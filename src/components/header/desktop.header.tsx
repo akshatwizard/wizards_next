@@ -53,7 +53,7 @@ const itemVariants: Variants = {
     },
 };
 
-export default function DesktopHeader() {
+export default function DesktopHeader({scrolled}:{scrolled:boolean | null}) {
     const currentPath = usePathname();
     const [hovered, setHovered] = useState<number | null>(null);
 
@@ -104,7 +104,7 @@ export default function DesktopHeader() {
                             {(isActive || isHovered) && (
                                 <Span
                                     layoutId="active-nav"
-                                    className="absolute inset-x-0 h-0.5 bottom-3 bg-linear-to-r from-transparent via-white to-transparent"
+                                    className={`absolute inset-x-0 h-0.5 ${scrolled ? "bottom-1.5" : "bottom-3"} bg-linear-to-r from-transparent via-white to-transparent`}
                                     transition={{ type: "tween", ease: [0.22, 1, 0.36, 1], duration: 0.5 }}
                                 />
                             )}

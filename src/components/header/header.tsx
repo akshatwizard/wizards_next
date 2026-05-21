@@ -15,7 +15,7 @@ export default function Header() {
     const [openMenu, setOpenMenu] = useState<boolean>(false);
 
     useMotionValueEvent(scrollY, "change", (current) => {
-        if (current > 80) {
+        if (current > 50) {
             setScrolled(true);
         } else {
             setScrolled(null);
@@ -28,14 +28,14 @@ export default function Header() {
             <motion.header
                 key="Header"
                 aria-label="Header"
-                className={`sticky top-0 lg:mt-2 md:mt-1.5 mt-1 w-full z-20 lg:px-8 md:px-6 px-2 transition-all duration-300 ease-in-out ${scrolled ? "md:h-14 h-12 bg-white/5 backdrop-blur border-b border-white/10" : "md:h-18 h-16  bg-transparent border-b border-white/0 backdrop-blur-none"} `}
+                className={`sticky top-0 lg:mt-2 md:mt-1.5 mt-1 w-full z-20 lg:px-8 md:px-6 px-2 transition-all duration-300 ease-in-out ${scrolled ? "md:h-16 h-12 bg-black/1 backdrop-blur border-b border-white/5" : "md:h-18 h-16  bg-transparent border-b border-white/0 backdrop-blur-none"} `}
             >
                 <nav className='relative w-full max-w-7xl mx-auto flex items-center justify-between py-1 h-full gap-5'>
                     <Link href="/" className="flex items-center select-none">
                         <BoltLogo scrolled={scrolled} />
                     </Link>
 
-                    <DesktopHeader />
+                    <DesktopHeader scrolled={scrolled} />
 
                     <button
                         onClick={() => setOpenMenu(true)}

@@ -61,7 +61,7 @@ export function BoltLogo({ scrolled }: { scrolled: boolean | null }) {
             <motion.span
                 initial={{ opacity: 0, x: -14 }}
                 animate={wiCtrl}
-                className={`font-sora uppercase font-bold text-white ${textSize}`}
+                className={`font-sora uppercase font-bold text-white ${textSize} transition-all duration-300 ease-in-out`}
             >
                 WI
             </motion.span>
@@ -72,7 +72,7 @@ export function BoltLogo({ scrolled }: { scrolled: boolean | null }) {
                 viewBox="0 0 40 64"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="shrink-0 mx-0.5 rotate-10"
+                className="shrink-0 mx-0.5 rotate-10 transition-all duration-300 ease-in-out"
             >
                 <defs>
                     <linearGradient id="bolt-gradient" x1="36" y1="2" x2="14" y2="62" gradientUnits="userSpaceOnUse">
@@ -106,7 +106,7 @@ export function BoltLogo({ scrolled }: { scrolled: boolean | null }) {
             <motion.span
                 initial={{ opacity: 0, x: 14 }}
                 animate={ardsCtrl}
-                className={`font-sora uppercase font-bold text-white ${textSize}`}
+                className={`font-sora uppercase font-bold text-white ${textSize} transition-all duration-300 ease-in-out`}
             >
                 ARDS
             </motion.span>
