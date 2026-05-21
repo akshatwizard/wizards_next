@@ -63,7 +63,7 @@ export default function DesktopHeader() {
     };
 
     return (
-        <div className="h-full flex items-center gap-0.5">
+        <div className="hidden md:flex h-full items-center gap-0.5">
             {NavMenu.map((item, index) => {
                 const isActive = activePath(item.path);
                 const isHovered = hovered === index;
@@ -183,6 +183,9 @@ export default function DesktopHeader() {
                     </div>
                 );
             })}
+            <button className="text-zinc-400 border border-zinc-400 rounded-lg px-2.5 py-2 ml-1 cursor-pointer hover:bg-zinc-200/5 hover:text-zinc-200 hover:border-zinc-200 transition-all duration-200 ease-linear">
+                Get Started
+            </button>
         </div>
     );
 }
