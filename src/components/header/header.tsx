@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Span } from "../ui/motion_components";
 import { BoltLogo } from "./logo";
 import DesktopHeader from "./desktop.header";
+import MobileMenu from "./mobile.header";
 
 
 
@@ -23,19 +24,34 @@ export default function Header() {
 
 
     return (
-        <motion.header
-            key="Header"
-            aria-label="Header"
-            className={`sticky top-0 lg:mt-2 md:mt-1.5 mt-1 w-full z-20 lg:px-8 md:px-6 px-2 transition-all duration-300 ease-in-out ${scrolled ? "md:h-14 h-12 bg-white/5 backdrop-blur border-b border-white/10" : "md:h-18 h-16  bg-transparent border-b border-white/0 backdrop-blur-none"} `}
-        >
-            <nav className='relative w-full max-w-7xl mx-auto flex items-center justify-between py-1 h-full gap-5'>
-                <Link href="/" className="flex items-center select-none">
-                    <BoltLogo scrolled={scrolled} />
-                </Link>
+        <>
+            <motion.header
+                key="Header"
+                aria-label="Header"
+                className={`sticky top-0 lg:mt-2 md:mt-1.5 mt-1 w-full z-20 lg:px-8 md:px-6 px-2 transition-all duration-300 ease-in-out ${scrolled ? "md:h-14 h-12 bg-white/5 backdrop-blur border-b border-white/10" : "md:h-18 h-16  bg-transparent border-b border-white/0 backdrop-blur-none"} `}
+            >
+                <nav className='relative w-full max-w-7xl mx-auto flex items-center justify-between py-1 h-full gap-5'>
+                    <Link href="/" className="flex items-center select-none">
+                        <BoltLogo scrolled={scrolled} />
+                    </Link>
 
-                <DesktopHeader />
-            </nav>
+                    <DesktopHeader />
 
-        </motion.header>
+                    <button
+                        onClick={() => setOpenMenu(true)}
+                        className="flex md:hidden flex-col gap-1.5 p-2 text-zinc-400 hover:text-white transition-colors cursor-pointer"
+                        aria-label="Open menu"
+                    >
+                        <span className="w-5 h-px bg-current" />
+                        <span className="w-3.5 h-px bg-current" />
+                        <span className="w-5 h-px bg-current" />
+                    </button>
+
+                </nav>
+
+            </motion.header>
+
+            <MobileMenu open={openMenu} onClose={() => setOpenMenu(false)} />
+        </>
     )
 }
