@@ -183,9 +183,21 @@ export default function DesktopHeader() {
                     </div>
                 );
             })}
-            <button className="text-zinc-400 border border-zinc-400 rounded-lg px-2.5 py-2 ml-1 cursor-pointer hover:bg-zinc-200/5 hover:text-zinc-200 hover:border-zinc-200 transition-all duration-200 ease-linear">
-                Get Started
-            </button>
+            <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ duration: 0.15, ease: [0.22, 1, 0.36, 1] }}
+                className="relative px-3.5 py-2 ml-1 cursor-pointer group"
+            >
+                {/* Gradient border layer */}
+                <span className="absolute inset-0 rounded-lg p-px bg-linear-to-r from-[#FEE800] via-[#FD9E17] to-[#FD7303] opacity-50 group-hover:opacity-90 transition-opacity duration-200" />
+                {/* Dark fill punches out the center */}
+                <span className="absolute inset-px rounded-[7px] bg-zinc-950" />
+                {/* Gradient text */}
+                <span className="relative text-sm font-medium bg-linear-to-r from-[#FEE800] via-[#FD9E17] to-[#FD7303] bg-clip-text text-transparent leading-none">
+                    Get Started
+                </span>
+            </motion.button>
         </div>
     );
 }

@@ -222,7 +222,7 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
                         animate="visible"
                         exit="exit"
                         onClick={onClose}
-                        className="fixed inset-0 z-30 bg-black/60 backdrop-blur-sm"
+                        className="md:hidden fixed inset-0 z-30 bg-black/60 backdrop-blur-sm"
                     />
 
                     {/* Drawer */}
@@ -232,7 +232,7 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                        className="fixed inset-y-0 left-0 z-40 w-[80vw] max-w-[320px] flex flex-col bg-zinc-950 border-r border-white/8 shadow-2xl shadow-black/60"
+                        className="md:hidden fixed inset-y-0 left-0 z-40 w-[80vw] max-w-[320px] flex flex-col bg-zinc-950 border-r border-white/8 shadow-2xl shadow-black/60"
                     >
                         {/* Top shimmer */}
                         <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/15 to-transparent" />
