@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Sora, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/header";
+import SmoothScrollProvider from "@/lib/SmoothScroll";
 
 const sora = Sora({
   variable: "--font-sora",
@@ -31,7 +32,9 @@ export default function RootLayout({
     >
       <body className="antialiased">
         <Header />
-        {children}
+        <SmoothScrollProvider>
+          {children}
+        </SmoothScrollProvider>
       </body>
     </html>
   );

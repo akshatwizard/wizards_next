@@ -1,3 +1,4 @@
+import ClientMarquee from '@/components/client_marquee'
 import HeroSection from '@/components/hero'
 import NumberStrip from '@/components/numbers_strip'
 import Services from '@/components/services'
@@ -9,6 +10,7 @@ export default function Home() {
       <HeroSection />
       <NumberStrip />
       <Services />
+      <ClientMarquee/>
     </main>
   )
 }
