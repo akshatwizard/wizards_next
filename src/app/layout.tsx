@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Sora, Poppins } from "next/font/google";
+import { Sora, Poppins, Geist } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/header";
 import SmoothScrollProvider from "@/lib/SmoothScroll";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const sora = Sora({
   variable: "--font-sora",
@@ -28,7 +31,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sora.variable} ${poppins.variable} antialiased bg-zinc-950`}
+      className={cn("antialiased", "bg-zinc-950", sora.variable, poppins.variable, "font-sans", geist.variable)}
     >
       <body className="antialiased">
         <Header />

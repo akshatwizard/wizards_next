@@ -85,7 +85,7 @@ export default function PortfolioBentoGrid() {
                     </FadeUp>
 
                     <FadeUp delay={0.1}>
-                        <h2 className="text-3xl lg:text-4xl font-medium tracking-tight text-zinc-100">
+                        <h2 className="text-3xl lg:text-4xl font-medium tracking-tight text-zinc-200">
                             Projects that <span className="text-amber-600">speak for themselves</span>
                         </h2>
                     </FadeUp>

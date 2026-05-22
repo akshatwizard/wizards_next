@@ -1,4 +1,5 @@
 import ClientMarquee from '@/components/client_marquee'
+import Testimonials from '@/components/client_testimonials'
 import HeroSection from '@/components/hero'
 import NumberStrip from '@/components/numbers_strip'
 import Services from '@/components/services'
@@ -13,6 +14,7 @@ export default function Home() {
       <Services />
       <ClientMarquee/>
       <PortfolioBentoGrid/>
+      <Testimonials/>
     </main>
   )
 }
