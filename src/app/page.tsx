@@ -1,5 +1,6 @@
 import HeroSection from '@/components/hero'
 import NumberStrip from '@/components/numbers_strip'
+import Services from '@/components/services'
 import React from 'react'
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <main className='w-full'>
       <HeroSection />
       <NumberStrip />
+      <Services />
     </main>
   )
 }
