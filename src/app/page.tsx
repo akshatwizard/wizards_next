@@ -2,6 +2,7 @@ import ClientMarquee from '@/components/client_marquee'
 import HeroSection from '@/components/hero'
 import NumberStrip from '@/components/numbers_strip'
 import Services from '@/components/services'
+import PortfolioBentoGrid from '@/components/work'
 import React from 'react'
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <NumberStrip />
       <Services />
       <ClientMarquee/>
+      <PortfolioBentoGrid/>
     </main>
   )
 }
