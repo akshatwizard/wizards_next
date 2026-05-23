@@ -1,0 +1,937 @@
+import React from 'react'
+import Link from 'next/link'
+import {
+    Globe, Code2, Smartphone, ShoppingCart, BarChart3,
+    Shield, Zap, Layers, Database, GitBranch,
+    CheckCircle2, ArrowRight, ExternalLink, Users,
+    Star, Quote, Clock, TrendingUp, Award, Cpu,
+    Layout, Server, Palette, Search, RefreshCw,
+    ChevronRight, Play, Building2, Stethoscope,
+    School, Car, Shirt, Plane,
+} from 'lucide-react'
+import { Section, Wrapper } from '@/components/ui/sections'
+import { FadeUp } from '@/components/ui/motion_components'
+
+const STATS = [
+    { value: '120+', label: 'Sites launched' },
+    { value: '98%', label: 'Client satisfaction' },
+    { value: '2.1s', label: 'Avg load time' },
+    { value: '4 wks', label: 'Avg delivery' },
+]
+
+const WHAT_IS = [
+    {
+        icon: Globe,
+        title: 'What is web development?',
+        body: 'Web development is the process of building and maintaining websites and web applications — everything from a simple business card site to a full-scale e-commerce platform. It covers design, coding, databases, and performance.',
+    },
+    {
+        icon: Layout,
+        title: 'Frontend vs Backend',
+        body: 'Frontend is what users see — pages, buttons, animations. Backend is the engine underneath — servers, databases, logic. Full-stack development covers both. We do all three.',
+    },
+    {
+        icon: TrendingUp,
+        title: 'Why does it matter?',
+        body: 'Your website is your 24/7 salesperson. 75% of users judge credibility by design alone. A slow, outdated site loses you business every day — a fast, modern one converts strangers into customers.',
+    },
+    {
+        icon: Shield,
+        title: 'Security & compliance',
+        body: 'Every site we build is SSL-secured, GDPR-aware, and follows OWASP best practices. Security isn\'t an add-on — it\'s baked in from day one.',
+    },
+]
+
+const SERVICES_LIST = [
+    {
+        icon: Globe,
+        title: 'Business Websites',
+        desc: 'Fast, beautiful, mobile-first sites that establish credibility and drive enquiries.',
+        tags: ['Next.js', 'Tailwind', 'CMS'],
+    },
+    {
+        icon: ShoppingCart,
+        title: 'E-Commerce Stores',
+        desc: 'Shopify, WooCommerce, or custom storefronts built to convert browsers into buyers.',
+        tags: ['Shopify', 'WooCommerce', 'Payments'],
+    },
+    {
+        icon: Smartphone,
+        title: 'Progressive Web Apps',
+        desc: 'App-like experiences in the browser — offline-capable, installable, blazing fast.',
+        tags: ['PWA', 'React', 'Service Workers'],
+    },
+    {
+        icon: BarChart3,
+        title: 'Landing Pages',
+        desc: 'High-conversion pages built around a single goal — leads, signups, or sales.',
+        tags: ['CRO', 'A/B Testing', 'Analytics'],
+    },
+    {
+        icon: Database,
+        title: 'Web Applications',
+        desc: 'Custom tools, dashboards, portals, and SaaS products built for scale.',
+        tags: ['Node.js', 'PostgreSQL', 'REST API'],
+    },
+    {
+        icon: RefreshCw,
+        title: 'Redesign & Migration',
+        desc: 'Modernise a legacy site without losing your SEO rankings or existing content.',
+        tags: ['Audit', 'Migration', 'SEO-safe'],
+    },
+]
+
+const TECH_STACK = [
+    { category: 'Frontend', icon: Code2, items: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript', 'Framer Motion'] },
+    { category: 'Backend', icon: Server, items: ['Node.js', 'Express', 'Python', 'PostgreSQL', 'MongoDB'] },
+    { category: 'CMS', icon: Layers, items: ['Sanity', 'Contentful', 'WordPress', 'Payload CMS', 'Strapi'] },
+    { category: 'E-Commerce', icon: ShoppingCart, items: ['Shopify', 'WooCommerce', 'Medusa.js', 'Stripe', 'Razorpay'] },
+    { category: 'DevOps', icon: GitBranch, items: ['Vercel', 'AWS', 'Docker', 'GitHub Actions', 'Cloudflare'] },
+    { category: 'Design', icon: Palette, items: ['Figma', 'Framer', 'Adobe XD', 'Spline', 'Lottie'] },
+]
+
+const PROCESS = [
+    { num: '01', title: 'Discovery call', desc: 'We learn your goals, audience, and technical requirements. No jargon, just clarity.' },
+    { num: '02', title: 'Design & wireframe', desc: 'Figma mockups reviewed and approved before a single line of code is written.' },
+    { num: '03', title: 'Development', desc: 'Clean, well-commented code. Regular builds shared for your feedback.' },
+    { num: '04', title: 'Testing & QA', desc: 'Cross-browser, cross-device, performance, and security testing.' },
+    { num: '05', title: 'Launch', desc: 'We handle deployment, DNS, SSL, and go-live monitoring.' },
+    { num: '06', title: 'Support & grow', desc: 'Monthly maintenance plans, updates, and ongoing optimisation.' },
+]
+
+const CASE_STUDIES = [
+    {
+        client: 'Sadbhavana Banaras',
+        industry: 'Hospitality',
+        result: '3× increase in direct bookings',
+        metric: '+210%',
+        label: 'Direct bookings',
+        desc: 'Rebuilt their dated PHP site into a Next.js hotel website with integrated booking flow and Google Hotels schema.',
+        tags: ['Next.js', 'Booking Engine', 'SEO'],
+    },
+    {
+        client: 'Banarsi Saree Co.',
+        industry: 'E-Commerce',
+        result: '₹40K → ₹4L monthly revenue',
+        metric: '10×',
+        label: 'Revenue growth',
+        desc: 'Migrated from a broken Wix store to a custom Shopify build with product filtering, size charts, and Razorpay integration.',
+        tags: ['Shopify', 'Razorpay', 'Custom Theme'],
+    },
+    {
+        client: 'GD Sons',
+        industry: 'Corporate',
+        result: '68% drop in bounce rate',
+        metric: '-68%',
+        label: 'Bounce rate',
+        desc: 'Full corporate website redesign with a lead generation form, case study pages, and ATS-connected careers portal.',
+        tags: ['Next.js', 'CRM Integration', 'Lead Gen'],
+    },
+]
+
+const CLIENTS = [
+    { initials: 'SB', name: 'Sadbhavana Banaras', industry: 'Hospitality' },
+    { initials: 'BS', name: 'Banarsi Saree', industry: 'E-Commerce' },
+    { initials: 'GD', name: 'GD Sons', industry: 'Corporate' },
+    { initials: 'CL', name: 'Career Launcher', industry: 'Education' },
+    { initials: 'SJ', name: 'Swarnam Jewellers', industry: 'Retail' },
+    { initials: 'MF', name: 'Mega Furniture', industry: 'Retail' },
+    { initials: 'DA', name: 'Dr. Ankita Chauhan', industry: 'Healthcare' },
+    { initials: 'VP', name: 'Varanasi Prints', industry: 'FMCG' },
+]
+
+const INDUSTRIES = [
+    { icon: Building2, label: 'Corporate' },
+    { icon: ShoppingCart, label: 'E-Commerce' },
+    { icon: Stethoscope, label: 'Healthcare' },
+    { icon: School, label: 'Education' },
+    { icon: Car, label: 'Automotive' },
+    { icon: Shirt, label: 'Retail' },
+    { icon: Plane, label: 'Travel' },
+    { icon: Globe, label: 'FMCG' },
+]
+
+const TEAM = [
+    {
+        initials: 'AK',
+        name: 'Aditya Kumar',
+        role: 'Lead Developer',
+        skills: ['Next.js', 'TypeScript', 'Node.js'],
+        exp: '6 yrs exp',
+    },
+    {
+        initials: 'RS',
+        name: 'Riya Sharma',
+        role: 'UI/UX Designer',
+        skills: ['Figma', 'Framer', 'Design Systems'],
+        exp: '4 yrs exp',
+    },
+    {
+        initials: 'PV',
+        name: 'Pradeep Verma',
+        role: 'Backend Engineer',
+        skills: ['Node.js', 'PostgreSQL', 'AWS'],
+        exp: '5 yrs exp',
+    },
+    {
+        initials: 'SM',
+        name: 'Sana Malik',
+        role: 'Shopify Expert',
+        skills: ['Shopify', 'Liquid', 'E-Commerce'],
+        exp: '3 yrs exp',
+    },
+]
+
+const TESTIMONIAL = {
+    quote: "Wizards Next delivered our new site in under 4 weeks. It loads instantly, looks stunning, and we've seen a 3× jump in online enquiries since launch. Worth every paisa.",
+    name: 'Rohit Mehta',
+    role: 'Director, Sadbhavana Hotels',
+    initials: 'RM',
+    rating: 5,
+}
+
+const FAQS = [
+    {
+        q: 'How long does a website take to build?',
+        a: 'Most business websites take 2–4 weeks. E-commerce stores and web apps take 4–8 weeks depending on complexity. We give you a precise timeline after the discovery call.',
+    },
+    {
+        q: 'Do you provide hosting and maintenance?',
+        a: 'Yes. We offer managed hosting on Vercel or AWS, plus monthly maintenance plans covering updates, backups, performance monitoring, and minor edits.',
+    },
+    {
+        q: 'Will I be able to update the website myself?',
+        a: 'Absolutely. We integrate a headless CMS (Sanity, Contentful, or WordPress) so you can edit content, add blog posts, and update products without touching code.',
+    },
+    {
+        q: 'Do you work with clients outside Varanasi?',
+        a: 'Yes — we work with clients pan-India and internationally. All communication happens over video calls, and we use shared Figma for design reviews.',
+    },
+    {
+        q: 'What is your pricing?',
+        a: 'Pricing depends on scope. Business websites start at ₹25,000, e-commerce stores at ₹45,000, and custom web apps at ₹80,000+. We send a detailed quote after understanding your requirements.',
+    },
+]
+
+// ═══════════════════════════════════════════════════════════════
+// SHARED UI ATOMS
+// ═══════════════════════════════════════════════════════════════
+
+function SectionBadge({ label }: { label: string }) {
+    return (
+        <div className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/25 rounded-full px-3.5 py-1 mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+            <span className="text-amber-500 text-[10px] font-medium tracking-widest uppercase">
+                {label}
+            </span>
+        </div>
+    )
+}
+
+function SectionHeading({ children }: { children: React.ReactNode }) {
+    return (
+        <h2 className="font-syne text-2xl sm:text-3xl lg:text-4xl font-extrabold text-zinc-100 tracking-tight leading-tight">
+            {children}
+        </h2>
+    )
+}
+
+function Tag({ label }: { label: string }) {
+    return (
+        <span className="text-[10px] px-2 py-0.5 rounded border border-zinc-700/60 bg-zinc-950 text-zinc-500">
+            {label}
+        </span>
+    )
+}
+
+function Divider() {
+    return <div className="w-full h-px bg-zinc-800 my-2" />
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 1. HERO SECTION
+// ═══════════════════════════════════════════════════════════════
+
+function HeroSection() {
+    return (
+        <Section className="relative overflow-hidden bg-[#09090b]">
+
+            {/* Grid texture */}
+            <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.15]"
+                style={{
+                    backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
+                    backgroundSize: '48px 48px',
+                }} />
+
+            {/* Glow */}
+            <div aria-hidden className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px]"
+                style={{ background: 'radial-gradient(ellipse, rgba(217,119,6,0.1) 0%, transparent 65%)' }} />
+
+            <Wrapper>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+                    {/* Left */}
+                    <div className="flex flex-col">
+
+                        <FadeUp delay={0}>
+                            {/* Breadcrumb */}
+                            <div className="flex items-center gap-1.5 text-[11px] text-zinc-600 mb-6">
+                                <Link href="/" className="hover:text-zinc-400 transition-colors">Home</Link>
+                                <ChevronRight size={12} />
+                                <Link href="/services" className="hover:text-zinc-400 transition-colors">Services</Link>
+                                <ChevronRight size={12} />
+                                <span className="text-zinc-400">Web Development</span>
+                            </div>
+
+                            <SectionBadge label="Web Development" />
+                        </FadeUp>
+
+                        <FadeUp delay={0.08}>
+                            <h1 className="font-syne text-3xl sm:text-4xl lg:text-5xl font-extrabold text-zinc-50 tracking-tight leading-[1.06] mb-5">
+                                Websites that work as hard as{' '}
+                                <span className="text-amber-500">you do</span>
+                            </h1>
+                        </FadeUp>
+
+                        <FadeUp delay={0.12}>
+                            <p className="text-zinc-400 text-[14px] leading-relaxed font-light max-w-md mb-8">
+                                We build fast, beautiful, and conversion-focused websites —
+                                from business portfolios to full-scale e-commerce stores.
+                                Delivered in weeks, not months.
+                            </p>
+                        </FadeUp>
+
+                        {/* CTAs */}
+                        <FadeUp delay={0.16} className="flex flex-wrap items-center gap-3 mb-10">
+                            <Link href="/contact"
+                                className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 active:scale-[0.97] text-black text-[13px] font-semibold px-6 py-3 rounded-xl transition-all duration-200">
+                                Start your project
+                                <ArrowRight size={15} />
+                            </Link>
+                            <Link href="#case-studies"
+                                className="inline-flex items-center gap-2 border border-zinc-700 hover:border-zinc-600 text-zinc-300 text-[13px] font-medium px-6 py-3 rounded-xl transition-all duration-200">
+                                <Play size={13} className="text-amber-600" />
+                                See our work
+                            </Link>
+                        </FadeUp>
+
+                        {/* Social proof */}
+                        <FadeUp delay={0.2} className="flex items-center gap-3">
+                            <div className="flex">
+                                {['AK', 'RS', 'PV', 'SM'].map((i, idx) => (
+                                    <div key={i}
+                                        className="size-8 rounded-full border-2 border-[#09090b] bg-zinc-800 flex items-center justify-center text-[9px] font-bold text-amber-600"
+                                        style={{ marginLeft: idx === 0 ? 0 : -8 }}>
+                                        {i}
+                                    </div>
+                                ))}
+                            </div>
+                            <div>
+                                <div className="flex items-center gap-0.5 mb-0.5">
+                                    {[...Array(5)].map((_, i) => (
+                                        <Star key={i} size={11} fill="#f59e0b" stroke="#f59e0b" strokeWidth={1} />
+                                    ))}
+                                </div>
+                                <p className="text-[10px] text-zinc-500">
+                                    Trusted by <span className="text-zinc-300 font-medium">120+ clients</span> across India
+                                </p>
+                            </div>
+                        </FadeUp>
+                    </div>
+
+                    {/* Right — image placeholder + floating stats */}
+                    <FadeUp delay={0.15} className="relative">
+                        {/* Main placeholder */}
+                        <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
+                            {/* Grid texture inside */}
+                            <div aria-hidden className="absolute inset-0 opacity-30"
+                                style={{
+                                    backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+                                    backgroundSize: '24px 24px',
+                                }} />
+                            <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="flex flex-col items-center gap-3 opacity-20">
+                                    <Globe size={48} className="text-amber-600" strokeWidth={1} />
+                                    <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">Project screenshot</span>
+                                </div>
+                            </div>
+                            {/* Amber corner pip */}
+                            <div className="absolute top-3 left-3 w-1.5 h-1.5 rounded-full bg-amber-600/60" />
+                        </div>
+
+                        {/* Floating stat cards */}
+                        <div className="absolute -bottom-4 -left-4 bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 shadow-xl">
+                            <p className="font-syne text-xl font-black text-amber-500 leading-none">2.1s</p>
+                            <p className="text-[9px] text-zinc-500 mt-0.5 uppercase tracking-widest">Avg load time</p>
+                        </div>
+
+                        <div className="absolute -top-4 -right-4 bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 shadow-xl">
+                            <p className="font-syne text-xl font-black text-amber-500 leading-none">120+</p>
+                            <p className="text-[9px] text-zinc-500 mt-0.5 uppercase tracking-widest">Sites launched</p>
+                        </div>
+                    </FadeUp>
+                </div>
+
+                {/* Stat strip */}
+                <FadeUp delay={0.25}>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-zinc-800 border border-zinc-800 rounded-2xl overflow-hidden mt-14">
+                        {STATS.map((s) => (
+                            <div key={s.label} className="bg-[#09090b] px-6 py-5 text-center">
+                                <p className="font-syne text-2xl font-extrabold text-amber-500">{s.value}</p>
+                                <p className="text-[11px] text-zinc-500 mt-0.5">{s.label}</p>
+                            </div>
+                        ))}
+                    </div>
+                </FadeUp>
+            </Wrapper>
+        </Section>
+    )
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 2. WHAT IS WEB DEVELOPMENT
+// ═══════════════════════════════════════════════════════════════
+
+function WhatIsSection() {
+    return (
+        <Section className="bg-[#09090b]">
+            <Wrapper>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                    <div>
+                        <FadeUp delay={0}><SectionBadge label="101" /></FadeUp>
+                        <FadeUp delay={0.06}>
+                            <SectionHeading>
+                                New to web development?{' '}
+                                <span className="text-amber-500">We'll catch you up.</span>
+                            </SectionHeading>
+                        </FadeUp>
+                        <FadeUp delay={0.1}>
+                            <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed mt-3 max-w-md">
+                                Whether you're a first-time founder or a business owner replacing an old site,
+                                here's everything you need to know before we start.
+                            </p>
+                        </FadeUp>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {WHAT_IS.map((item, i) => {
+                            const Icon = item.icon
+                            return (
+                                <FadeUp key={item.title} delay={i * 0.08}>
+                                    <div className="h-full p-4 rounded-xl border border-zinc-800 bg-zinc-900/50 hover:border-zinc-700 transition-colors duration-200">
+                                        <div className="size-9 rounded-lg bg-amber-600/10 border border-amber-600/20 flex items-center justify-center mb-3">
+                                            <Icon size={16} className="text-amber-500" strokeWidth={1.7} />
+                                        </div>
+                                        <h3 className="text-[13px] font-semibold text-zinc-200 mb-1.5 leading-snug">{item.title}</h3>
+                                        <p className="text-[11.5px] text-zinc-500 leading-relaxed font-light">{item.body}</p>
+                                    </div>
+                                </FadeUp>
+                            )
+                        })}
+                    </div>
+                </div>
+            </Wrapper>
+        </Section>
+    )
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 3. SERVICES OFFERED
+// ═══════════════════════════════════════════════════════════════
+
+function ServicesOfferedSection() {
+    return (
+        <Section className="bg-[#09090b]">
+            <Wrapper>
+                <FadeUp delay={0} className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+                    <div>
+                        <SectionBadge label="What we build" />
+                        <SectionHeading>
+                            Six types of web projects,{' '}
+                            <span className="text-amber-500">one team</span>
+                        </SectionHeading>
+                    </div>
+                    <Link href="/contact"
+                        className="inline-flex items-center gap-1.5 text-amber-600 text-[12px] font-medium border border-amber-600/25 rounded-lg px-4 py-2 hover:bg-amber-600/8 transition-colors shrink-0">
+                        Discuss your project <ArrowRight size={12} />
+                    </Link>
+                </FadeUp>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {SERVICES_LIST.map((svc, i) => {
+                        const Icon = svc.icon
+                        return (
+                            <FadeUp key={svc.title} delay={i * 0.07}>
+                                <div className="group h-full flex flex-col gap-4 p-5 rounded-2xl border border-zinc-800 bg-zinc-900 hover:bg-zinc-800/60 hover:border-zinc-700 transition-all duration-200">
+                                    <div className="size-10 rounded-xl bg-amber-600/10 border border-amber-600/20 flex items-center justify-center">
+                                        <Icon size={18} className="text-amber-500" strokeWidth={1.7} />
+                                    </div>
+                                    <div className="flex-1">
+                                        <h3 className="font-syne text-[15px] font-bold text-zinc-100 mb-1.5">{svc.title}</h3>
+                                        <p className="text-[12.5px] text-zinc-500 leading-relaxed font-light">{svc.desc}</p>
+                                    </div>
+                                    <div className="flex flex-wrap gap-1.5 pt-3 border-t border-zinc-800">
+                                        {svc.tags.map(t => <Tag key={t} label={t} />)}
+                                    </div>
+                                </div>
+                            </FadeUp>
+                        )
+                    })}
+                </div>
+            </Wrapper>
+        </Section>
+    )
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 4. OUR PROCESS
+// ═══════════════════════════════════════════════════════════════
+
+function ProcessSection() {
+    return (
+        <Section className="bg-[#09090b]">
+            <Wrapper>
+                <div
+                    className="relative rounded-2xl overflow-hidden px-8 py-14 sm:px-12"
+                    style={{
+                        background: 'radial-gradient(ellipse at 50% 0%, rgba(217,119,6,0.1) 0%, transparent 55%), linear-gradient(180deg, #111008 0%, #0c0c0e 100%)',
+                        border: '1px solid rgba(255,255,255,0.06)',
+                    }}
+                >
+                    <div aria-hidden className="pointer-events-none absolute inset-0 opacity-20"
+                        style={{
+                            backgroundImage: 'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
+                            backgroundSize: '40px 40px',
+                        }} />
+
+                    <FadeUp delay={0} className="text-center mb-12">
+                        <SectionBadge label="How we work" />
+                        <SectionHeading>
+                            From idea to live site —{' '}
+                            <span className="text-amber-500">6 clear steps</span>
+                        </SectionHeading>
+                    </FadeUp>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                        {PROCESS.map((step, i) => (
+                            <FadeUp key={step.num} delay={i * 0.07}>
+                                <div className="relative flex flex-col gap-3 p-5 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] hover:border-amber-600/20 transition-all duration-200">
+                                    <span className="absolute top-4 right-4 font-syne text-[10px] font-bold text-zinc-700">{step.num}</span>
+                                    <div className="size-10 rounded-xl bg-amber-600/10 border border-amber-600/25 flex items-center justify-center">
+                                        <span className="font-syne text-[13px] font-black text-amber-500">{step.num}</span>
+                                    </div>
+                                    <h3 className="font-syne text-[14px] font-bold text-zinc-100 leading-snug">{step.title}</h3>
+                                    <p className="text-[12px] text-zinc-500 leading-relaxed font-light">{step.desc}</p>
+                                </div>
+                            </FadeUp>
+                        ))}
+                    </div>
+                </div>
+            </Wrapper>
+        </Section>
+    )
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 5. CASE STUDIES
+// ═══════════════════════════════════════════════════════════════
+
+function CaseStudiesSection() {
+    return (
+        <Section id="case-studies" className="bg-[#09090b]">
+            <Wrapper>
+                <FadeUp delay={0} className="mb-10">
+                    <SectionBadge label="Case studies" />
+                    <SectionHeading>
+                        Real projects,{' '}
+                        <span className="text-amber-500">real results</span>
+                    </SectionHeading>
+                    <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed mt-2 max-w-lg">
+                        Every number below is pulled from analytics, not our imagination.
+                    </p>
+                </FadeUp>
+
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                    {CASE_STUDIES.map((cs, i) => (
+                        <FadeUp key={cs.client} delay={i * 0.1}>
+                            <div className="group h-full flex flex-col rounded-2xl border border-zinc-800 bg-zinc-900 overflow-hidden hover:border-zinc-700 transition-all duration-200">
+
+                                {/* Image placeholder */}
+                                <div className="relative h-40 bg-zinc-950 shrink-0">
+                                    <div aria-hidden className="absolute inset-0 opacity-20"
+                                        style={{
+                                            backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+                                            backgroundSize: '20px 20px',
+                                        }} />
+                                    {/* Metric badge */}
+                                    <div className="absolute bottom-3 left-3 bg-amber-600 text-black px-3 py-1.5 rounded-lg">
+                                        <p className="font-syne text-lg font-black leading-none">{cs.metric}</p>
+                                        <p className="text-[9px] font-semibold opacity-70 mt-0.5">{cs.label}</p>
+                                    </div>
+                                    <div className="absolute top-3 right-3 text-[9px] font-medium text-zinc-600 bg-zinc-900/80 px-2 py-1 rounded-md border border-zinc-800">
+                                        {cs.industry}
+                                    </div>
+                                </div>
+
+                                {/* Body */}
+                                <div className="flex flex-col gap-3 p-5 flex-1">
+                                    <div>
+                                        <h3 className="font-syne text-[14px] font-bold text-zinc-100">{cs.client}</h3>
+                                        <p className="text-[11px] text-amber-600 font-medium mt-0.5">{cs.result}</p>
+                                    </div>
+                                    <p className="text-[12px] text-zinc-500 leading-relaxed font-light flex-1">{cs.desc}</p>
+                                    <div className="flex flex-wrap gap-1.5 pt-3 border-t border-zinc-800">
+                                        {cs.tags.map(t => <Tag key={t} label={t} />)}
+                                    </div>
+                                </div>
+                            </div>
+                        </FadeUp>
+                    ))}
+                </div>
+            </Wrapper>
+        </Section>
+    )
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 6. CLIENT LIST
+// ═══════════════════════════════════════════════════════════════
+
+function ClientListSection() {
+    return (
+        <Section className="bg-[#09090b]">
+            <Wrapper>
+                <FadeUp delay={0} className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+                    <div>
+                        <SectionBadge label="Our clients" />
+                        <SectionHeading>
+                            Brands that trusted us{' '}
+                            <span className="text-amber-500">to build for them</span>
+                        </SectionHeading>
+                    </div>
+                </FadeUp>
+
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    {CLIENTS.map((c, i) => (
+                        <FadeUp key={c.name} delay={i * 0.05}>
+                            <div className="flex items-center gap-3 p-4 rounded-xl border border-zinc-800 bg-zinc-900 hover:border-zinc-700 hover:bg-zinc-800/60 transition-all duration-200">
+                                <div className="size-9 rounded-lg bg-amber-600/15 border border-amber-600/25 flex items-center justify-center text-[10px] font-bold text-amber-600 flex-shrink-0">
+                                    {c.initials}
+                                </div>
+                                <div>
+                                    <p className="text-[12px] font-medium text-zinc-200 leading-snug">{c.name}</p>
+                                    <p className="text-[10px] text-zinc-600">{c.industry}</p>
+                                </div>
+                            </div>
+                        </FadeUp>
+                    ))}
+                </div>
+            </Wrapper>
+        </Section>
+    )
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 7. INDUSTRIES
+// ═══════════════════════════════════════════════════════════════
+
+function IndustriesSection() {
+    return (
+        <Section className="bg-[#09090b]">
+            <Wrapper>
+                <FadeUp delay={0} className="text-center mb-10">
+                    <SectionBadge label="Industries" />
+                    <SectionHeading>
+                        We build for{' '}
+                        <span className="text-amber-500">every sector</span>
+                    </SectionHeading>
+                    <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed mt-2 max-w-md mx-auto">
+                        Industry-specific design patterns, conversion flows, and integrations — we know what works in your space.
+                    </p>
+                </FadeUp>
+
+                <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2">
+                    {INDUSTRIES.map((ind, i) => {
+                        const Icon = ind.icon
+                        return (
+                            <FadeUp key={ind.label} delay={i * 0.05}>
+                                <div className="group flex flex-col items-center gap-2.5 p-4 rounded-xl border border-zinc-800 bg-zinc-900 hover:border-amber-600/30 hover:bg-zinc-800/60 transition-all duration-200 text-center">
+                                    <div className="size-10 rounded-xl bg-amber-600/10 border border-amber-600/20 flex items-center justify-center group-hover:bg-amber-600/20 transition-colors">
+                                        <Icon size={18} className="text-amber-500" strokeWidth={1.7} />
+                                    </div>
+                                    <p className="text-[11px] font-medium text-zinc-400 leading-snug">{ind.label}</p>
+                                </div>
+                            </FadeUp>
+                        )
+                    })}
+                </div>
+            </Wrapper>
+        </Section>
+    )
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 8. TECH STACK
+// ═══════════════════════════════════════════════════════════════
+
+function TechStackSection() {
+    return (
+        <Section className="bg-[#09090b]">
+            <Wrapper>
+                <FadeUp delay={0} className="mb-10">
+                    <SectionBadge label="Tech stack" />
+                    <SectionHeading>
+                        Modern tools,{' '}
+                        <span className="text-amber-500">no legacy baggage</span>
+                    </SectionHeading>
+                    <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed mt-2 max-w-lg">
+                        We don't pick technology to show off — we pick what's right for your project's
+                        scale, budget, and long-term maintainability.
+                    </p>
+                </FadeUp>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {TECH_STACK.map((cat, i) => {
+                        const Icon = cat.icon
+                        return (
+                            <FadeUp key={cat.category} delay={i * 0.07}>
+                                <div className="p-5 rounded-2xl border border-zinc-800 bg-zinc-900 h-full">
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <div className="size-8 rounded-lg bg-amber-600/10 border border-amber-600/20 flex items-center justify-center">
+                                            <Icon size={15} className="text-amber-500" strokeWidth={1.7} />
+                                        </div>
+                                        <h3 className="font-syne text-[13px] font-bold text-zinc-200">{cat.category}</h3>
+                                    </div>
+                                    <div className="flex flex-wrap gap-1.5">
+                                        {cat.items.map((tech) => (
+                                            <span key={tech}
+                                                className="text-[11px] px-2.5 py-1 rounded-lg border border-zinc-700/60 bg-zinc-950 text-zinc-400 hover:border-amber-600/30 hover:text-zinc-300 transition-colors cursor-default">
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </FadeUp>
+                        )
+                    })}
+                </div>
+            </Wrapper>
+        </Section>
+    )
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 9. TEAM
+// ═══════════════════════════════════════════════════════════════
+
+function TeamSection() {
+    return (
+        <Section className="bg-[#09090b]">
+            <Wrapper>
+                <FadeUp delay={0} className="mb-10">
+                    <SectionBadge label="The team" />
+                    <SectionHeading>
+                        People behind{' '}
+                        <span className="text-amber-500">your project</span>
+                    </SectionHeading>
+                    <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed mt-2 max-w-lg">
+                        You won't be passed to a junior. These are the actual people who design,
+                        code, and deliver your website.
+                    </p>
+                </FadeUp>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    {TEAM.map((member, i) => (
+                        <FadeUp key={member.name} delay={i * 0.08}>
+                            <div className="group flex flex-col gap-4 p-5 rounded-2xl border border-zinc-800 bg-zinc-900 hover:border-zinc-700 hover:bg-zinc-800/60 transition-all duration-200">
+                                {/* Avatar + name */}
+                                <div className="flex items-center gap-3">
+                                    {/* Avatar placeholder */}
+                                    <div className="size-10 rounded-xl bg-amber-600/15 border border-amber-600/25 flex items-center justify-center text-[11px] font-bold text-amber-600 flex-shrink-0">
+                                        {member.initials}
+                                    </div>
+                                    <div>
+                                        <p className="text-[13px] font-semibold text-zinc-200 leading-snug">{member.name}</p>
+                                        <p className="text-[10px] text-zinc-500">{member.role}</p>
+                                    </div>
+                                </div>
+
+                                {/* Experience badge */}
+                                <div className="flex items-center gap-1.5">
+                                    <Clock size={11} className="text-amber-600" />
+                                    <span className="text-[10.5px] text-zinc-500">{member.exp}</span>
+                                </div>
+
+                                {/* Skills */}
+                                <div className="flex flex-wrap gap-1.5 pt-3 border-t border-zinc-800">
+                                    {member.skills.map(s => <Tag key={s} label={s} />)}
+                                </div>
+                            </div>
+                        </FadeUp>
+                    ))}
+                </div>
+            </Wrapper>
+        </Section>
+    )
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 10. TESTIMONIAL
+// ═══════════════════════════════════════════════════════════════
+
+function TestimonialSection() {
+    return (
+        <Section className="bg-[#09090b]">
+            <Wrapper>
+                <FadeUp delay={0}>
+                    <div
+                        className="relative rounded-2xl overflow-hidden p-8 sm:p-12"
+                        style={{
+                            background: 'radial-gradient(ellipse at 30% 50%, rgba(217,119,6,0.08) 0%, transparent 55%), #111008',
+                            border: '1px solid rgba(255,255,255,0.06)',
+                        }}
+                    >
+                        <Quote size={40} className="text-amber-600/20 mb-6" strokeWidth={1} />
+                        <p className="font-syne text-lg sm:text-xl lg:text-2xl text-zinc-200 leading-relaxed font-medium max-w-3xl mb-8">
+                            "{TESTIMONIAL.quote}"
+                        </p>
+                        <div className="flex items-center gap-4">
+                            <div className="size-12 rounded-xl bg-amber-600/20 border border-amber-600/30 flex items-center justify-center text-[13px] font-bold text-amber-500">
+                                {TESTIMONIAL.initials}
+                            </div>
+                            <div>
+                                <p className="text-[14px] font-semibold text-zinc-100">{TESTIMONIAL.name}</p>
+                                <p className="text-[12px] text-zinc-500">{TESTIMONIAL.role}</p>
+                                <div className="flex items-center gap-0.5 mt-1">
+                                    {[...Array(TESTIMONIAL.rating)].map((_, i) => (
+                                        <Star key={i} size={11} fill="#f59e0b" stroke="#f59e0b" strokeWidth={1} />
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </FadeUp>
+            </Wrapper>
+        </Section>
+    )
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 11. FAQ
+// ═══════════════════════════════════════════════════════════════
+
+function FAQSection() {
+    return (
+        <Section className="bg-[#09090b]">
+            <Wrapper>
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 items-start">
+
+                    <FadeUp delay={0} className="lg:sticky lg:top-24">
+                        <SectionBadge label="FAQ" />
+                        <SectionHeading>
+                            Questions we get{' '}
+                            <span className="text-amber-500">all the time</span>
+                        </SectionHeading>
+                        <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed mt-3 mb-6">
+                            Still have something else on your mind? We're one message away.
+                        </p>
+                        <Link href="/contact"
+                            className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-black text-[13px] font-semibold px-5 py-2.5 rounded-xl transition-colors">
+                            Ask us directly <ArrowRight size={14} />
+                        </Link>
+                    </FadeUp>
+
+                    <div className="flex flex-col divide-y divide-zinc-800">
+                        {FAQS.map((faq, i) => (
+                            <FadeUp key={faq.q} delay={i * 0.06}>
+                                <div className="py-5">
+                                    <div className="flex items-start gap-3 mb-2">
+                                        <CheckCircle2 size={15} className="text-amber-600 mt-0.5 flex-shrink-0" strokeWidth={2} />
+                                        <h3 className="font-syne text-[14px] font-bold text-zinc-200 leading-snug">{faq.q}</h3>
+                                    </div>
+                                    <p className="text-[12.5px] text-zinc-500 leading-relaxed font-light pl-6">{faq.a}</p>
+                                </div>
+                            </FadeUp>
+                        ))}
+                    </div>
+                </div>
+            </Wrapper>
+        </Section>
+    )
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 12. BOTTOM CTA
+// ═══════════════════════════════════════════════════════════════
+
+function BottomCTA() {
+    return (
+        <Section className="bg-[#09090b] pb-20">
+            <Wrapper>
+                <FadeUp delay={0}>
+                    <div
+                        className="relative rounded-2xl overflow-hidden px-8 py-14 sm:px-16 text-center"
+                        style={{
+                            background: 'radial-gradient(ellipse at 50% 0%, rgba(217,119,6,0.15) 0%, transparent 60%), #111008',
+                            border: '1px solid rgba(255,255,255,0.07)',
+                        }}
+                    >
+                        <div aria-hidden className="pointer-events-none absolute inset-0 opacity-20"
+                            style={{
+                                backgroundImage: 'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
+                                backgroundSize: '40px 40px',
+                            }} />
+
+                        <Award size={36} className="text-amber-600/40 mx-auto mb-6" strokeWidth={1.2} />
+                        <h2 className="font-syne text-2xl sm:text-3xl lg:text-4xl font-extrabold text-zinc-50 tracking-tight leading-tight mb-3">
+                            Ready to build something{' '}
+                            <span className="text-amber-500">great?</span>
+                        </h2>
+                        <p className="text-zinc-400 text-[14px] font-light max-w-md mx-auto mb-8">
+                            Tell us about your project and we'll send a proposal within 24 hours.
+                            No agency fluff — just a straight conversation.
+                        </p>
+                        <div className="flex flex-wrap items-center justify-center gap-3">
+                            <Link href="/contact"
+                                className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 active:scale-[0.97] text-black text-[13px] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200">
+                                Start your project <ArrowRight size={15} />
+                            </Link>
+                            <Link href="https://wa.me/91XXXXXXXXXX"
+                                className="inline-flex items-center gap-2 border border-zinc-700 hover:border-zinc-600 text-zinc-300 text-[13px] font-medium px-7 py-3.5 rounded-xl transition-all duration-200">
+                                WhatsApp us
+                                <ExternalLink size={13} />
+                            </Link>
+                        </div>
+                        <p className="text-zinc-700 text-[11px] mt-6">
+                            Free 30-min discovery call · No commitment required
+                        </p>
+                    </div>
+                </FadeUp>
+            </Wrapper>
+        </Section>
+    )
+}
+
+// ═══════════════════════════════════════════════════════════════
+// PAGE EXPORT
+// ═══════════════════════════════════════════════════════════════
+
+export default function WebDevelopmentPage() {
+    return (
+        <main className="bg-[#09090b]">
+            <HeroSection />
+            <WhatIsSection />
+            <ServicesOfferedSection />
+            <ProcessSection />
+            <CaseStudiesSection />
+            <ClientListSection />
+            <IndustriesSection />
+            <TechStackSection />
+            <TeamSection />
+            <TestimonialSection />
+            <FAQSection />
+            <BottomCTA />
+        </main>
+    )
+}
