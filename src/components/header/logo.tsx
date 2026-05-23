@@ -29,21 +29,21 @@ export function BoltLogo({ scrolled }: { scrolled: boolean | null }) {
             el.removeEventListener("transitionend", onDrawDone);
 
             // Fill floods in via motion
-            await fillCtrl.start({
+            fillCtrl.start({
                 fillOpacity: 1,
-                transition: { duration: 0.25, ease: "easeOut" },
+                transition: { duration: 0.25, ease: [0.34, 1.56, 0.64, 1] },
             });
 
             // Text springs in with stagger
             wiCtrl.start({
                 opacity: 1,
-                x: 0,
+                filter:"blur(0)",
                 transition: { duration: 0.38, ease: [0.34, 1.56, 0.64, 1] },
             });
-            await ardsCtrl.start({
+            ardsCtrl.start({
                 opacity: 1,
-                x: 0,
-                transition: { duration: 0.38, ease: [0.34, 1.56, 0.64, 1], delay: 0.08 },
+                filter:"blur(0)",
+                transition: { duration: 0.38, ease: [0.34, 1.56, 0.64, 1] },
             });
         };
 
@@ -59,7 +59,7 @@ export function BoltLogo({ scrolled }: { scrolled: boolean | null }) {
         <div className="flex items-center">
 
             <motion.span
-                initial={{ opacity: 0, x: -14 }}
+                initial={{ opacity: 0, filter: "blur(4px)" }}
                 animate={wiCtrl}
                 className={`font-sora uppercase font-bold text-white ${textSize} transition-all duration-300 ease-in-out`}
             >
@@ -104,7 +104,7 @@ export function BoltLogo({ scrolled }: { scrolled: boolean | null }) {
             </svg>
 
             <motion.span
-                initial={{ opacity: 0, x: 14 }}
+                initial={{ opacity: 0, filter: "blur(4px)"}}
                 animate={ardsCtrl}
                 className={`font-sora uppercase font-bold text-white ${textSize} transition-all duration-300 ease-in-out`}
             >

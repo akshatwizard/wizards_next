@@ -38,7 +38,7 @@ function MarqueeItem({ initials, name, href }: Client) {
 
 export default function ClientMarquee() {
     return (
-        <Section className="lg:py-20 md:py-16 py-14 overflow-hidden">
+        <Section className="overflow-hidden">
 
             <Wrapper className="max-w-full overflow-hidden">
                 {/* Header */}

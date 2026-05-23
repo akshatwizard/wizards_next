@@ -1,6 +1,7 @@
 import AboutUs from '@/components/about'
 import ClientMarquee from '@/components/client_marquee'
 import Testimonials from '@/components/client_testimonials'
+import FAQ from '@/components/faq'
 import HeroSection from '@/components/hero'
 import NumberStrip from '@/components/numbers_strip'
 import Services from '@/components/services'
@@ -14,11 +15,12 @@ export default function Home() {
       <HeroSection />
       <NumberStrip />
       <Services />
-      <ClientMarquee/>
-      <PortfolioBentoGrid/>
-      <Testimonials/>
-      <AboutUs/>
-      <ProcessSection/>
+      <ClientMarquee />
+      <PortfolioBentoGrid />
+      <Testimonials />
+      <AboutUs />
+      <ProcessSection />
+      <FAQ />
     </main>
   )
 }
