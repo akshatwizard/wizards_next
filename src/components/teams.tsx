@@ -2,29 +2,35 @@
 
 import { team } from "@/constant/team";
 import { Section, Wrapper } from "./ui/sections";
+import { FadeUp } from "./ui/motion_components";
 
 export default function Team() {
     return (
         <Section>
             <Wrapper>
                 <div>
-                    <div className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/25 rounded-full px-4 py-1.5 mb-4">
+                    <FadeUp className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/25 rounded-full px-4 py-1.5 mb-4">
                         <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
                         <span className="text-amber-600 text-[10px] tracking-widest uppercase">
                             The Team
                         </span>
-                    </div>
-                    <h2 className="tracking-tight text-zinc-200 leading-tight mb-3 lg:text-4xl text-3xl font-medium">
-                        Meet the <span className="text-amber-600 font-sora!">wizards</span> behind the magic
-                    </h2>
-                    <p className="text-zinc-500 text-sm font-light max-w-md">
-                        A tight-knit crew of strategists, designers, developers and storytellers — obsessed with growth.
-                    </p>
+                    </FadeUp>
+                    <FadeUp delay={0.1}>
+                        <h2 className="tracking-tight text-zinc-200 leading-tight mb-3 lg:text-4xl text-3xl font-medium">
+                            Meet the <span className="text-amber-600 font-sora!">wizards</span> behind the magic
+                        </h2>
+                    </FadeUp>
+                    <FadeUp delay={0.15}>
+                        <p className="text-zinc-500 text-sm font-light max-w-md">
+                            A tight-knit crew of strategists, designers, developers and storytellers — obsessed with growth.
+                        </p>
+                    </FadeUp>
                 </div>
 
                 <div className="grid grid-cols-4 gap-px bg-zinc-800/10 rounded-2xl overflow-hidden">
-                    {team.map(({ initials, name, role, bio, socials }) => (
-                        <div
+                    {team.map(({ initials, name, role, bio, socials }, index) => (
+                        <FadeUp
+                            delay={index * 0.13}
                             key={name}
                             className="group bg-zinc-900 hover:bg-zinc-900/70 transition-colors duration-200 p-6 flex flex-col gap-3 cursor-default"
                         >
@@ -55,7 +61,7 @@ export default function Team() {
                                     </a>
                                 ))}
                             </div>
-                        </div>
+                        </FadeUp>
                     ))}
                 </div>
             </Wrapper>

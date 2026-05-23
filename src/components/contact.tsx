@@ -1,6 +1,7 @@
 "use client";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Section, Wrapper } from "./ui/sections";
+import { FadeUp } from "./ui/motion_components";
 
 const contactInfo = [
     { Icon: Phone, label: "Phone", value: "+91 98765 43210" },
@@ -27,21 +28,27 @@ export default function Contact() {
         <Section>
             <Wrapper>
                 <div>
-                    <div className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/25 rounded-full px-4 py-1.5 mb-4">
+                    <FadeUp className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/25 rounded-full px-4 py-1.5 mb-4">
                         <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
                         <span className="text-amber-600 text-[10px] tracking-widest uppercase">
                             Contact Us
                         </span>
-                    </div>
-                    <h2 className="tracking-tight text-zinc-200 leading-tight mb-3 lg:text-4xl text-3xl font-medium">
-                        Let's build something <br /><span className="text-amber-600 font-sora!">great together</span>
-                    </h2>
-                    <p className="text-zinc-500 text-sm font-light max-w-md">
-                        Drop us a message and a strategist will get back to you within 24 hours.
-                    </p>
+                    </FadeUp>
+
+                    <FadeUp delay={0.1}>
+                        <h2 className="tracking-tight text-zinc-200 leading-tight mb-3 lg:text-4xl text-3xl font-medium">
+                            Let's build something <br /><span className="text-amber-600 font-sora!">great together</span>
+                        </h2>
+                    </FadeUp>
+
+                    <FadeUp delay={0.15}>
+                        <p className="text-zinc-500 text-sm font-light max-w-md">
+                            Drop us a message and a strategist will get back to you within 24 hours.
+                        </p>
+                    </FadeUp>
                 </div>
 
-                <div
+                <FadeUp delay={0.2}
                     className="grid gap-px bg-zinc-800 rounded-2xl overflow-hidden"
                     style={{ gridTemplateColumns: "1fr 1.3fr" }}
                 >
@@ -132,7 +139,7 @@ export default function Contact() {
                             Send Message →
                         </button>
                     </div>
-                </div>
+                </FadeUp>
             </Wrapper>
         </Section>
     );
