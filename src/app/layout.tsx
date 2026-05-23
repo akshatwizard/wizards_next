@@ -4,8 +4,9 @@ import "./globals.css";
 import Header from "@/components/header/header";
 import SmoothScrollProvider from "@/lib/SmoothScroll";
 import { cn } from "@/lib/utils";
+import Footer from "@/components/footer";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 const sora = Sora({
   variable: "--font-sora",
@@ -38,6 +39,7 @@ export default function RootLayout({
         <SmoothScrollProvider>
           {children}
         </SmoothScrollProvider>
+        <Footer />
       </body>
     </html>
   );
