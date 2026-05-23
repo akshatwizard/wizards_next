@@ -13,7 +13,7 @@ export const NavMenu: MenuType[] = [
     },
     {
         name: "Services",
-        path: null,
+        path: "/services",
         subMenu: [
             {
                 name: "Digital Marketing",
@@ -33,7 +33,7 @@ export const NavMenu: MenuType[] = [
             },
             {
                 name: "Website Development",
-                path: "/services/web-dev"
+                path: "/services/website-development"
             },
             {
                 name: "App Development",

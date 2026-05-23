@@ -1,7 +1,7 @@
 "use client"
 
 import { NavMenu } from "@/constant/menu"
-import { ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { AnimatePresence, motion, Variants } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -53,7 +53,7 @@ const itemVariants: Variants = {
     },
 };
 
-export default function DesktopHeader({scrolled}:{scrolled:boolean | null}) {
+export default function DesktopHeader({ scrolled }: { scrolled: boolean | null }) {
     const currentPath = usePathname();
     const [hovered, setHovered] = useState<number | null>(null);
 
@@ -77,7 +77,7 @@ export default function DesktopHeader({scrolled}:{scrolled:boolean | null}) {
                         onMouseLeave={() => setHovered(null)}
                     >
                         {/* Nav Item */}
-                        {item.path ? (
+                        {(item.path && item.subMenu === null) ? (
                             <Link
                                 href={item.path}
                                 className={`${isActive ? "text-zinc-100" : "text-zinc-400 group-hover:text-zinc-100"} transition-colors duration-200 ease-linear px-2 h-full flex items-center`}
@@ -161,15 +161,9 @@ export default function DesktopHeader({scrolled}:{scrolled:boolean | null}) {
                                                             <span className="text-sm leading-none">{sub.name}</span>
 
                                                             {/* Arrow on hover */}
-                                                            <motion.span
-                                                                className="ml-auto text-zinc-600 group-hover/sub:text-zinc-400 transition-colors duration-150"
-                                                                initial={{ opacity: 0, x: -4 }}
-                                                                whileHover={{ opacity: 1, x: 0 }}
-                                                            >
-                                                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                                                    <path d="M2.5 6h7M6.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                                                                </svg>
-                                                            </motion.span>
+                                                            <ArrowRight
+                                                                className={`ml-auto h-3.5 w-3.5 shrink-0   transition-all duration-200  group-hover/sub:translate-x-0 -translate-x-1 ${subActive ? " text-amber-600 opacity-100" : "opacity-0 text-zinc-600 group-hover/sub:opacity-100 group-hover/sub:text-amber-600"} `}
+                                                            />
                                                         </Link>
                                                     </motion.li>
                                                 );
