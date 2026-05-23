@@ -6,6 +6,7 @@ import Contact from '@/components/contact'
 import CTABanner from '@/components/cta_banner'
 import FAQ from '@/components/faq'
 import HeroSection from '@/components/hero'
+import IndustriesSection from '@/components/industry'
 import NumberStrip from '@/components/numbers_strip'
 import Services from '@/components/services'
 import ProcessSection from '@/components/steps'
@@ -20,6 +21,7 @@ export default function Home() {
       <NumberStrip />
       <Services />
       <ClientMarquee />
+      <IndustriesSection />
       <CTABanner />
       <PortfolioBentoGrid />
       <Testimonials />
