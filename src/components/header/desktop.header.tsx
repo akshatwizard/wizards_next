@@ -63,7 +63,7 @@ export default function DesktopHeader({scrolled}:{scrolled:boolean | null}) {
     };
 
     return (
-        <div className="hidden md:flex h-full items-center gap-0.5">
+        <div className="hidden md:flex h-full items-center gap-0">
             {NavMenu.map((item, index) => {
                 const isActive = activePath(item.path);
                 const isHovered = hovered === index;
@@ -80,13 +80,13 @@ export default function DesktopHeader({scrolled}:{scrolled:boolean | null}) {
                         {item.path ? (
                             <Link
                                 href={item.path}
-                                className={`${isActive ? "text-zinc-100" : "text-zinc-400 group-hover:text-zinc-100"} transition-colors duration-200 ease-linear px-1.5 h-full flex items-center`}
+                                className={`${isActive ? "text-zinc-100" : "text-zinc-400 group-hover:text-zinc-100"} transition-colors duration-200 ease-linear px-2 h-full flex items-center`}
                             >
                                 {item.name}
                             </Link>
                         ) : (
                             <button
-                                className={`${isActive ? "text-zinc-100" : "text-zinc-400 group-hover:text-zinc-100"} transition-colors duration-200 ease-linear px-1.5 h-full flex items-center gap-1 cursor-pointer`}
+                                className={`${isActive ? "text-zinc-100" : "text-zinc-400 group-hover:text-zinc-100"} transition-colors duration-200 ease-linear px-2 h-full flex items-center gap-1 cursor-pointer`}
                             >
                                 {item.name}
                                 <motion.span
@@ -104,9 +104,11 @@ export default function DesktopHeader({scrolled}:{scrolled:boolean | null}) {
                             {(isActive || isHovered) && (
                                 <Span
                                     layoutId="active-nav"
-                                    className={`absolute inset-x-0 h-0.5 ${scrolled ? "bottom-1.5" : "bottom-3"} bg-linear-to-r from-transparent via-white to-transparent`}
+                                    className={`overflow-hidden absolute block w-full inset-0 h-2/3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-zinc-800/40 border border-zinc-200/8 rounded-lg -z-10`}
                                     transition={{ type: "tween", ease: [0.22, 1, 0.36, 1], duration: 0.5 }}
-                                />
+                                >
+                                    <span className="absolute bottom-0 inset-x-0 h-px bg-linear-to-r from-transparent via-blue-400 to-transparent rounded-full" />
+                                </Span>
                             )}
                         </AnimatePresence>
 
