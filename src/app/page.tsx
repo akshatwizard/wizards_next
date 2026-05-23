@@ -6,6 +6,7 @@ import HeroSection from '@/components/hero'
 import NumberStrip from '@/components/numbers_strip'
 import Services from '@/components/services'
 import ProcessSection from '@/components/steps'
+import Team from '@/components/teams'
 import PortfolioBentoGrid from '@/components/work'
 import React from 'react'
 
@@ -21,6 +22,7 @@ export default function Home() {
       <AboutUs />
       <ProcessSection />
       <FAQ />
+      <Team />
     </main>
   )
 }

@@ -1,16 +1,131 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { Section, Wrapper } from './ui/sections'
-import { Service, services } from '@/constant/services';
-import { FadeUp } from './ui/motion_components';
-import Link from 'next/link';
+import { Service, services } from '@/constant/services'
+import { FadeUp } from './ui/motion_components'
+import Link from 'next/link'
+
+// ─── Each service needs a video path added to your services constant
+// e.g. { name: "Social Media", video: "/videos/social-media.mp4", ... }
+// The card gracefully skips the video if none is provided.
+
+function ServiceCard({ service }: { service: Service }) {
+    const [hovered, setHovered] = useState(false)
+    const videoRef = useRef<HTMLVideoElement>(null)
+    const { Icon, name, desc, tags, video } = service
+
+    const startVideo = () => {
+        setHovered(true)
+        if (videoRef.current) {
+            videoRef.current.currentTime = 0
+            videoRef.current.play().catch(() => {
+                // Autoplay blocked (unlikely with muted) — silently ignore
+            })
+        }
+    }
+
+    const stopVideo = () => {
+        setHovered(false)
+        if (videoRef.current) {
+            videoRef.current.pause()
+            videoRef.current.currentTime = 0
+        }
+    }
+
+    return (
+        <div
+            onMouseEnter={startVideo}
+            onMouseLeave={stopVideo}
+            onTouchStart={startVideo}  // mobile tap
+            onTouchEnd={stopVideo}
+            className="h-full relative bg-zinc-900 lg:p-7 md:p-5 p-4 flex flex-col gap-4 transition-colors duration-200 hover:bg-zinc-800/60 cursor-default overflow-hidden"
+        >
+            {/* Amber top accent bar */}
+            <div
+                className={`absolute top-0 left-0 right-0 h-0.5 transition-colors duration-300 z-10 ${hovered ? "bg-amber-600" : "bg-zinc-700/50"}`}
+            />
+
+            {/* ── Video overlay ── */}
+            {video && (
+                <>
+                    <video
+                        ref={videoRef}
+                        src={video}
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"  // load enough to show first frame, not the whole file
+                        className={`
+                            absolute inset-0 w-full h-full object-cover z-0
+                            transition-opacity duration-500
+                            ${hovered ? 'opacity-100' : 'opacity-0'}
+                        `}
+                    />
+                    {/* Dark scrim so text stays readable over the video */}
+                    <div
+                        className={`
+                            absolute inset-0 z-0 transition-opacity duration-500
+                            bg-linear-to-b from-black/60 via-black/50 to-black/80
+                            ${hovered ? 'opacity-100' : 'opacity-0'}
+                        `}
+                    />
+                </>
+            )}
+
+            {/* All card content sits above the video */}
+            <div className="relative z-10 flex flex-col gap-4 h-full">
+                {/* Lucide icon box */}
+                <div
+                    className={`w-11 h-11 rounded-xl flex items-center justify-center border transition-all duration-200 ${hovered
+                        ? "bg-amber-600/20 border-amber-600/40"
+                        : "bg-amber-600/10 border-amber-600/20"
+                        }`}
+                >
+                    <Icon
+                        size={20}
+                        className={`transition-colors duration-200 ${hovered ? "text-amber-500" : "text-amber-600"}`}
+                        strokeWidth={1.6}
+                    />
+                </div>
+
+                {/* Title */}
+                <h3 className="lg:text-xl md:text-lg text-zinc-200 leading-snug tracking-tight">
+                    {name}
+                </h3>
+
+                {/* Description — fades out on hover so video breathes */}
+                <p
+                    className={`text-[12.5px] leading-relaxed font-light flex-1 transition-colors duration-300 ${hovered ? 'text-zinc-300' : 'text-zinc-500'
+                        }`}
+                >
+                    {desc}
+                </p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1.5">
+                    {tags.map((tag) => (
+                        <span
+                            key={tag}
+                            className={`text-[10.5px] px-2 py-0.5 rounded border transition-colors duration-200 ${hovered
+                                ? "bg-black/40 border-amber-600/30 text-zinc-300"
+                                : "bg-zinc-950 border-zinc-700/60 text-zinc-500"
+                                }`}
+                        >
+                            {tag}
+                        </span>
+                    ))}
+                </div>
+            </div>
+        </div>
+    )
+}
 
 export default function Services() {
     return (
-        <Section className='relative overflow-hidden'>
+        <Section className="relative overflow-hidden">
             <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-140 h-45 bg-amber-600/5 blur-3xl rounded-full" />
             <Wrapper>
-                <FadeUp delay={0.1} className="relative">
+                <FadeUp delay={0.1} className="relative mb-8">
                     <div className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/25 rounded-full px-4 py-1.5 mb-4">
                         <span className="w-1.5 h-1.5 rounded-full bg-amber-600 inline-block" />
                         <span className="text-amber-600 text-[11px] tracking-widest uppercase">
@@ -19,7 +134,7 @@ export default function Services() {
                     </div>
 
                     <h2 className="tracking-tight text-zinc-200 leading-tight mb-3 lg:text-4xl text-3xl font-medium">
-                        Everything your brand needs{" "} <br />
+                        Everything your brand needs{" "}<br />
                         <span className="text-amber-600 font-sora!">to grow online</span>
                     </h2>
 
@@ -32,12 +147,13 @@ export default function Services() {
 
                 <div className="grid md:grid-cols-3 grid-cols-2 gap-px border border-zinc-800 rounded-2xl overflow-hidden">
                     {services.map((svc, idx) => (
-                        <FadeUp delay={idx * 0.1} key={svc.name} className='h-full'>
+                        <FadeUp delay={idx * 0.1} key={svc.name} className="h-full">
                             <ServiceCard service={svc} />
                         </FadeUp>
                     ))}
                 </div>
-                <FadeUp delay={0.2} className="flex items-center justify-between pt-2">
+
+                <FadeUp delay={0.2} className="flex items-center justify-between pt-4">
                     <span className="text-zinc-600 text-xs">
                         9 services · Varanasi &amp; Pan-India
                     </span>
@@ -51,64 +167,4 @@ export default function Services() {
             </Wrapper>
         </Section>
     )
-}
-
-
-function ServiceCard({ service }: { service: Service }) {
-    const [hovered, setHovered] = useState(false);
-    const { Icon, name, desc, tags } = service;
-
-    return (
-        <div
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-            className="h-full relative bg-zinc-900 lg:p-7 md:p-5 p-4 flex flex-col gap-4 transition-colors duration-200 hover:bg-zinc-800/60 cursor-default"
-        >
-            {/* Amber top accent bar */}
-            <div
-                className={`absolute top-0 left-0 right-0 h-0.5 transition-colors duration-300 ${hovered ? "bg-amber-600" : "bg-zinc-700/50"
-                    }`}
-            />
-
-            {/* Lucide icon box */}
-            <div
-                className={`w-11 h-11 rounded-xl flex items-center justify-center border transition-all duration-200 ${hovered
-                    ? "bg-amber-600/20 border-amber-600/40"
-                    : "bg-amber-600/10 border-amber-600/20"
-                    }`}
-            >
-                <Icon
-                    size={20}
-                    className={`transition-colors duration-200 ${hovered ? "text-amber-500" : "text-amber-600"
-                        }`}
-                    strokeWidth={1.6}
-                />
-            </div>
-
-            {/* Title */}
-            <h3 className="lg:text-xl md:text-lg text-zinc-200 leading-snug tracking-tight">
-                {name}
-            </h3>
-
-            {/* Description */}
-            <p className="text-[12.5px] text-zinc-500 leading-relaxed font-light flex-1">
-                {desc}
-            </p>
-
-            {/* Tags */}
-            <div className="flex flex-wrap gap-1.5">
-                {tags.map((tag) => (
-                    <span
-                        key={tag}
-                        className={`text-[10.5px] px-2 py-0.5 rounded border transition-colors duration-200 ${hovered
-                            ? "bg-zinc-950 border-amber-600/20 text-zinc-400"
-                            : "bg-zinc-950 border-zinc-700/60 text-zinc-500"
-                            }`}
-                    >
-                        {tag}
-                    </span>
-                ))}
-            </div>
-        </div>
-    );
 }
