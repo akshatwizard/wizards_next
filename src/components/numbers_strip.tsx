@@ -10,7 +10,7 @@ const data = [
 
 export default function NumberStrip() {
     return (
-        <Section className="border-y border-white/10 bg-zinc-900/5">
+        <Section className="border-y border-white/10 bg-zinc-800/10">
             <Wrapper className="py-0!">
                 <div className="grid grid-cols-2 divide-y divide-white/5 divide-x lg:grid-cols-4">
                     {data.map((item, index) => (
