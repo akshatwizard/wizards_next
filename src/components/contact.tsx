@@ -49,8 +49,7 @@ export default function Contact() {
                 </div>
 
                 <FadeUp delay={0.2}
-                    className="grid gap-px bg-zinc-800 rounded-2xl overflow-hidden"
-                    style={{ gridTemplateColumns: "1fr 1.3fr" }}
+                    className="grid gap-px bg-zinc-800 rounded-2xl overflow-hidden lg:grid-cols-[1fr_1.3fr]"
                 >
                     {/* Left — info */}
                     <div className="bg-zinc-900 p-7 flex flex-col gap-5">

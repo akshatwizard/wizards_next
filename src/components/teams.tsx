@@ -27,7 +27,7 @@ export default function Team() {
                     </FadeUp>
                 </div>
 
-                <div className="grid grid-cols-4 gap-px bg-zinc-800/10 rounded-2xl overflow-hidden">
+                <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-px bg-zinc-800/10 rounded-2xl overflow-hidden">
                     {team.map(({ initials, name, role, bio, socials }, index) => (
                         <FadeUp
                             delay={index * 0.13}

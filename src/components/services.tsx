@@ -5,9 +5,6 @@ import { Service, services } from '@/constant/services'
 import { FadeUp } from './ui/motion_components'
 import Link from 'next/link'
 
-// ─── Each service needs a video path added to your services constant
-// e.g. { name: "Social Media", video: "/videos/social-media.mp4", ... }
-// The card gracefully skips the video if none is provided.
 
 function ServiceCard({ service }: { service: Service }) {
     const [hovered, setHovered] = useState(false)
@@ -18,9 +15,7 @@ function ServiceCard({ service }: { service: Service }) {
         setHovered(true)
         if (videoRef.current) {
             videoRef.current.currentTime = 0
-            videoRef.current.play().catch(() => {
-                // Autoplay blocked (unlikely with muted) — silently ignore
-            })
+            videoRef.current.play().catch(() => { })
         }
     }
 
@@ -36,16 +31,14 @@ function ServiceCard({ service }: { service: Service }) {
         <div
             onMouseEnter={startVideo}
             onMouseLeave={stopVideo}
-            onTouchStart={startVideo}  // mobile tap
+            onTouchStart={startVideo}
             onTouchEnd={stopVideo}
             className="h-full relative bg-zinc-900 lg:p-7 md:p-5 p-4 flex flex-col gap-4 transition-colors duration-200 hover:bg-zinc-800/60 cursor-default overflow-hidden"
         >
             {/* Amber top accent bar */}
-            <div
-                className={`absolute top-0 left-0 right-0 h-0.5 transition-colors duration-300 z-10 ${hovered ? "bg-amber-600" : "bg-zinc-700/50"}`}
-            />
+            <div className={`absolute top-0 left-0 right-0 h-0.5 transition-colors duration-300 z-10 ${hovered ? "bg-amber-600" : "bg-zinc-700/50"}`} />
 
-            {/* ── Video overlay ── */}
+            {/* Video overlay */}
             {video && (
                 <>
                     <video
@@ -54,38 +47,19 @@ function ServiceCard({ service }: { service: Service }) {
                         muted
                         loop
                         playsInline
-                        preload="metadata"  // load enough to show first frame, not the whole file
-                        className={`
-                            absolute inset-0 w-full h-full object-cover z-0
-                            transition-opacity duration-500
-                            ${hovered ? 'opacity-100' : 'opacity-0'}
-                        `}
+                        preload="metadata"
+                        className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-500 ${hovered ? 'opacity-100' : 'opacity-0'}`}
                     />
-                    {/* Dark scrim so text stays readable over the video */}
-                    <div
-                        className={`
-                            absolute inset-0 z-0 transition-opacity duration-500
-                            bg-linear-to-b from-black/60 via-black/50 to-black/80
-                            ${hovered ? 'opacity-100' : 'opacity-0'}
-                        `}
-                    />
+                    {/* Scrim — darker so the centered label pops */}
+                    <div className={`absolute inset-0 z-0 transition-opacity duration-500 bg-black/70 ${hovered ? 'opacity-100' : 'opacity-0'}`} />
                 </>
             )}
 
-            {/* All card content sits above the video */}
-            <div className="relative z-10 flex flex-col gap-4 h-full">
-                {/* Lucide icon box */}
-                <div
-                    className={`w-11 h-11 rounded-xl flex items-center justify-center border transition-all duration-200 ${hovered
-                        ? "bg-amber-600/20 border-amber-600/40"
-                        : "bg-amber-600/10 border-amber-600/20"
-                        }`}
-                >
-                    <Icon
-                        size={20}
-                        className={`transition-colors duration-200 ${hovered ? "text-amber-500" : "text-amber-600"}`}
-                        strokeWidth={1.6}
-                    />
+            {/* Content — hidden when video is playing */}
+            <div className={`relative z-10 flex flex-col gap-4 h-full transition-opacity duration-300 ${hovered && video ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+                {/* Icon */}
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center border bg-amber-600/10 border-amber-600/20">
+                    <Icon size={20} className="text-amber-600" strokeWidth={1.6} />
                 </div>
 
                 {/* Title */}
@@ -93,29 +67,30 @@ function ServiceCard({ service }: { service: Service }) {
                     {name}
                 </h3>
 
-                {/* Description — fades out on hover so video breathes */}
-                <p
-                    className={`text-[12.5px] leading-relaxed font-light flex-1 transition-colors duration-300 ${hovered ? 'text-zinc-300' : 'text-zinc-500'
-                        }`}
-                >
+                {/* Description */}
+                <p className="text-[12.5px] text-zinc-500 leading-relaxed font-light flex-1">
                     {desc}
                 </p>
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-1.5">
                     {tags.map((tag) => (
-                        <span
-                            key={tag}
-                            className={`text-[10.5px] px-2 py-0.5 rounded border transition-colors duration-200 ${hovered
-                                ? "bg-black/40 border-amber-600/30 text-zinc-300"
-                                : "bg-zinc-950 border-zinc-700/60 text-zinc-500"
-                                }`}
-                        >
+                        <span key={tag} className="text-[10.5px] px-2 py-0.5 rounded border bg-zinc-950 border-zinc-700/60 text-zinc-500">
                             {tag}
                         </span>
                     ))}
                 </div>
             </div>
+
+            {/* Centered label shown over video */}
+            {video && (
+                <div className={`absolute inset-0 z-20 flex flex-col items-center justify-center gap-2 transition-opacity duration-300 ${hovered ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+                    <div className="w-11 h-11 rounded-xl flex items-center justify-center border bg-amber-600/20 border-amber-600/40">
+                        <Icon size={20} className="text-amber-500" strokeWidth={1.6} />
+                    </div>
+                    <p className="text-sm font-semibold text-zinc-100 tracking-tight">{name}</p>
+                </div>
+            )}
         </div>
     )
 }
@@ -145,7 +120,7 @@ export default function Services() {
                     </p>
                 </FadeUp>
 
-                <div className="grid md:grid-cols-3 grid-cols-2 gap-px border border-zinc-800 rounded-2xl overflow-hidden">
+                <div className="grid md:grid-cols-3 grid-cols-1 gap-px border border-zinc-800 rounded-2xl overflow-hidden">
                     {services.map((svc, idx) => (
                         <FadeUp delay={idx * 0.1} key={svc.name} className="h-full">
                             <ServiceCard service={svc} />

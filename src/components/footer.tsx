@@ -19,8 +19,7 @@ export default function Footer() {
         <footer className="bg-zinc-800/20 border-t border-zinc-900 px-8 pb-6">
             <Wrapper className="pb-0! gap-0!">
                 <div
-                    className="grid gap-8 mb-10"
-                    style={{ gridTemplateColumns: "1.4fr 1fr 1fr 1fr" }}
+                    className="grid gap-8 mb-10 lg:grid-cols-[1.3fr_1fr_1fr_1fr] md:grid-cols-2 grid-cols-1"
                 >
                     {/* Brand */}
                     <div>
@@ -115,7 +114,7 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom bar */}
-                <div className="border-t border-zinc-900 pt-5 flex items-center justify-between">
+                <div className="border-t border-zinc-900 pt-5 flex items-center justify-between flex-wrap">
                     <p className="text-zinc-700 text-[11px]">© {new Date().getFullYear()} Wizards Next LLP. All rights reserved.</p>
                     <div className="flex items-center gap-1.5 text-zinc-600 text-[10.5px]">
                         <span className="w-1.5 h-1.5 rounded-full bg-amber-600 inline-block" />
