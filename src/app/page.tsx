@@ -1,6 +1,7 @@
 import AboutUs from '@/components/about'
 import ClientMarquee from '@/components/client_marquee'
 import Testimonials from '@/components/client_testimonials'
+import Contact from '@/components/contact'
 import FAQ from '@/components/faq'
 import HeroSection from '@/components/hero'
 import NumberStrip from '@/components/numbers_strip'
@@ -23,6 +24,7 @@ export default function Home() {
       <ProcessSection />
       <FAQ />
       <Team />
+      <Contact/>
     </main>
   )
 }
