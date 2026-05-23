@@ -1,4 +1,5 @@
 import AboutUs from '@/components/about'
+import BlogSection from '@/components/blogs'
 import ClientMarquee from '@/components/client_marquee'
 import Testimonials from '@/components/client_testimonials'
 import Contact from '@/components/contact'
@@ -26,6 +27,7 @@ export default function Home() {
       <ProcessSection />
       <FAQ />
       <Team />
+      <BlogSection />
       <Contact />
     </main>
   )
