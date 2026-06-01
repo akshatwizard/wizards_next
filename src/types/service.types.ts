@@ -65,3 +65,20 @@ export type ServiceProcessType = {
     heading: React.ReactNode;
     process_list: ProcessListType[]
 }
+
+export type CaseStudyType = {
+    client: string,
+    industry: string,
+    result: string,
+    metric: string,
+    label: string,
+    desc: string,
+    tags: string[],
+}
+
+export type ServiceCaseStudyType = {
+    badge: string;
+    heading: React.ReactNode;
+    content: string;
+    case_study_list: CaseStudyType[]
+}

@@ -1,4 +1,4 @@
-import { ServiceHeroTypes, ServiceAboutTypes, ServicesOfferedTypes, ServiceProcessType } from "@/types/service.types";
+import { ServiceHeroTypes, ServiceAboutTypes, ServicesOfferedTypes, ServiceProcessType, ServiceCaseStudyType } from "@/types/service.types";
 import { ArrowRight, BarChart3, Database, Globe, Layout, Play, RefreshCw, Shield, ShoppingCart, Smartphone, TrendingUp } from "lucide-react";
 import { FadeUp } from "@/components/ui/motion_components";
 import { SectionHeading } from "@/components/services/section_heading";
@@ -179,6 +179,47 @@ export const WebDevServiceProcess: ServiceProcessType = {
             num: '06',
             title: 'Support & grow',
             desc: 'Monthly maintenance plans, updates, and ongoing optimisation.'
+        },
+    ]
+}
+
+export const WebDevServiceCaseStudy: ServiceCaseStudyType = {
+
+    badge: "Case studies",
+    heading: (
+        <SectionHeading>
+            Real projects,{' '}
+            <span className="text-amber-500">real results</span>
+        </SectionHeading>
+    ),
+    content: "Every number below is pulled from analytics, not our imagination.",
+    case_study_list: [
+        {
+            client: 'Sadbhavana Banaras',
+            industry: 'Hospitality',
+            result: '3× increase in direct bookings',
+            metric: '+210%',
+            label: 'Direct bookings',
+            desc: 'Rebuilt their dated PHP site into a Next.js hotel website with integrated booking flow and Google Hotels schema.',
+            tags: ['Next.js', 'Booking Engine', 'SEO'],
+        },
+        {
+            client: 'Banarsi Saree Co.',
+            industry: 'E-Commerce',
+            result: '₹40K → ₹4L monthly revenue',
+            metric: '10×',
+            label: 'Revenue growth',
+            desc: 'Migrated from a broken Wix store to a custom Shopify build with product filtering, size charts, and Razorpay integration.',
+            tags: ['Shopify', 'Razorpay', 'Custom Theme'],
+        },
+        {
+            client: 'GD Sons',
+            industry: 'Corporate',
+            result: '68% drop in bounce rate',
+            metric: '-68%',
+            label: 'Bounce rate',
+            desc: 'Full corporate website redesign with a lead generation form, case study pages, and ATS-connected careers portal.',
+            tags: ['Next.js', 'CRM Integration', 'Lead Gen'],
         },
     ]
 }

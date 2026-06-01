@@ -12,10 +12,11 @@ import {
 import { Section, Wrapper } from '@/components/ui/sections'
 import { FadeUp } from '@/components/ui/motion_components'
 import ServiceHero from '@/components/services/service_hero'
-import { WebDevServiceAbout, WebDevServiceHero, WebDevServiceProcess, webDevServicesOffered } from '@/constant/services_data'
+import { WebDevServiceAbout, WebDevServiceCaseStudy, WebDevServiceHero, WebDevServiceProcess, webDevServicesOffered } from '@/constant/services_data'
 import ServiceAbout from '@/components/services/service_about'
 import ServicesOffered from '@/components/services/service_offered'
 import ServiceProcess from '@/components/services/service_process'
+import ServiceCaseStudy from '@/components/services/service_case_stydy'
 
 const TECH_STACK = [
     { category: 'Frontend', icon: Code2, items: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript', 'Framer Motion'] },
@@ -172,67 +173,6 @@ function Tag({ label }: { label: string }) {
     )
 }
 
-
-// ═══════════════════════════════════════════════════════════════
-// 5. CASE STUDIES
-// ═══════════════════════════════════════════════════════════════
-
-function CaseStudiesSection() {
-    return (
-        <Section id="case-studies" className="bg-[#09090b]">
-            <Wrapper>
-                <FadeUp delay={0} className="mb-10">
-                    <SectionBadge label="Case studies" />
-                    <SectionHeading>
-                        Real projects,{' '}
-                        <span className="text-amber-500">real results</span>
-                    </SectionHeading>
-                    <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed mt-2 max-w-lg">
-                        Every number below is pulled from analytics, not our imagination.
-                    </p>
-                </FadeUp>
-
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                    {CASE_STUDIES.map((cs, i) => (
-                        <FadeUp key={cs.client} delay={i * 0.1}>
-                            <div className="group h-full flex flex-col rounded-2xl border border-zinc-800 bg-zinc-900 overflow-hidden hover:border-zinc-700 transition-all duration-200">
-
-                                {/* Image placeholder */}
-                                <div className="relative h-40 bg-zinc-950 shrink-0">
-                                    <div aria-hidden className="absolute inset-0 opacity-20"
-                                        style={{
-                                            backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
-                                            backgroundSize: '20px 20px',
-                                        }} />
-                                    {/* Metric badge */}
-                                    <div className="absolute bottom-3 left-3 bg-amber-600 text-black px-3 py-1.5 rounded-lg">
-                                        <p className="font-syne text-lg font-black leading-none">{cs.metric}</p>
-                                        <p className="text-[9px] font-semibold opacity-70 mt-0.5">{cs.label}</p>
-                                    </div>
-                                    <div className="absolute top-3 right-3 text-[9px] font-medium text-zinc-600 bg-zinc-900/80 px-2 py-1 rounded-md border border-zinc-800">
-                                        {cs.industry}
-                                    </div>
-                                </div>
-
-                                {/* Body */}
-                                <div className="flex flex-col gap-3 p-5 flex-1">
-                                    <div>
-                                        <h3 className="font-syne text-[14px] font-bold text-zinc-100">{cs.client}</h3>
-                                        <p className="text-[11px] text-amber-600 font-medium mt-0.5">{cs.result}</p>
-                                    </div>
-                                    <p className="text-[12px] text-zinc-500 leading-relaxed font-light flex-1">{cs.desc}</p>
-                                    <div className="flex flex-wrap gap-1.5 pt-3 border-t border-zinc-800">
-                                        {cs.tags.map(t => <Tag key={t} label={t} />)}
-                                    </div>
-                                </div>
-                            </div>
-                        </FadeUp>
-                    ))}
-                </div>
-            </Wrapper>
-        </Section>
-    )
-}
 
 // ═══════════════════════════════════════════════════════════════
 // 6. CLIENT LIST
@@ -564,7 +504,7 @@ export default function WebDevelopmentPage() {
             <ServiceAbout data={WebDevServiceAbout} />
             <ServicesOffered data={webDevServicesOffered} />
             <ServiceProcess data={WebDevServiceProcess} />
-            <CaseStudiesSection />
+            <ServiceCaseStudy data={WebDevServiceCaseStudy} />
             <ClientListSection />
             <IndustriesSection />
             <TechStackSection />
