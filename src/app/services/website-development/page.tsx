@@ -11,6 +11,8 @@ import {
 } from 'lucide-react'
 import { Section, Wrapper } from '@/components/ui/sections'
 import { FadeUp } from '@/components/ui/motion_components'
+import ServiceHero from '@/components/services/service_hero'
+import { WebDevServiceHero } from '@/constant/services_data'
 
 const STATS = [
     { value: '120+', label: 'Sites launched' },
@@ -920,7 +922,7 @@ function BottomCTA() {
 export default function WebDevelopmentPage() {
     return (
         <main className="bg-[#09090b]">
-            <HeroSection />
+            <ServiceHero data={WebDevServiceHero} />
             <WhatIsSection />
             <ServicesOfferedSection />
             <ProcessSection />
