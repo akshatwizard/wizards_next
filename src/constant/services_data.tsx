@@ -1,6 +1,7 @@
-import { ServiceHeroTypes } from "@/types/service.types";
-import { ArrowRight, Globe, Play } from "lucide-react";
+import { ServiceHeroTypes, ServiceAboutTypes } from "@/types/service.types";
+import { ArrowRight, Globe, Layout, Play, Shield, TrendingUp } from "lucide-react";
 import { FadeUp } from "@/components/ui/motion_components";
+import { SectionHeading } from "@/components/services/section_heading";
 
 export const WebDevServiceHero: ServiceHeroTypes = {
     bread_crumb: "Web Development",
@@ -57,4 +58,38 @@ export const WebDevServiceHero: ServiceHeroTypes = {
             </div>
         </FadeUp>
     )
+}
+
+
+export const WebDevServiceAbout: ServiceAboutTypes = {
+    badge: "101",
+    heading: (
+        <SectionHeading>
+            New to web development?{' '} <br />
+            <span className="text-amber-500">We'll catch you up.</span>
+        </SectionHeading>
+    ),
+    content: " Whether you're a first-time founder or a business owner replacing an old site, here's everything you need to know before we start.",
+    what_is: [
+        {
+            icon: Globe,
+            title: 'What is web development?',
+            body: 'Web development is the process of building and maintaining websites and web applications — everything from a simple business card site to a full-scale e-commerce platform. It covers design, coding, databases, and performance.',
+        },
+        {
+            icon: Layout,
+            title: 'Frontend vs Backend',
+            body: 'Frontend is what users see — pages, buttons, animations. Backend is the engine underneath — servers, databases, logic. Full-stack development covers both. We do all three.',
+        },
+        {
+            icon: TrendingUp,
+            title: 'Why does it matter?',
+            body: 'Your website is your 24/7 salesperson. 75% of users judge credibility by design alone. A slow, outdated site loses you business every day — a fast, modern one converts strangers into customers.',
+        },
+        {
+            icon: Shield,
+            title: 'Security & compliance',
+            body: 'Every site we build is SSL-secured, GDPR-aware, and follows OWASP best practices. Security isn\'t an add-on — it\'s baked in from day one.',
+        },
+    ]
 }

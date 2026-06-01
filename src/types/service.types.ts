@@ -20,12 +20,22 @@ export type ServiceHeroTypes = {
     secondaryCta?: HeroCta
     clientCount?: string
     clients_initials: string[];
-    
+
     stats?: HeroStat[]
 
     right_section: React.ReactNode
 }
 
-export interface WebDevData {
-    data: ServiceHeroTypes
+export type WhatIsTypes = {
+    icon: LucideIcon,
+    title: string,
+    body: string
+}
+
+
+export type ServiceAboutTypes = {
+    badge: string;
+    heading: React.ReactNode;
+    content: string;
+    what_is: WhatIsTypes[]
 }

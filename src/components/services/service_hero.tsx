@@ -3,11 +3,11 @@ import { FadeUp } from "../ui/motion_components";
 import Link from "next/link";
 import { ChevronRight, Star } from "lucide-react";
 import { SectionBadge } from "./section_badge";
-import { WebDevData } from "@/types/service.types";
+import { ServiceHeroTypes } from "@/types/service.types";
 
 
 
-export default function ServiceHero({ data }: WebDevData) {
+export default function ServiceHero({ data }: { data: ServiceHeroTypes }) {
     return (
         <Section className="relative overflow-hidden">
             <div
