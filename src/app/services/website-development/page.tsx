@@ -12,48 +12,10 @@ import {
 import { Section, Wrapper } from '@/components/ui/sections'
 import { FadeUp } from '@/components/ui/motion_components'
 import ServiceHero from '@/components/services/service_hero'
-import { WebDevServiceAbout, WebDevServiceHero, webDevServicesOffered } from '@/constant/services_data'
+import { WebDevServiceAbout, WebDevServiceHero, WebDevServiceProcess, webDevServicesOffered } from '@/constant/services_data'
 import ServiceAbout from '@/components/services/service_about'
 import ServicesOffered from '@/components/services/service_offered'
-
-const SERVICES_LIST = [
-    {
-        icon: Globe,
-        title: 'Business Websites',
-        desc: 'Fast, beautiful, mobile-first sites that establish credibility and drive enquiries.',
-        tags: ['Next.js', 'Tailwind', 'CMS'],
-    },
-    {
-        icon: ShoppingCart,
-        title: 'E-Commerce Stores',
-        desc: 'Shopify, WooCommerce, or custom storefronts built to convert browsers into buyers.',
-        tags: ['Shopify', 'WooCommerce', 'Payments'],
-    },
-    {
-        icon: Smartphone,
-        title: 'Progressive Web Apps',
-        desc: 'App-like experiences in the browser — offline-capable, installable, blazing fast.',
-        tags: ['PWA', 'React', 'Service Workers'],
-    },
-    {
-        icon: BarChart3,
-        title: 'Landing Pages',
-        desc: 'High-conversion pages built around a single goal — leads, signups, or sales.',
-        tags: ['CRO', 'A/B Testing', 'Analytics'],
-    },
-    {
-        icon: Database,
-        title: 'Web Applications',
-        desc: 'Custom tools, dashboards, portals, and SaaS products built for scale.',
-        tags: ['Node.js', 'PostgreSQL', 'REST API'],
-    },
-    {
-        icon: RefreshCw,
-        title: 'Redesign & Migration',
-        desc: 'Modernise a legacy site without losing your SEO rankings or existing content.',
-        tags: ['Audit', 'Migration', 'SEO-safe'],
-    },
-]
+import ServiceProcess from '@/components/services/service_process'
 
 const TECH_STACK = [
     { category: 'Frontend', icon: Code2, items: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript', 'Framer Motion'] },
@@ -64,14 +26,6 @@ const TECH_STACK = [
     { category: 'Design', icon: Palette, items: ['Figma', 'Framer', 'Adobe XD', 'Spline', 'Lottie'] },
 ]
 
-const PROCESS = [
-    { num: '01', title: 'Discovery call', desc: 'We learn your goals, audience, and technical requirements. No jargon, just clarity.' },
-    { num: '02', title: 'Design & wireframe', desc: 'Figma mockups reviewed and approved before a single line of code is written.' },
-    { num: '03', title: 'Development', desc: 'Clean, well-commented code. Regular builds shared for your feedback.' },
-    { num: '04', title: 'Testing & QA', desc: 'Cross-browser, cross-device, performance, and security testing.' },
-    { num: '05', title: 'Launch', desc: 'We handle deployment, DNS, SSL, and go-live monitoring.' },
-    { num: '06', title: 'Support & grow', desc: 'Monthly maintenance plans, updates, and ongoing optimisation.' },
-]
 
 const CASE_STUDIES = [
     {
@@ -218,102 +172,6 @@ function Tag({ label }: { label: string }) {
     )
 }
 
-// ═══════════════════════════════════════════════════════════════
-// 3. SERVICES OFFERED
-// ═══════════════════════════════════════════════════════════════
-
-function ServicesOfferedSection() {
-    return (
-        <Section className="bg-[#09090b]">
-            <Wrapper>
-                <FadeUp delay={0} className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
-                    <div>
-                        <SectionBadge label="What we build" />
-                        <SectionHeading>
-                            Six types of web projects,{' '}
-                            <span className="text-amber-500">one team</span>
-                        </SectionHeading>
-                    </div>
-                    <Link href="/contact"
-                        className="inline-flex items-center gap-1.5 text-amber-600 text-[12px] font-medium border border-amber-600/25 rounded-lg px-4 py-2 hover:bg-amber-600/8 transition-colors shrink-0">
-                        Discuss your project <ArrowRight size={12} />
-                    </Link>
-                </FadeUp>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                    {SERVICES_LIST.map((svc, i) => {
-                        const Icon = svc.icon
-                        return (
-                            <FadeUp key={svc.title} delay={i * 0.07}>
-                                <div className="group h-full flex flex-col gap-4 p-5 rounded-2xl border border-zinc-800 bg-zinc-900 hover:bg-zinc-800/60 hover:border-zinc-700 transition-all duration-200">
-                                    <div className="size-10 rounded-xl bg-amber-600/10 border border-amber-600/20 flex items-center justify-center">
-                                        <Icon size={18} className="text-amber-500" strokeWidth={1.7} />
-                                    </div>
-                                    <div className="flex-1">
-                                        <h3 className="font-syne text-[15px] font-bold text-zinc-100 mb-1.5">{svc.title}</h3>
-                                        <p className="text-[12.5px] text-zinc-500 leading-relaxed font-light">{svc.desc}</p>
-                                    </div>
-                                    <div className="flex flex-wrap gap-1.5 pt-3 border-t border-zinc-800">
-                                        {svc.tags.map(t => <Tag key={t} label={t} />)}
-                                    </div>
-                                </div>
-                            </FadeUp>
-                        )
-                    })}
-                </div>
-            </Wrapper>
-        </Section>
-    )
-}
-
-// ═══════════════════════════════════════════════════════════════
-// 4. OUR PROCESS
-// ═══════════════════════════════════════════════════════════════
-
-function ProcessSection() {
-    return (
-        <Section className="bg-[#09090b]">
-            <Wrapper>
-                <div
-                    className="relative rounded-2xl overflow-hidden px-8 py-14 sm:px-12"
-                    style={{
-                        background: 'radial-gradient(ellipse at 50% 0%, rgba(217,119,6,0.1) 0%, transparent 55%), linear-gradient(180deg, #111008 0%, #0c0c0e 100%)',
-                        border: '1px solid rgba(255,255,255,0.06)',
-                    }}
-                >
-                    <div aria-hidden className="pointer-events-none absolute inset-0 opacity-20"
-                        style={{
-                            backgroundImage: 'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
-                            backgroundSize: '40px 40px',
-                        }} />
-
-                    <FadeUp delay={0} className="text-center mb-12">
-                        <SectionBadge label="How we work" />
-                        <SectionHeading>
-                            From idea to live site —{' '}
-                            <span className="text-amber-500">6 clear steps</span>
-                        </SectionHeading>
-                    </FadeUp>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                        {PROCESS.map((step, i) => (
-                            <FadeUp key={step.num} delay={i * 0.07}>
-                                <div className="relative flex flex-col gap-3 p-5 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] hover:border-amber-600/20 transition-all duration-200">
-                                    <span className="absolute top-4 right-4 font-syne text-[10px] font-bold text-zinc-700">{step.num}</span>
-                                    <div className="size-10 rounded-xl bg-amber-600/10 border border-amber-600/25 flex items-center justify-center">
-                                        <span className="font-syne text-[13px] font-black text-amber-500">{step.num}</span>
-                                    </div>
-                                    <h3 className="font-syne text-[14px] font-bold text-zinc-100 leading-snug">{step.title}</h3>
-                                    <p className="text-[12px] text-zinc-500 leading-relaxed font-light">{step.desc}</p>
-                                </div>
-                            </FadeUp>
-                        ))}
-                    </div>
-                </div>
-            </Wrapper>
-        </Section>
-    )
-}
 
 // ═══════════════════════════════════════════════════════════════
 // 5. CASE STUDIES
@@ -705,7 +563,7 @@ export default function WebDevelopmentPage() {
             <ServiceHero data={WebDevServiceHero} />
             <ServiceAbout data={WebDevServiceAbout} />
             <ServicesOffered data={webDevServicesOffered} />
-            <ProcessSection />
+            <ServiceProcess data={WebDevServiceProcess} />
             <CaseStudiesSection />
             <ClientListSection />
             <IndustriesSection />

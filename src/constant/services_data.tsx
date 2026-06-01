@@ -1,4 +1,4 @@
-import { ServiceHeroTypes, ServiceAboutTypes, ServicesOfferedTypes } from "@/types/service.types";
+import { ServiceHeroTypes, ServiceAboutTypes, ServicesOfferedTypes, ServiceProcessType } from "@/types/service.types";
 import { ArrowRight, BarChart3, Database, Globe, Layout, Play, RefreshCw, Shield, ShoppingCart, Smartphone, TrendingUp } from "lucide-react";
 import { FadeUp } from "@/components/ui/motion_components";
 import { SectionHeading } from "@/components/services/section_heading";
@@ -137,6 +137,48 @@ export const webDevServicesOffered: ServicesOfferedTypes = {
             title: 'Redesign & Migration',
             desc: 'Modernise a legacy site without losing your SEO rankings or existing content.',
             tags: ['Audit', 'Migration', 'SEO-safe'],
+        },
+    ]
+}
+
+export const WebDevServiceProcess: ServiceProcessType = {
+    badge: "How we work",
+    heading: (
+        <SectionHeading>
+            From idea to live site —{' '}
+            <span className="text-amber-500">6 clear steps</span>
+        </SectionHeading>
+    ),
+    process_list: [
+        {
+            num: '01',
+            title: 'Discovery call',
+            desc: 'We learn your goals, audience, and technical requirements. No jargon, just clarity.'
+        },
+        {
+            num: '02',
+            title: 'Design & wireframe',
+            desc: 'Figma mockups reviewed and approved before a single line of code is written.'
+        },
+        {
+            num: '03',
+            title: 'Development',
+            desc: 'Clean, well-commented code. Regular builds shared for your feedback.'
+        },
+        {
+            num: '04',
+            title: 'Testing & QA',
+            desc: 'Cross-browser, cross-device, performance, and security testing.'
+        },
+        {
+            num: '05',
+            title: 'Launch',
+            desc: 'We handle deployment, DNS, SSL, and go-live monitoring.'
+        },
+        {
+            num: '06',
+            title: 'Support & grow',
+            desc: 'Monthly maintenance plans, updates, and ongoing optimisation.'
         },
     ]
 }

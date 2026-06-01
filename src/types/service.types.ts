@@ -53,3 +53,15 @@ export type ServicesOfferedTypes = {
     // content: string;
     service_list: ServiceLists[]
 }
+
+export type ProcessListType = {
+    num: string;
+    title: string;
+    desc: string;
+}
+
+export type ServiceProcessType = {
+    badge: string;
+    heading: React.ReactNode;
+    process_list: ProcessListType[]
+}
