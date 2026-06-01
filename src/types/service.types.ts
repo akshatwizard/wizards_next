@@ -39,3 +39,17 @@ export type ServiceAboutTypes = {
     content: string;
     what_is: WhatIsTypes[]
 }
+
+export type ServiceLists = {
+    icon: LucideIcon,
+    title: string,
+    desc: string;
+    tags: string[];
+}
+
+export type ServicesOfferedTypes = {
+    badge: string;
+    heading: React.ReactNode;
+    // content: string;
+    service_list: ServiceLists[]
+}

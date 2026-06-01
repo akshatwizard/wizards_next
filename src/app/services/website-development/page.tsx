@@ -12,8 +12,9 @@ import {
 import { Section, Wrapper } from '@/components/ui/sections'
 import { FadeUp } from '@/components/ui/motion_components'
 import ServiceHero from '@/components/services/service_hero'
-import { WebDevServiceAbout, WebDevServiceHero } from '@/constant/services_data'
+import { WebDevServiceAbout, WebDevServiceHero, webDevServicesOffered } from '@/constant/services_data'
 import ServiceAbout from '@/components/services/service_about'
+import ServicesOffered from '@/components/services/service_offered'
 
 const SERVICES_LIST = [
     {
@@ -703,7 +704,7 @@ export default function WebDevelopmentPage() {
         <main className="bg-[#09090b]">
             <ServiceHero data={WebDevServiceHero} />
             <ServiceAbout data={WebDevServiceAbout} />
-            <ServicesOfferedSection />
+            <ServicesOffered data={webDevServicesOffered} />
             <ProcessSection />
             <CaseStudiesSection />
             <ClientListSection />

@@ -27,13 +27,13 @@ export default function ServiceAbout({ data }: { data: ServiceAboutTypes }) {
                         return (
                             <FadeUp key={item.title} delay={i * 0.08}>
                                 <div className="h-full p-4 rounded-xl border border-zinc-800 bg-zinc-900/50 hover:border-zinc-700 transition-colors duration-200">
-                                    <div className="size-9 rounded-lg bg-amber-600/10 border border-amber-600/20 flex items-center justify-center mb-3">
+                                    <div className="size-9 rounded-lg bg-amber-600/10 border border-amber-600/20 flex items-center justify-center mb-5">
                                         <Icon size={16} className="text-amber-500" strokeWidth={1.7} />
                                     </div>
-                                    <h3 className="md:text-xl text-base font-medium text-zinc-200 mb-1.5 leading-snug">
+                                    <h3 className="md:text-lg text-base text-zinc-200 mb-1.5 leading-snug">
                                         {item.title}
                                     </h3>
-                                    <p className="md:text-sm text-xs text-zinc-500 leading-relaxed font-light">
+                                    <p className="md:text-sm text-xs text-zinc-500 leading-snug">
                                         {item.body}
                                     </p>
                                 </div>

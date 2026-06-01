@@ -1,5 +1,5 @@
-import { ServiceHeroTypes, ServiceAboutTypes } from "@/types/service.types";
-import { ArrowRight, Globe, Layout, Play, Shield, TrendingUp } from "lucide-react";
+import { ServiceHeroTypes, ServiceAboutTypes, ServicesOfferedTypes } from "@/types/service.types";
+import { ArrowRight, BarChart3, Database, Globe, Layout, Play, RefreshCw, Shield, ShoppingCart, Smartphone, TrendingUp } from "lucide-react";
 import { FadeUp } from "@/components/ui/motion_components";
 import { SectionHeading } from "@/components/services/section_heading";
 
@@ -60,7 +60,6 @@ export const WebDevServiceHero: ServiceHeroTypes = {
     )
 }
 
-
 export const WebDevServiceAbout: ServiceAboutTypes = {
     badge: "101",
     heading: (
@@ -90,6 +89,54 @@ export const WebDevServiceAbout: ServiceAboutTypes = {
             icon: Shield,
             title: 'Security & compliance',
             body: 'Every site we build is SSL-secured, GDPR-aware, and follows OWASP best practices. Security isn\'t an add-on — it\'s baked in from day one.',
+        },
+    ]
+}
+
+export const webDevServicesOffered: ServicesOfferedTypes = {
+    badge: "101",
+    heading: (
+        <SectionHeading>
+            Six types of web projects,{' '}
+            <span className="text-amber-500">one team</span>
+        </SectionHeading>
+    ),
+    service_list: [
+        {
+            icon: Globe,
+            title: 'Business Websites',
+            desc: 'Fast, beautiful, mobile-first sites that establish credibility and drive enquiries.',
+            tags: ['Next.js', 'Tailwind', 'CMS'],
+        },
+        {
+            icon: ShoppingCart,
+            title: 'E-Commerce Stores',
+            desc: 'Shopify, WooCommerce, or custom storefronts built to convert browsers into buyers.',
+            tags: ['Shopify', 'WooCommerce', 'Payments'],
+        },
+        {
+            icon: Smartphone,
+            title: 'Progressive Web Apps',
+            desc: 'App-like experiences in the browser — offline-capable, installable, blazing fast.',
+            tags: ['PWA', 'React', 'Service Workers'],
+        },
+        {
+            icon: BarChart3,
+            title: 'Landing Pages',
+            desc: 'High-conversion pages built around a single goal — leads, signups, or sales.',
+            tags: ['CRO', 'A/B Testing', 'Analytics'],
+        },
+        {
+            icon: Database,
+            title: 'Web Applications',
+            desc: 'Custom tools, dashboards, portals, and SaaS products built for scale.',
+            tags: ['Node.js', 'PostgreSQL', 'REST API'],
+        },
+        {
+            icon: RefreshCw,
+            title: 'Redesign & Migration',
+            desc: 'Modernise a legacy site without losing your SEO rankings or existing content.',
+            tags: ['Audit', 'Migration', 'SEO-safe'],
         },
     ]
 }
