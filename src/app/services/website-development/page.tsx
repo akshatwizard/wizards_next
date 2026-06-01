@@ -12,11 +12,12 @@ import {
 import { Section, Wrapper } from '@/components/ui/sections'
 import { FadeUp } from '@/components/ui/motion_components'
 import ServiceHero from '@/components/services/service_hero'
-import { WebDevServiceAbout, WebDevServiceCaseStudy, WebDevServiceHero, WebDevServiceProcess, webDevServicesOffered } from '@/constant/services_data'
+import { WebDevServiceAbout, WebDevServiceCaseStudy, WebDevServiceHero, WebDevServiceProcess, WebDevServiceProject, webDevServicesOffered } from '@/constant/services_data'
 import ServiceAbout from '@/components/services/service_about'
 import ServicesOffered from '@/components/services/service_offered'
 import ServiceProcess from '@/components/services/service_process'
 import ServiceCaseStudy from '@/components/services/service_case_stydy'
+import ProjectsSection from '@/components/services/service_project'
 
 const TECH_STACK = [
     { category: 'Frontend', icon: Code2, items: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript', 'Framer Motion'] },
@@ -505,6 +506,7 @@ export default function WebDevelopmentPage() {
             <ServicesOffered data={webDevServicesOffered} />
             <ServiceProcess data={WebDevServiceProcess} />
             <ServiceCaseStudy data={WebDevServiceCaseStudy} />
+            <ProjectsSection data={WebDevServiceProject} />
             <ClientListSection />
             <IndustriesSection />
             <TechStackSection />

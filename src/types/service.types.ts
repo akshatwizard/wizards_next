@@ -82,3 +82,19 @@ export type ServiceCaseStudyType = {
     content: string;
     case_study_list: CaseStudyType[]
 }
+
+export type ProjectListType = {
+    name: string,
+    sector: string,
+    result: string,
+    metric: string,
+    metricLabel: string,
+    desc: string,
+    tags: string[],
+    href: string,
+}
+
+export type ServiceProjectType = {
+    project_list: ProjectListType[],
+    filter: string[]
+}

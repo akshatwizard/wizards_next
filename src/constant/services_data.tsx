@@ -1,4 +1,4 @@
-import { ServiceHeroTypes, ServiceAboutTypes, ServicesOfferedTypes, ServiceProcessType, ServiceCaseStudyType } from "@/types/service.types";
+import { ServiceHeroTypes, ServiceAboutTypes, ServicesOfferedTypes, ServiceProcessType, ServiceCaseStudyType, ServiceProjectType } from "@/types/service.types";
 import { ArrowRight, BarChart3, Database, Globe, Layout, Play, RefreshCw, Shield, ShoppingCart, Smartphone, TrendingUp } from "lucide-react";
 import { FadeUp } from "@/components/ui/motion_components";
 import { SectionHeading } from "@/components/services/section_heading";
@@ -184,7 +184,6 @@ export const WebDevServiceProcess: ServiceProcessType = {
 }
 
 export const WebDevServiceCaseStudy: ServiceCaseStudyType = {
-
     badge: "Case studies",
     heading: (
         <SectionHeading>
@@ -222,4 +221,70 @@ export const WebDevServiceCaseStudy: ServiceCaseStudyType = {
             tags: ['Next.js', 'CRM Integration', 'Lead Gen'],
         },
     ]
+}
+
+export const WebDevServiceProject: ServiceProjectType = {
+    project_list: [
+        {
+            name: "Sadbhavana Banaras",
+            sector: "Hospitality",
+            result: "3× increase in direct bookings",
+            metric: "+210%",
+            metricLabel: "Direct bookings",
+            desc: "Rebuilt their dated PHP site into a Next.js hotel website with integrated booking flow and Google Hotels schema.",
+            tags: ["Next.js", "Booking Engine", "SEO"],
+            href: "#",
+        },
+        {
+            name: "Banarsi Saree Co.",
+            sector: "E-Commerce",
+            result: "₹40K → ₹4L monthly revenue",
+            metric: "10×",
+            metricLabel: "Revenue growth",
+            desc: "Migrated from a broken Wix store to a custom Shopify build with product filtering, size charts and Razorpay.",
+            tags: ["Shopify", "Razorpay", "Custom Theme"],
+            href: "#",
+        },
+        {
+            name: "GD Sons",
+            sector: "Corporate",
+            result: "68% drop in bounce rate",
+            metric: "-68%",
+            metricLabel: "Bounce rate",
+            desc: "Full corporate website redesign with lead generation form, case study pages, and ATS-connected careers portal.",
+            tags: ["Next.js", "CRM Integration", "Lead Gen"],
+            href: "#",
+        },
+        {
+            name: "Career Launcher",
+            sector: "Education",
+            result: "180% increase in course enquiries",
+            metric: "+180%",
+            metricLabel: "Enquiries",
+            desc: "Built a course catalogue portal with batch scheduling, online enrollment, and integrated WhatsApp lead capture.",
+            tags: ["Next.js", "CMS", "Lead Gen"],
+            href: "#",
+        },
+        {
+            name: "Dr. Ankita Chauhan",
+            sector: "Healthcare",
+            result: "Personal brand site + appointment system",
+            metric: "4.9★",
+            metricLabel: "Google rating",
+            desc: "Designed a clean medical portfolio with online appointment booking, patient testimonials, and Google Business integration.",
+            tags: ["Personal Brand", "Booking", "SEO"],
+            href: "#",
+        },
+        {
+            name: "Swarnam Jewellers",
+            sector: "Retail",
+            result: "95% increase in footfall from web",
+            metric: "+95%",
+            metricLabel: "Store traffic",
+            desc: "Luxury jewellery catalogue website with high-res product gallery, WhatsApp CTA, and local SEO optimisation.",
+            tags: ["Catalogue", "Local SEO", "WhatsApp"],
+            href: "#",
+        },
+    ],
+    filter: ["All", "Hospitality", "E-Commerce", "Corporate", "Education", "Healthcare", "Retail"]
 }
