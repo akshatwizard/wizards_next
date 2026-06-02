@@ -32,10 +32,10 @@ export default function ServicesOffered({ data }: { data: ServicesOfferedTypes }
                                         <Icon size={16} className="text-amber-500" strokeWidth={1.7} />
                                     </div>
                                     <div className="flex-1">
-                                        <h3 className="md:text-lg text-base text-zinc-200 mb-1.5 leading-snug">
+                                        <h3 className="text-[15px] text-zinc-200 mb-1.5 leading-snug">
                                             {svc.title}
                                         </h3>
-                                        <p className="md:text-sm text-xs text-zinc-500 leading-snug">
+                                        <p className="text-xs text-zinc-500 leading-snug">
                                             {svc.desc}
                                         </p>
                                     </div>

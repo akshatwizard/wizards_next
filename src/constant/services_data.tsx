@@ -1,4 +1,4 @@
-import { ServiceHeroTypes, ServiceAboutTypes, ServicesOfferedTypes, ServiceProcessType, ServiceCaseStudyType, ServiceProjectType } from "@/types/service.types";
+import { ServiceHeroTypes, ServiceAboutTypes, ServicesOfferedTypes, ServiceProcessType, ServiceCaseStudyType, ServiceProjectType, ServiceClientListType } from "@/types/service.types";
 import { ArrowRight, BarChart3, Database, Globe, Layout, Play, RefreshCw, Shield, ShoppingCart, Smartphone, TrendingUp } from "lucide-react";
 import { FadeUp } from "@/components/ui/motion_components";
 import { SectionHeading } from "@/components/services/section_heading";
@@ -287,4 +287,17 @@ export const WebDevServiceProject: ServiceProjectType = {
         },
     ],
     filter: ["All", "Hospitality", "E-Commerce", "Corporate", "Education", "Healthcare", "Retail"]
+}
+
+export const WebDevServiceClientList: ServiceClientListType = {
+    client_list: [
+        { initials: 'SB', name: 'Sadbhavana Banaras', industry: 'Hospitality' },
+        { initials: 'BS', name: 'Banarsi Saree', industry: 'E-Commerce' },
+        { initials: 'GD', name: 'GD Sons', industry: 'Corporate' },
+        { initials: 'CL', name: 'Career Launcher', industry: 'Education' },
+        { initials: 'SJ', name: 'Swarnam Jewellers', industry: 'Retail' },
+        { initials: 'MF', name: 'Mega Furniture', industry: 'Retail' },
+        { initials: 'DA', name: 'Dr. Ankita Chauhan', industry: 'Healthcare' },
+        { initials: 'VP', name: 'Varanasi Prints', industry: 'FMCG' },
+    ]
 }

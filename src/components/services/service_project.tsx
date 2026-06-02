@@ -74,7 +74,7 @@ function ProjectCard({ project }: { project: ProjectListType }) {
     );
 }
 
-export default function ProjectsSection({ data }: { data: ServiceProjectType }) {
+export default function ServiceProject({ data }: { data: ServiceProjectType }) {
     const [active, setActive] = useState("All");
 
     const filtered = active === "All" ? data.project_list : data.project_list.filter((p) => p.sector === active);

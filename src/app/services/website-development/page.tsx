@@ -12,12 +12,13 @@ import {
 import { Section, Wrapper } from '@/components/ui/sections'
 import { FadeUp } from '@/components/ui/motion_components'
 import ServiceHero from '@/components/services/service_hero'
-import { WebDevServiceAbout, WebDevServiceCaseStudy, WebDevServiceHero, WebDevServiceProcess, WebDevServiceProject, webDevServicesOffered } from '@/constant/services_data'
+import { WebDevServiceAbout, WebDevServiceCaseStudy, WebDevServiceClientList, WebDevServiceHero, WebDevServiceProcess, WebDevServiceProject, webDevServicesOffered } from '@/constant/services_data'
 import ServiceAbout from '@/components/services/service_about'
 import ServicesOffered from '@/components/services/service_offered'
 import ServiceProcess from '@/components/services/service_process'
 import ServiceCaseStudy from '@/components/services/service_case_stydy'
-import ProjectsSection from '@/components/services/service_project'
+import ServiceProject from '@/components/services/service_project'
+import ServiceClientList from '@/components/services/service_client_list'
 
 const TECH_STACK = [
     { category: 'Frontend', icon: Code2, items: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript', 'Framer Motion'] },
@@ -26,48 +27,6 @@ const TECH_STACK = [
     { category: 'E-Commerce', icon: ShoppingCart, items: ['Shopify', 'WooCommerce', 'Medusa.js', 'Stripe', 'Razorpay'] },
     { category: 'DevOps', icon: GitBranch, items: ['Vercel', 'AWS', 'Docker', 'GitHub Actions', 'Cloudflare'] },
     { category: 'Design', icon: Palette, items: ['Figma', 'Framer', 'Adobe XD', 'Spline', 'Lottie'] },
-]
-
-
-const CASE_STUDIES = [
-    {
-        client: 'Sadbhavana Banaras',
-        industry: 'Hospitality',
-        result: '3× increase in direct bookings',
-        metric: '+210%',
-        label: 'Direct bookings',
-        desc: 'Rebuilt their dated PHP site into a Next.js hotel website with integrated booking flow and Google Hotels schema.',
-        tags: ['Next.js', 'Booking Engine', 'SEO'],
-    },
-    {
-        client: 'Banarsi Saree Co.',
-        industry: 'E-Commerce',
-        result: '₹40K → ₹4L monthly revenue',
-        metric: '10×',
-        label: 'Revenue growth',
-        desc: 'Migrated from a broken Wix store to a custom Shopify build with product filtering, size charts, and Razorpay integration.',
-        tags: ['Shopify', 'Razorpay', 'Custom Theme'],
-    },
-    {
-        client: 'GD Sons',
-        industry: 'Corporate',
-        result: '68% drop in bounce rate',
-        metric: '-68%',
-        label: 'Bounce rate',
-        desc: 'Full corporate website redesign with a lead generation form, case study pages, and ATS-connected careers portal.',
-        tags: ['Next.js', 'CRM Integration', 'Lead Gen'],
-    },
-]
-
-const CLIENTS = [
-    { initials: 'SB', name: 'Sadbhavana Banaras', industry: 'Hospitality' },
-    { initials: 'BS', name: 'Banarsi Saree', industry: 'E-Commerce' },
-    { initials: 'GD', name: 'GD Sons', industry: 'Corporate' },
-    { initials: 'CL', name: 'Career Launcher', industry: 'Education' },
-    { initials: 'SJ', name: 'Swarnam Jewellers', industry: 'Retail' },
-    { initials: 'MF', name: 'Mega Furniture', industry: 'Retail' },
-    { initials: 'DA', name: 'Dr. Ankita Chauhan', industry: 'Healthcare' },
-    { initials: 'VP', name: 'Varanasi Prints', industry: 'FMCG' },
 ]
 
 const INDUSTRIES = [
@@ -171,45 +130,6 @@ function Tag({ label }: { label: string }) {
         <span className="text-[10px] px-2 py-0.5 rounded border border-zinc-700/60 bg-zinc-950 text-zinc-500">
             {label}
         </span>
-    )
-}
-
-
-// ═══════════════════════════════════════════════════════════════
-// 6. CLIENT LIST
-// ═══════════════════════════════════════════════════════════════
-
-function ClientListSection() {
-    return (
-        <Section className="bg-[#09090b]">
-            <Wrapper>
-                <FadeUp delay={0} className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
-                    <div>
-                        <SectionBadge label="Our clients" />
-                        <SectionHeading>
-                            Brands that trusted us{' '}
-                            <span className="text-amber-500">to build for them</span>
-                        </SectionHeading>
-                    </div>
-                </FadeUp>
-
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                    {CLIENTS.map((c, i) => (
-                        <FadeUp key={c.name} delay={i * 0.05}>
-                            <div className="flex items-center gap-3 p-4 rounded-xl border border-zinc-800 bg-zinc-900 hover:border-zinc-700 hover:bg-zinc-800/60 transition-all duration-200">
-                                <div className="size-9 rounded-lg bg-amber-600/15 border border-amber-600/25 flex items-center justify-center text-[10px] font-bold text-amber-600 flex-shrink-0">
-                                    {c.initials}
-                                </div>
-                                <div>
-                                    <p className="text-[12px] font-medium text-zinc-200 leading-snug">{c.name}</p>
-                                    <p className="text-[10px] text-zinc-600">{c.industry}</p>
-                                </div>
-                            </div>
-                        </FadeUp>
-                    ))}
-                </div>
-            </Wrapper>
-        </Section>
     )
 }
 
@@ -500,14 +420,14 @@ function BottomCTA() {
 
 export default function WebDevelopmentPage() {
     return (
-        <main className="bg-[#09090b]">
+        <main>
             <ServiceHero data={WebDevServiceHero} />
             <ServiceAbout data={WebDevServiceAbout} />
             <ServicesOffered data={webDevServicesOffered} />
             <ServiceProcess data={WebDevServiceProcess} />
             <ServiceCaseStudy data={WebDevServiceCaseStudy} />
-            <ProjectsSection data={WebDevServiceProject} />
-            <ClientListSection />
+            <ServiceProject data={WebDevServiceProject} />
+            <ServiceClientList data={WebDevServiceClientList} />
             <IndustriesSection />
             <TechStackSection />
             <TeamSection />

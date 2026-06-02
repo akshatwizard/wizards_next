@@ -98,3 +98,13 @@ export type ServiceProjectType = {
     project_list: ProjectListType[],
     filter: string[]
 }
+
+export type ClientList = {
+    initials: string,
+    name: string,
+    industry: string
+}
+
+export type ServiceClientListType = {
+    client_list: ClientList[]
+}
