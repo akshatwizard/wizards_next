@@ -12,13 +12,14 @@ import {
 import { Section, Wrapper } from '@/components/ui/sections'
 import { FadeUp } from '@/components/ui/motion_components'
 import ServiceHero from '@/components/services/service_hero'
-import { WebDevServiceAbout, WebDevServiceCaseStudy, WebDevServiceClientList, WebDevServiceHero, WebDevServiceProcess, WebDevServiceProject, webDevServicesOffered } from '@/constant/services_data'
+import { WebDevServiceAbout, WebDevServiceCaseStudy, WebDevServiceClientList, WebDevServiceHero, WebDevServiceIndustriesList, WebDevServiceProcess, WebDevServiceProject, webDevServicesOffered } from '@/constant/services_data'
 import ServiceAbout from '@/components/services/service_about'
 import ServicesOffered from '@/components/services/service_offered'
 import ServiceProcess from '@/components/services/service_process'
 import ServiceCaseStudy from '@/components/services/service_case_stydy'
 import ServiceProject from '@/components/services/service_project'
 import ServiceClientList from '@/components/services/service_client_list'
+import ServiceIndustries from '@/components/services/service_industries'
 
 const TECH_STACK = [
     { category: 'Frontend', icon: Code2, items: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript', 'Framer Motion'] },
@@ -29,16 +30,6 @@ const TECH_STACK = [
     { category: 'Design', icon: Palette, items: ['Figma', 'Framer', 'Adobe XD', 'Spline', 'Lottie'] },
 ]
 
-const INDUSTRIES = [
-    { icon: Building2, label: 'Corporate' },
-    { icon: ShoppingCart, label: 'E-Commerce' },
-    { icon: Stethoscope, label: 'Healthcare' },
-    { icon: School, label: 'Education' },
-    { icon: Car, label: 'Automotive' },
-    { icon: Shirt, label: 'Retail' },
-    { icon: Plane, label: 'Travel' },
-    { icon: Globe, label: 'FMCG' },
-]
 
 const TEAM = [
     {
@@ -133,44 +124,6 @@ function Tag({ label }: { label: string }) {
     )
 }
 
-// ═══════════════════════════════════════════════════════════════
-// 7. INDUSTRIES
-// ═══════════════════════════════════════════════════════════════
-
-function IndustriesSection() {
-    return (
-        <Section className="bg-[#09090b]">
-            <Wrapper>
-                <FadeUp delay={0} className="text-center mb-10">
-                    <SectionBadge label="Industries" />
-                    <SectionHeading>
-                        We build for{' '}
-                        <span className="text-amber-500">every sector</span>
-                    </SectionHeading>
-                    <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed mt-2 max-w-md mx-auto">
-                        Industry-specific design patterns, conversion flows, and integrations — we know what works in your space.
-                    </p>
-                </FadeUp>
-
-                <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2">
-                    {INDUSTRIES.map((ind, i) => {
-                        const Icon = ind.icon
-                        return (
-                            <FadeUp key={ind.label} delay={i * 0.05}>
-                                <div className="group flex flex-col items-center gap-2.5 p-4 rounded-xl border border-zinc-800 bg-zinc-900 hover:border-amber-600/30 hover:bg-zinc-800/60 transition-all duration-200 text-center">
-                                    <div className="size-10 rounded-xl bg-amber-600/10 border border-amber-600/20 flex items-center justify-center group-hover:bg-amber-600/20 transition-colors">
-                                        <Icon size={18} className="text-amber-500" strokeWidth={1.7} />
-                                    </div>
-                                    <p className="text-[11px] font-medium text-zinc-400 leading-snug">{ind.label}</p>
-                                </div>
-                            </FadeUp>
-                        )
-                    })}
-                </div>
-            </Wrapper>
-        </Section>
-    )
-}
 
 // ═══════════════════════════════════════════════════════════════
 // 8. TECH STACK
@@ -428,7 +381,7 @@ export default function WebDevelopmentPage() {
             <ServiceCaseStudy data={WebDevServiceCaseStudy} />
             <ServiceProject data={WebDevServiceProject} />
             <ServiceClientList data={WebDevServiceClientList} />
-            <IndustriesSection />
+            <ServiceIndustries data={WebDevServiceIndustriesList} />
             <TechStackSection />
             <TeamSection />
             <TestimonialSection />

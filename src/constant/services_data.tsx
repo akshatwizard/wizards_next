@@ -1,5 +1,5 @@
-import { ServiceHeroTypes, ServiceAboutTypes, ServicesOfferedTypes, ServiceProcessType, ServiceCaseStudyType, ServiceProjectType, ServiceClientListType } from "@/types/service.types";
-import { ArrowRight, BarChart3, Database, Globe, Layout, Play, RefreshCw, Shield, ShoppingCart, Smartphone, TrendingUp } from "lucide-react";
+import { ServiceHeroTypes, ServiceAboutTypes, ServicesOfferedTypes, ServiceProcessType, ServiceCaseStudyType, ServiceProjectType, ServiceClientListType, ServiceIndustriestype } from "@/types/service.types";
+import { ArrowRight, BarChart3, Building2, Car, Database, Globe, Layout, Plane, Play, RefreshCw, School, Shield, Shirt, ShoppingCart, Smartphone, Stethoscope, TrendingUp } from "lucide-react";
 import { FadeUp } from "@/components/ui/motion_components";
 import { SectionHeading } from "@/components/services/section_heading";
 
@@ -299,5 +299,18 @@ export const WebDevServiceClientList: ServiceClientListType = {
         { initials: 'MF', name: 'Mega Furniture', industry: 'Retail' },
         { initials: 'DA', name: 'Dr. Ankita Chauhan', industry: 'Healthcare' },
         { initials: 'VP', name: 'Varanasi Prints', industry: 'FMCG' },
+    ]
+}
+
+export const WebDevServiceIndustriesList: ServiceIndustriestype = {
+    industries_list: [
+        { icon: Building2, label: 'Corporate' },
+        { icon: ShoppingCart, label: 'E-Commerce' },
+        { icon: Stethoscope, label: 'Healthcare' },
+        { icon: School, label: 'Education' },
+        { icon: Car, label: 'Automotive' },
+        { icon: Shirt, label: 'Retail' },
+        { icon: Plane, label: 'Travel' },
+        { icon: Globe, label: 'FMCG' },
     ]
 }

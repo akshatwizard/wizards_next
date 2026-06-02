@@ -108,3 +108,12 @@ export type ClientList = {
 export type ServiceClientListType = {
     client_list: ClientList[]
 }
+
+export type ServiceIndustriestype = {
+    industries_list: {
+        icon: LucideIcon,
+        label: string
+    }[],
+}
+
+
