@@ -1,4 +1,4 @@
-import { ServiceHeroTypes, ServiceAboutTypes, ServicesOfferedTypes, ServiceProcessType, ServiceCaseStudyType, ServiceProjectType, ServiceClientListType, ServiceIndustriestype, ServiceTechStackType } from "@/types/service.types";
+import { ServiceHeroTypes, ServiceAboutTypes, ServicesOfferedTypes, ServiceProcessType, ServiceCaseStudyType, ServiceProjectType, ServiceClientListType, ServiceIndustriestype, ServiceTechStackType, ServiceFAQType } from "@/types/service.types";
 import { ArrowRight, BarChart3, Building2, Car, Code2, Database, GitBranch, Globe, Layers, Layout, Palette, Plane, Play, RefreshCw, School, Server, Shield, Shirt, ShoppingCart, Smartphone, Stethoscope, TrendingUp } from "lucide-react";
 import { FadeUp } from "@/components/ui/motion_components";
 import { SectionHeading } from "@/components/services/section_heading";
@@ -325,3 +325,29 @@ export const WebDevServiceTechStack: ServiceTechStackType = {
         { category: 'Design', icon: Palette, items: ['Figma', 'Framer', 'Adobe XD', 'Spline', 'Lottie'] },
     ]
 }
+
+export const WebDevServiceFAQ: ServiceFAQType = {
+    faq_list: [
+        {
+            q: 'How long does a website take to build?',
+            a: 'Most business websites take 2–4 weeks. E-commerce stores and web apps take 4–8 weeks depending on complexity. We give you a precise timeline after the discovery call.',
+        },
+        {
+            q: 'Do you provide hosting and maintenance?',
+            a: 'Yes. We offer managed hosting on Vercel or AWS, plus monthly maintenance plans covering updates, backups, performance monitoring, and minor edits.',
+        },
+        {
+            q: 'Will I be able to update the website myself?',
+            a: 'Absolutely. We integrate a headless CMS (Sanity, Contentful, or WordPress) so you can edit content, add blog posts, and update products without touching code.',
+        },
+        {
+            q: 'Do you work with clients outside Varanasi?',
+            a: 'Yes — we work with clients pan-India and internationally. All communication happens over video calls, and we use shared Figma for design reviews.',
+        },
+        {
+            q: 'What is your pricing?',
+            a: 'Pricing depends on scope. Business websites start at ₹25,000, e-commerce stores at ₹45,000, and custom web apps at ₹80,000+. We send a detailed quote after understanding your requirements.',
+        },
+    ]
+}
+

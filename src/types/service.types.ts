@@ -124,4 +124,11 @@ export type ServiceTechStackType = {
     }[]
 }
 
+export type ServiceFAQType = {
+    faq_list: {
+        q: string;
+        a: string
+    }[]
+}
+
 

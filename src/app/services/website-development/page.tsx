@@ -12,7 +12,7 @@ import {
 import { Section, Wrapper } from '@/components/ui/sections'
 import { FadeUp } from '@/components/ui/motion_components'
 import ServiceHero from '@/components/services/service_hero'
-import { WebDevServiceAbout, WebDevServiceCaseStudy, WebDevServiceClientList, WebDevServiceHero, WebDevServiceIndustriesList, WebDevServiceProcess, WebDevServiceProject, webDevServicesOffered, WebDevServiceTechStack } from '@/constant/services_data'
+import { WebDevServiceAbout, WebDevServiceCaseStudy, WebDevServiceClientList, WebDevServiceFAQ, WebDevServiceHero, WebDevServiceIndustriesList, WebDevServiceProcess, WebDevServiceProject, webDevServicesOffered, WebDevServiceTechStack } from '@/constant/services_data'
 import ServiceAbout from '@/components/services/service_about'
 import ServicesOffered from '@/components/services/service_offered'
 import ServiceProcess from '@/components/services/service_process'
@@ -22,6 +22,7 @@ import ServiceClientList from '@/components/services/service_client_list'
 import ServiceIndustries from '@/components/services/service_industries'
 import ServiceTechStack from '@/components/services/service_techstack'
 import ServiceCTA from '@/components/services/service_cta'
+import ServiceFAQ from '@/components/services/service_faq'
 
 
 const TEAM = [
@@ -62,29 +63,6 @@ const TESTIMONIAL = {
     initials: 'RM',
     rating: 5,
 }
-
-const FAQS = [
-    {
-        q: 'How long does a website take to build?',
-        a: 'Most business websites take 2–4 weeks. E-commerce stores and web apps take 4–8 weeks depending on complexity. We give you a precise timeline after the discovery call.',
-    },
-    {
-        q: 'Do you provide hosting and maintenance?',
-        a: 'Yes. We offer managed hosting on Vercel or AWS, plus monthly maintenance plans covering updates, backups, performance monitoring, and minor edits.',
-    },
-    {
-        q: 'Will I be able to update the website myself?',
-        a: 'Absolutely. We integrate a headless CMS (Sanity, Contentful, or WordPress) so you can edit content, add blog posts, and update products without touching code.',
-    },
-    {
-        q: 'Do you work with clients outside Varanasi?',
-        a: 'Yes — we work with clients pan-India and internationally. All communication happens over video calls, and we use shared Figma for design reviews.',
-    },
-    {
-        q: 'What is your pricing?',
-        a: 'Pricing depends on scope. Business websites start at ₹25,000, e-commerce stores at ₹45,000, and custom web apps at ₹80,000+. We send a detailed quote after understanding your requirements.',
-    },
-]
 
 // ═══════════════════════════════════════════════════════════════
 // SHARED UI ATOMS
@@ -214,50 +192,6 @@ function TestimonialSection() {
     )
 }
 
-// ═══════════════════════════════════════════════════════════════
-// 11. FAQ
-// ═══════════════════════════════════════════════════════════════
-
-function FAQSection() {
-    return (
-        <Section className="bg-[#09090b]">
-            <Wrapper>
-                <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 items-start">
-
-                    <FadeUp delay={0} className="lg:sticky lg:top-24">
-                        <SectionBadge label="FAQ" />
-                        <SectionHeading>
-                            Questions we get{' '}
-                            <span className="text-amber-500">all the time</span>
-                        </SectionHeading>
-                        <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed mt-3 mb-6">
-                            Still have something else on your mind? We're one message away.
-                        </p>
-                        <Link href="/contact"
-                            className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-black text-[13px] font-semibold px-5 py-2.5 rounded-xl transition-colors">
-                            Ask us directly <ArrowRight size={14} />
-                        </Link>
-                    </FadeUp>
-
-                    <div className="flex flex-col divide-y divide-zinc-800">
-                        {FAQS.map((faq, i) => (
-                            <FadeUp key={faq.q} delay={i * 0.06}>
-                                <div className="py-5">
-                                    <div className="flex items-start gap-3 mb-2">
-                                        <CheckCircle2 size={15} className="text-amber-600 mt-0.5 flex-shrink-0" strokeWidth={2} />
-                                        <h3 className="font-syne text-[14px] font-bold text-zinc-200 leading-snug">{faq.q}</h3>
-                                    </div>
-                                    <p className="text-[12.5px] text-zinc-500 leading-relaxed font-light pl-6">{faq.a}</p>
-                                </div>
-                            </FadeUp>
-                        ))}
-                    </div>
-                </div>
-            </Wrapper>
-        </Section>
-    )
-}
-
 
 export default function WebDevelopmentPage() {
     return (
@@ -273,7 +207,7 @@ export default function WebDevelopmentPage() {
             <ServiceTechStack data={WebDevServiceTechStack} />
             <TeamSection />
             <TestimonialSection />
-            <FAQSection />
+            <ServiceFAQ data={WebDevServiceFAQ} />
             <ServiceCTA />
         </main>
     )
