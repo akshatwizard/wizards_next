@@ -12,7 +12,7 @@ import {
 import { Section, Wrapper } from '@/components/ui/sections'
 import { FadeUp } from '@/components/ui/motion_components'
 import ServiceHero from '@/components/services/service_hero'
-import { WebDevServiceAbout, WebDevServiceCaseStudy, WebDevServiceClientList, WebDevServiceHero, WebDevServiceIndustriesList, WebDevServiceProcess, WebDevServiceProject, webDevServicesOffered } from '@/constant/services_data'
+import { WebDevServiceAbout, WebDevServiceCaseStudy, WebDevServiceClientList, WebDevServiceHero, WebDevServiceIndustriesList, WebDevServiceProcess, WebDevServiceProject, webDevServicesOffered, WebDevServiceTechStack } from '@/constant/services_data'
 import ServiceAbout from '@/components/services/service_about'
 import ServicesOffered from '@/components/services/service_offered'
 import ServiceProcess from '@/components/services/service_process'
@@ -20,15 +20,8 @@ import ServiceCaseStudy from '@/components/services/service_case_stydy'
 import ServiceProject from '@/components/services/service_project'
 import ServiceClientList from '@/components/services/service_client_list'
 import ServiceIndustries from '@/components/services/service_industries'
-
-const TECH_STACK = [
-    { category: 'Frontend', icon: Code2, items: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript', 'Framer Motion'] },
-    { category: 'Backend', icon: Server, items: ['Node.js', 'Express', 'Python', 'PostgreSQL', 'MongoDB'] },
-    { category: 'CMS', icon: Layers, items: ['Sanity', 'Contentful', 'WordPress', 'Payload CMS', 'Strapi'] },
-    { category: 'E-Commerce', icon: ShoppingCart, items: ['Shopify', 'WooCommerce', 'Medusa.js', 'Stripe', 'Razorpay'] },
-    { category: 'DevOps', icon: GitBranch, items: ['Vercel', 'AWS', 'Docker', 'GitHub Actions', 'Cloudflare'] },
-    { category: 'Design', icon: Palette, items: ['Figma', 'Framer', 'Adobe XD', 'Spline', 'Lottie'] },
-]
+import ServiceTechStack from '@/components/services/service_techstack'
+import ServiceCTA from '@/components/services/service_cta'
 
 
 const TEAM = [
@@ -124,56 +117,6 @@ function Tag({ label }: { label: string }) {
     )
 }
 
-
-// ═══════════════════════════════════════════════════════════════
-// 8. TECH STACK
-// ═══════════════════════════════════════════════════════════════
-
-function TechStackSection() {
-    return (
-        <Section className="bg-[#09090b]">
-            <Wrapper>
-                <FadeUp delay={0} className="mb-10">
-                    <SectionBadge label="Tech stack" />
-                    <SectionHeading>
-                        Modern tools,{' '}
-                        <span className="text-amber-500">no legacy baggage</span>
-                    </SectionHeading>
-                    <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed mt-2 max-w-lg">
-                        We don't pick technology to show off — we pick what's right for your project's
-                        scale, budget, and long-term maintainability.
-                    </p>
-                </FadeUp>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {TECH_STACK.map((cat, i) => {
-                        const Icon = cat.icon
-                        return (
-                            <FadeUp key={cat.category} delay={i * 0.07}>
-                                <div className="p-5 rounded-2xl border border-zinc-800 bg-zinc-900 h-full">
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <div className="size-8 rounded-lg bg-amber-600/10 border border-amber-600/20 flex items-center justify-center">
-                                            <Icon size={15} className="text-amber-500" strokeWidth={1.7} />
-                                        </div>
-                                        <h3 className="font-syne text-[13px] font-bold text-zinc-200">{cat.category}</h3>
-                                    </div>
-                                    <div className="flex flex-wrap gap-1.5">
-                                        {cat.items.map((tech) => (
-                                            <span key={tech}
-                                                className="text-[11px] px-2.5 py-1 rounded-lg border border-zinc-700/60 bg-zinc-950 text-zinc-400 hover:border-amber-600/30 hover:text-zinc-300 transition-colors cursor-default">
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-                            </FadeUp>
-                        )
-                    })}
-                </div>
-            </Wrapper>
-        </Section>
-    )
-}
 
 // ═══════════════════════════════════════════════════════════════
 // 9. TEAM
@@ -315,61 +258,6 @@ function FAQSection() {
     )
 }
 
-// ═══════════════════════════════════════════════════════════════
-// 12. BOTTOM CTA
-// ═══════════════════════════════════════════════════════════════
-
-function BottomCTA() {
-    return (
-        <Section className="bg-[#09090b] pb-20">
-            <Wrapper>
-                <FadeUp delay={0}>
-                    <div
-                        className="relative rounded-2xl overflow-hidden px-8 py-14 sm:px-16 text-center"
-                        style={{
-                            background: 'radial-gradient(ellipse at 50% 0%, rgba(217,119,6,0.15) 0%, transparent 60%), #111008',
-                            border: '1px solid rgba(255,255,255,0.07)',
-                        }}
-                    >
-                        <div aria-hidden className="pointer-events-none absolute inset-0 opacity-20"
-                            style={{
-                                backgroundImage: 'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
-                                backgroundSize: '40px 40px',
-                            }} />
-
-                        <Award size={36} className="text-amber-600/40 mx-auto mb-6" strokeWidth={1.2} />
-                        <h2 className="font-syne text-2xl sm:text-3xl lg:text-4xl font-extrabold text-zinc-50 tracking-tight leading-tight mb-3">
-                            Ready to build something{' '}
-                            <span className="text-amber-500">great?</span>
-                        </h2>
-                        <p className="text-zinc-400 text-[14px] font-light max-w-md mx-auto mb-8">
-                            Tell us about your project and we'll send a proposal within 24 hours.
-                            No agency fluff — just a straight conversation.
-                        </p>
-                        <div className="flex flex-wrap items-center justify-center gap-3">
-                            <Link href="/contact"
-                                className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 active:scale-[0.97] text-black text-[13px] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200">
-                                Start your project <ArrowRight size={15} />
-                            </Link>
-                            <Link href="https://wa.me/91XXXXXXXXXX"
-                                className="inline-flex items-center gap-2 border border-zinc-700 hover:border-zinc-600 text-zinc-300 text-[13px] font-medium px-7 py-3.5 rounded-xl transition-all duration-200">
-                                WhatsApp us
-                                <ExternalLink size={13} />
-                            </Link>
-                        </div>
-                        <p className="text-zinc-700 text-[11px] mt-6">
-                            Free 30-min discovery call · No commitment required
-                        </p>
-                    </div>
-                </FadeUp>
-            </Wrapper>
-        </Section>
-    )
-}
-
-// ═══════════════════════════════════════════════════════════════
-// PAGE EXPORT
-// ═══════════════════════════════════════════════════════════════
 
 export default function WebDevelopmentPage() {
     return (
@@ -382,11 +270,11 @@ export default function WebDevelopmentPage() {
             <ServiceProject data={WebDevServiceProject} />
             <ServiceClientList data={WebDevServiceClientList} />
             <ServiceIndustries data={WebDevServiceIndustriesList} />
-            <TechStackSection />
+            <ServiceTechStack data={WebDevServiceTechStack} />
             <TeamSection />
             <TestimonialSection />
             <FAQSection />
-            <BottomCTA />
+            <ServiceCTA />
         </main>
     )
 }
