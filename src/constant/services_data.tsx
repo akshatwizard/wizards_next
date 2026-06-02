@@ -1,5 +1,5 @@
-import { ServiceHeroTypes, ServiceAboutTypes, ServicesOfferedTypes, ServiceProcessType, ServiceCaseStudyType, ServiceProjectType, ServiceClientListType, ServiceIndustriestype } from "@/types/service.types";
-import { ArrowRight, BarChart3, Building2, Car, Database, Globe, Layout, Plane, Play, RefreshCw, School, Shield, Shirt, ShoppingCart, Smartphone, Stethoscope, TrendingUp } from "lucide-react";
+import { ServiceHeroTypes, ServiceAboutTypes, ServicesOfferedTypes, ServiceProcessType, ServiceCaseStudyType, ServiceProjectType, ServiceClientListType, ServiceIndustriestype, ServiceTechStackType } from "@/types/service.types";
+import { ArrowRight, BarChart3, Building2, Car, Code2, Database, GitBranch, Globe, Layers, Layout, Palette, Plane, Play, RefreshCw, School, Server, Shield, Shirt, ShoppingCart, Smartphone, Stethoscope, TrendingUp } from "lucide-react";
 import { FadeUp } from "@/components/ui/motion_components";
 import { SectionHeading } from "@/components/services/section_heading";
 
@@ -312,5 +312,16 @@ export const WebDevServiceIndustriesList: ServiceIndustriestype = {
         { icon: Shirt, label: 'Retail' },
         { icon: Plane, label: 'Travel' },
         { icon: Globe, label: 'FMCG' },
+    ]
+}
+
+export const WebDevServiceTechStack: ServiceTechStackType = {
+    techstack_list: [
+        { category: 'Frontend', icon: Code2, items: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript', 'Framer Motion'] },
+        { category: 'Backend', icon: Server, items: ['Node.js', 'Express', 'Python', 'PostgreSQL', 'MongoDB'] },
+        { category: 'CMS', icon: Layers, items: ['Sanity', 'Contentful', 'WordPress', 'Payload CMS', 'Strapi'] },
+        { category: 'E-Commerce', icon: ShoppingCart, items: ['Shopify', 'WooCommerce', 'Medusa.js', 'Stripe', 'Razorpay'] },
+        { category: 'DevOps', icon: GitBranch, items: ['Vercel', 'AWS', 'Docker', 'GitHub Actions', 'Cloudflare'] },
+        { category: 'Design', icon: Palette, items: ['Figma', 'Framer', 'Adobe XD', 'Spline', 'Lottie'] },
     ]
 }

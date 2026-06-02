@@ -116,4 +116,12 @@ export type ServiceIndustriestype = {
     }[],
 }
 
+export type ServiceTechStackType = {
+    techstack_list: {
+        category: string,
+        icon: LucideIcon,
+        items: string[]
+    }[]
+}
+
 
