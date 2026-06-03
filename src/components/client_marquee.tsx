@@ -40,7 +40,7 @@ export default function ClientMarquee() {
     return (
         <Section className="overflow-hidden">
 
-            <Wrapper className="max-w-full overflow-hidden">
+            <Wrapper className="overflow-hidden">
                 {/* Header */}
                 <div className="text-center">
                     <FadeUp className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/20 rounded-full px-4 py-1.5 mb-4">

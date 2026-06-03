@@ -165,7 +165,7 @@ function StatChip({ icon, value, label, style }: {
 }) {
     return (
         <div
-            className="absolute z-20 flex items-center gap-2 rounded-[10px] border px-3 py-1.5"
+            className="absolute flex items-center gap-2 rounded-[10px] border px-3 py-1.5"
             style={{ background: "#0f0f0d", borderColor: "rgba(217,119,6,0.22)", ...style }}
         >
             <div className="w-6.5 h-6.5 rounded-[7px] flex items-center justify-center"
