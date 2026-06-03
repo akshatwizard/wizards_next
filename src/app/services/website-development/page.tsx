@@ -1,18 +1,8 @@
 import React from 'react'
-import Link from 'next/link'
-import {
-    Globe, Code2, Smartphone, ShoppingCart, BarChart3,
-    Shield, Zap, Layers, Database, GitBranch,
-    CheckCircle2, ArrowRight, ExternalLink, Users,
-    Star, Quote, Clock, TrendingUp, Award, Cpu,
-    Layout, Server, Palette, Search, RefreshCw,
-    ChevronRight, Play, Building2, Stethoscope,
-    School, Car, Shirt, Plane,
-} from 'lucide-react'
 import { Section, Wrapper } from '@/components/ui/sections'
 import { FadeUp } from '@/components/ui/motion_components'
 import ServiceHero from '@/components/services/service_hero'
-import { WebDevServiceAbout, WebDevServiceCaseStudy, WebDevServiceClientList, WebDevServiceFAQ, WebDevServiceHero, WebDevServiceIndustriesList, WebDevServiceProcess, WebDevServiceProject, webDevServicesOffered, WebDevServiceTechStack } from '@/constant/services_data'
+import { WebDevServiceAbout, WebDevServiceCaseStudy, WebDevServiceClientList, WebDevServiceFAQ, WebDevServiceHero, WebDevServiceIndustriesList, WebDevServiceProcess, WebDevServiceProject, webDevServicesOffered, WebDevServiceTeam, WebDevServiceTechStack, WebDevServiceTestimonial } from '@/constant/services_data'
 import ServiceAbout from '@/components/services/service_about'
 import ServicesOffered from '@/components/services/service_offered'
 import ServiceProcess from '@/components/services/service_process'
@@ -23,174 +13,8 @@ import ServiceIndustries from '@/components/services/service_industries'
 import ServiceTechStack from '@/components/services/service_techstack'
 import ServiceCTA from '@/components/services/service_cta'
 import ServiceFAQ from '@/components/services/service_faq'
-
-
-const TEAM = [
-    {
-        initials: 'AK',
-        name: 'Aditya Kumar',
-        role: 'Lead Developer',
-        skills: ['Next.js', 'TypeScript', 'Node.js'],
-        exp: '6 yrs exp',
-    },
-    {
-        initials: 'RS',
-        name: 'Riya Sharma',
-        role: 'UI/UX Designer',
-        skills: ['Figma', 'Framer', 'Design Systems'],
-        exp: '4 yrs exp',
-    },
-    {
-        initials: 'PV',
-        name: 'Pradeep Verma',
-        role: 'Backend Engineer',
-        skills: ['Node.js', 'PostgreSQL', 'AWS'],
-        exp: '5 yrs exp',
-    },
-    {
-        initials: 'SM',
-        name: 'Sana Malik',
-        role: 'Shopify Expert',
-        skills: ['Shopify', 'Liquid', 'E-Commerce'],
-        exp: '3 yrs exp',
-    },
-]
-
-const TESTIMONIAL = {
-    quote: "Wizards Next delivered our new site in under 4 weeks. It loads instantly, looks stunning, and we've seen a 3× jump in online enquiries since launch. Worth every paisa.",
-    name: 'Rohit Mehta',
-    role: 'Director, Sadbhavana Hotels',
-    initials: 'RM',
-    rating: 5,
-}
-
-// ═══════════════════════════════════════════════════════════════
-// SHARED UI ATOMS
-// ═══════════════════════════════════════════════════════════════
-
-function SectionBadge({ label }: { label: string }) {
-    return (
-        <div className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/25 rounded-full px-3.5 py-1 mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-            <span className="text-amber-500 text-[10px] font-medium tracking-widest uppercase">
-                {label}
-            </span>
-        </div>
-    )
-}
-
-function SectionHeading({ children }: { children: React.ReactNode }) {
-    return (
-        <h2 className="font-syne text-2xl sm:text-3xl lg:text-4xl font-extrabold text-zinc-100 tracking-tight leading-tight">
-            {children}
-        </h2>
-    )
-}
-
-function Tag({ label }: { label: string }) {
-    return (
-        <span className="text-[10px] px-2 py-0.5 rounded border border-zinc-700/60 bg-zinc-950 text-zinc-500">
-            {label}
-        </span>
-    )
-}
-
-
-// ═══════════════════════════════════════════════════════════════
-// 9. TEAM
-// ═══════════════════════════════════════════════════════════════
-
-function TeamSection() {
-    return (
-        <Section className="bg-[#09090b]">
-            <Wrapper>
-                <FadeUp delay={0} className="mb-10">
-                    <SectionBadge label="The team" />
-                    <SectionHeading>
-                        People behind{' '}
-                        <span className="text-amber-500">your project</span>
-                    </SectionHeading>
-                    <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed mt-2 max-w-lg">
-                        You won't be passed to a junior. These are the actual people who design,
-                        code, and deliver your website.
-                    </p>
-                </FadeUp>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {TEAM.map((member, i) => (
-                        <FadeUp key={member.name} delay={i * 0.08}>
-                            <div className="group flex flex-col gap-4 p-5 rounded-2xl border border-zinc-800 bg-zinc-900 hover:border-zinc-700 hover:bg-zinc-800/60 transition-all duration-200">
-                                {/* Avatar + name */}
-                                <div className="flex items-center gap-3">
-                                    {/* Avatar placeholder */}
-                                    <div className="size-10 rounded-xl bg-amber-600/15 border border-amber-600/25 flex items-center justify-center text-[11px] font-bold text-amber-600 flex-shrink-0">
-                                        {member.initials}
-                                    </div>
-                                    <div>
-                                        <p className="text-[13px] font-semibold text-zinc-200 leading-snug">{member.name}</p>
-                                        <p className="text-[10px] text-zinc-500">{member.role}</p>
-                                    </div>
-                                </div>
-
-                                {/* Experience badge */}
-                                <div className="flex items-center gap-1.5">
-                                    <Clock size={11} className="text-amber-600" />
-                                    <span className="text-[10.5px] text-zinc-500">{member.exp}</span>
-                                </div>
-
-                                {/* Skills */}
-                                <div className="flex flex-wrap gap-1.5 pt-3 border-t border-zinc-800">
-                                    {member.skills.map(s => <Tag key={s} label={s} />)}
-                                </div>
-                            </div>
-                        </FadeUp>
-                    ))}
-                </div>
-            </Wrapper>
-        </Section>
-    )
-}
-
-// ═══════════════════════════════════════════════════════════════
-// 10. TESTIMONIAL
-// ═══════════════════════════════════════════════════════════════
-
-function TestimonialSection() {
-    return (
-        <Section className="bg-[#09090b]">
-            <Wrapper>
-                <FadeUp delay={0}>
-                    <div
-                        className="relative rounded-2xl overflow-hidden p-8 sm:p-12"
-                        style={{
-                            background: 'radial-gradient(ellipse at 30% 50%, rgba(217,119,6,0.08) 0%, transparent 55%), #111008',
-                            border: '1px solid rgba(255,255,255,0.06)',
-                        }}
-                    >
-                        <Quote size={40} className="text-amber-600/20 mb-6" strokeWidth={1} />
-                        <p className="font-syne text-lg sm:text-xl lg:text-2xl text-zinc-200 leading-relaxed font-medium max-w-3xl mb-8">
-                            "{TESTIMONIAL.quote}"
-                        </p>
-                        <div className="flex items-center gap-4">
-                            <div className="size-12 rounded-xl bg-amber-600/20 border border-amber-600/30 flex items-center justify-center text-[13px] font-bold text-amber-500">
-                                {TESTIMONIAL.initials}
-                            </div>
-                            <div>
-                                <p className="text-[14px] font-semibold text-zinc-100">{TESTIMONIAL.name}</p>
-                                <p className="text-[12px] text-zinc-500">{TESTIMONIAL.role}</p>
-                                <div className="flex items-center gap-0.5 mt-1">
-                                    {[...Array(TESTIMONIAL.rating)].map((_, i) => (
-                                        <Star key={i} size={11} fill="#f59e0b" stroke="#f59e0b" strokeWidth={1} />
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </FadeUp>
-            </Wrapper>
-        </Section>
-    )
-}
+import ServiceTeam from '@/components/services/service_team'
+import ServiceTestimonial from '@/components/services/service_testimonial'
 
 
 export default function WebDevelopmentPage() {
@@ -205,8 +29,8 @@ export default function WebDevelopmentPage() {
             <ServiceClientList data={WebDevServiceClientList} />
             <ServiceIndustries data={WebDevServiceIndustriesList} />
             <ServiceTechStack data={WebDevServiceTechStack} />
-            <TeamSection />
-            <TestimonialSection />
+            <ServiceTeam data={WebDevServiceTeam} />
+            <ServiceTestimonial data={WebDevServiceTestimonial} />
             <ServiceFAQ data={WebDevServiceFAQ} />
             <ServiceCTA />
         </main>

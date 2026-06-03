@@ -1,4 +1,4 @@
-import { ServiceHeroTypes, ServiceAboutTypes, ServicesOfferedTypes, ServiceProcessType, ServiceCaseStudyType, ServiceProjectType, ServiceClientListType, ServiceIndustriestype, ServiceTechStackType, ServiceFAQType } from "@/types/service.types";
+import { ServiceHeroTypes, ServiceAboutTypes, ServicesOfferedTypes, ServiceProcessType, ServiceCaseStudyType, ServiceProjectType, ServiceClientListType, ServiceIndustriestype, ServiceTechStackType, ServiceFAQType, ServiceTeamType, ServiceTestimonialsType } from "@/types/service.types";
 import { ArrowRight, BarChart3, Building2, Car, Code2, Database, GitBranch, Globe, Layers, Layout, Palette, Plane, Play, RefreshCw, School, Server, Shield, Shirt, ShoppingCart, Smartphone, Stethoscope, TrendingUp } from "lucide-react";
 import { FadeUp } from "@/components/ui/motion_components";
 import { SectionHeading } from "@/components/services/section_heading";
@@ -351,3 +351,61 @@ export const WebDevServiceFAQ: ServiceFAQType = {
     ]
 }
 
+export const WebDevServiceTeam: ServiceTeamType = {
+    team_list: [
+        {
+            initials: 'AK',
+            name: 'Aditya Kumar',
+            role: 'Lead Developer',
+            skills: ['Next.js', 'TypeScript', 'Node.js'],
+            exp: '6 yrs exp',
+        },
+        {
+            initials: 'RS',
+            name: 'Riya Sharma',
+            role: 'UI/UX Designer',
+            skills: ['Figma', 'Framer', 'Design Systems'],
+            exp: '4 yrs exp',
+        },
+        {
+            initials: 'PV',
+            name: 'Pradeep Verma',
+            role: 'Backend Engineer',
+            skills: ['Node.js', 'PostgreSQL', 'AWS'],
+            exp: '5 yrs exp',
+        },
+        {
+            initials: 'SM',
+            name: 'Sana Malik',
+            role: 'Shopify Expert',
+            skills: ['Shopify', 'Liquid', 'E-Commerce'],
+            exp: '3 yrs exp',
+        },
+    ]
+}
+
+export const WebDevServiceTestimonial: ServiceTestimonialsType = {
+    testimonial_list: [
+        {
+            quote: "Wizards Next delivered our new site in under 4 weeks. It loads instantly, looks stunning, and we've seen a 3× jump in online enquiries since launch. Worth every paisa.",
+            name: 'Rohit Mehta',
+            role: 'Director, Sadbhavana Hotels',
+            initials: 'RM',
+            rating: 5,
+        },
+        {
+            quote: "Wizards Next delivered our new site in under 4 weeks. It loads instantly, looks stunning, and we've seen a 3× jump in online enquiries since launch. Worth every paisa.",
+            name: 'Priyesh Rai',
+            role: 'Director, Sadbhavana Hotels',
+            initials: 'RM',
+            rating: 5,
+        },
+        {
+            quote: "Wizards Next delivered our new site in under 4 weeks. It loads instantly, looks stunning, and we've seen a 3× jump in online enquiries since launch. Worth every paisa.",
+            name: 'Akshat Agarwal',
+            role: 'Director, Sadbhavana Hotels',
+            initials: 'RM',
+            rating: 5,
+        },
+    ]
+}

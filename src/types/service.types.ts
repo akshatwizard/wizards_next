@@ -131,4 +131,22 @@ export type ServiceFAQType = {
     }[]
 }
 
+export type ServiceTeamType = {
+    team_list: {
+        initials: string,
+        name: string,
+        role: string,
+        skills: string[],
+        exp: string,
+    }[],
+}
 
+export type ServiceTestimonialsType = {
+    testimonial_list: {
+        quote: string,
+        name: string,
+        role: string,
+        initials: string,
+        rating: number,
+    }[]
+}
