@@ -22,21 +22,21 @@ export default function HeroSection() {
                             Best Digital Marketing Agency — Varanasi
                         </FadeUp>
 
-                        <FadeUp delay={0.1}>
+                        <FadeUp delay={0.05}>
                             <PageHeading className='font-medium'>
                                 We Don't Just Market. We <span className='font-sora! text-amber-600'>Ignite</span> <br />Your <span className='font-sora! text-amber-600'>Brand</span>
                             </PageHeading>
                         </FadeUp>
 
                         <FadeUp
-                            delay={0.15}
+                            delay={0.1}
                             className='text-zinc-400 max-w-lg block mt-5 leading-snug'>
                             <span>
                                 From social media mastery to full-stack web development — Wizards Next is your one-stop growth partner with 24+ years of combined expertise.
                             </span>
                         </FadeUp>
 
-                        <FadeUp delay={0.2} className="mt-9 flex items-center gap-2.5">
+                        <FadeUp delay={0.15} className="mt-9 flex items-center gap-2.5">
                             <Link
                                 href="#"
                                 className="rounded-lg bg-amber-600 px-5 py-2.5 text-[13px] font-medium text-zinc-950 transition-colors hover:bg-amber-400"
@@ -55,7 +55,7 @@ export default function HeroSection() {
                             </Link>
                         </FadeUp>
 
-                        <FadeUp delay={0.25} className='mt-10 flex items-center gap-2'>
+                        <FadeUp delay={0.2} className='mt-10 flex items-center gap-2'>
                             <div className="flex pointer-events-none select-none">
                                 {['DS', 'RK', 'AM', 'PV'].map((initials, i) => (
                                     <div
@@ -73,7 +73,7 @@ export default function HeroSection() {
                             </p>
                         </FadeUp>
 
-                        <FadeUp delay={0.3} className='flex items-center text-xs mt-5 gap-1.5'>
+                        <FadeUp delay={0.2} className='flex items-center text-xs mt-5 gap-1.5'>
                             <ShieldCheck className='text-blue-600' strokeWidth={1} size={30} />
                             <span className='text-zinc-700'>
                                 Trusted by Founders and <br />Entrepreneurs from all over the world
