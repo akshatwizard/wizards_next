@@ -1,6 +1,3 @@
-import React from 'react'
-import { Section, Wrapper } from '@/components/ui/sections'
-import { FadeUp } from '@/components/ui/motion_components'
 import ServiceHero from '@/components/services/service_hero'
 import { WebDevServiceAbout, WebDevServiceCaseStudy, WebDevServiceClientList, WebDevServiceFAQ, WebDevServiceHero, WebDevServiceIndustriesList, WebDevServiceProcess, WebDevServiceProject, webDevServicesOffered, WebDevServiceTeam, WebDevServiceTechStack, WebDevServiceTestimonial } from '@/constant/services_data'
 import ServiceAbout from '@/components/services/service_about'
