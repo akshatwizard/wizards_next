@@ -80,13 +80,13 @@ export default function DesktopHeader({ scrolled }: { scrolled: boolean | null }
                         {(item.path && item.subMenu === null) ? (
                             <Link
                                 href={item.path}
-                                className={`${isActive ? "text-zinc-100" : "text-zinc-400 group-hover:text-zinc-100"} transition-colors duration-200 ease-linear px-2 h-full flex items-center`}
+                                className={`${isActive ? "text-zinc-100" : "text-sm text-zinc-400 group-hover:text-zinc-100"} transition-colors duration-200 ease-linear px-2 h-full flex items-center`}
                             >
                                 {item.name}
                             </Link>
                         ) : (
                             <button
-                                className={`${isActive ? "text-zinc-100" : "text-zinc-400 group-hover:text-zinc-100"} transition-colors duration-200 ease-linear px-2 h-full flex items-center gap-1 cursor-pointer`}
+                                className={`${isActive ? "text-zinc-100" : "text-sm text-zinc-400 group-hover:text-zinc-100"} transition-colors duration-200 ease-linear px-2 h-full flex items-center gap-1 cursor-pointer`}
                             >
                                 {item.name}
                                 <motion.span
@@ -101,13 +101,24 @@ export default function DesktopHeader({ scrolled }: { scrolled: boolean | null }
 
                         {/* Active/Hovered indicator */}
                         <AnimatePresence mode="popLayout">
-                            {(isActive || isHovered) && (
+                            {isActive && (
                                 <Span
                                     layoutId="active-nav"
-                                    className={`overflow-hidden absolute block w-full inset-0 h-2/3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-zinc-800/40 border border-zinc-200/8 rounded-lg -z-10`}
-                                    transition={{ type: "tween", ease: [0.22, 1, 0.36, 1], duration: 0.5 }}
+                                    className={`overflow-hidden absolute block w-full inset-x-0 h-2/3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-zinc-900 rounded-lg -z-10`}
+                                    transition={{ type: "tween", ease: [0.22, 1, 0.36, 1], duration: 0.4 }}
                                 >
-                                    <span className="absolute bottom-0 inset-x-0 h-px bg-linear-to-r from-transparent via-blue-400 to-transparent rounded-full" />
+                                    <span className="absolute -bottom-px inset-x-0 h-0.5 bg-linear-to-r from-transparent via-blue-600 to-transparent" />
+                                </Span>
+                            )}
+                        </AnimatePresence>
+
+                        <AnimatePresence>
+                            {!isActive && isHovered && (
+                                <Span
+                                    layoutId="hovered-nav"
+                                    className={`overflow-hidden absolute block w-full inset-x-0 h-2/3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-zinc-900 rounded-lg -z-10`}
+                                    transition={{ type: "tween", ease: [0.22, 1, 0.36, 1], duration: 0.4 }}
+                                >
                                 </Span>
                             )}
                         </AnimatePresence>
@@ -183,16 +194,9 @@ export default function DesktopHeader({ scrolled }: { scrolled: boolean | null }
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.15, ease: [0.22, 1, 0.36, 1] }}
-                className="relative px-3.5 py-2 ml-1 cursor-pointer group"
+                className="relative px-3.5 py-2 ml-1 cursor-pointer group rounded-lg bg-amber-600 text-sm text-zinc-950 transition-colors hover:bg-amber-500"
             >
-                {/* Gradient border layer */}
-                <span className="absolute inset-0 rounded-lg p-px bg-linear-to-r from-[#FEE800] via-[#FD9E17] to-[#FD7303] opacity-50 group-hover:opacity-90 transition-opacity duration-200" />
-                {/* Dark fill punches out the center */}
-                <span className="absolute inset-px rounded-[7px] bg-zinc-950" />
-                {/* Gradient text */}
-                <span className="relative text-sm font-medium bg-linear-to-r from-[#FEE800] via-[#FD9E17] to-[#FD7303] bg-clip-text text-transparent leading-none">
-                    Get Started
-                </span>
+                Get Started
             </motion.button>
         </div>
     );
