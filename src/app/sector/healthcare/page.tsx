@@ -5,6 +5,7 @@ import ServiceCTA from '@/components/services/service_cta'
 import { HealthcareSectorHero, HealthcareSectorAudience, HealthcareSectorCaseStudy, HealthcareSectorClients, HealthcareSectorFAQ, HealthcareSectorMidCTA, HealthcareSectorProjects, HealthcareSectorServices, HealthcareSectorStats, HealthcareSectorTestimonials, HealthcareSectorTrust } from '@/constant/sectors/healthcare'
 import SectorHero from '@/components/sectors/sector_hero'
 import SectorAudience from '@/components/sectors/sector_audience'
+import SectorServices from '@/components/sectors/sector_services'
 
 export const metadata: Metadata = {
     title: 'Digital Marketing for Healthcare | Wizards Next',
@@ -14,16 +15,9 @@ export const metadata: Metadata = {
 export default function HealthcareSectorPage() {
     return (
         <main>
-            {/* 1. Hero — full width, no stats strip */}
             <SectorHero data={HealthcareSectorHero} />
-
-            {/* 2. Who is this for */}
             <SectorAudience data={HealthcareSectorAudience} />
-
-            {/* 3. Services we offer in this sector */}
             <SectorServices data={HealthcareSectorServices} />
-
-            {/* 4. Stats banner */}
             <SectorStatsBanner data={HealthcareSectorStats} />
 
             {/* 5. Case studies */}
