@@ -6,6 +6,7 @@ import { HealthcareSectorHero, HealthcareSectorAudience, HealthcareSectorCaseStu
 import SectorHero from '@/components/sectors/sector_hero'
 import SectorAudience from '@/components/sectors/sector_audience'
 import SectorServices from '@/components/sectors/sector_services'
+import SectorStatsBanner from '@/components/sectors/sector_stats_banner'
 
 export const metadata: Metadata = {
     title: 'Digital Marketing for Healthcare | Wizards Next',
