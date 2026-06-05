@@ -73,6 +73,7 @@ export default function DesktopHeader({ scrolled }: { scrolled: boolean | null }
                     <div
                         className="relative h-full group"
                         key={item.name}
+                        role="button"
                         onMouseEnter={() => setHovered(index)}
                         onMouseLeave={() => setHovered(null)}
                     >
@@ -133,10 +134,10 @@ export default function DesktopHeader({ scrolled }: { scrolled: boolean | null }
                                     exit="exit"
                                     onMouseEnter={() => setHovered(index)}
                                     onMouseLeave={() => setHovered(null)}
-                                    className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-50"
+                                    className="absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50"
                                 >
                                     {/* Arrow notch */}
-                                    <div className="absolute top-3 left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 bg-zinc-900 border-l border-t border-white/8 z-10" />
+                                    <div className="absolute top-1 left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 bg-zinc-900 border-l border-t border-white/8 z-10" />
 
                                     {/* Panel */}
                                     <div className="relative min-w-70 rounded-xl border border-white/8 bg-zinc-900/90 backdrop-blur-md overflow-hidden shadow-2xl shadow-black/40">

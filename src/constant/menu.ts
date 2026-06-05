@@ -42,6 +42,44 @@ export const NavMenu: MenuType[] = [
         ]
     },
     {
+        name: "Sectors",
+        path: "/sector",
+        subMenu: [
+            {
+                name: "Healthcare",
+                path: "/sector/healthcare"
+            },
+            {
+                name: "Travel & Tourism",
+                path: "/sector/travel-and-tourism"
+            },
+            {
+                name: "FMCG",
+                path: "/sector/fmcg"
+            },
+            {
+                name: "Education",
+                path: "/sector/education"
+            },
+            {
+                name: "Automotive",
+                path: "/sector/automative"
+            },
+            {
+                name: "Retail",
+                path: "/sector/retail"
+            },
+            {
+                name: "Corporate",
+                path: "/sector/corporate"
+            },
+            {
+                name: "E-Commerce",
+                path: "/sector/e-commerce"
+            },
+        ]
+    },
+    {
         name: "Our Works",
         path: "/our-works",
         subMenu: null
