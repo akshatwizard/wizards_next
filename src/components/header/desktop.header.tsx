@@ -100,12 +100,12 @@ export default function DesktopHeader({ scrolled }: { scrolled: boolean | null }
                             </button>
                         )}
 
-                        {/* Active/Hovered indicator */}
+                        {/* Active indicator */}
                         <AnimatePresence mode="popLayout">
                             {isActive && (
                                 <Span
                                     layoutId="active-nav"
-                                    className={`overflow-hidden absolute block w-full inset-x-0 h-2/3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-zinc-900 rounded-lg -z-10`}
+                                    className={`overflow-hidden absolute block w-full inset-x-0 h-1/2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-zinc-900 rounded-lg -z-10`}
                                     transition={{ type: "tween", ease: [0.22, 1, 0.36, 1], duration: 0.4 }}
                                 >
                                     <span className="absolute -bottom-px inset-x-0 h-0.5 bg-linear-to-r from-transparent via-blue-600 to-transparent" />
@@ -117,7 +117,7 @@ export default function DesktopHeader({ scrolled }: { scrolled: boolean | null }
                             {!isActive && isHovered && (
                                 <Span
                                     layoutId="hovered-nav"
-                                    className={`overflow-hidden absolute block w-full inset-x-0 h-2/3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-zinc-900 rounded-lg -z-10`}
+                                    className={`overflow-hidden absolute block w-full inset-x-0 h-1/2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-zinc-900 rounded-lg -z-10`}
                                     transition={{ type: "tween", ease: [0.22, 1, 0.36, 1], duration: 0.4 }}
                                 >
                                 </Span>
