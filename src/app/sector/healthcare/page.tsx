@@ -10,6 +10,8 @@ import SectorStatsBanner from '@/components/sectors/sector_stats_banner'
 import SectorCaseStudy from '@/components/sectors/sector_case_studyes'
 import SectorProjects from '@/components/sectors/sector_projects'
 import SectorMidCTA from '@/components/sectors/sector_cta'
+import SectorClientList from '@/components/sectors/sector_client_list'
+import SectorTrust from '@/components/sectors/sector_why_choose_us'
 
 export const metadata: Metadata = {
     title: 'Digital Marketing for Healthcare | Wizards Next',

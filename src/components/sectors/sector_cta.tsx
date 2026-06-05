@@ -23,7 +23,7 @@ export default function SectorMidCTA({ data }: { data: SectorMidCTAType }) {
                             }} />
 
                         <div className="relative z-10 max-w-2xl mx-auto">
-                            <h2 className="font-syne text-2xl sm:text-3xl font-extrabold text-zinc-50 tracking-tight leading-tight mb-3">
+                            <h2 className="text-2xl sm:text-3xl font-medium text-zinc-200 tracking-tight leading-tight mb-3">
                                 {data.heading}
                             </h2>
                             <p className="text-zinc-400 text-[13.5px] font-light leading-relaxed mb-8">
