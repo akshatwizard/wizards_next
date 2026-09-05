@@ -2,6 +2,7 @@ import { Section, Wrapper } from './ui/sections'
 import { HeroBackground } from './ui/hero-background'
 import { PageHeading } from './ui/headings'
 import Link from 'next/link'
+import Image from 'next/image'
 import { FadeUp } from './ui/motion_components'
 import { Shield, ShieldCheck } from 'lucide-react'
 
@@ -24,7 +25,7 @@ export default function HeroSection() {
 
                         <FadeUp delay={0.05}>
                             <PageHeading className='font-medium'>
-                                We Don't Just Market. We <span className='font-sora! text-amber-600'>Ignite</span> <br />Your <span className='font-sora! text-amber-600'>Brand</span>
+                                We Don&apos;t Just Market. We <span className='font-sora! text-amber-600'>Ignite</span> <br />Your <span className='font-sora! text-amber-600'>Brand</span>
                             </PageHeading>
                         </FadeUp>
 
@@ -80,6 +81,19 @@ export default function HeroSection() {
                             </span>
                         </FadeUp>
 
+                    </div>
+
+                    <div className='w-full h-full flex items-center justify-center relative mt-6 lg:mt-0'>
+                        <FadeUp delay={0.2} className="relative w-full max-w-[420px] lg:max-w-full">
+                            <Image
+                                src="/images/services-neon-network.webp"
+                                alt="Illustrated map of Wizards Next's services — branding, marketing, content, video, web development, e-commerce, and AI, connected as one growth system"
+                                width={1024}
+                                height={1536}
+                                priority
+                                className="w-full h-auto object-contain select-none pointer-events-none drop-shadow-[0_0_50px_rgba(217,119,6,0.12)]"
+                            />
+                        </FadeUp>
                     </div>
                 </div>
             </Wrapper>

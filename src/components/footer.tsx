@@ -2,9 +2,39 @@ import Link from "next/link";
 import { Wrapper } from "./ui/sections";
 
 const services = [
-    "Social Media Marketing", "Meta & Google Ads", "Brand Creation",
-    "Web & App Dev", "Shopify Setup", "Video & Podcast",
+    { label: "Social Media Planning", href: "/services/social-media" },
+    { label: "Content Creation", href: "/services/content-creation" },
+    { label: "Videography", href: "/services/videography" },
+    { label: "Video Editing", href: "/services/video-editing" },
+    { label: "Influencer Marketing", href: "/services/influencer-marketing" },
+    { label: "Performance Marketing", href: "/services/performance-marketing" },
+    { label: "Google & Meta Ads", href: "/services/google-meta-ads-management" },
+    { label: "WhatsApp Marketing", href: "/services/whatsapp-marketing" },
+    { label: "SEO Consultancy", href: "/services/seo-consultancy" },
+    { label: "Analytics & Reporting", href: "/services/analytics-reporting" },
+    { label: "Brand Creation", href: "/services/brand-designing" },
+    { label: "Graphic Design", href: "/services/graphic-designing" },
+    { label: "Corporate Profiles", href: "/services/corporate-profile-creation" },
+    { label: "Website Development", href: "/services/website-development" },
+    { label: "Mobile App Development", href: "/services/app-dev" },
+    { label: "E-Commerce Development", href: "/services/ecommerce-development" },
+    { label: "E-Commerce Management", href: "/services/ecommerce-management" },
+    { label: "AI Consultancy", href: "/services/ai-consultancy" },
 ];
+
+const sectors = [
+    { label: "Healthcare", href: "/sector/healthcare" },
+    { label: "Travel & Tourism", href: "/sector/travel-and-tourism" },
+    { label: "FMCG", href: "/sector/fmcg" },
+    { label: "Education", href: "/sector/education" },
+    { label: "Automotive", href: "/sector/automotive" },
+    { label: "Retail", href: "/sector/retail" },
+    { label: "Corporate", href: "/sector/corporate" },
+    { label: "E-Commerce", href: "/sector/e-commerce" },
+    { label: "Food & Dining", href: "/sector/food-and-dining" },
+    { label: "Local Services", href: "/sector/local-services" },
+];
+
 const company = [
     { label: "About Us", href: "/about" },
     { label: "Our Work", href: "/our-works" },
@@ -24,14 +54,25 @@ const socials = [
     { label: "Yt", href: "#" },
 ];
 
+function ColumnHeading({ children }: { children: React.ReactNode }) {
+    return (
+        <p
+            className="text-zinc-100 font-semibold text-[12px] tracking-wide mb-4"
+            style={{ fontFamily: "'Syne', sans-serif" }}
+        >
+            {children}
+        </p>
+    );
+}
+
 export default function Footer() {
     return (
         <footer className="bg-zinc-800/20 border-t border-zinc-900 px-8 pb-6">
             <Wrapper className="pb-0! gap-0!">
                 <div
-                    className="grid gap-8 mb-10 lg:grid-cols-[1.3fr_1fr_1fr_1fr] md:grid-cols-2 grid-cols-1"
+                    className="grid gap-8 mb-10 lg:grid-cols-[1.1fr_1.6fr_1fr_1fr] md:grid-cols-2 grid-cols-1"
                 >
-                    {/* Brand */}
+                    {/* Brand + Contact */}
                     <div>
                         <p
                             className="font-extrabold text-xl text-zinc-100 tracking-tight mb-2"
@@ -40,11 +81,11 @@ export default function Footer() {
                             WIZARDS<span className="text-amber-600">.</span>
                         </p>
                         <p className="text-zinc-500 text-[12px] font-light leading-relaxed max-w-50 mb-4">
-                            Your growth partner for social media, ads, branding, web & content.
+                            Your one-stop growth partner for marketing, branding, web development, and AI-assisted workflows.
                         </p>
 
                         {/* Text-label social buttons */}
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 mb-6">
                             {socials.map(({ label, href }) => (
                                 <a
                                     key={label}
@@ -56,51 +97,9 @@ export default function Footer() {
                                 </a>
                             ))}
                         </div>
-                    </div>
 
-                    {/* Services */}
-                    <div>
-                        <p
-                            className="text-zinc-100 font-semibold text-[12px] tracking-wide mb-4"
-                            style={{ fontFamily: "'Syne', sans-serif" }}
-                        >
-                            Services
-                        </p>
+                        <ColumnHeading>Contact</ColumnHeading>
                         <div className="flex flex-col gap-2">
-                            {services.map((s) => (
-                                <a key={s} href="#" className="text-zinc-500 text-[12px] hover:text-amber-600 transition-colors duration-200">
-                                    {s}
-                                </a>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Company */}
-                    <div>
-                        <p
-                            className="text-zinc-100 font-semibold text-[12px] tracking-wide mb-4"
-                            style={{ fontFamily: "'Syne', sans-serif" }}
-                        >
-                            Company
-                        </p>
-                        <div className="flex flex-col gap-2">
-                            {company.map(({ label, href }) => (
-                                <Link key={label} href={href} className="text-zinc-500 text-[12px] hover:text-amber-600 transition-colors duration-200">
-                                    {label}
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Contact + Legal */}
-                    <div>
-                        <p
-                            className="text-zinc-100 font-semibold text-[12px] tracking-wide mb-4"
-                            style={{ fontFamily: "'Syne', sans-serif" }}
-                        >
-                            Contact
-                        </p>
-                        <div className="flex flex-col gap-2 mb-6">
                             <a href="mailto:akshat@wizards.co.in" className="text-zinc-500 text-[12px] hover:text-amber-600 transition-colors duration-200">
                                 akshat@wizards.co.in
                             </a>
@@ -109,12 +108,43 @@ export default function Footer() {
                             </a>
                             <span className="text-zinc-500 text-[12px]">Varanasi, UP — India</span>
                         </div>
-                        <p
-                            className="text-zinc-100 font-semibold text-[12px] tracking-wide mb-3"
-                            style={{ fontFamily: "'Syne', sans-serif" }}
-                        >
-                            Legal
-                        </p>
+                    </div>
+
+                    {/* Services — full list, two sub-columns */}
+                    <div>
+                        <ColumnHeading>Services</ColumnHeading>
+                        <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+                            {services.map(({ label, href }) => (
+                                <Link key={label} href={href} className="text-zinc-500 text-[12px] hover:text-amber-600 transition-colors duration-200">
+                                    {label}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Sectors — new */}
+                    <div>
+                        <ColumnHeading>Sectors</ColumnHeading>
+                        <div className="flex flex-col gap-2">
+                            {sectors.map(({ label, href }) => (
+                                <Link key={label} href={href} className="text-zinc-500 text-[12px] hover:text-amber-600 transition-colors duration-200">
+                                    {label}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Company + Legal */}
+                    <div>
+                        <ColumnHeading>Company</ColumnHeading>
+                        <div className="flex flex-col gap-2 mb-6">
+                            {company.map(({ label, href }) => (
+                                <Link key={label} href={href} className="text-zinc-500 text-[12px] hover:text-amber-600 transition-colors duration-200">
+                                    {label}
+                                </Link>
+                            ))}
+                        </div>
+                        <ColumnHeading>Legal</ColumnHeading>
                         <div className="flex flex-col gap-2">
                             {legal.map(({ label, href }) => (
                                 <Link key={label} href={href} className="text-zinc-500 text-[12px] hover:text-amber-600 transition-colors duration-200">
