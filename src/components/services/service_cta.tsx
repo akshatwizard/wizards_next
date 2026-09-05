@@ -28,7 +28,7 @@ export default function ServiceCTA() {
                             <span className="text-amber-500">great?</span>
                         </h2>
                         <p className="text-zinc-400 text-[14px] font-light max-w-md mx-auto mb-8">
-                            Tell us about your project and we'll send a proposal within 24 hours.
+                            Tell us about your project and we&apos;ll send a proposal within 24 hours.
                             No agency fluff — just a straight conversation.
                         </p>
                         <div className="flex flex-wrap items-center justify-center gap-3">
@@ -36,7 +36,7 @@ export default function ServiceCTA() {
                                 className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 active:scale-[0.97] text-black text-[13px] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200">
                                 Start your project <ArrowRight size={15} />
                             </Link>
-                            <Link href="https://wa.me/91XXXXXXXXXX"
+                            <Link href="https://wa.me/919935070000"
                                 className="inline-flex items-center gap-2 border border-zinc-700 hover:border-zinc-600 text-zinc-300 text-[13px] font-medium px-7 py-3.5 rounded-xl transition-all duration-200">
                                 WhatsApp us
                                 <ExternalLink size={13} />

@@ -168,7 +168,7 @@ export const HealthcareSectorCaseStudy = {
     badge: 'Case studies',
     heading: (
         <>
-            Practices we've helped{' '}
+            Practices we&apos;ve helped{' '}
             <span className="text-amber-500">grow</span>
         </>
     ),
@@ -207,7 +207,7 @@ export const HealthcareSectorProjects = {
     badge: 'Projects',
     heading: (
         <>
-            Work we've done in{' '}
+            Work we&apos;ve done in{' '}
             <span className="text-amber-500">healthcare</span>
         </>
     ),

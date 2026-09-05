@@ -1,16 +1,11 @@
 import { Metadata } from 'next'
-import ServiceTestimonial from '@/components/services/service_testimonial'
 import ServiceFAQ from '@/components/services/service_faq'
 import ServiceCTA from '@/components/services/service_cta'
-import { HealthcareSectorHero, HealthcareSectorAudience, HealthcareSectorCaseStudy, HealthcareSectorClients, HealthcareSectorFAQ, HealthcareSectorMidCTA, HealthcareSectorProjects, HealthcareSectorServices, HealthcareSectorStats, HealthcareSectorTestimonials, HealthcareSectorTrust } from '@/constant/sectors/healthcare'
+import { HealthcareSectorAudience, HealthcareSectorFAQ, HealthcareSectorServices, HealthcareSectorStats, HealthcareSectorTrust, HealthcareSectorHero } from '@/constant/sectors/healthcare'
 import SectorHero from '@/components/sectors/sector_hero'
 import SectorAudience from '@/components/sectors/sector_audience'
 import SectorServices from '@/components/sectors/sector_services'
 import SectorStatsBanner from '@/components/sectors/sector_stats_banner'
-import SectorCaseStudy from '@/components/sectors/sector_case_studyes'
-import SectorProjects from '@/components/sectors/sector_projects'
-import SectorMidCTA from '@/components/sectors/sector_cta'
-import SectorClientList from '@/components/sectors/sector_client_list'
 import SectorTrust from '@/components/sectors/sector_why_choose_us'
 
 export const metadata: Metadata = {
@@ -25,12 +20,7 @@ export default function HealthcareSectorPage() {
             <SectorAudience data={HealthcareSectorAudience} />
             <SectorServices data={HealthcareSectorServices} />
             <SectorStatsBanner data={HealthcareSectorStats} />
-            <SectorCaseStudy data={HealthcareSectorCaseStudy} />
-            <SectorProjects data={HealthcareSectorProjects} />
-            <SectorMidCTA data={HealthcareSectorMidCTA} />
-            <SectorClientList data={HealthcareSectorClients} />
             <SectorTrust data={HealthcareSectorTrust} />
-            <ServiceTestimonial data={HealthcareSectorTestimonials} />
             <ServiceFAQ data={HealthcareSectorFAQ} />
             <ServiceCTA />
         </main>

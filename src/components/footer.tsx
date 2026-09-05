@@ -1,11 +1,21 @@
+import Link from "next/link";
 import { Wrapper } from "./ui/sections";
 
 const services = [
     "Social Media Marketing", "Meta & Google Ads", "Brand Creation",
     "Web & App Dev", "Shopify Setup", "Video & Podcast",
 ];
-const company = ["About Us", "Our Work", "Team", "Blog", "Careers", "Contact"];
-const legal = ["Privacy Policy", "Terms of Service"];
+const company = [
+    { label: "About Us", href: "/about" },
+    { label: "Our Work", href: "/our-works" },
+    { label: "Blog", href: "/blogs" },
+    { label: "Careers", href: "/careers" },
+    { label: "Contact", href: "/contact" },
+];
+const legal = [
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms of Service", href: "/terms-of-service" },
+];
 
 const socials = [
     { label: "Ig", href: "#" },
@@ -74,10 +84,10 @@ export default function Footer() {
                             Company
                         </p>
                         <div className="flex flex-col gap-2">
-                            {company.map((c) => (
-                                <a key={c} href="#" className="text-zinc-500 text-[12px] hover:text-amber-600 transition-colors duration-200">
-                                    {c}
-                                </a>
+                            {company.map(({ label, href }) => (
+                                <Link key={label} href={href} className="text-zinc-500 text-[12px] hover:text-amber-600 transition-colors duration-200">
+                                    {label}
+                                </Link>
                             ))}
                         </div>
                     </div>
@@ -91,11 +101,13 @@ export default function Footer() {
                             Contact
                         </p>
                         <div className="flex flex-col gap-2 mb-6">
-                            {["hello@wizardsnext.com", "+91 98765 43210", "Varanasi, UP — India"].map((c) => (
-                                <a key={c} href="#" className="text-zinc-500 text-[12px] hover:text-amber-600 transition-colors duration-200">
-                                    {c}
-                                </a>
-                            ))}
+                            <a href="mailto:akshat@wizards.co.in" className="text-zinc-500 text-[12px] hover:text-amber-600 transition-colors duration-200">
+                                akshat@wizards.co.in
+                            </a>
+                            <a href="tel:+917339474554" className="text-zinc-500 text-[12px] hover:text-amber-600 transition-colors duration-200">
+                                +91 73394 74554
+                            </a>
+                            <span className="text-zinc-500 text-[12px]">Varanasi, UP — India</span>
                         </div>
                         <p
                             className="text-zinc-100 font-semibold text-[12px] tracking-wide mb-3"
@@ -104,10 +116,10 @@ export default function Footer() {
                             Legal
                         </p>
                         <div className="flex flex-col gap-2">
-                            {legal.map((l) => (
-                                <a key={l} href="#" className="text-zinc-500 text-[12px] hover:text-amber-600 transition-colors duration-200">
-                                    {l}
-                                </a>
+                            {legal.map(({ label, href }) => (
+                                <Link key={label} href={href} className="text-zinc-500 text-[12px] hover:text-amber-600 transition-colors duration-200">
+                                    {label}
+                                </Link>
                             ))}
                         </div>
                     </div>
