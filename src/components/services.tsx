@@ -1,97 +1,60 @@
-"use client"
-import React, { useState, useRef } from 'react'
 import { Section, Wrapper } from './ui/sections'
-import { Service, services } from '@/constant/services'
 import { FadeUp } from './ui/motion_components'
 import Link from 'next/link'
+import {
+    Palette, Layout, Award, Layers, PenLine, Camera, Film, Users, Target,
+    MousePointerClick, MessageCircle, Search, PieChart, Globe, Smartphone,
+    ShoppingCart, Boxes, Bot, Mail, ArrowUpRight, LucideIcon,
+} from 'lucide-react'
 
+type ServiceItem = { slug: string; name: string; desc: string; Icon: LucideIcon }
 
-function ServiceCard({ service }: { service: Service }) {
-    const [hovered, setHovered] = useState(false)
-    const videoRef = useRef<HTMLVideoElement>(null)
-    const { Icon, name, desc, tags, video } = service
+const ALL_SERVICES: ServiceItem[] = [
+    { slug: 'brand-designing', name: 'Brand Creation', desc: 'Logo, identity, and guidelines that make you instantly recognisable.', Icon: Palette },
+    { slug: 'graphic-designing', name: 'Graphic Design', desc: 'Scroll-stopping creative — carousels, posters, and ad visuals.', Icon: Layout },
+    { slug: 'corporate-profile-creation', name: 'Corporate Profile Creation', desc: 'Professional company profiles, on video and in print.', Icon: Award },
+    { slug: 'social-media', name: 'Social Media Planning & Management', desc: 'Strategy, content, and community management, done consistently.', Icon: Layers },
+    { slug: 'content-creation', name: 'Content Creation', desc: 'Blog posts, captions, and copy that sound like your brand.', Icon: PenLine },
+    { slug: 'videography', name: 'Videography', desc: 'Professional filming, on location or in studio.', Icon: Camera },
+    { slug: 'video-editing', name: 'Video Editing', desc: 'Reels, YouTube videos, and ad creative, cut for the platform.', Icon: Film },
+    { slug: 'influencer-marketing', name: 'Influencer Marketing', desc: 'Matched with creators whose audience actually converts.', Icon: Users },
+    { slug: 'performance-marketing', name: 'Performance Marketing', desc: 'Budget strategy across paid channels, tied to real ROI.', Icon: Target },
+    { slug: 'google-meta-ads-management', name: 'Google & Meta Ads Management', desc: 'Hands-on campaign management, tested and optimised weekly.', Icon: MousePointerClick },
+    { slug: 'whatsapp-marketing', name: 'WhatsApp Marketing', desc: 'Catalogs, broadcasts, and automation on WhatsApp Business.', Icon: MessageCircle },
+    { slug: 'email-marketing', name: 'Email Marketing', desc: 'Newsletters and automation on the channel you actually own.', Icon: Mail },
+    { slug: 'seo-consultancy', name: 'SEO Consultancy', desc: 'SEO built for how search actually works in your market.', Icon: Search },
+    { slug: 'analytics-reporting', name: 'Analytics & Reporting', desc: 'Clear dashboards and plain-language monthly reporting.', Icon: PieChart },
+    { slug: 'website-development', name: 'Website Development', desc: 'Fast, conversion-focused websites on modern frameworks.', Icon: Globe },
+    { slug: 'app-dev', name: 'Mobile App Development', desc: 'iOS and Android apps built for a real business goal.', Icon: Smartphone },
+    { slug: 'ecommerce-development', name: 'E-Commerce Website Development', desc: 'Online stores built to actually sell.', Icon: ShoppingCart },
+    { slug: 'ecommerce-management', name: 'E-Commerce Business Management', desc: 'Keeping your store running well after launch.', Icon: Boxes },
+    { slug: 'ai-consultancy', name: 'AI Consultancy', desc: 'Helping your team adopt the AI workflow we run ourselves.', Icon: Bot },
+]
 
-    const startVideo = () => {
-        setHovered(true)
-        if (videoRef.current) {
-            videoRef.current.currentTime = 0
-            videoRef.current.play().catch(() => { })
-        }
-    }
-
-    const stopVideo = () => {
-        setHovered(false)
-        if (videoRef.current) {
-            videoRef.current.pause()
-            videoRef.current.currentTime = 0
-        }
-    }
-
+function ServiceCard({ service }: { service: ServiceItem }) {
+    const { Icon, name, desc, slug } = service
     return (
-        <div
-            onMouseEnter={startVideo}
-            onMouseLeave={stopVideo}
-            onTouchStart={startVideo}
-            onTouchEnd={stopVideo}
-            className="h-full relative bg-zinc-900 lg:p-7 md:p-5 p-4 flex flex-col gap-4 transition-colors duration-200 hover:bg-zinc-800/60 cursor-default overflow-hidden"
+        <Link
+            href={`/services/${slug}`}
+            className="group h-full relative bg-zinc-900 lg:p-6 md:p-5 p-4 flex flex-col gap-3.5 transition-colors duration-200 hover:bg-zinc-800/60"
         >
-            {/* Amber top accent bar */}
-            <div className={`absolute top-0 left-0 right-0 h-0.5 transition-colors duration-300 z-10 ${hovered ? "bg-amber-600" : "bg-zinc-700/50"}`} />
+            <div className="absolute top-0 left-0 right-0 h-0.5 bg-zinc-700/50 group-hover:bg-amber-600 transition-colors duration-300" />
 
-            {/* Video overlay */}
-            {video && (
-                <>
-                    <video
-                        ref={videoRef}
-                        src={video}
-                        muted
-                        loop
-                        playsInline
-                        preload="metadata"
-                        className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-500 ${hovered ? 'opacity-100' : 'opacity-0'}`}
-                    />
-                    {/* Scrim — darker so the centered label pops */}
-                    <div className={`absolute inset-0 z-0 transition-opacity duration-500 bg-black/70 ${hovered ? 'opacity-100' : 'opacity-0'}`} />
-                </>
-            )}
-
-            {/* Content — hidden when video is playing */}
-            <div className={`relative z-10 flex flex-col gap-4 h-full transition-opacity duration-300 ${hovered && video ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-                {/* Icon */}
-                <div className="w-11 h-11 rounded-xl flex items-center justify-center border bg-amber-600/10 border-amber-600/20">
-                    <Icon size={20} className="text-amber-600" strokeWidth={1.6} />
-                </div>
-
-                {/* Title */}
-                <h3 className="lg:text-xl md:text-lg text-zinc-200 leading-snug tracking-tight">
-                    {name}
-                </h3>
-
-                {/* Description */}
-                <p className="text-[12.5px] text-zinc-500 leading-relaxed font-light flex-1">
-                    {desc}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-1.5">
-                    {tags.map((tag) => (
-                        <span key={tag} className="text-[10.5px] px-2 py-0.5 rounded border bg-zinc-950 border-zinc-700/60 text-zinc-500">
-                            {tag}
-                        </span>
-                    ))}
-                </div>
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center border bg-amber-600/10 border-amber-600/20 shrink-0">
+                <Icon size={18} className="text-amber-600" strokeWidth={1.6} />
             </div>
 
-            {/* Centered label shown over video */}
-            {video && (
-                <div className={`absolute inset-0 z-20 flex flex-col items-center justify-center gap-2 transition-opacity duration-300 ${hovered ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-                    <div className="w-11 h-11 rounded-xl flex items-center justify-center border bg-amber-600/20 border-amber-600/40">
-                        <Icon size={20} className="text-amber-500" strokeWidth={1.6} />
-                    </div>
-                    <p className="text-sm font-semibold text-zinc-100 tracking-tight">{name}</p>
-                </div>
-            )}
-        </div>
+            <div className="flex items-start justify-between gap-2">
+                <h3 className="text-[15px] text-zinc-200 leading-snug tracking-tight font-medium">
+                    {name}
+                </h3>
+                <ArrowUpRight size={14} className="text-zinc-600 group-hover:text-amber-600 shrink-0 mt-0.5 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-200" />
+            </div>
+
+            <p className="text-[12px] text-zinc-500 leading-relaxed font-light">
+                {desc}
+            </p>
+        </Link>
     )
 }
 
@@ -115,14 +78,14 @@ export default function Services() {
 
                     <p className="text-zinc-500 text-[13.5px] leading-relaxed font-light max-w-xl">
                         From building your identity to running high-converting ad campaigns —
-                        we cover the full digital spectrum so you don't have to juggle
+                        we cover the full digital spectrum so you don&apos;t have to juggle
                         multiple agencies.
                     </p>
                 </FadeUp>
 
                 <div className="grid md:grid-cols-3 grid-cols-1 gap-px border border-zinc-800 rounded-2xl overflow-hidden">
-                    {services.map((svc, idx) => (
-                        <FadeUp delay={idx * 0.1} key={svc.name} className="h-full">
+                    {ALL_SERVICES.map((svc, idx) => (
+                        <FadeUp delay={Math.min(idx * 0.04, 0.4)} key={svc.slug} className="h-full">
                             <ServiceCard service={svc} />
                         </FadeUp>
                     ))}
@@ -130,7 +93,7 @@ export default function Services() {
 
                 <FadeUp delay={0.2} className="flex items-center justify-between pt-4">
                     <span className="text-zinc-600 text-xs">
-                        9 services · Varanasi &amp; Pan-India
+                        {ALL_SERVICES.length} services · Varanasi &amp; Pan-India
                     </span>
                     <Link
                         href="/services"
