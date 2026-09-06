@@ -2,15 +2,34 @@
 
 import Marquee from "react-fast-marquee";
 import { FadeUp } from "./ui/motion_components";
-import { row1, row2 } from "@/constant/clients";
-import Link from "next/link";
+import { clients } from "@/constant/clients";
 import { ArrowUpRight } from "lucide-react";
 import { Section, Wrapper } from "./ui/sections";
 import { LinkPreview } from "./ui/link-preview";
 
-type Client = (typeof row1)[0];
+function getInitials(name: string) {
+    return name
+        .replace(/^Dr\.\s*/i, "")
+        .split(" ")
+        .filter(Boolean)
+        .slice(0, 2)
+        .map((w) => w[0])
+        .join("")
+        .toUpperCase();
+}
 
-function MarqueeItem({ initials, name, href }: Client) {
+const marqueeItems = clients.map((c) => ({
+    initials: getInitials(c.name),
+    name: c.name,
+    href: `/our-works/${c.slug}`,
+}));
+const midpoint = Math.ceil(marqueeItems.length / 2);
+const row1 = marqueeItems.slice(0, midpoint);
+const row2 = marqueeItems.slice(midpoint);
+
+type MarqueeClient = (typeof marqueeItems)[0];
+
+function MarqueeItem({ initials, name, href }: MarqueeClient) {
     return (
         <LinkPreview url={href}>
             <div
@@ -51,7 +70,7 @@ export default function ClientMarquee() {
                     </FadeUp>
                     <FadeUp delay={0.1}>
                         <h2 className="text-3xl lg:text-4xl font-medium tracking-tight text-zinc-100">
-                            Trusted by <span className="font-sora! text-amber-600">20+ brands</span> across India
+                            Trusted by <span className="font-sora! text-amber-600">{clients.length}+ brands</span> across India
                         </h2>
                     </FadeUp>
                     <FadeUp delay={0.15}>

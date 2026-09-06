@@ -1,36 +1,52 @@
-import { SectorClientListType } from "@/types/sector.types";
-import { SectionBadge } from "../services/section_badge";
-import { SectionHeading } from "../services/section_heading";
-import { FadeUp } from "../ui/motion_components";
-import { Section, Wrapper } from "../ui/sections";
+import Link from "next/link"
+import { ArrowUpRight } from "lucide-react"
+import { Section, Wrapper } from "@/components/ui/sections"
+import { FadeUp } from "@/components/ui/motion_components"
+import { getClientsBySector } from "@/constant/clients"
 
-export default function SectorClientList({ data }: { data: SectorClientListType }) {
+export default function SectorClientList({ sectorSlug, sectorLabel }: { sectorSlug: string; sectorLabel: string }) {
+    const sectorClients = getClientsBySector(sectorSlug)
+
     return (
         <Section>
-            <Wrapper>
-                <FadeUp delay={0} className="mb-8">
-                    <SectionBadge label={data.badge ?? 'Our clients'} />
-                    <SectionHeading>{data.heading}</SectionHeading>
+            <Wrapper className="lg:py-12 md:py-10 py-8">
+                <FadeUp>
+                    <p className="text-zinc-100 font-semibold text-lg mb-1">
+                        {sectorLabel} clients we work with
+                    </p>
+                    <p className="text-zinc-500 text-[13px] font-light mb-6">
+                        {sectorClients.length > 0
+                            ? "Real profiles, real work — open one to see the details."
+                            : `Case studies for ${sectorLabel} are on their way — check back soon.`}
+                    </p>
                 </FadeUp>
- 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                    {data.items.map((c, i) => (
-                        <FadeUp key={c.name} delay={i * 0.05}>
-                            <div className="flex items-center gap-3 p-4 rounded-xl border border-zinc-800 bg-zinc-900 hover:border-zinc-700 hover:bg-zinc-800/60 transition-all duration-200">
-                                <div className="size-10 rounded-xl bg-amber-600/15 border border-amber-600/25 flex items-center justify-center text-[11px] font-bold text-amber-600 shrink-0">
-                                    {c.initials}
-                                </div>
-                                <div className="min-w-0">
-                                    <p className="text-[12.5px] font-semibold text-zinc-200 leading-snug truncate">{c.name}</p>
-                                    <p className="text-[10.5px] text-zinc-500">{c.type}</p>
-                                    {c.location && (
-                                        <p className="text-[10px] text-zinc-700">{c.location}</p>
-                                    )}
-                                </div>
-                            </div>
-                        </FadeUp>
-                    ))}
-                </div>
+
+                {sectorClients.length > 0 && (
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                        {sectorClients.map((client, i) => (
+                            <FadeUp key={client.slug} delay={i * 0.05}>
+                                <Link
+                                    href={`/our-works/${client.slug}`}
+                                    className="group block bg-zinc-900 border border-zinc-800 hover:border-amber-600/30 rounded-xl p-4 transition-colors h-full"
+                                >
+                                    <div className="flex items-start justify-between">
+                                        <p className="text-zinc-200 text-[14px] font-medium group-hover:text-amber-600 transition-colors">
+                                            {client.name}
+                                        </p>
+                                        <ArrowUpRight size={14} className="text-zinc-600 group-hover:text-amber-600 transition-colors shrink-0" />
+                                    </div>
+                                    <div className="flex flex-wrap gap-1 mt-2">
+                                        {client.tags.slice(0, 3).map((tag) => (
+                                            <span key={tag} className="text-[9.5px] px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-500 bg-zinc-950">
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </Link>
+                            </FadeUp>
+                        ))}
+                    </div>
+                )}
             </Wrapper>
         </Section>
     )

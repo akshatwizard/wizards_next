@@ -1,15 +1,17 @@
-import { Project, PROJECTS } from '@/constant/projects'
+import { getFeaturedClients } from '@/constant/clients'
+import { Client } from '@/types/client.types'
 import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 import { Section, Wrapper } from './ui/sections'
 import { FadeUp } from './ui/motion_components'
 
 
-function ProjectCard({ project }: { project: Project }) {
-    const { name, industry, tags, colSpan, rowSpan, imgHeight } = project
+function ProjectCard({ client }: { client: Client }) {
+    const { name, sector, tags, colSpan, rowSpan, imgHeight } = client
 
     return (
-        <div
+        <Link
+            href={`/our-works/${client.slug}`}
             className={`h-full group relative bg-zinc-900 rounded-2xl overflow-hidden cursor-pointer border border-zinc-800 hover:border-zinc-700  transition-all duration-200 flex flex-col ${colSpan ?? ''} ${rowSpan ?? ''}`}
         >
             {/* Image placeholder */}
@@ -23,10 +25,10 @@ function ProjectCard({ project }: { project: Project }) {
                         backgroundSize: '24px 24px',
                     }}
                 />
-                {/* Industry label centered */}
+                {/* Sector label centered */}
                 <div className="absolute inset-0 flex items-center justify-center">
                     <span className="text-[11px] font-medium text-zinc-600 tracking-widest uppercase">
-                        {industry}
+                        {sector ?? name}
                     </span>
                 </div>
                 {/* Amber corner accent */}
@@ -48,7 +50,6 @@ function ProjectCard({ project }: { project: Project }) {
                         <p className="font-syne text-[13px] font-bold text-zinc-100 tracking-tight leading-snug">
                             {name}
                         </p>
-                        <p className="text-[10px] text-zinc-500 mt-0.5">{industry}</p>
                     </div>
                     <div className="w-6 h-6 rounded-md bg-zinc-800 border border-zinc-700 flex items-center justify-center shrink-0 group-hover:bg-amber-600/15 group-hover:border-amber-600/40 transition-colors">
                         <ArrowUpRight className="w-2.5 h-2.5 text-zinc-400 group-hover:text-amber-600" />
@@ -65,12 +66,14 @@ function ProjectCard({ project }: { project: Project }) {
                     ))}
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 
 
 export default function PortfolioBentoGrid() {
+    const featured = getFeaturedClients(7)
+
     return (
         <Section>
             <Wrapper>
@@ -91,7 +94,7 @@ export default function PortfolioBentoGrid() {
                     </FadeUp>
                     <FadeUp delay={0.15}>
                         <p className="text-zinc-500 text-[12.5px] font-light max-w-md leading-relaxed">
-                            From brand-new identities to full-funnel campaigns — a snapshot of what we've built for our clients.
+                            From brand-new identities to full-funnel campaigns — a snapshot of what we&apos;ve built for our clients.
                         </p>
                     </FadeUp>
                 </div>
@@ -100,16 +103,16 @@ export default function PortfolioBentoGrid() {
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
                     style={{ gridTemplateRows: 'auto' }}
                 >
-                    {PROJECTS.map((project, index) => (
-                        <ProjectCard key={project.id} project={project} />
+                    {featured.map((client) => (
+                        <ProjectCard key={client.slug} client={client} />
                     ))}
                 </FadeUp>
 
                 {/* Footer CTA */}
                 <FadeUp delay={0.25} className="flex items-center justify-between ">
-                    <span className="text-[12px] text-zinc-600">Showing 7 of 20+ projects</span>
+                    <span className="text-[12px] text-zinc-600">Showing {featured.length} of {getFeaturedClients().length}+ projects</span>
                     <Link
-                        href="#"
+                        href="/our-works"
                         className="inline-flex items-center gap-1.5 bg-amber-600 hover:bg-amber-500 text-black text-[12px] font-semibold px-5 py-2.5 rounded-lg transition-colors"
                     >
                         View all work

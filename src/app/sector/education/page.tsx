@@ -7,6 +7,8 @@ import SectorAudience from '@/components/sectors/sector_audience'
 import SectorServices from '@/components/sectors/sector_services'
 import SectorStatsBanner from '@/components/sectors/sector_stats_banner'
 import SectorTrust from '@/components/sectors/sector_why_choose_us'
+import SectorClientList from '@/components/sectors/sector_client_list'
+import SectorInterestForm from '@/components/sectors/sector_interest_form'
 
 export const metadata: Metadata = {
     title: 'Digital Marketing for Education | Wizards Next',
@@ -21,6 +23,8 @@ export default function EducationSectorPage() {
             <SectorServices data={EducationSectorServices} />
             <SectorStatsBanner data={EducationSectorStats} />
             <SectorTrust data={EducationSectorTrust} />
+            <SectorClientList sectorSlug="education" sectorLabel="Education" />
+            <SectorInterestForm sectorLabel="Education" />
             <ServiceFAQ data={EducationSectorFAQ} />
             <ServiceCTA />
         </main>
