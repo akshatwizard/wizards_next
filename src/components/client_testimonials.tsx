@@ -15,6 +15,14 @@ import { Testimonial, TEXT_TESTIMONIALS, VIDEO_TESTIMONIALS, VideoTestimonial } 
 export default function Testimonials() {
     const [tab, setTab] = useState<Tab>('quotes')
 
+    // No fabricated placeholders — if there's no real testimonial data yet,
+    // this section simply doesn't render, rather than showing an empty
+    // shell or invented quotes. Add real entries to constant/testimonials.ts
+    // and this reappears on its own.
+    if (TEXT_TESTIMONIALS.length === 0 && VIDEO_TESTIMONIALS.length === 0) {
+        return null
+    }
+
     return (
         <Section className="relative overflow-hidden bg-[#09090b]">
             <AnimatedBg />
@@ -85,7 +93,7 @@ function TextCard({ t }: { t: Testimonial }) {
     return (
         <div className="bg-white/4 border border-white/4 rounded-xl p-4 space-y-3 hover:bg-white/[0.07] hover:border-white/[0.14] transition-all duration-300">
             <StarRating rating={t.rating} />
-            <p className="text-sm text-zinc-300 leading-relaxed">"{t.text}"</p>
+            <p className="text-sm text-zinc-300 leading-relaxed">&quot;{t.text}&quot;</p>
             <div className="flex items-center gap-2.5 pt-1">
                 <div className="relative size-8 rounded-full overflow-hidden shrink-0 bg-zinc-800">
                     <Image src={t.profile} alt={t.name} fill className="object-cover" />
@@ -121,7 +129,7 @@ function VideoCard({ v }: { v: VideoTestimonial }) {
                 </div>
             </div>
             <div className="p-3.5">
-                <p className="text-xs text-zinc-300 leading-snug mb-2.5 italic">"{v.quote}"</p>
+                <p className="text-xs text-zinc-300 leading-snug mb-2.5 italic">&quot;{v.quote}&quot;</p>
                 <div className="flex items-center gap-2">
                     <div className="relative size-6 rounded-full overflow-hidden shrink-0 bg-zinc-800">
                         <Image src={v.thumbnail} alt={v.name} fill className="object-cover" />

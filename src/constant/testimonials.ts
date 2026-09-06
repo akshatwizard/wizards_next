@@ -14,106 +14,16 @@ export type VideoTestimonial = {
     quote: string
 }
 
-export const TEXT_TESTIMONIALS: Testimonial[] = [
-    {
-        name: 'Ananya S.',
-        designation: 'Brand Manager',
-        text: 'Every campaign felt thoughtfully crafted. Attention to detail is unmatched — our engagement tripled in two months.',
-        profile: '/images/testimonial/img-1.png',
-        rating: 5,
-    },
-    {
-        name: 'Rohit M.',
-        designation: 'E-Commerce Founder',
-        text: 'Our Shopify store went from ₹40K to ₹4L monthly revenue after they took over our ads. Absolutely incredible.',
-        profile: '/images/testimonial/img-2.png',
-        rating: 4.5,
-    },
-    {
-        name: 'Meera K.',
-        designation: 'Healthcare Professional',
-        text: 'From strategy to execution, the experience is seamless. They built my personal brand from scratch and it shows.',
-        profile: '/images/testimonial/img-3.png',
-        rating: 4,
-    },
-    {
-        name: 'Aditi R.',
-        designation: 'Education Entrepreneur',
-        text: 'The best digital marketing experience I\'ve had.Period.Our leads increased by 250% in the first quarter.',
-        profile: '/images/testimonial/img-4.png',
-        rating: 5,
-    },
-    {
-        name: 'Kunal P.',
-        designation: 'Retail Business Owner',
-        text: 'Professional, warm, and incredibly skilled. They understood our Varanasi audience better than anyone else.',
-        profile: '/images/testimonial/img-5.png',
-        rating: 4.5,
-    },
-    {
-        name: 'Priya T.',
-        designation: 'Restaurant Owner',
-        text: 'Our social media presence transformed overnight. Content quality and consistency is something else entirely.',
-        profile: '/images/testimonial/img-1.png',
-        rating: 5,
-    },
-    {
-        name: 'Vikram S.',
-        designation: 'Corporate Director',
-        text: 'ROI-focused and transparent. Every rupee spent on ads was tracked and optimised. Highly recommend them.',
-        profile: '/images/testimonial/img-2.png',
-        rating: 4.5,
-    },
-    {
-        name: 'Sunita D.',
-        designation: 'Jewellery Retailer',
-        text: 'Sales doubled within 3 months of working with them. The Instagram strategy they built is still running strong.',
-        profile: '/images/testimonial/img-3.png',
-        rating: 5,
-    },
-]
+// Checked wizards.co.in thoroughly (homepage, all 11 industry/portfolio pages,
+// About, Career, Blogs, Contact) — there are no real client testimonial
+// quotes anywhere on the old site to carry over. The previous content here
+// was invented (fake names, fake specific revenue/lead numbers) and has been
+// removed rather than replaced with more invented content.
+//
+// To add real testimonials once collected: add entries here in the same
+// shape. The component below renders nothing when these arrays are empty,
+// so the section simply reappears on its own once real data exists —
+// no other file needs to change.
+export const TEXT_TESTIMONIALS: Testimonial[] = []
 
-export const VIDEO_TESTIMONIALS: VideoTestimonial[] = [
-    {
-        name: 'Ananya S.',
-        designation: 'Brand Manager',
-        thumbnail: '/images/testimonial/img-1.png',
-        videoUrl: '#',
-        quote: 'Tripled our engagement in two months.',
-    },
-    {
-        name: 'Rohit M.',
-        designation: 'E-Commerce Founder',
-        thumbnail: '/images/testimonial/img-2.png',
-        videoUrl: '#',
-        quote: '10× monthly revenue with their ads.',
-    },
-    {
-        name: 'Meera K.',
-        designation: 'Healthcare Professional',
-        thumbnail: '/images/testimonial/img-3.png',
-        videoUrl: '#',
-        quote: 'Built my personal brand from scratch.',
-    },
-    {
-        name: 'Aditi R.',
-        designation: 'Education Entrepreneur',
-        thumbnail: '/images/testimonial/img-4.png',
-        videoUrl: '#',
-        quote: '250% increase in leads, first quarter.',
-    },
-    {
-        name: 'Kunal P.',
-        designation: 'Retail Business Owner',
-        thumbnail: '/images/testimonial/img-5.png',
-        videoUrl: '#',
-        quote: 'They understood our audience perfectly.',
-    },
-    {
-        name: 'Priya T.',
-        designation: 'Restaurant Owner',
-        thumbnail: '/images/testimonial/img-1.png',
-        videoUrl: '#',
-        quote: 'Content quality unlike anything before.',
-    },
-]
+export const VIDEO_TESTIMONIALS: VideoTestimonial[] = []
