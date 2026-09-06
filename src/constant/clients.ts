@@ -24,7 +24,7 @@ export const clients: Client[] = [
     {
         slug: "sadbhavana-banaras",
         name: "Sadbhavana Banaras",
-        sector: "travel-and-tourism",
+        sectors: ["travel-and-tourism"],
         tags: ["Social Media", "Meta Ads", "Branding"],
         services: ["social-media", "google-meta-ads-management", "brand-designing"],
         website: "https://sadbhavanabanaras.com",
@@ -35,7 +35,7 @@ export const clients: Client[] = [
     {
         slug: "banarsi-saree",
         name: "Banarsi Saree",
-        sector: "e-commerce",
+        sectors: ["e-commerce"],
         tags: ["Shopify", "Google Ads", "SEO"],
         services: ["ecommerce-development", "google-meta-ads-management", "seo-consultancy"],
         website: "https://banarsisaree.com",
@@ -46,7 +46,7 @@ export const clients: Client[] = [
     {
         slug: "career-launcher",
         name: "Career Launcher",
-        sector: "education",
+        sectors: ["education"],
         tags: ["Instagram", "Content"],
         services: ["social-media", "content-creation"],
         featured: true,
@@ -55,7 +55,7 @@ export const clients: Client[] = [
     {
         slug: "dr-ankita-chauhan",
         name: "Dr. Ankita Chauhan",
-        sector: "healthcare",
+        sectors: ["healthcare"],
         tags: ["Personal Brand", "Reels"],
         services: ["brand-designing", "videography"],
         website: "https://drankitachauhan.com",
@@ -65,7 +65,7 @@ export const clients: Client[] = [
     {
         slug: "mega-furniture",
         name: "Mega Furniture",
-        sector: "retail",
+        sectors: ["retail"],
         tags: ["Shopify", "Web Dev", "Ads"],
         services: ["ecommerce-development", "website-development", "google-meta-ads-management"],
         featured: true,
@@ -74,7 +74,7 @@ export const clients: Client[] = [
     {
         slug: "swarnam-jewellers",
         name: "Swarnam Jewellers",
-        sector: "retail",
+        sectors: ["retail"],
         tags: ["Instagram", "Branding"],
         services: ["social-media", "brand-designing"],
         featured: true,
@@ -82,13 +82,31 @@ export const clients: Client[] = [
     },
     {
         slug: "gd-sons",
-        name: "GD Sons",
-        sector: "corporate",
-        tags: ["Google Ads", "Analytics", "SEO"],
-        services: ["google-meta-ads-management", "analytics-reporting", "seo-consultancy"],
+        name: "Girdhar Das and Sons",
+        sectors: ["local-services", "e-commerce"],
+        tagline: "A 55-year-old Varanasi retail institution, turned into a pan-India e-commerce brand through consistent content and real customer trust.",
+        tags: ["Website Development", "Social Media", "WhatsApp Marketing", "Influencer Marketing"],
+        services: ["website-development", "whatsapp-marketing", "content-creation", "videography", "google-meta-ads-management", "social-media", "influencer-marketing", "performance-marketing"],
+        overview: "Girdhar Das and Sons has been a fixture in Varanasi's retail scene for 55 years — a trusted name for kitchenware and home appliances long before either of us was in business. We started working together in 2023, beginning with something simple: consistent, honest social media content showing the actual store, the actual products, the actual people behind the counter.\n\nWithin a couple of months, that consistency showed up somewhere unexpected — foot traffic at the physical store increased, as customers began recognising the shop from what they'd already seen online.\n\nThe website had existed for years by that point, but only as a catalogue — a place to browse, not to buy. In December 2025, we helped activate real e-commerce: online payments, cash on delivery, and shipping across India. The first few months were quiet, as first months usually are. By March, that had changed completely — the store now processes consistent orders from across the country every day, ranging from a ₹100 spice tin to a ₹20,000 appliance, some shipments as light as 100g and others as heavy as 45kg.",
+        highlights: [
+            "10,000+ followers on Instagram, 14,000+ on Facebook, 5,100+ subscribers on YouTube",
+            "19.8K clicks and 2.09M impressions on Google Search over the past year (Search Console)",
+            "Online payments, COD, and pan-India shipping live since December 2025",
+            "Daily orders now arriving from across India, ₹100–₹20,000 in order value",
+        ],
         website: "https://gdsons.co.in",
+        links: [
+            { label: "Instagram", url: "https://www.instagram.com/gdsons.vns/" },
+            { label: "Facebook", url: "https://www.facebook.com/gdandsons" },
+            { label: "YouTube", url: "https://www.youtube.com/@GirdharDasandSons" },
+        ],
+        screenshots: [
+            { src: "/images/clients/gd-sons/showcase.png", caption: "Instagram presence, the live product catalogue, and real Search Console performance (19.8K clicks, 2.09M impressions)." },
+        ],
+        heroImage: "/images/clients/gd-sons/hero-illustration.png",
         featured: true,
-        imgHeight: "h-44",
+        colSpan: "col-span-2",
+        imgHeight: "h-52",
     },
 
     // ─── From the old marquee list — name confirmed real, sector/services pending your input ───
@@ -105,27 +123,27 @@ export const clients: Client[] = [
     { slug: "steel-dalal", name: "Steel Dalal", tags: [], services: [] },
 
     // ─── Added from the wizards.co.in deep audit — names/websites confirmed real, no brief yet ───
-    { slug: "shagun-matrimonial", name: "Shagun Matrimonial", sector: "local-services", tags: ["Matchmaking"], services: [], website: "https://www.shaguncentre.com" }, // sector is a best-fit guess — Matrimonial isn't one of the 10 sectors yet
-    { slug: "benaras-boutique", name: "Benaras Boutique", sector: "e-commerce", tags: ["Sarees", "E-Commerce"], services: [], website: "https://www.benarasboutiue.com" },
-    { slug: "earthy-hues", name: "Earthy Hues", sector: "travel-and-tourism", tags: ["Travel"], services: [], website: "https://www.earthyhues.com" },
-    { slug: "modern-world-travel", name: "Modern World Travel", sector: "travel-and-tourism", tags: ["Travel Agency"], services: [], website: "https://www.modernworldtravel.com" },
-    { slug: "travel-zone", name: "Travel Zone", sector: "travel-and-tourism", tags: ["Travel Agency"], services: [], website: "https://www.travelzonevaranasi.com" },
-    { slug: "sunshine-travels", name: "Sunshine Travels", sector: "travel-and-tourism", tags: ["Travel Agency"], services: [], website: "https://www.sunshinetravel.in" },
-    { slug: "divine-soul-resonance", name: "Divine Soul Resonance", sector: "corporate", tags: ["Coaching"], services: [], website: "https://www.divinesoulresonance.com" },
-    { slug: "labour-law-desk", name: "Labour Law Desk", sector: "corporate", tags: ["Legal Services"], services: [], website: "https://www.labourlawdesk.com" },
-    { slug: "soul-creation", name: "Soul Creation", sector: "local-services", tags: ["Photography", "Events"], services: [], website: "https://www.soulcreation.co.in" },
-    { slug: "little-leaf", name: "Little Leaf", sector: "corporate", tags: ["Waste Management"], services: [], website: "https://www.littleleaf.one" },
-    { slug: "only-polymer", name: "Only Polymer", sector: "corporate", tags: ["Manufacturing"], services: [], website: "https://www.onlypolymer.com" },
-    { slug: "ras-polytex", name: "RAS Polytex", sector: "corporate", tags: ["Manufacturing", "Packaging"], services: [], website: "https://www.raspoly.com" },
-    { slug: "ganga-papers", name: "Ganga Papers", sector: "corporate", tags: ["Manufacturing", "Paper"], services: [], website: "https://www.gangapapers.com" },
-    { slug: "alpran-hr-services", name: "Alpran HR Services", sector: "corporate", tags: ["HR Consultancy"], services: [], website: "https://alpranhrservices.com" },
-    { slug: "kailash-rug-industries", name: "Kailash Rug Industries", sector: "corporate", tags: ["Manufacturing", "Export"], services: [], website: "https://www.kailashrug.in" }, // sector is a best-fit guess — Carpets & Rugs isn't one of the 10 sectors yet
-    { slug: "hc-pg-college", name: "Harish Chandra PG College", sector: "education", tags: ["College"], services: [], website: "https://www.hcpgcollege.edu.in" },
-    { slug: "the-elegance", name: "The Elegance", sector: "travel-and-tourism", tags: ["Hotel"], services: [], website: "https://www.theelegance.co.in" },
-    { slug: "hotel-madin", name: "Hotel Madin", sector: "travel-and-tourism", tags: ["Hotel"], services: [], website: "https://www.hotelmadin.com" },
-    { slug: "hotel-runway-inn", name: "Hotel Runway Inn", sector: "travel-and-tourism", tags: ["Hotel"], services: [], website: "https://www.hotelrunwayinn.com" },
-    { slug: "dr-k-shilpi-reddy", name: "Dr. K. Shilpi Reddy", sector: "healthcare", tags: ["Healthcare"], services: [], website: "https://www.drkshilpireddy.com" },
-    { slug: "mrs-mom-event", name: "Mrs. Mom Event", sector: "local-services", tags: ["Events"], services: [], website: "http://www.mrsmomevent.com" },
+    { slug: "shagun-matrimonial", name: "Shagun Matrimonial", sectors: ["local-services"], tags: ["Matchmaking"], services: [], website: "https://www.shaguncentre.com" }, // sector is a best-fit guess — Matrimonial isn't one of the 10 sectors yet
+    { slug: "benaras-boutique", name: "Benaras Boutique", sectors: ["e-commerce"], tags: ["Sarees", "E-Commerce"], services: [], website: "https://www.benarasboutiue.com" },
+    { slug: "earthy-hues", name: "Earthy Hues", sectors: ["travel-and-tourism"], tags: ["Travel"], services: [], website: "https://www.earthyhues.com" },
+    { slug: "modern-world-travel", name: "Modern World Travel", sectors: ["travel-and-tourism"], tags: ["Travel Agency"], services: [], website: "https://www.modernworldtravel.com" },
+    { slug: "travel-zone", name: "Travel Zone", sectors: ["travel-and-tourism"], tags: ["Travel Agency"], services: [], website: "https://www.travelzonevaranasi.com" },
+    { slug: "sunshine-travels", name: "Sunshine Travels", sectors: ["travel-and-tourism"], tags: ["Travel Agency"], services: [], website: "https://www.sunshinetravel.in" },
+    { slug: "divine-soul-resonance", name: "Divine Soul Resonance", sectors: ["corporate"], tags: ["Coaching"], services: [], website: "https://www.divinesoulresonance.com" },
+    { slug: "labour-law-desk", name: "Labour Law Desk", sectors: ["corporate"], tags: ["Legal Services"], services: [], website: "https://www.labourlawdesk.com" },
+    { slug: "soul-creation", name: "Soul Creation", sectors: ["local-services"], tags: ["Photography", "Events"], services: [], website: "https://www.soulcreation.co.in" },
+    { slug: "little-leaf", name: "Little Leaf", sectors: ["corporate"], tags: ["Waste Management"], services: [], website: "https://www.littleleaf.one" },
+    { slug: "only-polymer", name: "Only Polymer", sectors: ["corporate"], tags: ["Manufacturing"], services: [], website: "https://www.onlypolymer.com" },
+    { slug: "ras-polytex", name: "RAS Polytex", sectors: ["corporate"], tags: ["Manufacturing", "Packaging"], services: [], website: "https://www.raspoly.com" },
+    { slug: "ganga-papers", name: "Ganga Papers", sectors: ["corporate"], tags: ["Manufacturing", "Paper"], services: [], website: "https://www.gangapapers.com" },
+    { slug: "alpran-hr-services", name: "Alpran HR Services", sectors: ["corporate"], tags: ["HR Consultancy"], services: [], website: "https://alpranhrservices.com" },
+    { slug: "kailash-rug-industries", name: "Kailash Rug Industries", sectors: ["corporate"], tags: ["Manufacturing", "Export"], services: [], website: "https://www.kailashrug.in" }, // sector is a best-fit guess — Carpets & Rugs isn't one of the 10 sectors yet
+    { slug: "hc-pg-college", name: "Harish Chandra PG College", sectors: ["education"], tags: ["College"], services: [], website: "https://www.hcpgcollege.edu.in" },
+    { slug: "the-elegance", name: "The Elegance", sectors: ["travel-and-tourism"], tags: ["Hotel"], services: [], website: "https://www.theelegance.co.in" },
+    { slug: "hotel-madin", name: "Hotel Madin", sectors: ["travel-and-tourism"], tags: ["Hotel"], services: [], website: "https://www.hotelmadin.com" },
+    { slug: "hotel-runway-inn", name: "Hotel Runway Inn", sectors: ["travel-and-tourism"], tags: ["Hotel"], services: [], website: "https://www.hotelrunwayinn.com" },
+    { slug: "dr-k-shilpi-reddy", name: "Dr. K. Shilpi Reddy", sectors: ["healthcare"], tags: ["Healthcare"], services: [], website: "https://www.drkshilpireddy.com" },
+    { slug: "mrs-mom-event", name: "Mrs. Mom Event", sectors: ["local-services"], tags: ["Events"], services: [], website: "http://www.mrsmomevent.com" },
 ];
 
 export function getClientBySlug(slug: string): Client | undefined {
@@ -133,7 +151,7 @@ export function getClientBySlug(slug: string): Client | undefined {
 }
 
 export function getClientsBySector(sectorSlug: string, excludeSlug?: string): Client[] {
-    return clients.filter((c) => c.sector === sectorSlug && c.slug !== excludeSlug);
+    return clients.filter((c) => c.sectors?.includes(sectorSlug) && c.slug !== excludeSlug);
 }
 
 export function getFeaturedClients(limit?: number): Client[] {

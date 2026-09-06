@@ -49,10 +49,10 @@ function ClientCard({ client }: { client: (typeof clients)[0] }) {
 export default function OurWorksPage() {
     const bySector = SECTOR_ORDER.map(({ slug, label }) => ({
         label,
-        clients: clients.filter((c) => c.sector === slug),
+        clients: clients.filter((c) => c.sectors?.includes(slug)),
     })).filter((g) => g.clients.length > 0);
 
-    const unassigned = clients.filter((c) => !c.sector);
+    const unassigned = clients.filter((c) => !c.sectors || c.sectors.length === 0);
 
     return (
         <main>

@@ -7,7 +7,7 @@ import { FadeUp } from './ui/motion_components'
 
 
 function ProjectCard({ client }: { client: Client }) {
-    const { name, sector, tags, colSpan, rowSpan, imgHeight } = client
+    const { name, sectors, tags, colSpan, rowSpan, imgHeight } = client
 
     return (
         <Link
@@ -28,7 +28,7 @@ function ProjectCard({ client }: { client: Client }) {
                 {/* Sector label centered */}
                 <div className="absolute inset-0 flex items-center justify-center">
                     <span className="text-[11px] font-medium text-zinc-600 tracking-widest uppercase">
-                        {sector ?? name}
+                        {sectors && sectors.length > 0 ? sectors.join(' / ') : name}
                     </span>
                 </div>
                 {/* Amber corner accent */}
