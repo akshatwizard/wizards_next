@@ -84,14 +84,14 @@ export default function HeroSection() {
                     </div>
 
                     <div className='w-full h-full flex items-center justify-center relative mt-6 lg:mt-0'>
-                        <FadeUp delay={0.2} className="relative w-full max-w-[420px] lg:max-w-full">
+                        <FadeUp delay={0.2} className="relative w-full max-w-[300px] sm:max-w-[340px] lg:max-w-[380px] mx-auto">
                             <Image
                                 src="/images/services-neon-network.webp"
                                 alt="Illustrated map of Wizards Next's services — branding, marketing, content, video, web development, e-commerce, and AI, connected as one growth system"
                                 width={1024}
                                 height={1536}
                                 priority
-                                className="w-full h-auto object-contain select-none pointer-events-none drop-shadow-[0_0_50px_rgba(217,119,6,0.12)]"
+                                className="w-full h-auto max-h-[520px] object-contain select-none pointer-events-none drop-shadow-[0_0_50px_rgba(217,119,6,0.12)]"
                             />
                         </FadeUp>
                     </div>

@@ -10,6 +10,7 @@ const services = [
     { label: "Performance Marketing", href: "/services/performance-marketing" },
     { label: "Google & Meta Ads", href: "/services/google-meta-ads-management" },
     { label: "WhatsApp Marketing", href: "/services/whatsapp-marketing" },
+    { label: "Email Marketing", href: "/services/email-marketing" },
     { label: "SEO Consultancy", href: "/services/seo-consultancy" },
     { label: "Analytics & Reporting", href: "/services/analytics-reporting" },
     { label: "Brand Creation", href: "/services/brand-designing" },

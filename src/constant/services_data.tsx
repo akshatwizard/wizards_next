@@ -1,5 +1,5 @@
 import { ServiceHeroTypes, ServiceAboutTypes, ServicesOfferedTypes, ServiceProcessType, ServiceCaseStudyType, ServiceProjectType, ServiceClientListType, ServiceIndustriestype, ServiceTechStackType, ServiceFAQType, ServiceTeamType, ServiceTestimonialsType } from "@/types/service.types";
-import { ArrowRight, Award, BarChart3, Bot, BookOpen, Boxes, Building2, Camera, Car, Code2, CreditCard, Database, Film, GitBranch, Globe, Layers, Layout, LineChart, MapPin, Megaphone, MessageCircle, Music, MousePointerClick, Package, Palette, PenLine, PieChart, Plane, Play, RefreshCw, School, Search, Send, Server, Shield, Shirt, ShoppingCart, Smartphone, Sparkles, Star, Stethoscope, Target, TrendingUp, Users, UtensilsCrossed, Zap } from "lucide-react";
+import { ArrowRight, Award, BarChart3, Bot, BookOpen, Boxes, Building2, Camera, Car, Code2, CreditCard, Database, Film, GitBranch, Globe, Layers, Layout, LineChart, Mail, MapPin, Megaphone, MessageCircle, Music, MousePointerClick, Package, Palette, PenLine, PieChart, Plane, Play, RefreshCw, School, Search, Send, Server, Shield, Shirt, ShoppingCart, Smartphone, Sparkles, Star, Stethoscope, Target, TrendingUp, Users, UtensilsCrossed, Zap } from "lucide-react";
 import { FadeUp } from "@/components/ui/motion_components";
 import { SectionHeading } from "@/components/services/section_heading";
 
@@ -2028,5 +2028,93 @@ export const AIConsultancyFAQ: ServiceFAQType = {
         { q: 'Is ongoing support included, or just the initial setup?', a: 'Initial setup and training are the core scope; ongoing optimisation support is available separately.' },
         { q: 'How do you handle our confidential information during this?', a: 'Discussed and agreed upfront before any workflow audit begins.' },
         { q: 'How is this different from just having our team try AI tools themselves?', a: 'Most teams that try this alone stall at tool selection — this is built around actually embedding it into how the team already works.' },
+    ]
+}
+
+// ─────────────────────────────────────────────────────────────────────────
+// Email Marketing
+// ─────────────────────────────────────────────────────────────────────────
+
+export const EmailMarketingHero: ServiceHeroTypes = {
+    bread_crumb: "Email Marketing",
+    badge: "Email Marketing",
+    heading: (<h1 className="text-4xl md:text-5xl lg:text-6xl leading-[1.08] text-zinc-200 tracking-tight mb-5 font-medium">The channel you{' '} <br /> already{' '}<span className="text-amber-500">own</span></h1>),
+    content: "Newsletters, automated sequences, and lifecycle campaigns that reach people who've already opted in — no algorithm to fight, no platform to pay to be seen.",
+    primaryCta: { label: "Start your project", href: "/contact", icon: ArrowRight },
+    secondaryCta: { label: "See our work", href: "/our-works", icon: Play },
+    clients_initials: ['GD', 'BS'],
+    clientCount: "New offering",
+    stats: [
+        { value: 'Owned', label: 'Channel — no algorithm' },
+        { value: 'Automated', label: 'Lifecycle sequences' },
+        { value: 'Segmented', label: 'Lists, not blasts' },
+        { value: 'Tracked', label: 'Opens, clicks, conversions' },
+    ],
+    right_section: (
+        <FadeUp delay={0.15} className="relative">
+            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
+                <div aria-hidden className="absolute inset-0 opacity-30" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+                <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="flex flex-col items-center gap-3 opacity-20">
+                        <Mail size={48} className="text-amber-600" strokeWidth={1} />
+                        <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">Inbox preview</span>
+                    </div>
+                </div>
+            </div>
+        </FadeUp>
+    )
+}
+
+export const EmailMarketingAbout: ServiceAboutTypes = {
+    badge: "101",
+    heading: (<SectionHeading>An audience you own,{' '} <br /><span className="text-amber-500">not one you&apos;re renting</span></SectionHeading>),
+    content: "Social platforms can change their algorithm overnight. An email list is yours — every subscriber opted in, and every send reaches an inbox directly.",
+    what_is: [
+        { icon: Mail, title: 'Newsletters vs. lifecycle emails', body: 'Regular newsletters keep a brand top of mind; automated lifecycle sequences (welcome, abandoned cart, post-purchase) do the selling while you sleep.' },
+        { icon: Users, title: 'Segmentation over blasts', body: 'The same message to everyone gets ignored. Lists split by behaviour and interest get emails people actually want to open.' },
+        { icon: BarChart3, title: 'Measured properly', body: 'Open rates, click-through, and — the metric that actually matters — conversions traced back to a specific email.' },
+        { icon: Shield, title: 'Deliverability, handled', body: 'Getting into the inbox instead of spam is its own discipline — proper authentication and list hygiene from day one.' },
+    ]
+}
+
+export const EmailMarketingServicesOffered: ServicesOfferedTypes = {
+    badge: "What's included",
+    heading: (<SectionHeading>An owned channel,{' '}<span className="text-amber-500">properly run</span></SectionHeading>),
+    service_list: [
+        { icon: Mail, title: 'Newsletter Campaigns', desc: 'Regular, on-brand sends that keep your audience engaged.', tags: ['Newsletters'] },
+        { icon: RefreshCw, title: 'Automated Sequences', desc: 'Welcome flows, abandoned cart, and post-purchase automation.', tags: ['Automation'] },
+        { icon: Users, title: 'List Segmentation', desc: 'Splitting subscribers by behaviour so messages actually land.', tags: ['Segmentation'] },
+        { icon: BarChart3, title: 'Performance Reporting', desc: 'Opens, clicks, and conversions tracked per campaign.', tags: ['Reporting'] },
+    ]
+}
+
+export const EmailMarketingProcess: ServiceProcessType = {
+    badge: "How we work",
+    heading: (<SectionHeading>From list to inbox —{' '}<span className="text-amber-500">5 clear steps</span></SectionHeading>),
+    process_list: [
+        { num: '01', title: 'List & platform audit', desc: 'What you already have, and whether deliverability is actually healthy.' },
+        { num: '02', title: 'Segmentation strategy', desc: 'Splitting your list by behaviour, not just demographics.' },
+        { num: '03', title: 'Sequence & campaign design', desc: 'Automated flows and a regular newsletter calendar.' },
+        { num: '04', title: 'Send & monitor', desc: 'Deliverability watched closely, not just scheduled and forgotten.' },
+        { num: '05', title: 'Report & refine', desc: 'What\'s converting, and what changes next cycle.' },
+    ]
+}
+
+export const EmailMarketingIndustries: ServiceIndustriestype = {
+    industries_list: [
+        { icon: ShoppingCart, label: 'E-Commerce' },
+        { icon: Shirt, label: 'Retail' },
+        { icon: School, label: 'Education' },
+        { icon: Building2, label: 'Corporate' },
+    ]
+}
+
+export const EmailMarketingFAQ: ServiceFAQType = {
+    faq_list: [
+        { q: 'Do we need a large list to start?', a: 'No — a properly segmented small list often outperforms a large unsegmented one. We\'ll work with what you have.' },
+        { q: 'What platform do you use?', a: 'Scoped to your existing setup or recommended fresh, based on your list size and automation needs.' },
+        { q: 'How do you avoid landing in spam?', a: 'Proper sender authentication, list hygiene, and sending patterns that platforms trust — set up correctly from the start.' },
+        { q: 'Can this integrate with our e-commerce store?', a: 'Yes — abandoned cart and post-purchase flows are some of the highest-return automations we set up.' },
+        { q: 'How often should we send?', a: 'Depends on the business and list — discussed and set deliberately rather than defaulted to a generic schedule.' },
     ]
 }

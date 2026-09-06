@@ -23,6 +23,7 @@ export const NavMenu: MenuType[] = [
             { name: "Performance Marketing", path: "/services/performance-marketing" },
             { name: "Google & Meta Ads Management", path: "/services/google-meta-ads-management" },
             { name: "WhatsApp Marketing", path: "/services/whatsapp-marketing" },
+            { name: "Email Marketing", path: "/services/email-marketing" },
             { name: "SEO Consultancy", path: "/services/seo-consultancy" },
             { name: "Analytics & Reporting", path: "/services/analytics-reporting" },
             { name: "Brand Creation", path: "/services/brand-designing" },

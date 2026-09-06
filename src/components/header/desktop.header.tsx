@@ -126,67 +126,75 @@ export default function DesktopHeader({ scrolled }: { scrolled: boolean | null }
 
                         {/* SubMenu */}
                         <AnimatePresence>
-                            {hasSubMenu && isHovered && (
-                                <motion.div
-                                    variants={menuVariants}
-                                    initial="hidden"
-                                    animate="visible"
-                                    exit="exit"
-                                    onMouseEnter={() => setHovered(index)}
-                                    onMouseLeave={() => setHovered(null)}
-                                    className="absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50"
-                                >
-                                    {/* Arrow notch */}
-                                    <div className="absolute top-1 left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 bg-zinc-900 border-l border-t border-white/8 z-10" />
+                            {hasSubMenu && isHovered && (() => {
+                                const count = item.subMenu!.length;
+                                // 3 columns for long lists (Services), 2 for medium (Sectors), 1 otherwise.
+                                const cols = count > 14 ? 3 : count > 6 ? 2 : 1;
+                                const panelWidth = cols === 3 ? "min-w-[640px]" : cols === 2 ? "min-w-[460px]" : "min-w-70";
+                                const gridCols = cols === 3 ? "grid-cols-3" : cols === 2 ? "grid-cols-2" : "grid-cols-1";
 
-                                    {/* Panel */}
-                                    <div className="relative min-w-70 rounded-xl border border-white/8 bg-zinc-900/90 backdrop-blur-md overflow-hidden shadow-2xl shadow-black/40">
-                                        {/* Top shimmer line */}
-                                        <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/20 to-transparent" />
+                                return (
+                                    <motion.div
+                                        variants={menuVariants}
+                                        initial="hidden"
+                                        animate="visible"
+                                        exit="exit"
+                                        onMouseEnter={() => setHovered(index)}
+                                        onMouseLeave={() => setHovered(null)}
+                                        className="absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50"
+                                    >
+                                        {/* Arrow notch */}
+                                        <div className="absolute top-1 left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 bg-zinc-900 border-l border-t border-white/8 z-10" />
 
-                                        <ul className="p-1.5 flex flex-col gap-0.5">
-                                            {item.subMenu!.map((sub) => {
-                                                const subActive = activePath(sub.path);
-                                                return (
-                                                    <motion.li key={sub.name} variants={itemVariants}>
-                                                        <Link
-                                                            href={sub.path ?? "#"}
-                                                            className={`
-                                                                group/sub relative flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors duration-150
-                                                                ${subActive
-                                                                    ? "bg-white/8 text-white"
-                                                                    : "text-zinc-400 hover:bg-white/5 hover:text-zinc-100"
-                                                                }
-                                                            `}
-                                                        >
-                                                            {/* Active pill */}
-                                                            {subActive && (
-                                                                <span className="absolute left-1 top-1/2 -translate-y-1/2 w-0.5 h-4 rounded-full bg-linear-to-b from-[#FEE800] via-[#FD9E17] to-[#FD7303]" />
-                                                            )}
+                                        {/* Panel */}
+                                        <div className={`relative ${panelWidth} rounded-xl border border-white/8 bg-zinc-900/90 backdrop-blur-md overflow-hidden shadow-2xl shadow-black/40`}>
+                                            {/* Top shimmer line */}
+                                            <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/20 to-transparent" />
 
-                                                            {/* Hover dot */}
-                                                            <span className={`
-                                                                w-1 h-1 rounded-full shrink-0 transition-colors duration-150
-                                                                ${subActive ? "bg-[#FD9E17]" : "bg-zinc-600 group-hover/sub:bg-zinc-400"}
-                                                            `} />
+                                            <ul className={`p-1.5 grid ${gridCols} gap-0.5`}>
+                                                {item.subMenu!.map((sub) => {
+                                                    const subActive = activePath(sub.path);
+                                                    return (
+                                                        <motion.li key={sub.name} variants={itemVariants}>
+                                                            <Link
+                                                                href={sub.path ?? "#"}
+                                                                className={`
+                                                                    group/sub relative flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors duration-150 h-full
+                                                                    ${subActive
+                                                                        ? "bg-white/8 text-white"
+                                                                        : "text-zinc-400 hover:bg-white/5 hover:text-zinc-100"
+                                                                    }
+                                                                `}
+                                                            >
+                                                                {/* Active pill */}
+                                                                {subActive && (
+                                                                    <span className="absolute left-1 top-1/2 -translate-y-1/2 w-0.5 h-4 rounded-full bg-linear-to-b from-[#FEE800] via-[#FD9E17] to-[#FD7303]" />
+                                                                )}
 
-                                                            <span className="text-sm leading-none">{sub.name}</span>
+                                                                {/* Hover dot */}
+                                                                <span className={`
+                                                                    w-1 h-1 rounded-full shrink-0 transition-colors duration-150 mt-0.5
+                                                                    ${subActive ? "bg-[#FD9E17]" : "bg-zinc-600 group-hover/sub:bg-zinc-400"}
+                                                                `} />
 
-                                                            {/* Arrow on hover */}
-                                                            <ArrowRight
-                                                                className={`ml-auto h-3.5 w-3.5 shrink-0   transition-all duration-200  group-hover/sub:translate-x-0 -translate-x-1 ${subActive ? " text-amber-600 opacity-100" : "opacity-0 text-zinc-600 group-hover/sub:opacity-100 group-hover/sub:text-amber-600"} `}
-                                                            />
-                                                        </Link>
-                                                    </motion.li>
-                                                );
-                                            })}
-                                        </ul>
+                                                                <span className="text-[13px] leading-tight">{sub.name}</span>
 
-                                        {/* Bottom shimmer */}
-                                        <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
-                                    </div>
-                                </motion.div>
-                            )}
+                                                                {/* Arrow on hover */}
+                                                                <ArrowRight
+                                                                    className={`ml-auto h-3.5 w-3.5 shrink-0 transition-all duration-200  group-hover/sub:translate-x-0 -translate-x-1 ${subActive ? " text-amber-600 opacity-100" : "opacity-0 text-zinc-600 group-hover/sub:opacity-100 group-hover/sub:text-amber-600"} `}
+                                                                />
+                                                            </Link>
+                                                        </motion.li>
+                                                    );
+                                                })}
+                                            </ul>
+
+                                            {/* Bottom shimmer */}
+                                            <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
+                                        </div>
+                                    </motion.div>
+                                );
+                            })()}
                         </AnimatePresence>
                     </div>
                 );

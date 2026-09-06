@@ -103,6 +103,29 @@ export const clients: Client[] = [
     { slug: "dr-payal-bajaj", name: "Dr. Payal Bajaj", tags: [], services: [] },
     { slug: "dr-ramya-valiveru", name: "Dr. Ramya Valiveru", tags: [], services: [] },
     { slug: "steel-dalal", name: "Steel Dalal", tags: [], services: [] },
+
+    // ─── Added from the wizards.co.in deep audit — names/websites confirmed real, no brief yet ───
+    { slug: "shagun-matrimonial", name: "Shagun Matrimonial", sector: "local-services", tags: ["Matchmaking"], services: [], website: "https://www.shaguncentre.com" }, // sector is a best-fit guess — Matrimonial isn't one of the 10 sectors yet
+    { slug: "benaras-boutique", name: "Benaras Boutique", sector: "e-commerce", tags: ["Sarees", "E-Commerce"], services: [], website: "https://www.benarasboutiue.com" },
+    { slug: "earthy-hues", name: "Earthy Hues", sector: "travel-and-tourism", tags: ["Travel"], services: [], website: "https://www.earthyhues.com" },
+    { slug: "modern-world-travel", name: "Modern World Travel", sector: "travel-and-tourism", tags: ["Travel Agency"], services: [], website: "https://www.modernworldtravel.com" },
+    { slug: "travel-zone", name: "Travel Zone", sector: "travel-and-tourism", tags: ["Travel Agency"], services: [], website: "https://www.travelzonevaranasi.com" },
+    { slug: "sunshine-travels", name: "Sunshine Travels", sector: "travel-and-tourism", tags: ["Travel Agency"], services: [], website: "https://www.sunshinetravel.in" },
+    { slug: "divine-soul-resonance", name: "Divine Soul Resonance", sector: "corporate", tags: ["Coaching"], services: [], website: "https://www.divinesoulresonance.com" },
+    { slug: "labour-law-desk", name: "Labour Law Desk", sector: "corporate", tags: ["Legal Services"], services: [], website: "https://www.labourlawdesk.com" },
+    { slug: "soul-creation", name: "Soul Creation", sector: "local-services", tags: ["Photography", "Events"], services: [], website: "https://www.soulcreation.co.in" },
+    { slug: "little-leaf", name: "Little Leaf", sector: "corporate", tags: ["Waste Management"], services: [], website: "https://www.littleleaf.one" },
+    { slug: "only-polymer", name: "Only Polymer", sector: "corporate", tags: ["Manufacturing"], services: [], website: "https://www.onlypolymer.com" },
+    { slug: "ras-polytex", name: "RAS Polytex", sector: "corporate", tags: ["Manufacturing", "Packaging"], services: [], website: "https://www.raspoly.com" },
+    { slug: "ganga-papers", name: "Ganga Papers", sector: "corporate", tags: ["Manufacturing", "Paper"], services: [], website: "https://www.gangapapers.com" },
+    { slug: "alpran-hr-services", name: "Alpran HR Services", sector: "corporate", tags: ["HR Consultancy"], services: [], website: "https://alpranhrservices.com" },
+    { slug: "kailash-rug-industries", name: "Kailash Rug Industries", sector: "corporate", tags: ["Manufacturing", "Export"], services: [], website: "https://www.kailashrug.in" }, // sector is a best-fit guess — Carpets & Rugs isn't one of the 10 sectors yet
+    { slug: "hc-pg-college", name: "Harish Chandra PG College", sector: "education", tags: ["College"], services: [], website: "https://www.hcpgcollege.edu.in" },
+    { slug: "the-elegance", name: "The Elegance", sector: "travel-and-tourism", tags: ["Hotel"], services: [], website: "https://www.theelegance.co.in" },
+    { slug: "hotel-madin", name: "Hotel Madin", sector: "travel-and-tourism", tags: ["Hotel"], services: [], website: "https://www.hotelmadin.com" },
+    { slug: "hotel-runway-inn", name: "Hotel Runway Inn", sector: "travel-and-tourism", tags: ["Hotel"], services: [], website: "https://www.hotelrunwayinn.com" },
+    { slug: "dr-k-shilpi-reddy", name: "Dr. K. Shilpi Reddy", sector: "healthcare", tags: ["Healthcare"], services: [], website: "https://www.drkshilpireddy.com" },
+    { slug: "mrs-mom-event", name: "Mrs. Mom Event", sector: "local-services", tags: ["Events"], services: [], website: "http://www.mrsmomevent.com" },
 ];
 
 export function getClientBySlug(slug: string): Client | undefined {
