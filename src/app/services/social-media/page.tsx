@@ -1,12 +1,13 @@
 import { Metadata } from 'next'
 import ServiceHero from '@/components/services/service_hero'
 import ServiceAbout from '@/components/services/service_about'
+import ServiceDeepDive from '@/components/services/service_deepdive'
 import ServicesOffered from '@/components/services/service_offered'
 import ServiceProcess from '@/components/services/service_process'
 import ServiceIndustries from '@/components/services/service_industries'
 import ServiceFAQ from '@/components/services/service_faq'
 import ServiceCTA from '@/components/services/service_cta'
-import { SocialMediaHero, SocialMediaAbout, SocialMediaServicesOffered, SocialMediaProcess, SocialMediaIndustries, SocialMediaFAQ } from '@/constant/services_data'
+import { SocialMediaHero, SocialMediaAbout, SocialMediaServicesOffered, SocialMediaProcess, SocialMediaIndustries, SocialMediaFAQ , SocialMediaDeepDive } from '@/constant/services_data'
 
 export const metadata: Metadata = {
     title: 'Social Media Planning & Management | Wizards Next',
@@ -18,6 +19,7 @@ export default function SocialMediaPage() {
         <main>
             <ServiceHero data={SocialMediaHero} />
             <ServiceAbout data={SocialMediaAbout} />
+            <ServiceDeepDive data={SocialMediaDeepDive} />
             <ServicesOffered data={SocialMediaServicesOffered} />
             <ServiceProcess data={SocialMediaProcess} />
             <ServiceIndustries data={SocialMediaIndustries} />

@@ -1,12 +1,13 @@
 import { Metadata } from 'next'
 import ServiceHero from '@/components/services/service_hero'
 import ServiceAbout from '@/components/services/service_about'
+import ServiceDeepDive from '@/components/services/service_deepdive'
 import ServicesOffered from '@/components/services/service_offered'
 import ServiceProcess from '@/components/services/service_process'
 import ServiceIndustries from '@/components/services/service_industries'
 import ServiceFAQ from '@/components/services/service_faq'
 import ServiceCTA from '@/components/services/service_cta'
-import { EcommerceMgmtHero, EcommerceMgmtAbout, EcommerceMgmtServicesOffered, EcommerceMgmtProcess, EcommerceMgmtIndustries, EcommerceMgmtFAQ } from '@/constant/services_data'
+import { EcommerceMgmtHero, EcommerceMgmtAbout, EcommerceMgmtServicesOffered, EcommerceMgmtProcess, EcommerceMgmtIndustries, EcommerceMgmtFAQ , EcommerceMgmtDeepDive } from '@/constant/services_data'
 
 export const metadata: Metadata = {
     title: 'E-Commerce Business Management | Wizards Next',
@@ -18,6 +19,7 @@ export default function EcommerceManagementPage() {
         <main>
             <ServiceHero data={EcommerceMgmtHero} />
             <ServiceAbout data={EcommerceMgmtAbout} />
+            <ServiceDeepDive data={EcommerceMgmtDeepDive} />
             <ServicesOffered data={EcommerceMgmtServicesOffered} />
             <ServiceProcess data={EcommerceMgmtProcess} />
             <ServiceIndustries data={EcommerceMgmtIndustries} />

@@ -1,12 +1,13 @@
 import { Metadata } from 'next'
 import ServiceHero from '@/components/services/service_hero'
 import ServiceAbout from '@/components/services/service_about'
+import ServiceDeepDive from '@/components/services/service_deepdive'
 import ServicesOffered from '@/components/services/service_offered'
 import ServiceProcess from '@/components/services/service_process'
 import ServiceIndustries from '@/components/services/service_industries'
 import ServiceFAQ from '@/components/services/service_faq'
 import ServiceCTA from '@/components/services/service_cta'
-import { GraphicDesignHero, GraphicDesignAbout, GraphicDesignServicesOffered, GraphicDesignProcess, GraphicDesignIndustries, GraphicDesignFAQ } from '@/constant/services_data'
+import { GraphicDesignHero, GraphicDesignAbout, GraphicDesignServicesOffered, GraphicDesignProcess, GraphicDesignIndustries, GraphicDesignFAQ , GraphicDesignDeepDive } from '@/constant/services_data'
 
 export const metadata: Metadata = {
     title: 'Graphic Design Services | Wizards Next',
@@ -18,6 +19,7 @@ export default function GraphicDesigningPage() {
         <main>
             <ServiceHero data={GraphicDesignHero} />
             <ServiceAbout data={GraphicDesignAbout} />
+            <ServiceDeepDive data={GraphicDesignDeepDive} />
             <ServicesOffered data={GraphicDesignServicesOffered} />
             <ServiceProcess data={GraphicDesignProcess} />
             <ServiceIndustries data={GraphicDesignIndustries} />

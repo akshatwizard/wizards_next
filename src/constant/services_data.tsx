@@ -1,4 +1,4 @@
-import { ServiceHeroTypes, ServiceAboutTypes, ServicesOfferedTypes, ServiceProcessType, ServiceCaseStudyType, ServiceProjectType, ServiceClientListType, ServiceIndustriestype, ServiceTechStackType, ServiceFAQType, ServiceTeamType, ServiceTestimonialsType } from "@/types/service.types";
+import { ServiceHeroTypes, ServiceAboutTypes, ServicesOfferedTypes, ServiceProcessType, ServiceCaseStudyType, ServiceProjectType, ServiceClientListType, ServiceIndustriestype, ServiceTechStackType, ServiceFAQType, ServiceTeamType, ServiceTestimonialsType, ServiceDeepDiveType } from "@/types/service.types";
 import { ArrowRight, Award, BarChart3, Bot, BookOpen, Boxes, Building2, Camera, Car, Code2, CreditCard, Database, Film, GitBranch, Globe, Layers, Layout, LineChart, Mail, MapPin, Megaphone, MessageCircle, Music, MousePointerClick, Package, Palette, PenLine, PieChart, Plane, Play, RefreshCw, School, Search, Send, Server, Shield, Shirt, ShoppingCart, Smartphone, Sparkles, Star, Stethoscope, Target, TrendingUp, Users, UtensilsCrossed, Zap } from "lucide-react";
 import { FadeUp } from "@/components/ui/motion_components";
 import { SectionHeading } from "@/components/services/section_heading";
@@ -2117,4 +2117,483 @@ export const EmailMarketingFAQ: ServiceFAQType = {
         { q: 'Can this integrate with our e-commerce store?', a: 'Yes — abandoned cart and post-purchase flows are some of the highest-return automations we set up.' },
         { q: 'How often should we send?', a: 'Depends on the business and list — discussed and set deliberately rather than defaulted to a generic schedule.' },
     ]
+}
+
+// ─────────────────────────────────────────────────────────────────────────
+// Deep-dive sections — long-form, SEO-oriented content per service
+// ─────────────────────────────────────────────────────────────────────────
+
+export const BrandCreationDeepDive: ServiceDeepDiveType = {
+    badge: "In Depth",
+    heading: (
+        <SectionHeading>
+            Everything that goes into{' '}
+            <span className="text-amber-500">building a brand identity</span>
+        </SectionHeading>
+    ),
+    intro: "\"Branding\" gets used loosely enough that it's worth being precise about what's actually involved, what we do at each stage, and what it changes for a business once it's done properly.",
+    sections: [
+        {
+            subheading: "What brand identity actually involves",
+            body: "A complete brand identity is four things working together: a logo (and its variations — icon-only, wordmark-only, dark and light versions), a colour system (not just \"our colour is blue\" but primary, secondary, and accent shades with exact hex and CMYK codes), a typography system (which fonts, at which weights, for headings versus body text), and a set of usage rules that ties it all together. Most businesses have the first piece and improvise the rest, which is exactly why the same brand looks different on their signage, their Instagram, and their invoices. Building it properly means all four pieces are decided once, documented, and handed over — not reinvented every time someone new touches the brand.",
+        },
+        {
+            subheading: "How we approach it, step by step",
+            body: "It starts with discovery — not a design brainstorm, but structured conversations about the business, its customers, and its competitors, plus an honest audit of whatever visual identity already exists. From there we research how similar premium businesses in the category present themselves, specifically to find where there's room to look different rather than blending in. Concept development follows: 2–3 genuinely distinct directions, not three variations of the same idea, each with its own logic for why it fits the business. Once a direction is chosen, we build out the full system — every logo variation, the complete colour and type specification, and the guidelines document that explains how to use all of it correctly. The last step is handover: source files, the guidelines PDF, and rollout support for updating existing materials like signage, packaging, or stationery.",
+        },
+        {
+            subheading: "What this means for your business",
+            body: "The immediate effect is consistency — the same business looks like the same business whether someone sees it on a hoarding, a WhatsApp catalog, or a Google search result. The longer-term effect is that every other service on this site works better once this exists: ad creative built on top of a real brand system converts better than generic templates, and a website designed around documented brand rules looks intentional rather than assembled. For premium and HNI-facing businesses specifically, this consistency is doing quiet credibility work before a single word of copy gets read.",
+        },
+    ],
+}
+
+export const GraphicDesignDeepDive: ServiceDeepDiveType = {
+    badge: "In Depth",
+    heading: (
+        <SectionHeading>
+            What ongoing graphic design{' '}
+            <span className="text-amber-500">actually covers</span>
+        </SectionHeading>
+    ),
+    intro: "Brand Creation happens once. Graphic design is the weekly, sometimes daily, output that runs on top of it — worth explaining in full since it's the highest-frequency work in the whole relationship.",
+    sections: [
+        {
+            subheading: "What ongoing design work actually involves",
+            body: "This covers every visual asset that isn't the brand system itself: social media carousels and single-image posts, Story and Reel cover art, static ad creative sized correctly for Meta and Google's specific format requirements, posters and banners for offline use, simple motion graphics for feeds, and print collateral — brochures, flyers, menu cards, event material. The common thread is volume and frequency: a brand identity gets built once every few years, but a business posting four to six times a week needs a steady, reliable stream of on-brand creative behind that schedule.",
+        },
+        {
+            subheading: "How we approach it, step by step",
+            body: "Every request starts by being checked against the existing brand guidelines — colour, type, logo placement — so nothing ships that a customer would recognise as off-brand. For anything beyond routine social assets, we moodboard a concept before producing it. Production itself happens in batches where possible, since designing five carousels for a week's content is more efficient and more consistent than designing them one at a time as requests trickle in. Revisions follow a structured round rather than open-ended back-and-forth, which is what keeps a 24–48 hour turnaround realistic even at volume. Final delivery includes both the editable source file and platform-ready exports, organised so nothing gets lost between projects.",
+        },
+        {
+            subheading: "What this means for your business",
+            body: "Consistent, high-frequency design output is what makes a content calendar actually executable — a great posting strategy with inconsistent or late creative behind it doesn't survive contact with reality. Because the same team handles your social, ads, and design, creative gets built with the platform and campaign goal in mind from the first draft, rather than designed in isolation and hoped it performs. Over time, this is also what makes a feed or grid look intentional rather than like a series of unrelated posts.",
+        },
+    ],
+}
+
+export const CorporateProfileDeepDive: ServiceDeepDiveType = {
+    badge: "In Depth",
+    heading: (
+        <SectionHeading>
+            What a corporate profile{' '}
+            <span className="text-amber-500">is actually built to do</span>
+        </SectionHeading>
+    ),
+    intro: "This is a newer, more specific offering than most on this site, so it's worth explaining exactly what it covers and where it's genuinely useful, rather than assuming the name is self-explanatory.",
+    sections: [
+        {
+            subheading: "What a corporate profile actually involves",
+            body: "It's a matched pair of assets, not one: a corporate video, typically 2–4 minutes, and a printed or digital company profile document, built together so both tell the same story rather than arriving as disconnected pieces from separate vendors. The video includes professional narration and is cut down into shorter versions for LinkedIn and other platforms. The document is delivered both print-ready and as a digital PDF, structured so it can be updated later without a full rebuild as achievements or services change.",
+        },
+        {
+            subheading: "How we approach it, step by step",
+            body: "Discovery here is different from other services — it's less about design preference and more about understanding the specific use case, because a document built for a tender submission needs a different emphasis than one built for an investor conversation or a first meeting with a large institutional client. From there we write the script for the video and the copy for the document as one connected exercise, so the language and claims are consistent across both. Production follows — on-site filming for the video, layout and design for the document — with structured review rounds on each before final delivery in every format needed: video files, a print-ready document, and a digital version.",
+        },
+        {
+            subheading: "What this means for your business",
+            body: "This exists for the specific moments where a generic website page isn't enough — a tender committee, an investor, or an institutional client evaluating whether to trust a business with a significant engagement. Having a video and a document that tell the same considered story, rather than improvising an explanation in the room, is what this is actually solving for. It's also, practically, one of the more durable assets on this list — built to be updated rather than replaced as the business grows.",
+        },
+    ],
+}
+
+export const SocialMediaDeepDive: ServiceDeepDiveType = {
+    badge: "In Depth",
+    heading: (
+        <SectionHeading>
+            What social media management{' '}
+            <span className="text-amber-500">actually involves, day to day</span>
+        </SectionHeading>
+    ),
+    intro: "\"We do social media\" hides a lot of actual work. Here's what genuinely goes into managing an account properly, week over week.",
+    sections: [
+        {
+            subheading: "What this actually involves",
+            body: "Two distinct layers sit under this one service. Planning is the strategic layer — deciding what content pillars the account is built around, mapping those into a monthly calendar, and setting goals that are specific to the business rather than generic follower targets. Management is the execution layer — publishing on schedule, and responding to comments and direct messages as a business that's actually paying attention, not one that posts and disappears. Both matter: a strong calendar with no community response looks abandoned, and responsive community management with no calendar strategy behind it drifts without direction.",
+        },
+        {
+            subheading: "How we approach it, step by step",
+            body: "We start with an audit of where the account actually stands — not assumptions, the real numbers — and a clear definition of what success means for this specific business. From there, content pillars get built into a real monthly calendar, briefed out to whoever's producing the content, video, or graphics behind each post. Publishing happens on schedule, with comments and DMs handled within business hours and anything sensitive escalated to you rather than improvised. At the end of each month, we review what actually performed against what didn't, and that review is what shapes next month's calendar — the strategy adjusts based on real data, not on a fixed template repeated indefinitely.",
+        },
+        {
+            subheading: "What this means for your business",
+            body: "Consistency is what compounds here — an account posted to reliably, with someone actually answering when a potential customer comments or messages, builds trust in a way that sporadic posting never does. Because planning sits with the same team producing your content and running your ads, the calendar reflects what's actually being promoted elsewhere instead of running as a disconnected workstream nobody's coordinating.",
+        },
+    ],
+}
+
+export const ContentCreationDeepDive: ServiceDeepDiveType = {
+    badge: "In Depth",
+    heading: (
+        <SectionHeading>
+            Everything &quot;content creation&quot;{' '}
+            <span className="text-amber-500">actually covers here</span>
+        </SectionHeading>
+    ),
+    intro: "This sits underneath almost every other service on this site, so it's worth being specific about exactly what gets written, and how.",
+    sections: [
+        {
+            subheading: "What this actually involves",
+            body: "This is the writing layer specifically — blog posts and articles, social captions, ad copy, email copy, and website page copy — separated deliberately from Social Media Planning (the scheduling and community layer) and Graphic Design (the visual layer). Blog and website copy is written with SEO targets in mind; social captions are written for engagement first. Depending on the audience, writing happens in English, Hindi, or Hinglish, matched to how that specific business's customers actually communicate rather than defaulting to one register everywhere.",
+        },
+        {
+            subheading: "How we approach it, step by step",
+            body: "The starting point is defining a brand voice once — how the business should sound in writing — and documenting it so every writer who touches the account stays consistent, rather than each piece sounding like it came from a different person. From there we audit what content already exists across the website, blog, and social channels to find the real gaps, and build an editorial calendar deciding what gets written, in what order, and why. Writing itself goes through two structured revision rounds as standard, checked against both the brand voice and, where relevant, SEO targets, before being delivered in whatever format the destination channel actually needs.",
+        },
+        {
+            subheading: "What this means for your business",
+            body: "Every other service eventually needs words — an ad needs a headline, a landing page needs copy, a blog post needs to actually rank. Having this handled by writers who know the documented brand voice means a business doesn't end up with five different tones of voice depending on which channel someone's reading. For content aimed at search specifically, this pairs directly with SEO Consultancy rather than operating as a separate, disconnected effort.",
+        },
+    ],
+}
+
+export const VideographyDeepDive: ServiceDeepDiveType = {
+    badge: "In Depth",
+    heading: (
+        <SectionHeading>
+            What goes into a videography{' '}
+            <span className="text-amber-500">shoot, before editing even starts</span>
+        </SectionHeading>
+    ),
+    intro: "Videography and Video Editing are deliberately separate services on this site — here's what specifically falls under the filming side.",
+    sections: [
+        {
+            subheading: "What this actually involves",
+            body: "This covers the production side only: planning the shoot, setting up lighting and framing correctly, and capturing enough coverage that an editor actually has something to work with afterward. It includes on-location filming (the more common choice for authenticity in brand and product work), studio filming for interviews and controlled product shots, multi-angle coverage where the format calls for it, and clean on-set audio capture rather than trying to fix sound in post.",
+        },
+        {
+            subheading: "How we approach it, step by step",
+            body: "Pre-production comes first — a shot list, a script or outline, and a decision on location versus studio, made before any equipment shows up. On the day, setup covers lighting, audio, and camera positioning appropriate to that specific location, followed by the shoot itself, filmed with enough coverage that editing has real flexibility rather than one unusable angle. Footage gets reviewed the same day or the next, specifically to confirm everything needed was actually captured before the crew wraps — catching a missing shot after everyone's gone home is far more expensive than catching it on set. Organised footage is then handed off to editing, ours or yours.",
+        },
+        {
+            subheading: "What this means for your business",
+            body: "Good editing cannot fix badly shot footage — this is why the two are treated as genuinely separate disciplines rather than one blurred service. Planning the shoot around the final platform from the start (a Reel needs different framing than a YouTube interview) means the footage arrives at editing already suited to where it's going, rather than needing to be forced into a format it wasn't shot for.",
+        },
+    ],
+}
+
+export const VideoEditingDeepDive: ServiceDeepDiveType = {
+    badge: "In Depth",
+    heading: (
+        <SectionHeading>
+            What actually happens{' '}
+            <span className="text-amber-500">between raw footage and a finished video</span>
+        </SectionHeading>
+    ),
+    intro: "The post-production side, and specifically why the same cut rarely works unchanged across every platform.",
+    sections: [
+        {
+            subheading: "What this actually involves",
+            body: "This is the cutting, pacing, colour, sound, and export layer — taking footage we shot, or footage already provided, and turning it into platform-ready video. That includes captions and subtitles as standard for social formats, consistent colour grading across a video, and music and sound design mixed to match the pacing rather than dropped in as an afterthought. Crucially, this includes producing genuinely different cuts for genuinely different destinations — a Reels edit, a YouTube edit, and an ad-format edit are rarely the same cut resized.",
+        },
+        {
+            subheading: "How we approach it, step by step",
+            body: "Editing starts with reviewing all the available footage and selecting what actually earns a place in the edit — most raw footage doesn't make the final cut, and that's normal. From there, the story and pacing structure gets decided — the order and rhythm that actually holds someone's attention on that specific platform. The edit and colour grade happen next, followed by sound design and music matched to the pacing. Every video goes through two structured revision rounds before final delivery, exported specifically for wherever it's going — vertical and captioned for Reels, standard widescreen for YouTube, and so on.",
+        },
+        {
+            subheading: "What this means for your business",
+            body: "A video that performs well on YouTube frequently underperforms when reposted unchanged to Instagram, because pacing, captions, and framing expectations differ by platform. Treating each destination as its own edit, rather than one video resized everywhere, is specifically what closes that gap — and it applies whether the footage came from our own Videography team or was provided directly.",
+        },
+    ],
+}
+
+export const InfluencerMarketingDeepDive: ServiceDeepDiveType = {
+    badge: "In Depth",
+    heading: (
+        <SectionHeading>
+            What running an influencer campaign{' '}
+            <span className="text-amber-500">actually involves</span>
+        </SectionHeading>
+    ),
+    intro: "Beyond \"find an influencer and send them the product\" — here's what a properly managed campaign actually requires.",
+    sections: [
+        {
+            subheading: "What this actually involves",
+            body: "This covers the full loop: sourcing and vetting creators, negotiating terms and usage rights, briefing the campaign clearly, reviewing content before it goes live, and reporting on what actually happened afterward. For most clients here, that means a set of relevant micro and mid-tier creators rather than one large name — local Varanasi voices for genuinely local reach, or niche creators in the right category for something aimed nationally. Vetting specifically means checking engagement rate and audience quality, not just follower count, since inflated followings are common and easy to miss without checking.",
+        },
+        {
+            subheading: "How we approach it, step by step",
+            body: "It starts with defining who the campaign actually needs to reach and what success looks like — a campaign built for local footfall looks different from one built for national brand awareness. From there, a shortlist gets built and checked for real engagement before anyone's approached. Outreach and negotiation cover deliverables, timelines, and usage rights, agreed upfront so there's no ambiguity later about what the brand can do with the content afterward. Creators are briefed clearly, and content gets reviewed before it goes live rather than after. Performance reporting covers reach, engagement, and any tracked conversions from the campaign.",
+        },
+        {
+            subheading: "What this means for your business",
+            body: "The right micro-influencer with a genuinely engaged, relevant audience routinely outperforms a much larger creator with a broad, disengaged following — this is specifically why vetting matters more than reach. Knowing which local and regional creators have real audiences, versus inflated numbers, is the difference between a campaign that converts and one that just generated impressions.",
+        },
+    ],
+}
+
+export const PerformanceMarketingDeepDive: ServiceDeepDiveType = {
+    badge: "In Depth",
+    heading: (
+        <SectionHeading>
+            What performance marketing{' '}
+            <span className="text-amber-500">actually means, beyond the buzzword</span>
+        </SectionHeading>
+    ),
+    intro: "This sits above Google & Meta Ads Management specifically — here's the distinction, and what the strategy layer actually covers.",
+    sections: [
+        {
+            subheading: "What this actually involves",
+            body: "This is budget and channel strategy — deciding which platforms deserve spend and how that spend should move between them, based on where a customer journey actually goes through paid media. It's distinct from Google & Meta Ads Management, which is the hands-on execution of campaigns once that strategy exists. Performance Marketing covers the media plan, the channel mix recommendation, and ongoing budget reallocation based on what's actually converting — the thinking that decides what the ad accounts should be doing, not the day-to-day account work itself.",
+        },
+        {
+            subheading: "How we approach it, step by step",
+            body: "It starts with mapping the actual customer funnel — where paid media genuinely fits into how someone goes from unaware to a customer for this specific business. From there, channel selection decides which platforms deserve budget based on where the real audience spends time, not by default assumption. That translates into live campaigns in coordination with whoever's executing them, with budget continuously shifted toward what's converting and away from what isn't, reviewed on a weekly cycle. Reporting stays honest about cost per result — actual return, not just reach and impressions dressed up to look like success.",
+        },
+        {
+            subheading: "What this means for your business",
+            body: "Every rupee of ad spend gets tracked back to an actual result under this approach — no budget disappears into a report full of impressions with no bottom line attached. For a business already running ads without a clear strategy behind the spend, this is usually the layer that was missing, not the execution itself.",
+        },
+    ],
+}
+
+export const AdsManagementDeepDive: ServiceDeepDiveType = {
+    badge: "In Depth",
+    heading: (
+        <SectionHeading>
+            What hands-on ads management{' '}
+            <span className="text-amber-500">actually looks like week to week</span>
+        </SectionHeading>
+    ),
+    intro: "The execution layer beneath Performance Marketing — here's what actually happens inside the ad accounts themselves.",
+    sections: [
+        {
+            subheading: "What this actually involves",
+            body: "This covers account setup and structure, audience and keyword research, creative testing, and bid management across Google Search, Display, and Shopping, plus Meta's feed, Reels, and retargeting placements. It includes cleaning up or building the account structure correctly from the outset, since a badly structured account makes every optimisation decision harder later. Retargeting — reaching people who've already shown interest rather than only targeting cold audiences — is included as standard, not an upsell.",
+        },
+        {
+            subheading: "How we approach it, step by step",
+            body: "Account audit and setup comes first, followed by audience and keyword research specific to what this business's customers are actually searching for or responding to. Campaigns get built with clear objectives set per ad set rather than one vague goal for the whole account, and creative and copy variants get tested against each other rather than assumed to work from the first draft. Budget is then shifted toward whatever's actually winning, reviewed weekly, with a full report delivered monthly covering what changed and why.",
+        },
+        {
+            subheading: "What this means for your business",
+            body: "An ad account that's actively managed — tested, adjusted weekly, retargeting built in from the start — performs meaningfully differently from one that was set up once and left alone. Because this sits with the same team handling your creative and analytics, an underperforming ad gets flagged to the design team the same week, not discovered a quarter later in a report nobody reads closely.",
+        },
+    ],
+}
+
+export const WhatsAppMarketingDeepDive: ServiceDeepDiveType = {
+    badge: "In Depth",
+    heading: (
+        <SectionHeading>
+            What WhatsApp marketing{' '}
+            <span className="text-amber-500">actually involves, done properly</span>
+        </SectionHeading>
+    ),
+    intro: "This channel gets misused constantly as an unfiltered broadcast list — here's what a properly built version actually looks like.",
+    sections: [
+        {
+            subheading: "What this actually involves",
+            body: "This is built on the WhatsApp Business API specifically, not the free consumer app, which is what allows product catalogs, broadcasts at real scale, and basic automated response flows. It covers account setup and verification, building and segmenting contact lists so broadcasts reach the right people rather than everyone at once, creating product catalogs customers can browse inside the chat, and setting up approved message templates — Meta reviews and approves these before they can be sent, and we handle that process.",
+        },
+        {
+            subheading: "How we approach it, step by step",
+            body: "Setup and verification come first, followed by list building and segmentation — organising contacts properly rather than treating the whole list as one audience. Catalog and template creation follows, built around whatever products or services actually make sense to showcase this way. Campaigns get scheduled on a cadence that respects the channel rather than sending constantly, and response management covers tracking replies and overall campaign performance, not just send volume.",
+        },
+        {
+            subheading: "What this means for your business",
+            body: "Done with proper consent and segmentation, this becomes one of the highest-open-rate channels a business has — genuinely higher than email, and often checked before Instagram for many Indian consumers. Done badly, as an unconsented blast list, it gets a business blocked or ignored, which is exactly why consent tracking and segmentation are treated as core to the setup rather than optional extras.",
+        },
+    ],
+}
+
+export const EmailMarketingDeepDive: ServiceDeepDiveType = {
+    badge: "In Depth",
+    heading: (
+        <SectionHeading>
+            What running email marketing{' '}
+            <span className="text-amber-500">properly actually involves</span>
+        </SectionHeading>
+    ),
+    intro: "The channel a business actually owns outright — here's the full scope of what running it well requires.",
+    sections: [
+        {
+            subheading: "What this actually involves",
+            body: "This covers regular newsletter campaigns, automated lifecycle sequences (welcome flows, abandoned cart recovery, post-purchase follow-up), list segmentation by behaviour rather than blanket sends, and deliverability — the technical discipline of actually reaching the inbox instead of spam. Automated sequences specifically do ongoing selling work without a person manually sending anything, which is why they're usually the highest-return part of this service once set up correctly.",
+        },
+        {
+            subheading: "How we approach it, step by step",
+            body: "It starts with an audit of whatever list and platform already exists, and an honest check on whether deliverability is actually healthy — a large list sending to a damaged sender reputation performs worse than a small, well-maintained one. Segmentation strategy follows, splitting subscribers by real behaviour rather than just demographics. From there we design the automated sequences and a regular newsletter calendar, then send and monitor deliverability closely rather than scheduling and forgetting. Reporting covers opens, clicks, and — the number that actually matters — conversions traced back to specific emails, feeding directly into what changes next cycle.",
+        },
+        {
+            subheading: "What this means for your business",
+            body: "Unlike social platforms, an email list can't have its algorithm changed overnight by someone else — every subscriber opted in, and every send reaches an inbox directly. For e-commerce clients specifically, abandoned cart and post-purchase automation are usually among the highest-return pieces of the entire marketing stack, running continuously without needing a person to trigger each one.",
+        },
+    ],
+}
+
+export const SEOConsultancyDeepDive: ServiceDeepDiveType = {
+    badge: "In Depth",
+    heading: (
+        <SectionHeading>
+            The complete SEO methodology,{' '}
+            <span className="text-amber-500">explained in full</span>
+        </SectionHeading>
+    ),
+    intro: "This is the service with the most moving parts on this site, and the one where a templated national playbook genuinely fails in a market like Varanasi — worth explaining properly.",
+    sections: [
+        {
+            subheading: "What this actually involves",
+            body: "A full SEO engagement covers a technical and content audit, keyword research done at two levels rather than one, on-page optimisation, technical fixes and schema markup, local SEO including Google Business Profile management, and ongoing monthly reporting. The two-level keyword research is the part most agencies skip: city-level tools like Ubersuggest routinely show near-zero search volume for real, common local searches, because they simply undercount \"near me\" and map-pack behaviour at that scale. Reading that as \"no demand\" is the single most common mistake in local SEO — the correct read is to benchmark true demand nationally, then treat local search terms as intent signals validated by low competition, not by volume figures that were never going to reflect reality at a city level.",
+        },
+        {
+            subheading: "How we approach it, step by step",
+            body: "It begins with a full technical and content audit — a genuine read of what's working, broken, or missing on the site today. Keyword research follows at both levels described above, feeding directly into on-page and content strategy built with real depth, specifically because competitor sites across Varanasi tend to be thin, single-page efforts that never earn meaningful rankings. Technical SEO and schema implementation cover site speed, structured data, and crawlability. Local SEO covers Google Business Profile optimisation, citations, and review strategy. Ongoing reporting tracks rankings and traffic monthly, but the metric that actually matters is leads and enquiries traced back to organic search, not rankings in isolation.",
+        },
+        {
+            subheading: "What this means for your business",
+            body: "Genuine content depth is a real competitive advantage in this specific market, precisely because most local competitors aren't investing in it — a comprehensive page has a real structural edge here that it might not have in a saturated metro market. Results take time regardless of market: technical fixes can show impact within weeks, but genuine ranking movement for competitive terms typically takes three to six months. This work is coordinated directly with Content Creation, since SEO strategy and SEO writing function as one connected process here, not two separate vendors working from different briefs.",
+        },
+    ],
+}
+
+export const AnalyticsReportingDeepDive: ServiceDeepDiveType = {
+    badge: "In Depth",
+    heading: (
+        <SectionHeading>
+            What analytics and reporting{' '}
+            <span className="text-amber-500">actually covers, underneath everything else</span>
+        </SectionHeading>
+    ),
+    intro: "Every other service on this site produces data — this is what turns that into something an owner can actually read and act on.",
+    sections: [
+        {
+            subheading: "What this actually involves",
+            body: "This covers tracking setup (GA4 and conversion pixels implemented correctly, not as an afterthought), a custom KPI dashboard showing what actually matters rather than every available metric, monthly written reports in plain language, and a deeper quarterly review of whether the overall strategy still makes sense. This runs underneath every other service rather than standing apart from it — the goal is one coherent picture of what's happening across ads, social, SEO, and the website, not five separate numbers from five separate places.",
+        },
+        {
+            subheading: "How we approach it, step by step",
+            body: "It starts with defining what actually counts as success for this specific business — not a generic set of marketing metrics, but the numbers that map to real outcomes. Tracking gets implemented correctly across the site and every active campaign, which is frequently the step a business's existing setup got wrong or skipped. From there, one dashboard gets built to show what matters without needing to check five separate platforms. Monthly reporting delivers a plain-language summary rather than a raw data export, and a quarterly review steps back to check whether the overall approach still makes sense rather than just reporting the same numbers indefinitely.",
+        },
+        {
+            subheading: "What this means for your business",
+            body: "Reports here are written to be read by a business owner, not a marketer — plain language, the numbers that actually matter, and a clear statement of what happens next, rather than a wall of charts with no interpretation attached. If existing tracking is already a mess, that's usually the actual starting point of this engagement, since no reporting can be trusted until the tracking underneath it is clean.",
+        },
+    ],
+}
+
+export const WebDevDeepDive: ServiceDeepDiveType = {
+    badge: "In Depth",
+    heading: (
+        <SectionHeading>
+            What goes into a website build,{' '}
+            <span className="text-amber-500">beyond just design</span>
+        </SectionHeading>
+    ),
+    intro: "The most requested service on this site, and the one where \"looks good\" and \"actually works\" are frequently treated as the same thing when they're not.",
+    sections: [
+        {
+            subheading: "What this actually involves",
+            body: "A proper build covers discovery and sitemap planning, design and UX focused on clarity and conversion rather than decoration, development on modern frameworks (Next.js and Laravel, chosen based on what the project actually needs), performance testing across devices, and SEO-ready technical structure built into the site's architecture from the first commit rather than bolted on after launch. A CMS or admin panel is included where the project actually calls for one, scoped rather than added by default.",
+        },
+        {
+            subheading: "How we approach it, step by step",
+            body: "Discovery comes first — understanding the business and mapping the site's real structure before any visual design starts. Design and UX follow, prioritising clarity and a clear path to conversion over visual flourish for its own sake. Development happens on the framework that actually fits the project's needs and scale. QA and performance testing cover cross-device behaviour and page-speed, checked before anything goes live rather than after launch reveals a problem. Launch and handover include full documentation and everything needed to maintain the site going forward, with the client owning the code outright.",
+        },
+        {
+            subheading: "What this means for your business",
+            body: "A site with SEO-ready structure built in from the start avoids the far more expensive retrofit of adding proper structure to a site that was never built for it. Performance testing before launch, rather than after complaints arrive, is what keeps a site fast on the mobile connections most Indian visitors are actually using. This work draws directly on genuinely long-standing, hands-on development experience — not a template customised by a junior team.",
+        },
+    ],
+}
+
+export const MobileAppDeepDive: ServiceDeepDiveType = {
+    badge: "In Depth",
+    heading: (
+        <SectionHeading>
+            What actually goes into deciding{' '}
+            <span className="text-amber-500">— and building — a mobile app</span>
+        </SectionHeading>
+    ),
+    intro: "The question this starts with is usually more important than the build itself: does this genuinely need to be an app, or would a website do the job better?",
+    sections: [
+        {
+            subheading: "What this actually involves",
+            body: "This covers the platform decision (native iOS/Android versus cross-platform, decided after discovery rather than by default), UI/UX design built around how people actually use a phone rather than a shrunk-down website, development, backend integration for whatever data or business logic the app needs, testing across real devices rather than only simulators, and full app store submission and approval handling for both Apple and Google.",
+        },
+        {
+            subheading: "How we approach it, step by step",
+            body: "Discovery here specifically asks what an app needs to do that a website genuinely can't do better — push notifications, offline access, or a materially smoother repeat-customer experience are common real reasons; wanting \"an app\" for its own sake usually isn't. UI/UX design follows, built for phone-native interaction patterns. Development happens cross-platform or native depending on what discovery concluded, tested across real devices before submission. Store deployment covers the full submission and review process with both Apple and Google, handled end to end rather than left to the client to navigate.",
+        },
+        {
+            subheading: "What this means for your business",
+            body: "An app that plugs into an existing website and backend, built by the same team that knows both, avoids becoming a disconnected second system that drifts out of sync with everything else the business runs. Backend complexity and the number of integrations — payments, bookings, notifications — usually drive cost and timeline far more than the visual design itself.",
+        },
+    ],
+}
+
+export const EcommerceDevDeepDive: ServiceDeepDiveType = {
+    badge: "In Depth",
+    heading: (
+        <SectionHeading>
+            Everything involved in building{' '}
+            <span className="text-amber-500">a store that actually sells</span>
+        </SectionHeading>
+    ),
+    intro: "The build phase specifically — what happens before a store goes live, and why getting this right the first time matters more here than almost anywhere else.",
+    sections: [
+        {
+            subheading: "What this actually involves",
+            body: "This covers platform selection (Laravel for fully custom builds, Shopify where that's genuinely the better fit, or a headless Next.js front end), store design and UX built around how the target customer actually shops, product catalog structure planned for the real scale of inventory rather than retrofitted later, and live payment gateway integration — including Razorpay — rather than a demo checkout fixed after launch. Shipping configuration is built in from the start, not treated as a separate afterthought.",
+        },
+        {
+            subheading: "How we approach it, step by step",
+            body: "Platform selection happens first, based on catalog complexity and real customisation needs rather than a default choice. Store design and UX follow, built around the actual shopping behaviour of the target customer. Product catalog setup structures categories, variants, and inventory properly from day one — retrofitting this after launch is far more disruptive than planning it upfront. Payment and shipping integration follows, tested end to end, with the full checkout flow verified before the store goes live rather than discovered broken by a real customer.",
+        },
+        {
+            subheading: "What this means for your business",
+            body: "A checkout that fails partway through, or a shipping rule that wasn't actually configured, costs real sales the moment it happens — which is why this is treated as core build work rather than a post-launch fix. This is the build phase specifically; running the store day to day once it's live — inventory, updates, order-flow issues — is a distinct, ongoing service (E-Commerce Business Management), not assumed to be covered by the build alone.",
+        },
+    ],
+}
+
+export const EcommerceMgmtDeepDive: ServiceDeepDiveType = {
+    badge: "In Depth",
+    heading: (
+        <SectionHeading>
+            What keeping a store running{' '}
+            <span className="text-amber-500">actually requires, after launch</span>
+        </SectionHeading>
+    ),
+    intro: "Launching a store is one project with a clear end date. Running one is a different, ongoing job — here's what that actually involves.",
+    sections: [
+        {
+            subheading: "What this actually involves",
+            body: "This covers product and category updates, inventory coordination as stock changes, order-flow and shipping notification management, ongoing small feature requests and fixes, and a monthly store health report. It's available for stores we built and, after a store health audit, for stores built elsewhere — the operational need is the same either way once a store is genuinely live and being used by real customers.",
+        },
+        {
+            subheading: "How we approach it, step by step",
+            body: "A store health audit comes first — a full, honest check of what's currently working, broken, or out of date, especially important for stores we didn't originally build. Catalog and inventory coordination then runs on an ongoing basis as products and stock levels change. Order flow and notification management keeps checkout, shipping, and email systems actually working correctly, since these are exactly the systems that quietly break without anyone noticing until a customer complains. Feature updates and fixes get handled as the business's needs evolve, with a monthly report covering overall store health and what's coming next.",
+        },
+        {
+            subheading: "What this means for your business",
+            body: "This is genuinely proven in practice rather than a hypothetical offering — the same shipping module updates, notification fixes, and ongoing catalog management already run for an active client's own store. The distinction from the build service matters: this is the operations layer for a store that already exists, priced and scoped differently because the work itself is different — ongoing, reactive, and operational rather than a one-time project with a launch date.",
+        },
+    ],
+}
+
+export const AIConsultancyDeepDive: ServiceDeepDiveType = {
+    badge: "In Depth",
+    heading: (
+        <SectionHeading>
+            What this AI consultancy{' '}
+            <span className="text-amber-500">actually covers, in practice</span>
+        </SectionHeading>
+    ),
+    intro: "The newest service on this site, and the one most likely to be misunderstood as a generic \"use ChatGPT\" suggestion — here's what it specifically means instead.",
+    sections: [
+        {
+            subheading: "What this actually involves",
+            body: "This is a workflow audit and implementation service, not a generic AI-tools briefing. It covers a genuine audit of how planning and development currently happen inside a business, mapping the specific points where an AI-assisted approach would actually help rather than everywhere it theoretically could, recommending and setting up the right tools for that specific team, hands-on training so the team can actually use what's been set up, and documented playbooks for continued use after the engagement ends.",
+        },
+        {
+            subheading: "How we approach it, step by step",
+            body: "The current workflow audit comes first — understanding exactly how planning and development actually happen today, and specifically where the friction is, before any tool gets recommended. AI opportunity mapping follows, identifying the exact points in that workflow worth changing rather than proposing a wholesale, disruptive overhaul. Tool selection and setup are matched to the team's actual needs and existing systems, not a generic off-the-shelf stack. Team training happens hands-on, built around the team's real comfort level rather than assuming a technical audience, and ongoing optimisation checks in as the new workflow beds in, adjusting whatever isn't working.",
+        },
+        {
+            subheading: "What this means for your business",
+            body: "This is demonstrated rather than theoretical — the same AI-assisted approach to planning and development used to run this agency's own project management and content operations is what gets set up for a client's team. Most businesses that try adopting AI tools alone stall at the tool-selection stage, or never get meaningfully past an initial demo — this is specifically built around actually embedding the workflow into how a team already works, not just showing them a capability once.",
+        },
+    ],
 }

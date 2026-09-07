@@ -124,6 +124,16 @@ export type ServiceTechStackType = {
     }[]
 }
 
+export type ServiceDeepDiveType = {
+    badge: string;
+    heading: React.ReactNode;
+    intro?: string;
+    sections: {
+        subheading: string;
+        body: string;
+    }[];
+}
+
 export type ServiceFAQType = {
     faq_list: {
         q: string;

@@ -1,12 +1,13 @@
 import { Metadata } from 'next'
 import ServiceHero from '@/components/services/service_hero'
 import ServiceAbout from '@/components/services/service_about'
+import ServiceDeepDive from '@/components/services/service_deepdive'
 import ServicesOffered from '@/components/services/service_offered'
 import ServiceProcess from '@/components/services/service_process'
 import ServiceIndustries from '@/components/services/service_industries'
 import ServiceFAQ from '@/components/services/service_faq'
 import ServiceCTA from '@/components/services/service_cta'
-import { ContentCreationHero, ContentCreationAbout, ContentCreationServicesOffered, ContentCreationProcess, ContentCreationIndustries, ContentCreationFAQ } from '@/constant/services_data'
+import { ContentCreationHero, ContentCreationAbout, ContentCreationServicesOffered, ContentCreationProcess, ContentCreationIndustries, ContentCreationFAQ , ContentCreationDeepDive } from '@/constant/services_data'
 
 export const metadata: Metadata = {
     title: 'Content Creation Services | Wizards Next',
@@ -18,6 +19,7 @@ export default function ContentCreationPage() {
         <main>
             <ServiceHero data={ContentCreationHero} />
             <ServiceAbout data={ContentCreationAbout} />
+            <ServiceDeepDive data={ContentCreationDeepDive} />
             <ServicesOffered data={ContentCreationServicesOffered} />
             <ServiceProcess data={ContentCreationProcess} />
             <ServiceIndustries data={ContentCreationIndustries} />

@@ -1,12 +1,13 @@
 import { Metadata } from 'next'
 import ServiceHero from '@/components/services/service_hero'
 import ServiceAbout from '@/components/services/service_about'
+import ServiceDeepDive from '@/components/services/service_deepdive'
 import ServicesOffered from '@/components/services/service_offered'
 import ServiceProcess from '@/components/services/service_process'
 import ServiceIndustries from '@/components/services/service_industries'
 import ServiceFAQ from '@/components/services/service_faq'
 import ServiceCTA from '@/components/services/service_cta'
-import { VideographyHero, VideographyAbout, VideographyServicesOffered, VideographyProcess, VideographyIndustries, VideographyFAQ } from '@/constant/services_data'
+import { VideographyHero, VideographyAbout, VideographyServicesOffered, VideographyProcess, VideographyIndustries, VideographyFAQ , VideographyDeepDive } from '@/constant/services_data'
 
 export const metadata: Metadata = {
     title: 'Videography Services | Wizards Next',
@@ -18,6 +19,7 @@ export default function VideographyPage() {
         <main>
             <ServiceHero data={VideographyHero} />
             <ServiceAbout data={VideographyAbout} />
+            <ServiceDeepDive data={VideographyDeepDive} />
             <ServicesOffered data={VideographyServicesOffered} />
             <ServiceProcess data={VideographyProcess} />
             <ServiceIndustries data={VideographyIndustries} />

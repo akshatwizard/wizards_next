@@ -1,12 +1,13 @@
 import { Metadata } from 'next'
 import ServiceHero from '@/components/services/service_hero'
 import ServiceAbout from '@/components/services/service_about'
+import ServiceDeepDive from '@/components/services/service_deepdive'
 import ServicesOffered from '@/components/services/service_offered'
 import ServiceProcess from '@/components/services/service_process'
 import ServiceIndustries from '@/components/services/service_industries'
 import ServiceFAQ from '@/components/services/service_faq'
 import ServiceCTA from '@/components/services/service_cta'
-import { AdsManagementHero, AdsManagementAbout, AdsManagementServicesOffered, AdsManagementProcess, AdsManagementIndustries, AdsManagementFAQ } from '@/constant/services_data'
+import { AdsManagementHero, AdsManagementAbout, AdsManagementServicesOffered, AdsManagementProcess, AdsManagementIndustries, AdsManagementFAQ , AdsManagementDeepDive } from '@/constant/services_data'
 
 export const metadata: Metadata = {
     title: 'Google & Meta Ads Management | Wizards Next',
@@ -18,6 +19,7 @@ export default function GoogleMetaAdsManagementPage() {
         <main>
             <ServiceHero data={AdsManagementHero} />
             <ServiceAbout data={AdsManagementAbout} />
+            <ServiceDeepDive data={AdsManagementDeepDive} />
             <ServicesOffered data={AdsManagementServicesOffered} />
             <ServiceProcess data={AdsManagementProcess} />
             <ServiceIndustries data={AdsManagementIndustries} />
