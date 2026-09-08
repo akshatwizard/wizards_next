@@ -2,6 +2,7 @@ import { ServiceHeroTypes, ServiceAboutTypes, ServicesOfferedTypes, ServiceProce
 import { ArrowRight, Award, BarChart3, Bot, BookOpen, Boxes, Building2, Camera, Car, Code2, CreditCard, Database, Film, GitBranch, Globe, Layers, Layout, LineChart, Mail, MapPin, Megaphone, MessageCircle, Music, MousePointerClick, Package, Palette, PenLine, PieChart, Plane, Play, RefreshCw, School, Search, Send, Server, Shield, Shirt, ShoppingCart, Smartphone, Sparkles, Star, Stethoscope, Target, TrendingUp, Users, UtensilsCrossed, Zap } from "lucide-react";
 import { FadeUp } from "@/components/ui/motion_components";
 import { SectionHeading } from "@/components/services/section_heading";
+import Image from "next/image";
 
 export const WebDevServiceHero: ServiceHeroTypes = {
     bread_crumb: "Web Development",
@@ -33,28 +34,14 @@ export const WebDevServiceHero: ServiceHeroTypes = {
     ],
     right_section: (
         <FadeUp delay={0.15} className="relative">
-            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
-                <div aria-hidden className="absolute inset-0 opacity-30"
-                    style={{
-                        backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
-                        backgroundSize: '24px 24px',
-                    }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3 opacity-20">
-                        <Globe size={48} className="text-amber-600" strokeWidth={1} />
-                        <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">Project screenshot</span>
-                    </div>
-                </div>
-                <div className="absolute top-3 left-3 w-1.5 h-1.5 rounded-full bg-amber-600/60" />
-            </div>
-            <div className="absolute -bottom-4 -left-4 bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 shadow-xl">
-                <p className="font-syne text-xl font-black text-amber-500 leading-none">2.1s</p>
-                <p className="text-[9px] text-zinc-500 mt-0.5 uppercase tracking-widest">Avg load time</p>
-            </div>
-
-            <div className="absolute -top-4 -right-4 bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 shadow-xl">
-                <p className="font-syne text-xl font-black text-amber-500 leading-none">120+</p>
-                <p className="text-[9px] text-zinc-500 mt-0.5 uppercase tracking-widest">Sites launched</p>
+            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 flex items-center justify-center p-10">
+                <Image
+                    src="/images/services/website-development.webp"
+                    alt="Website Development illustration"
+                    width={1254}
+                    height={1254}
+                    className="w-full h-full object-contain drop-shadow-[0_0_40px_rgba(217,119,6,0.15)]"
+                />
             </div>
         </FadeUp>
     )
@@ -435,18 +422,14 @@ export const BrandCreationHero: ServiceHeroTypes = {
     ],
     right_section: (
         <FadeUp delay={0.15} className="relative">
-            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
-                <div aria-hidden className="absolute inset-0 opacity-30"
-                    style={{
-                        backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
-                        backgroundSize: '24px 24px',
-                    }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3 opacity-20">
-                        <Palette size={48} className="text-amber-600" strokeWidth={1} />
-                        <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">Brand system preview</span>
-                    </div>
-                </div>
+            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 flex items-center justify-center p-10">
+                <Image
+                    src="/images/services/brand-designing.webp"
+                    alt="Brand Creation illustration"
+                    width={1254}
+                    height={1254}
+                    className="w-full h-full object-contain drop-shadow-[0_0_40px_rgba(217,119,6,0.15)]"
+                />
             </div>
         </FadeUp>
     )
@@ -563,18 +546,14 @@ export const GraphicDesignHero: ServiceHeroTypes = {
     ],
     right_section: (
         <FadeUp delay={0.15} className="relative">
-            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
-                <div aria-hidden className="absolute inset-0 opacity-30"
-                    style={{
-                        backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
-                        backgroundSize: '24px 24px',
-                    }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3 opacity-20">
-                        <Layout size={48} className="text-amber-600" strokeWidth={1} />
-                        <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">Creative preview</span>
-                    </div>
-                </div>
+            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 flex items-center justify-center p-10">
+                <Image
+                    src="/images/services/graphic-designing.webp"
+                    alt="Graphic Design illustration"
+                    width={1254}
+                    height={1254}
+                    className="w-full h-full object-contain drop-shadow-[0_0_40px_rgba(217,119,6,0.15)]"
+                />
             </div>
         </FadeUp>
     )
@@ -675,15 +654,14 @@ export const CorporateProfileHero: ServiceHeroTypes = {
     ],
     right_section: (
         <FadeUp delay={0.15} className="relative">
-            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
-                <div aria-hidden className="absolute inset-0 opacity-30"
-                    style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3 opacity-20">
-                        <Award size={48} className="text-amber-600" strokeWidth={1} />
-                        <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">Corporate profile preview</span>
-                    </div>
-                </div>
+            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 flex items-center justify-center p-10">
+                <Image
+                    src="/images/services/corporate-profile-creation.webp"
+                    alt="Corporate Profile Creation illustration"
+                    width={1254}
+                    height={1254}
+                    className="w-full h-full object-contain drop-shadow-[0_0_40px_rgba(217,119,6,0.15)]"
+                />
             </div>
         </FadeUp>
     )
@@ -784,15 +762,14 @@ export const SocialMediaHero: ServiceHeroTypes = {
     ],
     right_section: (
         <FadeUp delay={0.15} className="relative">
-            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
-                <div aria-hidden className="absolute inset-0 opacity-30"
-                    style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3 opacity-20">
-                        <Layers size={48} className="text-amber-600" strokeWidth={1} />
-                        <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">Content calendar preview</span>
-                    </div>
-                </div>
+            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 flex items-center justify-center p-10">
+                <Image
+                    src="/images/services/social-media.webp"
+                    alt="Social Media Planning & Management illustration"
+                    width={1254}
+                    height={1254}
+                    className="w-full h-full object-contain drop-shadow-[0_0_40px_rgba(217,119,6,0.15)]"
+                />
             </div>
         </FadeUp>
     )
@@ -893,14 +870,14 @@ export const ContentCreationHero: ServiceHeroTypes = {
     ],
     right_section: (
         <FadeUp delay={0.15} className="relative">
-            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
-                <div aria-hidden className="absolute inset-0 opacity-30" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3 opacity-20">
-                        <PenLine size={48} className="text-amber-600" strokeWidth={1} />
-                        <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">Copy preview</span>
-                    </div>
-                </div>
+            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 flex items-center justify-center p-10">
+                <Image
+                    src="/images/services/content-creation.webp"
+                    alt="Content Creation illustration"
+                    width={1254}
+                    height={1254}
+                    className="w-full h-full object-contain drop-shadow-[0_0_40px_rgba(217,119,6,0.15)]"
+                />
             </div>
         </FadeUp>
     )
@@ -981,14 +958,14 @@ export const VideographyHero: ServiceHeroTypes = {
     ],
     right_section: (
         <FadeUp delay={0.15} className="relative">
-            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
-                <div aria-hidden className="absolute inset-0 opacity-30" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3 opacity-20">
-                        <Camera size={48} className="text-amber-600" strokeWidth={1} />
-                        <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">Production preview</span>
-                    </div>
-                </div>
+            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 flex items-center justify-center p-10">
+                <Image
+                    src="/images/services/videography.webp"
+                    alt="Videography illustration"
+                    width={1254}
+                    height={1254}
+                    className="w-full h-full object-contain drop-shadow-[0_0_40px_rgba(217,119,6,0.15)]"
+                />
             </div>
         </FadeUp>
     )
@@ -1069,14 +1046,14 @@ export const VideoEditingHero: ServiceHeroTypes = {
     ],
     right_section: (
         <FadeUp delay={0.15} className="relative">
-            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
-                <div aria-hidden className="absolute inset-0 opacity-30" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3 opacity-20">
-                        <Film size={48} className="text-amber-600" strokeWidth={1} />
-                        <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">Timeline preview</span>
-                    </div>
-                </div>
+            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 flex items-center justify-center p-10">
+                <Image
+                    src="/images/services/video-editing.webp"
+                    alt="Video Editing illustration"
+                    width={1254}
+                    height={1254}
+                    className="w-full h-full object-contain drop-shadow-[0_0_40px_rgba(217,119,6,0.15)]"
+                />
             </div>
         </FadeUp>
     )
@@ -1157,14 +1134,14 @@ export const InfluencerMarketingHero: ServiceHeroTypes = {
     ],
     right_section: (
         <FadeUp delay={0.15} className="relative">
-            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
-                <div aria-hidden className="absolute inset-0 opacity-30" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3 opacity-20">
-                        <Users size={48} className="text-amber-600" strokeWidth={1} />
-                        <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">Creator matching preview</span>
-                    </div>
-                </div>
+            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 flex items-center justify-center p-10">
+                <Image
+                    src="/images/services/influencer-marketing.webp"
+                    alt="Influencer Marketing illustration"
+                    width={1254}
+                    height={1254}
+                    className="w-full h-full object-contain drop-shadow-[0_0_40px_rgba(217,119,6,0.15)]"
+                />
             </div>
         </FadeUp>
     )
@@ -1245,14 +1222,14 @@ export const PerformanceMarketingHero: ServiceHeroTypes = {
     ],
     right_section: (
         <FadeUp delay={0.15} className="relative">
-            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
-                <div aria-hidden className="absolute inset-0 opacity-30" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3 opacity-20">
-                        <Target size={48} className="text-amber-600" strokeWidth={1} />
-                        <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">Funnel preview</span>
-                    </div>
-                </div>
+            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 flex items-center justify-center p-10">
+                <Image
+                    src="/images/services/performance-marketing.webp"
+                    alt="Performance Marketing illustration"
+                    width={1254}
+                    height={1254}
+                    className="w-full h-full object-contain drop-shadow-[0_0_40px_rgba(217,119,6,0.15)]"
+                />
             </div>
         </FadeUp>
     )
@@ -1333,14 +1310,14 @@ export const AdsManagementHero: ServiceHeroTypes = {
     ],
     right_section: (
         <FadeUp delay={0.15} className="relative">
-            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
-                <div aria-hidden className="absolute inset-0 opacity-30" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3 opacity-20">
-                        <MousePointerClick size={48} className="text-amber-600" strokeWidth={1} />
-                        <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">Campaign dashboard preview</span>
-                    </div>
-                </div>
+            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 flex items-center justify-center p-10">
+                <Image
+                    src="/images/services/google-meta-ads-management.webp"
+                    alt="Google & Meta Ads Management illustration"
+                    width={1254}
+                    height={1254}
+                    className="w-full h-full object-contain drop-shadow-[0_0_40px_rgba(217,119,6,0.15)]"
+                />
             </div>
         </FadeUp>
     )
@@ -1421,14 +1398,14 @@ export const WhatsAppMarketingHero: ServiceHeroTypes = {
     ],
     right_section: (
         <FadeUp delay={0.15} className="relative">
-            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
-                <div aria-hidden className="absolute inset-0 opacity-30" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3 opacity-20">
-                        <MessageCircle size={48} className="text-amber-600" strokeWidth={1} />
-                        <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">WhatsApp catalog preview</span>
-                    </div>
-                </div>
+            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 flex items-center justify-center p-10">
+                <Image
+                    src="/images/services/whatsapp-marketing.webp"
+                    alt="WhatsApp Marketing illustration"
+                    width={1254}
+                    height={1254}
+                    className="w-full h-full object-contain drop-shadow-[0_0_40px_rgba(217,119,6,0.15)]"
+                />
             </div>
         </FadeUp>
     )
@@ -1509,14 +1486,14 @@ export const SEOConsultancyHero: ServiceHeroTypes = {
     ],
     right_section: (
         <FadeUp delay={0.15} className="relative">
-            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
-                <div aria-hidden className="absolute inset-0 opacity-30" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3 opacity-20">
-                        <Search size={48} className="text-amber-600" strokeWidth={1} />
-                        <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">Rankings preview</span>
-                    </div>
-                </div>
+            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 flex items-center justify-center p-10">
+                <Image
+                    src="/images/services/seo-consultancy.webp"
+                    alt="SEO Consultancy illustration"
+                    width={1254}
+                    height={1254}
+                    className="w-full h-full object-contain drop-shadow-[0_0_40px_rgba(217,119,6,0.15)]"
+                />
             </div>
         </FadeUp>
     )
@@ -1598,14 +1575,14 @@ export const AnalyticsReportingHero: ServiceHeroTypes = {
     ],
     right_section: (
         <FadeUp delay={0.15} className="relative">
-            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
-                <div aria-hidden className="absolute inset-0 opacity-30" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3 opacity-20">
-                        <PieChart size={48} className="text-amber-600" strokeWidth={1} />
-                        <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">Dashboard preview</span>
-                    </div>
-                </div>
+            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 flex items-center justify-center p-10">
+                <Image
+                    src="/images/services/analytics-reporting.webp"
+                    alt="Analytics & Reporting illustration"
+                    width={1254}
+                    height={1254}
+                    className="w-full h-full object-contain drop-shadow-[0_0_40px_rgba(217,119,6,0.15)]"
+                />
             </div>
         </FadeUp>
     )
@@ -1686,14 +1663,14 @@ export const MobileAppHero: ServiceHeroTypes = {
     ],
     right_section: (
         <FadeUp delay={0.15} className="relative">
-            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
-                <div aria-hidden className="absolute inset-0 opacity-30" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3 opacity-20">
-                        <Smartphone size={48} className="text-amber-600" strokeWidth={1} />
-                        <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">App preview</span>
-                    </div>
-                </div>
+            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 flex items-center justify-center p-10">
+                <Image
+                    src="/images/services/app-dev.webp"
+                    alt="Mobile App Development illustration"
+                    width={1254}
+                    height={1254}
+                    className="w-full h-full object-contain drop-shadow-[0_0_40px_rgba(217,119,6,0.15)]"
+                />
             </div>
         </FadeUp>
     )
@@ -1782,14 +1759,14 @@ export const EcommerceDevHero: ServiceHeroTypes = {
     ],
     right_section: (
         <FadeUp delay={0.15} className="relative">
-            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
-                <div aria-hidden className="absolute inset-0 opacity-30" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3 opacity-20">
-                        <ShoppingCart size={48} className="text-amber-600" strokeWidth={1} />
-                        <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">Store preview</span>
-                    </div>
-                </div>
+            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 flex items-center justify-center p-10">
+                <Image
+                    src="/images/services/ecommerce-development.webp"
+                    alt="E-Commerce Website Development illustration"
+                    width={1254}
+                    height={1254}
+                    className="w-full h-full object-contain drop-shadow-[0_0_40px_rgba(217,119,6,0.15)]"
+                />
             </div>
         </FadeUp>
     )
@@ -1878,14 +1855,14 @@ export const EcommerceMgmtHero: ServiceHeroTypes = {
     ],
     right_section: (
         <FadeUp delay={0.15} className="relative">
-            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
-                <div aria-hidden className="absolute inset-0 opacity-30" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3 opacity-20">
-                        <Boxes size={48} className="text-amber-600" strokeWidth={1} />
-                        <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">Store operations preview</span>
-                    </div>
-                </div>
+            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 flex items-center justify-center p-10">
+                <Image
+                    src="/images/services/ecommerce-management.webp"
+                    alt="E-Commerce Business Management illustration"
+                    width={1254}
+                    height={1254}
+                    className="w-full h-full object-contain drop-shadow-[0_0_40px_rgba(217,119,6,0.15)]"
+                />
             </div>
         </FadeUp>
     )
@@ -1965,14 +1942,14 @@ export const AIConsultancyHero: ServiceHeroTypes = {
     ],
     right_section: (
         <FadeUp delay={0.15} className="relative">
-            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
-                <div aria-hidden className="absolute inset-0 opacity-30" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3 opacity-20">
-                        <Bot size={48} className="text-amber-600" strokeWidth={1} />
-                        <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">Workflow preview</span>
-                    </div>
-                </div>
+            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 flex items-center justify-center p-10">
+                <Image
+                    src="/images/services/ai-consultancy.webp"
+                    alt="AI Consultancy illustration"
+                    width={1254}
+                    height={1254}
+                    className="w-full h-full object-contain drop-shadow-[0_0_40px_rgba(217,119,6,0.15)]"
+                />
             </div>
         </FadeUp>
     )
@@ -2052,14 +2029,14 @@ export const EmailMarketingHero: ServiceHeroTypes = {
     ],
     right_section: (
         <FadeUp delay={0.15} className="relative">
-            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
-                <div aria-hidden className="absolute inset-0 opacity-30" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3 opacity-20">
-                        <Mail size={48} className="text-amber-600" strokeWidth={1} />
-                        <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">Inbox preview</span>
-                    </div>
-                </div>
+            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 flex items-center justify-center p-10">
+                <Image
+                    src="/images/services/email-marketing.webp"
+                    alt="Email Marketing illustration"
+                    width={1254}
+                    height={1254}
+                    className="w-full h-full object-contain drop-shadow-[0_0_40px_rgba(217,119,6,0.15)]"
+                />
             </div>
         </FadeUp>
     )

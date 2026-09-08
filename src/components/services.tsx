@@ -1,47 +1,51 @@
 import { Section, Wrapper } from './ui/sections'
 import { FadeUp } from './ui/motion_components'
 import Link from 'next/link'
-import {
-    Palette, Layout, Award, Layers, PenLine, Camera, Film, Users, Target,
-    MousePointerClick, MessageCircle, Search, PieChart, Globe, Smartphone,
-    ShoppingCart, Boxes, Bot, Mail, ArrowUpRight, LucideIcon,
-} from 'lucide-react'
+import Image from 'next/image'
+import { ArrowUpRight } from 'lucide-react'
 
-type ServiceItem = { slug: string; name: string; desc: string; Icon: LucideIcon }
+type ServiceItem = { slug: string; name: string; desc: string }
 
 const ALL_SERVICES: ServiceItem[] = [
-    { slug: 'brand-designing', name: 'Brand Creation', desc: 'Logo, identity, and guidelines that make you instantly recognisable.', Icon: Palette },
-    { slug: 'graphic-designing', name: 'Graphic Design', desc: 'Scroll-stopping creative — carousels, posters, and ad visuals.', Icon: Layout },
-    { slug: 'corporate-profile-creation', name: 'Corporate Profile Creation', desc: 'Professional company profiles, on video and in print.', Icon: Award },
-    { slug: 'social-media', name: 'Social Media Planning & Management', desc: 'Strategy, content, and community management, done consistently.', Icon: Layers },
-    { slug: 'content-creation', name: 'Content Creation', desc: 'Blog posts, captions, and copy that sound like your brand.', Icon: PenLine },
-    { slug: 'videography', name: 'Videography', desc: 'Professional filming, on location or in studio.', Icon: Camera },
-    { slug: 'video-editing', name: 'Video Editing', desc: 'Reels, YouTube videos, and ad creative, cut for the platform.', Icon: Film },
-    { slug: 'influencer-marketing', name: 'Influencer Marketing', desc: 'Matched with creators whose audience actually converts.', Icon: Users },
-    { slug: 'performance-marketing', name: 'Performance Marketing', desc: 'Budget strategy across paid channels, tied to real ROI.', Icon: Target },
-    { slug: 'google-meta-ads-management', name: 'Google & Meta Ads Management', desc: 'Hands-on campaign management, tested and optimised weekly.', Icon: MousePointerClick },
-    { slug: 'whatsapp-marketing', name: 'WhatsApp Marketing', desc: 'Catalogs, broadcasts, and automation on WhatsApp Business.', Icon: MessageCircle },
-    { slug: 'email-marketing', name: 'Email Marketing', desc: 'Newsletters and automation on the channel you actually own.', Icon: Mail },
-    { slug: 'seo-consultancy', name: 'SEO Consultancy', desc: 'SEO built for how search actually works in your market.', Icon: Search },
-    { slug: 'analytics-reporting', name: 'Analytics & Reporting', desc: 'Clear dashboards and plain-language monthly reporting.', Icon: PieChart },
-    { slug: 'website-development', name: 'Website Development', desc: 'Fast, conversion-focused websites on modern frameworks.', Icon: Globe },
-    { slug: 'app-dev', name: 'Mobile App Development', desc: 'iOS and Android apps built for a real business goal.', Icon: Smartphone },
-    { slug: 'ecommerce-development', name: 'E-Commerce Website Development', desc: 'Online stores built to actually sell.', Icon: ShoppingCart },
-    { slug: 'ecommerce-management', name: 'E-Commerce Business Management', desc: 'Keeping your store running well after launch.', Icon: Boxes },
-    { slug: 'ai-consultancy', name: 'AI Consultancy', desc: 'Helping your team adopt the AI workflow we run ourselves.', Icon: Bot },
+    { slug: 'brand-designing', name: 'Brand Creation', desc: 'Logo, identity, and guidelines that make you instantly recognisable.' },
+    { slug: 'graphic-designing', name: 'Graphic Design', desc: 'Scroll-stopping creative — carousels, posters, and ad visuals.' },
+    { slug: 'corporate-profile-creation', name: 'Corporate Profile Creation', desc: 'Professional company profiles, on video and in print.' },
+    { slug: 'social-media', name: 'Social Media Planning & Management', desc: 'Strategy, content, and community management, done consistently.' },
+    { slug: 'content-creation', name: 'Content Creation', desc: 'Blog posts, captions, and copy that sound like your brand.' },
+    { slug: 'videography', name: 'Videography', desc: 'Professional filming, on location or in studio.' },
+    { slug: 'video-editing', name: 'Video Editing', desc: 'Reels, YouTube videos, and ad creative, cut for the platform.' },
+    { slug: 'influencer-marketing', name: 'Influencer Marketing', desc: 'Matched with creators whose audience actually converts.' },
+    { slug: 'performance-marketing', name: 'Performance Marketing', desc: 'Budget strategy across paid channels, tied to real ROI.' },
+    { slug: 'google-meta-ads-management', name: 'Google & Meta Ads Management', desc: 'Hands-on campaign management, tested and optimised weekly.' },
+    { slug: 'whatsapp-marketing', name: 'WhatsApp Marketing', desc: 'Catalogs, broadcasts, and automation on WhatsApp Business.' },
+    { slug: 'email-marketing', name: 'Email Marketing', desc: 'Newsletters and automation on the channel you actually own.' },
+    { slug: 'seo-consultancy', name: 'SEO Consultancy', desc: 'SEO built for how search actually works in your market.' },
+    { slug: 'analytics-reporting', name: 'Analytics & Reporting', desc: 'Clear dashboards and plain-language monthly reporting.' },
+    { slug: 'website-development', name: 'Website Development', desc: 'Fast, conversion-focused websites on modern frameworks.' },
+    { slug: 'app-dev', name: 'Mobile App Development', desc: 'iOS and Android apps built for a real business goal.' },
+    { slug: 'ecommerce-development', name: 'E-Commerce Website Development', desc: 'Online stores built to actually sell.' },
+    { slug: 'ecommerce-management', name: 'E-Commerce Business Management', desc: 'Keeping your store running well after launch.' },
+    { slug: 'ai-consultancy', name: 'AI Consultancy', desc: 'Helping your team adopt the AI workflow we run ourselves.' },
 ]
 
 function ServiceCard({ service }: { service: ServiceItem }) {
-    const { Icon, name, desc, slug } = service
+    const { name, desc, slug } = service
     return (
         <Link
             href={`/services/${slug}`}
-            className="group h-full relative bg-zinc-900 lg:p-6 md:p-5 p-4 flex flex-col gap-3.5 transition-colors duration-200 hover:bg-zinc-800/60"
+            className="group h-full relative bg-zinc-900 lg:p-6 md:p-5 p-4 flex flex-col gap-3 transition-colors duration-200 hover:bg-zinc-800/60"
         >
             <div className="absolute top-0 left-0 right-0 h-0.5 bg-zinc-700/50 group-hover:bg-amber-600 transition-colors duration-300" />
 
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center border bg-amber-600/10 border-amber-600/20 shrink-0">
-                <Icon size={18} className="text-amber-600" strokeWidth={1.6} />
+            {/* Icon — 256px source displayed at a fixed small size, no background badge since the artwork already carries its own colour */}
+            <div className="w-12 h-12 shrink-0 relative">
+                <Image
+                    src={`/images/services/icons/${slug}-icon.webp`}
+                    alt={`${name} icon`}
+                    width={256}
+                    height={256}
+                    className="w-full h-full object-contain"
+                />
             </div>
 
             <div className="flex items-start justify-between gap-2">
