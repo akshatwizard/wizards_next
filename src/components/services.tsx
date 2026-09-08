@@ -33,29 +33,30 @@ function ServiceCard({ service }: { service: ServiceItem }) {
     return (
         <Link
             href={`/services/${slug}`}
-            className="group h-full relative bg-zinc-900 lg:p-6 md:p-5 p-4 flex flex-col gap-3 transition-colors duration-200 hover:bg-zinc-800/60"
+            className="group h-full relative bg-zinc-900 lg:p-7 md:p-6 p-5 flex flex-col gap-4 transition-colors duration-200 hover:bg-zinc-800/60"
         >
             <div className="absolute top-0 left-0 right-0 h-0.5 bg-zinc-700/50 group-hover:bg-amber-600 transition-colors duration-300" />
 
-            {/* Icon — 256px source displayed at a fixed small size, no background badge since the artwork already carries its own colour */}
-            <div className="w-12 h-12 shrink-0 relative">
+            {/* Icon — given its own space and a soft ambient glow so it reads as the focal point, not a small corner mark */}
+            <div className="relative w-20 h-20 shrink-0 flex items-center justify-center mb-1">
+                <div className="absolute inset-0 bg-amber-600/10 blur-2xl rounded-full scale-90 group-hover:bg-amber-600/15 transition-colors duration-300" />
                 <Image
                     src={`/images/services/icons/${slug}-icon.webp`}
                     alt={`${name} icon`}
                     width={256}
                     height={256}
-                    className="w-full h-full object-contain"
+                    className="relative w-full h-full object-contain"
                 />
             </div>
 
             <div className="flex items-start justify-between gap-2">
-                <h3 className="text-[15px] text-zinc-200 leading-snug tracking-tight font-medium">
+                <h3 className="text-[19px] text-zinc-200 leading-snug tracking-tight font-semibold">
                     {name}
                 </h3>
-                <ArrowUpRight size={14} className="text-zinc-600 group-hover:text-amber-600 shrink-0 mt-0.5 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-200" />
+                <ArrowUpRight size={16} className="text-zinc-600 group-hover:text-amber-600 shrink-0 mt-1 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-200" />
             </div>
 
-            <p className="text-[12px] text-zinc-500 leading-relaxed font-light">
+            <p className="text-[13px] text-zinc-500 leading-relaxed font-light">
                 {desc}
             </p>
         </Link>
