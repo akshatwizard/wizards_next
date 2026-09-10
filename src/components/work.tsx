@@ -110,7 +110,11 @@ export default function PortfolioBentoGrid() {
 
                 {/* Footer CTA */}
                 <FadeUp delay={0.25} className="flex items-center justify-between ">
-                    <span className="text-[12px] text-zinc-600">Showing {featured.length} of {getFeaturedClients().length}+ projects</span>
+                    {getFeaturedClients().length > featured.length ? (
+                        <span className="text-[12px] text-zinc-600">Showing {featured.length} of {getFeaturedClients().length}+ projects</span>
+                    ) : (
+                        <span className="text-[12px] text-zinc-600">More case studies added regularly</span>
+                    )}
                     <Link
                         href="/our-works"
                         className="inline-flex items-center gap-1.5 bg-amber-600 hover:bg-amber-500 text-black text-[12px] font-semibold px-5 py-2.5 rounded-lg transition-colors"

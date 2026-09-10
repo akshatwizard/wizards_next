@@ -56,6 +56,12 @@ function MarqueeItem({ initials, name, href }: MarqueeClient) {
 }
 
 export default function ClientMarquee() {
+    // A marquee needs multiple items to actually read as "scrolling" —
+    // with only a few clients in the system right now, this section
+    // simply doesn't render rather than looping one or two names.
+    // Reappears on its own once the client list grows back.
+    if (clients.length < 4) return null
+
     return (
         <Section className="overflow-hidden">
 
