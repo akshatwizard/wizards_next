@@ -143,7 +143,7 @@ export default function ClientProfile({ client }: { client: Client }) {
 
                         {bannerImage && (
                             <div className="flex items-center justify-center relative mt-8 lg:mt-0">
-                                <FadeUp delay={0.2} className="relative w-full max-w-[460px] mx-auto rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900">
+                                <FadeUp delay={0.2} className="relative w-full max-w-[460px] mx-auto">
                                     <Image
                                         src={bannerImage.src}
                                         alt={bannerImage.caption ?? `${client.name} — real results`}
@@ -163,24 +163,9 @@ export default function ClientProfile({ client }: { client: Client }) {
             <Section>
                 <Wrapper className="lg:py-10 md:py-8 py-6">
                     {client.overview ? (
-                        <div className={client.heroImage ? "grid lg:grid-cols-[1.4fr_1fr] gap-10 items-start" : ""}>
-                            <FadeUp className="max-w-2xl">
-                                <p className="text-zinc-400 text-[14px] leading-relaxed font-light whitespace-pre-line">
-                                    {client.overview}
-                                </p>
-                                {client.highlights && client.highlights.length > 0 && (
-                                    <ul className="mt-6 flex flex-col gap-2.5">
-                                        {client.highlights.map((h) => (
-                                            <li key={h} className="text-zinc-400 text-[13.5px] flex gap-2">
-                                                <span className="text-amber-600">—</span>{h}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                )}
-                            </FadeUp>
-
+                        <FadeUp className="max-w-2xl">
                             {client.heroImage && (
-                                <FadeUp delay={0.1} className="relative w-full max-w-[280px] mx-auto lg:sticky lg:top-24">
+                                <div className="float-right w-[45%] sm:w-[340px] ml-6 mb-4">
                                     <Image
                                         src={client.heroImage}
                                         alt={`${client.name} — conceptual illustration`}
@@ -188,9 +173,21 @@ export default function ClientProfile({ client }: { client: Client }) {
                                         height={1254}
                                         className="w-full h-auto object-contain select-none pointer-events-none"
                                     />
-                                </FadeUp>
+                                </div>
                             )}
-                        </div>
+                            <p className="text-zinc-200 text-[14px] leading-relaxed font-light whitespace-pre-line text-justify">
+                                {client.overview}
+                            </p>
+                            {client.highlights && client.highlights.length > 0 && (
+                                <ul className="clear-both mt-6 flex flex-col gap-2.5">
+                                    {client.highlights.map((h) => (
+                                        <li key={h} className="text-zinc-200 text-[13.5px] flex gap-2">
+                                            <span className="text-amber-600">—</span>{h}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </FadeUp>
                     ) : (
                         <FadeUp className="max-w-lg bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6">
                             <p className="text-zinc-500 text-[13px] font-light">
