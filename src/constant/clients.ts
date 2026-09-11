@@ -34,9 +34,9 @@ export const clients: Client[] = [
             { label: "YouTube", url: "https://www.youtube.com/@GirdharDasandSons" },
         ],
         screenshots: [
-            { src: "/images/clients/gd-sons/showcase.png", caption: "Instagram presence, the live product catalogue, and real Search Console performance (19.8K clicks, 2.09M impressions)." },
+            { src: "/images/clients/gd-sons/showcase.webp", caption: "Instagram presence, the live product catalogue, and real Search Console performance (19.8K clicks, 2.09M impressions)." },
         ],
-        heroImage: "/images/clients/gd-sons/hero-illustration.png",
+        heroImage: "/images/clients/gd-sons/hero-illustration.webp",
         featured: true,
         colSpan: "col-span-2",
         imgHeight: "h-52",
@@ -65,9 +65,9 @@ export const clients: Client[] = [
             { label: "Mrs. Mom Event", url: "https://mrsmomevent.com/" },
         ],
         screenshots: [
-            { src: "/images/clients/dr-k-shilpi-reddy/showcase.png", caption: "Her Instagram profile and YouTube channel — 419K+ followers and 1.28M subscribers." },
+            { src: "/images/clients/dr-k-shilpi-reddy/showcase.webp", caption: "Her Instagram profile and YouTube channel — 419K+ followers and 1.28M subscribers." },
         ],
-        heroImage: "/images/clients/dr-k-shilpi-reddy/hero-illustration.png",
+        heroImage: "/images/clients/dr-k-shilpi-reddy/hero-illustration.webp",
         featured: true,
         imgHeight: "h-44",
     },
