@@ -16,7 +16,7 @@ export default function ServiceDeepDive({ data }: { data: ServiceDeepDiveType })
                     </FadeUp>
                     {data.intro && (
                         <FadeUp delay={0.1}>
-                            <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed mt-3 max-w-2xl">
+                            <p className="text-zinc-200 text-[13.5px] font-light leading-relaxed mt-3 max-w-2xl">
                                 {data.intro}
                             </p>
                         </FadeUp>
@@ -29,7 +29,7 @@ export default function ServiceDeepDive({ data }: { data: ServiceDeepDiveType })
                             <h3 className="text-zinc-200 text-[16px] font-medium mb-2 leading-snug">
                                 {sec.subheading}
                             </h3>
-                            <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed whitespace-pre-line">
+                            <p className="text-zinc-200 text-[13.5px] font-light leading-relaxed whitespace-pre-line">
                                 {sec.body}
                             </p>
                         </FadeUp>

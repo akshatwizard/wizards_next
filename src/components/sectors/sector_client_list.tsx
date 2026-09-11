@@ -15,7 +15,7 @@ export default function SectorClientList({ sectorSlug, sectorLabel }: { sectorSl
                     <p className="text-zinc-100 font-semibold text-lg mb-1">
                         {sectorLabel} clients we work with
                     </p>
-                    <p className="text-zinc-500 text-[13px] font-light mb-6">
+                    <p className="text-zinc-200 text-[13px] font-light mb-6">
                         {sectorClients.length > 0
                             ? "Real profiles, real work — open one to see the details."
                             : `Case studies for ${sectorLabel} are on their way — check back soon.`}
@@ -33,13 +33,13 @@ export default function SectorClientList({ sectorSlug, sectorLabel }: { sectorSl
                                         className="group block bg-zinc-900 border border-zinc-800 hover:border-amber-600/30 rounded-xl overflow-hidden transition-colors h-full"
                                     >
                                         {showcase && (
-                                            <div className="relative w-full h-36 bg-zinc-950 border-b border-zinc-800">
+                                            <div className="relative w-full aspect-square bg-zinc-950 border-b border-zinc-800 flex items-center justify-center p-3">
                                                 <Image
                                                     src={showcase.src}
                                                     alt={showcase.caption ?? `${client.name} — real results`}
                                                     width={1254}
                                                     height={1254}
-                                                    className="w-full h-full object-cover"
+                                                    className="w-full h-full object-contain"
                                                 />
                                             </div>
                                         )}
@@ -48,11 +48,11 @@ export default function SectorClientList({ sectorSlug, sectorLabel }: { sectorSl
                                                 <p className="text-zinc-200 text-[14px] font-medium group-hover:text-amber-600 transition-colors">
                                                     {client.name}
                                                 </p>
-                                                <ArrowUpRight size={14} className="text-zinc-600 group-hover:text-amber-600 transition-colors shrink-0" />
+                                                <ArrowUpRight size={14} className="text-zinc-300 group-hover:text-amber-600 transition-colors shrink-0" />
                                             </div>
                                             <div className="flex flex-wrap gap-1 mt-2">
                                                 {client.tags.slice(0, 3).map((tag) => (
-                                                    <span key={tag} className="text-[9.5px] px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-500 bg-zinc-950">
+                                                    <span key={tag} className="text-[9.5px] px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-200 bg-zinc-950">
                                                         {tag}
                                                     </span>
                                                 ))}

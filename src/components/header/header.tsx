@@ -39,7 +39,7 @@ export default function Header() {
 
                     <button
                         onClick={() => setOpenMenu(true)}
-                        className="flex md:hidden flex-col gap-1.5 p-2 text-zinc-400 hover:text-white transition-colors cursor-pointer"
+                        className="flex md:hidden flex-col gap-1.5 p-2 text-zinc-100 hover:text-white transition-colors cursor-pointer"
                         aria-label="Open menu"
                     >
                         <span className="w-5 h-px bg-current" />

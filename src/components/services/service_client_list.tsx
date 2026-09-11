@@ -28,7 +28,7 @@ export default function ServiceClientList({ data }: { data: ServiceClientListTyp
                                 </div>
                                 <div>
                                     <p className="text-[12px] font-medium text-zinc-200 leading-snug">{c.name}</p>
-                                    <p className="text-[10px] text-zinc-600">{c.industry}</p>
+                                    <p className="text-[10px] text-zinc-300">{c.industry}</p>
                                 </div>
                             </div>
                         </FadeUp>

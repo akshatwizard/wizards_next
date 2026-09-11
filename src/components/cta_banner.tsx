@@ -83,7 +83,7 @@ export default function CTABanner() {
                             >
                                 Ready to <span className="text-amber-600 font-sora!">10x</span> your<br />brand online?
                             </h2>
-                            <p className="text-zinc-500 text-sm font-light leading-relaxed max-w-sm mb-6">
+                            <p className="text-zinc-200 text-sm font-light leading-relaxed max-w-sm mb-6">
                                 Join 200+ businesses that trust Wizards Next to run their digital presence — from ads and
                                 content to full-stack web builds.
                             </p>
@@ -96,7 +96,7 @@ export default function CTABanner() {
                                 </Link>
                                 <Link
                                     href="#work"
-                                    className="bg-transparent hover:border-amber-600/40 hover:text-zinc-100 transition-all duration-200 text-zinc-400 text-[12px] font-medium px-6 py-2.5 rounded-[9px] border border-zinc-700"
+                                    className="bg-transparent hover:border-amber-600/40 hover:text-zinc-100 transition-all duration-200 text-zinc-100 text-[12px] font-medium px-6 py-2.5 rounded-[9px] border border-zinc-700"
                                 >
                                     See Our Work
                                 </Link>
@@ -111,7 +111,7 @@ export default function CTABanner() {
                             >
                                 {/* header */}
                                 <div className="flex items-center justify-between">
-                                    <span className="text-[11px] font-semibold text-zinc-400 tracking-wide">
+                                    <span className="text-[11px] font-semibold text-zinc-100 tracking-wide">
                                         Campaign Overview
                                     </span>
                                     <span className="text-[9px] font-semibold px-2 py-0.5 rounded border"
@@ -128,7 +128,7 @@ export default function CTABanner() {
                                             <div className="font-sora! text-amber-600 font-extrabold text-2xl lg:text-4xl md:text-3xl">
                                                 {v}
                                             </div>
-                                            <div className="text-xs text-zinc-600 mt-0.5">{l}</div>
+                                            <div className="text-xs text-zinc-300 mt-0.5">{l}</div>
                                         </div>
                                     ))}
                                 </div>
@@ -143,7 +143,7 @@ export default function CTABanner() {
 
                                 {/* footer */}
                                 <div className="flex items-center justify-between">
-                                    <span className="text-[9.5px] text-zinc-600">Last 7 days</span>
+                                    <span className="text-[9.5px] text-zinc-300">Last 7 days</span>
                                     <span className="flex items-center gap-1 text-[9px] text-amber-600">
                                         <span className="w-1.5 h-1.5 rounded-full bg-amber-600 inline-block" />
                                         Updating live
@@ -175,7 +175,7 @@ function StatChip({ icon, value, label, style }: {
             <div>
                 <div className="font-extrabold text-[13px] text-zinc-200"
                     style={{ fontFamily: "'Syne',sans-serif" }}>{value}</div>
-                <div className="text-[9px] text-zinc-600">{label}</div>
+                <div className="text-[9px] text-zinc-300">{label}</div>
             </div>
         </div>
     );

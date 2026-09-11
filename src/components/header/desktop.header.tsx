@@ -81,13 +81,13 @@ export default function DesktopHeader({ scrolled }: { scrolled: boolean | null }
                         {(item.path && item.subMenu === null) ? (
                             <Link
                                 href={item.path}
-                                className={`${isActive ? "text-zinc-100" : "text-sm text-zinc-400 group-hover:text-zinc-100"} transition-colors duration-200 ease-linear px-2 h-full flex items-center`}
+                                className={`${isActive ? "text-zinc-100" : "text-sm text-zinc-100 group-hover:text-zinc-100"} transition-colors duration-200 ease-linear px-2 h-full flex items-center`}
                             >
                                 {item.name}
                             </Link>
                         ) : (
                             <button
-                                className={`${isActive ? "text-zinc-100" : "text-sm text-zinc-400 group-hover:text-zinc-100"} transition-colors duration-200 ease-linear px-2 h-full flex items-center gap-1 cursor-pointer`}
+                                className={`${isActive ? "text-zinc-100" : "text-sm text-zinc-100 group-hover:text-zinc-100"} transition-colors duration-200 ease-linear px-2 h-full flex items-center gap-1 cursor-pointer`}
                             >
                                 {item.name}
                                 <motion.span
@@ -162,7 +162,7 @@ export default function DesktopHeader({ scrolled }: { scrolled: boolean | null }
                                                                     group/sub relative flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors duration-150 h-full
                                                                     ${subActive
                                                                         ? "bg-white/8 text-white"
-                                                                        : "text-zinc-400 hover:bg-white/5 hover:text-zinc-100"
+                                                                        : "text-zinc-100 hover:bg-white/5 hover:text-zinc-100"
                                                                     }
                                                                 `}
                                                             >
@@ -181,7 +181,7 @@ export default function DesktopHeader({ scrolled }: { scrolled: boolean | null }
 
                                                                 {/* Arrow on hover */}
                                                                 <ArrowRight
-                                                                    className={`ml-auto h-3.5 w-3.5 shrink-0 transition-all duration-200  group-hover/sub:translate-x-0 -translate-x-1 ${subActive ? " text-amber-600 opacity-100" : "opacity-0 text-zinc-600 group-hover/sub:opacity-100 group-hover/sub:text-amber-600"} `}
+                                                                    className={`ml-auto h-3.5 w-3.5 shrink-0 transition-all duration-200  group-hover/sub:translate-x-0 -translate-x-1 ${subActive ? " text-amber-600 opacity-100" : "opacity-0 text-zinc-300 group-hover/sub:opacity-100 group-hover/sub:text-amber-600"} `}
                                                                 />
                                                             </Link>
                                                         </motion.li>

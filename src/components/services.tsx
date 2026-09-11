@@ -53,11 +53,11 @@ function ServiceCard({ service }: { service: ServiceItem }) {
                     <h3 className="text-[17px] text-zinc-200 leading-snug tracking-tight font-semibold">
                         {name}
                     </h3>
-                    <ArrowUpRight size={16} className="text-zinc-600 group-hover:text-amber-600 shrink-0 mt-1 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-200" />
+                    <ArrowUpRight size={16} className="text-zinc-300 group-hover:text-amber-600 shrink-0 mt-1 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-200" />
                 </div>
             </div>
 
-            <p className="text-[13px] text-zinc-500 leading-relaxed font-light">
+            <p className="text-[13px] text-zinc-200 leading-relaxed font-light">
                 {desc}
             </p>
         </Link>
@@ -82,7 +82,7 @@ export default function Services() {
                         <span className="text-amber-600 font-sora!">to grow online</span>
                     </h2>
 
-                    <p className="text-zinc-500 text-[13.5px] leading-relaxed font-light max-w-xl">
+                    <p className="text-zinc-200 text-[13.5px] leading-relaxed font-light max-w-xl">
                         From building your identity to running high-converting ad campaigns —
                         we cover the full digital spectrum so you don&apos;t have to juggle
                         multiple agencies.
@@ -98,7 +98,7 @@ export default function Services() {
                 </div>
 
                 <FadeUp delay={0.2} className="flex items-center justify-between pt-4">
-                    <span className="text-zinc-600 text-xs">
+                    <span className="text-zinc-300 text-xs">
                         {ALL_SERVICES.length} services · Varanasi &amp; Pan-India
                     </span>
                     <Link

@@ -27,7 +27,7 @@ export default function ServiceCTA() {
                             Ready to build something{' '}
                             <span className="text-amber-500">great?</span>
                         </h2>
-                        <p className="text-zinc-400 text-[14px] font-light max-w-md mx-auto mb-8">
+                        <p className="text-zinc-100 text-[14px] font-light max-w-md mx-auto mb-8">
                             Tell us about your project and we&apos;ll send a proposal within 24 hours.
                             No agency fluff — just a straight conversation.
                         </p>

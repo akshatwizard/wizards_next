@@ -79,7 +79,7 @@ export default function ServiceTestimonial({ data }: { data: ServiceTestimonials
                                             </div>
                                             <div className="text-center">
                                                 <p className="text-[14px] font-semibold text-zinc-100">{item.name}</p>
-                                                <p className="text-[12px] text-zinc-500">{item.role}</p>
+                                                <p className="text-[12px] text-zinc-200">{item.role}</p>
                                                 <div className="flex items-center justify-center gap-0.5 mt-1.5">
                                                     {[...Array(item.rating)].map((_, i) => (
                                                         <Star key={i} size={11} fill="#f59e0b" stroke="#f59e0b" strokeWidth={1} />
@@ -98,9 +98,9 @@ export default function ServiceTestimonial({ data }: { data: ServiceTestimonials
                             disabled={!canScrollPrev}
                             aria-label="Previous testimonial"
                             className="absolute top-1/2 -translate-y-1/2 left-7 z-10 size-9 rounded-xl border flex items-center justify-center transition-all duration-200 cursor-pointer disabled:cursor-not-allowed
-                                    border-white/10 bg-white/5 text-zinc-400
+                                    border-white/10 bg-white/5 text-zinc-100
                                     hover:bg-white/10 hover:border-white/20 hover:text-zinc-200
-                                    disabled:opacity-30 disabled:hover:bg-white/5 disabled:hover:border-white/10 disabled:hover:text-zinc-400"
+                                    disabled:opacity-30 disabled:hover:bg-white/5 disabled:hover:border-white/10 disabled:hover:text-zinc-100"
                         >
                             <ChevronLeft size={16} />
                         </button>
@@ -110,9 +110,9 @@ export default function ServiceTestimonial({ data }: { data: ServiceTestimonials
                             disabled={!canScrollNext}
                             aria-label="Next testimonial"
                             className="absolute top-1/2 -translate-y-1/2 right-7 z-10 size-9 rounded-xl border flex items-center justify-center transition-all duration-200 cursor-pointer disabled:cursor-not-allowed
-                                    border-white/10 bg-white/5 text-zinc-400
+                                    border-white/10 bg-white/5 text-zinc-100
                                     hover:bg-white/10 hover:border-white/20 hover:text-zinc-200
-                                    disabled:opacity-30 disabled:hover:bg-white/5 disabled:hover:border-white/10 disabled:hover:text-zinc-400"
+                                    disabled:opacity-30 disabled:hover:bg-white/5 disabled:hover:border-white/10 disabled:hover:text-zinc-100"
                         >
                             <ChevronRight size={16} />
                         </button>

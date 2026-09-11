@@ -76,10 +76,10 @@ function ServiceCard({ service }: { service: ServiceItem }) {
                 </div>
                 <div className="flex-1 flex items-start justify-between gap-2 min-w-0">
                     <p className="text-zinc-200 text-[16px] font-semibold group-hover:text-amber-600 transition-colors leading-snug">{name}</p>
-                    <ArrowUpRight size={16} className="text-zinc-600 group-hover:text-amber-600 transition-colors shrink-0 mt-1" />
+                    <ArrowUpRight size={16} className="text-zinc-300 group-hover:text-amber-600 transition-colors shrink-0 mt-1" />
                 </div>
             </div>
-            <p className="text-zinc-500 text-[12.5px] font-light leading-relaxed">{desc}</p>
+            <p className="text-zinc-200 text-[12.5px] font-light leading-relaxed">{desc}</p>
         </Link>
     )
 }
@@ -90,10 +90,10 @@ export default function ServicesPage() {
             <Section>
                 <Wrapper className="pb-0!">
                     <FadeUp delay={0}>
-                        <div className="flex items-center gap-1.5 text-[11px] text-zinc-600 mb-6">
-                            <Link href="/" className="hover:text-zinc-400 transition-colors">Home</Link>
+                        <div className="flex items-center gap-1.5 text-[11px] text-zinc-300 mb-6">
+                            <Link href="/" className="hover:text-zinc-100 transition-colors">Home</Link>
                             <ChevronRight size={12} />
-                            <span className="text-zinc-400">Services</span>
+                            <span className="text-zinc-100">Services</span>
                         </div>
                         <SectionBadge label="All Services" />
                     </FadeUp>
@@ -103,7 +103,7 @@ export default function ServicesPage() {
                         </h1>
                     </FadeUp>
                     <FadeUp delay={0.15}>
-                        <p className="text-zinc-500 text-sm font-light max-w-lg">
+                        <p className="text-zinc-200 text-sm font-light max-w-lg">
                             Every service is built to the same depth, whether it&apos;s your brand identity or your ad account — nothing here is treated as an afterthought.
                         </p>
                     </FadeUp>
@@ -115,7 +115,7 @@ export default function ServicesPage() {
                     <Wrapper className={pi === 0 ? "lg:pt-10 md:pt-8 pt-6" : "lg:py-10 md:py-8 py-6"}>
                         <FadeUp className="mb-6">
                             <p className="text-zinc-100 font-semibold text-[15px] mb-1.5">{pillar.title}</p>
-                            <p className="text-zinc-500 text-[12.5px] font-light">{pillar.blurb}</p>
+                            <p className="text-zinc-200 text-[12.5px] font-light">{pillar.blurb}</p>
                         </FadeUp>
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                             {pillar.services.map((svc, i) => (
@@ -132,7 +132,7 @@ export default function ServicesPage() {
                 <Wrapper className="lg:py-12 md:py-10 py-8">
                     <FadeUp className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 text-center">
                         <p className="text-zinc-200 text-lg font-medium mb-2">Not sure which service you need?</p>
-                        <p className="text-zinc-500 text-[13px] font-light mb-5 max-w-md mx-auto">
+                        <p className="text-zinc-200 text-[13px] font-light mb-5 max-w-md mx-auto">
                             Tell us what you&apos;re trying to achieve and we&apos;ll point you at the right one.
                         </p>
                         <Link

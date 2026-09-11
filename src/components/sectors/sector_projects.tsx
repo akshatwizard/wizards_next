@@ -15,7 +15,7 @@ export default function SectorProjects({ data }: { data: SectorProjectType }) {
                         <SectionBadge label={data.badge ?? 'Projects'} />
                         <SectionHeading>{data.heading}</SectionHeading>
                         {data.subheading && (
-                            <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed mt-2 max-w-xl">
+                            <p className="text-zinc-200 text-[13.5px] font-light leading-relaxed mt-2 max-w-xl">
                                 {data.subheading}
                             </p>
                         )}
@@ -65,12 +65,12 @@ export default function SectorProjects({ data }: { data: SectorProjectType }) {
                                             {project.name}
                                         </h3>
                                         <div className="size-6 rounded-md bg-zinc-800 border border-zinc-700 flex items-center justify-center shrink-0 group-hover:bg-amber-600/15 group-hover:border-amber-600/30 transition-colors">
-                                            <ArrowRight size={11} className="text-zinc-500 group-hover:text-amber-600 transition-colors" />
+                                            <ArrowRight size={11} className="text-zinc-200 group-hover:text-amber-600 transition-colors" />
                                         </div>
                                     </div>
                                     <div className="flex flex-wrap gap-1.5">
                                         {project.tags.map(t => (
-                                            <span key={t} className="text-[10px] px-2 py-0.5 rounded border border-zinc-800 bg-zinc-950 text-zinc-600 group-hover:border-amber-600/20 group-hover:text-zinc-500 transition-colors">
+                                            <span key={t} className="text-[10px] px-2 py-0.5 rounded border border-zinc-800 bg-zinc-950 text-zinc-300 group-hover:border-amber-600/20 group-hover:text-zinc-200 transition-colors">
                                                 {t}
                                             </span>
                                         ))}

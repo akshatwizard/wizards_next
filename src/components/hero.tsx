@@ -31,7 +31,7 @@ export default function HeroSection() {
 
                         <FadeUp
                             delay={0.1}
-                            className='text-zinc-400 max-w-lg block mt-5 leading-snug'>
+                            className='text-zinc-100 max-w-lg block mt-5 leading-snug'>
                             <span>
                                 From social media mastery to full-stack web development — Wizards Next is your one-stop growth partner with 24+ years of combined expertise.
                             </span>
@@ -61,14 +61,14 @@ export default function HeroSection() {
                                 {['DS', 'RK', 'AM', 'PV'].map((initials, i) => (
                                     <div
                                         key={initials}
-                                        className="text-zinc-500 w-7 h-7 rounded-full border-2 border-zinc-950 bg-zinc-800 flex items-center justify-center text-[9px] font-semibold text-fun-blue-300"
+                                        className="text-zinc-200 w-7 h-7 rounded-full border-2 border-zinc-950 bg-zinc-800 flex items-center justify-center text-[9px] font-semibold text-fun-blue-300"
                                         style={{ marginLeft: i === 0 ? 0 : -8 }}
                                     >
                                         {initials}
                                     </div>
                                 ))}
                             </div>
-                            <p className="text-[11px] text-fun-blue-300/50 leading-snug text-zinc-500">
+                            <p className="text-[11px] text-fun-blue-300/50 leading-snug text-zinc-200">
                                 Trusted by <span className="text-fun-blue-300/80 font-medium">500+ clients</span>
                                 <br />across all Indian states
                             </p>

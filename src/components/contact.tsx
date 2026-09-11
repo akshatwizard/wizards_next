@@ -70,7 +70,7 @@ export default function Contact() {
                     </FadeUp>
 
                     <FadeUp delay={0.15}>
-                        <p className="text-zinc-500 text-sm font-light max-w-md">
+                        <p className="text-zinc-200 text-sm font-light max-w-md">
                             Drop us a message and a strategist will get back to you within 24 hours.
                         </p>
                     </FadeUp>
@@ -87,22 +87,22 @@ export default function Contact() {
                                     <Icon size={15} strokeWidth={1.6} className="text-amber-600" />
                                 </div>
                                 <div>
-                                    <p className="text-[10px] text-zinc-600 uppercase tracking-wider mb-0.5">{label}</p>
-                                    <p className="text-zinc-400 text-[12.5px]">{value}</p>
+                                    <p className="text-[10px] text-zinc-300 uppercase tracking-wider mb-0.5">{label}</p>
+                                    <p className="text-zinc-100 text-[12.5px]">{value}</p>
                                 </div>
                             </div>
                         ))}
 
                         {/* Social text buttons */}
                         <div className="mt-auto pt-4 border-t border-zinc-800">
-                            <p className="text-[10.5px] text-zinc-600 uppercase tracking-wider mb-2.5">Follow us</p>
+                            <p className="text-[10.5px] text-zinc-300 uppercase tracking-wider mb-2.5">Follow us</p>
                             <div className="flex gap-2">
                                 {socials.map(({ label, href }) => (
                                     <a
                                         key={label}
                                         href={href}
                                         aria-label={label}
-                                        className="w-8 h-8 rounded-lg bg-zinc-950 border border-zinc-800 hover:bg-amber-600/12 hover:border-amber-600/35 hover:text-amber-600 flex items-center justify-center text-[11px] font-bold text-zinc-500 transition-all duration-200"
+                                        className="w-8 h-8 rounded-lg bg-zinc-950 border border-zinc-800 hover:bg-amber-600/12 hover:border-amber-600/35 hover:text-amber-600 flex items-center justify-center text-[11px] font-bold text-zinc-200 transition-all duration-200"
                                     >
                                         {label}
                                     </a>
@@ -117,7 +117,7 @@ export default function Contact() {
                             <div className="flex flex-col items-center justify-center text-center gap-3 py-10">
                                 <CheckCircle2 size={32} className="text-amber-600" />
                                 <p className="text-zinc-200 text-sm font-medium">Message sent — thanks!</p>
-                                <p className="text-zinc-500 text-[12.5px] max-w-xs">A strategist will get back to you within 24 hours.</p>
+                                <p className="text-zinc-200 text-[12.5px] max-w-xs">A strategist will get back to you within 24 hours.</p>
                                 <button onClick={() => setStatus("idle")} className="text-amber-600 text-[12.5px] mt-2 hover:underline">
                                     Send another message
                                 </button>
@@ -126,7 +126,7 @@ export default function Contact() {
                             <form onSubmit={handleSubmit} className="flex flex-col gap-3">
                                 <div className="grid grid-cols-2 gap-3">
                                     <div className="flex flex-col gap-1.5">
-                                        <label className="text-[10.5px] text-zinc-600 uppercase tracking-wider">Name</label>
+                                        <label className="text-[10.5px] text-zinc-300 uppercase tracking-wider">Name</label>
                                         <input
                                             required
                                             type="text"
@@ -137,7 +137,7 @@ export default function Contact() {
                                         />
                                     </div>
                                     <div className="flex flex-col gap-1.5">
-                                        <label className="text-[10.5px] text-zinc-600 uppercase tracking-wider">Phone</label>
+                                        <label className="text-[10.5px] text-zinc-300 uppercase tracking-wider">Phone</label>
                                         <input
                                             type="tel"
                                             placeholder="+91 00000 00000"
@@ -149,7 +149,7 @@ export default function Contact() {
                                 </div>
 
                                 <div className="flex flex-col gap-1.5">
-                                    <label className="text-[10.5px] text-zinc-600 uppercase tracking-wider">Email</label>
+                                    <label className="text-[10.5px] text-zinc-300 uppercase tracking-wider">Email</label>
                                     <input
                                         required
                                         type="email"
@@ -161,13 +161,13 @@ export default function Contact() {
                                 </div>
 
                                 <div className="flex flex-col gap-1.5">
-                                    <label className="text-[10.5px] text-zinc-600 uppercase tracking-wider">
+                                    <label className="text-[10.5px] text-zinc-300 uppercase tracking-wider">
                                         Service Interested In
                                     </label>
                                     <select
                                         value={form.service}
                                         onChange={(e) => update("service", e.target.value)}
-                                        className="bg-zinc-900 border border-zinc-800 text-zinc-400 rounded-lg px-3 py-2.5 text-[12.5px] outline-none focus:border-amber-600/45 transition-colors"
+                                        className="bg-zinc-900 border border-zinc-800 text-zinc-100 rounded-lg px-3 py-2.5 text-[12.5px] outline-none focus:border-amber-600/45 transition-colors"
                                     >
                                         <option value="">Select a service</option>
                                         {services.map((s) => (
@@ -177,7 +177,7 @@ export default function Contact() {
                                 </div>
 
                                 <div className="flex flex-col gap-1.5">
-                                    <label className="text-[10.5px] text-zinc-600 uppercase tracking-wider">Message</label>
+                                    <label className="text-[10.5px] text-zinc-300 uppercase tracking-wider">Message</label>
                                     <textarea
                                         required
                                         rows={3}

@@ -15,7 +15,7 @@ export default function ServiceIndustries({ data }: { data: ServiceIndustriestyp
                         We build for{' '}
                         <span className="text-amber-500">every sector</span>
                     </SectionHeading>
-                    <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed mt-2 max-w-md mx-auto">
+                    <p className="text-zinc-200 text-[13.5px] font-light leading-relaxed mt-2 max-w-md mx-auto">
                         Industry-specific design patterns, conversion flows, and integrations — we know what works in your space.
                     </p>
                 </FadeUp>
@@ -29,7 +29,7 @@ export default function ServiceIndustries({ data }: { data: ServiceIndustriestyp
                                     <div className="size-10 rounded-xl bg-amber-600/10 border border-amber-600/20 flex items-center justify-center group-hover:bg-amber-600/20 transition-colors">
                                         <Icon size={18} className="text-amber-500" strokeWidth={1.7} />
                                     </div>
-                                    <p className="text-[11px] font-medium text-zinc-400 leading-snug">{ind.label}</p>
+                                    <p className="text-[11px] font-medium text-zinc-100 leading-snug">{ind.label}</p>
                                 </div>
                             </FadeUp>
                         )

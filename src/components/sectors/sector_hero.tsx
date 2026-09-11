@@ -35,12 +35,12 @@ export default function SectorHero({ data }: { data: SectorHeroType }) {
                     <div className="flex flex-col">
                         {/* Breadcrumb */}
                         <FadeUp delay={0}>
-                            <div className="flex items-center gap-1.5 text-[11px] text-zinc-600 mb-6">
-                                <Link href="/" className="hover:text-zinc-400 transition-colors">Home</Link>
+                            <div className="flex items-center gap-1.5 text-[11px] text-zinc-300 mb-6">
+                                <Link href="/" className="hover:text-zinc-100 transition-colors">Home</Link>
                                 <ChevronRight size={12} />
-                                <Link href="/sector" className="hover:text-zinc-400 transition-colors">Sectors</Link>
+                                <Link href="/sector" className="hover:text-zinc-100 transition-colors">Sectors</Link>
                                 <ChevronRight size={12} />
-                                <span className="text-zinc-400">{data.badge}</span>
+                                <span className="text-zinc-100">{data.badge}</span>
                             </div>
                         </FadeUp>
 
@@ -54,7 +54,7 @@ export default function SectorHero({ data }: { data: SectorHeroType }) {
                             </FadeUp>
 
                             <FadeUp delay={0.14}>
-                                <p className="text-zinc-400 text-[14px] leading-relaxed font-light max-w-md mb-8">
+                                <p className="text-zinc-100 text-[14px] leading-relaxed font-light max-w-md mb-8">
                                     {data.subheading}
                                 </p>
                             </FadeUp>
@@ -77,12 +77,12 @@ export default function SectorHero({ data }: { data: SectorHeroType }) {
                             {/* Sector tags */}
                             <FadeUp delay={0.22}>
                                 <div className="flex flex-wrap gap-2">
-                                    <span className="text-[10px] text-zinc-600 uppercase tracking-widest self-center mr-1">
+                                    <span className="text-[10px] text-zinc-300 uppercase tracking-widest self-center mr-1">
                                         Includes
                                     </span>
                                     {data.tags.map((tag) => (
                                         <span key={tag}
-                                            className="text-[11px] px-3 py-1 rounded-full border border-zinc-800 bg-zinc-900 text-zinc-400">
+                                            className="text-[11px] px-3 py-1 rounded-full border border-zinc-800 bg-zinc-900 text-zinc-100">
                                             {tag}
                                         </span>
                                     ))}

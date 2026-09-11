@@ -17,7 +17,7 @@ export default function ServiceTeam({ data }: { data: ServiceTeamType }) {
                         People behind{' '}
                         <span className="text-amber-500">your project</span>
                     </SectionHeading>
-                    <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed mt-2 max-w-lg">
+                    <p className="text-zinc-200 text-[13.5px] font-light leading-relaxed mt-2 max-w-lg">
                         You won't be passed to a junior. These are the actual people who design,
                         code, and deliver your website.
                     </p>
@@ -35,14 +35,14 @@ export default function ServiceTeam({ data }: { data: ServiceTeamType }) {
                                     </div>
                                     <div>
                                         <p className="text-[13px] font-semibold text-zinc-200 leading-snug">{member.name}</p>
-                                        <p className="text-[10px] text-zinc-500">{member.role}</p>
+                                        <p className="text-[10px] text-zinc-200">{member.role}</p>
                                     </div>
                                 </div>
 
                                 {/* Experience badge */}
                                 <div className="flex items-center gap-1.5">
                                     <Clock size={11} className="text-amber-600" />
-                                    <span className="text-[10.5px] text-zinc-500">{member.exp}</span>
+                                    <span className="text-[10.5px] text-zinc-200">{member.exp}</span>
                                 </div>
 
                                 {/* Skills */}

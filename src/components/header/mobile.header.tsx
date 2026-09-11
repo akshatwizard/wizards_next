@@ -109,7 +109,7 @@ function MobileNavItem({ item, onClose }: { item: MenuType; onClose: () => void;
                     <Link
                         href={item.path}
                         onClick={onClose}
-                        className={`flex-1 flex items-center gap-3 py-3.5 text-base font-medium transition-colors duration-150 ${isActive ? "text-white" : "text-zinc-400"
+                        className={`flex-1 flex items-center gap-3 py-3.5 text-base font-medium transition-colors duration-150 ${isActive ? "text-white" : "text-zinc-100"
                             }`}
                     >
                         {isActive && (
@@ -120,7 +120,7 @@ function MobileNavItem({ item, onClose }: { item: MenuType; onClose: () => void;
                 ) : (
                     <button
                         onClick={() => setSubOpen((p) => !p)}
-                        className={`flex-1 flex items-center gap-3 py-3.5 text-base font-medium text-left transition-colors duration-150 cursor-pointer ${isActive ? "text-white" : "text-zinc-400"
+                        className={`flex-1 flex items-center gap-3 py-3.5 text-base font-medium text-left transition-colors duration-150 cursor-pointer ${isActive ? "text-white" : "text-zinc-100"
                             }`}
                     >
                         {isActive && (
@@ -133,7 +133,7 @@ function MobileNavItem({ item, onClose }: { item: MenuType; onClose: () => void;
                 {hasSubMenu && (
                     <button
                         onClick={() => setSubOpen((p) => !p)}
-                        className="p-2 text-zinc-500 hover:text-zinc-200 transition-colors duration-150 cursor-pointer"
+                        className="p-2 text-zinc-200 hover:text-zinc-200 transition-colors duration-150 cursor-pointer"
                         aria-label={subOpen ? "Collapse" : "Expand"}
                     >
                         <motion.span
@@ -175,7 +175,7 @@ function MobileNavItem({ item, onClose }: { item: MenuType; onClose: () => void;
                                             onClick={onClose}
                                             className={`group relative flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors duration-150 ${subActive
                                                 ? "bg-white/6 text-white"
-                                                : "text-zinc-500 hover:bg-white/4 hover:text-zinc-200"
+                                                : "text-zinc-200 hover:bg-white/4 hover:text-zinc-200"
                                                 }`}
                                         >
                                             {subActive && (
@@ -243,7 +243,7 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
 
                             <button
                                 onClick={onClose}
-                                className="p-1.5 rounded-lg text-zinc-500 hover:text-zinc-200 hover:bg-white/6 transition-colors duration-150 cursor-pointer"
+                                className="p-1.5 rounded-lg text-zinc-200 hover:text-zinc-200 hover:bg-white/6 transition-colors duration-150 cursor-pointer"
                                 aria-label="Close menu"
                             >
                                 <X size={18} />

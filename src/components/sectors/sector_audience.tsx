@@ -15,7 +15,7 @@ export default function SectorAudience({ data }: { data: SectorAudienceType }) {
                         {data.heading}
                     </SectionHeading>
                     {data.subheading && (
-                        <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed mt-2 max-w-xl">
+                        <p className="text-zinc-200 text-[13.5px] font-light leading-relaxed mt-2 max-w-xl">
                             {data.subheading}
                         </p>
                     )}
@@ -34,7 +34,7 @@ export default function SectorAudience({ data }: { data: SectorAudienceType }) {
                                         <h3 className="font-syne text-[14px] font-bold text-zinc-100 mb-1.5 leading-snug">
                                             {card.title}
                                         </h3>
-                                        <p className="text-[12.5px] text-zinc-500 leading-relaxed font-light">
+                                        <p className="text-[12.5px] text-zinc-200 leading-relaxed font-light">
                                             {card.desc}
                                         </p>
                                     </div>

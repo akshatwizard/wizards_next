@@ -28,7 +28,7 @@ export default function NumberStrip() {
                             </h2>
 
                             {/* label */}
-                            <p className="text-[11px] font-normal uppercase tracking-widest text-zinc-500">
+                            <p className="text-[11px] font-normal uppercase tracking-widest text-zinc-200">
                                 {item.tag}
                             </p>
                         </FadeUp>

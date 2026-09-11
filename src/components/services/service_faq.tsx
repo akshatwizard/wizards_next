@@ -18,7 +18,7 @@ export default function ServiceFAQ({ data }: { data: ServiceFAQType }) {
                             Questions we get{' '}
                             <span className="text-amber-500">all the time</span>
                         </SectionHeading>
-                        <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed mt-3 mb-6">
+                        <p className="text-zinc-200 text-[13.5px] font-light leading-relaxed mt-3 mb-6">
                             Still have something else on your mind? We're one message away.
                         </p>
                         <Link href="/contact"
@@ -35,7 +35,7 @@ export default function ServiceFAQ({ data }: { data: ServiceFAQType }) {
                                         <CheckCircle2 size={15} className="text-amber-600 mt-0.5 shrink-0" strokeWidth={2} />
                                         <h3 className="font-syne text-[14px] font-bold text-zinc-200 leading-snug">{faq.q}</h3>
                                     </div>
-                                    <p className="text-[12.5px] text-zinc-500 leading-relaxed font-light pl-6">{faq.a}</p>
+                                    <p className="text-[12.5px] text-zinc-200 leading-relaxed font-light pl-6">{faq.a}</p>
                                 </div>
                             </FadeUp>
                         ))}

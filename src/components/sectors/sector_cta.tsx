@@ -26,7 +26,7 @@ export default function SectorMidCTA({ data }: { data: SectorMidCTAType }) {
                             <h2 className="text-2xl sm:text-3xl font-medium text-zinc-200 tracking-tight leading-tight mb-3">
                                 {data.heading}
                             </h2>
-                            <p className="text-zinc-400 text-[13.5px] font-light leading-relaxed mb-8">
+                            <p className="text-zinc-100 text-[13.5px] font-light leading-relaxed mb-8">
                                 {data.subheading}
                             </p>
                             <div className="flex flex-wrap items-center justify-center gap-3">

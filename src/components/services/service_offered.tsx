@@ -35,7 +35,7 @@ export default function ServicesOffered({ data }: { data: ServicesOfferedTypes }
                                         <h3 className="text-[15px] text-zinc-200 mb-1.5 leading-snug">
                                             {svc.title}
                                         </h3>
-                                        <p className="text-xs text-zinc-500 leading-snug">
+                                        <p className="text-xs text-zinc-200 leading-snug">
                                             {svc.desc}
                                         </p>
                                     </div>

@@ -14,7 +14,7 @@ export default function SectorTrust({ data }: { data: SectorTrustType }) {
                         <SectionBadge label={data.badge ?? 'Why Wizards'} />
                         <SectionHeading>{data.heading}</SectionHeading>
                         {data.subheading && (
-                            <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed mt-3">
+                            <p className="text-zinc-200 text-[13.5px] font-light leading-relaxed mt-3">
                                 {data.subheading}
                             </p>
                         )}
@@ -33,7 +33,7 @@ export default function SectorTrust({ data }: { data: SectorTrustType }) {
                                             <h3 className="font-syne text-[13.5px] font-bold text-zinc-100 mb-1 leading-snug">
                                                 {point.title}
                                             </h3>
-                                            <p className="text-[12px] text-zinc-500 leading-relaxed font-light">
+                                            <p className="text-[12px] text-zinc-200 leading-relaxed font-light">
                                                 {point.desc}
                                             </p>
                                         </div>

@@ -22,10 +22,10 @@ export default function AboutPage() {
                 />
                 <Wrapper className="pb-0!">
                     <FadeUp delay={0}>
-                        <div className="flex items-center gap-1.5 text-[11px] text-zinc-600 mb-6">
-                            <Link href="/" className="hover:text-zinc-400 transition-colors">Home</Link>
+                        <div className="flex items-center gap-1.5 text-[11px] text-zinc-300 mb-6">
+                            <Link href="/" className="hover:text-zinc-100 transition-colors">Home</Link>
                             <ChevronRight size={12} />
-                            <span className="text-zinc-400">About</span>
+                            <span className="text-zinc-100">About</span>
                         </div>
                         <SectionBadge label="About Us" />
                     </FadeUp>
@@ -35,7 +35,7 @@ export default function AboutPage() {
                         </h1>
                     </FadeUp>
                     <FadeUp delay={0.15}>
-                        <p className="text-zinc-500 text-sm font-light max-w-lg">
+                        <p className="text-zinc-200 text-sm font-light max-w-lg">
                             A growth-oriented, progressive organisation working in digital marketing and web development since June 2023 — built as a joint venture, not a startup from scratch.
                         </p>
                     </FadeUp>
@@ -45,7 +45,7 @@ export default function AboutPage() {
             {/* Our Story */}
             <Section>
                 <Wrapper className="lg:py-10 md:py-8 py-6">
-                    <div className="max-w-2xl flex flex-col gap-4 text-zinc-400 text-[14px] leading-relaxed font-light">
+                    <div className="max-w-2xl flex flex-col gap-4 text-zinc-100 text-[14px] leading-relaxed font-light">
                         <p>
                             Wizards Next LLP emerged as a joint venture between <strong className="text-zinc-300 font-medium">JR Digital Marketing Services</strong> and <strong className="text-zinc-300 font-medium">Arushi Inforbit Solutions</strong> in June 2023 — bringing together a digital marketing practice and a web development practice that had been solving half the same problem separately for years.
                         </p>
@@ -64,7 +64,7 @@ export default function AboutPage() {
                 <Wrapper className="lg:py-10 md:py-8 py-6">
                     <FadeUp>
                         <p className="text-zinc-100 font-semibold text-[13px] tracking-wide mb-1">Built on two foundations</p>
-                        <p className="text-zinc-600 text-[12.5px] font-light mb-6 max-w-lg">
+                        <p className="text-zinc-300 text-[12.5px] font-light mb-6 max-w-lg">
                             Each side of the joint venture brought a distinct, established practice — not two teams learning on the job together.
                         </p>
                     </FadeUp>
@@ -74,7 +74,7 @@ export default function AboutPage() {
                                 <Target size={18} className="text-amber-600" strokeWidth={1.6} />
                             </div>
                             <p className="text-zinc-200 font-medium text-[15px] mb-2">JR Digital Marketing Services</p>
-                            <p className="text-zinc-500 text-[13px] font-light leading-relaxed mb-4">
+                            <p className="text-zinc-200 text-[13px] font-light leading-relaxed mb-4">
                                 The marketing engine behind the venture — SEO, paid search, social media marketing, content marketing, and email marketing, brought in as an established practice rather than built from zero.
                             </p>
                             <a
@@ -91,7 +91,7 @@ export default function AboutPage() {
                                 <Zap size={18} className="text-amber-600" strokeWidth={1.6} />
                             </div>
                             <p className="text-zinc-200 font-medium text-[15px] mb-2">Arushi Inforbit Solutions</p>
-                            <p className="text-zinc-500 text-[13px] font-light leading-relaxed mb-4">
+                            <p className="text-zinc-200 text-[13px] font-light leading-relaxed mb-4">
                                 The technology side — website development, e-commerce platforms, and building responsive, well-engineered sites, which is why development at Wizards Next has never been an afterthought bolted onto marketing.
                             </p>
                             <a
@@ -120,7 +120,7 @@ export default function AboutPage() {
                             </div>
                             <div>
                                 <p className="font-medium text-[15px] text-zinc-200 mb-1">Superior Performance</p>
-                                <p className="text-[13px] text-zinc-500 leading-relaxed">Measurable goals focused on market leadership and real ROI — not activity for its own sake.</p>
+                                <p className="text-[13px] text-zinc-200 leading-relaxed">Measurable goals focused on market leadership and real ROI — not activity for its own sake.</p>
                             </div>
                         </FadeUp>
                         <FadeUp delay={0.1} className="flex items-start gap-4">
@@ -129,7 +129,7 @@ export default function AboutPage() {
                             </div>
                             <div>
                                 <p className="font-medium text-[15px] text-zinc-200 mb-1">Collaborative Power</p>
-                                <p className="text-[13px] text-zinc-500 leading-relaxed">A joint venture legacy built on trust and transparency between two established practices, not one team pretending to cover both.</p>
+                                <p className="text-[13px] text-zinc-200 leading-relaxed">A joint venture legacy built on trust and transparency between two established practices, not one team pretending to cover both.</p>
                             </div>
                         </FadeUp>
                         <FadeUp delay={0.15} className="flex items-start gap-4">
@@ -138,7 +138,7 @@ export default function AboutPage() {
                             </div>
                             <div>
                                 <p className="font-medium text-[15px] text-zinc-200 mb-1">One Point of Contact</p>
-                                <p className="text-[13px] text-zinc-500 leading-relaxed">Branding, website, and marketing under one roof — no coordinating between separate vendors who don&apos;t talk to each other.</p>
+                                <p className="text-[13px] text-zinc-200 leading-relaxed">Branding, website, and marketing under one roof — no coordinating between separate vendors who don&apos;t talk to each other.</p>
                             </div>
                         </FadeUp>
                         <FadeUp delay={0.2} className="flex items-start gap-4">
@@ -147,7 +147,7 @@ export default function AboutPage() {
                             </div>
                             <div>
                                 <p className="font-medium text-[15px] text-zinc-200 mb-1">Varanasi-Rooted, Pan-India Reach</p>
-                                <p className="text-[13px] text-zinc-500 leading-relaxed">Based in Varanasi with deep knowledge of this market, while serving clients across India remotely.</p>
+                                <p className="text-[13px] text-zinc-200 leading-relaxed">Based in Varanasi with deep knowledge of this market, while serving clients across India remotely.</p>
                             </div>
                         </FadeUp>
                     </div>
@@ -161,7 +161,7 @@ export default function AboutPage() {
                 <Wrapper className="lg:py-12 md:py-10 py-8">
                     <FadeUp className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 text-center">
                         <p className="text-zinc-200 text-lg font-medium mb-2">Want to work with us?</p>
-                        <p className="text-zinc-500 text-[13px] font-light mb-5 max-w-md mx-auto">
+                        <p className="text-zinc-200 text-[13px] font-light mb-5 max-w-md mx-auto">
                             Tell us about your business and what you&apos;re trying to achieve.
                         </p>
                         <Link

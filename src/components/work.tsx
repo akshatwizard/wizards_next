@@ -16,7 +16,7 @@ function ProjectCard({ client }: { client: Client }) {
             className="h-full group relative bg-zinc-900 rounded-2xl overflow-hidden cursor-pointer border border-zinc-800 hover:border-zinc-700 transition-all duration-200 flex flex-col"
         >
             {/* Image — same fixed height for every card, no more asymmetric bento sizing */}
-            <div className="relative w-full h-44 shrink-0 bg-zinc-950 flex items-center justify-center p-6">
+            <div className="relative w-full h-36 shrink-0 bg-zinc-950 flex items-center justify-center p-5">
                 {heroImage ? (
                     <Image
                         src={heroImage}
@@ -35,7 +35,7 @@ function ProjectCard({ client }: { client: Client }) {
                                 backgroundSize: '24px 24px',
                             }}
                         />
-                        <span className="relative text-[11px] font-medium text-zinc-600 tracking-widest uppercase">
+                        <span className="relative text-[11px] font-medium text-zinc-300 tracking-widest uppercase">
                             {sectors && sectors.length > 0 ? sectors.join(' / ') : name}
                         </span>
                     </>
@@ -60,14 +60,14 @@ function ProjectCard({ client }: { client: Client }) {
                         </p>
                     </div>
                     <div className="w-6 h-6 rounded-md bg-zinc-800 border border-zinc-700 flex items-center justify-center shrink-0 group-hover:bg-amber-600/15 group-hover:border-amber-600/40 transition-colors">
-                        <ArrowUpRight className="w-2.5 h-2.5 text-zinc-400 group-hover:text-amber-600" />
+                        <ArrowUpRight className="w-2.5 h-2.5 text-zinc-100 group-hover:text-amber-600" />
                     </div>
                 </div>
                 <div className="flex flex-wrap gap-1">
                     {tags.map((tag) => (
                         <span
                             key={tag}
-                            className="text-[9.5px] px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-500 bg-zinc-950 group-hover:border-amber-600/20 group-hover:text-zinc-400 transition-colors"
+                            className="text-[9.5px] px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-200 bg-zinc-950 group-hover:border-amber-600/20 group-hover:text-zinc-100 transition-colors"
                         >
                             {tag}
                         </span>
@@ -101,14 +101,14 @@ export default function PortfolioBentoGrid() {
                         </h2>
                     </FadeUp>
                     <FadeUp delay={0.15}>
-                        <p className="text-zinc-500 text-[12.5px] font-light max-w-md leading-relaxed">
+                        <p className="text-zinc-200 text-[12.5px] font-light max-w-md leading-relaxed">
                             From brand-new identities to full-funnel campaigns — a snapshot of what we&apos;ve built for our clients.
                         </p>
                     </FadeUp>
                 </div>
 
                 <FadeUp delay={0.2}
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3"
                 >
                     {featured.map((client) => (
                         <ProjectCard key={client.slug} client={client} />
@@ -118,9 +118,9 @@ export default function PortfolioBentoGrid() {
                 {/* Footer CTA */}
                 <FadeUp delay={0.25} className="flex items-center justify-between ">
                     {getFeaturedClients().length > featured.length ? (
-                        <span className="text-[12px] text-zinc-600">Showing {featured.length} of {getFeaturedClients().length}+ projects</span>
+                        <span className="text-[12px] text-zinc-300">Showing {featured.length} of {getFeaturedClients().length}+ projects</span>
                     ) : (
-                        <span className="text-[12px] text-zinc-600">More case studies added regularly</span>
+                        <span className="text-[12px] text-zinc-300">More case studies added regularly</span>
                     )}
                     <Link
                         href="/our-works"

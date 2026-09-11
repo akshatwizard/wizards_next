@@ -65,7 +65,7 @@ function ProjectCard({ project }: { project: ProjectListType }) {
                     />
                 </div>
                 <p className="text-[11px] text-amber-600 font-medium">{project.result}</p>
-                <p className="text-[11.5px] text-zinc-500 leading-relaxed font-light flex-1">{project.desc}</p>
+                <p className="text-[11.5px] text-zinc-200 leading-relaxed font-light flex-1">{project.desc}</p>
                 <div className="flex flex-wrap gap-1 pt-2 border-t border-zinc-800 mt-auto">
                     {project.tags.map((t) => <Tag key={t} label={t} />)}
                 </div>
@@ -93,7 +93,7 @@ export default function ServiceProject({ data }: { data: ServiceProjectType }) {
                         <SectionHeading>
                             Work we're <span className="text-amber-500">proud of</span>
                         </SectionHeading>
-                        <p className="text-zinc-600 text-[12px] mt-1.5">
+                        <p className="text-zinc-300 text-[12px] mt-1.5">
                             Showing {filtered.length} project{filtered.length !== 1 ? "s" : ""}
                             {active === "All" ? " across 6 sectors" : ` in ${active}`}
                         </p>
@@ -114,7 +114,7 @@ export default function ServiceProject({ data }: { data: ServiceProjectType }) {
                             onClick={() => setActive(f)}
                             className={`px-4 py-1.5 rounded-full border text-[11px] font-medium transition-all duration-200 ${active === f
                                 ? "bg-amber-600/12 border-amber-600/40 text-amber-600"
-                                : "border-zinc-800 text-zinc-500 hover:border-zinc-700 hover:text-zinc-300"
+                                : "border-zinc-800 text-zinc-200 hover:border-zinc-700 hover:text-zinc-300"
                                 }`}
                         >
                             {f}

@@ -78,12 +78,12 @@ export default function ClientProfile({ client }: { client: Client }) {
                     <div className={bannerImage ? "grid lg:grid-cols-2 gap-10 items-center" : ""}>
                         <div>
                             <FadeUp delay={0}>
-                                <div className="flex items-center gap-1.5 text-[11px] text-zinc-600 mb-6 flex-wrap">
-                                    <Link href="/" className="hover:text-zinc-400 transition-colors">Home</Link>
+                                <div className="flex items-center gap-1.5 text-[11px] text-zinc-300 mb-6 flex-wrap">
+                                    <Link href="/" className="hover:text-zinc-100 transition-colors">Home</Link>
                                     <ChevronRight size={12} />
-                                    <Link href="/our-works" className="hover:text-zinc-400 transition-colors">Our Works</Link>
+                                    <Link href="/our-works" className="hover:text-zinc-100 transition-colors">Our Works</Link>
                                     <ChevronRight size={12} />
-                                    <span className="text-zinc-400">{client.name}</span>
+                                    <span className="text-zinc-100">{client.name}</span>
                                 </div>
                                 <div className="flex flex-wrap gap-2">
                                     {labels.length > 0 ? (
@@ -102,13 +102,13 @@ export default function ClientProfile({ client }: { client: Client }) {
 
                             {client.tagline && (
                                 <FadeUp delay={0.12}>
-                                    <p className="text-zinc-500 text-sm font-light max-w-lg mb-4">{client.tagline}</p>
+                                    <p className="text-zinc-200 text-sm font-light max-w-lg mb-4">{client.tagline}</p>
                                 </FadeUp>
                             )}
 
                             <FadeUp delay={0.15} className="flex flex-wrap items-center gap-2 mb-2">
                                 {client.tags.map((tag) => (
-                                    <span key={tag} className="text-[10.5px] px-2.5 py-1 rounded-full border border-zinc-800 text-zinc-500 bg-zinc-900">
+                                    <span key={tag} className="text-[10.5px] px-2.5 py-1 rounded-full border border-zinc-800 text-zinc-200 bg-zinc-900">
                                         {tag}
                                     </span>
                                 ))}
@@ -132,7 +132,7 @@ export default function ClientProfile({ client }: { client: Client }) {
                                             href={l.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-1.5 text-zinc-400 text-[12.5px] hover:text-amber-600 transition-colors"
+                                            className="inline-flex items-center gap-1.5 text-zinc-100 text-[12.5px] hover:text-amber-600 transition-colors"
                                         >
                                             {l.label} <ExternalLink size={12} />
                                         </a>
@@ -163,9 +163,9 @@ export default function ClientProfile({ client }: { client: Client }) {
             <Section>
                 <Wrapper className="lg:py-10 md:py-8 py-6">
                     {client.overview ? (
-                        <FadeUp className="max-w-2xl">
+                        <FadeUp className="max-w-5xl">
                             {client.heroImage && (
-                                <div className="float-right w-[45%] sm:w-[340px] ml-6 mb-4">
+                                <div className="float-right w-[45%] sm:w-[420px] ml-8 mb-4">
                                     <Image
                                         src={client.heroImage}
                                         alt={`${client.name} — conceptual illustration`}
@@ -175,13 +175,13 @@ export default function ClientProfile({ client }: { client: Client }) {
                                     />
                                 </div>
                             )}
-                            <p className="text-zinc-200 text-[14px] leading-relaxed font-light whitespace-pre-line text-justify">
+                            <p className="text-zinc-200 text-[15px] leading-relaxed font-light whitespace-pre-line text-justify">
                                 {client.overview}
                             </p>
                             {client.highlights && client.highlights.length > 0 && (
                                 <ul className="clear-both mt-6 flex flex-col gap-2.5">
                                     {client.highlights.map((h) => (
-                                        <li key={h} className="text-zinc-200 text-[13.5px] flex gap-2">
+                                        <li key={h} className="text-zinc-200 text-[14px] flex gap-2">
                                             <span className="text-amber-600">—</span>{h}
                                         </li>
                                     ))}
@@ -190,7 +190,7 @@ export default function ClientProfile({ client }: { client: Client }) {
                         </FadeUp>
                     ) : (
                         <FadeUp className="max-w-lg bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6">
-                            <p className="text-zinc-500 text-[13px] font-light">
+                            <p className="text-zinc-200 text-[13px] font-light">
                                 The detailed case study for {client.name} is on its way — check back soon, or see the services we&apos;ve worked on together below.
                             </p>
                         </FadeUp>
@@ -205,13 +205,20 @@ export default function ClientProfile({ client }: { client: Client }) {
                         <FadeUp>
                             <p className="text-zinc-100 font-semibold text-[13px] tracking-wide mb-4">Services we provided</p>
                         </FadeUp>
-                        <FadeUp delay={0.05} className="flex flex-wrap gap-2">
+                        <FadeUp delay={0.05} className="flex flex-wrap gap-2.5">
                             {client.services.map((slug) => (
                                 <Link
                                     key={slug}
                                     href={`/services/${slug}`}
-                                    className="text-[12px] px-3 py-1.5 rounded-lg border border-zinc-800 text-zinc-400 bg-zinc-900 hover:border-amber-600/30 hover:text-amber-600 transition-colors"
+                                    className="flex items-center gap-2 text-[12.5px] pl-2 pr-3.5 py-1.5 rounded-lg border border-zinc-800 text-zinc-100 bg-zinc-900 hover:border-amber-600/30 hover:text-amber-600 transition-colors"
                                 >
+                                    <Image
+                                        src={`/images/services/icons/${slug}-icon.webp`}
+                                        alt=""
+                                        width={256}
+                                        height={256}
+                                        className="w-5 h-5 object-contain shrink-0"
+                                    />
                                     {SERVICE_LABELS[slug] ?? slug}
                                 </Link>
                             ))}
@@ -231,7 +238,7 @@ export default function ClientProfile({ client }: { client: Client }) {
                             {remainingScreenshots.map((shot, i) => (
                                 <FadeUp key={shot.src} delay={i * 0.05} className="rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900">
                                     <Image src={shot.src} alt={shot.caption ?? `${client.name} screenshot`} width={1254} height={1254} className="w-full h-auto object-cover" />
-                                    {shot.caption && <p className="text-zinc-500 text-[11.5px] p-3">{shot.caption}</p>}
+                                    {shot.caption && <p className="text-zinc-200 text-[11.5px] p-3">{shot.caption}</p>}
                                 </FadeUp>
                             ))}
                         </div>
@@ -256,7 +263,7 @@ export default function ClientProfile({ client }: { client: Client }) {
                                     className="group bg-zinc-900 border border-zinc-800 hover:border-amber-600/30 rounded-xl p-4 transition-colors"
                                 >
                                     <p className="text-zinc-300 text-[13px] font-medium group-hover:text-amber-600 transition-colors">{rc.name}</p>
-                                    <span className="inline-flex items-center gap-1 text-zinc-600 text-[11px] mt-1">
+                                    <span className="inline-flex items-center gap-1 text-zinc-300 text-[11px] mt-1">
                                         View profile <ArrowRight size={10} />
                                     </span>
                                 </Link>
@@ -270,7 +277,7 @@ export default function ClientProfile({ client }: { client: Client }) {
                 <Wrapper className="lg:py-12 md:py-10 py-8">
                     <FadeUp className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 text-center">
                         <p className="text-zinc-200 text-lg font-medium mb-2">Want results like this for your business?</p>
-                        <p className="text-zinc-500 text-[13px] font-light mb-5 max-w-md mx-auto">
+                        <p className="text-zinc-200 text-[13px] font-light mb-5 max-w-md mx-auto">
                             Tell us about your business and what you&apos;re trying to achieve.
                         </p>
                         <Link

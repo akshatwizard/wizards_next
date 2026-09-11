@@ -46,7 +46,7 @@ export default function Testimonials() {
                     </FadeUp>
 
                     <FadeUp delay={0.15}>
-                        <p className="text-zinc-500 text-sm font-light max-w-md leading-relaxed">
+                        <p className="text-zinc-200 text-sm font-light max-w-md leading-relaxed">
                             An unmatched experience — every project feels personal, impactful, and results-driven.
                         </p>
                     </FadeUp>
@@ -100,7 +100,7 @@ function TextCard({ t }: { t: Testimonial }) {
                 </div>
                 <div>
                     <p className="text-xs font-medium text-zinc-200">{t.name}</p>
-                    <p className="text-[10px] text-zinc-500">{t.designation}</p>
+                    <p className="text-[10px] text-zinc-200">{t.designation}</p>
                 </div>
             </div>
         </div>
@@ -136,7 +136,7 @@ function VideoCard({ v }: { v: VideoTestimonial }) {
                     </div>
                     <div>
                         <p className="text-[11px] font-medium text-zinc-200">{v.name}</p>
-                        <p className="text-[9px] text-zinc-500">{v.designation}</p>
+                        <p className="text-[9px] text-zinc-200">{v.designation}</p>
                     </div>
                 </div>
             </div>
@@ -200,7 +200,7 @@ function TabSwitcher({ active, onChange }: { active: Tab; onChange: (t: Tab) => 
                     onClick={() => onChange(tab)}
                     className={cn(
                         'relative px-5 py-2 rounded-lg text-sm font-medium transition-colors duration-200 cursor-pointer',
-                        active === tab ? 'text-zinc-950' : 'text-zinc-400 hover:text-zinc-200'
+                        active === tab ? 'text-zinc-950' : 'text-zinc-100 hover:text-zinc-200'
                     )}
                 >
                     {active === tab && (

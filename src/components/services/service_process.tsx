@@ -38,7 +38,7 @@ export default function ServiceProcess({ data }: { data: ServiceProcessType }) {
                                         </span>
                                     </div>
                                     <h3 className="text-[14px] text-zinc-100 leading-snug">{step.title}</h3>
-                                    <p className="text-[12px] text-zinc-500 leading-relaxed font-light">{step.desc}</p>
+                                    <p className="text-[12px] text-zinc-200 leading-relaxed font-light">{step.desc}</p>
                                 </div>
                             </FadeUp>
                         ))}

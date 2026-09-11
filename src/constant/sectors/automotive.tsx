@@ -25,7 +25,7 @@ export const AutomotiveSectorHero = {
                 <div className="absolute inset-0 flex items-center justify-center">
                     <div className="flex flex-col items-center gap-3 opacity-20">
                         <Car size={48} className="text-amber-600" strokeWidth={1} />
-                        <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">Project screenshot</span>
+                        <span className="text-xs text-zinc-200 font-medium tracking-widest uppercase">Project screenshot</span>
                     </div>
                 </div>
             </div>

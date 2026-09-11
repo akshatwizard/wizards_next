@@ -14,7 +14,7 @@ export default function SectorCaseStudy({ data }: { data: SectorCaseStudyType })
                     <SectionBadge label={data.badge ?? 'Case studies'} />
                     <SectionHeading>{data.heading}</SectionHeading>
                     {data.subheading && (
-                        <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed mt-2 max-w-lg">
+                        <p className="text-zinc-200 text-[13.5px] font-light leading-relaxed mt-2 max-w-lg">
                             {data.subheading}
                         </p>
                     )}
@@ -41,11 +41,11 @@ export default function SectorCaseStudy({ data }: { data: SectorCaseStudyType })
                                         <h3 className="font-syne text-[14px] font-bold text-zinc-100">{cs.client}</h3>
                                         <p className="text-[11px] text-amber-600 font-medium mt-0.5">{cs.result}</p>
                                     </div>
-                                    <p className="text-[12px] text-zinc-500 leading-relaxed font-light flex-1">{cs.desc}</p>
+                                    <p className="text-[12px] text-zinc-200 leading-relaxed font-light flex-1">{cs.desc}</p>
                                     <div className="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-zinc-800">
                                         <div className="flex flex-wrap gap-1.5">
                                             {cs.tags.map(t => (
-                                                <span key={t} className="text-[10px] px-2 py-0.5 rounded border border-zinc-700/60 bg-zinc-950 text-zinc-500">
+                                                <span key={t} className="text-[10px] px-2 py-0.5 rounded border border-zinc-700/60 bg-zinc-950 text-zinc-200">
                                                     {t}
                                                 </span>
                                             ))}

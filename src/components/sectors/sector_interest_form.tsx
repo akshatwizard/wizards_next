@@ -51,7 +51,7 @@ export default function SectorInterestForm({ sectorLabel }: { sectorLabel: strin
                         <p className="text-zinc-200 font-medium text-[16px] mb-2">
                             Ready to grow in {sectorLabel}?
                         </p>
-                        <p className="text-zinc-500 text-[13px] font-light">
+                        <p className="text-zinc-200 text-[13px] font-light">
                             Tell us a bit about your business — a strategist familiar with {sectorLabel.toLowerCase()} will get back to you within 24 hours.
                         </p>
                     </FadeUp>

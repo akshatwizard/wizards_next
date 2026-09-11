@@ -82,10 +82,10 @@ export default function ContactPage() {
                 <Wrapper>
                     <div>
                         <FadeUp delay={0}>
-                            <div className="flex items-center gap-1.5 text-[11px] text-zinc-600 mb-6">
-                                <Link href="/" className="hover:text-zinc-400 transition-colors">Home</Link>
+                            <div className="flex items-center gap-1.5 text-[11px] text-zinc-300 mb-6">
+                                <Link href="/" className="hover:text-zinc-100 transition-colors">Home</Link>
                                 <ChevronRight size={12} />
-                                <span className="text-zinc-400">Contact</span>
+                                <span className="text-zinc-100">Contact</span>
                             </div>
                             <SectionBadge label="Contact Us" />
                         </FadeUp>
@@ -97,7 +97,7 @@ export default function ContactPage() {
                         </FadeUp>
 
                         <FadeUp delay={0.15}>
-                            <p className="text-zinc-500 text-sm font-light max-w-md">
+                            <p className="text-zinc-200 text-sm font-light max-w-md">
                                 Tell us about your business and what you&apos;re trying to achieve — a strategist will get back to you within 24 hours.
                             </p>
                         </FadeUp>
@@ -112,8 +112,8 @@ export default function ContactPage() {
                                         <Icon size={15} strokeWidth={1.6} className="text-amber-600" />
                                     </div>
                                     <div>
-                                        <p className="text-[10px] text-zinc-600 uppercase tracking-wider mb-0.5">{label}</p>
-                                        <p className="text-zinc-400 text-[12.5px]">{value}</p>
+                                        <p className="text-[10px] text-zinc-300 uppercase tracking-wider mb-0.5">{label}</p>
+                                        <p className="text-zinc-100 text-[12.5px]">{value}</p>
                                     </div>
                                 </div>
                             ))}
@@ -125,7 +125,7 @@ export default function ContactPage() {
                                 <div className="flex flex-col items-center justify-center text-center gap-3 py-10">
                                     <CheckCircle2 size={32} className="text-amber-600" />
                                     <p className="text-zinc-200 text-sm font-medium">Message sent — thanks!</p>
-                                    <p className="text-zinc-500 text-[12.5px] max-w-xs">
+                                    <p className="text-zinc-200 text-[12.5px] max-w-xs">
                                         A strategist will get back to you within 24 hours.
                                     </p>
                                     <button
@@ -227,7 +227,7 @@ const inputClass =
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
     return (
         <div className="flex flex-col gap-1.5">
-            <label className="text-[10.5px] text-zinc-600 uppercase tracking-wider">{label}</label>
+            <label className="text-[10.5px] text-zinc-300 uppercase tracking-wider">{label}</label>
             {children}
         </div>
     );

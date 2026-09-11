@@ -20,7 +20,7 @@ export default function SectorStatsBanner({ data }: { data: SectorStatsBannerTyp
                                 </p>
                                 <p className="text-[12px] font-medium text-zinc-300 mt-1">{s.label}</p>
                                 {s.sublabel && (
-                                    <p className="text-[10px] text-zinc-600 mt-0.5">{s.sublabel}</p>
+                                    <p className="text-[10px] text-zinc-300 mt-0.5">{s.sublabel}</p>
                                 )}
                             </div>
                         ))}

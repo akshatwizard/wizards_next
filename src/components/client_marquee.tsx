@@ -43,7 +43,7 @@ function MarqueeItem({ initials, name, href }: MarqueeClient) {
                 </div>
 
                 {/* Name */}
-                <span className="text-[13px] font-medium whitespace-nowrap text-zinc-400 group-hover/item:text-zinc-100 transition-colors duration-300 "
+                <span className="text-[13px] font-medium whitespace-nowrap text-zinc-100 group-hover/item:text-zinc-100 transition-colors duration-300 "
                 >
                     {name}
                 </span>
@@ -80,7 +80,7 @@ export default function ClientMarquee() {
                         </h2>
                     </FadeUp>
                     <FadeUp delay={0.15}>
-                        <p className="text-zinc-500 text-sm mt-2 font-light">
+                        <p className="text-zinc-200 text-sm mt-2 font-light">
                             From Varanasi to pan-India — brands that chose to grow with Wizards.
                         </p>
                     </FadeUp>

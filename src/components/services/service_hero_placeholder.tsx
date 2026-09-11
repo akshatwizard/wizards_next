@@ -15,7 +15,7 @@ export function ServiceHeroPlaceholder() {
                 <div className="absolute inset-0 flex items-center justify-center">
                     <div className="flex flex-col items-center gap-3 opacity-20">
                         <Globe size={48} className="text-amber-600" strokeWidth={1} />
-                        <span className="text-xs text-zinc-500 font-medium tracking-widest uppercase">Project screenshot</span>
+                        <span className="text-xs text-zinc-200 font-medium tracking-widest uppercase">Project screenshot</span>
                     </div>
                 </div>
                 {/* Amber corner pip */}
@@ -25,12 +25,12 @@ export function ServiceHeroPlaceholder() {
             {/* Floating stat cards */}
             <div className="absolute -bottom-4 -left-4 bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 shadow-xl">
                 <p className="font-syne text-xl font-black text-amber-500 leading-none">2.1s</p>
-                <p className="text-[9px] text-zinc-500 mt-0.5 uppercase tracking-widest">Avg load time</p>
+                <p className="text-[9px] text-zinc-200 mt-0.5 uppercase tracking-widest">Avg load time</p>
             </div>
 
             <div className="absolute -top-4 -right-4 bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 shadow-xl">
                 <p className="font-syne text-xl font-black text-amber-500 leading-none">120+</p>
-                <p className="text-[9px] text-zinc-500 mt-0.5 uppercase tracking-widest">Sites launched</p>
+                <p className="text-[9px] text-zinc-200 mt-0.5 uppercase tracking-widest">Sites launched</p>
             </div>
         </FadeUp>
     )

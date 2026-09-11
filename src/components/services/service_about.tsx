@@ -15,7 +15,7 @@ export default function ServiceAbout({ data }: { data: ServiceAboutTypes }) {
                         {data.heading}
                     </FadeUp>
                     <FadeUp delay={0.1}>
-                        <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed mt-3 max-w-md">
+                        <p className="text-zinc-200 text-[13.5px] font-light leading-relaxed mt-3 max-w-md">
                             {data.content}
                         </p>
                     </FadeUp>
@@ -33,7 +33,7 @@ export default function ServiceAbout({ data }: { data: ServiceAboutTypes }) {
                                     <h3 className="text-[15px] text-zinc-200 mb-1.5 leading-snug">
                                         {item.title}
                                     </h3>
-                                    <p className="text-xs text-zinc-500 leading-snug">
+                                    <p className="text-xs text-zinc-200 leading-snug">
                                         {item.body}
                                     </p>
                                 </div>

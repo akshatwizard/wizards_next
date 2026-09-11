@@ -15,19 +15,19 @@ export default function TermsOfServicePage() {
             <Section>
                 <Wrapper>
                     <FadeUp delay={0}>
-                        <div className="flex items-center gap-1.5 text-[11px] text-zinc-600 mb-6">
-                            <Link href="/" className="hover:text-zinc-400 transition-colors">Home</Link>
+                        <div className="flex items-center gap-1.5 text-[11px] text-zinc-300 mb-6">
+                            <Link href="/" className="hover:text-zinc-100 transition-colors">Home</Link>
                             <ChevronRight size={12} />
-                            <span className="text-zinc-400">Terms of Service</span>
+                            <span className="text-zinc-100">Terms of Service</span>
                         </div>
                         <SectionBadge label="Legal" />
                         <h1 className="tracking-tight text-zinc-200 leading-tight mb-3 lg:text-4xl text-3xl font-medium">
                             Terms of Service
                         </h1>
-                        <p className="text-zinc-600 text-[12.5px] mb-10">Last updated: [DATE]</p>
+                        <p className="text-zinc-300 text-[12.5px] mb-10">Last updated: [DATE]</p>
                     </FadeUp>
 
-                    <div className="max-w-2xl flex flex-col gap-8 text-zinc-400 text-[14px] leading-relaxed font-light">
+                    <div className="max-w-2xl flex flex-col gap-8 text-zinc-100 text-[14px] leading-relaxed font-light">
                         <LegalSection title="1. Acceptance of Terms">
                             By accessing or using this website, you agree to be bound by these Terms of Service. If you
                             do not agree, please do not use this site.

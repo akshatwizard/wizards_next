@@ -36,7 +36,7 @@ export default function IndustriesSection() {
                         </FadeUp>
 
                         <FadeUp delay={0.15}>
-                            <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed max-w-lg mt-2">
+                            <p className="text-zinc-200 text-[13.5px] font-light leading-relaxed max-w-lg mt-2">
                                 From a neighbourhood clinic in Varanasi to a pan-India e-commerce brand —
                                 we've built campaigns across industries that most agencies won't touch.
                             </p>
@@ -48,17 +48,17 @@ export default function IndustriesSection() {
                         <div className="flex items-center gap-4 bg-zinc-900 border border-zinc-800 rounded-2xl px-5 py-4">
                             <div className="text-center">
                                 <p className=" text-2xl font-medium text-amber-500 leading-none">500+</p>
-                                <p className="text-[10px] text-zinc-500 mt-0.5 uppercase tracking-widest">Clients</p>
+                                <p className="text-[10px] text-zinc-200 mt-0.5 uppercase tracking-widest">Clients</p>
                             </div>
                             <div className="w-px h-8 bg-zinc-800" />
                             <div className="text-center">
                                 <p className=" text-2xl font-medium text-amber-500 leading-none">10+</p>
-                                <p className="text-[10px] text-zinc-500 mt-0.5 uppercase tracking-widest">Industries</p>
+                                <p className="text-[10px] text-zinc-200 mt-0.5 uppercase tracking-widest">Industries</p>
                             </div>
                             <div className="w-px h-8 bg-zinc-800" />
                             <div className="text-center">
                                 <p className=" text-2xl font-medium text-amber-500 leading-none">28+</p>
-                                <p className="text-[10px] text-zinc-500 mt-0.5 uppercase tracking-widest">States</p>
+                                <p className="text-[10px] text-zinc-200 mt-0.5 uppercase tracking-widest">States</p>
                             </div>
                         </div>
                     </FadeUp>
@@ -77,7 +77,7 @@ export default function IndustriesSection() {
 
                 {/* Bottom note */}
                 <FadeUp delay={0.3}>
-                    <p className="text-center text-[11.5px] text-zinc-600 mt-8">
+                    <p className="text-center text-[11.5px] text-zinc-300 mt-8">
                         Don't see your industry?{' '}
                         <a
                             href="/contact"
@@ -115,14 +115,14 @@ function IndustryCard({ industry, delay }: { industry: Industry; delay: number }
                     <p className="text-[13.5px] font-semibold text-zinc-200 leading-snug tracking-tight">
                         {name}
                     </p>
-                    <p className="text-[11.5px] text-zinc-500 font-light leading-snug">
+                    <p className="text-[11.5px] text-zinc-200 font-light leading-snug">
                         {sub}
                     </p>
                 </div>
 
                 {/* Client count */}
                 <div className="flex items-center justify-between pt-2.5 border-t border-zinc-800 mt-auto">
-                    <span className="text-[11px] text-zinc-600">Clients served</span>
+                    <span className="text-[11px] text-zinc-300">Clients served</span>
                     <span className="text-[12px] font-semibold text-amber-600">{count}</span>
                 </div>
             </Link>

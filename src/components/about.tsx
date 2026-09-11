@@ -12,7 +12,7 @@ function Feature({ icon: Icon, title, description }: { icon: React.ElementType, 
             </div>
             <div>
                 <p className="font-medium text-[15px] text-zinc-200 mb-0.5">{title}</p>
-                <p className="text-[13px] text-zinc-500 leading-snug">{description}</p>
+                <p className="text-[13px] text-zinc-200 leading-snug">{description}</p>
             </div>
         </div>
     )
@@ -142,7 +142,7 @@ export default function AboutUs() {
                             </h2>
 
                             {/* Body copy */}
-                            <div className="space-y-3 text-[13.5px] text-zinc-500 leading-relaxed font-light">
+                            <div className="space-y-3 text-[13.5px] text-zinc-200 leading-relaxed font-light">
                                 <p>
                                     Wizards Next is a growth-oriented and progressive organization working
                                     in the field of digital marketing since June 2023. Initially formed as
@@ -175,7 +175,7 @@ export default function AboutUs() {
                         {/* CTA */}
                         <FadeUp delay={0.3}>
                             <Link
-                                href="#"
+                                href="/about"
                                 className="inline-flex items-center gap-2 border border-zinc-700 hover:border-amber-600/50 hover:bg-amber-600/5 text-zinc-300 text-[13px] font-medium px-6 py-3 rounded-full transition-all duration-200 w-max mt-1"
                             >
                                 Read Our Full Story

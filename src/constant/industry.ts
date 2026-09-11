@@ -51,7 +51,7 @@ export const INDUSTRIES: Industry[] = [
         sub: 'Dealers & service centres',
         count: '6+',
         iconBg: 'bg-zinc-600/10',
-        iconColor: 'text-zinc-400',
+        iconColor: 'text-zinc-100',
     },
     {
         icon: Shirt,

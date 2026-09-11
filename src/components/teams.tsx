@@ -21,7 +21,7 @@ export default function Team() {
                         </h2>
                     </FadeUp>
                     <FadeUp delay={0.15}>
-                        <p className="text-zinc-500 text-sm font-light max-w-md">
+                        <p className="text-zinc-200 text-sm font-light max-w-md">
                             A tight-knit crew of strategists, designers, developers and storytellers — obsessed with growth.
                         </p>
                     </FadeUp>
@@ -46,7 +46,7 @@ export default function Team() {
                             </div>
 
                             {/* Bio */}
-                            <p className="text-zinc-500 text-xs leading-relaxed font-light flex-1">{bio}</p>
+                            <p className="text-zinc-200 text-xs leading-relaxed font-light flex-1">{bio}</p>
 
                             {/* Text-label social buttons */}
                             <div className="flex gap-2 mt-auto pt-1">
@@ -55,7 +55,7 @@ export default function Team() {
                                         key={label}
                                         href={href}
                                         aria-label={label}
-                                        className="w-8 h-8 rounded-lg bg-zinc-950 border border-zinc-800 hover:bg-amber-600/12 hover:border-amber-600/35 hover:text-amber-600 flex items-center justify-center text-[11px] font-bold text-zinc-500 transition-all duration-200"
+                                        className="w-8 h-8 rounded-lg bg-zinc-950 border border-zinc-800 hover:bg-amber-600/12 hover:border-amber-600/35 hover:text-amber-600 flex items-center justify-center text-[11px] font-bold text-zinc-200 transition-all duration-200"
                                     >
                                         {label}
                                     </a>

@@ -15,7 +15,7 @@ export default function ServiceTechStack({ data }: { data: ServiceTechStackType 
                         Modern tools,{' '}
                         <span className="text-amber-500">no legacy baggage</span>
                     </SectionHeading>
-                    <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed mt-2 max-w-lg">
+                    <p className="text-zinc-200 text-[13.5px] font-light leading-relaxed mt-2 max-w-lg">
                         We don't pick technology to show off — we pick what's right for your project's
                         scale, budget, and long-term maintainability.
                     </p>
@@ -36,7 +36,7 @@ export default function ServiceTechStack({ data }: { data: ServiceTechStackType 
                                     <div className="flex flex-wrap gap-1.5">
                                         {cat.items.map((tech) => (
                                             <span key={tech}
-                                                className="text-[11px] px-2.5 py-1 rounded-lg border border-zinc-700/60 bg-zinc-950 text-zinc-400 hover:border-amber-600/30 hover:text-zinc-300 transition-colors cursor-default">
+                                                className="text-[11px] px-2.5 py-1 rounded-lg border border-zinc-700/60 bg-zinc-950 text-zinc-100 hover:border-amber-600/30 hover:text-zinc-300 transition-colors cursor-default">
                                                 {tech}
                                             </span>
                                         ))}

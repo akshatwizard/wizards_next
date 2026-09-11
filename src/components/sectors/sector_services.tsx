@@ -16,7 +16,7 @@ export default function SectorServices({ data }: { data: SectorServicesType }) {
                         <SectionBadge label={data.badge ?? 'What we do for you'} />
                         <SectionHeading>{data.heading}</SectionHeading>
                         {data.subheading && (
-                            <p className="text-zinc-500 text-[13.5px] font-light leading-relaxed mt-2 max-w-xl">
+                            <p className="text-zinc-200 text-[13.5px] font-light leading-relaxed mt-2 max-w-xl">
                                 {data.subheading}
                             </p>
                         )}
@@ -40,13 +40,13 @@ export default function SectorServices({ data }: { data: SectorServicesType }) {
                                         <h3 className="font-syne text-[15px] font-bold text-zinc-100 mb-1.5">
                                             {svc.title}
                                         </h3>
-                                        <p className="text-[12.5px] text-zinc-500 leading-relaxed font-light">
+                                        <p className="text-[12.5px] text-zinc-200 leading-relaxed font-light">
                                             {svc.desc}
                                         </p>
                                     </div>
                                     <div className="flex flex-wrap gap-1.5 pt-3 border-t border-zinc-800">
                                         {svc.tags.map(t => (
-                                            <span key={t} className="text-[10px] px-2 py-0.5 rounded border border-zinc-700/60 bg-zinc-950 text-zinc-500">
+                                            <span key={t} className="text-[10px] px-2 py-0.5 rounded border border-zinc-700/60 bg-zinc-950 text-zinc-200">
                                                 {t}
                                             </span>
                                         ))}

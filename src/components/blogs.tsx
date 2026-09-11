@@ -73,7 +73,7 @@ function Tags({ tags, hovered }: { tags: Tag[]; hovered: boolean }) {
             {tags.map((tag) => (
                 <span
                     key={tag}
-                    className={`text-[9.5px] px-1.5 py-0.5 rounded border transition-colors duration-200 bg-[#111114] ${hovered ? 'border-amber-600/20 text-zinc-500' : 'border-zinc-700/60 text-zinc-600'
+                    className={`text-[9.5px] px-1.5 py-0.5 rounded border transition-colors duration-200 bg-[#111114] ${hovered ? 'border-amber-600/20 text-zinc-200' : 'border-zinc-700/60 text-zinc-300'
                         }`}
                 >
                     {tag}
@@ -117,10 +117,10 @@ function FeaturedCard({ post }: { post: FeaturedPost }) {
                         <div className="w-4.5 h-4.5 rounded-[5px] bg-amber-600/15 border border-amber-600/25 flex items-center justify-center text-[7px] font-bold text-amber-600">
                             {post.author.initials}
                         </div>
-                        <span className="text-[10px] text-zinc-600">{post.author.name}</span>
+                        <span className="text-[10px] text-zinc-300">{post.author.name}</span>
                     </div>
                     <span className="w-1 h-1 rounded-full bg-zinc-700" />
-                    <span className="text-[10px] text-zinc-600">{post.date}</span>
+                    <span className="text-[10px] text-zinc-300">{post.date}</span>
                     <span className="w-1 h-1 rounded-full bg-zinc-700" />
                     <span className="text-[10px] text-zinc-700">{post.readTime}</span>
                 </div>
@@ -129,7 +129,7 @@ function FeaturedCard({ post }: { post: FeaturedPost }) {
                     {post.title}
                 </h3>
 
-                <p className="text-[11.5px] text-zinc-600 leading-relaxed font-light">
+                <p className="text-[11.5px] text-zinc-300 leading-relaxed font-light">
                     {post.excerpt}
                 </p>
 
@@ -160,7 +160,7 @@ function SmallCard({ post }: { post: SmallPost }) {
             {/* Body */}
             <div className="flex flex-col gap-1.5 flex-1 p-3.5">
                 <div className="flex items-center gap-1.5">
-                    <span className="text-[10px] text-zinc-600">{post.date}</span>
+                    <span className="text-[10px] text-zinc-300">{post.date}</span>
                     <span className="w-1 h-1 rounded-full bg-zinc-700" />
                     <span className="text-[10px] text-zinc-700">{post.readTime}</span>
                 </div>
@@ -196,7 +196,7 @@ function NewsletterStrip() {
                     <p className="font-syne text-[13px] font-semibold text-zinc-200">
                         Get weekly growth tips in your inbox
                     </p>
-                    <p className="text-[11px] text-zinc-600 mt-0.5">No spam. Unsubscribe any time.</p>
+                    <p className="text-[11px] text-zinc-300 mt-0.5">No spam. Unsubscribe any time.</p>
                 </div>
             </div>
 

@@ -32,15 +32,15 @@ function ClientCard({ client }: { client: (typeof clients)[0] }) {
         >
             <div>
                 <p className="text-zinc-200 font-medium text-[14px] group-hover:text-amber-600 transition-colors">{client.name}</p>
-                {client.tagline && <p className="text-zinc-600 text-[11.5px] mt-1">{client.tagline}</p>}
+                {client.tagline && <p className="text-zinc-300 text-[11.5px] mt-1">{client.tagline}</p>}
             </div>
             <div className="flex items-center justify-between mt-4">
                 <div className="flex flex-wrap gap-1">
                     {client.tags.slice(0, 2).map((t) => (
-                        <span key={t} className="text-[9.5px] px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-500 bg-zinc-950">{t}</span>
+                        <span key={t} className="text-[9.5px] px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-200 bg-zinc-950">{t}</span>
                     ))}
                 </div>
-                <ArrowUpRight size={14} className="text-zinc-600 group-hover:text-amber-600 transition-colors shrink-0" />
+                <ArrowUpRight size={14} className="text-zinc-300 group-hover:text-amber-600 transition-colors shrink-0" />
             </div>
         </Link>
     );
@@ -59,10 +59,10 @@ export default function OurWorksPage() {
             <Section>
                 <Wrapper className="pb-0!">
                     <FadeUp delay={0}>
-                        <div className="flex items-center gap-1.5 text-[11px] text-zinc-600 mb-6">
-                            <Link href="/" className="hover:text-zinc-400 transition-colors">Home</Link>
+                        <div className="flex items-center gap-1.5 text-[11px] text-zinc-300 mb-6">
+                            <Link href="/" className="hover:text-zinc-100 transition-colors">Home</Link>
                             <ChevronRight size={12} />
-                            <span className="text-zinc-400">Our Works</span>
+                            <span className="text-zinc-100">Our Works</span>
                         </div>
                         <SectionBadge label="Our Works" />
                     </FadeUp>
@@ -72,7 +72,7 @@ export default function OurWorksPage() {
                         </h1>
                     </FadeUp>
                     <FadeUp delay={0.15}>
-                        <p className="text-zinc-500 text-sm font-light max-w-lg">
+                        <p className="text-zinc-200 text-sm font-light max-w-lg">
                             A profile for every client we work with — browse by sector, or open a profile directly.
                         </p>
                     </FadeUp>

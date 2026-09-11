@@ -35,22 +35,22 @@ export default function ServiceHero({ data }: { data: ServiceHeroTypes }) {
                     <div className="flex flex-col">
                         <FadeUp delay={0}>
                             {/* Breadcrumb */}
-                            <div className="flex items-center gap-1.5 text-[11px] text-zinc-600 mb-6">
+                            <div className="flex items-center gap-1.5 text-[11px] text-zinc-300 mb-6">
                                 <Link
                                     href="/"
-                                    className="hover:text-zinc-400 transition-colors"
+                                    className="hover:text-zinc-100 transition-colors"
                                 >
                                     Home
                                 </Link>
                                 <ChevronRight size={12} />
                                 <Link
                                     href="/services"
-                                    className="hover:text-zinc-400 transition-colors"
+                                    className="hover:text-zinc-100 transition-colors"
                                 >
                                     Services
                                 </Link>
                                 <ChevronRight size={12} />
-                                <span className="text-zinc-400">{data.bread_crumb}</span>
+                                <span className="text-zinc-100">{data.bread_crumb}</span>
                             </div>
 
                             <SectionBadge label={data.badge} />
@@ -61,7 +61,7 @@ export default function ServiceHero({ data }: { data: ServiceHeroTypes }) {
                         </FadeUp>
 
                         <FadeUp delay={0.12}>
-                            <p className="text-zinc-400 text-[14px] leading-relaxed font-light max-w-md mb-8">
+                            <p className="text-zinc-100 text-[14px] leading-relaxed font-light max-w-md mb-8">
                                 {/* We build fast, beautiful, and conversion-focused websites —
                                 from business portfolios to full-scale e-commerce stores.
                                 Delivered in weeks, not months. */}
@@ -121,7 +121,7 @@ export default function ServiceHero({ data }: { data: ServiceHeroTypes }) {
                                             />
                                         ))}
                                     </div>
-                                    <p className="text-[10px] text-zinc-500">
+                                    <p className="text-[10px] text-zinc-200">
                                         Trusted by{" "}
                                         <span className="text-zinc-300 font-medium">
                                             {data.clientCount} clients
@@ -148,7 +148,7 @@ export default function ServiceHero({ data }: { data: ServiceHeroTypes }) {
                                 <p className="font-syne text-2xl font-extrabold text-amber-500">
                                     {s.value}
                                 </p>
-                                <p className="text-[11px] text-zinc-500 mt-0.5">{s.label}</p>
+                                <p className="text-[11px] text-zinc-200 mt-0.5">{s.label}</p>
                             </div>
                         ))}
                     </div>

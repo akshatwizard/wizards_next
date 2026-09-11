@@ -63,7 +63,7 @@ function StepCard({
                 <h3 className="font-syne text-[14px] font-bold text-zinc-100 leading-snug">
                     {step.title}
                 </h3>
-                <p className="text-[12.5px] text-zinc-500 leading-relaxed font-light">
+                <p className="text-[12.5px] text-zinc-200 leading-relaxed font-light">
                     {step.description}
                 </p>
             </div>
@@ -122,7 +122,7 @@ export default function ProcessSection() {
                         </FadeUp>
 
                         <FadeUp delay={0.12}>
-                            <p className="text-zinc-400 text-[13.5px] font-light max-w-md leading-relaxed">
+                            <p className="text-zinc-100 text-[13.5px] font-light max-w-md leading-relaxed">
                                 We don't guess. We follow our proven workflow to scale your brand
                                 with precision, creativity, and data.
                             </p>
