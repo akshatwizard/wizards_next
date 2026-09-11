@@ -41,6 +41,36 @@ export const clients: Client[] = [
         colSpan: "col-span-2",
         imgHeight: "h-52",
     },
+
+    {
+        slug: "dr-k-shilpi-reddy",
+        name: "Dr. K. Shilpi Reddy",
+        sectors: ["healthcare"],
+        tagline: "23+ years of trusted care, turned into Hyderabad's most-followed voice in women's health.",
+        tags: ["Social Media", "Content Creation", "Website Development", "SEO"],
+        services: ["social-media", "content-creation", "google-meta-ads-management", "performance-marketing", "website-development", "seo-consultancy", "videography"],
+        overview: "Dr. K. Shilpi Reddy is an Obstetrician and Gynaecologist with over 23 years of practice, serving as Clinical Director of Obstetrics & Gynaecology at KIMS Cuddles, Kondapur — a Hyderabad hospital she co-founded with Dr. Abhinay Bollineni in 2016, built as a center of excellence for obstetrics, fetal medicine, and paediatric care. Long before any of that following existed, her actual medical work started in rural Telangana — a nursing home in Dubbaka in 2003, then a larger one in Siddipet in 2007 — treating high-risk pregnancies in communities with almost no access to specialist obstetric care. That same instinct is what her digital presence is built on today.\n\nWe began working with her in 2023, taking over social media, content, video production, paid ads, performance marketing, her website, and SEO as one continuous, hands-on engagement rather than a set-and-forget campaign.\n\nWhat's driven the growth since then is the day-to-day discipline behind it: a content calendar planned and shot consistently, not sporadically — patient-education reels, VBAC and high-risk pregnancy stories, myth-busting content on fertility and PCOS, and behind-the-scenes moments from her work as a social activist and motivational speaker. Every week involves fresh video shoots, edits, captions written in her voice, Meta and Google ad campaigns monitored and optimised, and community engagement — replying to comments and DMs — so the page stays active and trustworthy rather than just posting and going quiet.\n\nThat groundwork is what took her from a respected but comparatively lower-visibility clinical profile in 2023 to one of Hyderabad's most-followed gynaecologists online today: 419K+ Instagram followers, a highly engaged Facebook community, and 1.28 million subscribers on YouTube, where longer-form patient stories and expert explainers live. The same consistency now extends to her website and SEO, keeping her positioned as a go-to authority on women's health searches.\n\nAlongside her clinical work, she also runs Mrs. Mom Event, her own venture in pregnancy and infant-care wellness education — part of the same content ecosystem this engagement supports.",
+        highlights: [
+            "419,000+ Instagram followers, up from a comparatively low-visibility starting point in 2023",
+            "1.28 million subscribers on YouTube",
+            "29,016 Facebook page likes",
+            "23+ years of clinical experience, including co-founding KIMS Cuddles, Kondapur in 2016",
+        ],
+        website: "https://drkshilpireddy.com",
+        links: [
+            { label: "Instagram", url: "https://www.instagram.com/dr.k.shilpireddy/" },
+            { label: "Facebook", url: "https://www.facebook.com/Dr.k.shilpireddy" },
+            { label: "YouTube", url: "https://www.youtube.com/channel/UC4JqmB6gTvjYSQixZtJ0jHw" },
+            { label: "LinkedIn", url: "https://www.linkedin.com/in/drkshilpireddy/" },
+            { label: "Mrs. Mom Event", url: "https://mrsmomevent.com/" },
+        ],
+        screenshots: [
+            { src: "/images/clients/dr-k-shilpi-reddy/showcase.png", caption: "Her Instagram profile and YouTube channel — 419K+ followers and 1.28M subscribers." },
+        ],
+        heroImage: "/images/clients/dr-k-shilpi-reddy/hero-illustration.png",
+        featured: true,
+        imgHeight: "h-44",
+    },
 ];
 
 export function getClientBySlug(slug: string): Client | undefined {
