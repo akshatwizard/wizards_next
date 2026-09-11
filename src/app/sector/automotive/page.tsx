@@ -19,11 +19,11 @@ export default function AutomotiveSectorPage() {
     return (
         <main>
             <SectorHero data={AutomotiveSectorHero} />
+            <SectorClientList sectorSlug="automotive" sectorLabel="Automotive" />
             <SectorAudience data={AutomotiveSectorAudience} />
             <SectorServices data={AutomotiveSectorServices} />
             <SectorStatsBanner data={AutomotiveSectorStats} />
             <SectorTrust data={AutomotiveSectorTrust} />
-            <SectorClientList sectorSlug="automotive" sectorLabel="Automotive" />
             <SectorInterestForm sectorLabel="Automotive" />
             <ServiceFAQ data={AutomotiveSectorFAQ} />
             <ServiceCTA />

@@ -19,11 +19,11 @@ export default function LocalServicesSectorPage() {
     return (
         <main>
             <SectorHero data={LocalServicesSectorHero} />
+            <SectorClientList sectorSlug="local-services" sectorLabel="Local Services" />
             <SectorAudience data={LocalServicesSectorAudience} />
             <SectorServices data={LocalServicesSectorServices} />
             <SectorStatsBanner data={LocalServicesSectorStats} />
             <SectorTrust data={LocalServicesSectorTrust} />
-            <SectorClientList sectorSlug="local-services" sectorLabel="Local Services" />
             <SectorInterestForm sectorLabel="Local Services" />
             <ServiceFAQ data={LocalServicesSectorFAQ} />
             <ServiceCTA />

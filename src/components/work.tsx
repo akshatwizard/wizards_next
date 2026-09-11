@@ -2,36 +2,44 @@ import { getFeaturedClients } from '@/constant/clients'
 import { Client } from '@/types/client.types'
 import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Section, Wrapper } from './ui/sections'
 import { FadeUp } from './ui/motion_components'
 
 
 function ProjectCard({ client }: { client: Client }) {
-    const { name, sectors, tags, colSpan, rowSpan, imgHeight } = client
+    const { name, sectors, tags, heroImage } = client
 
     return (
         <Link
             href={`/our-works/${client.slug}`}
-            className={`h-full group relative bg-zinc-900 rounded-2xl overflow-hidden cursor-pointer border border-zinc-800 hover:border-zinc-700  transition-all duration-200 flex flex-col ${colSpan ?? ''} ${rowSpan ?? ''}`}
+            className="h-full group relative bg-zinc-900 rounded-2xl overflow-hidden cursor-pointer border border-zinc-800 hover:border-zinc-700 transition-all duration-200 flex flex-col"
         >
-            {/* Image placeholder */}
-            <div className={`relative w-full bg-zinc-950 shrink-0 ${rowSpan === 'row-span-2' ? 'flex-1' : (imgHeight ?? 'h-44')}`}>
-                {/* Subtle grid texture */}
-                <div
-                    className="absolute inset-0 opacity-30"
-                    style={{
-                        backgroundImage:
-                            'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
-                        backgroundSize: '24px 24px',
-                    }}
-                />
-                {/* Sector label centered */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-[11px] font-medium text-zinc-600 tracking-widest uppercase">
-                        {sectors && sectors.length > 0 ? sectors.join(' / ') : name}
-                    </span>
-                </div>
-                {/* Amber corner accent */}
+            {/* Image — same fixed height for every card, no more asymmetric bento sizing */}
+            <div className="relative w-full h-44 shrink-0 bg-zinc-950 flex items-center justify-center p-6">
+                {heroImage ? (
+                    <Image
+                        src={heroImage}
+                        alt={`${name} illustration`}
+                        width={1254}
+                        height={1254}
+                        className="relative w-full h-full object-contain"
+                    />
+                ) : (
+                    <>
+                        <div
+                            className="absolute inset-0 opacity-30"
+                            style={{
+                                backgroundImage:
+                                    'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
+                                backgroundSize: '24px 24px',
+                            }}
+                        />
+                        <span className="relative text-[11px] font-medium text-zinc-600 tracking-widest uppercase">
+                            {sectors && sectors.length > 0 ? sectors.join(' / ') : name}
+                        </span>
+                    </>
+                )}
                 <div className="absolute top-3 left-3 w-1.5 h-1.5 rounded-full bg-amber-600/60" />
 
                 {/* Hover overlay */}
@@ -101,7 +109,6 @@ export default function PortfolioBentoGrid() {
 
                 <FadeUp delay={0.2}
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
-                    style={{ gridTemplateRows: 'auto' }}
                 >
                     {featured.map((client) => (
                         <ProjectCard key={client.slug} client={client} />

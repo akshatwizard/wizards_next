@@ -19,11 +19,11 @@ export default function HealthcareSectorPage() {
     return (
         <main>
             <SectorHero data={HealthcareSectorHero} />
+            <SectorClientList sectorSlug="healthcare" sectorLabel="Healthcare" />
             <SectorAudience data={HealthcareSectorAudience} />
             <SectorServices data={HealthcareSectorServices} />
             <SectorStatsBanner data={HealthcareSectorStats} />
             <SectorTrust data={HealthcareSectorTrust} />
-            <SectorClientList sectorSlug="healthcare" sectorLabel="Healthcare" />
             <SectorInterestForm sectorLabel="Healthcare" />
             <ServiceFAQ data={HealthcareSectorFAQ} />
             <ServiceCTA />

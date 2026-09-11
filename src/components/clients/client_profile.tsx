@@ -67,12 +67,15 @@ function getRelatedClients(client: Client, limit = 4) {
 export default function ClientProfile({ client }: { client: Client }) {
     const relatedClients = getRelatedClients(client);
     const labels = sectorLabels(client.sectors);
+    const bannerImage = client.screenshots?.[0];
+    const remainingScreenshots = client.screenshots?.slice(1) ?? [];
 
     return (
         <main>
+            {/* Banner — leads with the real screenshot, not the decorative illustration */}
             <Section className="relative overflow-hidden">
                 <Wrapper>
-                    <div className={client.heroImage ? "grid lg:grid-cols-2 gap-10 items-center" : ""}>
+                    <div className={bannerImage ? "grid lg:grid-cols-2 gap-10 items-center" : ""}>
                         <div>
                             <FadeUp delay={0}>
                                 <div className="flex items-center gap-1.5 text-[11px] text-zinc-600 mb-6 flex-wrap">
@@ -138,15 +141,16 @@ export default function ClientProfile({ client }: { client: Client }) {
                             )}
                         </div>
 
-                        {client.heroImage && (
+                        {bannerImage && (
                             <div className="flex items-center justify-center relative mt-8 lg:mt-0">
-                                <FadeUp delay={0.2} className="relative w-full max-w-[420px] mx-auto">
+                                <FadeUp delay={0.2} className="relative w-full max-w-[460px] mx-auto rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900">
                                     <Image
-                                        src={client.heroImage}
-                                        alt={`${client.name} — conceptual illustration`}
+                                        src={bannerImage.src}
+                                        alt={bannerImage.caption ?? `${client.name} — real results`}
                                         width={1254}
                                         height={1254}
-                                        className="w-full h-auto object-contain select-none pointer-events-none"
+                                        priority
+                                        className="w-full h-auto object-contain"
                                     />
                                 </FadeUp>
                             </div>
@@ -155,24 +159,38 @@ export default function ClientProfile({ client }: { client: Client }) {
                 </Wrapper>
             </Section>
 
-            {/* Overview */}
+            {/* Overview — the story, with the decorative illustration as a supporting visual */}
             <Section>
                 <Wrapper className="lg:py-10 md:py-8 py-6">
                     {client.overview ? (
-                        <FadeUp className="max-w-2xl">
-                            <p className="text-zinc-400 text-[14px] leading-relaxed font-light whitespace-pre-line">
-                                {client.overview}
-                            </p>
-                            {client.highlights && client.highlights.length > 0 && (
-                                <ul className="mt-6 flex flex-col gap-2.5">
-                                    {client.highlights.map((h) => (
-                                        <li key={h} className="text-zinc-400 text-[13.5px] flex gap-2">
-                                            <span className="text-amber-600">—</span>{h}
-                                        </li>
-                                    ))}
-                                </ul>
+                        <div className={client.heroImage ? "grid lg:grid-cols-[1.4fr_1fr] gap-10 items-start" : ""}>
+                            <FadeUp className="max-w-2xl">
+                                <p className="text-zinc-400 text-[14px] leading-relaxed font-light whitespace-pre-line">
+                                    {client.overview}
+                                </p>
+                                {client.highlights && client.highlights.length > 0 && (
+                                    <ul className="mt-6 flex flex-col gap-2.5">
+                                        {client.highlights.map((h) => (
+                                            <li key={h} className="text-zinc-400 text-[13.5px] flex gap-2">
+                                                <span className="text-amber-600">—</span>{h}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </FadeUp>
+
+                            {client.heroImage && (
+                                <FadeUp delay={0.1} className="relative w-full max-w-[280px] mx-auto lg:sticky lg:top-24">
+                                    <Image
+                                        src={client.heroImage}
+                                        alt={`${client.name} — conceptual illustration`}
+                                        width={1254}
+                                        height={1254}
+                                        className="w-full h-auto object-contain select-none pointer-events-none"
+                                    />
+                                </FadeUp>
                             )}
-                        </FadeUp>
+                        </div>
                     ) : (
                         <FadeUp className="max-w-lg bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6">
                             <p className="text-zinc-500 text-[13px] font-light">
@@ -205,15 +223,15 @@ export default function ClientProfile({ client }: { client: Client }) {
                 </Section>
             )}
 
-            {/* Screenshots */}
-            {client.screenshots && client.screenshots.length > 0 && (
+            {/* Additional screenshots — the first one already leads the banner above */}
+            {remainingScreenshots.length > 0 && (
                 <Section>
                     <Wrapper className="lg:py-10 md:py-8 py-6">
                         <FadeUp>
                             <p className="text-zinc-100 font-semibold text-[13px] tracking-wide mb-4">A closer look</p>
                         </FadeUp>
                         <div className="grid sm:grid-cols-2 gap-4">
-                            {client.screenshots.map((shot, i) => (
+                            {remainingScreenshots.map((shot, i) => (
                                 <FadeUp key={shot.src} delay={i * 0.05} className="rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900">
                                     <Image src={shot.src} alt={shot.caption ?? `${client.name} screenshot`} width={1254} height={1254} className="w-full h-auto object-cover" />
                                     {shot.caption && <p className="text-zinc-500 text-[11.5px] p-3">{shot.caption}</p>}

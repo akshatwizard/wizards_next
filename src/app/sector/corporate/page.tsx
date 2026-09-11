@@ -19,11 +19,11 @@ export default function CorporateSectorPage() {
     return (
         <main>
             <SectorHero data={CorporateSectorHero} />
+            <SectorClientList sectorSlug="corporate" sectorLabel="Corporate" />
             <SectorAudience data={CorporateSectorAudience} />
             <SectorServices data={CorporateSectorServices} />
             <SectorStatsBanner data={CorporateSectorStats} />
             <SectorTrust data={CorporateSectorTrust} />
-            <SectorClientList sectorSlug="corporate" sectorLabel="Corporate" />
             <SectorInterestForm sectorLabel="Corporate" />
             <ServiceFAQ data={CorporateSectorFAQ} />
             <ServiceCTA />

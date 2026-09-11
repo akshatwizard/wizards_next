@@ -19,11 +19,11 @@ export default function RetailSectorPage() {
     return (
         <main>
             <SectorHero data={RetailSectorHero} />
+            <SectorClientList sectorSlug="retail" sectorLabel="Retail" />
             <SectorAudience data={RetailSectorAudience} />
             <SectorServices data={RetailSectorServices} />
             <SectorStatsBanner data={RetailSectorStats} />
             <SectorTrust data={RetailSectorTrust} />
-            <SectorClientList sectorSlug="retail" sectorLabel="Retail" />
             <SectorInterestForm sectorLabel="Retail" />
             <ServiceFAQ data={RetailSectorFAQ} />
             <ServiceCTA />

@@ -19,11 +19,11 @@ export default function EducationSectorPage() {
     return (
         <main>
             <SectorHero data={EducationSectorHero} />
+            <SectorClientList sectorSlug="education" sectorLabel="Education" />
             <SectorAudience data={EducationSectorAudience} />
             <SectorServices data={EducationSectorServices} />
             <SectorStatsBanner data={EducationSectorStats} />
             <SectorTrust data={EducationSectorTrust} />
-            <SectorClientList sectorSlug="education" sectorLabel="Education" />
             <SectorInterestForm sectorLabel="Education" />
             <ServiceFAQ data={EducationSectorFAQ} />
             <ServiceCTA />

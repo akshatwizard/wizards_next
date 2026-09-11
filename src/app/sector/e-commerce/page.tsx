@@ -19,11 +19,11 @@ export default function ECommerceSectorPage() {
     return (
         <main>
             <SectorHero data={EcommerceSectorHero} />
+            <SectorClientList sectorSlug="e-commerce" sectorLabel="E-Commerce" />
             <SectorAudience data={EcommerceSectorAudience} />
             <SectorServices data={EcommerceSectorServices} />
             <SectorStatsBanner data={EcommerceSectorStats} />
             <SectorTrust data={EcommerceSectorTrust} />
-            <SectorClientList sectorSlug="e-commerce" sectorLabel="E-Commerce" />
             <SectorInterestForm sectorLabel="E-Commerce" />
             <ServiceFAQ data={EcommerceSectorFAQ} />
             <ServiceCTA />

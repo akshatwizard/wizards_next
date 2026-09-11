@@ -19,11 +19,11 @@ export default function FmcgSectorPage() {
     return (
         <main>
             <SectorHero data={FmcgSectorHero} />
+            <SectorClientList sectorSlug="fmcg" sectorLabel="FMCG" />
             <SectorAudience data={FmcgSectorAudience} />
             <SectorServices data={FmcgSectorServices} />
             <SectorStatsBanner data={FmcgSectorStats} />
             <SectorTrust data={FmcgSectorTrust} />
-            <SectorClientList sectorSlug="fmcg" sectorLabel="FMCG" />
             <SectorInterestForm sectorLabel="FMCG" />
             <ServiceFAQ data={FmcgSectorFAQ} />
             <ServiceCTA />
