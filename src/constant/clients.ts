@@ -110,9 +110,9 @@ export const clients: Client[] = [
             "Managing the website and SEO since August 2024",
         ],
         website: "https://clinicaderm.in",
-        // showcase screenshot pending — the version sent had a checkerboard pattern
-        // baked into the pixels instead of real transparency (same export issue
-        // seen once before); heroImage below is unaffected and already in place.
+        screenshots: [
+            { src: "/images/clients/clinica-derm/showcase.webp", caption: "The Clinica Derm website and 16 months of real Google Search Console performance." },
+        ],
         trendChart: {
             title: "Average Google search position, May 2025 – Sep 2026",
             note: "Lower is better — position 1 is the top organic result",
