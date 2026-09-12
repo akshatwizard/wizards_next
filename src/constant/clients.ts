@@ -140,6 +140,52 @@ export const clients: Client[] = [
         featured: true,
         imgHeight: "h-44",
     },
+
+    {
+        slug: "travel-zone",
+        name: "Travel Zone",
+        sectors: ["travel-and-tourism"],
+        tagline: "Built once on Drupal in 2019, still fully self-managed — a platform built to scale with the business, not slow it down.",
+        tags: ["Website Development"],
+        services: ["website-development"],
+        overview: "Travel Zone is a Varanasi-based travel agency established in 1995 — 28+ years in business, a 4.9 Google rating, and approval from the Ministry of Tourism, Government of India, with affiliations including IATA, IATO, TAFI, ASTA, WTAAA, UFTAA, and TAAI. Based near Varanasi Cantt Station, they run tour packages across Uttar Pradesh, Indian Domestic, International, and Inbound routes, alongside visa services.\n\nWe built and launched their website on Drupal 7 in 2019, and the engagement since then has stayed focused specifically on the website itself — development and maintenance, not marketing or SEO, which the Travel Zone team handles entirely on their own.\n\nWhat that build actually delivers is a fully client-manageable platform: the Travel Zone team adds and updates every itinerary, city, and destination page themselves through the admin panel, with no need to come back to us for routine content work. The site structure interlinks every page deliberately, and the underlying database is optimised specifically to handle a large, constantly growing content library — itinerary pages spanning domestic and international routes — without the site slowing down as it scales.\n\nSix years on, that structure is still holding up under real load. The client has built out a genuinely large content library on top of it, including nationwide travel-blog content that, per their own Search Console data, reaches well beyond Varanasi — cities like Tirupati, Surat, Raipur, and Nagpur among them. That's entirely the client's own content and SEO work; what the platform we built in 2019 had to do was handle that scale of growth without needing to be rebuilt or restructured along the way — and it has.",
+        highlights: [
+            "Website built and launched on Drupal 7 in 2019 — still running, still fully self-managed by the client's own team six years later",
+            "Every itinerary, city, and destination page interlinked, with the database structure optimised for a large, constantly growing content library",
+            "The client's own content and SEO work, running on this platform, reached 132,994 clicks and 10.8 million impressions over a recent 16-month window",
+            "28+ years in business (established 1995), 4.9 Google rating, Ministry of Tourism (Govt. of India) approved",
+        ],
+        website: "https://www.travelzonevaranasi.com",
+        screenshots: [
+            { src: "/images/clients/travel-zone/showcase.webp", caption: "The Travel Zone website and the client's own 16-month Search Console performance." },
+        ],
+        trendChart: {
+            title: "Clicks on the client's own content, May 2025 – Sep 2026",
+            note: "This is the client's own SEO and content work, not ours — shown as evidence the platform handles real scale",
+            data: [
+                { label: "May '25", value: 6113 },
+                { label: "Jun '25", value: 8772 },
+                { label: "Jul '25", value: 8389 },
+                { label: "Aug '25", value: 9370 },
+                { label: "Sep '25", value: 8771 },
+                { label: "Oct '25", value: 12235 },
+                { label: "Nov '25", value: 11959 },
+                { label: "Dec '25", value: 21589 },
+                { label: "Jan '26", value: 17668 },
+                { label: "Feb '26", value: 4408 },
+                { label: "Mar '26", value: 5440 },
+                { label: "Apr '26", value: 3513 },
+                { label: "May '26", value: 3997 },
+                { label: "Jun '26", value: 4051 },
+                { label: "Jul '26", value: 2914 },
+                { label: "Aug '26", value: 2840 },
+                { label: "Sep '26*", value: 965 },
+            ],
+        },
+        heroImage: "/images/clients/travel-zone/hero-illustration.webp",
+        featured: true,
+        imgHeight: "h-44",
+    },
 ];
 
 export function getClientBySlug(slug: string): Client | undefined {
