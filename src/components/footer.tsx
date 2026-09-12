@@ -79,8 +79,7 @@ export default function Footer() {
                         <img
                             src="/images/brand/logo.webp"
                             alt="Wizards Next"
-                            height={30}
-                            className="w-auto mb-3"
+                            className="w-auto object-contain max-h-8 max-w-32 mb-3"
                         />
                         <p className="text-zinc-200 text-[12px] font-light leading-relaxed max-w-50 mb-4">
                             Your one-stop growth partner for marketing, branding, web development, and AI-assisted workflows.
