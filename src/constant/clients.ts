@@ -71,6 +71,28 @@ export const clients: Client[] = [
         featured: true,
         imgHeight: "h-44",
     },
+
+    {
+        slug: "ganga-papers-india",
+        name: "Ganga Papers India Ltd.",
+        sectors: ["corporate"],
+        tagline: "Keeping a 41-year-old paper manufacturer's shareholder record current, compliant, and easy to find — one document at a time.",
+        tags: ["Website Development"],
+        services: ["website-development"],
+        overview: "Ganga Papers India Ltd. is an established Indian paper manufacturer, in operation since 1985 — 41 years now — producing Kraft Paper, Pulp, and Newsprint & Writing/Printing Paper. As a publicly listed company, they're required to keep a wide range of statutory and shareholder-facing documents — quarterly results, annual reports, corporate governance reports, board meeting notices, related party transactions, investor KYC forms, credit ratings, and more — accurate and accessible on their website at all times.\n\nWe've managed their website since 2019, purely on the content and document side. The site is built in core PHP with a Drupal 7–based admin panel, structured specifically so this kind of document-heavy maintenance stays simple: whenever Ganga Papers issues a new filing, they send us the list of documents to update, and the site's dedicated Shareholders' Desk section — with over 20 clearly defined document categories, from Annual Returns to Secretarial Compliance Reports to Newspaper Advertisements — means every update lands in the right place without needing to restructure anything.\n\nSix years in, that same discipline still holds — the current AGM notice and annual return for this fiscal year are already live, alongside decades of historical filings, on a website built to match a listed manufacturer's compliance calendar without friction.",
+        highlights: [
+            "Managing their website's content and documents since 2019 — six years and counting",
+            "20+ distinct statutory and shareholder document categories in the Shareholders' Desk",
+            "41 years in operation (established 1985), with current fiscal-year filings kept live alongside decades of history",
+        ],
+        website: "https://gangapapers.com",
+        screenshots: [
+            { src: "/images/clients/ganga-papers-india/showcase.webp", caption: "The Shareholders' Desk navigation and a live Quarterly Results filing page." },
+        ],
+        heroImage: "/images/clients/ganga-papers-india/hero-illustration.webp",
+        featured: true,
+        imgHeight: "h-44",
+    },
 ];
 
 export function getClientBySlug(slug: string): Client | undefined {
