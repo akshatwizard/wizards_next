@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Wrapper } from "./ui/sections";
 
 const services = [
@@ -76,13 +75,12 @@ export default function Footer() {
                 >
                     {/* Brand + Contact */}
                     <div>
-                        <Image
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
                             src="/images/brand/logo.webp"
                             alt="Wizards Next"
-                            width={547}
-                            height={219}
-                            style={{ height: 30, width: "auto" }}
-                            className="mb-3"
+                            height={30}
+                            className="w-auto mb-3"
                         />
                         <p className="text-zinc-200 text-[12px] font-light leading-relaxed max-w-50 mb-4">
                             Your one-stop growth partner for marketing, branding, web development, and AI-assisted workflows.
