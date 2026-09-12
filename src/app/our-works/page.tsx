@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, ChevronRight } from "lucide-react";
 import { Section, Wrapper } from "@/components/ui/sections";
 import { FadeUp } from "@/components/ui/motion_components";
@@ -28,19 +29,34 @@ function ClientCard({ client }: { client: (typeof clients)[0] }) {
     return (
         <Link
             href={`/our-works/${client.slug}`}
-            className="group bg-zinc-900 border border-zinc-800 hover:border-amber-600/30 rounded-2xl p-5 transition-colors flex flex-col justify-between min-h-28"
+            className="group bg-zinc-900 border border-zinc-800 hover:border-amber-600/30 rounded-2xl overflow-hidden transition-colors flex flex-col"
         >
-            <div>
-                <p className="text-zinc-200 font-medium text-[14px] group-hover:text-amber-600 transition-colors">{client.name}</p>
-                {client.tagline && <p className="text-zinc-300 text-[11.5px] mt-1">{client.tagline}</p>}
+            <div className="relative w-full aspect-square shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b border-zinc-800">
+                {client.heroImage ? (
+                    <Image
+                        src={client.heroImage}
+                        alt={`${client.name} illustration`}
+                        width={1254}
+                        height={1254}
+                        className="w-full h-full object-contain"
+                    />
+                ) : (
+                    <span className="text-[11px] font-medium text-zinc-300 tracking-widest uppercase">{client.name}</span>
+                )}
             </div>
-            <div className="flex items-center justify-between mt-4">
-                <div className="flex flex-wrap gap-1">
-                    {client.tags.slice(0, 2).map((t) => (
-                        <span key={t} className="text-[9.5px] px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-200 bg-zinc-950">{t}</span>
-                    ))}
+            <div className="p-5 flex flex-col justify-between flex-1">
+                <div>
+                    <p className="text-zinc-200 font-medium text-[14px] group-hover:text-amber-600 transition-colors">{client.name}</p>
+                    {client.tagline && <p className="text-zinc-300 text-[11.5px] mt-1">{client.tagline}</p>}
                 </div>
-                <ArrowUpRight size={14} className="text-zinc-300 group-hover:text-amber-600 transition-colors shrink-0" />
+                <div className="flex items-center justify-between mt-4">
+                    <div className="flex flex-wrap gap-1">
+                        {client.tags.slice(0, 2).map((t) => (
+                            <span key={t} className="text-[9.5px] px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-200 bg-zinc-950">{t}</span>
+                        ))}
+                    </div>
+                    <ArrowUpRight size={14} className="text-zinc-300 group-hover:text-amber-600 transition-colors shrink-0" />
+                </div>
             </div>
         </Link>
     );

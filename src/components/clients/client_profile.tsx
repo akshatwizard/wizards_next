@@ -6,6 +6,7 @@ import { FadeUp } from "@/components/ui/motion_components";
 import { SectionBadge } from "@/components/services/section_badge";
 import { Client } from "@/types/client.types";
 import { clients as allClients } from "@/constant/clients";
+import { getServiceMeta } from "@/constant/service_meta";
 
 const SERVICE_LABELS: Record<string, string> = {
     "brand-designing": "Brand Creation",
@@ -163,9 +164,9 @@ export default function ClientProfile({ client }: { client: Client }) {
             <Section>
                 <Wrapper className="lg:py-10 md:py-8 py-6">
                     {client.overview ? (
-                        <FadeUp className="max-w-5xl">
+                        <FadeUp>
                             {client.heroImage && (
-                                <div className="float-right w-[45%] sm:w-[420px] ml-8 mb-4">
+                                <div className="float-right w-[45%] sm:w-[480px] ml-8 mb-4">
                                     <Image
                                         src={client.heroImage}
                                         alt={`${client.name} — conceptual illustration`}
@@ -205,23 +206,37 @@ export default function ClientProfile({ client }: { client: Client }) {
                         <FadeUp>
                             <p className="text-zinc-100 font-semibold text-[13px] tracking-wide mb-4">Services we provided</p>
                         </FadeUp>
-                        <FadeUp delay={0.05} className="flex flex-wrap gap-2.5">
-                            {client.services.map((slug) => (
-                                <Link
-                                    key={slug}
-                                    href={`/services/${slug}`}
-                                    className="flex items-center gap-2 text-[12.5px] pl-2 pr-3.5 py-1.5 rounded-lg border border-zinc-800 text-zinc-100 bg-zinc-900 hover:border-amber-600/30 hover:text-amber-600 transition-colors"
-                                >
-                                    <Image
-                                        src={`/images/services/icons/${slug}-icon.webp`}
-                                        alt=""
-                                        width={256}
-                                        height={256}
-                                        className="w-5 h-5 object-contain shrink-0"
-                                    />
-                                    {SERVICE_LABELS[slug] ?? slug}
-                                </Link>
-                            ))}
+                        <FadeUp delay={0.05} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {client.services.map((slug, i) => {
+                                const meta = getServiceMeta(slug);
+                                return (
+                                    <Link
+                                        key={slug}
+                                        href={`/services/${slug}`}
+                                        className="group bg-zinc-900 border border-zinc-800 hover:border-amber-600/30 rounded-2xl p-5 transition-colors flex flex-col gap-3"
+                                        style={{ transitionDelay: `${i * 20}ms` }}
+                                    >
+                                        <div className="flex items-center gap-3">
+                                            <div className="relative w-12 h-12 shrink-0 flex items-center justify-center">
+                                                <div className="absolute inset-0 bg-amber-600/10 blur-xl rounded-full scale-90 group-hover:bg-amber-600/15 transition-colors duration-300" />
+                                                <Image
+                                                    src={`/images/services/icons/${slug}-icon.webp`}
+                                                    alt=""
+                                                    width={256}
+                                                    height={256}
+                                                    className="relative w-full h-full object-contain"
+                                                />
+                                            </div>
+                                            <p className="text-zinc-200 text-[15px] font-semibold group-hover:text-amber-600 transition-colors leading-snug">
+                                                {meta?.name ?? SERVICE_LABELS[slug] ?? slug}
+                                            </p>
+                                        </div>
+                                        {meta?.desc && (
+                                            <p className="text-zinc-200 text-[12.5px] font-light leading-relaxed">{meta.desc}</p>
+                                        )}
+                                    </Link>
+                                );
+                            })}
                         </FadeUp>
                     </Wrapper>
                 </Section>

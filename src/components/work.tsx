@@ -15,8 +15,8 @@ function ProjectCard({ client }: { client: Client }) {
             href={`/our-works/${client.slug}`}
             className="h-full group relative bg-zinc-900 rounded-2xl overflow-hidden cursor-pointer border border-zinc-800 hover:border-zinc-700 transition-all duration-200 flex flex-col"
         >
-            {/* Image — same fixed height for every card, no more asymmetric bento sizing */}
-            <div className="relative w-full h-36 shrink-0 bg-zinc-950 flex items-center justify-center p-5">
+            {/* Image — square container to match the illustrations' real aspect ratio, so they fill the space instead of floating small */}
+            <div className="relative w-full aspect-square shrink-0 bg-zinc-950 flex items-center justify-center p-4">
                 {heroImage ? (
                     <Image
                         src={heroImage}

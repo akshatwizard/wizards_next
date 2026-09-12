@@ -5,57 +5,23 @@ import { ChevronRight, ArrowUpRight } from 'lucide-react'
 import { Section, Wrapper } from '@/components/ui/sections'
 import { FadeUp } from '@/components/ui/motion_components'
 import { SectionBadge } from '@/components/services/section_badge'
+import { ALL_SERVICES, ServiceMeta } from '@/constant/service_meta'
 
 export const metadata: Metadata = {
     title: 'All Services | Wizards Next',
     description: 'Branding, digital marketing, website development, and AI consultancy — every service Wizards Next offers, in one place.',
 }
 
-type ServiceItem = { slug: string; name: string; desc: string }
+const PILLAR_ORDER: ServiceMeta['pillar'][] = ['Branding & Identity', 'Digital Marketing & Growth', 'Website, Technology & AI']
+const PILLAR_BLURBS: Record<ServiceMeta['pillar'], string> = {
+    'Branding & Identity': 'The visual system a business is built on — created once, used everywhere.',
+    'Digital Marketing & Growth': 'Content, campaigns, and channels that turn attention into customers.',
+    'Website, Technology & AI': 'The technical foundation — built, launched, and kept running.',
+}
 
-const PILLARS: { title: string; blurb: string; services: ServiceItem[] }[] = [
-    {
-        title: 'Branding & Identity',
-        blurb: 'The visual system a business is built on — created once, used everywhere.',
-        services: [
-            { slug: 'brand-designing', name: 'Brand Creation', desc: 'Logo, identity, and guidelines that make you instantly recognisable.' },
-            { slug: 'graphic-designing', name: 'Graphic Design', desc: 'Scroll-stopping creative — carousels, posters, and ad visuals.' },
-            { slug: 'corporate-profile-creation', name: 'Corporate Profile Creation', desc: 'Professional company profiles, on video and in print.' },
-        ],
-    },
-    {
-        title: 'Digital Marketing & Growth',
-        blurb: 'Content, campaigns, and channels that turn attention into customers.',
-        services: [
-            { slug: 'social-media', name: 'Social Media Planning & Management', desc: 'Strategy, content, and community management, done consistently.' },
-            { slug: 'content-creation', name: 'Content Creation', desc: 'Blog posts, captions, and copy that sound like your brand.' },
-            { slug: 'videography', name: 'Videography', desc: 'Professional filming, on location or in studio.' },
-            { slug: 'video-editing', name: 'Video Editing', desc: 'Reels, YouTube videos, and ad creative, cut for the platform.' },
-            { slug: 'influencer-marketing', name: 'Influencer Marketing', desc: 'Matched with creators whose audience actually converts.' },
-            { slug: 'performance-marketing', name: 'Performance Marketing', desc: 'Budget strategy across paid channels, tied to real ROI.' },
-            { slug: 'google-meta-ads-management', name: 'Google & Meta Ads Management', desc: 'Hands-on campaign management, tested and optimised weekly.' },
-            { slug: 'whatsapp-marketing', name: 'WhatsApp Marketing', desc: 'Catalogs, broadcasts, and automation on WhatsApp Business.' },
-            { slug: 'email-marketing', name: 'Email Marketing', desc: 'Newsletters and automation on the channel you actually own.' },
-            { slug: 'seo-consultancy', name: 'SEO Consultancy', desc: 'SEO built for how search actually works in your market.' },
-            { slug: 'analytics-reporting', name: 'Analytics & Reporting', desc: 'Clear dashboards and plain-language monthly reporting.' },
-        ],
-    },
-    {
-        title: 'Website, Technology & AI',
-        blurb: 'The technical foundation — built, launched, and kept running.',
-        services: [
-            { slug: 'website-development', name: 'Website Development', desc: 'Fast, conversion-focused websites on modern frameworks.' },
-            { slug: 'app-dev', name: 'Mobile App Development', desc: 'iOS and Android apps built for a real business goal.' },
-            { slug: 'ecommerce-development', name: 'E-Commerce Website Development', desc: 'Online stores built to actually sell.' },
-            { slug: 'ecommerce-management', name: 'E-Commerce Business Management', desc: 'Keeping your store running well after launch.' },
-            { slug: 'ai-consultancy', name: 'AI Consultancy', desc: 'Helping your team adopt the AI workflow we run ourselves.' },
-        ],
-    },
-]
+const TOTAL = ALL_SERVICES.length
 
-const TOTAL = PILLARS.reduce((n, p) => n + p.services.length, 0)
-
-function ServiceCard({ service }: { service: ServiceItem }) {
+function ServiceCard({ service }: { service: ServiceMeta }) {
     const { name, desc, slug } = service
     return (
         <Link
@@ -110,15 +76,15 @@ export default function ServicesPage() {
                 </Wrapper>
             </Section>
 
-            {PILLARS.map((pillar, pi) => (
-                <Section key={pillar.title}>
+            {PILLAR_ORDER.map((pillar, pi) => (
+                <Section key={pillar}>
                     <Wrapper className={pi === 0 ? "lg:pt-10 md:pt-8 pt-6" : "lg:py-10 md:py-8 py-6"}>
                         <FadeUp className="mb-6">
-                            <p className="text-zinc-100 font-semibold text-[15px] mb-1.5">{pillar.title}</p>
-                            <p className="text-zinc-200 text-[12.5px] font-light">{pillar.blurb}</p>
+                            <p className="text-zinc-100 font-semibold text-[15px] mb-1.5">{pillar}</p>
+                            <p className="text-zinc-300 text-[12.5px] font-light">{PILLAR_BLURBS[pillar]}</p>
                         </FadeUp>
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                            {pillar.services.map((svc, i) => (
+                            {ALL_SERVICES.filter((s) => s.pillar === pillar).map((svc, i) => (
                                 <FadeUp key={svc.slug} delay={Math.min(i * 0.05, 0.3)}>
                                     <ServiceCard service={svc} />
                                 </FadeUp>
