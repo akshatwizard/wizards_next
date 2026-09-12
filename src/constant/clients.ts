@@ -93,6 +93,53 @@ export const clients: Client[] = [
         featured: true,
         imgHeight: "h-44",
     },
+
+    {
+        slug: "clinica-derm",
+        name: "Clinica Derm",
+        sectors: ["healthcare"],
+        tagline: "From buried on page three to owning page one — the SEO engine behind Hyderabad's most-searched-for skin clinic.",
+        tags: ["SEO Consultancy", "Website Development"],
+        services: ["seo-consultancy", "website-development"],
+        overview: "Clinica Derm is a skin and hair clinic in Banjara Hills, Hyderabad, led by Dr. Deepthi Atmakuri — a board-certified dermatologist (DDVL, MBBS) with an aesthetics fellowship from Mahidol University, Thailand, and over 2,500 clients treated. She's also an independently recognised voice in the field — featured in the Times of India, and honoured at Times Power Women Telangana 2026 — credentials that exist entirely apart from our scope here, which is purely the website and its search visibility.\n\nWe've managed Clinica Derm's WordPress website and full-scope SEO since August 2024. No social media is part of this engagement — Dr. Atmakuri runs her own Instagram and Facebook independently.\n\nThe process runs on a fixed weekly and monthly rhythm: keyword research, done in discussion with the client and layered against competitor research, drives every new piece of content — blog posts and treatment pages built around real search demand, not guesswork. A dedicated team member handles ongoing backlink building across the web. Clinica Derm gets a performance report every week and a full audit every month, so they always know exactly where the site stands.\n\nThe Google Search Console data tells the actual story: average search position moved from the mid-30s in May 2025 to single digits by March 2026 — a site that used to be buried in search results now regularly lands on page one, and has held that ground for over a year since. Branded searches dominate outright, but just as important, competitive non-branded terms like \"dermatologist hyderabad\" and \"best dermatologist in hyderabad\" now rank in the 4.5–5.7 range, putting Clinica Derm in real contention against every other clinic in the city, not just searches for their own name.",
+        highlights: [
+            "16-month cumulative: 7,083 clicks and 1.18 million impressions on Google Search",
+            "Average search position improved from 35.3 to a low of 7.9, holding in the 8–17 range through 2026",
+            "Branded searches near position 1: \"clinicaderm\" at 1.12, \"clinica derm banjara hills\" at 1.03",
+            "Competitive non-branded terms now rank top-5: \"dermatologist hyderabad\" (4.5), \"best dermatologist hyderabad\" (5.0)",
+            "Managing the website and SEO since August 2024",
+        ],
+        website: "https://clinicaderm.in",
+        // showcase screenshot pending — the version sent had a checkerboard pattern
+        // baked into the pixels instead of real transparency (same export issue
+        // seen once before); heroImage below is unaffected and already in place.
+        trendChart: {
+            title: "Average Google search position, May 2025 – Sep 2026",
+            note: "Lower is better — position 1 is the top organic result",
+            data: [
+                { label: "May '25", value: 35.3 },
+                { label: "Jun '25", value: 39.0 },
+                { label: "Jul '25", value: 33.1 },
+                { label: "Aug '25", value: 28.0 },
+                { label: "Sep '25", value: 17.4 },
+                { label: "Oct '25", value: 9.9 },
+                { label: "Nov '25", value: 11.4 },
+                { label: "Dec '25", value: 10.4 },
+                { label: "Jan '26", value: 10.6 },
+                { label: "Feb '26", value: 8.4 },
+                { label: "Mar '26", value: 7.9 },
+                { label: "Apr '26", value: 9.8 },
+                { label: "May '26", value: 13.9 },
+                { label: "Jun '26", value: 17.0 },
+                { label: "Jul '26", value: 13.4 },
+                { label: "Aug '26", value: 13.7 },
+                { label: "Sep '26*", value: 12.5 },
+            ],
+        },
+        heroImage: "/images/clients/clinica-derm/hero-illustration.webp",
+        featured: true,
+        imgHeight: "h-44",
+    },
 ];
 
 export function getClientBySlug(slug: string): Client | undefined {

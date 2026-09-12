@@ -7,6 +7,7 @@ import { SectionBadge } from "@/components/services/section_badge";
 import { Client } from "@/types/client.types";
 import { clients as allClients } from "@/constant/clients";
 import { getServiceMeta } from "@/constant/service_meta";
+import TrendChart from "@/components/clients/trend_chart";
 
 const SERVICE_LABELS: Record<string, string> = {
     "brand-designing": "Brand Creation",
@@ -187,6 +188,11 @@ export default function ClientProfile({ client }: { client: Client }) {
                                         </li>
                                     ))}
                                 </ul>
+                            )}
+                            {client.trendChart && (
+                                <div className="mt-8">
+                                    <TrendChart chart={client.trendChart} />
+                                </div>
                             )}
                         </FadeUp>
                     ) : (

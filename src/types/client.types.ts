@@ -15,6 +15,13 @@ export type ClientLink = {
     url: string
 }
 
+export type ClientTrendChart = {
+    title: string
+    note?: string          // e.g. clarifying that lower is better for a ranking metric
+    unit?: string          // shown after each value, e.g. "" or "%"
+    data: { label: string; value: number }[]
+}
+
 export type Client = {
     slug: string           // URL slug — /our-works/[slug]
     name: string
@@ -33,6 +40,7 @@ export type Client = {
     website?: string
     links?: ClientLink[]
     screenshots?: ClientScreenshot[]
+    trendChart?: ClientTrendChart   // optional visualized metric, for clients with rich enough time-series data to justify one
 
     featured?: boolean        // show on the homepage "Our Work" strip
     colSpan?: 'col-span-2'      // homepage bento-grid display hints
