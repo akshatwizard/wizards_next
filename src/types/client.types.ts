@@ -22,6 +22,13 @@ export type ClientTrendChart = {
     data: { label: string; value: number }[]
 }
 
+export type ClientTechnicalOverview = {
+    performance?: string
+    responsiveness?: string
+    scalability?: string
+    uiUxTheme?: string
+}
+
 export type Client = {
     slug: string           // URL slug — /our-works/[slug]
     name: string
@@ -41,6 +48,7 @@ export type Client = {
     links?: ClientLink[]
     screenshots?: ClientScreenshot[]
     trendChart?: ClientTrendChart   // optional visualized metric, for clients with rich enough time-series data to justify one
+    technicalOverview?: ClientTechnicalOverview   // Performance / Responsiveness / Scalability / UI-UX Theme, when a detailed technical brief is provided
 
     featured?: boolean        // show on the homepage "Our Work" strip
     colSpan?: 'col-span-2'      // homepage bento-grid display hints

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronRight, ExternalLink, ArrowRight } from "lucide-react";
+import { ChevronRight, ExternalLink, ArrowRight, Zap, Smartphone, TrendingUp, Palette } from "lucide-react";
 import { Section, Wrapper } from "@/components/ui/sections";
 import { FadeUp } from "@/components/ui/motion_components";
 import { SectionBadge } from "@/components/services/section_badge";
@@ -244,6 +244,39 @@ export default function ClientProfile({ client }: { client: Client }) {
                                 );
                             })}
                         </FadeUp>
+                    </Wrapper>
+                </Section>
+            )}
+
+            {/* Website Technical Overview — only for clients with a detailed technical brief */}
+            {client.technicalOverview && Object.values(client.technicalOverview).some(Boolean) && (
+                <Section tone="raised">
+                    <Wrapper className="lg:py-10 md:py-8 py-6">
+                        <FadeUp>
+                            <p className="text-zinc-100 font-semibold text-[13px] tracking-wide mb-4">Website technical overview</p>
+                        </FadeUp>
+                        <div className="grid sm:grid-cols-2 gap-4">
+                            {[
+                                { key: "performance", label: "Performance", Icon: Zap },
+                                { key: "responsiveness", label: "Responsiveness", Icon: Smartphone },
+                                { key: "scalability", label: "Scalability", Icon: TrendingUp },
+                                { key: "uiUxTheme", label: "UI/UX Theme", Icon: Palette },
+                            ].map(({ key, label, Icon }, i) => {
+                                const value = client.technicalOverview?.[key as keyof typeof client.technicalOverview];
+                                if (!value) return null;
+                                return (
+                                    <FadeUp key={key} delay={i * 0.05} className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+                                        <div className="flex items-center gap-2.5 mb-3">
+                                            <div className="w-8 h-8 rounded-lg bg-amber-600/10 border border-amber-600/20 flex items-center justify-center shrink-0">
+                                                <Icon size={14} className="text-amber-600" strokeWidth={1.8} />
+                                            </div>
+                                            <p className="text-zinc-200 text-[13.5px] font-medium">{label}</p>
+                                        </div>
+                                        <p className="text-zinc-200 text-[12.5px] font-light leading-relaxed">{value}</p>
+                                    </FadeUp>
+                                );
+                            })}
+                        </div>
                     </Wrapper>
                 </Section>
             )}

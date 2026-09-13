@@ -26,7 +26,13 @@ export const clients: Client[] = [
             "19.8K clicks and 2.09M impressions on Google Search over the past year (Search Console)",
             "Online payments, COD, and pan-India shipping live since December 2025",
             "Daily orders now arriving from across India, ₹100–₹20,000 in order value",
+            "Real (human) site traffic runs 64.5% mobile — the design and checkout are built around that",
         ],
+        technicalOverview: {
+            performance: "The same standing on-page SEO checklist runs on every product and category page — optimised meta titles and descriptions, a clean header hierarchy, descriptive alt text on every product image, SEO-friendly URLs, internal linking between related products and categories, and a current XML sitemap. On speed, product images are compressed, browser caching and asset minification are enabled, and listing pages use lazy-loading — treated as non-negotiable on every build, not an optional extra.",
+            responsiveness: "Built mobile-first on Laravel with Tailwind CSS. Our own visitor intelligence tracking shows real (human) traffic running 64.5% mobile, and the design and checkout flow are built and tested around that reality.",
+            scalability: "The backend runs on Laravel with a Razorpay webhook-based payment integration — order creation happens only after payment is verified server-side, independent of whether the customer's browser stays open, the industry-standard, most reliable pattern for growing order volume. The catalogue and category structure, including a custom-built two-panel sidebar menu, are built to keep expanding as new products are added, without needing a redesign.",
+        },
         website: "https://gdsons.co.in",
         links: [
             { label: "Instagram", url: "https://www.instagram.com/gdsons.vns/" },
@@ -56,6 +62,10 @@ export const clients: Client[] = [
             "29,016 Facebook page likes",
             "23+ years of clinical experience, including co-founding KIMS Cuddles, Kondapur in 2016",
         ],
+        technicalOverview: {
+            performance: "The same on-page SEO checklist runs everywhere — optimised meta titles and descriptions, a clean header hierarchy built around real patient search intent, descriptive alt text on every image, SEO-friendly URLs, internal linking across service and blog pages, and a current sitemap. On speed, images are compressed, caching and minification are enabled, and render-blocking scripts are kept to a minimum — standing hygiene, checked every time new content goes live.",
+            scalability: "The website and SEO work run as one continuous engagement alongside the content calendar, so new patient-education content, service pages, and blog posts get added on a steady cadence without needing structural rework — the same discipline that's driven the social growth applies to the site itself.",
+        },
         website: "https://drkshilpireddy.com",
         links: [
             { label: "Instagram", url: "https://www.instagram.com/dr.k.shilpireddy/" },
@@ -85,6 +95,12 @@ export const clients: Client[] = [
             "20+ distinct statutory and shareholder document categories in the Shareholders' Desk",
             "41 years in operation (established 1985), with current fiscal-year filings kept live alongside decades of history",
         ],
+        technicalOverview: {
+            performance: "For a compliance-driven site like this, on-page SEO focuses on making sure every disclosure and filing page is properly titled, cleanly structured, and genuinely findable — correct meta titles and descriptions, a clean heading hierarchy, SEO-friendly URLs for every document category, and internal linking between related filings, so a shareholder or regulator can locate what they need without digging. On speed, images and assets are kept optimised with caching enabled — basic hygiene applied consistently, even on a content-first, document-heavy site.",
+            responsiveness: "The site carries a standard responsive configuration, and the Shareholders' Desk and document-heavy pages render cleanly across devices. Device-level search analytics aren't currently exported for this client to quantify the exact mobile/desktop split.",
+            scalability: "Built on core PHP with a Drupal 7-based admin panel, the site's real proof of scalability is the Shareholders' Desk itself: 20+ distinct statutory and compliance document categories, each independently maintainable, so new filings get added without ever touching the site's structure or design.",
+            uiUxTheme: "The design follows a traditional, function-first corporate/investor-relations style rather than a flashy consumer one — appropriate for a listed manufacturer whose primary visitors are shareholders and regulators. The homepage leads with trust-building icon blocks (decades of experience, eco-friendly manufacturing, plant infrastructure, round-the-clock customer service), and the Shareholders' Desk is presented as clean, scannable tables rather than buried behind PDF-only navigation.",
+        },
         website: "https://gangapapers.com",
         screenshots: [
             { src: "/images/clients/ganga-papers-india/showcase.webp", caption: "The Shareholders' Desk navigation and a live Quarterly Results filing page." },
@@ -108,7 +124,14 @@ export const clients: Client[] = [
             "Branded searches near position 1: \"clinicaderm\" at 1.12, \"clinica derm banjara hills\" at 1.03",
             "Competitive non-branded terms now rank top-5: \"dermatologist hyderabad\" (4.5), \"best dermatologist hyderabad\" (5.0)",
             "Managing the website and SEO since August 2024",
+            "5,407 of 7,083 total clicks come from mobile at an average position of 8.69, vs. 32.16 on desktop",
         ],
+        technicalOverview: {
+            performance: "The same standing on-page SEO checklist runs across every treatment and blog page — optimised meta titles and descriptions, a clean header hierarchy, descriptive alt text on treatment photography, SEO-friendly URLs, and internal linking between related treatment and blog pages, on top of the keyword and competitor research already driving the content plan. On speed, images are compressed (important on a photography-heavy clinic site), caching and minification are enabled, and render-blocking scripts are kept to a minimum — checked every time new content goes live.",
+            responsiveness: "Built on WordPress (Elementor), and the search data backs up how well it performs on mobile: 5,407 of the site's 7,083 total clicks come from mobile at an average position of 8.69, compared to 32.16 on desktop — a meaningful gap in the site's favour on the device most patients actually search from.",
+            scalability: "The WordPress/Elementor setup makes it easy to keep expanding the treatment and blog library — new procedures, new patient-education content — without redesigning the site, which is exactly the structure behind the SEO growth: content added consistently, month over month, on a foundation built to hold it.",
+            uiUxTheme: "Photography-led and trust-focused, in keeping with an aesthetic/dermatology practice: a hero section built around Dr. Deepthi Atmakuri herself, three feature blocks up top (Expert Dermatologists / Advanced Technology / Personalized Treatment), a clean treatment-category grid, and dedicated sections for media features and patient testimonials — all designed to build credibility before a first-time visitor ever picks up the phone.",
+        },
         website: "https://clinicaderm.in",
         screenshots: [
             { src: "/images/clients/clinica-derm/showcase.webp", caption: "The Clinica Derm website and 16 months of real Google Search Console performance." },
@@ -154,7 +177,14 @@ export const clients: Client[] = [
             "Every itinerary, city, and destination page interlinked, with the database structure optimised for a large, constantly growing content library",
             "The client's own content and SEO work, running on this platform, reached 132,994 clicks and 10.8 million impressions over a recent 16-month window",
             "28+ years in business (established 1995), 4.9 Google rating, Ministry of Tourism (Govt. of India) approved",
+            "86% of all clicks (114,430 of 132,994) come from mobile, at an average position of 7.43 vs. 13.86 on desktop",
         ],
+        technicalOverview: {
+            performance: "Every itinerary, city, and destination page follows the same on-page SEO checklist applied everywhere — optimised meta titles and descriptions, a clean header hierarchy, descriptive alt text, SEO-friendly URLs, and internal linking between related tours. On speed, the image-heavy destination pages are compressed and cached, assets are minified, and lazy-loading is used across the growing itinerary library — standing hygiene, not a one-time setup.",
+            responsiveness: "Genuinely mobile-dominant: 114,430 of the site's 132,994 total clicks (86%) come from mobile, at an average position of 7.43 — nearly double the ranking strength of desktop's 13.86. For a travel site where most research happens on a phone, that's exactly where the site needed to perform.",
+            scalability: "Built on Drupal 7 with every itinerary, city, and destination page interlinked and the content model optimised at the table level — precisely what let the content library scale to dozens of Indian cities without a single redesign. The client manages all of it themselves through the admin panel.",
+            uiUxTheme: "Bold, photography-first design built around Varanasi's ghats and festival culture — the homepage hero uses full-bleed destination photography with elegant script-style typography over it, a bold red-and-white brand palette carried through the logo and CTAs, and a mega-menu that surfaces dozens of curated tour packages without feeling cluttered. Trust badges (Ministry of Tourism approval, IATA/IATO/TAFI/ASTA affiliations) sit prominently on the homepage, and a WhatsApp quick-contact button stays fixed on screen.",
+        },
         website: "https://www.travelzonevaranasi.com",
         screenshots: [
             { src: "/images/clients/travel-zone/showcase.webp", caption: "The Travel Zone website and the client's own 16-month Search Console performance." },
