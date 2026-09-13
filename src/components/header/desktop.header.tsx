@@ -53,7 +53,7 @@ const itemVariants: Variants = {
     },
 };
 
-export default function DesktopHeader({ scrolled }: { scrolled: boolean | null }) {
+export default function DesktopHeader({ scrolled, onGetStarted }: { scrolled: boolean | null; onGetStarted: () => void }) {
     const currentPath = usePathname();
     const [hovered, setHovered] = useState<number | null>(null);
 
@@ -200,6 +200,7 @@ export default function DesktopHeader({ scrolled }: { scrolled: boolean | null }
                 );
             })}
             <motion.button
+                onClick={onGetStarted}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.15, ease: [0.22, 1, 0.36, 1] }}

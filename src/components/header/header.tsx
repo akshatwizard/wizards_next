@@ -6,6 +6,7 @@ import { Span } from "../ui/motion_components";
 import { BoltLogo } from "./logo";
 import DesktopHeader from "./desktop.header";
 import MobileMenu from "./mobile.header";
+import QuickContactModal from "./quick_contact_modal";
 
 
 
@@ -13,6 +14,7 @@ export default function Header() {
     const { scrollY } = useScroll();
     const [scrolled, setScrolled] = useState<boolean | null>(false);
     const [openMenu, setOpenMenu] = useState<boolean>(false);
+    const [openContactModal, setOpenContactModal] = useState<boolean>(false);
 
     useMotionValueEvent(scrollY, "change", (current) => {
         if (current > 50) {
@@ -35,7 +37,7 @@ export default function Header() {
                         <BoltLogo scrolled={scrolled} />
                     </Link>
 
-                    <DesktopHeader scrolled={scrolled} />
+                    <DesktopHeader scrolled={scrolled} onGetStarted={() => setOpenContactModal(true)} />
 
                     <button
                         onClick={() => setOpenMenu(true)}
@@ -52,6 +54,7 @@ export default function Header() {
             </motion.header>
 
             <MobileMenu open={openMenu} onClose={() => setOpenMenu(false)} />
+            <QuickContactModal open={openContactModal} onClose={() => setOpenContactModal(false)} />
         </>
     )
 }
