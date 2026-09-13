@@ -6,6 +6,10 @@ import { escapeHtml } from "./email";
 
 const AMBER = "#d97706";
 const DARK = "#18181b";
+// Email clients can't resolve relative paths — images need a full URL.
+// Set NEXT_PUBLIC_SITE_URL in your environment if the domain ever changes
+// from the current Vercel URL (e.g. once wizards.co.in points here).
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://wizards-next.vercel.app";
 
 function layout({ title, bodyHtml, footerNote }: { title: string; bodyHtml: string; footerNote: string }): string {
     return `<!DOCTYPE html>
@@ -18,8 +22,7 @@ function layout({ title, bodyHtml, footerNote }: { title: string; bodyHtml: stri
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width: 560px; background-color:#ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e4e4e7;">
           <tr>
             <td style="background-color:${DARK}; padding: 22px 28px;">
-              <span style="color:#ffffff; font-size: 18px; font-weight: 700; letter-spacing: -0.02em;">WIZARDS<span style="color:${AMBER};">.</span></span>
-              <span style="color:#a1a1aa; font-size: 12px; margin-left: 8px;">NEXT</span>
+              <img src="${SITE_URL}/images/brand/logo-email.png" alt="Wizards Next" width="140" style="display:block; height:auto; max-width: 140px;" />
             </td>
           </tr>
           <tr>
@@ -54,10 +57,18 @@ export function buildTeamNotificationEmail(args: {
     formLabel: string;      // e.g. "Contact Form", "Careers Application", "Healthcare — Sector Interest"
     fields: { label: string; value: string }[]; // already in display order; values are raw (will be escaped here)
     submitterEmail: string;
+    pageUrl?: string;       // full URL of the page the form was submitted from
 }): { subject: string; html: string } {
-    const { formLabel, fields, submitterEmail } = args;
+    const { formLabel, fields, submitterEmail, pageUrl } = args;
     const nameField = fields.find((f) => f.label.toLowerCase() === "name");
-    const subject = `New ${formLabel} — ${nameField?.value || submitterEmail}`;
+
+    let pagePath = "";
+    try {
+        pagePath = pageUrl ? new URL(pageUrl).pathname : "";
+    } catch {
+        pagePath = "";
+    }
+    const subject = `New ${formLabel} — ${nameField?.value || submitterEmail}${pagePath ? ` (from ${pagePath})` : ""}`;
 
     const rows = fields
         .map((f) => {
@@ -72,9 +83,13 @@ export function buildTeamNotificationEmail(args: {
         })
         .join("");
 
+    const pageRow = pageUrl
+        ? fieldRow("Submitted from", `<a href="${escapeHtml(pageUrl)}" style="color:${AMBER}; text-decoration:none;">${escapeHtml(pagePath || pageUrl)}</a>`)
+        : "";
+
     const bodyHtml = `
         <p style="margin: 0 0 18px 0; font-size: 13.5px; color:#52525b;">A new submission just came in from the website.</p>
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">${rows}</table>
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">${rows}${pageRow}</table>
         <table role="presentation" cellpadding="0" cellspacing="0" style="margin-top: 22px;">
             <tr><td style="background-color:${AMBER}; border-radius: 8px;">
                 <a href="mailto:${escapeHtml(submitterEmail)}" style="display:inline-block; padding: 10px 18px; font-size: 13px; font-weight: 600; color:#18181b; text-decoration:none;">Reply to ${escapeHtml(submitterEmail)}</a>

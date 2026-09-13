@@ -38,6 +38,7 @@ export default function SectorInterestForm({ sectorLabel }: { sectorLabel: strin
                     service: `${sectorLabel} — Sector Interest`,
                     honeypot,
                     formRenderedAt,
+                    pageUrl: window.location.href,
                 }),
             });
             const data = await res.json();

@@ -7,12 +7,11 @@ import { HoneypotField } from "../ui/honeypot_field";
 type FormState = { name: string; phone: string; email: string; message: string };
 const initialState: FormState = { name: "", phone: "", email: "", message: "" };
 
-export default function QuickContactModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+export default function QuickContactModal({ open, onClose, openedAt }: { open: boolean; onClose: () => void; openedAt: number }) {
     const [form, setForm] = useState<FormState>(initialState);
     const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
     const [errorMsg, setErrorMsg] = useState("");
     const [honeypot, setHoneypot] = useState("");
-    const [formRenderedAt] = useState(() => Date.now());
 
     function update<K extends keyof FormState>(key: K, value: FormState[K]) {
         setForm((prev) => ({ ...prev, [key]: value }));
@@ -42,7 +41,7 @@ export default function QuickContactModal({ open, onClose }: { open: boolean; on
             const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ ...form, service: "Get Started — Quick Contact", honeypot, formRenderedAt }),
+                body: JSON.stringify({ ...form, service: "Get Started — Quick Contact", honeypot, formRenderedAt: openedAt, pageUrl: window.location.href }),
             });
             const data = await res.json();
             if (!res.ok) throw new Error(data?.error || "Something went wrong.");

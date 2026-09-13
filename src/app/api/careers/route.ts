@@ -6,7 +6,7 @@ import { isSpamSubmission, isValidEmail, isValidPhone, isReasonableLength } from
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { name, email, phone, role, portfolioLink, message, honeypot, formRenderedAt } = body ?? {};
+        const { name, email, phone, role, portfolioLink, message, honeypot, formRenderedAt, pageUrl } = body ?? {};
 
         const spamCheck = isSpamSubmission({ honeypot, formRenderedAt, message });
         if (spamCheck.spam) {
@@ -41,6 +41,7 @@ export async function POST(request: Request) {
                 { label: "Message", value: message || "—" },
             ],
             submitterEmail: email,
+            pageUrl,
         });
 
         const teamResult = await sendEmail({

@@ -48,7 +48,7 @@ export default function Contact() {
             const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ ...form, honeypot, formRenderedAt }),
+                body: JSON.stringify({ ...form, honeypot, formRenderedAt, pageUrl: window.location.href }),
             });
             const data = await res.json();
             if (!res.ok) throw new Error(data?.error || "Something went wrong.");

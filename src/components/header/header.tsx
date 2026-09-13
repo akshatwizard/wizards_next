@@ -15,6 +15,7 @@ export default function Header() {
     const [scrolled, setScrolled] = useState<boolean | null>(false);
     const [openMenu, setOpenMenu] = useState<boolean>(false);
     const [openContactModal, setOpenContactModal] = useState<boolean>(false);
+    const [contactModalOpenedAt, setContactModalOpenedAt] = useState<number>(0);
 
     useMotionValueEvent(scrollY, "change", (current) => {
         if (current > 50) {
@@ -37,7 +38,7 @@ export default function Header() {
                         <BoltLogo scrolled={scrolled} />
                     </Link>
 
-                    <DesktopHeader scrolled={scrolled} onGetStarted={() => setOpenContactModal(true)} />
+                    <DesktopHeader scrolled={scrolled} onGetStarted={() => { setContactModalOpenedAt(Date.now()); setOpenContactModal(true); }} />
 
                     <button
                         onClick={() => setOpenMenu(true)}
@@ -54,7 +55,7 @@ export default function Header() {
             </motion.header>
 
             <MobileMenu open={openMenu} onClose={() => setOpenMenu(false)} />
-            <QuickContactModal open={openContactModal} onClose={() => setOpenContactModal(false)} />
+            <QuickContactModal open={openContactModal} onClose={() => setOpenContactModal(false)} openedAt={contactModalOpenedAt} />
         </>
     )
 }

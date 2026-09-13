@@ -10,7 +10,7 @@ import { isSpamSubmission, isValidEmail, isValidPhone, isReasonableLength } from
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { name, phone, email, service, message, honeypot, formRenderedAt } = body ?? {};
+        const { name, phone, email, service, message, honeypot, formRenderedAt, pageUrl } = body ?? {};
 
         // ── Spam checks — run before validation so bots get a generic
         // rejection rather than field-specific feedback that helps them adapt.
@@ -47,6 +47,7 @@ export async function POST(request: Request) {
                 { label: "Message", value: message },
             ],
             submitterEmail: email,
+            pageUrl,
         });
 
         const teamResult = await sendEmail({
