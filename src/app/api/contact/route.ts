@@ -1,64 +1,81 @@
 import { NextResponse } from "next/server";
+import { TEAM_EMAILS, sendEmail } from "@/lib/email";
+import { buildTeamNotificationEmail, buildAcknowledgementEmail } from "@/lib/email-templates";
+import { isSpamSubmission, isValidEmail, isValidPhone, isReasonableLength } from "@/lib/spam-check";
 
-// Sends contact form submissions via Resend's REST API directly (no SDK
-// install required). Needs RESEND_API_KEY set in your environment.
-// RESEND_FROM_EMAIL must be an address on a domain verified in Resend —
-// defaults to noreply@wizards.co.in if not set, update as needed.
+// Handles the homepage contact form, the /contact page, and every sector's
+// interest form — all three post here with the same shape, optionally
+// carrying a `service` field to say which sector/page it came from.
 
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { name, phone, email, service, message } = body ?? {};
+        const { name, phone, email, service, message, honeypot, formRenderedAt } = body ?? {};
 
-        if (!name || !email || !message) {
-            return NextResponse.json(
-                { error: "Name, email, and message are required." },
-                { status: 400 }
-            );
+        // ── Spam checks — run before validation so bots get a generic
+        // rejection rather than field-specific feedback that helps them adapt.
+        const spamCheck = isSpamSubmission({ honeypot, formRenderedAt, message });
+        if (spamCheck.spam) {
+            console.warn("Contact form submission rejected as spam:", spamCheck.reason);
+            // Respond as if it succeeded — never tell a bot what tripped it.
+            return NextResponse.json({ success: true });
         }
 
-        const RESEND_API_KEY = process.env.RESEND_API_KEY;
-        const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "noreply@wizards.co.in";
-        const TO_EMAIL = "leads@wizards.co.in";
-
-        if (!RESEND_API_KEY) {
-            console.error("RESEND_API_KEY is not set in the environment.");
-            return NextResponse.json(
-                { error: "Email service is not configured yet. Please try again later." },
-                { status: 500 }
-            );
+        // ── Field validation
+        if (!isReasonableLength(name, { min: 2, max: 120 })) {
+            return NextResponse.json({ error: "Please enter your full name." }, { status: 400 });
+        }
+        if (!isValidEmail(email)) {
+            return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
+        }
+        if (!isValidPhone(phone)) {
+            return NextResponse.json({ error: "Please enter a valid phone number." }, { status: 400 });
+        }
+        if (!isReasonableLength(message, { min: 10, max: 4000 })) {
+            return NextResponse.json({ error: "Please write a message of at least 10 characters." }, { status: 400 });
         }
 
-        const emailRes = await fetch("https://api.resend.com/emails", {
-            method: "POST",
-            headers: {
-                Authorization: `Bearer ${RESEND_API_KEY}`,
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                from: `Wizards Next Website <${FROM_EMAIL}>`,
-                to: [TO_EMAIL],
-                reply_to: email,
-                subject: `New enquiry from ${name}`,
-                html: `
-                    <h2>New contact form submission</h2>
-                    <p><strong>Name:</strong> ${escapeHtml(name)}</p>
-                    <p><strong>Phone:</strong> ${escapeHtml(phone || "Not provided")}</p>
-                    <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-                    <p><strong>Service interested in:</strong> ${escapeHtml(service || "Not specified")}</p>
-                    <p><strong>Message:</strong></p>
-                    <p>${escapeHtml(message).replace(/\n/g, "<br/>")}</p>
-                `,
-            }),
+        const formLabel = service ? String(service) : "Contact Form";
+
+        const { subject, html } = buildTeamNotificationEmail({
+            formLabel,
+            fields: [
+                { label: "Name", value: name },
+                { label: "Phone", value: phone || "Not provided" },
+                { label: "Email", value: email },
+                { label: "Service interested in", value: service || "Not specified" },
+                { label: "Message", value: message },
+            ],
+            submitterEmail: email,
         });
 
-        if (!emailRes.ok) {
-            const errorText = await emailRes.text();
-            console.error("Resend API error:", errorText);
-            return NextResponse.json(
-                { error: "Could not send your message right now. Please try again." },
-                { status: 502 }
-            );
+        const teamResult = await sendEmail({
+            to: TEAM_EMAILS,
+            fromName: "Wizards Next Website",
+            subject,
+            html,
+            replyTo: email,
+        });
+
+        if (!teamResult.ok) {
+            return NextResponse.json({ error: teamResult.error }, { status: 502 });
+        }
+
+        // Acknowledgement to the submitter — best-effort. If this leg fails,
+        // the lead has already reached the team, so we still report success
+        // to the user rather than making them think nothing went through.
+        const ack = buildAcknowledgementEmail({
+            name,
+            context: formLabel.toLowerCase().includes("sector interest") ? "sector-interest" : "contact",
+        });
+        const ackResult = await sendEmail({
+            to: [email],
+            fromName: "Wizards Next",
+            subject: ack.subject,
+            html: ack.html,
+        });
+        if (!ackResult.ok) {
+            console.error("Acknowledgement email failed to send:", ackResult.error);
         }
 
         return NextResponse.json({ success: true });
@@ -69,14 +86,4 @@ export async function POST(request: Request) {
             { status: 500 }
         );
     }
-}
-
-// Minimal HTML-escaping so form input can't break the email markup.
-function escapeHtml(value: string) {
-    return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
 }

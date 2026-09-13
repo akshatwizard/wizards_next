@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { X, Loader2, CheckCircle2 } from "lucide-react";
+import { HoneypotField } from "../ui/honeypot_field";
 
 type FormState = { name: string; phone: string; email: string; message: string };
 const initialState: FormState = { name: "", phone: "", email: "", message: "" };
@@ -10,6 +11,8 @@ export default function QuickContactModal({ open, onClose }: { open: boolean; on
     const [form, setForm] = useState<FormState>(initialState);
     const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
     const [errorMsg, setErrorMsg] = useState("");
+    const [honeypot, setHoneypot] = useState("");
+    const [formRenderedAt] = useState(() => Date.now());
 
     function update<K extends keyof FormState>(key: K, value: FormState[K]) {
         setForm((prev) => ({ ...prev, [key]: value }));
@@ -21,19 +24,25 @@ export default function QuickContactModal({ open, onClose }: { open: boolean; on
         setTimeout(() => {
             setStatus("idle");
             setForm(initialState);
+            setHoneypot("");
             setErrorMsg("");
         }, 200);
     }
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
+        if (form.message.trim().length < 10) {
+            setStatus("error");
+            setErrorMsg("Please write a message of at least 10 characters.");
+            return;
+        }
         setStatus("submitting");
         setErrorMsg("");
         try {
             const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ ...form, service: "Get Started — Quick Contact" }),
+                body: JSON.stringify({ ...form, service: "Get Started — Quick Contact", honeypot, formRenderedAt }),
             });
             const data = await res.json();
             if (!res.ok) throw new Error(data?.error || "Something went wrong.");
@@ -98,6 +107,7 @@ export default function QuickContactModal({ open, onClose }: { open: boolean; on
                                 <p className="text-zinc-300 text-[12.5px] mb-5">Tell us a bit about your business — a strategist will get back to you within 24 hours.</p>
 
                                 <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+                                    <HoneypotField value={honeypot} onChange={setHoneypot} />
                                     <input
                                         required
                                         type="text"
@@ -124,6 +134,7 @@ export default function QuickContactModal({ open, onClose }: { open: boolean; on
                                     <textarea
                                         required
                                         rows={3}
+                                        minLength={10}
                                         placeholder="Tell us about your brand and goals..."
                                         value={form.message}
                                         onChange={(e) => update("message", e.target.value)}

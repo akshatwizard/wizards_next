@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Loader2, CheckCircle2 } from "lucide-react";
 import { Section, Wrapper } from "@/components/ui/sections";
 import { FadeUp } from "@/components/ui/motion_components";
+import { HoneypotField } from "@/components/ui/honeypot_field";
 
 type FormState = { name: string; email: string; phone: string; message: string };
 const initialState: FormState = { name: "", email: "", phone: "", message: "" };
@@ -12,6 +13,8 @@ export default function SectorInterestForm({ sectorLabel }: { sectorLabel: strin
     const [form, setForm] = useState<FormState>(initialState);
     const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
     const [errorMsg, setErrorMsg] = useState("");
+    const [honeypot, setHoneypot] = useState("");
+    const [formRenderedAt] = useState(() => Date.now());
 
     function update<K extends keyof FormState>(key: K, value: FormState[K]) {
         setForm((prev) => ({ ...prev, [key]: value }));
@@ -22,12 +25,19 @@ export default function SectorInterestForm({ sectorLabel }: { sectorLabel: strin
         setStatus("submitting");
         setErrorMsg("");
         try {
+            // This form is deliberately compact and doesn't collect a free-text
+            // message — a sensible default keeps the shared /api/contact
+            // validation (and the team notification email) meaningful either way.
+            const message = form.message.trim() || `Interested in ${sectorLabel} services — please get in touch.`;
             const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     ...form,
+                    message,
                     service: `${sectorLabel} — Sector Interest`,
+                    honeypot,
+                    formRenderedAt,
                 }),
             });
             const data = await res.json();
@@ -69,6 +79,7 @@ export default function SectorInterestForm({ sectorLabel }: { sectorLabel: strin
                             </div>
                         ) : (
                             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2.5">
+                                <HoneypotField value={honeypot} onChange={setHoneypot} />
                                 <input
                                     required
                                     type="text"

@@ -1,64 +1,69 @@
 import { NextResponse } from "next/server";
-
-// Same pattern as /api/contact — sends via Resend's REST API directly.
-// Routed to the same lead inbox for now; point TO_EMAIL at a dedicated
-// hiring address (e.g. careers@wizards.co.in) once one exists.
+import { TEAM_EMAILS, sendEmail } from "@/lib/email";
+import { buildTeamNotificationEmail, buildAcknowledgementEmail } from "@/lib/email-templates";
+import { isSpamSubmission, isValidEmail, isValidPhone, isReasonableLength } from "@/lib/spam-check";
 
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { name, email, phone, role, portfolioLink, message } = body ?? {};
+        const { name, email, phone, role, portfolioLink, message, honeypot, formRenderedAt } = body ?? {};
 
-        if (!name || !email || !role) {
-            return NextResponse.json(
-                { error: "Name, email, and the role you're applying for are required." },
-                { status: 400 }
-            );
+        const spamCheck = isSpamSubmission({ honeypot, formRenderedAt, message });
+        if (spamCheck.spam) {
+            console.warn("Careers form submission rejected as spam:", spamCheck.reason);
+            return NextResponse.json({ success: true });
         }
 
-        const RESEND_API_KEY = process.env.RESEND_API_KEY;
-        const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "noreply@wizards.co.in";
-        const TO_EMAIL = "leads@wizards.co.in";
-
-        if (!RESEND_API_KEY) {
-            console.error("RESEND_API_KEY is not set in the environment.");
-            return NextResponse.json(
-                { error: "Application service is not configured yet. Please try again later." },
-                { status: 500 }
-            );
+        if (!isReasonableLength(name, { min: 2, max: 120 })) {
+            return NextResponse.json({ error: "Please enter your full name." }, { status: 400 });
+        }
+        if (!isValidEmail(email)) {
+            return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
+        }
+        if (!isValidPhone(phone)) {
+            return NextResponse.json({ error: "Please enter a valid phone number." }, { status: 400 });
+        }
+        if (!isReasonableLength(role, { min: 2, max: 120 })) {
+            return NextResponse.json({ error: "Please specify the role you're applying for." }, { status: 400 });
+        }
+        if (portfolioLink && !isReasonableLength(portfolioLink, { max: 500 })) {
+            return NextResponse.json({ error: "That portfolio link looks too long — please double check it." }, { status: 400 });
         }
 
-        const emailRes = await fetch("https://api.resend.com/emails", {
-            method: "POST",
-            headers: {
-                Authorization: `Bearer ${RESEND_API_KEY}`,
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                from: `Wizards Next Careers <${FROM_EMAIL}>`,
-                to: [TO_EMAIL],
-                reply_to: email,
-                subject: `New application: ${role} — ${name}`,
-                html: `
-                    <h2>New job application</h2>
-                    <p><strong>Role:</strong> ${escapeHtml(role)}</p>
-                    <p><strong>Name:</strong> ${escapeHtml(name)}</p>
-                    <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-                    <p><strong>Phone:</strong> ${escapeHtml(phone || "Not provided")}</p>
-                    <p><strong>Portfolio/Resume link:</strong> ${escapeHtml(portfolioLink || "Not provided")}</p>
-                    <p><strong>Message:</strong></p>
-                    <p>${escapeHtml(message || "—").replace(/\n/g, "<br/>")}</p>
-                `,
-            }),
+        const { subject, html } = buildTeamNotificationEmail({
+            formLabel: `Careers Application — ${role}`,
+            fields: [
+                { label: "Role", value: role },
+                { label: "Name", value: name },
+                { label: "Email", value: email },
+                { label: "Phone", value: phone || "Not provided" },
+                { label: "Portfolio/Resume link", value: portfolioLink || "Not provided" },
+                { label: "Message", value: message || "—" },
+            ],
+            submitterEmail: email,
         });
 
-        if (!emailRes.ok) {
-            const errorText = await emailRes.text();
-            console.error("Resend API error:", errorText);
-            return NextResponse.json(
-                { error: "Could not submit your application right now. Please try again." },
-                { status: 502 }
-            );
+        const teamResult = await sendEmail({
+            to: TEAM_EMAILS,
+            fromName: "Wizards Next Careers",
+            subject,
+            html,
+            replyTo: email,
+        });
+
+        if (!teamResult.ok) {
+            return NextResponse.json({ error: teamResult.error }, { status: 502 });
+        }
+
+        const ack = buildAcknowledgementEmail({ name, context: "careers" });
+        const ackResult = await sendEmail({
+            to: [email],
+            fromName: "Wizards Next Careers",
+            subject: ack.subject,
+            html: ack.html,
+        });
+        if (!ackResult.ok) {
+            console.error("Acknowledgement email failed to send:", ackResult.error);
         }
 
         return NextResponse.json({ success: true });
@@ -69,13 +74,4 @@ export async function POST(request: Request) {
             { status: 500 }
         );
     }
-}
-
-function escapeHtml(value: string) {
-    return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
 }

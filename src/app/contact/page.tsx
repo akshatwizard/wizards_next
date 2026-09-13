@@ -7,6 +7,7 @@ import { Section, Wrapper } from "@/components/ui/sections";
 import { FadeUp } from "@/components/ui/motion_components";
 import { SectionBadge } from "@/components/services/section_badge";
 import { services } from "@/constant/services";
+import { HoneypotField } from "@/components/ui/honeypot_field";
 
 // Confirmed from the live wizards.co.in site — update here if these change.
 const contactInfo = [
@@ -31,6 +32,8 @@ export default function ContactPage() {
     const [form, setForm] = useState<FormState>(initialState);
     const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
     const [errorMsg, setErrorMsg] = useState("");
+    const [honeypot, setHoneypot] = useState("");
+    const [formRenderedAt] = useState(() => Date.now());
 
     function update<K extends keyof FormState>(key: K, value: FormState[K]) {
         setForm((prev) => ({ ...prev, [key]: value }));
@@ -38,6 +41,11 @@ export default function ContactPage() {
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
+        if (form.message.trim().length < 10) {
+            setStatus("error");
+            setErrorMsg("Please write a message of at least 10 characters.");
+            return;
+        }
         setStatus("submitting");
         setErrorMsg("");
 
@@ -45,7 +53,7 @@ export default function ContactPage() {
             const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(form),
+                body: JSON.stringify({ ...form, honeypot, formRenderedAt }),
             });
             const data = await res.json();
 
@@ -137,6 +145,7 @@ export default function ContactPage() {
                                 </div>
                             ) : (
                                 <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+                                    <HoneypotField value={honeypot} onChange={setHoneypot} />
                                     <div className="grid grid-cols-2 gap-3">
                                         <Field label="Name">
                                             <input
@@ -187,6 +196,7 @@ export default function ContactPage() {
                                         <textarea
                                             required
                                             rows={3}
+                                            minLength={10}
                                             placeholder="Tell us about your brand and goals..."
                                             value={form.message}
                                             onChange={(e) => update("message", e.target.value)}

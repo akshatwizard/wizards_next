@@ -7,6 +7,7 @@ import { Section, Wrapper } from "@/components/ui/sections";
 import { FadeUp } from "@/components/ui/motion_components";
 import { SectionBadge } from "@/components/services/section_badge";
 import { openRoles } from "@/constant/careers";
+import { HoneypotField } from "@/components/ui/honeypot_field";
 
 type FormState = {
     name: string;
@@ -23,6 +24,8 @@ export default function CareersPage() {
     const [form, setForm] = useState<FormState>(initialState);
     const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
     const [errorMsg, setErrorMsg] = useState("");
+    const [honeypot, setHoneypot] = useState("");
+    const [formRenderedAt] = useState(() => Date.now());
 
     function update<K extends keyof FormState>(key: K, value: FormState[K]) {
         setForm((prev) => ({ ...prev, [key]: value }));
@@ -36,7 +39,7 @@ export default function CareersPage() {
             const res = await fetch("/api/careers", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(form),
+                body: JSON.stringify({ ...form, honeypot, formRenderedAt }),
             });
             const data = await res.json();
             if (!res.ok) throw new Error(data?.error || "Something went wrong.");
@@ -165,6 +168,7 @@ export default function CareersPage() {
                                 </div>
                             ) : (
                                 <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+                                    <HoneypotField value={honeypot} onChange={setHoneypot} />
                                     <div className="grid grid-cols-2 gap-3">
                                         <Field label="Name">
                                             <input required type="text" placeholder="Your name" value={form.name}
