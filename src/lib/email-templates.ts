@@ -57,10 +57,18 @@ export function buildTeamNotificationEmail(args: {
     formLabel: string;      // e.g. "Contact Form", "Careers Application", "Healthcare — Sector Interest"
     fields: { label: string; value: string }[]; // already in display order; values are raw (will be escaped here)
     submitterEmail: string;
+    pageUrl?: string;       // full URL of the page the form was submitted from
 }): { subject: string; html: string } {
-    const { formLabel, fields, submitterEmail } = args;
+    const { formLabel, fields, submitterEmail, pageUrl } = args;
     const nameField = fields.find((f) => f.label.toLowerCase() === "name");
-    const subject = `New ${formLabel} — ${nameField?.value || submitterEmail}`;
+
+    let pagePath = "";
+    try {
+        pagePath = pageUrl ? new URL(pageUrl).pathname : "";
+    } catch {
+        pagePath = "";
+    }
+    const subject = `New ${formLabel} — ${nameField?.value || submitterEmail}${pagePath ? ` (from ${pagePath})` : ""}`;
 
     const rows = fields
         .map((f) => {
@@ -75,9 +83,13 @@ export function buildTeamNotificationEmail(args: {
         })
         .join("");
 
+    const pageRow = pageUrl
+        ? fieldRow("Submitted from", `<a href="${escapeHtml(pageUrl)}" style="color:${AMBER}; text-decoration:none;">${escapeHtml(pagePath || pageUrl)}</a>`)
+        : "";
+
     const bodyHtml = `
         <p style="margin: 0 0 18px 0; font-size: 13.5px; color:#52525b;">A new submission just came in from the website.</p>
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">${rows}</table>
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">${rows}${pageRow}</table>
         <table role="presentation" cellpadding="0" cellspacing="0" style="margin-top: 22px;">
             <tr><td style="background-color:${AMBER}; border-radius: 8px;">
                 <a href="mailto:${escapeHtml(submitterEmail)}" style="display:inline-block; padding: 10px 18px; font-size: 13px; font-weight: 600; color:#18181b; text-decoration:none;">Reply to ${escapeHtml(submitterEmail)}</a>
