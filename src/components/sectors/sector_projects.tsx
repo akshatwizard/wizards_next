@@ -39,7 +39,7 @@ export default function SectorProjects({ data }: { data: SectorProjectType }) {
                                         style={{ background: 'radial-gradient(ellipse at 50% 110%, rgba(217,119,6,0.1) 0%, transparent 60%)' }} />
 
                                     {/* Project type label */}
-                                    <div className="absolute top-2.5 left-2.5 text-[9px] font-semibold tracking-wider uppercase px-2 py-1 rounded-md border border-amber-600/25 bg-amber-600/10 text-amber-600">
+                                    <div className="absolute top-2.5 left-2.5 text-[12px] font-semibold tracking-wider uppercase px-2 py-1 rounded-md border border-amber-600/25 bg-amber-600/10 text-amber-600">
                                         {project.type}
                                     </div>
 
@@ -47,11 +47,11 @@ export default function SectorProjects({ data }: { data: SectorProjectType }) {
                                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/40">
                                         {project.href ? (
                                             <Link href={project.href}
-                                                className="inline-flex items-center gap-1.5 bg-amber-600 text-black text-[11px] font-semibold px-4 py-2 rounded-lg">
+                                                className="inline-flex items-center gap-1.5 bg-amber-600 text-black text-[12px] font-semibold px-4 py-2 rounded-lg">
                                                 View project <ExternalLink size={11} />
                                             </Link>
                                         ) : (
-                                            <span className="inline-flex items-center gap-1.5 bg-zinc-800 text-zinc-300 text-[11px] font-medium px-4 py-2 rounded-lg border border-zinc-700">
+                                            <span className="inline-flex items-center gap-1.5 bg-zinc-800 text-zinc-300 text-[12px] font-medium px-4 py-2 rounded-lg border border-zinc-700">
                                                 Coming soon
                                             </span>
                                         )}
@@ -70,7 +70,7 @@ export default function SectorProjects({ data }: { data: SectorProjectType }) {
                                     </div>
                                     <div className="flex flex-wrap gap-1.5">
                                         {project.tags.map(t => (
-                                            <span key={t} className="text-[10px] px-2 py-0.5 rounded border border-zinc-800 bg-zinc-950 text-zinc-300 group-hover:border-amber-600/20 group-hover:text-zinc-200 transition-colors">
+                                            <span key={t} className="text-[12px] px-2 py-0.5 rounded border border-zinc-800 bg-zinc-950 text-zinc-300 group-hover:border-amber-600/20 group-hover:text-zinc-200 transition-colors">
                                                 {t}
                                             </span>
                                         ))}

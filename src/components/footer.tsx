@@ -92,7 +92,7 @@ export default function Footer() {
                                     key={label}
                                     href={href}
                                     aria-label={label}
-                                    className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 hover:bg-amber-600/12 hover:border-amber-600/35 hover:text-amber-600 flex items-center justify-center text-[11px] font-bold text-zinc-200 transition-all duration-200"
+                                    className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 hover:bg-amber-600/12 hover:border-amber-600/35 hover:text-amber-600 flex items-center justify-center text-[12px] font-bold text-zinc-200 transition-all duration-200"
                                 >
                                     {label}
                                 </a>
@@ -158,8 +158,8 @@ export default function Footer() {
 
                 {/* Bottom bar */}
                 <div className="border-t border-zinc-900 pt-5 flex items-center justify-between flex-wrap">
-                    <p className="text-zinc-700 text-[11px]">© {new Date().getFullYear()} Wizards Next LLP. All rights reserved.</p>
-                    <div className="flex items-center gap-1.5 text-zinc-300 text-[10.5px]">
+                    <p className="text-zinc-700 text-[12px]">© {new Date().getFullYear()} Wizards Next LLP. All rights reserved.</p>
+                    <div className="flex items-center gap-1.5 text-zinc-300 text-[12px]">
                         <span className="w-1.5 h-1.5 rounded-full bg-amber-600 inline-block" />
                         Varanasi — Pan India
                     </div>

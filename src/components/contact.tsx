@@ -58,7 +58,7 @@ export default function Contact() {
                 <div>
                     <FadeUp className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/25 rounded-full px-4 py-1.5 mb-4">
                         <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
-                        <span className="text-amber-600 text-[10px] tracking-widest uppercase">
+                        <span className="text-amber-600 text-[12px] tracking-widest uppercase">
                             Contact Us
                         </span>
                     </FadeUp>
@@ -87,7 +87,7 @@ export default function Contact() {
                                     <Icon size={15} strokeWidth={1.6} className="text-amber-600" />
                                 </div>
                                 <div>
-                                    <p className="text-[10px] text-zinc-300 uppercase tracking-wider mb-0.5">{label}</p>
+                                    <p className="text-[12px] text-zinc-300 uppercase tracking-wider mb-0.5">{label}</p>
                                     <p className="text-zinc-100 text-[12.5px]">{value}</p>
                                 </div>
                             </div>
@@ -95,14 +95,14 @@ export default function Contact() {
 
                         {/* Social text buttons */}
                         <div className="mt-auto pt-4 border-t border-zinc-800">
-                            <p className="text-[10.5px] text-zinc-300 uppercase tracking-wider mb-2.5">Follow us</p>
+                            <p className="text-[12px] text-zinc-300 uppercase tracking-wider mb-2.5">Follow us</p>
                             <div className="flex gap-2">
                                 {socials.map(({ label, href }) => (
                                     <a
                                         key={label}
                                         href={href}
                                         aria-label={label}
-                                        className="w-8 h-8 rounded-lg bg-zinc-950 border border-zinc-800 hover:bg-amber-600/12 hover:border-amber-600/35 hover:text-amber-600 flex items-center justify-center text-[11px] font-bold text-zinc-200 transition-all duration-200"
+                                        className="w-8 h-8 rounded-lg bg-zinc-950 border border-zinc-800 hover:bg-amber-600/12 hover:border-amber-600/35 hover:text-amber-600 flex items-center justify-center text-[12px] font-bold text-zinc-200 transition-all duration-200"
                                     >
                                         {label}
                                     </a>
@@ -126,7 +126,7 @@ export default function Contact() {
                             <form onSubmit={handleSubmit} className="flex flex-col gap-3">
                                 <div className="grid grid-cols-2 gap-3">
                                     <div className="flex flex-col gap-1.5">
-                                        <label className="text-[10.5px] text-zinc-300 uppercase tracking-wider">Name</label>
+                                        <label className="text-[12px] text-zinc-300 uppercase tracking-wider">Name</label>
                                         <input
                                             required
                                             type="text"
@@ -137,7 +137,7 @@ export default function Contact() {
                                         />
                                     </div>
                                     <div className="flex flex-col gap-1.5">
-                                        <label className="text-[10.5px] text-zinc-300 uppercase tracking-wider">Phone</label>
+                                        <label className="text-[12px] text-zinc-300 uppercase tracking-wider">Phone</label>
                                         <input
                                             type="tel"
                                             placeholder="+91 00000 00000"
@@ -149,7 +149,7 @@ export default function Contact() {
                                 </div>
 
                                 <div className="flex flex-col gap-1.5">
-                                    <label className="text-[10.5px] text-zinc-300 uppercase tracking-wider">Email</label>
+                                    <label className="text-[12px] text-zinc-300 uppercase tracking-wider">Email</label>
                                     <input
                                         required
                                         type="email"
@@ -161,7 +161,7 @@ export default function Contact() {
                                 </div>
 
                                 <div className="flex flex-col gap-1.5">
-                                    <label className="text-[10.5px] text-zinc-300 uppercase tracking-wider">
+                                    <label className="text-[12px] text-zinc-300 uppercase tracking-wider">
                                         Service Interested In
                                     </label>
                                     <select
@@ -177,7 +177,7 @@ export default function Contact() {
                                 </div>
 
                                 <div className="flex flex-col gap-1.5">
-                                    <label className="text-[10.5px] text-zinc-300 uppercase tracking-wider">Message</label>
+                                    <label className="text-[12px] text-zinc-300 uppercase tracking-wider">Message</label>
                                     <textarea
                                         required
                                         rows={3}

@@ -49,7 +49,7 @@ export default function Services() {
                 <FadeUp delay={0.1} className="relative mb-8">
                     <div className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/25 rounded-full px-4 py-1.5 mb-4">
                         <span className="w-1.5 h-1.5 rounded-full bg-amber-600 inline-block" />
-                        <span className="text-amber-600 text-[11px] tracking-widest uppercase">
+                        <span className="text-amber-600 text-[12px] tracking-widest uppercase">
                             What We Do
                         </span>
                     </div>

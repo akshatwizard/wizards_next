@@ -11,7 +11,7 @@ export default function Team() {
                 <div>
                     <FadeUp className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/25 rounded-full px-4 py-1.5 mb-4">
                         <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
-                        <span className="text-amber-600 text-[10px] tracking-widest uppercase">
+                        <span className="text-amber-600 text-[12px] tracking-widest uppercase">
                             The Team
                         </span>
                     </FadeUp>
@@ -42,7 +42,7 @@ export default function Team() {
                             {/* Name + role */}
                             <div>
                                 <p className="font-sora! text-zinc-200 font-medium tracking-tight">{name}</p>
-                                <p className="text-amber-600 text-[10px] mt-0.5">{role}</p>
+                                <p className="text-amber-600 text-[12px] mt-0.5">{role}</p>
                             </div>
 
                             {/* Bio */}
@@ -55,7 +55,7 @@ export default function Team() {
                                         key={label}
                                         href={href}
                                         aria-label={label}
-                                        className="w-8 h-8 rounded-lg bg-zinc-950 border border-zinc-800 hover:bg-amber-600/12 hover:border-amber-600/35 hover:text-amber-600 flex items-center justify-center text-[11px] font-bold text-zinc-200 transition-all duration-200"
+                                        className="w-8 h-8 rounded-lg bg-zinc-950 border border-zinc-800 hover:bg-amber-600/12 hover:border-amber-600/35 hover:text-amber-600 flex items-center justify-center text-[12px] font-bold text-zinc-200 transition-all duration-200"
                                     >
                                         {label}
                                     </a>

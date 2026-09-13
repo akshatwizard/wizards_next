@@ -42,7 +42,7 @@ export default function ServiceCTA() {
                                 <ExternalLink size={13} />
                             </Link>
                         </div>
-                        <p className="text-zinc-700 text-[11px] mt-6">
+                        <p className="text-zinc-700 text-[12px] mt-6">
                             Free 30-min discovery call · No commitment required
                         </p>
                     </div>

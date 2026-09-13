@@ -6,7 +6,7 @@ import { SectionHeading } from "../services/section_heading"
 
 export default function SectorTrust({ data }: { data: SectorTrustType }) {
     return (
-        <Section>
+        <Section tone="raised">
             <Wrapper>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 

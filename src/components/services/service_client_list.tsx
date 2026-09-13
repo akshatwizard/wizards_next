@@ -23,12 +23,12 @@ export default function ServiceClientList({ data }: { data: ServiceClientListTyp
                     {data.client_list.map((c, i) => (
                         <FadeUp key={c.name} delay={i * 0.05}>
                             <div className="flex items-center gap-3 p-4 rounded-xl border border-zinc-800 bg-zinc-900 hover:border-zinc-700 hover:bg-zinc-800/60 transition-all duration-200">
-                                <div className="size-9 rounded-lg bg-amber-600/15 border border-amber-600/25 flex items-center justify-center text-[10px] font-bold text-amber-600 shrink-0">
+                                <div className="size-9 rounded-lg bg-amber-600/15 border border-amber-600/25 flex items-center justify-center text-[12px] font-bold text-amber-600 shrink-0">
                                     {c.initials}
                                 </div>
                                 <div>
                                     <p className="text-[12px] font-medium text-zinc-200 leading-snug">{c.name}</p>
-                                    <p className="text-[10px] text-zinc-300">{c.industry}</p>
+                                    <p className="text-[12px] text-zinc-300">{c.industry}</p>
                                 </div>
                             </div>
                         </FadeUp>

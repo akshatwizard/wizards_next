@@ -95,7 +95,7 @@ function ImageBlock() {
             {/* Floating stat badge — bottom right, overlapping */}
             <div className="absolute -bottom-4 -right-4 sm:right-0 lg:-right-6 bg-amber-600 rounded-2xl px-5 py-4 shadow-xl shadow-amber-900/40">
                 <p className="font-syne text-3xl font-black text-black leading-none">24+</p>
-                <p className="text-[11px] font-medium text-black/70 mt-0.5 tracking-wide uppercase">
+                <p className="text-[12px] font-medium text-black/70 mt-0.5 tracking-wide uppercase">
                     Years of Excellence
                 </p>
             </div>
@@ -131,7 +131,7 @@ export default function AboutUs() {
                         <FadeUp delay={0.1}>
                             <div className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/25 rounded-full px-3.5 py-1 mb-4 w-max">
                                 <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-                                <span className="text-amber-500 text-[10px] tracking-widest uppercase">
+                                <span className="text-amber-500 text-[12px] tracking-widest uppercase">
                                     About Us
                                 </span>
                             </div>

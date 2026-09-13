@@ -9,7 +9,7 @@ import { ServicesOfferedTypes } from '@/types/service.types'
 
 export default function ServicesOffered({ data }: { data: ServicesOfferedTypes }) {
     return (
-        <Section>
+        <Section tone="raised">
             <Wrapper>
                 <FadeUp delay={0} className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
                     <div>

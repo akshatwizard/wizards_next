@@ -30,19 +30,19 @@ export default function ServiceTeam({ data }: { data: ServiceTeamType }) {
                                 {/* Avatar + name */}
                                 <div className="flex items-center gap-3">
                                     {/* Avatar placeholder */}
-                                    <div className="size-10 rounded-xl bg-amber-600/15 border border-amber-600/25 flex items-center justify-center text-[11px] font-bold text-amber-600 shrink-0">
+                                    <div className="size-10 rounded-xl bg-amber-600/15 border border-amber-600/25 flex items-center justify-center text-[12px] font-bold text-amber-600 shrink-0">
                                         {member.initials}
                                     </div>
                                     <div>
                                         <p className="text-[13px] font-semibold text-zinc-200 leading-snug">{member.name}</p>
-                                        <p className="text-[10px] text-zinc-200">{member.role}</p>
+                                        <p className="text-[12px] text-zinc-200">{member.role}</p>
                                     </div>
                                 </div>
 
                                 {/* Experience badge */}
                                 <div className="flex items-center gap-1.5">
                                     <Clock size={11} className="text-amber-600" />
-                                    <span className="text-[10.5px] text-zinc-200">{member.exp}</span>
+                                    <span className="text-[12px] text-zinc-200">{member.exp}</span>
                                 </div>
 
                                 {/* Skills */}

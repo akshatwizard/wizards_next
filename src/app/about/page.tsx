@@ -22,7 +22,7 @@ export default function AboutPage() {
                 />
                 <Wrapper className="pb-0!">
                     <FadeUp delay={0}>
-                        <div className="flex items-center gap-1.5 text-[11px] text-zinc-300 mb-6">
+                        <div className="flex items-center gap-1.5 text-[12px] text-zinc-300 mb-6">
                             <Link href="/" className="hover:text-zinc-100 transition-colors">Home</Link>
                             <ChevronRight size={12} />
                             <span className="text-zinc-100">About</span>
@@ -159,7 +159,7 @@ export default function AboutPage() {
             {/* CTA */}
             <Section>
                 <Wrapper className="lg:py-12 md:py-10 py-8">
-                    <FadeUp className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 text-center">
+                    <FadeUp className="bg-zinc-800 border border-zinc-700 rounded-2xl p-8 text-center">
                         <p className="text-zinc-200 text-lg font-medium mb-2">Want to work with us?</p>
                         <p className="text-zinc-200 text-[13px] font-light mb-5 max-w-md mx-auto">
                             Tell us about your business and what you&apos;re trying to achieve.

@@ -32,9 +32,9 @@ export default function ServiceCaseStudy({ data }: { data: ServiceCaseStudyType 
                                     {/* Metric badge */}
                                     <div className="absolute bottom-3 left-3 bg-amber-600 text-black px-3 py-1.5 rounded-lg">
                                         <p className="font-syne text-lg font-black leading-none">{cs.metric}</p>
-                                        <p className="text-[9px] font-semibold opacity-70 mt-0.5">{cs.label}</p>
+                                        <p className="text-[12px] font-semibold opacity-70 mt-0.5">{cs.label}</p>
                                     </div>
-                                    <div className="absolute top-3 right-3 text-[9px] font-medium text-zinc-300 bg-zinc-900/80 px-2 py-1 rounded-md border border-zinc-800">
+                                    <div className="absolute top-3 right-3 text-[12px] font-medium text-zinc-300 bg-zinc-900/80 px-2 py-1 rounded-md border border-zinc-800">
                                         {cs.industry}
                                     </div>
                                 </div>
@@ -43,7 +43,7 @@ export default function ServiceCaseStudy({ data }: { data: ServiceCaseStudyType 
                                 <div className="flex flex-col gap-3 p-5 flex-1">
                                     <div>
                                         <h3 className="font-syne text-[14px] font-bold text-zinc-100">{cs.client}</h3>
-                                        <p className="text-[11px] text-amber-600 font-medium mt-0.5">{cs.result}</p>
+                                        <p className="text-[12px] text-amber-600 font-medium mt-0.5">{cs.result}</p>
                                     </div>
                                     <p className="text-[12px] text-zinc-200 leading-relaxed font-light flex-1">{cs.desc}</p>
                                     <div className="flex flex-wrap gap-1.5 pt-3 border-t border-zinc-800">

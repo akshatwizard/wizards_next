@@ -33,7 +33,7 @@ export default function Testimonials() {
                     <FadeUp delay={0}>
                         <div className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/25 rounded-full px-3.5 py-1">
                             <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
-                            <span className="text-amber-500 text-[10px] tracking-widest uppercase">
+                            <span className="text-amber-500 text-[12px] tracking-widest uppercase">
                                 Testimonials
                             </span>
                         </div>
@@ -100,7 +100,7 @@ function TextCard({ t }: { t: Testimonial }) {
                 </div>
                 <div>
                     <p className="text-xs font-medium text-zinc-200">{t.name}</p>
-                    <p className="text-[10px] text-zinc-200">{t.designation}</p>
+                    <p className="text-[12px] text-zinc-200">{t.designation}</p>
                 </div>
             </div>
         </div>
@@ -124,7 +124,7 @@ function VideoCard({ v }: { v: VideoTestimonial }) {
                         </svg>
                     </div>
                 </div>
-                <div className="absolute bottom-2 right-2 px-1.5 py-0.5 bg-black/70 rounded text-[9px] text-zinc-300 font-medium">
+                <div className="absolute bottom-2 right-2 px-1.5 py-0.5 bg-black/70 rounded text-[12px] text-zinc-300 font-medium">
                     0:45
                 </div>
             </div>
@@ -135,8 +135,8 @@ function VideoCard({ v }: { v: VideoTestimonial }) {
                         <Image src={v.thumbnail} alt={v.name} fill className="object-cover" />
                     </div>
                     <div>
-                        <p className="text-[11px] font-medium text-zinc-200">{v.name}</p>
-                        <p className="text-[9px] text-zinc-200">{v.designation}</p>
+                        <p className="text-[12px] font-medium text-zinc-200">{v.name}</p>
+                        <p className="text-[12px] text-zinc-200">{v.designation}</p>
                     </div>
                 </div>
             </div>

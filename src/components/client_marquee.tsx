@@ -37,7 +37,7 @@ function MarqueeItem({ initials, name, href }: MarqueeClient) {
             >
                 {/* Avatar */}
                 <div
-                    className="font-sora! w-9 h-9 rounded-lg shrink-0 flex items-center justify-center text-[11px] font-bold tracking-wide  bg-zinc-800 border border-zinc-700  text-amber-600  group-hover/item:bg-amber-600/15  group-hover/item:border-amber-600/40  group-hover/item:text-amber-500 transition-all duration-300"
+                    className="font-sora! w-9 h-9 rounded-lg shrink-0 flex items-center justify-center text-[12px] font-bold tracking-wide  bg-zinc-800 border border-zinc-700  text-amber-600  group-hover/item:bg-amber-600/15  group-hover/item:border-amber-600/40  group-hover/item:text-amber-500 transition-all duration-300"
                 >
                     {initials}
                 </div>
@@ -70,7 +70,7 @@ export default function ClientMarquee() {
                 <div className="text-center">
                     <FadeUp className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/20 rounded-full px-4 py-1.5 mb-4">
                         <span className="w-1.5 h-1.5 rounded-full bg-amber-600 inline-block" />
-                        <span className="text-amber-600 text-[10.5px] tracking-[2px] uppercase font-medium">
+                        <span className="text-amber-600 text-[12px] tracking-[2px] uppercase font-medium">
                             Our Clients
                         </span>
                     </FadeUp>

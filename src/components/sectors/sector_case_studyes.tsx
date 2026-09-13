@@ -33,26 +33,26 @@ export default function SectorCaseStudy({ data }: { data: SectorCaseStudyType })
                                         }} />
                                     <div className="absolute bottom-3 left-3 bg-amber-600 text-black px-3 py-1.5 rounded-lg">
                                         <p className="font-syne text-lg font-black leading-none">{cs.metric}</p>
-                                        <p className="text-[9px] font-semibold opacity-70 mt-0.5">{cs.metricLabel}</p>
+                                        <p className="text-[12px] font-semibold opacity-70 mt-0.5">{cs.metricLabel}</p>
                                     </div>
                                 </div>
                                 <div className="flex flex-col gap-3 p-5 flex-1">
                                     <div>
                                         <h3 className="font-syne text-[14px] font-bold text-zinc-100">{cs.client}</h3>
-                                        <p className="text-[11px] text-amber-600 font-medium mt-0.5">{cs.result}</p>
+                                        <p className="text-[12px] text-amber-600 font-medium mt-0.5">{cs.result}</p>
                                     </div>
                                     <p className="text-[12px] text-zinc-200 leading-relaxed font-light flex-1">{cs.desc}</p>
                                     <div className="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-zinc-800">
                                         <div className="flex flex-wrap gap-1.5">
                                             {cs.tags.map(t => (
-                                                <span key={t} className="text-[10px] px-2 py-0.5 rounded border border-zinc-700/60 bg-zinc-950 text-zinc-200">
+                                                <span key={t} className="text-[12px] px-2 py-0.5 rounded border border-zinc-700/60 bg-zinc-950 text-zinc-200">
                                                     {t}
                                                 </span>
                                             ))}
                                         </div>
                                         {cs.href && (
                                             <Link href={cs.href}
-                                                className="inline-flex items-center gap-1 text-[10px] text-amber-600 hover:text-amber-500 transition-colors">
+                                                className="inline-flex items-center gap-1 text-[12px] text-amber-600 hover:text-amber-500 transition-colors">
                                                 View <ExternalLink size={10} />
                                             </Link>
                                         )}

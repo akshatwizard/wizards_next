@@ -31,7 +31,7 @@ export default function ServiceProcess({ data }: { data: ServiceProcessType }) {
                         {data.process_list.map((step, i) => (
                             <FadeUp key={step.num} delay={i * 0.07} className='w-full h-full'>
                                 <div className="relative h-full flex flex-col gap-3 p-5 rounded-xl border border-white/6 bg-white/2 hover:bg-white/4 hover:border-amber-600/20 transition-all duration-200">
-                                    <span className="absolute top-4 right-4 font-syne text-[10px] font-bold text-zinc-700">{step.num}</span>
+                                    <span className="absolute top-4 right-4 font-syne text-[12px] font-bold text-zinc-700">{step.num}</span>
                                     <div className="size-10 rounded-xl bg-amber-600/10 border border-amber-600/25 flex items-center justify-center">
                                         <span className="text-[13px] font-black text-amber-500">
                                             {step.num}

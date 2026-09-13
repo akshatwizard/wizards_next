@@ -36,7 +36,7 @@ export default function ServiceTechStack({ data }: { data: ServiceTechStackType 
                                     <div className="flex flex-wrap gap-1.5">
                                         {cat.items.map((tech) => (
                                             <span key={tech}
-                                                className="text-[11px] px-2.5 py-1 rounded-lg border border-zinc-700/60 bg-zinc-950 text-zinc-100 hover:border-amber-600/30 hover:text-zinc-300 transition-colors cursor-default">
+                                                className="text-[12px] px-2.5 py-1 rounded-lg border border-zinc-700/60 bg-zinc-950 text-zinc-100 hover:border-amber-600/30 hover:text-zinc-300 transition-colors cursor-default">
                                                 {tech}
                                             </span>
                                         ))}

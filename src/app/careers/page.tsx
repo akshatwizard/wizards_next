@@ -63,7 +63,7 @@ export default function CareersPage() {
                 />
                 <Wrapper className="pb-0!">
                     <FadeUp delay={0}>
-                        <div className="flex items-center gap-1.5 text-[11px] text-zinc-300 mb-6">
+                        <div className="flex items-center gap-1.5 text-[12px] text-zinc-300 mb-6">
                             <Link href="/" className="hover:text-zinc-100 transition-colors">Home</Link>
                             <ChevronRight size={12} />
                             <span className="text-zinc-100">Careers</span>
@@ -97,7 +97,7 @@ export default function CareersPage() {
                                     <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
                                         <div>
                                             <p className="text-zinc-200 font-medium text-[15px] mb-1">{role.title}</p>
-                                            <div className="flex flex-wrap items-center gap-3 text-[11.5px] text-zinc-200">
+                                            <div className="flex flex-wrap items-center gap-3 text-[12px] text-zinc-200">
                                                 <span className="flex items-center gap-1"><Briefcase size={12} /> {role.department}</span>
                                                 <span className="flex items-center gap-1"><MapPin size={12} /> {role.location}</span>
                                                 <span className="flex items-center gap-1"><Clock size={12} /> {role.type}</span>
@@ -116,7 +116,7 @@ export default function CareersPage() {
                                     <p className="text-zinc-200 text-[13px] font-light mb-4">{role.description}</p>
                                     <div className="grid sm:grid-cols-2 gap-4">
                                         <div>
-                                            <p className="text-[10px] text-zinc-300 uppercase tracking-wider mb-2">Responsibilities</p>
+                                            <p className="text-[12px] text-zinc-300 uppercase tracking-wider mb-2">Responsibilities</p>
                                             <ul className="flex flex-col gap-1.5">
                                                 {role.responsibilities.map((r) => (
                                                     <li key={r} className="text-zinc-100 text-[12.5px] flex gap-2">
@@ -126,7 +126,7 @@ export default function CareersPage() {
                                             </ul>
                                         </div>
                                         <div>
-                                            <p className="text-[10px] text-zinc-300 uppercase tracking-wider mb-2">What we&apos;re looking for</p>
+                                            <p className="text-[12px] text-zinc-300 uppercase tracking-wider mb-2">What we&apos;re looking for</p>
                                             <ul className="flex flex-col gap-1.5">
                                                 {role.requirements.map((r) => (
                                                     <li key={r} className="text-zinc-100 text-[12.5px] flex gap-2">
@@ -220,7 +220,7 @@ const inputClass =
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
     return (
         <div className="flex flex-col gap-1.5">
-            <label className="text-[10.5px] text-zinc-300 uppercase tracking-wider">{label}</label>
+            <label className="text-[12px] text-zinc-300 uppercase tracking-wider">{label}</label>
             {children}
         </div>
     );

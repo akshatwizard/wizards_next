@@ -41,18 +41,18 @@ function ClientCard({ client }: { client: (typeof clients)[0] }) {
                         className="w-full h-full object-contain"
                     />
                 ) : (
-                    <span className="text-[11px] font-medium text-zinc-300 tracking-widest uppercase">{client.name}</span>
+                    <span className="text-[12px] font-medium text-zinc-300 tracking-widest uppercase">{client.name}</span>
                 )}
             </div>
             <div className="p-5 flex flex-col justify-between flex-1">
                 <div>
                     <p className="text-zinc-200 font-medium text-[14px] group-hover:text-amber-600 transition-colors">{client.name}</p>
-                    {client.tagline && <p className="text-zinc-300 text-[11.5px] mt-1">{client.tagline}</p>}
+                    {client.tagline && <p className="text-zinc-300 text-[12px] mt-1">{client.tagline}</p>}
                 </div>
                 <div className="flex items-center justify-between mt-4">
                     <div className="flex flex-wrap gap-1">
                         {client.tags.slice(0, 2).map((t) => (
-                            <span key={t} className="text-[9.5px] px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-200 bg-zinc-950">{t}</span>
+                            <span key={t} className="text-[12px] px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-200 bg-zinc-950">{t}</span>
                         ))}
                     </div>
                     <ArrowUpRight size={14} className="text-zinc-300 group-hover:text-amber-600 transition-colors shrink-0" />
@@ -75,7 +75,7 @@ export default function OurWorksPage() {
             <Section>
                 <Wrapper className="pb-0!">
                     <FadeUp delay={0}>
-                        <div className="flex items-center gap-1.5 text-[11px] text-zinc-300 mb-6">
+                        <div className="flex items-center gap-1.5 text-[12px] text-zinc-300 mb-6">
                             <Link href="/" className="hover:text-zinc-100 transition-colors">Home</Link>
                             <ChevronRight size={12} />
                             <span className="text-zinc-100">Our Works</span>

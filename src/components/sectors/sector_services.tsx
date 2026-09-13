@@ -9,7 +9,7 @@ import { ArrowRight } from "lucide-react"
 
 export default function SectorServices({ data }: { data: SectorServicesType }) {
     return (
-        <Section>
+        <Section tone="raised">
             <Wrapper>
                 <FadeUp delay={0} className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
                     <div>
@@ -46,7 +46,7 @@ export default function SectorServices({ data }: { data: SectorServicesType }) {
                                     </div>
                                     <div className="flex flex-wrap gap-1.5 pt-3 border-t border-zinc-800">
                                         {svc.tags.map(t => (
-                                            <span key={t} className="text-[10px] px-2 py-0.5 rounded border border-zinc-700/60 bg-zinc-950 text-zinc-200">
+                                            <span key={t} className="text-[12px] px-2 py-0.5 rounded border border-zinc-700/60 bg-zinc-950 text-zinc-200">
                                                 {t}
                                             </span>
                                         ))}

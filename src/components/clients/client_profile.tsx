@@ -80,7 +80,7 @@ export default function ClientProfile({ client }: { client: Client }) {
                     <div className={bannerImage ? "grid lg:grid-cols-2 gap-10 items-center" : ""}>
                         <div>
                             <FadeUp delay={0}>
-                                <div className="flex items-center gap-1.5 text-[11px] text-zinc-300 mb-6 flex-wrap">
+                                <div className="flex items-center gap-1.5 text-[12px] text-zinc-300 mb-6 flex-wrap">
                                     <Link href="/" className="hover:text-zinc-100 transition-colors">Home</Link>
                                     <ChevronRight size={12} />
                                     <Link href="/our-works" className="hover:text-zinc-100 transition-colors">Our Works</Link>
@@ -110,7 +110,7 @@ export default function ClientProfile({ client }: { client: Client }) {
 
                             <FadeUp delay={0.15} className="flex flex-wrap items-center gap-2 mb-2">
                                 {client.tags.map((tag) => (
-                                    <span key={tag} className="text-[10.5px] px-2.5 py-1 rounded-full border border-zinc-800 text-zinc-200 bg-zinc-900">
+                                    <span key={tag} className="text-[12px] px-2.5 py-1 rounded-full border border-zinc-800 text-zinc-200 bg-zinc-900">
                                         {tag}
                                     </span>
                                 ))}
@@ -207,7 +207,7 @@ export default function ClientProfile({ client }: { client: Client }) {
 
             {/* Services provided */}
             {client.services.length > 0 && (
-                <Section>
+                <Section tone="raised">
                     <Wrapper className="lg:py-10 md:py-8 py-6">
                         <FadeUp>
                             <p className="text-zinc-100 font-semibold text-[13px] tracking-wide mb-4">Services we provided</p>
@@ -259,7 +259,7 @@ export default function ClientProfile({ client }: { client: Client }) {
                             {remainingScreenshots.map((shot, i) => (
                                 <FadeUp key={shot.src} delay={i * 0.05} className="rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900">
                                     <Image src={shot.src} alt={shot.caption ?? `${client.name} screenshot`} width={1254} height={1254} className="w-full h-auto object-cover" />
-                                    {shot.caption && <p className="text-zinc-200 text-[11.5px] p-3">{shot.caption}</p>}
+                                    {shot.caption && <p className="text-zinc-200 text-[12px] p-3">{shot.caption}</p>}
                                 </FadeUp>
                             ))}
                         </div>
@@ -269,7 +269,7 @@ export default function ClientProfile({ client }: { client: Client }) {
 
             {/* Related clients in the same sector(s) */}
             {relatedClients.length > 0 && (
-                <Section>
+                <Section tone="raised">
                     <Wrapper className="lg:py-10 md:py-8 py-6">
                         <FadeUp>
                             <p className="text-zinc-100 font-semibold text-[13px] tracking-wide mb-4">
@@ -284,7 +284,7 @@ export default function ClientProfile({ client }: { client: Client }) {
                                     className="group bg-zinc-900 border border-zinc-800 hover:border-amber-600/30 rounded-xl p-4 transition-colors"
                                 >
                                     <p className="text-zinc-300 text-[13px] font-medium group-hover:text-amber-600 transition-colors">{rc.name}</p>
-                                    <span className="inline-flex items-center gap-1 text-zinc-300 text-[11px] mt-1">
+                                    <span className="inline-flex items-center gap-1 text-zinc-300 text-[12px] mt-1">
                                         View profile <ArrowRight size={10} />
                                     </span>
                                 </Link>
@@ -296,7 +296,7 @@ export default function ClientProfile({ client }: { client: Client }) {
 
             <Section>
                 <Wrapper className="lg:py-12 md:py-10 py-8">
-                    <FadeUp className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 text-center">
+                    <FadeUp className="bg-zinc-800 border border-zinc-700 rounded-2xl p-8 text-center">
                         <p className="text-zinc-200 text-lg font-medium mb-2">Want results like this for your business?</p>
                         <p className="text-zinc-200 text-[13px] font-light mb-5 max-w-md mx-auto">
                             Tell us about your business and what you&apos;re trying to achieve.

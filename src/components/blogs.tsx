@@ -16,7 +16,7 @@ export default function BlogSection() {
                     <div>
                         <div className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/25 rounded-full px-3.5 py-1 mb-2.5">
                             <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
-                            <span className="text-amber-600 text-[10px] tracking-[1.5px] uppercase">
+                            <span className="text-amber-600 text-[12px] tracking-[1.5px] uppercase">
                                 Blog & Insights
                             </span>
                         </div>
@@ -61,7 +61,7 @@ export default function BlogSection() {
 
 function CategoryPill({ label }: { label: string }) {
     return (
-        <span className="absolute top-2.5 left-2.5 z-10 text-[9px] font-semibold tracking-[0.8px] uppercase px-2 py-1 rounded-[5px] border border-amber-600/30 bg-amber-600/12 text-amber-600">
+        <span className="absolute top-2.5 left-2.5 z-10 text-[12px] font-semibold tracking-[0.8px] uppercase px-2 py-1 rounded-[5px] border border-amber-600/30 bg-amber-600/12 text-amber-600">
             {label}
         </span>
     )
@@ -73,7 +73,7 @@ function Tags({ tags, hovered }: { tags: Tag[]; hovered: boolean }) {
             {tags.map((tag) => (
                 <span
                     key={tag}
-                    className={`text-[9.5px] px-1.5 py-0.5 rounded border transition-colors duration-200 bg-[#111114] ${hovered ? 'border-amber-600/20 text-zinc-200' : 'border-zinc-700/60 text-zinc-300'
+                    className={`text-[12px] px-1.5 py-0.5 rounded border transition-colors duration-200 bg-[#111114] ${hovered ? 'border-amber-600/20 text-zinc-200' : 'border-zinc-700/60 text-zinc-300'
                         }`}
                 >
                     {tag}
@@ -85,7 +85,7 @@ function Tags({ tags, hovered }: { tags: Tag[]; hovered: boolean }) {
 
 function ReadArrow() {
     return (
-        <span className="flex items-center gap-1 text-[10px] text-amber-600 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 shrink-0">
+        <span className="flex items-center gap-1 text-[12px] text-amber-600 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 shrink-0">
             Read
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#D97706" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M7 17 17 7" /><path d="M7 7h10v10" />
@@ -114,22 +114,22 @@ function FeaturedCard({ post }: { post: FeaturedPost }) {
             <div className="flex flex-col gap-1.5 flex-1 p-5">
                 <div className="flex items-center gap-2 flex-wrap">
                     <div className="flex items-center gap-1.5">
-                        <div className="w-4.5 h-4.5 rounded-[5px] bg-amber-600/15 border border-amber-600/25 flex items-center justify-center text-[7px] font-bold text-amber-600">
+                        <div className="w-4.5 h-4.5 rounded-[5px] bg-amber-600/15 border border-amber-600/25 flex items-center justify-center text-[12px] font-bold text-amber-600">
                             {post.author.initials}
                         </div>
-                        <span className="text-[10px] text-zinc-300">{post.author.name}</span>
+                        <span className="text-[12px] text-zinc-300">{post.author.name}</span>
                     </div>
                     <span className="w-1 h-1 rounded-full bg-zinc-700" />
-                    <span className="text-[10px] text-zinc-300">{post.date}</span>
+                    <span className="text-[12px] text-zinc-300">{post.date}</span>
                     <span className="w-1 h-1 rounded-full bg-zinc-700" />
-                    <span className="text-[10px] text-zinc-700">{post.readTime}</span>
+                    <span className="text-[12px] text-zinc-700">{post.readTime}</span>
                 </div>
 
                 <h3 className="font-syne text-[16px] font-bold text-zinc-200 leading-snug tracking-tight">
                     {post.title}
                 </h3>
 
-                <p className="text-[11.5px] text-zinc-300 leading-relaxed font-light">
+                <p className="text-[12px] text-zinc-300 leading-relaxed font-light">
                     {post.excerpt}
                 </p>
 
@@ -160,9 +160,9 @@ function SmallCard({ post }: { post: SmallPost }) {
             {/* Body */}
             <div className="flex flex-col gap-1.5 flex-1 p-3.5">
                 <div className="flex items-center gap-1.5">
-                    <span className="text-[10px] text-zinc-300">{post.date}</span>
+                    <span className="text-[12px] text-zinc-300">{post.date}</span>
                     <span className="w-1 h-1 rounded-full bg-zinc-700" />
-                    <span className="text-[10px] text-zinc-700">{post.readTime}</span>
+                    <span className="text-[12px] text-zinc-700">{post.readTime}</span>
                 </div>
 
                 <h3 className="font-syne text-[12.5px] font-bold text-zinc-300 leading-snug tracking-tight">
@@ -196,7 +196,7 @@ function NewsletterStrip() {
                     <p className="font-syne text-[13px] font-semibold text-zinc-200">
                         Get weekly growth tips in your inbox
                     </p>
-                    <p className="text-[11px] text-zinc-300 mt-0.5">No spam. Unsubscribe any time.</p>
+                    <p className="text-[12px] text-zinc-300 mt-0.5">No spam. Unsubscribe any time.</p>
                 </div>
             </div>
 

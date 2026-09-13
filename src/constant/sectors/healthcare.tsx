@@ -42,12 +42,12 @@ export const HealthcareSectorHero = {
             </div>
             <div className="absolute -bottom-4 -left-4 bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 shadow-xl">
                 <p className="font-syne text-xl font-black text-amber-500 leading-none">2.1s</p>
-                <p className="text-[9px] text-zinc-200 mt-0.5 uppercase tracking-widest">Avg load time</p>
+                <p className="text-[12px] text-zinc-200 mt-0.5 uppercase tracking-widest">Avg load time</p>
             </div>
 
             <div className="absolute -top-4 -right-4 bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 shadow-xl">
                 <p className="font-syne text-xl font-black text-amber-500 leading-none">120+</p>
-                <p className="text-[9px] text-zinc-200 mt-0.5 uppercase tracking-widest">Sites launched</p>
+                <p className="text-[12px] text-zinc-200 mt-0.5 uppercase tracking-widest">Sites launched</p>
             </div>
         </FadeUp>
     )

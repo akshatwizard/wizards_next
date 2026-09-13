@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
             <Section>
                 <Wrapper>
                     <FadeUp delay={0}>
-                        <div className="flex items-center gap-1.5 text-[11px] text-zinc-300 mb-6">
+                        <div className="flex items-center gap-1.5 text-[12px] text-zinc-300 mb-6">
                             <Link href="/" className="hover:text-zinc-100 transition-colors">Home</Link>
                             <ChevronRight size={12} />
                             <span className="text-zinc-100">Privacy Policy</span>

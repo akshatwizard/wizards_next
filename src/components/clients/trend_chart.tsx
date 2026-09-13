@@ -33,7 +33,7 @@ export default function TrendChart({ chart }: { chart: ClientTrendChart }) {
     return (
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
             <p className="text-zinc-200 text-[14px] font-medium mb-1">{title}</p>
-            {note && <p className="text-zinc-300 text-[11.5px] mb-4">{note}</p>}
+            {note && <p className="text-zinc-300 text-[12px] mb-4">{note}</p>}
             <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-auto" preserveAspectRatio="none">
                 <defs>
                     <linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1">
@@ -56,7 +56,7 @@ export default function TrendChart({ chart }: { chart: ClientTrendChart }) {
                     )
                 })}
             </svg>
-            <p className="text-zinc-300 text-[10.5px] mt-2">
+            <p className="text-zinc-300 text-[12px] mt-2">
                 {data[0].label}: {data[0].value}{unit} → {data[data.length - 1].label}: {data[data.length - 1].value}{unit}
             </p>
         </div>

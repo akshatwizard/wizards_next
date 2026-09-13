@@ -74,7 +74,7 @@ export default function CTABanner() {
                         <div className="p-10">
                             <div className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/30 rounded-full px-4 py-1.5 mb-4">
                                 <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
-                                <span className="text-amber-600 text-[10px] tracking-[1.5px] uppercase">
+                                <span className="text-amber-600 text-[12px] tracking-[1.5px] uppercase">
                                     Limited spots — Q3 2026
                                 </span>
                             </div>
@@ -111,10 +111,10 @@ export default function CTABanner() {
                             >
                                 {/* header */}
                                 <div className="flex items-center justify-between">
-                                    <span className="text-[11px] font-semibold text-zinc-100 tracking-wide">
+                                    <span className="text-[12px] font-semibold text-zinc-100 tracking-wide">
                                         Campaign Overview
                                     </span>
-                                    <span className="text-[9px] font-semibold px-2 py-0.5 rounded border"
+                                    <span className="text-[12px] font-semibold px-2 py-0.5 rounded border"
                                         style={{ background: "rgba(217,119,6,0.15)", color: "#D97706", borderColor: "rgba(217,119,6,0.25)" }}>
                                         Live
                                     </span>
@@ -143,8 +143,8 @@ export default function CTABanner() {
 
                                 {/* footer */}
                                 <div className="flex items-center justify-between">
-                                    <span className="text-[9.5px] text-zinc-300">Last 7 days</span>
-                                    <span className="flex items-center gap-1 text-[9px] text-amber-600">
+                                    <span className="text-[12px] text-zinc-300">Last 7 days</span>
+                                    <span className="flex items-center gap-1 text-[12px] text-amber-600">
                                         <span className="w-1.5 h-1.5 rounded-full bg-amber-600 inline-block" />
                                         Updating live
                                     </span>
@@ -175,7 +175,7 @@ function StatChip({ icon, value, label, style }: {
             <div>
                 <div className="font-extrabold text-[13px] text-zinc-200"
                     style={{ fontFamily: "'Syne',sans-serif" }}>{value}</div>
-                <div className="text-[9px] text-zinc-300">{label}</div>
+                <div className="text-[12px] text-zinc-300">{label}</div>
             </div>
         </div>
     );

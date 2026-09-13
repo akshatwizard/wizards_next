@@ -82,7 +82,7 @@ export default function ContactPage() {
                 <Wrapper>
                     <div>
                         <FadeUp delay={0}>
-                            <div className="flex items-center gap-1.5 text-[11px] text-zinc-300 mb-6">
+                            <div className="flex items-center gap-1.5 text-[12px] text-zinc-300 mb-6">
                                 <Link href="/" className="hover:text-zinc-100 transition-colors">Home</Link>
                                 <ChevronRight size={12} />
                                 <span className="text-zinc-100">Contact</span>
@@ -112,7 +112,7 @@ export default function ContactPage() {
                                         <Icon size={15} strokeWidth={1.6} className="text-amber-600" />
                                     </div>
                                     <div>
-                                        <p className="text-[10px] text-zinc-300 uppercase tracking-wider mb-0.5">{label}</p>
+                                        <p className="text-[12px] text-zinc-300 uppercase tracking-wider mb-0.5">{label}</p>
                                         <p className="text-zinc-100 text-[12.5px]">{value}</p>
                                     </div>
                                 </div>
@@ -227,7 +227,7 @@ const inputClass =
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
     return (
         <div className="flex flex-col gap-1.5">
-            <label className="text-[10.5px] text-zinc-300 uppercase tracking-wider">{label}</label>
+            <label className="text-[12px] text-zinc-300 uppercase tracking-wider">{label}</label>
             {children}
         </div>
     );

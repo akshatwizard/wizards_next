@@ -35,7 +35,7 @@ function ProjectCard({ client }: { client: Client }) {
                                 backgroundSize: '24px 24px',
                             }}
                         />
-                        <span className="relative text-[11px] font-medium text-zinc-300 tracking-widest uppercase">
+                        <span className="relative text-[12px] font-medium text-zinc-300 tracking-widest uppercase">
                             {sectors && sectors.length > 0 ? sectors.join(' / ') : name}
                         </span>
                     </>
@@ -44,7 +44,7 @@ function ProjectCard({ client }: { client: Client }) {
 
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
-                    <span className="inline-flex items-center gap-1.5 bg-amber-600 text-black text-[11px] font-semibold px-4 py-2 rounded-lg">
+                    <span className="inline-flex items-center gap-1.5 bg-amber-600 text-black text-[12px] font-semibold px-4 py-2 rounded-lg">
                         View Project
                         <ArrowUpRight className="w-3 h-3" />
                     </span>
@@ -67,7 +67,7 @@ function ProjectCard({ client }: { client: Client }) {
                     {tags.map((tag) => (
                         <span
                             key={tag}
-                            className="text-[9.5px] px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-200 bg-zinc-950 group-hover:border-amber-600/20 group-hover:text-zinc-100 transition-colors"
+                            className="text-[12px] px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-200 bg-zinc-950 group-hover:border-amber-600/20 group-hover:text-zinc-100 transition-colors"
                         >
                             {tag}
                         </span>
@@ -90,7 +90,7 @@ export default function PortfolioBentoGrid() {
                 <div>
                     <FadeUp className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/25 rounded-full px-3.5 py-1 mb-3">
                         <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
-                        <span className="text-amber-600 text-[10px] font-medium tracking-widest uppercase">
+                        <span className="text-amber-600 text-[12px] font-medium tracking-widest uppercase">
                             Our Work
                         </span>
                     </FadeUp>

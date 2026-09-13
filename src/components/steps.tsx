@@ -49,7 +49,7 @@ function StepCard({
             className="relative flex flex-col gap-5 p-6 rounded-xl border border-white/6 bg-white/2 hover:bg-white/4 hover:border-amber-600/20 transition-all duration-300"
         >
             {/* Step number — top right */}
-            <span className="absolute top-5 right-5 font-syne text-[11px] font-bold text-zinc-700">
+            <span className="absolute top-5 right-5 font-syne text-[12px] font-bold text-zinc-700">
                 {step.number}
             </span>
 
@@ -108,7 +108,7 @@ export default function ProcessSection() {
                         <FadeUp delay={0}>
                             <div className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/25 rounded-full px-3.5 py-1 mb-4">
                                 <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
-                                <span className="text-amber-500 text-[10px] tracking-widest uppercase font-medium">
+                                <span className="text-amber-500 text-[12px] tracking-widest uppercase font-medium">
                                     Our Process
                                 </span>
                             </div>

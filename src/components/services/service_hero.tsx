@@ -35,7 +35,7 @@ export default function ServiceHero({ data }: { data: ServiceHeroTypes }) {
                     <div className="flex flex-col">
                         <FadeUp delay={0}>
                             {/* Breadcrumb */}
-                            <div className="flex items-center gap-1.5 text-[11px] text-zinc-300 mb-6">
+                            <div className="flex items-center gap-1.5 text-[12px] text-zinc-300 mb-6">
                                 <Link
                                     href="/"
                                     className="hover:text-zinc-100 transition-colors"
@@ -102,7 +102,7 @@ export default function ServiceHero({ data }: { data: ServiceHeroTypes }) {
                                     {data.clients_initials.map((i, idx) => (
                                         <div
                                             key={i}
-                                            className="size-8 rounded-full border-2 border-[#09090b] bg-zinc-800 flex items-center justify-center text-[9px] font-bold text-amber-600"
+                                            className="size-8 rounded-full border-2 border-[#09090b] bg-zinc-800 flex items-center justify-center text-[12px] font-bold text-amber-600"
                                             style={{ marginLeft: idx === 0 ? 0 : -8 }}
                                         >
                                             {i}
@@ -121,7 +121,7 @@ export default function ServiceHero({ data }: { data: ServiceHeroTypes }) {
                                             />
                                         ))}
                                     </div>
-                                    <p className="text-[10px] text-zinc-200">
+                                    <p className="text-[12px] text-zinc-200">
                                         Trusted by{" "}
                                         <span className="text-zinc-300 font-medium">
                                             {data.clientCount} clients
@@ -148,7 +148,7 @@ export default function ServiceHero({ data }: { data: ServiceHeroTypes }) {
                                 <p className="font-syne text-2xl font-extrabold text-amber-500">
                                     {s.value}
                                 </p>
-                                <p className="text-[11px] text-zinc-200 mt-0.5">{s.label}</p>
+                                <p className="text-[12px] text-zinc-200 mt-0.5">{s.label}</p>
                             </div>
                         ))}
                     </div>

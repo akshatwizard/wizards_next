@@ -5,7 +5,7 @@ import { SectionBadge } from "./section_badge"
 
 export default function ServiceAbout({ data }: { data: ServiceAboutTypes }) {
     return (
-        <Section>
+        <Section tone="raised">
             <Wrapper>
                 <div>
                     <FadeUp delay={0}>

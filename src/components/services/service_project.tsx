@@ -34,7 +34,7 @@ function ProjectCard({ project }: { project: ProjectListType }) {
 
                 {/* sector badge */}
                 <div
-                    className="absolute top-2.5 left-2.5 text-[9px] font-semibold tracking-wide uppercase px-2 py-1 rounded-md border z-10"
+                    className="absolute top-2.5 left-2.5 text-[12px] font-semibold tracking-wide uppercase px-2 py-1 rounded-md border z-10"
                     style={{ background: s.badgeBg, color: s.badgeText, borderColor: s.badgeBorder }}
                 >
                     {project.sector}
@@ -43,12 +43,12 @@ function ProjectCard({ project }: { project: ProjectListType }) {
                 {/* metric badge */}
                 <div className="absolute bottom-2.5 right-2.5 bg-amber-600 px-2.5 py-1.5 rounded-lg z-10">
                     <p className="font-syne text-sm font-black text-amber-900 leading-none">{project.metric}</p>
-                    <p className="text-[8px] font-semibold text-amber-800 mt-0.5">{project.metricLabel}</p>
+                    <p className="text-[12px] font-semibold text-amber-800 mt-0.5">{project.metricLabel}</p>
                 </div>
 
                 {/* hover overlay */}
                 <div className={`absolute inset-0 bg-black/50 flex items-center justify-center transition-opacity duration-200 ${hovered ? "opacity-100" : "opacity-0"}`}>
-                    <div className="inline-flex items-center gap-1.5 bg-amber-600 text-amber-950 text-[11px] font-semibold px-3.5 py-1.5 rounded-lg">
+                    <div className="inline-flex items-center gap-1.5 bg-amber-600 text-amber-950 text-[12px] font-semibold px-3.5 py-1.5 rounded-lg">
                         <Eye size={12} strokeWidth={2} />
                         View project
                     </div>
@@ -64,8 +64,8 @@ function ProjectCard({ project }: { project: ProjectListType }) {
                         className={`text-amber-600 shrink-0 mt-0.5 transition-all duration-200 ${hovered ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-1"}`}
                     />
                 </div>
-                <p className="text-[11px] text-amber-600 font-medium">{project.result}</p>
-                <p className="text-[11.5px] text-zinc-200 leading-relaxed font-light flex-1">{project.desc}</p>
+                <p className="text-[12px] text-amber-600 font-medium">{project.result}</p>
+                <p className="text-[12px] text-zinc-200 leading-relaxed font-light flex-1">{project.desc}</p>
                 <div className="flex flex-wrap gap-1 pt-2 border-t border-zinc-800 mt-auto">
                     {project.tags.map((t) => <Tag key={t} label={t} />)}
                 </div>
@@ -88,7 +88,7 @@ export default function ServiceProject({ data }: { data: ServiceProjectType }) {
                     <div>
                         <div className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/25 rounded-full px-3.5 py-1 mb-3">
                             <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-                            <span className="text-amber-500 text-[10px] font-medium tracking-widest uppercase">Our Projects</span>
+                            <span className="text-amber-500 text-[12px] font-medium tracking-widest uppercase">Our Projects</span>
                         </div>
                         <SectionHeading>
                             Work we're <span className="text-amber-500">proud of</span>
@@ -112,7 +112,7 @@ export default function ServiceProject({ data }: { data: ServiceProjectType }) {
                         <button
                             key={f}
                             onClick={() => setActive(f)}
-                            className={`px-4 py-1.5 rounded-full border text-[11px] font-medium transition-all duration-200 ${active === f
+                            className={`px-4 py-1.5 rounded-full border text-[12px] font-medium transition-all duration-200 ${active === f
                                 ? "bg-amber-600/12 border-amber-600/40 text-amber-600"
                                 : "border-zinc-800 text-zinc-200 hover:border-zinc-700 hover:text-zinc-300"
                                 }`}

@@ -9,7 +9,7 @@ export default function SectorClientList({ sectorSlug, sectorLabel }: { sectorSl
     const sectorClients = getClientsBySector(sectorSlug)
 
     return (
-        <Section>
+        <Section tone="raised">
             <Wrapper className="lg:py-12 md:py-10 py-8">
                 <FadeUp>
                     <p className="text-zinc-100 font-semibold text-lg mb-1">
@@ -52,7 +52,7 @@ export default function SectorClientList({ sectorSlug, sectorLabel }: { sectorSl
                                             </div>
                                             <div className="flex flex-wrap gap-1 mt-2">
                                                 {client.tags.slice(0, 3).map((tag) => (
-                                                    <span key={tag} className="text-[9.5px] px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-200 bg-zinc-950">
+                                                    <span key={tag} className="text-[12px] px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-200 bg-zinc-950">
                                                         {tag}
                                                     </span>
                                                 ))}

@@ -4,6 +4,7 @@ import { ComponentProps, ReactNode } from "react"
 type SectionProps = ComponentProps<"section"> & {
     children: ReactNode
     className?: string
+    tone?: "default" | "raised"
 }
 
 type WrapperProps = ComponentProps<"div"> & {
@@ -11,10 +12,14 @@ type WrapperProps = ComponentProps<"div"> & {
     className?: string
 }
 
-export function Section({ children, className, ...rest }: SectionProps) {
+export function Section({ children, className, tone = "default", ...rest }: SectionProps) {
     return (
         <section
-            className={cn("w-full lg:px-8 md:px-6 px-3", className)}
+            className={cn(
+                "w-full lg:px-8 md:px-6 px-3",
+                tone === "raised" && "bg-zinc-900/40 border-y border-zinc-800/60",
+                className
+            )}
             {...rest}
         >
             {children}

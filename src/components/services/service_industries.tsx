@@ -7,7 +7,7 @@ import { ServiceIndustriestype } from '@/types/service.types'
 
 export default function ServiceIndustries({ data }: { data: ServiceIndustriestype }) {
     return (
-        <Section>
+        <Section tone="raised">
             <Wrapper>
                 <FadeUp delay={0} className="text-center mb-10">
                     <SectionBadge label="Industries" />
@@ -29,7 +29,7 @@ export default function ServiceIndustries({ data }: { data: ServiceIndustriestyp
                                     <div className="size-10 rounded-xl bg-amber-600/10 border border-amber-600/20 flex items-center justify-center group-hover:bg-amber-600/20 transition-colors">
                                         <Icon size={18} className="text-amber-500" strokeWidth={1.7} />
                                     </div>
-                                    <p className="text-[11px] font-medium text-zinc-100 leading-snug">{ind.label}</p>
+                                    <p className="text-[12px] font-medium text-zinc-100 leading-snug">{ind.label}</p>
                                 </div>
                             </FadeUp>
                         )
