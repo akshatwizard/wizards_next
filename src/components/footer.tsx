@@ -34,6 +34,7 @@ const sectors = [
     { label: "E-Commerce", href: "/sector/e-commerce" },
     { label: "Food & Dining", href: "/sector/food-and-dining" },
     { label: "Local Services", href: "/sector/local-services" },
+    { label: "Membership & Community", href: "/sector/membership-community" },
 ];
 
 const company = [

@@ -216,6 +216,66 @@ export const clients: Client[] = [
         featured: true,
         imgHeight: "h-44",
     },
+
+    {
+        slug: "shagun-centre",
+        name: "Shagun Centre (Shagun Matrimonial)",
+        sectors: ["membership-community"],
+        tagline: "Built in 2016, stable since 2019, and still running an entire matrimonial business end to end — with zero extra cost to the client.",
+        tags: ["Website Development", "Mobile App"],
+        services: ["website-development", "app-dev"],
+        overview: "Shagun Centre is an offline-and-online matrimonial service with physical offices across 3 cities, offering personalised, advisor-driven matchmaking rather than open self-service browsing. We built their complete system in 2016 — as Inforbit, one of the two companies that would later found Wizards Next — one of the earliest projects in our portfolio, on Drupal 7.\n\nIt isn't just a website; it's the operating system for the entire business. When an inquiry comes in, the sales team logs the lead and every call in the system themselves, through a section of the admin panel accessible only to Shagun's own office employees. Once a candidate's details are ready, the team creates a full matrimonial biodata and adds it to the system, and only then can the candidate or their family log in — through OTP-secured access — to view matches. Crucially, nobody can browse the full database freely: every member only sees the handpicked, preference-matched profiles the office team has specifically set for them. Once a membership is purchased, the service team takes over, managing appointments, personalised searches, and ongoing communication with paying members.\n\nWhat makes it a genuine engineering success story is what happened after launch: the system went through steady, active development for its first two to three years, and since 2019, it has run with almost zero bugs and no further updates needed — while still powering the client's full day-to-day business, generating leads and revenue for them, at no extra development cost. That's seven years of stability on a system built to handle real transactional load, not just serve static pages.\n\nThe search data backs up the same story of quiet, compounding strength: branded searches now dominate across all three operating cities, and average search position across the board improved from around 20 in May 2025 to the mid-single-digits through 2026, on a site that hasn't needed a rebuild in years.",
+        highlights: [
+            "System built in 2016 (as Inforbit, now Wizards Next); actively developed through 2019, running with near-zero bugs since",
+            "Operating across 3 cities, with 25,000+ profiles currently in the system",
+            "50+ website inquiries handled daily, with roughly 10% going on to submit a full official matrimonial biodata",
+            "16-month cumulative: 2,719 clicks, 124,883 impressions, 2.18% average CTR",
+            "Branded dominance in all 3 operating cities — \"shagun matrimonial\" at position 1.92, \"shagun matrimonial gwalior\" at 1.82, \"shagun matrimonial kanpur\" at 1.03",
+        ],
+        technicalOverview: {
+            performance: "The same on-page SEO checklist applies here — optimised meta titles and descriptions across every service and city-facing page, a clean header hierarchy, SEO-friendly URLs, and internal linking — layered on top of a legacy Drupal 7 codebase that our team keeps tuned without needing to touch its core stability. On speed, images and assets stay optimised and cached — basic hygiene maintained even on a decade-old, largely unchanged codebase.",
+            responsiveness: "Strongly mobile-first in practice: 2,144 of the site's 2,719 total clicks (79%) come from mobile, at an average position of 6.21 — far ahead of desktop's 17.22. That tracks with how families actually use the service: checking shortlisted matches and appointment updates from a phone.",
+            scalability: "Built in 2016 and actively developed through 2019, the system has since run the entire business — leads, sales, service delivery, and membership management — for over 25,000 profiles without needing a rebuild or a significant update. That's the real scalability proof here: a system engineered once, handling years of growing transactional volume without additional engineering cost.",
+            uiUxTheme: "The public-facing side leans warm and romantic — a full-bleed wedding-couple hero photograph, a coral-red and indigo brand palette, and a heart-shaped logo mark, with copy built around trust and privacy. Because browsing isn't public, the design leads straight to a login panel rather than a searchable directory. Once logged in, members get a clean, card-based activity dashboard. The internal sales and service panel used by Shagun's own staff is visually distinct — a more utilitarian purple-and-white data-table interface built for speed and volume rather than romance.",
+        },
+        website: "https://www.shaguncentre.com/",
+        screenshots: [
+            { src: "/images/clients/shagun-centre/showcase.webp", caption: "The member-facing site, the internal sales panel, and real Search Console performance." },
+        ],
+        heroImage: "/images/clients/shagun-centre/hero-illustration.webp",
+        featured: true,
+        imgHeight: "h-44",
+    },
+
+    {
+        slug: "sjsaa",
+        name: "St. John's School DLW Alumni Association (SJSAA)",
+        sectors: ["membership-community"],
+        tagline: "A secure, self-service home for St. John's School DLW alumni — connecting members across India and beyond, one verified login at a time.",
+        tags: ["Website Development"],
+        services: ["website-development"],
+        overview: "SJSAA needed more than a website — they needed a proper Alumni Data Management System for St. John's School, DLW, Varanasi. We built it on Next.js, hosted on Vercel, with a Drupal 7-based admin panel — our in-house Drupal 7 team has built this same style of admin architecture for several client sites over the years, though newer builds since 2025 use a Laravel-based admin panel instead. It's been running since 2024.\n\nThe core of the system is security and self-service: every alumnus's contact details are protected from public exposure, with access gated behind an OTP-secured login available only to verified fellow alumni. Once in, a member can update their own profile directly. New members go through a full registration and approval workflow rather than being added freely, and the admin panel lets the association manage Events, Activities, Achievements, and the Photo Gallery from one place. Because alumni-association leadership rotates every few years, the system is deliberately built so that day-to-day execution can be handed cleanly from one management committee to the next, without retraining or rebuilding anything.\n\nThat combination of security and ease of use shows up in how the site is actually used: the \"sjsaa\" branded search now ranks at an average position of 1.84 with a 29.83% click-through rate — the association effectively owns its own name in search. More tellingly for an alumni platform, traffic isn't just local: alongside clicks from India, alumni are finding and returning to the site from the US, Canada, the UAE, the UK, Saudi Arabia, and Australia — real evidence the platform is reaching a genuinely dispersed diaspora of old students, not just members still living in Varanasi.",
+        highlights: [
+            "Website built and running since 2024",
+            "16-month cumulative: 616 clicks, 17,062 impressions, 3.61% average CTR, average position 8.97",
+            "Branded search \"sjsaa\": position 1.84, 29.83% CTR",
+            "International alumni reach in search traffic: India, plus the US, Canada, UAE, UK, Saudi Arabia, and Australia",
+            "75% of clicks come from mobile, outranking desktop (position 7.81 vs. 11.25)",
+        ],
+        technicalOverview: {
+            performance: "The same on-page SEO checklist applies across every public-facing page — Home, About Us, Events, Achievements, Gallery — optimised meta titles and descriptions, a clean header hierarchy, SEO-friendly URLs, and internal linking between related pages. On speed, images across the photo gallery are compressed, caching and asset minification are enabled, and the site is kept lightweight — standard hygiene applied consistently, even on a members-first platform where search traffic isn't the primary goal.",
+            responsiveness: "Genuinely mobile-first in practice: 464 of the site's 616 total clicks (75%) come from mobile, at a stronger average position (7.81) than desktop (11.25). The site is fully responsive across device sizes, which matters here — alumni checking event updates or their own profile are doing it from a phone, not a desktop.",
+            scalability: "Built on Next.js and Vercel with a Drupal 7-based admin panel, the data model is structured specifically to keep growing: new alumni, new batches, new events, and new photo albums all get added without touching the site's design or structure, and the admin handover process is built to survive a change in management committee every few years.",
+            uiUxTheme: "A dark, premium institutional aesthetic — charcoal/black backgrounds with a gold/amber accent colour, the school crest and shield prominent in the header, and card-based layouts with circular photo avatars for committee members and alumni profiles. Navigation uses a clean dropdown mega-menu, and the mobile experience carries the same dark-and-gold identity through banner-style event announcements — the overall feel is heritage and trust rather than a casual community-app look.",
+        },
+        website: "https://www.sjsaa.com",
+        screenshots: [
+            { src: "/images/clients/sjsaa/showcase.webp", caption: "The Managing Committee page and real Search Console performance, including international alumni reach." },
+        ],
+        heroImage: "/images/clients/sjsaa/hero-illustration.webp",
+        featured: true,
+        imgHeight: "h-44",
+    },
 ];
 
 export function getClientBySlug(slug: string): Client | undefined {

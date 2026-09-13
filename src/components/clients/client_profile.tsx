@@ -42,6 +42,7 @@ const SECTOR_LABELS: Record<string, string> = {
     "e-commerce": "E-Commerce",
     "food-and-dining": "Food & Dining",
     "local-services": "Local Services",
+    "membership-community": "Membership & Community",
 };
 
 const TECH_OVERVIEW_ITEMS = [
