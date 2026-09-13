@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronRight, ExternalLink, ArrowRight, Zap, Smartphone, TrendingUp, Palette } from "lucide-react";
+import { ChevronRight, ExternalLink, ArrowRight, Zap, Smartphone, TrendingUp, Palette, Sparkles } from "lucide-react";
 import { Section, Wrapper } from "@/components/ui/sections";
 import { FadeUp } from "@/components/ui/motion_components";
 import { SectionBadge } from "@/components/services/section_badge";
@@ -44,6 +44,13 @@ const SECTOR_LABELS: Record<string, string> = {
     "local-services": "Local Services",
 };
 
+const TECH_OVERVIEW_ITEMS = [
+    { key: "performance", label: "Performance", Icon: Zap },
+    { key: "responsiveness", label: "Responsiveness", Icon: Smartphone },
+    { key: "scalability", label: "Scalability", Icon: TrendingUp },
+    { key: "uiUxTheme", label: "UI/UX Theme", Icon: Palette },
+] as const;
+
 function sectorLabels(sectorSlugs?: string[]) {
     if (!sectorSlugs || sectorSlugs.length === 0) return [];
     return sectorSlugs.map((s) => SECTOR_LABELS[s] ?? s);
@@ -66,17 +73,42 @@ function getRelatedClients(client: Client, limit = 4) {
     return related;
 }
 
+// Shared card shell used by every card-based section on this page (services,
+// technical overview) so they read as one consistent design system rather
+// than each section inventing its own card style.
+function InfoCard({ icon: Icon, title, body, href }: { icon: React.ElementType; title: string; body?: string; href?: string }) {
+    const content = (
+        <>
+            <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-amber-600/10 border border-amber-600/20 flex items-center justify-center shrink-0">
+                    <Icon size={16} className="text-amber-600" strokeWidth={1.8} />
+                </div>
+                <p className="text-zinc-200 text-[14.5px] font-semibold leading-snug">{title}</p>
+            </div>
+            {body && <p className="text-zinc-200 text-[12.5px] font-light leading-relaxed mt-3">{body}</p>}
+        </>
+    );
+    const className = "group bg-zinc-950 border border-zinc-800 hover:border-amber-600/30 rounded-2xl p-5 transition-colors flex flex-col";
+    return href ? (
+        <Link href={href} className={className}>{content}</Link>
+    ) : (
+        <div className={className}>{content}</div>
+    );
+}
+
 export default function ClientProfile({ client }: { client: Client }) {
     const relatedClients = getRelatedClients(client);
     const labels = sectorLabels(client.sectors);
     const bannerImage = client.screenshots?.[0];
     const remainingScreenshots = client.screenshots?.slice(1) ?? [];
+    const hasTechOverview = client.technicalOverview && Object.values(client.technicalOverview).some(Boolean);
+    const hasWhatWeBuilt = client.services.length > 0 || hasTechOverview;
 
     return (
         <main>
-            {/* Banner — leads with the real screenshot, not the decorative illustration */}
+            {/* 1. Banner — leads with the real screenshot, not the decorative illustration */}
             <Section className="relative overflow-hidden">
-                <Wrapper>
+                <Wrapper className="pb-0!">
                     <div className={bannerImage ? "grid lg:grid-cols-2 gap-10 items-center" : ""}>
                         <div>
                             <FadeUp delay={0}>
@@ -161,13 +193,37 @@ export default function ClientProfile({ client }: { client: Client }) {
                 </Wrapper>
             </Section>
 
-            {/* Overview — the story, with the decorative illustration as a supporting visual */}
+            {/* 2. Key highlights strip — pulled out of the story text into their own
+                 prominent row, so proof numbers register before the reader has to
+                 read a paragraph to find them. Column count adapts to however many
+                 highlights this specific client actually has. */}
+            {client.highlights && client.highlights.length > 0 && (
+                <Section>
+                    <Wrapper className="py-8! lg:py-10!">
+                        <FadeUp
+                            className="grid gap-3"
+                            style={{ gridTemplateColumns: `repeat(auto-fit, minmax(220px, 1fr))` }}
+                        >
+                            {client.highlights.map((h, i) => (
+                                <div key={h} style={{ transitionDelay: `${i * 20}ms` }} className="bg-zinc-900 border border-zinc-800 rounded-2xl p-4 flex items-start gap-2.5">
+                                    <Sparkles size={14} className="text-amber-600 shrink-0 mt-0.5" />
+                                    <p className="text-zinc-200 text-[12.5px] leading-relaxed">{h}</p>
+                                </div>
+                            ))}
+                        </FadeUp>
+                    </Wrapper>
+                </Section>
+            )}
+
+            {/* 3. The story — now in a proper contained card, matching the rest of
+                 the page's card language, instead of sitting bare on the page
+                 background. Illustration and justified wrap preserved inside it. */}
             <Section>
-                <Wrapper className="lg:py-10 md:py-8 py-6">
+                <Wrapper className="lg:py-6 md:py-5 py-4">
                     {client.overview ? (
-                        <FadeUp>
+                        <FadeUp className="bg-zinc-900/60 border border-zinc-800 rounded-3xl p-6 lg:p-10">
                             {client.heroImage && (
-                                <div className="float-right w-[45%] sm:w-[480px] ml-8 mb-4">
+                                <div className="float-right w-[45%] sm:w-[380px] ml-8 mb-4">
                                     <Image
                                         src={client.heroImage}
                                         alt={`${client.name} — conceptual illustration`}
@@ -180,17 +236,8 @@ export default function ClientProfile({ client }: { client: Client }) {
                             <p className="text-zinc-200 text-[15px] leading-relaxed font-light whitespace-pre-line text-justify">
                                 {client.overview}
                             </p>
-                            {client.highlights && client.highlights.length > 0 && (
-                                <ul className="clear-both mt-6 flex flex-col gap-2.5">
-                                    {client.highlights.map((h) => (
-                                        <li key={h} className="text-zinc-200 text-[14px] flex gap-2">
-                                            <span className="text-amber-600">—</span>{h}
-                                        </li>
-                                    ))}
-                                </ul>
-                            )}
                             {client.trendChart && (
-                                <div className="mt-8">
+                                <div className="clear-both mt-8">
                                     <TrendChart chart={client.trendChart} />
                                 </div>
                             )}
@@ -205,83 +252,66 @@ export default function ClientProfile({ client }: { client: Client }) {
                 </Wrapper>
             </Section>
 
-            {/* Services provided */}
-            {client.services.length > 0 && (
+            {/* 4. What we built — services provided and the technical overview live
+                 together under one roof as two clearly labelled groups, using one
+                 shared card style, rather than two separate full-width sections
+                 that used to read as unrelated chapters. */}
+            {hasWhatWeBuilt && (
                 <Section tone="raised">
-                    <Wrapper className="lg:py-10 md:py-8 py-6">
-                        <FadeUp>
-                            <p className="text-zinc-100 font-semibold text-[13px] tracking-wide mb-4">Services we provided</p>
-                        </FadeUp>
-                        <FadeUp delay={0.05} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                            {client.services.map((slug, i) => {
-                                const meta = getServiceMeta(slug);
-                                return (
-                                    <Link
-                                        key={slug}
-                                        href={`/services/${slug}`}
-                                        className="group bg-zinc-900 border border-zinc-800 hover:border-amber-600/30 rounded-2xl p-5 transition-colors flex flex-col gap-3"
-                                        style={{ transitionDelay: `${i * 20}ms` }}
-                                    >
-                                        <div className="flex items-center gap-3">
-                                            <div className="relative w-12 h-12 shrink-0 flex items-center justify-center">
-                                                <div className="absolute inset-0 bg-amber-600/10 blur-xl rounded-full scale-90 group-hover:bg-amber-600/15 transition-colors duration-300" />
-                                                <Image
-                                                    src={`/images/services/icons/${slug}-icon.webp`}
-                                                    alt=""
-                                                    width={256}
-                                                    height={256}
-                                                    className="relative w-full h-full object-contain"
-                                                />
-                                            </div>
-                                            <p className="text-zinc-200 text-[15px] font-semibold group-hover:text-amber-600 transition-colors leading-snug">
-                                                {meta?.name ?? SERVICE_LABELS[slug] ?? slug}
-                                            </p>
-                                        </div>
-                                        {meta?.desc && (
-                                            <p className="text-zinc-200 text-[12.5px] font-light leading-relaxed">{meta.desc}</p>
-                                        )}
-                                    </Link>
-                                );
-                            })}
-                        </FadeUp>
+                    <Wrapper className="lg:py-12 md:py-10 py-8 gap-8! lg:gap-10!">
+                        {client.services.length > 0 && (
+                            <div>
+                                <FadeUp>
+                                    <p className="text-zinc-100 font-semibold text-[13px] tracking-wide mb-4">Services we provided</p>
+                                </FadeUp>
+                                <FadeUp delay={0.05} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                    {client.services.map((slug) => {
+                                        const meta = getServiceMeta(slug);
+                                        return (
+                                            <InfoCard
+                                                key={slug}
+                                                href={`/services/${slug}`}
+                                                icon={() => (
+                                                    <Image
+                                                        src={`/images/services/icons/${slug}-icon.webp`}
+                                                        alt=""
+                                                        width={256}
+                                                        height={256}
+                                                        className="w-full h-full object-contain"
+                                                    />
+                                                )}
+                                                title={meta?.name ?? SERVICE_LABELS[slug] ?? slug}
+                                                body={meta?.desc}
+                                            />
+                                        );
+                                    })}
+                                </FadeUp>
+                            </div>
+                        )}
+
+                        {hasTechOverview && (
+                            <div>
+                                <FadeUp>
+                                    <p className="text-zinc-100 font-semibold text-[13px] tracking-wide mb-4">Website technical overview</p>
+                                </FadeUp>
+                                <div className="grid sm:grid-cols-2 gap-4">
+                                    {TECH_OVERVIEW_ITEMS.map(({ key, label, Icon }, i) => {
+                                        const value = client.technicalOverview?.[key];
+                                        if (!value) return null;
+                                        return (
+                                            <FadeUp key={key} delay={i * 0.05}>
+                                                <InfoCard icon={Icon} title={label} body={value} />
+                                            </FadeUp>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        )}
                     </Wrapper>
                 </Section>
             )}
 
-            {/* Website Technical Overview — only for clients with a detailed technical brief */}
-            {client.technicalOverview && Object.values(client.technicalOverview).some(Boolean) && (
-                <Section tone="raised">
-                    <Wrapper className="lg:py-10 md:py-8 py-6">
-                        <FadeUp>
-                            <p className="text-zinc-100 font-semibold text-[13px] tracking-wide mb-4">Website technical overview</p>
-                        </FadeUp>
-                        <div className="grid sm:grid-cols-2 gap-4">
-                            {[
-                                { key: "performance", label: "Performance", Icon: Zap },
-                                { key: "responsiveness", label: "Responsiveness", Icon: Smartphone },
-                                { key: "scalability", label: "Scalability", Icon: TrendingUp },
-                                { key: "uiUxTheme", label: "UI/UX Theme", Icon: Palette },
-                            ].map(({ key, label, Icon }, i) => {
-                                const value = client.technicalOverview?.[key as keyof typeof client.technicalOverview];
-                                if (!value) return null;
-                                return (
-                                    <FadeUp key={key} delay={i * 0.05} className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
-                                        <div className="flex items-center gap-2.5 mb-3">
-                                            <div className="w-8 h-8 rounded-lg bg-amber-600/10 border border-amber-600/20 flex items-center justify-center shrink-0">
-                                                <Icon size={14} className="text-amber-600" strokeWidth={1.8} />
-                                            </div>
-                                            <p className="text-zinc-200 text-[13.5px] font-medium">{label}</p>
-                                        </div>
-                                        <p className="text-zinc-200 text-[12.5px] font-light leading-relaxed">{value}</p>
-                                    </FadeUp>
-                                );
-                            })}
-                        </div>
-                    </Wrapper>
-                </Section>
-            )}
-
-            {/* Additional screenshots — the first one already leads the banner above */}
+            {/* 5. Additional screenshots — the first one already leads the banner above */}
             {remainingScreenshots.length > 0 && (
                 <Section>
                     <Wrapper className="lg:py-10 md:py-8 py-6">
@@ -300,7 +330,7 @@ export default function ClientProfile({ client }: { client: Client }) {
                 </Section>
             )}
 
-            {/* Related clients in the same sector(s) */}
+            {/* 6. Related clients in the same sector(s) */}
             {relatedClients.length > 0 && (
                 <Section tone="raised">
                     <Wrapper className="lg:py-10 md:py-8 py-6">
@@ -327,6 +357,7 @@ export default function ClientProfile({ client }: { client: Client }) {
                 </Section>
             )}
 
+            {/* 7. CTA */}
             <Section>
                 <Wrapper className="lg:py-12 md:py-10 py-8">
                     <FadeUp className="bg-zinc-800 border border-zinc-700 rounded-2xl p-8 text-center">
