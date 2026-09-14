@@ -13,11 +13,16 @@ export const BUSINESS = {
     name: "Wizards Next LLP",
     legalName: "Wizards Next LLP",
     description:
-        "Wizards Next is a full-service digital marketing agency — social media, branding, performance ads, SEO, and website development — serving clients across India.",
+        "Wizards Next is a full-service digital marketing agency with offices in Varanasi and Hyderabad, running 50+ projects across India — plus overseas clients in the USA, Russia, and Spain. Social media, branding, performance ads, SEO, and website development, under one roof.",
     telephone: "+91-73394-74554",
     email: "akshat@wizards.co.in",
     addressLocality: "Varanasi",
     addressRegion: "Uttar Pradesh",
     addressCountry: "IN",
     foundingDate: "2023-06",
+    // Countries with an active, real client relationship today — used by
+    // the Organization JSON-LD's areaServed. India is the primary market;
+    // these three are the current overseas footprint. Add to this list as
+    // the roster genuinely grows — never pad it for appearances.
+    overseasCountries: ["United States", "Russia", "Spain"],
 };

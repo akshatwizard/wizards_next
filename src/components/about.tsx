@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Zap, Users, ArrowRight } from 'lucide-react'
+import { Zap, Users, ArrowRight, Globe2 } from 'lucide-react'
 import { FadeUp } from './ui/motion_components'
 import { Section, Wrapper } from './ui/sections'
 
@@ -151,7 +151,8 @@ export default function AboutUs() {
                                 <p>
                                     By combining the capabilities of these two titans, Wizards is well-positioned
                                     to offer complete integrated digital services and innovative design to clients
-                                    globally — specifically as a leader in Varanasi.
+                                    across India — with offices in Varanasi and Hyderabad, 50+ projects running
+                                    nationwide, and overseas clients in the USA, Russia, and Spain.
                                 </p>
                             </div>
                         </FadeUp>
@@ -168,6 +169,11 @@ export default function AboutUs() {
                                     icon={Users}
                                     title="Collaborative Power"
                                     description="A joint venture legacy built on trust, transparency, and innovation."
+                                />
+                                <Feature
+                                    icon={Globe2}
+                                    title="Two Cities, Nationwide Reach"
+                                    description="Varanasi and Hyderabad at home, 50+ projects across India, and clients overseas."
                                 />
                             </div>
                         </FadeUp>

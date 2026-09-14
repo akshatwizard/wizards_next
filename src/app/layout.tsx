@@ -53,7 +53,14 @@ const organizationJsonLd = {
     addressRegion: BUSINESS.addressRegion,
     addressCountry: BUSINESS.addressCountry,
   },
-  areaServed: "IN",
+  // India is the core, physically-served market (offices in Varanasi and
+  // Hyderabad); the three overseas countries reflect real, current client
+  // relationships served remotely — kept in sync with BUSINESS.overseasCountries
+  // in constant/site.ts rather than duplicated here.
+  areaServed: [
+    { "@type": "Country", name: "India" },
+    ...BUSINESS.overseasCountries.map((name) => ({ "@type": "Country", name })),
+  ],
 };
 
 export default function RootLayout({

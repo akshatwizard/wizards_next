@@ -22,7 +22,10 @@ import React from 'react'
 export const metadata = {
   title: 'Wizards Next — Digital Marketing Agency in Varanasi & Hyderabad',
   description:
-    'Wizards Next is a full-service digital marketing agency with offices in Varanasi and Hyderabad — social media, branding, performance ads, SEO, and website development for clients across India.',
+    'Digital marketing agency in Varanasi & Hyderabad — 50+ projects across India, with overseas clients in the USA, Russia & Spain. Social media, branding, ads, SEO, web development.',
+  alternates: {
+    canonical: '/',
+  },
 }
 
 export default function Home() {

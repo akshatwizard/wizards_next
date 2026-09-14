@@ -25,7 +25,7 @@ export default function HeroSection() {
                             delay={0}
                             className='flex items-center gap-2 text-xs px-3 py-2 rounded-full border border-amber-600/50 bg-amber-600/10 w-max text-amber-600 mb-8'>
                             <span className='size-1.5 rounded-full bg-amber-600 animate-ping' />
-                            Best Digital Marketing Agency — Varanasi
+                            Best Digital Marketing Agency — Varanasi &amp; Hyderabad
                         </FadeUp>
 
                         <FadeUp delay={0.05}>
@@ -38,7 +38,7 @@ export default function HeroSection() {
                             delay={0.1}
                             className='text-zinc-100 max-w-lg block mt-5 leading-snug'>
                             <span>
-                                From social media mastery to full-stack web development — Wizards Next is your one-stop growth partner with 24+ years of combined expertise.
+                                From social media mastery to full-stack web development — Wizards Next is your one-stop growth partner, running 50+ projects across India from offices in Varanasi and Hyderabad, with 24+ years of combined expertise.
                             </span>
                         </FadeUp>
 
@@ -82,7 +82,7 @@ export default function HeroSection() {
                         <FadeUp delay={0.2} className='flex items-center text-xs mt-5 gap-1.5'>
                             <ShieldCheck className='text-blue-600' strokeWidth={1} size={30} />
                             <span className='text-zinc-700'>
-                                Trusted by Founders and <br />Entrepreneurs from all over the world
+                                Trusted by Founders and Entrepreneurs across <br />India, the USA, Russia, and Spain
                             </span>
                         </FadeUp>
 
