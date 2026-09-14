@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Sora, Poppins, Geist } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Header from "@/components/header/header";
 import SmoothScrollProvider from "@/lib/SmoothScroll";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/footer";
-import { SITE_URL, BUSINESS } from "@/constant/site";
+import { SITE_URL, BUSINESS, GA_MEASUREMENT_ID } from "@/constant/site";
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -68,6 +69,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Next.js sets NODE_ENV=production for every `next build` — including
+  // Vercel preview deployments, not just the real production domain — so
+  // that check alone isn't enough to keep preview/PR traffic out of your
+  // analytics. VERCEL_ENV is what actually distinguishes them ("production"
+  // vs "preview" vs "development"); the fallback covers non-Vercel hosting,
+  // where VERCEL_ENV won't exist at all.
+  const isProductionDeployment =
+    process.env.NODE_ENV === "production" &&
+    (process.env.VERCEL_ENV ? process.env.VERCEL_ENV === "production" : true);
+
   return (
     <html
       lang="en"
@@ -86,6 +97,10 @@ export default function RootLayout({
           {children}
         </SmoothScrollProvider>
         <Footer />
+        {/* Google Analytics 4 — only on the real production domain, so
+            local dev and Vercel preview deployments (branches, PRs) never
+            send test traffic into your real analytics data. */}
+        {isProductionDeployment && <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />}
       </body>
     </html>
   );

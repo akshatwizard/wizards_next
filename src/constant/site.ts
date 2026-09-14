@@ -9,6 +9,13 @@
 export const SITE_URL =
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://www.wizards.co.in";
 
+// Google Analytics 4 measurement ID, wired up in layout.tsx via
+// @next/third-parties/google. NEXT_PUBLIC_GA_ID overrides this per
+// environment (e.g. a separate GA property for staging) without a code
+// change; this is the real production ID as the default so it works with
+// zero extra setup on Vercel.
+export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || "G-RR0DWW6W1N";
+
 export const BUSINESS = {
     name: "Wizards Next LLP",
     legalName: "Wizards Next LLP",
