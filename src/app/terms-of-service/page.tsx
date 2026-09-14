@@ -3,11 +3,20 @@
 // actual client service engagements should be governed by their own
 // separate signed agreements, not this page.
 
+import { Metadata } from "next";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { Section, Wrapper } from "@/components/ui/sections";
 import { FadeUp } from "@/components/ui/motion_components";
 import { SectionBadge } from "@/components/services/section_badge";
+
+export const metadata: Metadata = {
+    title: "Terms of Service | Wizards Next",
+    description: "The terms governing your use of the Wizards Next website and the digital marketing and web development services we provide.",
+    alternates: {
+        canonical: "/terms-of-service",
+    },
+};
 
 export default function TermsOfServicePage() {
     return (

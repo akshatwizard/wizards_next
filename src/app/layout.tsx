@@ -50,8 +50,10 @@ const organizationJsonLd = {
   foundingDate: BUSINESS.foundingDate,
   address: {
     "@type": "PostalAddress",
+    streetAddress: BUSINESS.streetAddress,
     addressLocality: BUSINESS.addressLocality,
     addressRegion: BUSINESS.addressRegion,
+    postalCode: BUSINESS.postalCode,
     addressCountry: BUSINESS.addressCountry,
   },
   // India is the core, physically-served market (offices in Varanasi and

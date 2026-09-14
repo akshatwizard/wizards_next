@@ -6,7 +6,7 @@ import { FadeUp } from "@/components/ui/motion_components";
 import { SectionBadge } from "@/components/services/section_badge";
 
 export const metadata: Metadata = {
-    title: "About Wizards Next — Digital Marketing Agency in Varanasi & Hyderabad",
+    title: "About Wizards Next | Varanasi & Hyderabad Agency",
     description: "A joint venture running 50+ projects across India from offices in Varanasi and Hyderabad, with overseas clients in the USA, Russia, and Spain.",
     alternates: {
         canonical: "/about",

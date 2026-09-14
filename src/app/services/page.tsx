@@ -8,8 +8,11 @@ import { SectionBadge } from '@/components/services/section_badge'
 import { ALL_SERVICES, ServiceMeta } from '@/constant/service_meta'
 
 export const metadata: Metadata = {
-    title: 'All Services | Wizards Next',
+    title: 'All Services | Wizards Next Digital Marketing',
     description: 'Branding, digital marketing, website development, and AI consultancy — every service Wizards Next offers, in one place.',
+    alternates: {
+        canonical: '/services',
+    },
 }
 
 const PILLAR_ORDER: ServiceMeta['pillar'][] = ['Branding & Identity', 'Digital Marketing & Growth', 'Website, Technology & AI']
@@ -71,6 +74,11 @@ export default function ServicesPage() {
                     <FadeUp delay={0.15}>
                         <p className="text-zinc-200 text-sm font-light max-w-lg">
                             Every service is built to the same depth, whether it&apos;s your brand identity or your ad account — nothing here is treated as an afterthought.
+                        </p>
+                    </FadeUp>
+                    <FadeUp delay={0.2}>
+                        <p className="text-zinc-200 text-[13px] font-light max-w-2xl mt-4 leading-relaxed">
+                            That runs from branding and content through performance ads, SEO, and full website builds — organised below into three groups: the identity work that makes a brand recognisable, the marketing that gets it in front of people, and the technology that gives it somewhere real to live. Most clients start with one service and add more as it proves out; a few use all three groups at once. Either way, it&apos;s the same team and the same standard throughout.
                         </p>
                     </FadeUp>
                 </Wrapper>

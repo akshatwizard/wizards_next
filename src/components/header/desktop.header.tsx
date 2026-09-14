@@ -189,6 +189,22 @@ export default function DesktopHeader({ scrolled, onGetStarted }: { scrolled: bo
                                                 })}
                                             </ul>
 
+                                            {/* View-all footer link — only when the parent item has its own hub
+                                                page (both "Services" and "Sectors" do). Previously there was no
+                                                way to reach /sector or /services from these dropdowns at all. */}
+                                            {item.path && (
+                                                <>
+                                                    <div className="h-px bg-white/8" />
+                                                    <Link
+                                                        href={item.path}
+                                                        className="flex items-center justify-between gap-2 px-4 py-2.5 text-[12.5px] text-zinc-300 hover:text-amber-600 hover:bg-white/5 transition-colors duration-150"
+                                                    >
+                                                        View all {item.name}
+                                                        <ArrowRight className="h-3.5 w-3.5 shrink-0" />
+                                                    </Link>
+                                                </>
+                                            )}
+
                                             {/* Bottom shimmer */}
                                             <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
                                         </div>

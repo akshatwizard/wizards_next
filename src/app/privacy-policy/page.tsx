@@ -3,11 +3,20 @@
 // In particular: confirm exactly which analytics/tracking tools are
 // actually implemented on this site before publishing the cookies section.
 
+import { Metadata } from "next";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { Section, Wrapper } from "@/components/ui/sections";
 import { FadeUp } from "@/components/ui/motion_components";
 import { SectionBadge } from "@/components/services/section_badge";
+
+export const metadata: Metadata = {
+    title: "Privacy Policy | Wizards Next",
+    description: "How Wizards Next LLP collects, uses, and protects your personal information across our website and client services.",
+    alternates: {
+        canonical: "/privacy-policy",
+    },
+};
 
 export default function PrivacyPolicyPage() {
     return (

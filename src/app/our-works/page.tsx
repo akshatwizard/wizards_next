@@ -8,8 +8,11 @@ import { SectionBadge } from "@/components/services/section_badge";
 import { clients } from "@/constant/clients";
 
 export const metadata: Metadata = {
-    title: "Our Works | Wizards Next",
+    title: "Our Works | Client Case Studies — Wizards Next",
     description: "Case studies and client profiles from across Wizards Next's work in marketing, branding, and web development.",
+    alternates: {
+        canonical: "/our-works",
+    },
 };
 
 const SECTOR_ORDER: { slug: string; label: string }[] = [
@@ -91,6 +94,11 @@ export default function OurWorksPage() {
                     <FadeUp delay={0.15}>
                         <p className="text-zinc-200 text-sm font-light max-w-lg">
                             A profile for every client we work with — browse by sector, or open a profile directly.
+                        </p>
+                    </FadeUp>
+                    <FadeUp delay={0.2}>
+                        <p className="text-zinc-200 text-[13px] font-light max-w-2xl mt-4 leading-relaxed">
+                            Every profile below is a real client, a real sector, and real numbers — not a portfolio of logos we&apos;re hoping you won&apos;t look too closely at. Where we have it, you&apos;ll find actual Search Console data: clicks, impressions, and ranking position, not vague claims of &ldquo;increased visibility.&rdquo; Where a result belongs to the client&apos;s own effort rather than ours, we say so.
                         </p>
                     </FadeUp>
                 </Wrapper>

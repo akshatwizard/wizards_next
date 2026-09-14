@@ -10,7 +10,7 @@ import ServiceCTA from '@/components/services/service_cta'
 import { AIConsultancyHero, AIConsultancyAbout, AIConsultancyServicesOffered, AIConsultancyProcess, AIConsultancyIndustries, AIConsultancyFAQ , AIConsultancyDeepDive } from '@/constant/services_data'
 
 export const metadata: Metadata = {
-    title: 'AI Consultancy | Wizards Next',
+    title: 'AI Consultancy Services | Wizards Next',
     description: 'Helping businesses adopt AI-assisted development and planning workflows, demonstrated by our own practice.',
 }
 
