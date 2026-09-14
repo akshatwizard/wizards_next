@@ -16,12 +16,12 @@ export const WebDevServiceHero: ServiceHeroTypes = {
     content: "We build fast, beautiful, and conversion-focused websites —  from business portfolios to full-scale e-commerce stores. Delivered in weeks, not months.",
     primaryCta: {
         label: "Start your project",
-        href: "#",
+        href: "/contact",
         icon: ArrowRight
     },
     secondaryCta: {
         label: "See our work",
-        href: "#",
+        href: "/our-works",
         icon: Play
     },
     clients_initials: ['AK', 'RS', 'PV', 'SM'],

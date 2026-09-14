@@ -1,11 +1,16 @@
 import { FadeUp } from './ui/motion_components'
 import { Section, Wrapper } from './ui/sections'
+import { clients } from '@/constant/clients'
+import { ALL_SERVICES } from '@/constant/service_meta'
 
+// "Happy Clients" and "Services Under One Roof" are derived from the real
+// data arrays rather than hardcoded, so this strip never goes stale as the
+// client roster grows toward 50 or a new service is added.
 const data = [
-    { num: '500', suffix: '+', tag: 'Happy Clients' },
+    { num: String(clients.length), suffix: '+', tag: 'Happy Clients' },
     { num: '200', suffix: '+', tag: 'Projects Delivered' },
     { num: '24', suffix: '+', tag: 'Years Experience' },
-    { num: '250', suffix: '%', tag: 'Increase in Leads' },
+    { num: String(ALL_SERVICES.length), suffix: '+', tag: 'Services Under One Roof' },
 ]
 
 export default function NumberStrip() {

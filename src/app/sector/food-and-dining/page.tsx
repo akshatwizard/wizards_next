@@ -19,12 +19,12 @@ export default function FoodAndDiningSectorPage() {
     return (
         <main>
             <SectorHero data={FoodDiningSectorHero} />
-            <SectorClientList sectorSlug="food-and-dining" sectorLabel="Food <ServiceFAQ data= Dining" />
+            <SectorClientList sectorSlug="food-and-dining" sectorLabel="Food & Dining" />
             <SectorAudience data={FoodDiningSectorAudience} />
             <SectorServices data={FoodDiningSectorServices} />
             <SectorStatsBanner data={FoodDiningSectorStats} />
             <SectorTrust data={FoodDiningSectorTrust} />
-            <SectorInterestForm sectorLabel="Food <ServiceFAQ data= Dining" />
+            <SectorInterestForm sectorLabel="Food & Dining" />
             <ServiceFAQ data={FoodDiningSectorFAQ} />
             <ServiceCTA />
         </main>

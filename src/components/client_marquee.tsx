@@ -6,17 +6,7 @@ import { clients } from "@/constant/clients";
 import { ArrowUpRight } from "lucide-react";
 import { Section, Wrapper } from "./ui/sections";
 import { LinkPreview } from "./ui/link-preview";
-
-function getInitials(name: string) {
-    return name
-        .replace(/^Dr\.\s*/i, "")
-        .split(" ")
-        .filter(Boolean)
-        .slice(0, 2)
-        .map((w) => w[0])
-        .join("")
-        .toUpperCase();
-}
+import { getInitials } from "@/lib/utils";
 
 const marqueeItems = clients.map((c) => ({
     initials: getInitials(c.name),

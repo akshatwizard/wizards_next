@@ -58,11 +58,13 @@ export const NavMenu: MenuType[] = [
         path: "/our-works",
         subMenu: null
     },
-    {
-        name: "Blogs",
-        path: "/blogs",
-        subMenu: null
-    },
+    // "Blogs" nav item is hidden along with the homepage blog section and
+    // the /blogs route until real posts are ready — restore all together.
+    // {
+    //     name: "Blogs",
+    //     path: "/blogs",
+    //     subMenu: null
+    // },
     {
         name: "Contact",
         path: "/contact",

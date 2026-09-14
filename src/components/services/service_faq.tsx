@@ -7,8 +7,28 @@ import Link from 'next/link'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 
 export default function ServiceFAQ({ data }: { data: ServiceFAQType }) {
+    // FAQPage structured data — built directly from the same Q&A shown on
+    // the page, so it can never drift out of sync with what's visible.
+    const faqJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: data.faq_list.map((faq) => ({
+            "@type": "Question",
+            name: faq.q,
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.a,
+            },
+        })),
+    }
+
     return (
         <Section>
+            <script
+                type="application/ld+json"
+                // eslint-disable-next-line react/no-danger
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c") }}
+            />
             <Wrapper>
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 items-start">
 

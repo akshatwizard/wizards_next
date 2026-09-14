@@ -40,7 +40,9 @@ const sectors = [
 const company = [
     { label: "About Us", href: "/about" },
     { label: "Our Work", href: "/our-works" },
-    { label: "Blog", href: "/blogs" },
+    // "Blog" is hidden along with the homepage blog section and the nav
+    // item above until real posts are ready — restore all together.
+    // { label: "Blog", href: "/blogs" },
     { label: "Careers", href: "/careers" },
     { label: "Contact", href: "/contact" },
 ];

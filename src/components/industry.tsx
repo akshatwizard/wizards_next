@@ -2,6 +2,7 @@ import { Industry, INDUSTRIES } from '@/constant/industry';
 import { FadeUp } from './ui/motion_components'
 import { Section, Wrapper } from './ui/sections'
 import Link from 'next/link';
+import { clients } from '@/constant/clients';
 
 
 export default function IndustriesSection() {
@@ -47,7 +48,7 @@ export default function IndustriesSection() {
                     <FadeUp delay={0.15} className="shrink-0">
                         <div className="flex items-center gap-4 bg-zinc-900 border border-zinc-800 rounded-2xl px-5 py-4">
                             <div className="text-center">
-                                <p className=" text-2xl font-medium text-amber-500 leading-none">500+</p>
+                                <p className=" text-2xl font-medium text-amber-500 leading-none">{clients.length}+</p>
                                 <p className="text-[12px] text-zinc-200 mt-0.5 uppercase tracking-widest">Clients</p>
                             </div>
                             <div className="w-px h-8 bg-zinc-800" />

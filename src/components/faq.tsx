@@ -8,8 +8,27 @@ import { faqs } from "@/constant/faq";
 export default function FAQ() {
     const [open, setOpen] = useState<number | null>(null);
 
+    // FAQPage structured data, built from the same list rendered below.
+    const faqJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map(({ q, a }) => ({
+            "@type": "Question",
+            name: q,
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: a,
+            },
+        })),
+    };
+
     return (
         <Section>
+            <script
+                type="application/ld+json"
+                // eslint-disable-next-line react/no-danger
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c") }}
+            />
             <Wrapper>
                 <div>
                     <FadeUp className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/25 rounded-full px-4 py-1.5 mb-4">

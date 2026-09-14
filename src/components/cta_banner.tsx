@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Section, Wrapper } from "./ui/sections";
 import { FadeUp } from "./ui/motion_components";
+import { clients } from "@/constant/clients";
 
 export default function CTABanner() {
     return (
@@ -64,7 +65,7 @@ export default function CTABanner() {
                     <StatChip
                         style={{ bottom: -24, left: 24 }}
                         icon={<UsersIcon />}
-                        value="200+"
+                        value={`${clients.length}+`}
                         label="Clients served"
                     />
 
@@ -84,7 +85,7 @@ export default function CTABanner() {
                                 Ready to <span className="text-amber-600 font-sora!">10x</span> your<br />brand online?
                             </h2>
                             <p className="text-zinc-200 text-sm font-light leading-relaxed max-w-sm mb-6">
-                                Join 200+ businesses that trust Wizards Next to run their digital presence — from ads and
+                                Join the {clients.length}+ businesses that trust Wizards Next to run their digital presence — from ads and
                                 content to full-stack web builds.
                             </p>
                             <div className="flex gap-2.5 flex-wrap">

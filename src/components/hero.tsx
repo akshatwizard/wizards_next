@@ -4,8 +4,13 @@ import { PageHeading } from './ui/headings'
 import Link from 'next/link'
 import Image from 'next/image'
 import { FadeUp } from './ui/motion_components'
-import { Shield, ShieldCheck } from 'lucide-react'
+import { ShieldCheck } from 'lucide-react'
+import { clients } from '@/constant/clients'
+import { getInitials } from '@/lib/utils'
 
+// Real client initials for the trust-badge avatar stack — never placeholder
+// names. Falls back gracefully as the roster grows past 4.
+const trustAvatars = clients.slice(0, 4).map((c) => getInitials(c.name))
 
 export default function HeroSection() {
 
@@ -39,13 +44,13 @@ export default function HeroSection() {
 
                         <FadeUp delay={0.15} className="mt-9 flex items-center gap-2.5">
                             <Link
-                                href="#"
+                                href="/services"
                                 className="rounded-lg bg-amber-600 px-5 py-2.5 text-[13px] font-medium text-zinc-950 transition-colors hover:bg-amber-400"
                             >
                                 Explore Services
                             </Link>
                             <Link
-                                href="#"
+                                href="/our-works"
                                 className="flex items-center gap-1.5 rounded-lg border border-white/10 px-5 py-2.5 text-[13px] text-zinc-300 transition-colors hover:border-white/25 hover:text-zinc-50"
                             >
                                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
@@ -58,19 +63,19 @@ export default function HeroSection() {
 
                         <FadeUp delay={0.2} className='mt-10 flex items-center gap-2'>
                             <div className="flex pointer-events-none select-none">
-                                {['DS', 'RK', 'AM', 'PV'].map((initials, i) => (
+                                {trustAvatars.map((initials, i) => (
                                     <div
-                                        key={initials}
-                                        className="text-zinc-200 w-7 h-7 rounded-full border-2 border-zinc-950 bg-zinc-800 flex items-center justify-center text-[12px] font-semibold text-fun-blue-300"
+                                        key={initials + i}
+                                        className="text-zinc-200 w-7 h-7 rounded-full border-2 border-zinc-950 bg-zinc-800 flex items-center justify-center text-[12px] font-semibold text-amber-500"
                                         style={{ marginLeft: i === 0 ? 0 : -8 }}
                                     >
                                         {initials}
                                     </div>
                                 ))}
                             </div>
-                            <p className="text-[12px] text-fun-blue-300/50 leading-snug text-zinc-200">
-                                Trusted by <span className="text-fun-blue-300/80 font-medium">500+ clients</span>
-                                <br />across all Indian states
+                            <p className="text-[12px] leading-snug text-zinc-200">
+                                Trusted by <span className="text-amber-500 font-medium">{clients.length}+ clients</span>
+                                <br />across India
                             </p>
                         </FadeUp>
 

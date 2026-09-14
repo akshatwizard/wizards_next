@@ -19,12 +19,12 @@ export default function TravelAndTourismSectorPage() {
     return (
         <main>
             <SectorHero data={TravelSectorHero} />
-            <SectorClientList sectorSlug="travel-and-tourism" sectorLabel="Travel <ServiceFAQ data= Tourism" />
+            <SectorClientList sectorSlug="travel-and-tourism" sectorLabel="Travel & Tourism" />
             <SectorAudience data={TravelSectorAudience} />
             <SectorServices data={TravelSectorServices} />
             <SectorStatsBanner data={TravelSectorStats} />
             <SectorTrust data={TravelSectorTrust} />
-            <SectorInterestForm sectorLabel="Travel <ServiceFAQ data= Tourism" />
+            <SectorInterestForm sectorLabel="Travel & Tourism" />
             <ServiceFAQ data={TravelSectorFAQ} />
             <ServiceCTA />
         </main>

@@ -1,5 +1,9 @@
 import AboutUs from '@/components/about'
-import BlogSection from '@/components/blogs'
+// BlogSection is hidden site-wide until real blog content is ready — see
+// note by the <Contact /> section below and src/constant/menu.ts /
+// src/components/footer.tsx, where the corresponding nav links are hidden
+// the same way. Restore all three together.
+// import BlogSection from '@/components/blogs'
 import ClientMarquee from '@/components/client_marquee'
 import Testimonials from '@/components/client_testimonials'
 import Contact from '@/components/contact'
@@ -10,9 +14,16 @@ import IndustriesSection from '@/components/industry'
 import NumberStrip from '@/components/numbers_strip'
 import Services from '@/components/services'
 import ProcessSection from '@/components/steps'
-import Team from '@/components/teams'
+// Team is hidden until real, complete team details are ready to publish.
+// import Team from '@/components/teams'
 import PortfolioBentoGrid from '@/components/work'
 import React from 'react'
+
+export const metadata = {
+  title: 'Wizards Next — Digital Marketing Agency in Varanasi & Hyderabad',
+  description:
+    'Wizards Next is a full-service digital marketing agency with offices in Varanasi and Hyderabad — social media, branding, performance ads, SEO, and website development for clients across India.',
+}
 
 export default function Home() {
   return (
@@ -28,8 +39,8 @@ export default function Home() {
       <AboutUs />
       <ProcessSection />
       <FAQ />
-      <Team />
-      <BlogSection />
+      {/* <Team /> — hidden until real team bios/photos are ready, see import note above */}
+      {/* <BlogSection /> — hidden until real blog posts exist, see import note above */}
       <Contact />
     </main>
   )
