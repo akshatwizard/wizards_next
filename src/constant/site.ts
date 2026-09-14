@@ -1,13 +1,13 @@
 // Single source of truth for the site's canonical URL and core business
-// details — used by root metadata, sitemap.ts, robots.ts, and the
-// Organization/LocalBusiness JSON-LD in layout.tsx.
+// details — used by root metadata, sitemap.ts, robots.ts, the
+// Organization/LocalBusiness JSON-LD in layout.tsx, and the email templates
+// (lib/email-templates.ts) for absolute image/link URLs.
 //
-// SITE_URL defaults to the current Vercel URL. Once a custom domain
-// (e.g. wizards.co.in) is live, either set NEXT_PUBLIC_SITE_URL in the
-// Vercel project's environment variables, or just update the fallback
-// string below — nothing else needs to change.
+// Production domain: https://www.wizards.co.in
+// NEXT_PUBLIC_SITE_URL can still override this per-environment (e.g. a
+// staging URL) without touching code.
 export const SITE_URL =
-    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://wizards-next.vercel.app";
+    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://www.wizards.co.in";
 
 export const BUSINESS = {
     name: "Wizards Next LLP",

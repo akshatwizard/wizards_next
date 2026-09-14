@@ -1,4 +1,5 @@
 import { escapeHtml } from "./email";
+import { SITE_URL } from "@/constant/site";
 
 // Table-based layout with inline styles throughout — this is HTML email, not
 // a web page. Many clients (Outlook especially) ignore <style> blocks and
@@ -7,9 +8,9 @@ import { escapeHtml } from "./email";
 const AMBER = "#d97706";
 const DARK = "#18181b";
 // Email clients can't resolve relative paths — images need a full URL.
-// Set NEXT_PUBLIC_SITE_URL in your environment if the domain ever changes
-// from the current Vercel URL (e.g. once wizards.co.in points here).
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://wizards-next.vercel.app";
+// SITE_URL comes from the same shared constant every other part of the
+// site uses, so there's one place to update if the domain ever changes.
+const SITE_HOSTNAME = new URL(SITE_URL).hostname;
 
 function layout({ title, bodyHtml, footerNote }: { title: string; bodyHtml: string; footerNote: string }): string {
     return `<!DOCTYPE html>
@@ -100,7 +101,7 @@ export function buildTeamNotificationEmail(args: {
     const html = layout({
         title: `New ${formLabel}`,
         bodyHtml,
-        footerNote: `Sent automatically from wizards-next.vercel.app. Reply-to on this email is already set to the submitter, so hitting reply goes straight to them.`,
+        footerNote: `Sent automatically from ${SITE_HOSTNAME}. Reply-to on this email is already set to the submitter, so hitting reply goes straight to them.`,
     });
 
     return { subject, html };
