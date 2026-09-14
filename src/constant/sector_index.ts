@@ -1,6 +1,6 @@
 import {
     Stethoscope, Plane, ShoppingBag, School, Car,
-    Shirt, Building2, Laptop, Wrench, UtensilsCrossed, Users,
+    Shirt, Building2, Laptop, Wrench, UtensilsCrossed, Users, Sparkles,
 } from 'lucide-react'
 
 export type SectorIndexEntry = {
@@ -104,5 +104,13 @@ export const SECTOR_INDEX: SectorIndexEntry[] = [
         description: 'Secure, self-service platforms for matrimonial services, alumni associations, professional bodies, and membership-driven organisations — built for privacy and years of stable operation.',
         iconBg: 'bg-indigo-600/10',
         iconColor: 'text-indigo-500',
+    },
+    {
+        icon: Sparkles,
+        slug: 'personal-services',
+        name: 'Personal Services',
+        description: 'Marketing built around the practitioner, not a storefront — for yoga teachers, energy healers, salons, and independent wellness practices.',
+        iconBg: 'bg-fuchsia-600/10',
+        iconColor: 'text-fuchsia-500',
     },
 ]

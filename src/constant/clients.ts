@@ -276,6 +276,42 @@ export const clients: Client[] = [
         featured: true,
         imgHeight: "h-44",
     },
+
+    {
+        slug: "divine-soul-resonance",
+        name: "Divine Soul Resonance by Archana Verma",
+        sectors: ["personal-services"],
+        tagline: "From a custom PHP website to a Next.js platform, supporting Archana's spiritual practice with content, clear enquiry paths, and growing search visibility.",
+        tags: ["Website Development", "Advanced SEO", "Content Creation", "Social Media"],
+        services: ["website-development", "seo-consultancy", "content-creation", "social-media", "video-editing", "graphic-designing", "analytics-reporting"],
+        overview: "Divine Soul Resonance is Archana Verma's USA-based spiritual practice, offering tarot reading and chakra healing. We built her original website back in 2022 — a hardcoded PHP site — and in 2025 migrated the whole platform to Next.js, pairing it with a Laravel admin panel that manages her blog content and structure through the API. That gave her a real publishing workflow instead of a site where every new article meant a manual code change.\\n\\nFrom February through October 2025, we also handled her social media planning, video editing, and graphic design, supporting how her work is presented visually across platforms. Since February 2026, our focus has shifted to what's now the core of the engagement: website content creation and Advanced SEO.\\n\\nSearch visibility has been building steadily. Her name alone — \\\"divine soul resonance\\\" — now holds an average position of 2.36 on Google, pulling a strong 12.12% click-through rate. Across the wider site, a 16-month Search Console export shows 8,011 impressions and 114 clicks, with August 2026 recording the highest single-month impression total in that stretch — nearly double June's. Seven separate blog articles, including pieces on tarot reading and Reiki/chakra healing, are already generating their own independent search impressions, and just over 40% of all search visibility is coming from the USA, her core market, alongside meaningful activity from India, Canada, and Australia.\\n\\nClick-through hasn't caught up with that rising visibility yet, and we're not going to pretend otherwise. For a personal, trust-led spiritual practice, that's a familiar pattern — search impressions tend to climb before the click curve follows, and non-branded terms in a niche as specific as tarot and chakra work take longer to convert than they do to simply appear. This is exactly the kind of engagement where patience is part of the plan, not a footnote to it: visibility is the leading indicator, and we expect the rest to follow as the content and rankings mature.",
+        highlights: [
+            "8,011 search impressions and 114 clicks over a 16-month Search Console history",
+            "Average position of 2.36 for the brand name \\\"divine soul resonance\\\" — a strong, stable page-1 ranking",
+            "August 2026 was the highest complete month for impressions yet — nearly double June's total",
+            "7 blog articles independently generating search impressions, including tarot reading and Reiki/chakra healing",
+            "40%+ of search visibility comes from the USA, Archana's core market, alongside India, Canada, and Australia",
+        ],
+        technicalOverview: {
+            performance: "The same standing on-page SEO checklist runs across the site — optimised meta titles and descriptions, a clean header hierarchy, descriptive image alt text, SEO-friendly URLs, internal linking, and current sitemap/robots.txt upkeep — alongside our standard speed-hygiene practices of image compression, caching, minification, and lazy-loading. This reflects our standing process on this build, not an independently measured Lighthouse audit.",
+            responsiveness: "The site adapts cleanly across devices — desktop uses horizontal navigation with service links beside Archana's portrait, while mobile collapses to a hamburger menu with vertically stacked service cards. Real Google Search activity confirms meaningful use on both: desktop drove 60.5% of clicks and mobile 38.6% over the reporting period.",
+            scalability: "Built on a Next.js frontend with Tailwind styling, paired with a Laravel admin panel that manages blog content and structure through API calls — separating content publishing from the frontend so a new article doesn't mean hardcoding a new page. Seven distinct blog URLs are already generating independent search impressions, showing the architecture supporting real content growth.",
+            uiUxTheme: "A white background with rust and burnt-orange headings, golden-orange supporting text, generous whitespace, and a script-style \\\"Archana\\\" wordmark. The desktop hero pairs large left-aligned copy with a circular peacock-feather graphic, using Archana's own portrait as the page's visual anchor.",
+        },
+        website: "https://www.divinesoulresonance.com",
+        links: [
+            { label: "Instagram", url: "https://www.instagram.com/divinesoulresonance" },
+            { label: "Facebook", url: "https://www.facebook.com/divinesoulresonance" },
+            { label: "YouTube", url: "https://www.youtube.com/@DivineSoulResonance/featured" },
+            { label: "Patreon", url: "https://www.patreon.com/DivineSoulResonance" },
+        ],
+        screenshots: [
+            { src: "/images/clients/divine-soul-resonance/showcase.webp", caption: "The current Next.js website alongside real 16-month Search Console performance — 8,011 impressions and 114 clicks, with a 2.36 average position for the brand name search." },
+        ],
+        heroImage: "/images/clients/divine-soul-resonance/hero-illustration.webp",
+        featured: true,
+        imgHeight: "h-44",
+    },
 ];
 
 export function getClientBySlug(slug: string): Client | undefined {

@@ -51,6 +51,7 @@ export const NavMenu: MenuType[] = [
             { name: "Food & Dining", path: "/sector/food-and-dining" },
             { name: "Local Services", path: "/sector/local-services" },
             { name: "Membership & Community", path: "/sector/membership-community" },
+            { name: "Personal Services", path: "/sector/personal-services" },
         ]
     },
     {

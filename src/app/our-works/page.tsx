@@ -27,6 +27,7 @@ const SECTOR_ORDER: { slug: string; label: string }[] = [
     { slug: "food-and-dining", label: "Food & Dining" },
     { slug: "local-services", label: "Local Services" },
     { slug: "membership-community", label: "Membership & Community" },
+    { slug: "personal-services", label: "Personal Services" },
 ];
 
 function ClientCard({ client }: { client: (typeof clients)[0] }) {
