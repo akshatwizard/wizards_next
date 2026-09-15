@@ -17,15 +17,17 @@ export function ProjectCard({ client }: { client: Client }) {
             href={`/our-works/${client.slug}`}
             className="h-full group relative bg-zinc-900 rounded-2xl overflow-hidden cursor-pointer border border-zinc-800 hover:border-amber-600/30 transition-all duration-200 flex flex-col"
         >
-            {/* Image — kept compact so the card reads name-first, illustration-second */}
-            <div className="relative w-full h-28 shrink-0 bg-zinc-950 flex items-center justify-center p-3">
+            {/* Image — square container matching the illustrations' real
+                1:1 aspect ratio, so they fill it edge to edge instead of
+                floating small inside a short, wide box */}
+            <div className="relative w-full aspect-square shrink-0 bg-zinc-950 flex items-center justify-center p-3">
                 {heroImage ? (
                     <Image
                         src={heroImage}
                         alt={`${name} illustration`}
                         width={1254}
                         height={1254}
-                        className="relative h-full w-auto object-contain"
+                        className="relative w-full h-full object-contain"
                     />
                 ) : (
                     <>

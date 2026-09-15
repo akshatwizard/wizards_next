@@ -36,14 +36,14 @@ function ClientCard({ client }: { client: (typeof clients)[0] }) {
             href={`/our-works/${client.slug}`}
             className="group bg-zinc-900 border border-zinc-800 hover:border-amber-600/30 rounded-2xl overflow-hidden transition-colors flex flex-col"
         >
-            <div className="relative w-full h-32 shrink-0 bg-zinc-950 flex items-center justify-center p-3 border-b border-zinc-800">
+            <div className="relative w-full aspect-square shrink-0 bg-zinc-950 flex items-center justify-center p-3 border-b border-zinc-800">
                 {client.heroImage ? (
                     <Image
                         src={client.heroImage}
                         alt={`${client.name} illustration`}
                         width={1254}
                         height={1254}
-                        className="h-full w-auto object-contain"
+                        className="w-full h-full object-contain"
                     />
                 ) : (
                     <span className="text-[12px] font-medium text-zinc-300 tracking-widest uppercase">{client.name}</span>
