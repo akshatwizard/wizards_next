@@ -23,9 +23,9 @@ export default function HeroSection() {
 
                         <FadeUp
                             delay={0}
-                            className='flex items-center gap-2 text-xs px-3 py-2 rounded-full border border-amber-600/50 bg-amber-600/10 w-max text-amber-600 mb-8'>
-                            <span className='size-1.5 rounded-full bg-amber-600 animate-ping' />
-                            Best Digital Marketing Agency — Varanasi &amp; Hyderabad
+                            className='flex items-center gap-2 text-xs px-3 py-2 rounded-full border border-amber-600/50 bg-amber-600/10 max-w-full w-fit text-amber-600 mb-8'>
+                            <span className='size-1.5 rounded-full bg-amber-600 animate-ping shrink-0' />
+                            <span>Best Digital Marketing Agency — Varanasi &amp; Hyderabad</span>
                         </FadeUp>
 
                         <FadeUp delay={0.05}>

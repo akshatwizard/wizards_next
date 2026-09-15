@@ -1,9 +1,10 @@
 "use client";
 import { useState } from "react";
 import { Plus } from "lucide-react";
+import Link from "next/link";
 import { Section, Wrapper } from "./ui/sections";
 import { FadeUp } from "./ui/motion_components";
-import { faqs } from "@/constant/faq";
+import { HOMEPAGE_FAQS } from "@/constant/faq";
 
 export default function FAQ() {
     const [open, setOpen] = useState<number | null>(null);
@@ -12,7 +13,7 @@ export default function FAQ() {
     const faqJsonLd = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        mainEntity: faqs.map(({ q, a }) => ({
+        mainEntity: HOMEPAGE_FAQS.map(({ q, a }) => ({
             "@type": "Question",
             name: q,
             acceptedAnswer: {
@@ -30,23 +31,33 @@ export default function FAQ() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c") }}
             />
             <Wrapper>
-                <div>
-                    <FadeUp className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/25 rounded-full px-4 py-1.5 mb-4">
-                        <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
-                        <span className="text-amber-600 text-[12px] tracking-widest uppercase font-medium">FAQ</span>
-                    </FadeUp>
-                    <FadeUp delay={0.1}>
-                        <h2 className="tracking-tight text-zinc-200 leading-tight mb-3 lg:text-4xl text-3xl font-medium">
-                            Questions we get <span className="text-amber-600 font-sora!">all the time</span>
-                        </h2>
-                    </FadeUp>
+                <div className="flex flex-wrap items-end justify-between gap-4">
+                    <div>
+                        <FadeUp className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/25 rounded-full px-4 py-1.5 mb-4">
+                            <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
+                            <span className="text-amber-600 text-[12px] tracking-widest uppercase font-medium">FAQ</span>
+                        </FadeUp>
+                        <FadeUp delay={0.1}>
+                            <h2 className="tracking-tight text-zinc-200 leading-tight mb-3 lg:text-4xl text-3xl font-medium">
+                                Questions we get <span className="text-amber-600 font-sora!">all the time</span>
+                            </h2>
+                        </FadeUp>
+                        <FadeUp delay={0.15}>
+                            <p className="text-zinc-200 text-sm font-light">No jargon. Just straight answers.</p>
+                        </FadeUp>
+                    </div>
                     <FadeUp delay={0.15}>
-                        <p className="text-zinc-200 text-sm font-light">No jargon. Just straight answers.</p>
+                        <Link
+                            href="/faq"
+                            className="text-amber-600 text-[13px] font-medium hover:text-amber-500 transition-colors whitespace-nowrap"
+                        >
+                            View all FAQs →
+                        </Link>
                     </FadeUp>
                 </div>
 
                 <FadeUp delay={0.25} className="flex flex-col gap-1">
-                    {faqs.map(({ q, a }, i) => {
+                    {HOMEPAGE_FAQS.map(({ q, a }, i) => {
                         const isOpen = open === i;
                         return (
                             <div key={i}
@@ -63,7 +74,7 @@ export default function FAQ() {
                                             className={`transition-all duration-300 ${isOpen ? "rotate-45 text-amber-600" : "text-zinc-200"}`} />
                                     </div>
                                 </button>
-                                <div className={`overflow-hidden transition-all duration-350 ${isOpen ? "max-h-40 pb-4" : "max-h-0"}`}>
+                                <div className={`overflow-hidden transition-all duration-350 ${isOpen ? "max-h-60 pb-4" : "max-h-0"}`}>
                                     <p className="text-zinc-200 text-xs max-w-3xl leading-relaxed font-light px-5 border-l-2 border-amber-600/40 ml-5">
                                         {a}
                                     </p>

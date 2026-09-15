@@ -355,3 +355,17 @@ export function getFeaturedClients(limit?: number): Client[] {
     const featured = clients.filter((c) => c.featured);
     return typeof limit === "number" ? featured.slice(0, limit) : featured;
 }
+
+// Random selection, stable per deployment (not per page load) — this
+// runs once during the build's static generation, since the homepage
+// grid is a Server Component with no client-side re-execution. That
+// means every visitor between deploys sees the same 8, avoiding the
+// server/client mismatch a client-side Math.random() would cause, while
+// the set itself changes with each new deploy. Falls back to every
+// featured client if there are fewer than `count` to choose from.
+export function getRandomFeaturedClients(count: number): Client[] {
+    const featured = clients.filter((c) => c.featured);
+    if (featured.length <= count) return featured;
+    const shuffled = [...featured].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, count);
+}

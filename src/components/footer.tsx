@@ -45,6 +45,7 @@ const company = [
     // item above until real posts are ready — restore all together.
     // { label: "Blog", href: "/blogs" },
     { label: "Careers", href: "/careers" },
+    { label: "FAQ", href: "/faq" },
     { label: "Contact", href: "/contact" },
 ];
 const legal = [

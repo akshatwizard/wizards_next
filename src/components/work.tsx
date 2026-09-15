@@ -1,4 +1,4 @@
-import { getFeaturedClients } from '@/constant/clients'
+import { getFeaturedClients, getRandomFeaturedClients } from '@/constant/clients'
 import { Client } from '@/types/client.types'
 import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
@@ -7,23 +7,25 @@ import { Section, Wrapper } from './ui/sections'
 import { FadeUp } from './ui/motion_components'
 
 
-function ProjectCard({ client }: { client: Client }) {
+export function ProjectCard({ client }: { client: Client }) {
     const { name, sectors, tags, heroImage } = client
+    const visibleTags = tags.slice(0, 2)
+    const extraCount = tags.length - visibleTags.length
 
     return (
         <Link
             href={`/our-works/${client.slug}`}
-            className="h-full group relative bg-zinc-900 rounded-2xl overflow-hidden cursor-pointer border border-zinc-800 hover:border-zinc-700 transition-all duration-200 flex flex-col"
+            className="h-full group relative bg-zinc-900 rounded-2xl overflow-hidden cursor-pointer border border-zinc-800 hover:border-amber-600/30 transition-all duration-200 flex flex-col"
         >
-            {/* Image — square container to match the illustrations' real aspect ratio, so they fill the space instead of floating small */}
-            <div className="relative w-full aspect-square shrink-0 bg-zinc-950 flex items-center justify-center p-4">
+            {/* Image — kept compact so the card reads name-first, illustration-second */}
+            <div className="relative w-full h-28 shrink-0 bg-zinc-950 flex items-center justify-center p-3">
                 {heroImage ? (
                     <Image
                         src={heroImage}
                         alt={`${name} illustration`}
                         width={1254}
                         height={1254}
-                        className="relative w-full h-full object-contain"
+                        className="relative h-full w-auto object-contain"
                     />
                 ) : (
                     <>
@@ -35,43 +37,43 @@ function ProjectCard({ client }: { client: Client }) {
                                 backgroundSize: '24px 24px',
                             }}
                         />
-                        <span className="relative text-[12px] font-medium text-zinc-300 tracking-widest uppercase">
+                        <span className="relative text-[11px] font-medium text-zinc-300 tracking-widest uppercase">
                             {sectors && sectors.length > 0 ? sectors.join(' / ') : name}
                         </span>
                     </>
                 )}
-                <div className="absolute top-3 left-3 w-1.5 h-1.5 rounded-full bg-amber-600/60" />
 
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
-                    <span className="inline-flex items-center gap-1.5 bg-amber-600 text-black text-[12px] font-semibold px-4 py-2 rounded-lg">
+                    <span className="inline-flex items-center gap-1.5 bg-amber-600 text-black text-[11px] font-semibold px-3 py-1.5 rounded-lg">
                         View Project
                         <ArrowUpRight className="w-3 h-3" />
                     </span>
                 </div>
             </div>
 
-            {/* Card meta */}
-            <div className="px-4 py-3.5 border-t border-zinc-800 shrink-0">
-                <div className="flex items-start justify-between mb-2">
-                    <div>
-                        <p className="font-syne text-[13px] font-bold text-zinc-100 tracking-tight leading-snug">
-                            {name}
-                        </p>
-                    </div>
-                    <div className="w-6 h-6 rounded-md bg-zinc-800 border border-zinc-700 flex items-center justify-center shrink-0 group-hover:bg-amber-600/15 group-hover:border-amber-600/40 transition-colors">
-                        <ArrowUpRight className="w-2.5 h-2.5 text-zinc-100 group-hover:text-amber-600" />
-                    </div>
+            {/* Card meta — name leads, sized to actually be read at a glance */}
+            <div className="px-4 py-3.5 border-t border-zinc-800 shrink-0 flex-1 flex flex-col justify-between gap-2.5">
+                <div className="flex items-start justify-between gap-2">
+                    <p className="font-syne text-[16px] font-bold text-zinc-100 tracking-tight leading-snug">
+                        {name}
+                    </p>
+                    <ArrowUpRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-amber-600 transition-colors shrink-0 mt-1" />
                 </div>
-                <div className="flex flex-wrap gap-1">
-                    {tags.map((tag) => (
+                <div className="flex flex-wrap gap-1.5">
+                    {visibleTags.map((tag) => (
                         <span
                             key={tag}
-                            className="text-[12px] px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-200 bg-zinc-950 group-hover:border-amber-600/20 group-hover:text-zinc-100 transition-colors"
+                            className="text-[11.5px] font-medium px-2 py-0.5 rounded-full border border-zinc-800 text-zinc-200 bg-zinc-950 group-hover:border-amber-600/25 group-hover:text-zinc-100 transition-colors"
                         >
                             {tag}
                         </span>
                     ))}
+                    {extraCount > 0 && (
+                        <span className="text-[11.5px] font-medium px-2 py-0.5 rounded-full text-zinc-300">
+                            +{extraCount} more
+                        </span>
+                    )}
                 </div>
             </div>
         </Link>
@@ -80,7 +82,7 @@ function ProjectCard({ client }: { client: Client }) {
 
 
 export default function PortfolioBentoGrid() {
-    const featured = getFeaturedClients(7)
+    const featured = getRandomFeaturedClients(8)
 
     return (
         <Section>

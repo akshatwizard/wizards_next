@@ -36,31 +36,31 @@ function ClientCard({ client }: { client: (typeof clients)[0] }) {
             href={`/our-works/${client.slug}`}
             className="group bg-zinc-900 border border-zinc-800 hover:border-amber-600/30 rounded-2xl overflow-hidden transition-colors flex flex-col"
         >
-            <div className="relative w-full aspect-square shrink-0 bg-zinc-950 flex items-center justify-center p-4 border-b border-zinc-800">
+            <div className="relative w-full h-32 shrink-0 bg-zinc-950 flex items-center justify-center p-3 border-b border-zinc-800">
                 {client.heroImage ? (
                     <Image
                         src={client.heroImage}
                         alt={`${client.name} illustration`}
                         width={1254}
                         height={1254}
-                        className="w-full h-full object-contain"
+                        className="h-full w-auto object-contain"
                     />
                 ) : (
                     <span className="text-[12px] font-medium text-zinc-300 tracking-widest uppercase">{client.name}</span>
                 )}
             </div>
-            <div className="p-5 flex flex-col justify-between flex-1">
+            <div className="p-5 flex flex-col justify-between flex-1 gap-3">
                 <div>
-                    <p className="text-zinc-200 font-medium text-[14px] group-hover:text-amber-600 transition-colors">{client.name}</p>
-                    {client.tagline && <p className="text-zinc-300 text-[12px] mt-1">{client.tagline}</p>}
+                    <p className="text-zinc-100 font-syne font-bold text-[19px] leading-snug group-hover:text-amber-600 transition-colors">{client.name}</p>
+                    {client.tagline && <p className="text-zinc-300 text-[13.5px] leading-relaxed mt-2">{client.tagline}</p>}
                 </div>
-                <div className="flex items-center justify-between mt-4">
-                    <div className="flex flex-wrap gap-1">
-                        {client.tags.slice(0, 2).map((t) => (
-                            <span key={t} className="text-[12px] px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-200 bg-zinc-950">{t}</span>
+                <div className="flex items-center justify-between gap-2">
+                    <div className="flex flex-wrap gap-1.5">
+                        {client.tags.map((t) => (
+                            <span key={t} className="text-[12px] font-medium px-2 py-1 rounded-full border border-zinc-800 text-zinc-200 bg-zinc-950 group-hover:border-amber-600/25 transition-colors">{t}</span>
                         ))}
                     </div>
-                    <ArrowUpRight size={14} className="text-zinc-300 group-hover:text-amber-600 transition-colors shrink-0" />
+                    <ArrowUpRight size={16} className="text-zinc-300 group-hover:text-amber-600 transition-colors shrink-0" />
                 </div>
             </div>
         </Link>

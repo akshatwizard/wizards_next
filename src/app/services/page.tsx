@@ -6,6 +6,8 @@ import { Section, Wrapper } from '@/components/ui/sections'
 import { FadeUp } from '@/components/ui/motion_components'
 import { SectionBadge } from '@/components/services/section_badge'
 import { ALL_SERVICES, ServiceMeta } from '@/constant/service_meta'
+import { clients } from '@/constant/clients'
+import { ProjectCard } from '@/components/work'
 
 export const metadata: Metadata = {
     title: 'All Services | Wizards Next Digital Marketing',
@@ -101,6 +103,26 @@ export default function ServicesPage() {
                     </Wrapper>
                 </Section>
             ))}
+
+            {/* Clients using these services — intentionally simple for now.
+                A fuller content restructuring of this page is planned; this
+                section just needs to exist today, showing real clients
+                rather than filtering per individual service. */}
+            <Section>
+                <Wrapper className="lg:py-10 md:py-8 py-6">
+                    <FadeUp className="mb-6">
+                        <p className="text-zinc-100 font-semibold text-[15px] mb-1.5">Clients using these services</p>
+                        <p className="text-zinc-300 text-[12.5px] font-light">Real engagements across the services above — not mockups.</p>
+                    </FadeUp>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                        {clients.map((client, i) => (
+                            <FadeUp key={client.slug} delay={Math.min(i * 0.05, 0.3)}>
+                                <ProjectCard client={client} />
+                            </FadeUp>
+                        ))}
+                    </div>
+                </Wrapper>
+            </Section>
 
             <Section>
                 <Wrapper className="lg:py-12 md:py-10 py-8">

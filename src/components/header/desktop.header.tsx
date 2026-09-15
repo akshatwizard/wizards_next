@@ -159,7 +159,7 @@ export default function DesktopHeader({ scrolled, onGetStarted }: { scrolled: bo
                                                             <Link
                                                                 href={sub.path ?? "#"}
                                                                 className={`
-                                                                    group/sub relative flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors duration-150 h-full
+                                                                    group/sub relative flex items-start gap-3 px-3 py-2.5 rounded-lg transition-colors duration-150 h-full
                                                                     ${subActive
                                                                         ? "bg-white/8 text-white"
                                                                         : "text-zinc-100 hover:bg-white/5 hover:text-zinc-100"

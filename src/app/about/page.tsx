@@ -193,6 +193,9 @@ export default function AboutPage() {
                         >
                             Get in touch <ArrowRight size={13} />
                         </Link>
+                        <p className="text-zinc-300 text-[12px] mt-4">
+                            Have questions first? <Link href="/faq" className="text-amber-600 hover:underline">Check our FAQ →</Link>
+                        </p>
                     </FadeUp>
                 </Wrapper>
             </Section>
