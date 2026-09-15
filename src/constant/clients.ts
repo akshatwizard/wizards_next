@@ -312,6 +312,35 @@ export const clients: Client[] = [
         featured: true,
         imgHeight: "h-44",
     },
+    {
+        slug: "harish-chandra-pg-college",
+        name: "Harish Chandra Post Graduate College",
+        sectors: ["education"],
+        tagline: "Wizards Next's oldest website partnership — carrying a 160-year-old Varanasi institution's legacy online since 2013, now reaching students across India.",
+        tags: ["Website Development"],
+        services: ["website-development"],
+        overview: "Harish Chandra Post Graduate College was founded in 1866 by Bharatendu Harishchandra, the pioneering figure of modern Hindi literature, starting with just five students. A century and a half later, it's grown into one of Varanasi's premier government-aided institutions, running five full faculties — Arts, Commerce, Science, Education, and Law — under the Harish Chandra Vidyalaya Samiti.\n\nWe've been the college's website partner since 2013 — our longest-running relationship of any client on this site. The site started in core PHP and migrated to Drupal 7 in 2017, the platform it still runs on today. What makes this partnership distinctive is how directly the college relies on it day to day: admission merit lists, NCC notices, and holiday announcements all get published live by the college's own staff, not by us — in the second week of September 2026 alone, that included B.A., B.Sc., and B.Com admission merit lists going up in real time.\n\nThe site's E-Lectures section is its own story. It was built during the Covid-19 shift to online classes so faculty could upload study material directly — and it never went away. Reference PDFs originally meant for HCPG's own students, on topics from the Revolt of 1857 to physics diffraction, are now found and downloaded by students across India simply searching for that exact material. One history reference document alone has drawn more than 30,000 clicks from Google search.\n\nThat reach hasn't come at the expense of the college's own identity online: search for \"HCPG,\" \"Harishchandra PG College,\" or any close variant, and the site holds the #1 position, with click-through rates as high as 70–75%. And none of it — the daily administrative use, a nationally distributed student audience, consistently strong rankings — has cost the site any stability. It's carried this load on the same platform for more than a decade without major disruption.",
+        highlights: [
+            "796,604 clicks and 33,231,465 impressions from Google Search over the last 16 months",
+            "Average search position improved from the low teens into single digits over the period",
+            "Branded search dominance: \"hcpg,\" \"harishchandra pg college,\" and close variants rank at position ~1.1–1.3, with click-through rates up to 75%",
+            "One E-Lectures reference PDF alone has drawn over 30,000 clicks from students nationwide",
+            "85% of clicks come from mobile, at a stronger average position (6.5) than desktop (15.3)",
+        ],
+        technicalOverview: {
+            performance: "Maintained under our standing on-page SEO checklist — meta titles and descriptions, proper header hierarchy, image alt text, SEO-friendly URLs, internal linking, and regular sitemap/robots.txt upkeep — plus the same speed-hygiene practices (image compression, caching, minification, lazy-loading) applied as ongoing maintenance, not a one-time setup.",
+            responsiveness: "Backed by real device-split data: over the last 16 months, mobile accounts for 676,287 of the site's 796,604 total clicks, at a noticeably stronger average position (6.5) than desktop (15.3) — the site performs best precisely where its real audience is. The founder tribute and NIRF ranking sections reflow cleanly into a single-column mobile layout without losing the desktop content hierarchy.",
+            scalability: "Runs on Drupal 7 with a self-service admin panel that college staff use directly to publish notices, merit lists, results, and official documents — no developer involvement needed for day-to-day updates. It also hosts a large, growing library of PDF study material through the E-Lectures section. Handling both a steady stream of administrative updates and heavy nationwide PDF traffic on the same platform for over a decade, without downtime, is the real proof of the architecture.",
+            uiUxTheme: "A clean institutional palette of blue and white with red accents, built around a rotating hero image carousel of college events, a dedicated founder tribute section with portrait and couplet, and a structured \"Important News and Notice\" panel linking to admission forms, NIRF documents, and circulars. Navigation spans clear top-level menus — About Us, Management, Courses, Facilities, Faculty, Students, IQAC, News and Events, Alumni — each with dropdowns for deeper sections. Dense but well-organized, appropriate for an information hub serving students, faculty, and administration, and it reflows into single-column cards on mobile without losing the desktop hierarchy.",
+        },
+        website: "https://www.hcpgcollege.edu.in",
+        screenshots: [
+            { src: "/images/clients/harish-chandra-pg-college/showcase.webp", caption: "The live HCPG College website alongside its mobile view — the founder tribute and NIRF ranking sections reflowing cleanly into a single-column layout, backed by 796,604 clicks and 33.2M impressions from Google Search over 16 months." },
+        ],
+        heroImage: "/images/clients/harish-chandra-pg-college/hero-illustration.webp",
+        featured: true,
+        imgHeight: "h-44",
+    },
 ];
 
 export function getClientBySlug(slug: string): Client | undefined {
