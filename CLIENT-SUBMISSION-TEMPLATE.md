@@ -23,3 +23,13 @@ Keep it positive, and be upfront that digital marketing results are a long game 
 
 Kaasvi, Dhanuka Silks, Dr. Jyosthna Elagandula, MasterTech Pune, Rimika Jaipur, Sunbeam Academy, Kshitij Auto, Laurels Care, Dr. Payal Bajaj, Dr. Ramya Valiveru, and Steel Dalal are already live and linkable (from the old client marquee list), but I deliberately left their sector unset rather than guess — they won't show up on any sector page's client list until confirmed. Fastest way to fix all 11 in one go: just send me a short list mapping each name to a sector, using the same template above (skip anything not relevant per client).
 
+## Monthly Instagram reports (standing process, started September 2026)
+
+When you send a monthly Instagram Insights PDF for a client, here's what I'll do with it, every time:
+
+- **Never reproduce the report's raw month-over-month comparison table.** That's the same standing rule as everywhere else on the client pages — real numbers, no data tables.
+- **Pull out what's genuinely real and positive** — follower milestones, net follower growth (new minus unfollows, not just the new-followers number on its own), and 1–2 specific real posts with their real engagement numbers. You asked for actual examples of activity to be included, and that's the most honest way to do it: name the post, name the number.
+- **When the month's core metrics (reach, views, interactions) are down** — and some months they will be, that's normal for social — I won't spin that as growth, and I also won't itemize every declining number on the page. I'll look for what *did* hold up (comments are usually the best signal — they mean someone stopped and engaged, not just scrolled past) and frame the dip the same way this site already frames slow-building SEO results: normal variation, not a problem to explain away, not something to hide either.
+- **The addition goes into the client's existing `overview` (a new paragraph) and `highlights` (one new line)** — not a separate new data structure. If these reports keep coming in at real volume across many clients, a proper recurring section might be worth building later; for now, folding each one into the existing narrative is the simpler, more honest fit.
+
+
