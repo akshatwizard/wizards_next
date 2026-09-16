@@ -9,6 +9,7 @@ import ServiceIndustries from '@/components/services/service_industries'
 import ServiceTechStack from '@/components/services/service_techstack'
 import ServiceCTA from '@/components/services/service_cta'
 import ServiceFAQ from '@/components/services/service_faq'
+import ServiceClientList from '@/components/services/service_clients'
 
 export const metadata: Metadata = {
     title: 'Website Development Services | Wizards Next',
@@ -29,6 +30,7 @@ export default function WebDevelopmentPage() {
             <ServiceProcess data={WebDevServiceProcess} />
             <ServiceIndustries data={WebDevServiceIndustriesList} />
             <ServiceTechStack data={WebDevServiceTechStack} />
+            <ServiceClientList serviceSlug="website-development" />
             <ServiceFAQ data={WebDevServiceFAQ} />
             <ServiceCTA />
         </main>

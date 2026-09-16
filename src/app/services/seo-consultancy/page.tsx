@@ -6,6 +6,7 @@ import ServicesOffered from '@/components/services/service_offered'
 import ServiceProcess from '@/components/services/service_process'
 import ServiceIndustries from '@/components/services/service_industries'
 import ServiceFAQ from '@/components/services/service_faq'
+import ServiceClientList from '@/components/services/service_clients'
 import ServiceCTA from '@/components/services/service_cta'
 import { SEOConsultancyHero, SEOConsultancyAbout, SEOConsultancyServicesOffered, SEOConsultancyProcess, SEOConsultancyIndustries, SEOConsultancyFAQ , SEOConsultancyDeepDive } from '@/constant/services_data'
 
@@ -23,6 +24,7 @@ export default function SeoConsultancyPage() {
             <ServicesOffered data={SEOConsultancyServicesOffered} />
             <ServiceProcess data={SEOConsultancyProcess} />
             <ServiceIndustries data={SEOConsultancyIndustries} />
+            <ServiceClientList serviceSlug="seo-consultancy" />
             <ServiceFAQ data={SEOConsultancyFAQ} />
             <ServiceCTA />
         </main>

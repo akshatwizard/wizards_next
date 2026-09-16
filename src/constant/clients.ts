@@ -352,6 +352,10 @@ export function getClientsBySector(sectorSlug: string, excludeSlug?: string): Cl
     return clients.filter((c) => c.sectors?.includes(sectorSlug) && c.slug !== excludeSlug);
 }
 
+export function getClientsByService(serviceSlug: string, excludeSlug?: string): Client[] {
+    return clients.filter((c) => c.services?.includes(serviceSlug) && c.slug !== excludeSlug);
+}
+
 export function getFeaturedClients(limit?: number): Client[] {
     const featured = clients.filter((c) => c.featured);
     return typeof limit === "number" ? featured.slice(0, limit) : featured;

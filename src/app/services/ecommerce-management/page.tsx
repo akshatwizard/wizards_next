@@ -6,6 +6,7 @@ import ServicesOffered from '@/components/services/service_offered'
 import ServiceProcess from '@/components/services/service_process'
 import ServiceIndustries from '@/components/services/service_industries'
 import ServiceFAQ from '@/components/services/service_faq'
+import ServiceClientList from '@/components/services/service_clients'
 import ServiceCTA from '@/components/services/service_cta'
 import { EcommerceMgmtHero, EcommerceMgmtAbout, EcommerceMgmtServicesOffered, EcommerceMgmtProcess, EcommerceMgmtIndustries, EcommerceMgmtFAQ , EcommerceMgmtDeepDive } from '@/constant/services_data'
 
@@ -23,6 +24,7 @@ export default function EcommerceManagementPage() {
             <ServicesOffered data={EcommerceMgmtServicesOffered} />
             <ServiceProcess data={EcommerceMgmtProcess} />
             <ServiceIndustries data={EcommerceMgmtIndustries} />
+            <ServiceClientList serviceSlug="ecommerce-management" />
             <ServiceFAQ data={EcommerceMgmtFAQ} />
             <ServiceCTA />
         </main>

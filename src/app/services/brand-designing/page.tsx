@@ -6,6 +6,7 @@ import ServicesOffered from '@/components/services/service_offered'
 import ServiceProcess from '@/components/services/service_process'
 import ServiceIndustries from '@/components/services/service_industries'
 import ServiceFAQ from '@/components/services/service_faq'
+import ServiceClientList from '@/components/services/service_clients'
 import ServiceCTA from '@/components/services/service_cta'
 import { BrandCreationHero, BrandCreationAbout, BrandCreationServicesOffered, BrandCreationProcess, BrandCreationIndustries, BrandCreationFAQ , BrandCreationDeepDive } from '@/constant/services_data'
 
@@ -23,6 +24,7 @@ export default function BrandDesigningPage() {
             <ServicesOffered data={BrandCreationServicesOffered} />
             <ServiceProcess data={BrandCreationProcess} />
             <ServiceIndustries data={BrandCreationIndustries} />
+            <ServiceClientList serviceSlug="brand-designing" />
             <ServiceFAQ data={BrandCreationFAQ} />
             <ServiceCTA />
         </main>

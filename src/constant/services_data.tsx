@@ -2122,6 +2122,14 @@ export const BrandCreationDeepDive: ServiceDeepDiveType = {
             subheading: "What this means for your business",
             body: "The immediate effect is consistency — the same business looks like the same business whether someone sees it on a hoarding, a WhatsApp catalog, or a Google search result. The longer-term effect is that every other service on this site works better once this exists: ad creative built on top of a real brand system converts better than generic templates, and a website designed around documented brand rules looks intentional rather than assembled. For premium and HNI-facing businesses specifically, this consistency is doing quiet credibility work before a single word of copy gets read.",
         },
+        {
+            subheading: "Who this is actually for",
+            body: "Businesses about to make a visible move — a new location, a rebrand, a serious push into a new market — where inconsistent, improvised visuals would actively work against the moment. It's also the right starting point for a genuinely new business before spending on ads or content, since paying to promote an inconsistent identity means paying twice once the identity gets fixed later.",
+        },
+        {
+            subheading: "What's often misunderstood before we start",
+            body: "The most common: treating a logo as the whole deliverable — a logo without a documented colour, type, and usage system is exactly how the same business ends up looking different on its signage, its Instagram, and its invoices. The second: assuming brand work is purely aesthetic — a well-built identity is doing real, measurable credibility work before a single word of copy gets read, particularly for premium and HNI-facing businesses. The third: expecting to love every concept presented — the point of showing 2–3 genuinely distinct directions is to find the right fit through real contrast, not to present variations of the same safe idea.",
+        },
     ],
 }
 
@@ -2146,6 +2154,14 @@ export const GraphicDesignDeepDive: ServiceDeepDiveType = {
         {
             subheading: "What this means for your business",
             body: "Consistent, high-frequency design output is what makes a content calendar actually executable — a great posting strategy with inconsistent or late creative behind it doesn't survive contact with reality. Because the same team handles your social, ads, and design, creative gets built with the platform and campaign goal in mind from the first draft, rather than designed in isolation and hoped it performs. Over time, this is also what makes a feed or grid look intentional rather than like a series of unrelated posts.",
+        },
+        {
+            subheading: "Who this is actually for",
+            body: "Businesses that already have (or are simultaneously building) a real brand system — graphic design applies that system to carousels, posters, and ad creative, it doesn't invent one from scratch each time. Used without that foundation, individual pieces can still look good in isolation but won't build the same compounding recognition over time.",
+        },
+        {
+            subheading: "What's often misunderstood before we start",
+            body: "The most common: judging creative purely on whether it's visually appealing rather than whether it's doing its actual job — a beautiful carousel that doesn't stop the scroll or communicate the offer clearly is a design failure regardless of how polished it looks. The second: requesting a redesign of the whole visual direction for every single piece — real creative velocity depends on a documented, reusable system that individual designs work within, not a from-scratch decision each time. The third: skipping platform-specific sizing and cropping — creative built for Instagram often gets cut off or misread on LinkedIn or in print without deliberate reformatting, not just a resize.",
         },
     ],
 }
@@ -2172,6 +2188,14 @@ export const CorporateProfileDeepDive: ServiceDeepDiveType = {
             subheading: "What this means for your business",
             body: "This exists for the specific moments where a generic website page isn't enough — a tender committee, an investor, or an institutional client evaluating whether to trust a business with a significant engagement. Having a video and a document that tell the same considered story, rather than improvising an explanation in the room, is what this is actually solving for. It's also, practically, one of the more durable assets on this list — built to be updated rather than replaced as the business grows.",
         },
+        {
+            subheading: "Who this is actually for",
+            body: "Businesses that need to present themselves formally to an audience not found on social media — investors, institutional clients, tender committees, or franchise partners. It's a different job from social content or a website: the profile has to work as a standalone document someone reads start to finish, often with no other context about the business.",
+        },
+        {
+            subheading: "What's often misunderstood before we start",
+            body: "The most common: treating a corporate profile as a longer brochure — it needs its own structure (credibility first, then capability, then proof, then the ask), not just more pages of the same marketing copy used elsewhere. The second: skipping the video version — a well-produced corporate video gets watched in full far more often than a PDF gets read cover to cover, especially in a pitch or tender context where attention is limited. The third: letting the profile go stale — a profile with two-year-old numbers or a team photo missing current staff undermines exactly the credibility it's meant to build.",
+        },
     ],
 }
 
@@ -2196,6 +2220,14 @@ export const SocialMediaDeepDive: ServiceDeepDiveType = {
         {
             subheading: "What this means for your business",
             body: "Consistency is what compounds here — an account posted to reliably, with someone actually answering when a potential customer comments or messages, builds trust in a way that sporadic posting never does. Because planning sits with the same team producing your content and running your ads, the calendar reflects what's actually being promoted elsewhere instead of running as a disconnected workstream nobody's coordinating.",
+        },
+        {
+            subheading: "Who this is actually for",
+            body: "Businesses that have something real to show — a product, a service, a physical space, a point of view — and need consistency more than a single viral moment. It's a weak fit as a standalone fix for a business with no clear offering yet, since content can showcase a business well but can't invent one; in that situation, the more useful starting point is usually Brand Creation or Content Creation first, social media second.",
+        },
+        {
+            subheading: "What's often misunderstood before we start",
+            body: "Follower count is the metric people fixate on and usually the least useful one — a smaller, genuinely engaged local following converts better than a large, passive one bought or grown through irrelevant reach. The second misunderstanding: posting more often isn't automatically better; a consistent, well-planned lower frequency reliably outperforms sporadic high-volume posting, because the algorithm and the audience both reward reliability over noise. The third: platforms aren't interchangeable — what performs on Instagram often doesn't translate directly to LinkedIn or Facebook, so a real strategy plans content per platform rather than cross-posting the same asset everywhere and hoping.",
         },
     ],
 }
@@ -2222,6 +2254,14 @@ export const ContentCreationDeepDive: ServiceDeepDiveType = {
             subheading: "What this means for your business",
             body: "Every other service eventually needs words — an ad needs a headline, a landing page needs copy, a blog post needs to actually rank. Having this handled by writers who know the documented brand voice means a business doesn't end up with five different tones of voice depending on which channel someone's reading. For content aimed at search specifically, this pairs directly with SEO Consultancy rather than operating as a separate, disconnected effort.",
         },
+        {
+            subheading: "Who this is actually for",
+            body: "Businesses willing to say something specific rather than something safe — content that actually explains, demonstrates, or takes a position performs; content written to avoid saying anything wrong usually performs the same as not posting at all. It works best as an ongoing practice rather than a one-time sprint, since search and social both reward genuine consistency over an intense but short-lived push.",
+        },
+        {
+            subheading: "What's often misunderstood before we start",
+            body: "The most common: assuming more content is automatically better — a smaller volume of genuinely useful, specific content consistently outperforms a higher volume of generic filler, on both search and social. The second: treating content as purely creative rather than strategic — the strongest content usually starts from a real question a customer is actually asking (which shows up directly in SEO and Content Strategy work), not from \"what should we post today.\" The third: writing content that sounds like every competitor's content — differentiated content requires being willing to have an actual point of view, which is exactly what most local competitors' generic copy avoids.",
+        },
     ],
 }
 
@@ -2246,6 +2286,14 @@ export const VideographyDeepDive: ServiceDeepDiveType = {
         {
             subheading: "What this means for your business",
             body: "Good editing cannot fix badly shot footage — this is why the two are treated as genuinely separate disciplines rather than one blurred service. Planning the shoot around the final platform from the start (a Reel needs different framing than a YouTube interview) means the footage arrives at editing already suited to where it's going, rather than needing to be forced into a format it wasn't shot for.",
+        },
+        {
+            subheading: "Who this is actually for",
+            body: "Businesses that need real footage of their actual space, product, process, or people — not stock — for a corporate profile, a website, social content, or an ad campaign. It's foundational to several other services here (Video Editing has nothing to cut without it, Corporate Profile Creation often needs it), so it's frequently the first shoot in a longer production, not a one-off.",
+        },
+        {
+            subheading: "What's often misunderstood before we start",
+            body: "The most common: underestimating planning time relative to shoot time — a half-day shoot that looks effortless on camera usually has a shot list, a location scout, and a schedule behind it, and skipping that is the single biggest reason footage doesn't cut together well later. The second: assuming one shoot covers every future need — footage shot for a specific purpose (a product ad) often doesn't reusably serve a different one (a recruitment video) without a fresh shoot, because framing and pacing choices differ by purpose. The third: treating audio as an afterthought — viewers forgive imperfect visuals more readily than bad audio, so professional sound capture on location matters as much as the camera work.",
         },
     ],
 }
@@ -2272,6 +2320,14 @@ export const VideoEditingDeepDive: ServiceDeepDiveType = {
             subheading: "What this means for your business",
             body: "A video that performs well on YouTube frequently underperforms when reposted unchanged to Instagram, because pacing, captions, and framing expectations differ by platform. Treating each destination as its own edit, rather than one video resized everywhere, is specifically what closes that gap — and it applies whether the footage came from our own Videography team or was provided directly.",
         },
+        {
+            subheading: "Who this is actually for",
+            body: "Businesses with usable raw footage — their own, or shot by us through Videography — that needs to become finished reels, YouTube videos, or ad creative, cut for the specific platform it's going on rather than one generic edit reused everywhere. It also covers stock and archival footage projects where no new shoot is needed at all.",
+        },
+        {
+            subheading: "What's often misunderstood before we start",
+            body: "The most common: assuming one edit works across platforms — a video cut for YouTube's longer attention span rarely performs identically as a 15-second Reel without a genuine re-edit, not just a trim. The second: underestimating how much the first three seconds matter — on short-form platforms specifically, the opening hook decides whether the rest gets watched at all, so it gets disproportionate attention in the edit. The third: treating captions as optional — a meaningful share of viewers watch with sound off, especially on Instagram and LinkedIn, so burned-in captions are close to a requirement for real reach, not a nice-to-have.",
+        },
     ],
 }
 
@@ -2296,6 +2352,14 @@ export const InfluencerMarketingDeepDive: ServiceDeepDiveType = {
         {
             subheading: "What this means for your business",
             body: "The right micro-influencer with a genuinely engaged, relevant audience routinely outperforms a much larger creator with a broad, disengaged following — this is specifically why vetting matters more than reach. Knowing which local and regional creators have real audiences, versus inflated numbers, is the difference between a campaign that converts and one that just generated impressions.",
+        },
+        {
+            subheading: "Who this is actually for",
+            body: "Businesses with a product or experience genuinely worth talking about, and a specific audience in mind that a chosen creator's followers actually overlap with — not a business hoping a large follower count alone will move product regardless of fit. It works best alongside Performance Marketing, since the strongest results usually come from boosting a creator's organic post as a paid ad, not from the organic post alone.",
+        },
+        {
+            subheading: "What's often misunderstood before we start",
+            body: "The most common: chasing follower count over actual engagement and audience fit — a smaller creator with a genuinely engaged, relevant local audience regularly outperforms a much larger one whose followers don't match the business's real customer. The second: treating a single post as the whole campaign — real results usually need a sequence (a teaser, the main content, a follow-up), not one isolated post. The third: skipping a written brief and hoping the creator \"gets it\" — the strongest results come from a clear brief on the offer and key message, paired with genuine creative freedom on how the creator delivers it in their own voice, not a script that makes sponsored content obviously sound sponsored.",
         },
     ],
 }
@@ -2322,6 +2386,14 @@ export const PerformanceMarketingDeepDive: ServiceDeepDiveType = {
             subheading: "What this means for your business",
             body: "Every rupee of ad spend gets tracked back to an actual result under this approach — no budget disappears into a report full of impressions with no bottom line attached. For a business already running ads without a clear strategy behind the spend, this is usually the layer that was missing, not the execution itself.",
         },
+        {
+            subheading: "Who this is actually for",
+            body: "Businesses running paid activity across more than one channel who need a single, coherent budget strategy tying them together — rather than several disconnected campaigns each optimised in isolation, with no shared view of which channel is actually driving results relative to spend. It sits one level above Google & Meta Ads Management for that reason: ads management is the execution, performance marketing is the strategy deciding where the next rupee of budget should go.",
+        },
+        {
+            subheading: "What's often misunderstood before we start",
+            body: "The most common: allocating budget by gut feel or by which channel is easiest to report on, rather than by actual return per channel — real performance marketing means shifting spend toward what's working and away from what isn't, on an ongoing basis, not a one-time allocation set at the start. The second: chasing a lower cost-per-click across every channel without checking whether that channel's traffic actually converts — a cheaper click that never buys is a worse outcome than a costlier one that does. The third: expecting performance marketing to fix a fundamentally weak offer or landing page — this discipline optimises how budget is spent given what's already true about the business, it doesn't manufacture demand for something the market doesn't want.",
+        },
     ],
 }
 
@@ -2346,6 +2418,14 @@ export const AdsManagementDeepDive: ServiceDeepDiveType = {
         {
             subheading: "What this means for your business",
             body: "An ad account that's actively managed — tested, adjusted weekly, retargeting built in from the start — performs meaningfully differently from one that was set up once and left alone. Because this sits with the same team handling your creative and analytics, an underperforming ad gets flagged to the design team the same week, not discovered a quarter later in a report nobody reads closely.",
+        },
+        {
+            subheading: "Who this is actually for",
+            body: "Businesses with a clear next step for someone who clicks — a product to buy, a form to fill, a call to book — and enough margin or lifetime value to make paid acquisition make sense. It's a poor fit for a business whose website or landing page isn't ready to convert yet, since ad spend against a weak landing experience mostly funds an expensive lesson rather than real leads; in that case, fixing the destination comes first.",
+        },
+        {
+            subheading: "What's often misunderstood before we start",
+            body: "The most common: judging a campaign on cost-per-click alone, when cost-per-lead (or per-sale) is the number that actually reflects whether the spend is working — a cheap click that never converts is worse than a more expensive one that does. The second: expecting Meta and Google Ads to behave the same way — Meta ads generally work on interruption and discovery (reaching people who weren't already looking), Google Search ads work on captured intent (reaching people already searching), and a strategy built for one rarely performs identically on the other without real adjustment. The third: turning campaigns off during a slow week — the algorithm needs a stable learning phase to optimise delivery, and constant on-off cycling usually costs more in wasted re-learning than it saves.",
         },
     ],
 }
@@ -2372,6 +2452,14 @@ export const WhatsAppMarketingDeepDive: ServiceDeepDiveType = {
             subheading: "What this means for your business",
             body: "Done with proper consent and segmentation, this becomes one of the highest-open-rate channels a business has — genuinely higher than email, and often checked before Instagram for many Indian consumers. Done badly, as an unconsented blast list, it gets a business blocked or ignored, which is exactly why consent tracking and segmentation are treated as core to the setup rather than optional extras.",
         },
+        {
+            subheading: "Who this is actually for",
+            body: "Businesses with an existing customer base or lead list and a genuine reason to message them — order updates, catalogue browsing, appointment reminders, a real offer — not a business looking to cold-broadcast to numbers with no prior relationship, which risks the account itself getting flagged. It's especially strong alongside E-Commerce, where order and shipping updates are exactly the kind of message customers actually want.",
+        },
+        {
+            subheading: "What's often misunderstood before we start",
+            body: "The most common: treating WhatsApp like an email blast — message frequency and relevance matter far more here, since a WhatsApp number feels personal in a way an inbox doesn't, and overusing it burns trust fast. The second: not setting up the WhatsApp Business catalogue properly — a browsable, tappable product catalogue inside the chat itself converts meaningfully better than sending customers back out to a website link. The third: skipping automation for the basics — order confirmations, FAQ answers, and business hours can all run automatically, freeing up actual staff time for the messages that genuinely need a human.",
+        },
     ],
 }
 
@@ -2396,6 +2484,14 @@ export const EmailMarketingDeepDive: ServiceDeepDiveType = {
         {
             subheading: "What this means for your business",
             body: "Unlike social platforms, an email list can't have its algorithm changed overnight by someone else — every subscriber opted in, and every send reaches an inbox directly. For e-commerce clients specifically, abandoned cart and post-purchase automation are usually among the highest-return pieces of the entire marketing stack, running continuously without needing a person to trigger each one.",
+        },
+        {
+            subheading: "Who this is actually for",
+            body: "Businesses with an owned list — customers, subscribers, or leads who've actually opted in — since email's whole advantage is reaching people on a channel the business owns outright, not one an algorithm or ad platform controls. It's a weak starting point for a business with no list yet; in that case, building the list, often through the website, comes first.",
+        },
+        {
+            subheading: "What's often misunderstood before we start",
+            body: "The most common: judging a campaign purely on open rate, when click-through and actual conversion are the numbers that reflect real impact — a high open rate on an email nobody acts on isn't actually working. The second: sending the same email to the entire list regardless of where someone is in their relationship with the business — a new subscriber and a five-year repeat customer should rarely get identical messaging, and basic segmentation usually outperforms one-size-fits-all sends by a wide margin. The third: treating deliverability as automatic — getting into the inbox instead of spam depends on list hygiene and technical setup (SPF, DKIM) that's easy to overlook until open rates mysteriously start dropping.",
         },
     ],
 }
@@ -2422,6 +2518,14 @@ export const SEOConsultancyDeepDive: ServiceDeepDiveType = {
             subheading: "What this means for your business",
             body: "Genuine content depth is a real competitive advantage in this specific market, precisely because most local competitors aren't investing in it — a comprehensive page has a real structural edge here that it might not have in a saturated metro market. Results take time regardless of market: technical fixes can show impact within weeks, but genuine ranking movement for competitive terms typically takes three to six months. This work is coordinated directly with Content Creation, since SEO strategy and SEO writing function as one connected process here, not two separate vendors working from different briefs.",
         },
+        {
+            subheading: "Who this is actually for",
+            body: "Businesses that already have a working, credible product or service and now need to be findable — not a fix for a business with no reviews, no clear offering, or a site with fundamental trust problems, since SEO amplifies what's already there rather than manufacturing credibility from nothing. It pairs directly with Content Creation, because sustained ranking growth in a competitive local category depends on genuinely useful content published on a real schedule, not a one-time optimisation pass.",
+        },
+        {
+            subheading: "What's often misunderstood before we start",
+            body: "The most common: expecting week-one movement on competitive terms. Genuine ranking gains for anything with real competition take months, and anyone promising otherwise is either selling paid ads and calling it SEO, or setting an expectation that won't survive contact with reality. The second: treating SEO and Google Ads as substitutes for each other — they solve different problems (compounding, owned visibility versus immediate but rented traffic), and the strongest strategies usually run both, deliberately, rather than picking one out of confusion about what each actually does. The third: assuming \"we did SEO once\" is a permanent state — algorithms and competitor content both keep moving, so this is an ongoing discipline, not a project with a finish line.",
+        },
     ],
 }
 
@@ -2446,6 +2550,14 @@ export const AnalyticsReportingDeepDive: ServiceDeepDiveType = {
         {
             subheading: "What this means for your business",
             body: "Reports here are written to be read by a business owner, not a marketer — plain language, the numbers that actually matter, and a clear statement of what happens next, rather than a wall of charts with no interpretation attached. If existing tracking is already a mess, that's usually the actual starting point of this engagement, since no reporting can be trusted until the tracking underneath it is clean.",
+        },
+        {
+            subheading: "Who this is actually for",
+            body: "Businesses running at least one other active service here — analytics and reporting works underneath everything else, turning what's happening across ads, social, SEO, and the website into one coherent picture, rather than standing alone as its own activity. It's especially valuable for an owner who's been making decisions off gut feel or a platform's own built-in summary screens, neither of which usually tells the full story.",
+        },
+        {
+            subheading: "What's often misunderstood before we start",
+            body: "The most common: confusing more data with more clarity — a dashboard showing every available metric is usually less useful than one showing the five that actually drive decisions, and building the right dashboard means deliberately leaving things out. The second: treating monthly reporting as the whole job — the real value is in the quarterly review, where the question shifts from \"what happened\" to \"does the strategy still make sense.\" The third: setting up tracking once and assuming it stays accurate — tracking pixels and conversion events silently break more often than most businesses realise, and unchecked broken tracking quietly produces confidently wrong numbers.",
         },
     ],
 }
@@ -2472,6 +2584,14 @@ export const WebDevDeepDive: ServiceDeepDiveType = {
             subheading: "What this means for your business",
             body: "A site with SEO-ready structure built in from the start avoids the far more expensive retrofit of adding proper structure to a site that was never built for it. Performance testing before launch, rather than after complaints arrive, is what keeps a site fast on the mobile connections most Indian visitors are actually using. This work draws directly on genuinely long-standing, hands-on development experience — not a template customised by a junior team.",
         },
+        {
+            subheading: "Who this is actually for",
+            body: "Three situations, mainly: no website yet and ready to build one properly the first time; an existing site that's outdated, slow, or hard to update and genuinely needs a rebuild rather than another patch; or a growing catalogue or service list that's outgrown what a template can hold. It's a poor fit for someone who just wants a single static page with no ongoing plans for it — that's a much lighter, cheaper build than what's described here, and we'll say so rather than overselling a full build where a simple one would do.",
+        },
+        {
+            subheading: "What's often misunderstood before we start",
+            body: "The biggest one: a website isn't a one-time expense that ends at launch — a site nobody touches after go-live quietly degrades as plugins age, content goes stale, and competitors' sites keep improving. The second: \"fast\" and \"cheap\" pull in opposite directions technically. A genuinely fast site — the kind that actually ranks and converts — needs real engineering attention (image optimisation, code splitting, caching), not just a lower quote and a hope. The third: WordPress versus a modern framework like Next.js isn't a religious debate, it's a real tradeoff between ease of editing and raw performance and security, and the right answer depends on how often content changes and who's doing the editing.",
+        },
     ],
 }
 
@@ -2496,6 +2616,14 @@ export const MobileAppDeepDive: ServiceDeepDiveType = {
         {
             subheading: "What this means for your business",
             body: "An app that plugs into an existing website and backend, built by the same team that knows both, avoids becoming a disconnected second system that drifts out of sync with everything else the business runs. Backend complexity and the number of integrations — payments, bookings, notifications — usually drive cost and timeline far more than the visual design itself.",
+        },
+        {
+            subheading: "Who this is actually for",
+            body: "Businesses with a real, ongoing reason for a customer to open an app repeatedly — bookings, loyalty tracking, order history, a service only usable through the app — not a business that wants an app mainly because a website already exists and an app feels like the natural next step. A mobile-responsive website often serves a first-time or occasional visitor better than an app ever will, since it requires no download at all.",
+        },
+        {
+            subheading: "What's often misunderstood before we start",
+            body: "The most common: underestimating that an app is a second product to maintain indefinitely, not a one-time build — OS updates, device compatibility, and app store policy changes all require ongoing attention long after launch. The second: choosing native development for both platforms by default — cross-platform frameworks now genuinely close most of the performance gap for the majority of business use cases, and building native-for-both often means paying twice for a difference few users will ever notice. The third: treating app store approval as a formality — both Apple and Google reject apps for real, specific reasons, and planning for that review from day one avoids a launch delay nobody budgeted for.",
         },
     ],
 }
@@ -2522,6 +2650,14 @@ export const EcommerceDevDeepDive: ServiceDeepDiveType = {
             subheading: "What this means for your business",
             body: "A checkout that fails partway through, or a shipping rule that wasn't actually configured, costs real sales the moment it happens — which is why this is treated as core build work rather than a post-launch fix. This is the build phase specifically; running the store day to day once it's live — inventory, updates, order-flow issues — is a distinct, ongoing service (E-Commerce Business Management), not assumed to be covered by the build alone.",
         },
+        {
+            subheading: "Who this is actually for",
+            body: "Businesses ready to genuinely sell online — real inventory, real fulfilment capacity, and a plan for payments and shipping — not just a catalogue page dressed up to look like a store. A browsable product listing with no checkout is a legitimate, lighter build in its own right (closer to standard Website Development), but calling it e-commerce when there's no way to actually complete a purchase sets the wrong expectation from day one.",
+        },
+        {
+            subheading: "What's often misunderstood before we start",
+            body: "The biggest one: launch is the easy part, and the store's first few weeks are usually quiet — that's normal, not a sign something's broken, the same pattern any new sales channel goes through while it earns search visibility and repeat customers. The second: payment integration isn't just \"add a Razorpay button\" — done properly, order creation happens only after server-side payment verification, independent of whether the customer's browser stays open, which is the difference between a store that occasionally loses real orders and one that doesn't. The third: a store's catalogue and category structure need to be built to expand from day one, because retrofitting that structure after a few hundred products exist is a far bigger job than building it right the first time.",
+        },
     ],
 }
 
@@ -2547,6 +2683,14 @@ export const EcommerceMgmtDeepDive: ServiceDeepDiveType = {
             subheading: "What this means for your business",
             body: "This is genuinely proven in practice rather than a hypothetical offering — the same shipping module updates, notification fixes, and ongoing catalog management already run for an active client's own store. The distinction from the build service matters: this is the operations layer for a store that already exists, priced and scoped differently because the work itself is different — ongoing, reactive, and operational rather than a one-time project with a launch date.",
         },
+        {
+            subheading: "Who this is actually for",
+            body: "Stores that are already live and selling, where the real bottleneck has shifted from \"build it\" to \"run it well\" — inventory accuracy, order fulfilment speed, catalogue upkeep, and the ongoing marketing that keeps orders coming in. It's the natural next step after E-Commerce Website Development, for a store past launch that needs sustained operational attention, not another build project.",
+        },
+        {
+            subheading: "What's often misunderstood before we start",
+            body: "The most common: assuming a launched store runs itself — a catalogue that isn't kept current quietly loses customer trust well before it loses sales, and by the time the sales drop is obvious the trust damage is already done. The second: treating customer service and returns as separate from marketing — how a store handles a return or a delayed order shapes repeat-purchase behaviour as much as any ad campaign does, arguably more. The third: not watching cart abandonment — most stores lose a meaningful share of near-purchases at checkout, and a specific recovery strategy, not just hoping they come back, is usually one of the highest-return pieces of ongoing store management.",
+        },
     ],
 }
 
@@ -2571,6 +2715,14 @@ export const AIConsultancyDeepDive: ServiceDeepDiveType = {
         {
             subheading: "What this means for your business",
             body: "This is demonstrated rather than theoretical — the same AI-assisted approach to planning and development used to run this agency's own project management and content operations is what gets set up for a client's team. Most businesses that try adopting AI tools alone stall at the tool-selection stage, or never get meaningfully past an initial demo — this is specifically built around actually embedding the workflow into how a team already works, not just showing them a capability once.",
+        },
+        {
+            subheading: "Who this is actually for",
+            body: "Teams genuinely willing to change how they work, not just add a chatbot on top of an unchanged process — the real value shows up in how planning, development, and content get done day to day, not in a single flashy feature bolted onto the existing way of doing things. It's demonstrated by our own practice specifically because we use these workflows ourselves daily, not as a pitch we don't apply internally.",
+        },
+        {
+            subheading: "What's often misunderstood before we start",
+            body: "The most common: expecting AI adoption to be a single tool purchase — the actual work is redesigning specific workflows (how a brief becomes a draft, how a report gets written) around AI assistance, which takes deliberate process change, not a subscription. The second: assuming AI output needs no human review — every workflow we build in keeps a clear human checkpoint before anything ships, because unreviewed AI output in a business context is a real, specific risk. The third: treating this as replacing a team rather than changing what they spend time on — the honest goal is shifting people away from repetitive first-draft work and toward judgment, review, and the decisions that actually need a person.",
         },
     ],
 }

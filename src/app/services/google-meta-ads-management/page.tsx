@@ -6,6 +6,7 @@ import ServicesOffered from '@/components/services/service_offered'
 import ServiceProcess from '@/components/services/service_process'
 import ServiceIndustries from '@/components/services/service_industries'
 import ServiceFAQ from '@/components/services/service_faq'
+import ServiceClientList from '@/components/services/service_clients'
 import ServiceCTA from '@/components/services/service_cta'
 import { AdsManagementHero, AdsManagementAbout, AdsManagementServicesOffered, AdsManagementProcess, AdsManagementIndustries, AdsManagementFAQ , AdsManagementDeepDive } from '@/constant/services_data'
 
@@ -23,6 +24,7 @@ export default function GoogleMetaAdsManagementPage() {
             <ServicesOffered data={AdsManagementServicesOffered} />
             <ServiceProcess data={AdsManagementProcess} />
             <ServiceIndustries data={AdsManagementIndustries} />
+            <ServiceClientList serviceSlug="google-meta-ads-management" />
             <ServiceFAQ data={AdsManagementFAQ} />
             <ServiceCTA />
         </main>

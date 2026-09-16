@@ -6,6 +6,7 @@ import ServicesOffered from '@/components/services/service_offered'
 import ServiceProcess from '@/components/services/service_process'
 import ServiceIndustries from '@/components/services/service_industries'
 import ServiceFAQ from '@/components/services/service_faq'
+import ServiceClientList from '@/components/services/service_clients'
 import ServiceCTA from '@/components/services/service_cta'
 import { CorporateProfileHero, CorporateProfileAbout, CorporateProfileServicesOffered, CorporateProfileProcess, CorporateProfileIndustries, CorporateProfileFAQ , CorporateProfileDeepDive } from '@/constant/services_data'
 
@@ -23,6 +24,7 @@ export default function CorporateProfileCreationPage() {
             <ServicesOffered data={CorporateProfileServicesOffered} />
             <ServiceProcess data={CorporateProfileProcess} />
             <ServiceIndustries data={CorporateProfileIndustries} />
+            <ServiceClientList serviceSlug="corporate-profile-creation" />
             <ServiceFAQ data={CorporateProfileFAQ} />
             <ServiceCTA />
         </main>

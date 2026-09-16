@@ -6,6 +6,7 @@ import ServicesOffered from '@/components/services/service_offered'
 import ServiceProcess from '@/components/services/service_process'
 import ServiceIndustries from '@/components/services/service_industries'
 import ServiceFAQ from '@/components/services/service_faq'
+import ServiceClientList from '@/components/services/service_clients'
 import ServiceCTA from '@/components/services/service_cta'
 import { AnalyticsReportingHero, AnalyticsReportingAbout, AnalyticsReportingServicesOffered, AnalyticsReportingProcess, AnalyticsReportingIndustries, AnalyticsReportingFAQ , AnalyticsReportingDeepDive } from '@/constant/services_data'
 
@@ -23,6 +24,7 @@ export default function AnalyticsReportingPage() {
             <ServicesOffered data={AnalyticsReportingServicesOffered} />
             <ServiceProcess data={AnalyticsReportingProcess} />
             <ServiceIndustries data={AnalyticsReportingIndustries} />
+            <ServiceClientList serviceSlug="analytics-reporting" />
             <ServiceFAQ data={AnalyticsReportingFAQ} />
             <ServiceCTA />
         </main>

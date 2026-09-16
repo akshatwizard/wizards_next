@@ -6,6 +6,7 @@ import ServicesOffered from '@/components/services/service_offered'
 import ServiceProcess from '@/components/services/service_process'
 import ServiceIndustries from '@/components/services/service_industries'
 import ServiceFAQ from '@/components/services/service_faq'
+import ServiceClientList from '@/components/services/service_clients'
 import ServiceCTA from '@/components/services/service_cta'
 import { WhatsAppMarketingHero, WhatsAppMarketingAbout, WhatsAppMarketingServicesOffered, WhatsAppMarketingProcess, WhatsAppMarketingIndustries, WhatsAppMarketingFAQ , WhatsAppMarketingDeepDive } from '@/constant/services_data'
 
@@ -23,6 +24,7 @@ export default function WhatsappMarketingPage() {
             <ServicesOffered data={WhatsAppMarketingServicesOffered} />
             <ServiceProcess data={WhatsAppMarketingProcess} />
             <ServiceIndustries data={WhatsAppMarketingIndustries} />
+            <ServiceClientList serviceSlug="whatsapp-marketing" />
             <ServiceFAQ data={WhatsAppMarketingFAQ} />
             <ServiceCTA />
         </main>
