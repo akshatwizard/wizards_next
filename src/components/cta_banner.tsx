@@ -2,13 +2,44 @@ import Link from "next/link";
 import { Section, Wrapper } from "./ui/sections";
 import { FadeUp } from "./ui/motion_components";
 import { clients } from "@/constant/clients";
+import { ALL_SERVICES } from "@/constant/service_meta";
+import { SECTOR_INDEX } from "@/constant/sector_index";
+
+// Real numbers only — no "Live" claim, no invented average, no fake
+// urgency. See CTA-BANNER-CHANGES.md for why this replaced the old
+// mock "Campaign Overview" dashboard and the "Limited Spots" badge.
+const STATS = [
+    { value: `${clients.length}+`, label: "Clients Served" },
+    { value: `${ALL_SERVICES.length}+`, label: "Services Offered" },
+    { value: "24+", label: "Years Combined Experience" },
+    { value: `${SECTOR_INDEX.length}`, label: "Industries Served" },
+];
+
+const PROCESS_STEPS = [
+    {
+        title: "A quick call",
+        desc: "20 minutes, no pitch deck. We ask about your business and what you're actually trying to achieve.",
+    },
+    {
+        title: "We look at what's already working",
+        desc: "A real read on your current site, socials, and search presence — not a canned audit template.",
+    },
+    {
+        title: "A scoped plan, not a generic proposal",
+        desc: "Priced and built around what you actually need, not a one-size package.",
+    },
+    {
+        title: "No obligation",
+        desc: "If it's not a fit — for you or for us — we'll say so directly.",
+    },
+];
 
 export default function CTABanner() {
     return (
         <Section>
             <Wrapper>
                 <FadeUp delay={0.2}
-                    className="relative rounded-[20px] border min-h-70 flex items-center"
+                    className="relative rounded-[20px] border flex flex-col"
                     style={{
                         background: "#111108",
                         borderColor: "rgba(217,119,6,0.15)",
@@ -55,34 +86,20 @@ export default function CTABanner() {
                         </svg>
                     </div>
 
-                    {/* ── Floating stat chips ── */}
-                    <StatChip
-                        style={{ top: -24, left: 24 }}
-                        icon={<TrendingUpIcon />}
-                        value="4.2×"
-                        label="Avg. ROAS"
-                    />
-                    <StatChip
-                        style={{ bottom: -24, left: 24 }}
-                        icon={<UsersIcon />}
-                        value={`${clients.length}+`}
-                        label="Clients served"
-                    />
-
-                    {/* ── Main content ── */}
+                    {/* ── Top: CTA copy + honest stats panel ── */}
                     <div className="relative z-10 grid md:grid-cols-2 grid-cols-1 w-full items-center">
                         {/* Left — copy */}
                         <div className="p-10">
                             <div className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/30 rounded-full px-4 py-1.5 mb-4">
                                 <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
                                 <span className="text-amber-600 text-[12px] tracking-[1.5px] uppercase">
-                                    Limited spots — Q3 2026
+                                    Free 20-Min Strategy Call
                                 </span>
                             </div>
                             <h2
                                 className="tracking-tight text-zinc-200 leading-tight mb-3 lg:text-5xl md:text-4xl text-3xl font-medium"
                             >
-                                Ready to <span className="text-amber-600 font-sora!">10x</span> your<br />brand online?
+                                Ready to grow <span className="text-amber-600 font-sora!">your brand</span><br />online?
                             </h2>
                             <p className="text-zinc-200 text-sm font-light leading-relaxed max-w-sm mb-6">
                                 Join the {clients.length}+ businesses that trust Wizards Next to run their digital presence — from ads and
@@ -104,102 +121,52 @@ export default function CTABanner() {
                             </div>
                         </div>
 
-                        {/* Right — mock analytics card */}
+                        {/* Right — honest stats panel. No "Live" badge, no chart,
+                            no invented average — just what's real and already
+                            computed elsewhere on the site. */}
                         <div className="p-8 flex items-center justify-center">
                             <div
-                                className="w-110 rounded-[14px] p-4 flex flex-col gap-2.5 border"
+                                className="w-110 rounded-[14px] p-5 flex flex-col gap-3 border"
                                 style={{ background: "#0f0f0d", borderColor: "rgba(217,119,6,0.2)" }}
                             >
-                                {/* header */}
-                                <div className="flex items-center justify-between">
-                                    <span className="text-[12px] font-semibold text-zinc-100 tracking-wide">
-                                        Campaign Overview
-                                    </span>
-                                    <span className="text-[12px] font-semibold px-2 py-0.5 rounded border"
-                                        style={{ background: "rgba(217,119,6,0.15)", color: "#D97706", borderColor: "rgba(217,119,6,0.25)" }}>
-                                        Live
-                                    </span>
-                                </div>
-
-                                {/* stat pills */}
-                                <div className="grid grid-cols-3 gap-1.5">
-                                    {[["38%", "Reach ↑"], ["₹4.2L", "Revenue"], ["2.1K", "Leads"]].map(([v, l]) => (
-                                        <div key={l} className="rounded-lg p-2 text-center border"
+                                <span className="text-[12px] font-semibold text-zinc-100 tracking-wide">
+                                    Wizards Next, at a glance
+                                </span>
+                                <div className="grid grid-cols-2 gap-2">
+                                    {STATS.map(({ value, label }) => (
+                                        <div key={label} className="rounded-lg p-3 text-center border"
                                             style={{ background: "#18180f", borderColor: "rgba(217,119,6,0.1)" }}>
-                                            <div className="font-sora! text-amber-600 font-extrabold text-2xl lg:text-4xl md:text-3xl">
-                                                {v}
+                                            <div className="font-sora! text-amber-600 font-extrabold text-2xl lg:text-3xl">
+                                                {value}
                                             </div>
-                                            <div className="text-xs text-zinc-300 mt-0.5">{l}</div>
+                                            <div className="text-[11px] text-zinc-300 mt-0.5 leading-tight">{label}</div>
                                         </div>
                                     ))}
                                 </div>
-
-                                {/* bar chart */}
-                                <div className="flex items-end gap-1 h-11">
-                                    {[30, 55, 90, 65, 85, 50, 100].map((h, i) => (
-                                        <div key={i} className="flex-1 rounded-t-[3px]"
-                                            style={{ height: `${h}%`, background: [2, 4, 6].includes(i) ? "#D97706" : "rgba(217,119,6,0.2)" }} />
-                                    ))}
-                                </div>
-
-                                {/* footer */}
-                                <div className="flex items-center justify-between">
-                                    <span className="text-[12px] text-zinc-300">Last 7 days</span>
-                                    <span className="flex items-center gap-1 text-[12px] text-amber-600">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-amber-600 inline-block" />
-                                        Updating live
-                                    </span>
-                                </div>
                             </div>
+                        </div>
+                    </div>
+
+                    {/* ── Bottom: what actually happens when you book a call ── */}
+                    <div className="relative z-10 border-t px-10 py-8" style={{ borderColor: "rgba(217,119,6,0.12)" }}>
+                        <p className="text-zinc-100 text-[13px] font-semibold mb-5">What happens when you book that call</p>
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                            {PROCESS_STEPS.map((step, i) => (
+                                <div key={step.title} className="flex flex-col gap-2">
+                                    <div className="flex items-center gap-2">
+                                        <span className="w-6 h-6 rounded-full flex items-center justify-center text-[11px] font-bold shrink-0"
+                                            style={{ background: "rgba(217,119,6,0.15)", color: "#D97706" }}>
+                                            {i + 1}
+                                        </span>
+                                        <p className="text-zinc-100 text-[13px] font-medium">{step.title}</p>
+                                    </div>
+                                    <p className="text-zinc-300 text-[12px] leading-relaxed pl-8">{step.desc}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </FadeUp>
             </Wrapper>
         </Section>
-    );
-}
-
-/* ── small helpers ── */
-function StatChip({ icon, value, label, style }: {
-    icon: React.ReactNode; value: string; label: string;
-    style: { top?: number; bottom?: number; left?: number; right?: number };
-}) {
-    return (
-        <div
-            className="absolute flex items-center gap-2 rounded-[10px] border px-3 py-1.5"
-            style={{ background: "#0f0f0d", borderColor: "rgba(217,119,6,0.22)", ...style }}
-        >
-            <div className="w-6.5 h-6.5 rounded-[7px] flex items-center justify-center"
-                style={{ background: "rgba(217,119,6,0.12)" }}>
-                {icon}
-            </div>
-            <div>
-                <div className="font-extrabold text-[13px] text-zinc-200"
-                    style={{ fontFamily: "'Syne',sans-serif" }}>{value}</div>
-                <div className="text-[12px] text-zinc-300">{label}</div>
-            </div>
-        </div>
-    );
-}
-
-function TrendingUpIcon() {
-    return (
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-            stroke="#D97706" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-            <polyline points="17 6 23 6 23 12" />
-        </svg>
-    );
-}
-
-function UsersIcon() {
-    return (
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-            stroke="#D97706" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-            <circle cx="9" cy="7" r="4" />
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-        </svg>
     );
 }
