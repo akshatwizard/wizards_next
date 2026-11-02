@@ -36,7 +36,7 @@ export default function ServiceCTA() {
                                 className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 active:scale-[0.97] text-black text-[13px] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200">
                                 Start your project <ArrowRight size={15} />
                             </Link>
-                            <Link href="https://wa.me/919935070000"
+                            <Link href={"https://wa.me/918072199651?text=" + encodeURIComponent("Hi Wizards Next, I'd like to know more about your services.")}
                                 className="inline-flex items-center gap-2 border border-zinc-700 hover:border-zinc-600 text-zinc-300 text-[13px] font-medium px-7 py-3.5 rounded-xl transition-all duration-200">
                                 WhatsApp us
                                 <ExternalLink size={13} />

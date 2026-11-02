@@ -6,6 +6,7 @@ import Header from "@/components/header/header";
 import SmoothScrollProvider from "@/lib/SmoothScroll";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/footer";
+import WhatsAppButton from "@/components/whatsapp_button";
 import FirstTouch from "@/components/analytics/first_touch";
 import { SITE_URL, BUSINESS, GA_MEASUREMENT_ID } from "@/constant/site";
 
@@ -101,6 +102,7 @@ export default function RootLayout({
           {children}
         </SmoothScrollProvider>
         <Footer />
+        <WhatsAppButton />
         {/* Google Analytics 4 — only on the real production domain, so
             local dev and Vercel preview deployments (branches, PRs) never
             send test traffic into your real analytics data. */}

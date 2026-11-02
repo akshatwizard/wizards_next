@@ -87,7 +87,7 @@ export default function TermsOfServicePage() {
 
                         <LegalSection title="10. Contact Us">
                             Questions about these Terms can be sent to{" "}
-                            <a href="mailto:akshat@wizards.co.in" className="text-amber-600 hover:underline">akshat@wizards.co.in</a>.
+                            <a href="mailto:admin@wizards.co.in" className="text-amber-600 hover:underline">admin@wizards.co.in</a>.
                         </LegalSection>
                     </div>
                 </Wrapper>

@@ -21,8 +21,8 @@ export const BUSINESS = {
     legalName: "Wizards Next LLP",
     description:
         "Wizards Next is a full-service digital marketing agency with offices in Varanasi and Hyderabad, running 50+ projects across India — plus overseas clients in the USA, Russia, and Spain. Social media, branding, performance ads, SEO, and website development, under one roof.",
-    telephone: "+91-73394-74554",
-    email: "akshat@wizards.co.in",
+    telephone: "+91-80721-99651",
+    email: "admin@wizards.co.in",
     // Confirmed from the /contact page's own published contact details —
     // kept in sync with that page rather than duplicated by hand elsewhere.
     streetAddress: "D59/127 A-1-4, Nirala Nagar Lane No. 3, Shivpurwa",

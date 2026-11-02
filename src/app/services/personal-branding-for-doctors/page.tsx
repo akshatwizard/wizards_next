@@ -13,7 +13,7 @@ import { Section, Wrapper } from '@/components/ui/sections'
 import { FadeUp } from '@/components/ui/motion_components'
 import { ServiceDeepDiveType, ServiceFAQType, ServiceHeroTypes, ServiceProcessType, ServicesOfferedTypes } from '@/types/service.types'
 
-const WHATSAPP_URL = 'https://wa.me/917339474554?text=' + encodeURIComponent("Hi, I'm a doctor and want a free profile audit")
+const WHATSAPP_URL = 'https://wa.me/918072199651?text=' + encodeURIComponent("Hi, I'm a doctor and want a free profile audit")
 const CONTACT_URL = '/contact'
 
 export const metadata: Metadata = {
@@ -122,7 +122,7 @@ const faq: ServiceFAQType = {
         { q: 'Do I have to appear on camera?', a: 'No. Appearing on camera helps patients get to know you, but we also plan formats that do not need you on screen. Where you do appear, we give simple shooting guidance.' },
         { q: 'Is this only for dentists?', a: 'No. It is for all doctors and clinics — dentists, physicians, specialists and multi-doctor clinics.' },
         { q: 'What does it cost?', a: 'Personal branding for doctors and professionals starts from ₹40,000. The exact scope is agreed after your free profile audit call.' },
-        { q: 'How do I get started?', a: 'Book a free 15-minute profile audit through our contact form or message us on WhatsApp at +91 73394 74554.' },
+        { q: 'How do I get started?', a: 'Book a free 15-minute profile audit through our contact form or message us on WhatsApp at +91 80721 99651.' },
     ],
 }
 
@@ -172,12 +172,12 @@ function FinalCTA() {
                             </Link>
                             <Link href={WHATSAPP_URL}
                                 className="inline-flex items-center gap-2 border border-zinc-700 hover:border-zinc-600 text-zinc-300 text-[13px] font-medium px-7 py-3.5 rounded-xl transition-all duration-200">
-                                WhatsApp +91 73394 74554
+                                WhatsApp +91 80721 99651
                                 <ExternalLink size={13} />
                             </Link>
                         </div>
                         <p className="text-zinc-400 text-[12px] mt-6">
-                            Or call +91 99350 70000 · akshat@wizards.co.in
+                            Or call +91 80721 99651 · admin@wizards.co.in
                         </p>
                     </div>
                 </FadeUp>

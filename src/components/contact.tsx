@@ -9,8 +9,8 @@ import { getLeadSource } from "@/lib/lead-source";
 
 // Confirmed from the live wizards.co.in site — update here if these change.
 const contactInfo = [
-    { Icon: Phone, label: "Phone", value: "+91 73394 74554" },
-    { Icon: Mail, label: "Email", value: "akshat@wizards.co.in" },
+    { Icon: Phone, label: "Phone", value: "+91 80721 99651" },
+    { Icon: Mail, label: "Email", value: "admin@wizards.co.in" },
     { Icon: MapPin, label: "Location", value: "Varanasi, Uttar Pradesh — India" },
     { Icon: Clock, label: "Hours", value: "Mon – Sat, 10am – 7pm IST" }, // not confirmed on old site — verify
 ];

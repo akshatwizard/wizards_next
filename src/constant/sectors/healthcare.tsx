@@ -258,7 +258,7 @@ export const HealthcareSectorMidCTA = {
     subheading:
         'We offer a free 30-minute digital audit for healthcare practices. Tell us where you are — we\'ll show you exactly where patients are dropping off.',
     primaryCta: { label: 'Book a free audit', href: '/contact' },
-    secondaryCta: { label: 'WhatsApp us', href: 'https://wa.me/919876543210' },
+    secondaryCta: { label: 'WhatsApp us', href: 'https://wa.me/918072199651?text=' + encodeURIComponent("Hi Wizards Next, I'd like to know more about your services.") },
 }
 
 // ─── Clients ───────────────────────────────────────────────────

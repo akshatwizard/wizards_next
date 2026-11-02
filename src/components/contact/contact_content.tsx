@@ -1,5 +1,6 @@
 "use client";
 
+import { trackWhatsAppClick } from "@/components/whatsapp_button";
 import { useState } from "react";
 import Link from "next/link";
 import { ChevronRight, Phone, Mail, MapPin, Clock, Loader2, CheckCircle2 } from "lucide-react";
@@ -12,9 +13,8 @@ import { getLeadSource } from "@/lib/lead-source";
 
 // Confirmed from the live wizards.co.in site — update here if these change.
 const contactInfo = [
-    { Icon: Phone, label: "Phone", value: "+91 73394 74554" },
-    { Icon: Phone, label: "Alternate", value: "+91 99350 70000" },
-    { Icon: Mail, label: "Email", value: "akshat@wizards.co.in" },
+    { Icon: Phone, label: "Phone", value: "+91 80721 99651" },
+    { Icon: Mail, label: "Email", value: "admin@wizards.co.in" },
     { Icon: MapPin, label: "Location", value: "D59/127 A-1-4, Nirala Nagar Lane No. 3, Shivpurwa, Varanasi – 221010" },
     { Icon: Clock, label: "Hours", value: "Mon – Sat, 10am – 7pm IST" }, // not confirmed on the old site — verify
 ];
@@ -126,6 +126,12 @@ export default function ContactContent() {
                                     </div>
                                 </div>
                             ))}
+                            <a href={"https://wa.me/918072199651?text=" + encodeURIComponent("Hi Wizards Next, I'd like to know more about your services.")}
+                                target="_blank" rel="noopener noreferrer"
+                                onClick={() => trackWhatsAppClick("/contact")}
+                                className="inline-flex items-center justify-center gap-2 bg-amber-600 hover:bg-amber-500 active:scale-[0.97] text-black text-[13px] font-semibold px-5 py-3 rounded-xl transition-all duration-200">
+                                Chat on WhatsApp
+                            </a>
                         </div>
 
                         {/* Right — form */}

@@ -102,7 +102,7 @@ export default function PrivacyPolicyPage() {
 
                         <LegalSection title="11. Contact Us">
                             Questions about this Privacy Policy can be sent to{" "}
-                            <a href="mailto:akshat@wizards.co.in" className="text-amber-600 hover:underline">akshat@wizards.co.in</a>.
+                            <a href="mailto:admin@wizards.co.in" className="text-amber-600 hover:underline">admin@wizards.co.in</a>.
                         </LegalSection>
                     </div>
                 </Wrapper>

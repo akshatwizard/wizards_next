@@ -106,11 +106,11 @@ export default function Footer() {
 
                         <ColumnHeading>Contact</ColumnHeading>
                         <div className="flex flex-col gap-2">
-                            <a href="mailto:akshat@wizards.co.in" className="text-zinc-200 text-[12px] hover:text-amber-600 transition-colors duration-200">
-                                akshat@wizards.co.in
+                            <a href="mailto:admin@wizards.co.in" className="text-zinc-200 text-[12px] hover:text-amber-600 transition-colors duration-200">
+                                admin@wizards.co.in
                             </a>
-                            <a href="tel:+917339474554" className="text-zinc-200 text-[12px] hover:text-amber-600 transition-colors duration-200">
-                                +91 73394 74554
+                            <a href="tel:+918072199651" className="text-zinc-200 text-[12px] hover:text-amber-600 transition-colors duration-200">
+                                +91 80721 99651
                             </a>
                             <span className="text-zinc-200 text-[12px]">Varanasi, UP — India</span>
                         </div>
