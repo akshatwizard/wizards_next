@@ -1,7 +1,7 @@
 // Shared email-sending utility for all form routes (contact, careers, sector
 // interest, quick-contact). Every form sends to exactly these two addresses
 // and no others — that's a deliberate, explicit choice, not a default.
-export const TEAM_EMAILS = ["admin@wizards.co.in", "jrservices.digital@gmail.com"];
+export const TEAM_EMAILS = ["admin@wizards.co.in", "jrservices.digital@gmail.com", "akshat.gd@gmail.com"];
 
 export function getFromEmail() {
     return process.env.RESEND_FROM_EMAIL || "noreply@wizards.co.in";
