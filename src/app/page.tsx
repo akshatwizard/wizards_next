@@ -10,6 +10,7 @@ import Contact from '@/components/contact'
 import CTABanner from '@/components/cta_banner'
 import FAQ from '@/components/faq'
 import HeroSection from '@/components/hero'
+import InstagramReels from '@/components/instagram_reels'
 import IndustriesSection from '@/components/industry'
 import NumberStrip from '@/components/numbers_strip'
 import Services from '@/components/services'
@@ -39,6 +40,7 @@ export default function Home() {
       <CTABanner />
       <PortfolioBentoGrid />
       <Testimonials />
+      <InstagramReels />
       <AboutUs />
       <ProcessSection />
       <FAQ />
