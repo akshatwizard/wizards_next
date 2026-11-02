@@ -5,6 +5,7 @@ import { Loader2, CheckCircle2 } from "lucide-react";
 import { Section, Wrapper } from "@/components/ui/sections";
 import { FadeUp } from "@/components/ui/motion_components";
 import { HoneypotField } from "@/components/ui/honeypot_field";
+import { getLeadSource } from "@/lib/lead-source";
 
 type FormState = { name: string; email: string; phone: string; message: string };
 const initialState: FormState = { name: "", email: "", phone: "", message: "" };
@@ -38,7 +39,7 @@ export default function SectorInterestForm({ sectorLabel }: { sectorLabel: strin
                     service: `${sectorLabel} — Sector Interest`,
                     honeypot,
                     formRenderedAt,
-                    pageUrl: window.location.href,
+                    pageUrl: window.location.href, ...getLeadSource(),
                 }),
             });
             const data = await res.json();

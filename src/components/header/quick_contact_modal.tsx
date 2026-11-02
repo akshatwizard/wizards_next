@@ -3,6 +3,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { X, Loader2, CheckCircle2 } from "lucide-react";
 import { HoneypotField } from "../ui/honeypot_field";
+import { getLeadSource } from "@/lib/lead-source";
 
 type FormState = { name: string; phone: string; email: string; message: string };
 const initialState: FormState = { name: "", phone: "", email: "", message: "" };
@@ -41,7 +42,7 @@ export default function QuickContactModal({ open, onClose, openedAt }: { open: b
             const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ ...form, service: "Get Started — Quick Contact", honeypot, formRenderedAt: openedAt, pageUrl: window.location.href }),
+                body: JSON.stringify({ ...form, service: "Get Started — Quick Contact", honeypot, formRenderedAt: openedAt, pageUrl: window.location.href, ...getLeadSource() }),
             });
             const data = await res.json();
             if (!res.ok) throw new Error(data?.error || "Something went wrong.");

@@ -11,6 +11,7 @@ export async function POST(request: Request) {
     try {
         const body = await request.json();
         const { name, phone, email, service, message, honeypot, formRenderedAt, pageUrl } = body ?? {};
+        const src = (k: string) => (typeof body?.[k] === "string" ? String(body[k]).slice(0, 500) : "");
 
         // ── Spam checks — run before validation so bots get a generic
         // rejection rather than field-specific feedback that helps them adapt.
@@ -79,6 +80,15 @@ export async function POST(request: Request) {
             console.error("Acknowledgement email failed to send:", ackResult.error);
         }
 
+        // CRM intake (app.insightsum.com) — best-effort, never affects the form.
+        // Skipped entirely until LEADS_INTAKE_SECRET is set in the environment.
+        await pushLeadToCrm({
+            name, email, phone, message, service, page_url: pageUrl,
+            utm_source: src("utm_source"), utm_medium: src("utm_medium"), utm_campaign: src("utm_campaign"),
+            utm_term: src("utm_term"), utm_content: src("utm_content"),
+            referrer: src("referrer"), landing_page: src("landing_page"),
+        });
+
         return NextResponse.json({ success: true });
     } catch (err) {
         console.error("Contact form error:", err);
@@ -86,5 +96,22 @@ export async function POST(request: Request) {
             { error: "Something went wrong. Please try again." },
             { status: 500 }
         );
+    }
+}
+
+async function pushLeadToCrm(lead: Record<string, unknown>) {
+    const secret = process.env.LEADS_INTAKE_SECRET;
+    if (!secret) return;
+    const url = process.env.LEADS_INTAKE_URL || "https://app.insightsum.com/api/leads/intake";
+    try {
+        const res = await fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "X-Intake-Secret": secret },
+            body: JSON.stringify(lead),
+            signal: AbortSignal.timeout(5000),
+        });
+        if (!res.ok) console.error("CRM lead intake failed:", res.status);
+    } catch (err) {
+        console.error("CRM lead intake error:", err instanceof Error ? err.message : err);
     }
 }

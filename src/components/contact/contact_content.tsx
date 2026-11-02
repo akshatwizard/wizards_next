@@ -8,6 +8,7 @@ import { FadeUp } from "@/components/ui/motion_components";
 import { SectionBadge } from "@/components/services/section_badge";
 import { services } from "@/constant/services";
 import { HoneypotField } from "@/components/ui/honeypot_field";
+import { getLeadSource } from "@/lib/lead-source";
 
 // Confirmed from the live wizards.co.in site — update here if these change.
 const contactInfo = [
@@ -53,7 +54,7 @@ export default function ContactContent() {
             const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ ...form, honeypot, formRenderedAt, pageUrl: window.location.href }),
+                body: JSON.stringify({ ...form, honeypot, formRenderedAt, pageUrl: window.location.href, ...getLeadSource() }),
             });
             const data = await res.json();
 

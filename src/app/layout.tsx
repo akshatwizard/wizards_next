@@ -6,6 +6,7 @@ import Header from "@/components/header/header";
 import SmoothScrollProvider from "@/lib/SmoothScroll";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/footer";
+import FirstTouch from "@/components/analytics/first_touch";
 import { SITE_URL, BUSINESS, GA_MEASUREMENT_ID } from "@/constant/site";
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
@@ -94,6 +95,7 @@ export default function RootLayout({
             __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c"),
           }}
         />
+        <FirstTouch />
         <Header />
         <SmoothScrollProvider>
           {children}
