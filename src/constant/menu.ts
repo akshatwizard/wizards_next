@@ -16,6 +16,7 @@ export const NavMenu: MenuType[] = [
         path: "/services",
         subMenu: [
             { name: "Social Media Planning & Management", path: "/services/social-media" },
+            { name: "Personal Branding for Doctors", path: "/services/personal-branding-for-doctors" },
             { name: "Content Creation", path: "/services/content-creation" },
             { name: "Videography", path: "/services/videography" },
             { name: "Video Editing", path: "/services/video-editing" },
