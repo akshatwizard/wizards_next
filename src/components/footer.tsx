@@ -41,6 +41,7 @@ const sectors = [
 const company = [
     { label: "About Us", href: "/about" },
     { label: "Our Work", href: "/our-works" },
+    { label: "Social Media Clients", href: "/social-media-clients" },
     // "Blog" is hidden along with the homepage blog section and the nav
     // item above until real posts are ready — restore all together.
     // { label: "Blog", href: "/blogs" },

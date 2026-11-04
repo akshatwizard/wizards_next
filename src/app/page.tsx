@@ -19,6 +19,7 @@ import ProcessSection from '@/components/steps'
 // Team is hidden until real, complete team details are ready to publish.
 // import Team from '@/components/teams'
 import PortfolioBentoGrid from '@/components/work'
+import SmmClientsStrip from '@/components/smm_clients_strip'
 import React from 'react'
 
 export const metadata = {
@@ -43,6 +44,7 @@ export default async function Home() {
       <IndustriesSection />
       <CTABanner />
       <PortfolioBentoGrid />
+      <SmmClientsStrip />
       <Testimonials />
       <InstagramReels reels={reels} />
       <AboutUs />

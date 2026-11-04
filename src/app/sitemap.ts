@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/constant/site";
 import { ALL_SERVICES } from "@/constant/service_meta";
 import { clients } from "@/constant/clients";
+import { smmClients } from "@/constant/smm_clients";
 import { NavMenu } from "@/constant/menu";
 
 // Sector slugs are derived from the same nav data every sector link on the
@@ -21,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: `${SITE_URL}/services/personal-branding-for-doctors`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
         { url: `${SITE_URL}/sector`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
         { url: `${SITE_URL}/our-works`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+        { url: `${SITE_URL}/social-media-clients`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
         { url: `${SITE_URL}/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.6 },
         { url: `${SITE_URL}/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
         { url: `${SITE_URL}/careers`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
@@ -49,5 +51,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
     }));
 
-    return [...staticRoutes, ...serviceRoutes, ...sectorRoutes, ...clientRoutes];
+    const smmClientRoutes: MetadataRoute.Sitemap = smmClients.map((c) => ({
+        url: `${SITE_URL}/social-media-clients/${c.slug}`,
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.6,
+    }));
+
+    return [...staticRoutes, ...serviceRoutes, ...sectorRoutes, ...clientRoutes, ...smmClientRoutes];
 }
