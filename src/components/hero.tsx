@@ -6,11 +6,17 @@ import Image from 'next/image'
 import { FadeUp } from './ui/motion_components'
 import { ShieldCheck } from 'lucide-react'
 import { clients } from '@/constant/clients'
-import { getInitials } from '@/lib/utils'
 
-// Real client initials for the trust-badge avatar stack — never placeholder
-// names. Falls back gracefully as the roster grows past 4.
-const trustAvatars = clients.slice(0, 4).map((c) => getInitials(c.name))
+// Real client logos for the trust-badge avatar stack — 3 website clients
+// (logos from their own sites) + 3 social media clients (Instagram profile pictures).
+const trustAvatars = [
+    { name: "Girdhar Das & Sons", src: "/images/clients/gd-sons/logo.webp" },
+    { name: "Clinica Derm", src: "/images/clients/clinica-derm/logo.webp" },
+    { name: "Harish Chandra PG College", src: "/images/clients/harish-chandra-pg-college/logo.webp" },
+    { name: "Dhanuka Silks", src: "/images/smm/dhanuka-silks.jpg" },
+    { name: "Dr K Shilpi Reddy", src: "/images/smm/dr-k-shilpi-reddy.jpg" },
+    { name: "GNSR Textiles", src: "/images/smm/gnsr-textiles-logo.webp" },
+]
 
 export default function HeroSection() {
 
@@ -63,14 +69,17 @@ export default function HeroSection() {
 
                         <FadeUp delay={0.2} className='mt-10 flex items-center gap-2'>
                             <div className="flex pointer-events-none select-none">
-                                {trustAvatars.map((initials, i) => (
-                                    <div
-                                        key={initials + i}
-                                        className="text-zinc-200 w-7 h-7 rounded-full border-2 border-zinc-950 bg-zinc-800 flex items-center justify-center text-[12px] font-semibold text-amber-500"
+                                {trustAvatars.map((a, i) => (
+                                    <Image
+                                        key={a.src}
+                                        src={a.src}
+                                        alt={a.name}
+                                        width={28}
+                                        height={28}
+                                        unoptimized
+                                        className="w-7 h-7 rounded-full border-2 border-zinc-950 bg-white object-cover"
                                         style={{ marginLeft: i === 0 ? 0 : -8 }}
-                                    >
-                                        {initials}
-                                    </div>
+                                    />
                                 ))}
                             </div>
                             <p className="text-[12px] leading-snug text-zinc-200">
