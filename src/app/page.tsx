@@ -1,12 +1,12 @@
 import AboutUs from '@/components/about'
 // BlogSection is hidden site-wide until real blog content is ready — see
-// note by the <Contact /> section below and src/constant/menu.ts /
+// note by the booking section at the bottom and src/constant/menu.ts /
 // src/components/footer.tsx, where the corresponding nav links are hidden
 // the same way. Restore all three together.
 // import BlogSection from '@/components/blogs'
 import ClientMarquee from '@/components/client_marquee'
 import Testimonials from '@/components/client_testimonials'
-import Contact from '@/components/contact'
+import BookingApp from '@/components/book/booking_app'
 import CTABanner from '@/components/cta_banner'
 import FAQ from '@/components/faq'
 import HeroSection from '@/components/hero'
@@ -52,7 +52,8 @@ export default async function Home() {
       <FAQ />
       {/* <Team /> — hidden until real team bios/photos are ready, see import note above */}
       {/* <BlogSection /> — hidden until real blog posts exist, see import note above */}
-      <Contact />
+      {/* Free 30-min Exploration Call booking, embedded inline (replaces the old contact form) */}
+      <BookingApp embedded />
     </main>
   )
 }

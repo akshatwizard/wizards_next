@@ -276,7 +276,7 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
                                 onClick={onClose}
                                 className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-linear-to-r from-[#FEE800] via-[#FD9E17] to-[#FD7303] text-black font-semibold text-sm"
                             >
-                                Book a free call
+                                Free Exploration Call
                             </Link>
                         </div>
 

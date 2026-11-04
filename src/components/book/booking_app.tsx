@@ -54,7 +54,9 @@ const btn = "inline-flex items-center justify-center gap-2 bg-amber-600 hover:bg
 const ghost = "inline-flex items-center justify-center gap-2 border border-zinc-700 hover:border-amber-600/50 text-zinc-100 text-[12.5px] font-medium px-4 py-2.5 rounded-xl transition-all duration-200 disabled:opacity-50";
 const input = "w-full bg-zinc-900 border border-zinc-800 focus:border-amber-600/60 outline-none rounded-xl px-4 py-3 text-[13px] text-zinc-100 placeholder:text-zinc-500";
 
-export default function BookingApp() {
+export default function BookingApp({ embedded = false }: { embedded?: boolean } = {}) {
+    const Root = embedded ? "div" : "main";
+    const Heading = embedded ? "h2" : "h1";
     const [token, setToken] = useState<string | null>(null);
     const [user, setUser] = useState<User | null>(null);
     const [days, setDays] = useState<Day[]>([]);
@@ -106,8 +108,8 @@ export default function BookingApp() {
     const canBook = user && !user.needsProfile && !upcoming.length && !user.freeConsultationUsed;
 
     return (
-        <main>
-            <Section className="relative overflow-hidden">
+        <Root>
+            <Section id={embedded ? "book" : undefined} className="relative overflow-hidden">
                 <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.15]"
                     style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)", backgroundSize: "48px 48px" }} />
                 <div aria-hidden className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-175 h-87.5"
@@ -115,17 +117,19 @@ export default function BookingApp() {
                 <Wrapper>
                     <div>
                         <FadeUp delay={0}>
+                            {!embedded && (
                             <div className="flex items-center gap-1.5 text-[12px] text-zinc-300 mb-6">
                                 <Link href="/" className="hover:text-zinc-100 transition-colors">Home</Link>
                                 <ChevronRight size={12} />
                                 <span className="text-zinc-100">Book a call</span>
                             </div>
+                            )}
                             <SectionBadge label="Free 30-Min Exploration Call" />
                         </FadeUp>
                         <FadeUp delay={0.08}>
-                            <h1 className="tracking-tight text-zinc-200 leading-tight mb-3 lg:text-4xl text-3xl font-medium max-w-2xl">
+                            <Heading className="tracking-tight text-zinc-200 leading-tight mb-3 lg:text-4xl text-3xl font-medium max-w-2xl">
                                 Book your free <span className="text-amber-600 font-sora">Exploration Call</span>
-                            </h1>
+                            </Heading>
                         </FadeUp>
                         <FadeUp delay={0.15}>
                             <p className="text-zinc-200 text-sm font-light max-w-xl">
@@ -199,7 +203,7 @@ export default function BookingApp() {
                     </FadeUp>
                 </Wrapper>
             </Section>
-        </main>
+        </Root>
     );
 }
 

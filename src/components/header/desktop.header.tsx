@@ -53,7 +53,7 @@ const itemVariants: Variants = {
     },
 };
 
-export default function DesktopHeader({ scrolled, onGetStarted }: { scrolled: boolean | null; onGetStarted: () => void }) {
+export default function DesktopHeader({ scrolled }: { scrolled: boolean | null; onGetStarted?: () => void }) {
     const currentPath = usePathname();
     const [hovered, setHovered] = useState<number | null>(null);
 
@@ -215,15 +215,19 @@ export default function DesktopHeader({ scrolled, onGetStarted }: { scrolled: bo
                     </div>
                 );
             })}
-            <motion.button
-                onClick={onGetStarted}
+            <motion.div
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.15, ease: [0.22, 1, 0.36, 1] }}
-                className="relative px-3.5 py-2 ml-1 cursor-pointer group rounded-lg bg-amber-600 text-sm text-zinc-950 transition-colors hover:bg-amber-500"
+                className="ml-1"
             >
-                Get Started
-            </motion.button>
+                <Link
+                    href="/book"
+                    className="relative block px-3.5 py-2 cursor-pointer group rounded-lg bg-amber-600 text-sm text-zinc-950 transition-colors hover:bg-amber-500"
+                >
+                    Free Exploration Call
+                </Link>
+            </motion.div>
         </div>
     );
 }
