@@ -496,50 +496,54 @@ export const clients: Client[] = [
         heroImage: "/images/smm/pdr-mall.jpg",
     },
     {
-        // TODO(Ravi): business details (products, address, years), engagement scope/results, screenshots; no website
+        // TODO(Ravi): engagement start year, results/metrics, screenshots
         slug: "rk-marbles-varanasi",
         name: "RK Marbles Varanasi",
         sectors: ["retail"],
-        tagline: "Tiles and marble store in Varanasi.",
+        tagline: "Varanasi's homegrown brand for marble, tiles and sanitary ware from India's top brands.",
         tags: ["Social Media"],
         services: ["social-media"],
-        overview: "RK Marbles is a tiles and marble store in Varanasi.\n\nWizards Next manages its social media presence on Instagram.",
+        overview: "RK Marbles is a homegrown Varanasi brand of marble, tiles and sanitary ware, selling products from all the top brands in India. It carries a big legacy and name in Varanasi. The business is owned by Neeraj Agarwal, and his son Soumya Agarwal looks after it.\n\nThe same company also runs Armonia Varanasi, a franchisee home décor and gifts store.\n\nWizards Next manages social media for both RK Marbles and Armonia — and for Wizards, associating with this project was a big breakthrough.",
         highlights: [
             "950+ Instagram followers",
-            "190+ Instagram posts",
+            "Marble, tiles and sanitary ware from India's top brands",
+            "A big legacy and name in Varanasi",
         ],
         links: [
             { label: "Instagram", url: "https://www.instagram.com/rkmarbles.varanasi/" },
+            { label: "Armonia Varanasi", url: "/our-works/armonia-varanasi" },
         ],
         heroImage: "/images/smm/rk-marbles-varanasi.jpg",
     },
     {
-        // TODO(Ravi): business details, engagement scope/results, screenshots; no website
+        // TODO(Ravi): engagement start year, results/metrics, screenshots
         slug: "armonia-varanasi",
         name: "Armonia Varanasi",
         sectors: ["retail"],
-        tagline: "Home décor and gifts store in Sigra, Varanasi.",
+        tagline: "Home décor and gifts franchisee store in Sigra, Varanasi, run by the RK Marbles group.",
         tags: ["Social Media"],
         services: ["social-media"],
-        overview: "Armonia is a home décor and gifts store on Sigra–Mahmoorganj Road in Varanasi.\n\nWizards Next manages its social media presence on Instagram.",
+        overview: "Armonia is a home décor and gifts store on Sigra–Mahmoorganj Road in Varanasi. It is a franchisee store operated by the RK Marbles group — owned by Neeraj Agarwal and run by Soumya Agarwal.\n\nWizards Next manages Armonia's Instagram, alongside the social media for RK Marbles.",
         highlights: [
             "4,200+ Instagram followers",
             "570+ Instagram posts",
+            "Franchisee store operated by the RK Marbles group",
         ],
         links: [
             { label: "Instagram", url: "https://www.instagram.com/armonia_varanasi/" },
+            { label: "RK Marbles Varanasi", url: "/our-works/rk-marbles-varanasi" },
         ],
         heroImage: "/images/smm/armonia-varanasi.jpg",
     },
     {
-        // TODO(Ravi): engagement start year, scope (Shopify/ads/SEO per old projects list?), results, screenshots
+        // TODO(Ravi): engagement start year, Shopify/ads/SEO scope per old projects list?, results, screenshots
         slug: "banarsi-saree",
         name: "Banarsi Saree",
         sectors: ["e-commerce", "retail"],
         tagline: "Online store for Banarasi silk sarees and suits, made in Varanasi.",
-        tags: ["Social Media"],
-        services: ["social-media"],
-        overview: "BanarsiSaree.com, under the Sanskar label, is an online store for Banarasi sarees made in Varanasi — Katan and Georgette silk sarees, pure handloom pieces and Banarasi three-piece suits with golden zari weaving, crafted by Varanasi weavers.\n\nWizards Next manages the brand's social media presence on Instagram.",
+        tags: ["Social Media", "Website Development"],
+        services: ["social-media", "website-development"],
+        overview: "BanarsiSaree.com, under the Sanskar label, is an online store for Banarasi sarees made in Varanasi — Katan and Georgette silk sarees, pure handloom pieces and Banarasi three-piece suits with golden zari weaving, crafted by Varanasi weavers.\n\nWizards Next designed and built the BanarsiSaree.com website around three years ago. Wizards Next also manages the brand's social media presence on Instagram.",
         highlights: [
             "29K+ Instagram followers",
             "890+ Instagram posts",
@@ -554,14 +558,14 @@ export const clients: Client[] = [
         heroImage: "/images/smm/banarsi-saree-logo.png",
     },
     {
-        // TODO(Ravi): engagement start year, scope (did we build ricemillconsultant.com?), results, screenshots
+        // TODO(Ravi): engagement start year, results, screenshots
         slug: "b-khaitan",
         name: "B Khaitan",
         sectors: ["corporate"],
         tagline: "Rice mill consultant with 46 years of hands-on experience.",
-        tags: ["Social Media"],
-        services: ["social-media"],
-        overview: "Bajrang Khaitan is a rice mill consultant from Uttar Pradesh who began working in the rice industry at 16 and has 46 years of hands-on experience across every aspect of rice milling.\n\nHe helps mill owners diagnose problems like low recovery, high breakage, frequent breakdowns and rising power bills, through online consultations, on-site mill visits across India and annual maintenance support. His site and channels share short, practical videos from real rice mills.\n\nWizards Next manages his social media presence on Instagram.",
+        tags: ["Social Media", "Website Development"],
+        services: ["social-media", "website-development"],
+        overview: "Bajrang Khaitan is a rice mill consultant from Uttar Pradesh who began working in the rice industry at 16 and has 46 years of hands-on experience across every aspect of rice milling.\n\nHe helps mill owners diagnose problems like low recovery, high breakage, frequent breakdowns and rising power bills, through online consultations, on-site mill visits across India and annual maintenance support. His site and channels share short, practical videos from real rice mills.\n\nWizards Next designed and built his website, ricemillconsultant.com. Wizards Next also manages his social media presence on Instagram.",
         highlights: [
             "46 years of rice-milling experience",
             "2,300+ Instagram followers",
@@ -575,14 +579,18 @@ export const clients: Client[] = [
         heroImage: "/images/smm/b-khaitan.jpg",
     },
     {
-        // TODO(Ravi): what GNSR Textiles does (products, location), engagement scope/results, screenshots; no website
+        // TODO(Ravi): store location (city/address), screenshots
         slug: "gnsr-textiles",
         name: "GNSR Textiles",
         sectors: ["retail"],
-        tagline: "Textiles business.",
+        tagline: "Banarasi-fabric sarees, suits, kurtas, accessories and home linen.",
         tags: ["Social Media"],
         services: ["social-media"],
-        overview: "GNSR Textiles is a textiles business.\n\nWizards Next manages its social media presence on Instagram.",
+        overview: "GNSR Textiles is a store offering Banarasi-fabric products: sarees, suits and dupattas for women, kurtas for men, potli bags and handbags as accessories, and bed sheets.\n\nWizards Next has managed GNSR Textiles' Instagram for around the last year and a half, building the account from scratch — zero followers — to around 7,000.",
+        highlights: [
+            "0 to 7K+ Instagram followers in ~18 months",
+            "Sarees, suits, dupattas, men's kurtas, accessories and bed sheets",
+        ],
         links: [
             { label: "Instagram", url: "https://www.instagram.com/gnsr_textiles/" },
         ],
@@ -611,14 +619,14 @@ export const clients: Client[] = [
         heroImage: "/images/smm/maansinghka-agencies.jpg",
     },
     {
-        // TODO(Ravi): engagement start year, scope (website?), results, screenshots
+        // TODO(Ravi): engagement start year, results, screenshots
         slug: "kasibunkari",
         name: "Kasibunkari",
         sectors: ["e-commerce", "retail"],
         tagline: "Handloom ethnic wear from Varanasi weavers — sarees, lehengas and suits.",
-        tags: ["Social Media"],
-        services: ["social-media"],
-        overview: "Kasibunkari is a Varanasi ethnic-wear brand selling sarees, lehengas and suits that blend Banarasi handloom craftsmanship with contemporary silhouettes, sourced directly from Varanasi weavers and shipped across India.\n\nIts store is in Ramkatora, Varanasi, and it caters to weddings, corporate gifting and retail.\n\nWizards Next manages the brand's social media presence on Instagram.",
+        tags: ["Social Media", "Website Development"],
+        services: ["social-media", "website-development"],
+        overview: "Kasibunkari is a Varanasi ethnic-wear brand selling sarees, lehengas and suits that blend Banarasi handloom craftsmanship with contemporary silhouettes, sourced directly from Varanasi weavers and shipped across India.\n\nIts store is in Ramkatora, Varanasi, and it caters to weddings, corporate gifting and retail.\n\nWizards Next recently designed and built the Kasibunkari website. Wizards Next also manages the brand's social media presence on Instagram.",
         highlights: [
             "3,900+ Instagram followers",
             "1,100+ Instagram posts",

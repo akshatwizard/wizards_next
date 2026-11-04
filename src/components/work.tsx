@@ -24,6 +24,7 @@ export function ProjectCard({ client }: { client: Client }) {
                 {heroImage ? (
                     <Image
                         src={heroImage}
+                        unoptimized={heroImage.startsWith("/images/smm/")}
                         alt={`${name} illustration`}
                         width={1254}
                         height={1254}

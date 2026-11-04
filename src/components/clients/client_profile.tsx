@@ -228,6 +228,7 @@ export default function ClientProfile({ client }: { client: Client }) {
                                 <div className="float-right w-[45%] sm:w-[380px] ml-8 mb-4">
                                     <Image
                                         src={client.heroImage}
+                                        unoptimized={client.heroImage.startsWith("/images/smm/")}
                                         alt={`${client.name} — conceptual illustration`}
                                         width={1254}
                                         height={1254}

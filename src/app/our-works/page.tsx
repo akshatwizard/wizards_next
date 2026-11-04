@@ -40,6 +40,7 @@ function ClientCard({ client }: { client: (typeof clients)[0] }) {
                 {client.heroImage ? (
                     <Image
                         src={client.heroImage}
+                        unoptimized={client.heroImage.startsWith("/images/smm/")}
                         alt={`${client.name} illustration`}
                         width={1254}
                         height={1254}
