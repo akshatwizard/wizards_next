@@ -34,7 +34,7 @@ export default function SmmClientsStrip() {
                     {smmClients.map((c) => (
                         <Link
                             key={c.slug}
-                            href={`/social-media-clients/${c.slug}`}
+                            href={`/our-works/${c.slug}`}
                             className="group bg-zinc-900 border border-zinc-800 hover:border-amber-600/30 rounded-2xl p-3 flex flex-col items-center gap-2 text-center transition-colors"
                         >
                             <SmmAvatar client={c} size={64} />

@@ -49,7 +49,7 @@ export default function SocialMediaClientsPage() {
                                 key={c.slug}
                                 className="group bg-zinc-900 border border-zinc-800 hover:border-amber-600/30 rounded-2xl p-5 flex flex-col gap-4 transition-colors"
                             >
-                                <Link href={`/social-media-clients/${c.slug}`} className="flex items-center gap-4">
+                                <Link href={`/our-works/${c.slug}`} className="flex items-center gap-4">
                                     <SmmAvatar client={c} size={64} />
                                     <div className="min-w-0">
                                         <p className="text-zinc-100 font-syne font-bold text-[18px] leading-snug group-hover:text-amber-600 transition-colors">{c.name}</p>
@@ -59,7 +59,7 @@ export default function SocialMediaClientsPage() {
                                 <p className="text-zinc-300 text-[13.5px] leading-relaxed flex-1">{c.tagline}</p>
                                 <div className="flex flex-wrap items-center gap-2">
                                     <Link
-                                        href={`/social-media-clients/${c.slug}`}
+                                        href={`/our-works/${c.slug}`}
                                         className="inline-flex items-center gap-1.5 bg-amber-600 hover:bg-amber-500 text-black text-[12px] font-semibold px-4 py-2 rounded-lg transition-colors"
                                     >
                                         View <ArrowUpRight size={12} />

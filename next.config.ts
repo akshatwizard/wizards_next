@@ -19,6 +19,13 @@ const nextConfig: NextConfig = {
         destination: "https://work.wizards.co.in/login",
         permanent: true,
       },
+      {
+        // The thin social-media client pages were replaced by full case
+        // studies; slugs are identical, so one rule covers every client.
+        source: "/social-media-clients/:slug",
+        destination: "/our-works/:slug",
+        permanent: true,
+      },
     ];
   },
 };

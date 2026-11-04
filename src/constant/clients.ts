@@ -342,6 +342,297 @@ export const clients: Client[] = [
         featured: true,
         imgHeight: "h-44",
     },
+    // ── Social Media Management clients ──────────────────────────────────
+    // Content below is drawn only from each client's own website, public
+    // Instagram profile counts (fetched Nov 2026) and public listings.
+    // Engagement details (start date, scope, results) are not yet known.
+
+    {
+        // TODO(Ravi): engagement start year, exact scope beyond Instagram, any results/metrics, screenshots
+        slug: "mrs-mom-event",
+        name: "Mrs Mom Event",
+        sectors: ["healthcare"],
+        tagline: "A health pageant and wellness-education event that celebrates moms-to-be.",
+        tags: ["Social Media"],
+        services: ["social-media"],
+        overview: "Mrs Mom Event is a beauty and health pageant created exclusively for pregnant women, celebrating the confidence, grace and joy of motherhood. It is part of the same women's-health ecosystem as Dr K Shilpi Reddy.\n\nAlongside the pageant, the event focuses on wellness and education in pregnancy and infant care — sustainability, cooking classes, spiritual well-being, free dental and medical screenings, personality development workshops and a mom's makeover — with an emphasis on informed parenting for the best outcomes for mother and child.\n\nWizards Next manages the event's social media presence on Instagram.",
+        highlights: [
+            "795+ Instagram followers",
+            "A pageant designed exclusively for pregnant women",
+            "Wellness sessions, free health screenings and workshops for expecting parents",
+        ],
+        website: "https://www.mrsmomevent.com",
+        links: [
+            { label: "Instagram", url: "https://www.instagram.com/mrsmomevent/" },
+            { label: "Dr K Shilpi Reddy", url: "/our-works/dr-k-shilpi-reddy" },
+        ],
+        heroImage: "/images/smm/mrs-mom-event.jpg",
+    },
+    {
+        // TODO(Ravi): engagement start year, scope (reels/ads/website?), results, screenshots
+        slug: "dr-ankita-chauhan",
+        name: "Dr Ankita Chauhan",
+        sectors: ["healthcare"],
+        tagline: "Consultant obstetrician & gynaecologist in Gachibowli, Hyderabad.",
+        tags: ["Social Media"],
+        services: ["social-media"],
+        overview: "Dr Ankita Chauhan is a Consultant Obstetrician & Gynaecologist in Gachibowli, Hyderabad. She holds an MBBS, an MS in Obstetrics & Gynaecology and fellowship training in laparoscopy, and is a member of FOGSI and IMA.\n\nHer practice covers pregnancy care and high-risk obstetrics, normal and caesarean deliveries, infertility and PCOS management, minimally invasive laparoscopic surgery for fibroids, cysts and endometriosis, and laser treatments for intimate health.\n\nWizards Next manages her social media presence on Instagram.",
+        highlights: [
+            "10+ years of experience in women's healthcare",
+            "MBBS, MS (OBG) with a fellowship in laparoscopy",
+            "Member of FOGSI & IMA",
+        ],
+        website: "https://drankitachauhan.com",
+        links: [
+            { label: "Instagram", url: "https://www.instagram.com/dr.ankitachauhan_/" },
+            { label: "YouTube", url: "https://www.youtube.com/@DrAnkitaChauhan" },
+        ],
+        heroImage: "/images/smm/dr-ankita-chauhan.png",
+    },
+    {
+        // TODO(Ravi): engagement start year, scope, results, screenshots; credentials/years of practice not on her homepage
+        slug: "dr-aradhya-achuri",
+        name: "Dr Aradhya Achuri",
+        sectors: ["healthcare"],
+        tagline: "Fertility & IVF specialist in Hyderabad.",
+        tags: ["Social Media"],
+        services: ["social-media"],
+        overview: "Dr Aradhya Achuri runs an IVF and fertility clinic in Hyderabad offering IVF, IUI and personalised fertility care.\n\nHer website publishes a large library of patient-education articles — on egg and sperm freezing, ovarian and endometrial PRP, laparoscopy in infertility, pelvic-floor treatment and women's sexual health — the kind of educational content that also drives her social channels.\n\nWizards Next manages her social media presence on Instagram.",
+        highlights: [
+            "30K+ Instagram followers",
+            "1,200+ Instagram posts",
+            "Extensive patient-education library on fertility and women's health",
+        ],
+        website: "https://draradhyaachuri.com",
+        links: [
+            { label: "Instagram", url: "https://www.instagram.com/draradhyaachuri/" },
+            { label: "Facebook", url: "https://www.facebook.com/fertsupport" },
+            { label: "YouTube", url: "https://www.youtube.com/@fertilitydoc" },
+        ],
+        heroImage: "/images/smm/dr-aradhya-achuri.jpg",
+    },
+    {
+        // TODO(Ravi): engagement start year, scope, results, screenshots
+        slug: "dr-satyanarayana-garre",
+        name: "Dr Satyanarayana Garre",
+        sectors: ["healthcare"],
+        tagline: "Nephrologist and kidney specialist in Jubilee Hills, Hyderabad.",
+        tags: ["Social Media"],
+        services: ["social-media"],
+        overview: "Dr Satyanarayana Garre is a nephrologist practising in Jubilee Hills, Hyderabad, caring for patients with kidney conditions from early-stage renal disease to advanced management — acute kidney injury, chronic kidney disease, kidney stones and urinary disorders.\n\nHis work spans dialysis (IHD, CRRT and peritoneal dialysis), renal transplant care, Permcath and PD catheter insertion, and advanced critical-care filters such as CytoSorb and Oxiris.\n\nWizards Next manages his social media presence on Instagram.",
+        highlights: [
+            "5,700+ Instagram followers",
+            "900+ Instagram posts",
+            "Dialysis, transplant care and advanced nephrology procedures",
+        ],
+        website: "https://drsatyanarayanagarre.in",
+        links: [
+            { label: "Instagram", url: "https://www.instagram.com/drsatyanarayana_garre/" },
+            { label: "Facebook", url: "https://www.facebook.com/Dr.Satyanarayanagare" },
+            { label: "YouTube", url: "https://www.youtube.com/@Dr.SatyanarayanaGarre" },
+        ],
+        heroImage: "/images/smm/dr-satyanarayana-garre-logo.svg",
+    },
+    {
+        // TODO(Ravi): engagement start year, scope, results, screenshots; founding year not on site
+        slug: "dhanuka-silks",
+        name: "Dhanuka Silks",
+        sectors: ["retail"],
+        tagline: "Varanasi's destination for sarees, bridal wear and festive ethnic fashion.",
+        tags: ["Social Media"],
+        services: ["social-media"],
+        overview: "Dhanuka Silks is a Varanasi ethnic-wear retailer with a curated collection of sarees, bridal wear, dupattas and festive fashion — from classic Banarasi and handloom sarees to chiffon, georgette and ready-to-wear drapes.\n\nIts stores at Rathyatra and Bansphatak, plus a counter at Varanasi International Airport (arrivals), bring traditional craftsmanship and contemporary style under one roof.\n\nWizards Next manages Dhanuka Silks' social media presence on Instagram.",
+        highlights: [
+            "18K+ Instagram followers",
+            "1,200+ Instagram posts",
+            "Stores at Rathyatra, Bansphatak and Varanasi Airport",
+        ],
+        website: "https://dhanukasilks.com",
+        links: [
+            { label: "Instagram", url: "https://www.instagram.com/dhanukasilks/" },
+        ],
+        heroImage: "/images/smm/dhanuka-silks.jpg",
+    },
+    {
+        // TODO(Ravi): engagement start year, scope, results, screenshots
+        slug: "sunbeam-academy",
+        name: "Sunbeam Academy",
+        sectors: ["education"],
+        tagline: "CBSE school in Varanasi.",
+        tags: ["Social Media"],
+        services: ["social-media"],
+        overview: "Sunbeam Academy is a CBSE school in Varanasi, spanning preschool and primary through the middle years, with a focus on all-round development.\n\nThe school emphasises activity-based learning — stories, games and projects — close teacher attention for every child, and stage performances and events that build creativity and confidence.\n\nWizards Next manages the school's social media presence on Instagram.",
+        highlights: [
+            "5,000+ Instagram followers",
+            "1,400+ Instagram posts",
+            "CBSE curriculum from preschool upward",
+        ],
+        website: "https://www.sunbeamacademy.com",
+        links: [
+            { label: "Instagram", url: "https://www.instagram.com/sunbeam.academy/" },
+            { label: "Facebook", url: "https://www.facebook.com/Sunbeamacademy1972" },
+            { label: "LinkedIn", url: "https://www.linkedin.com/company/sunbeam-academy" },
+        ],
+        heroImage: "/images/smm/sunbeam-academy-logo.png",
+    },
+    {
+        // TODO(Ravi): engagement start year, scope, results, screenshots; no official website found — confirm if one exists
+        slug: "pdr-mall",
+        name: "PDR Mall",
+        sectors: ["retail"],
+        tagline: "Shopping, dining and entertainment mall in Varanasi.",
+        tags: ["Social Media"],
+        services: ["social-media"],
+        overview: "PDR Mall in Varanasi describes itself as a lifestyle hub for shopping, dining and fun, and is home to PDR Cinemas.\n\nWizards Next manages the mall's social media presence on Instagram.",
+        highlights: [
+            "1,100+ Instagram followers",
+            "400+ Instagram posts",
+            "Home to PDR Cinemas",
+        ],
+        links: [
+            { label: "Instagram", url: "https://www.instagram.com/pdrmall/" },
+            { label: "Linktree", url: "https://linktr.ee/PDRMall" },
+        ],
+        heroImage: "/images/smm/pdr-mall.jpg",
+    },
+    {
+        // TODO(Ravi): business details (products, address, years), engagement scope/results, screenshots; no website
+        slug: "rk-marbles-varanasi",
+        name: "RK Marbles Varanasi",
+        sectors: ["retail"],
+        tagline: "Tiles and marble store in Varanasi.",
+        tags: ["Social Media"],
+        services: ["social-media"],
+        overview: "RK Marbles is a tiles and marble store in Varanasi.\n\nWizards Next manages its social media presence on Instagram.",
+        highlights: [
+            "950+ Instagram followers",
+            "190+ Instagram posts",
+        ],
+        links: [
+            { label: "Instagram", url: "https://www.instagram.com/rkmarbles.varanasi/" },
+        ],
+        heroImage: "/images/smm/rk-marbles-varanasi.jpg",
+    },
+    {
+        // TODO(Ravi): business details, engagement scope/results, screenshots; no website
+        slug: "armonia-varanasi",
+        name: "Armonia Varanasi",
+        sectors: ["retail"],
+        tagline: "Home décor and gifts store in Sigra, Varanasi.",
+        tags: ["Social Media"],
+        services: ["social-media"],
+        overview: "Armonia is a home décor and gifts store on Sigra–Mahmoorganj Road in Varanasi.\n\nWizards Next manages its social media presence on Instagram.",
+        highlights: [
+            "4,200+ Instagram followers",
+            "570+ Instagram posts",
+        ],
+        links: [
+            { label: "Instagram", url: "https://www.instagram.com/armonia_varanasi/" },
+        ],
+        heroImage: "/images/smm/armonia-varanasi.jpg",
+    },
+    {
+        // TODO(Ravi): engagement start year, scope (Shopify/ads/SEO per old projects list?), results, screenshots
+        slug: "banarsi-saree",
+        name: "Banarsi Saree",
+        sectors: ["e-commerce", "retail"],
+        tagline: "Online store for Banarasi silk sarees and suits, made in Varanasi.",
+        tags: ["Social Media"],
+        services: ["social-media"],
+        overview: "BanarsiSaree.com, under the Sanskar label, is an online store for Banarasi sarees made in Varanasi — Katan and Georgette silk sarees, pure handloom pieces and Banarasi three-piece suits with golden zari weaving, crafted by Varanasi weavers.\n\nWizards Next manages the brand's social media presence on Instagram.",
+        highlights: [
+            "29K+ Instagram followers",
+            "890+ Instagram posts",
+            "Handloom Banarasi sarees and suits sold online",
+        ],
+        website: "https://banarsisaree.com",
+        links: [
+            { label: "Instagram", url: "https://www.instagram.com/banarsi.sarees/" },
+            { label: "Facebook", url: "https://www.facebook.com/Banarasisaree2016" },
+            { label: "YouTube", url: "https://www.youtube.com/@BanarsiSaree16" },
+        ],
+        heroImage: "/images/smm/banarsi-saree-logo.png",
+    },
+    {
+        // TODO(Ravi): engagement start year, scope (did we build ricemillconsultant.com?), results, screenshots
+        slug: "b-khaitan",
+        name: "B Khaitan",
+        sectors: ["corporate"],
+        tagline: "Rice mill consultant with 46 years of hands-on experience.",
+        tags: ["Social Media"],
+        services: ["social-media"],
+        overview: "Bajrang Khaitan is a rice mill consultant from Uttar Pradesh who began working in the rice industry at 16 and has 46 years of hands-on experience across every aspect of rice milling.\n\nHe helps mill owners diagnose problems like low recovery, high breakage, frequent breakdowns and rising power bills, through online consultations, on-site mill visits across India and annual maintenance support. His site and channels share short, practical videos from real rice mills.\n\nWizards Next manages his social media presence on Instagram.",
+        highlights: [
+            "46 years of rice-milling experience",
+            "2,300+ Instagram followers",
+            "Online consultations and mill visits across India",
+        ],
+        website: "https://www.ricemillconsultant.com",
+        links: [
+            { label: "Instagram", url: "https://www.instagram.com/bajrangkhaitan/" },
+            { label: "Facebook", url: "https://www.facebook.com/share/19S19g9CVq/" },
+        ],
+        heroImage: "/images/smm/b-khaitan.jpg",
+    },
+    {
+        // TODO(Ravi): what GNSR Textiles does (products, location), engagement scope/results, screenshots; no website
+        slug: "gnsr-textiles",
+        name: "GNSR Textiles",
+        sectors: ["retail"],
+        tagline: "Textiles business.",
+        tags: ["Social Media"],
+        services: ["social-media"],
+        overview: "GNSR Textiles is a textiles business.\n\nWizards Next manages its social media presence on Instagram.",
+        links: [
+            { label: "Instagram", url: "https://www.instagram.com/gnsr_textiles/" },
+        ],
+        heroImage: "/images/smm/gnsr-textiles-logo.webp",
+    },
+    {
+        // TODO(Ravi): engagement start year, scope, results, screenshots
+        slug: "maansinghka-agencies",
+        name: "Maansinghka Agencies",
+        sectors: ["fmcg"],
+        tagline: "Makers of The Taste King — cold-pressed Kacchi Ghani mustard oil from Varanasi.",
+        tags: ["Social Media"],
+        services: ["social-media"],
+        overview: "Maansinghka Agencies is a Varanasi company that manufactures The Taste King, a pure Kacchi Ghani cold-pressed mustard oil. The oil is pressed using traditional methods without excessive heat or chemicals to keep its natural aroma and nutrients, and the company makes its own product rather than repacking.\n\nThe brand's stated mission is certainty of purity — FSSAI licensed and ISO certified, with zero adulteration.\n\nWizards Next manages the brand's social media presence on Instagram.",
+        highlights: [
+            "6,500+ Instagram followers",
+            "FSSAI licensed, ISO certified",
+            "Own cold-press manufacturing in Varanasi",
+        ],
+        website: "https://www.maansinghkaagencies.com",
+        links: [
+            { label: "Instagram", url: "https://www.instagram.com/maansinghka_agencies/" },
+            { label: "Facebook", url: "https://www.facebook.com/thetastekingvns" },
+            { label: "YouTube", url: "https://www.youtube.com/@MaansinghkaAgencies" },
+        ],
+        heroImage: "/images/smm/maansinghka-agencies.jpg",
+    },
+    {
+        // TODO(Ravi): engagement start year, scope (website?), results, screenshots
+        slug: "kasibunkari",
+        name: "Kasibunkari",
+        sectors: ["e-commerce", "retail"],
+        tagline: "Handloom ethnic wear from Varanasi weavers — sarees, lehengas and suits.",
+        tags: ["Social Media"],
+        services: ["social-media"],
+        overview: "Kasibunkari is a Varanasi ethnic-wear brand selling sarees, lehengas and suits that blend Banarasi handloom craftsmanship with contemporary silhouettes, sourced directly from Varanasi weavers and shipped across India.\n\nIts store is in Ramkatora, Varanasi, and it caters to weddings, corporate gifting and retail.\n\nWizards Next manages the brand's social media presence on Instagram.",
+        highlights: [
+            "3,900+ Instagram followers",
+            "1,100+ Instagram posts",
+            "Handloom direct from Varanasi weavers",
+        ],
+        website: "https://www.kasibunkari.com",
+        links: [
+            { label: "Instagram", url: "https://www.instagram.com/kasibunkari/" },
+            { label: "Facebook", url: "https://www.facebook.com/kasibunkaridotcom" },
+            { label: "YouTube", url: "https://www.youtube.com/@kasibunkari" },
+        ],
+        heroImage: "/images/smm/kasibunkari-logo.webp",
+    },
+
 ];
 
 export function getClientBySlug(slug: string): Client | undefined {

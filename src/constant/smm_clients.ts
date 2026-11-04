@@ -1,6 +1,6 @@
 // Social Media Management (SMM) clients — brands whose Instagram we manage.
-// Powers /social-media-clients, /social-media-clients/[slug], the homepage
-// "Brands we manage on social" strip and the sitemap. To add a client,
+// Powers /social-media-clients and the homepage "Brands we manage on social"
+// strip; each card links to the full case study at /our-works/[slug]. To add a client,
 // append one object and drop its Instagram profile picture in
 // /public/images/smm/[slug].jpg.
 //
@@ -16,7 +16,6 @@ export type SmmClient = {
     website?: string
     avatar?: string
     logo?: string
-    caseStudy?: string      // link to an existing /our-works profile, if any
 }
 
 const ig = (handle: string) => ({ handle, url: `https://www.instagram.com/${handle}/` })
@@ -30,7 +29,6 @@ export const smmClients: SmmClient[] = [
         instagram: ig("dr.k.shilpireddy"),
         website: "https://shilpireddy.com",
         avatar: "/images/smm/dr-k-shilpi-reddy.jpg",
-        caseStudy: "/our-works/dr-k-shilpi-reddy",
     },
     {
         slug: "mrs-mom-event",

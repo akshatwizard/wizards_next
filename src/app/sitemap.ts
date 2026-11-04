@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/constant/site";
 import { ALL_SERVICES } from "@/constant/service_meta";
 import { clients } from "@/constant/clients";
-import { smmClients } from "@/constant/smm_clients";
 import { NavMenu } from "@/constant/menu";
 
 // Sector slugs are derived from the same nav data every sector link on the
@@ -51,12 +50,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
     }));
 
-    const smmClientRoutes: MetadataRoute.Sitemap = smmClients.map((c) => ({
-        url: `${SITE_URL}/social-media-clients/${c.slug}`,
-        lastModified: now,
-        changeFrequency: "monthly",
-        priority: 0.6,
-    }));
-
-    return [...staticRoutes, ...serviceRoutes, ...sectorRoutes, ...clientRoutes, ...smmClientRoutes];
+    return [...staticRoutes, ...serviceRoutes, ...sectorRoutes, ...clientRoutes];
 }
