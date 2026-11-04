@@ -11,6 +11,10 @@ import { services } from "@/constant/services";
 import { HoneypotField } from "@/components/ui/honeypot_field";
 import { getLeadSource } from "@/lib/lead-source";
 
+// Address as already published on this page; Business Profile resolves to "Wizards Next LLP".
+const MAP_ADDRESS = "D59/127 A-1-4, Nirala Nagar Lane No. 3, Shivpurwa, Varanasi – 221010";
+const GOOGLE_PROFILE_URL = "https://share.google/zYiIe2jRbaZmqOOWi";
+
 // Confirmed from the live wizards.co.in site — update here if these change.
 const contactInfo = [
     { Icon: Phone, label: "Phone", value: "+91 80721 99651" },
@@ -230,6 +234,49 @@ export default function ContactContent() {
                                     </button>
                                 </form>
                             )}
+                        </div>
+                    </FadeUp>
+                </Wrapper>
+            </Section>
+
+            {/* Find us on Google: free Maps embed (no API key) for the Wizards Next LLP Business Profile */}
+            <Section className="relative">
+                <Wrapper>
+                    <FadeUp delay={0}>
+                        <SectionBadge label="Find us on Google" />
+                        <h2 className="tracking-tight text-zinc-200 leading-tight mt-3 mb-2 lg:text-3xl text-2xl font-medium">
+                            Visit <span className="text-amber-600 font-sora">Wizards Next LLP</span>
+                        </h2>
+                        <p className="text-zinc-200 text-sm font-light mb-6 max-w-xl">
+                            {MAP_ADDRESS}
+                        </p>
+                        <div className="rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900 aspect-4/3 md:aspect-video w-full">
+                            <iframe
+                                title="Wizards Next LLP on Google Maps"
+                                src={`https://www.google.com/maps?q=${encodeURIComponent(`Wizards Next LLP, ${MAP_ADDRESS}`)}&output=embed`}
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                allowFullScreen
+                                className="w-full h-full border-0"
+                            />
+                        </div>
+                        <div className="flex flex-wrap gap-3 mt-5">
+                            <a
+                                href={GOOGLE_PROFILE_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-amber-600 text-sm text-zinc-950 font-medium hover:bg-amber-500 transition-colors"
+                            >
+                                <MapPin size={15} /> View on Google
+                            </a>
+                            <a
+                                href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`Wizards Next LLP, ${MAP_ADDRESS}`)}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-zinc-700 text-sm text-zinc-200 hover:border-amber-600/50 hover:text-amber-600 transition-colors"
+                            >
+                                Get directions →
+                            </a>
                         </div>
                     </FadeUp>
                 </Wrapper>

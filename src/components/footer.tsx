@@ -54,11 +54,24 @@ const legal = [
     { label: "Terms of Service", href: "/terms-of-service" },
 ];
 
+// Wizards Next LLP official profiles (brand icons as inline SVG; lucide has no brand icons).
 const socials = [
-    { label: "Ig", href: "#" },
-    { label: "Tw", href: "#" },
-    { label: "In", href: "#" },
-    { label: "Yt", href: "#" },
+    {
+        label: "Instagram", href: "https://www.instagram.com/wizards.digital/",
+        icon: <path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1.1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 4.7a5.1 5.1 0 1 0 0 10.2 5.1 5.1 0 0 0 0-10.2zm0 8.4a3.3 3.3 0 1 1 0-6.6 3.3 3.3 0 0 1 0 6.6zm5.3-9.8a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z" />,
+    },
+    {
+        label: "Facebook", href: "https://www.facebook.com/wizardsdigital/",
+        icon: <path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.23 2.68.23v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z" />,
+    },
+    {
+        label: "LinkedIn", href: "https://in.linkedin.com/company/wizardsnext",
+        icon: <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />,
+    },
+    {
+        label: "Find us on Google", href: "https://share.google/zYiIe2jRbaZmqOOWi",
+        icon: <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.85 3.19-1.79 4.13-1.14 1.14-2.92 2.4-6.05 2.4-4.83 0-8.6-3.89-8.6-8.72s3.77-8.72 8.6-8.72c2.6 0 4.5 1.03 5.9 2.34l2.31-2.31C18.75 1.44 16.13 0 12.48 0 5.87 0 .31 5.39.31 12s5.56 12 12.17 12c3.57 0 6.27-1.17 8.38-3.36 2.16-2.16 2.84-5.21 2.84-7.67 0-.76-.05-1.47-.17-2.05H12.48z" />,
+    },
 ];
 
 function ColumnHeading({ children }: { children: React.ReactNode }) {
@@ -91,16 +104,19 @@ export default function Footer() {
                             Your one-stop growth partner for marketing, branding, web development, and AI-assisted workflows.
                         </p>
 
-                        {/* Text-label social buttons */}
-                        <div className="flex gap-2 mb-6">
-                            {socials.map(({ label, href }) => (
+                        {/* Social profile buttons */}
+                        <div className="flex flex-wrap gap-2 mb-6">
+                            {socials.map(({ label, href, icon }) => (
                                 <a
                                     key={label}
                                     href={href}
-                                    aria-label={label}
-                                    className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 hover:bg-amber-600/12 hover:border-amber-600/35 hover:text-amber-600 flex items-center justify-center text-[12px] font-bold text-zinc-200 transition-all duration-200"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={`Wizards Next on ${label === "Find us on Google" ? "Google" : label}`}
+                                    title={label}
+                                    className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 hover:bg-amber-600/12 hover:border-amber-600/35 hover:text-amber-600 flex items-center justify-center text-zinc-200 transition-all duration-200"
                                 >
-                                    {label}
+                                    <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true">{icon}</svg>
                                 </a>
                             ))}
                         </div>

@@ -35,8 +35,7 @@ export const metadata: Metadata = {
 // Organization / LocalBusiness structured data, emitted once here so it
 // applies site-wide. Built only from details already published on the
 // site (contact section, about page) — no invented address or social
-// links. `sameAs` is intentionally omitted until the site's social icons
-// point to real profile URLs instead of "#".
+// links. `sameAs` lists the official profiles linked in the footer.
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -50,6 +49,12 @@ const organizationJsonLd = {
   telephone: BUSINESS.telephone,
   email: BUSINESS.email,
   foundingDate: BUSINESS.foundingDate,
+  sameAs: [
+    "https://www.instagram.com/wizards.digital/",
+    "https://www.facebook.com/wizardsdigital/",
+    "https://in.linkedin.com/company/wizardsnext",
+    "https://share.google/zYiIe2jRbaZmqOOWi",
+  ],
   address: {
     "@type": "PostalAddress",
     streetAddress: BUSINESS.streetAddress,
