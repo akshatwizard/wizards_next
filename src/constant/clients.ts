@@ -387,7 +387,7 @@ export const clients: Client[] = [
             { label: "Instagram", url: "https://www.instagram.com/dr.ankitachauhan_/" },
             { label: "YouTube", url: "https://www.youtube.com/@DrAnkitaChauhan" },
         ],
-        heroImage: "/images/smm/dr-ankita-chauhan.png",
+        heroImage: "/images/smm/dr-ankita-chauhan-ig.webp",
     },
     {
         // TODO(Ravi): engagement start year, scope, results, screenshots; credentials/years of practice not on her homepage

@@ -46,7 +46,7 @@ export const smmClients: SmmClient[] = [
         tagline: "Consultant gynaecologist and obstetrician in Gachibowli, Hyderabad — pregnancy care, infertility and PCOS management.",
         instagram: ig("dr.ankitachauhan_"),
         website: "https://drankitachauhan.com",
-        avatar: "/images/smm/dr-ankita-chauhan.png",
+        avatar: "/images/smm/dr-ankita-chauhan-ig.webp",
     },
     {
         slug: "dr-aradhya-achuri",
