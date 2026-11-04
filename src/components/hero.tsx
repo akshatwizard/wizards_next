@@ -97,7 +97,7 @@ export default function HeroSection() {
 
                     </div>
 
-                    <div className='w-full h-full flex items-center justify-center relative mt-6 lg:mt-0'>
+                    <div className='w-full h-full hidden md:flex items-center justify-center relative mt-6 lg:mt-0'>
                         <FadeUp delay={0.2} className="relative w-full max-w-[300px] sm:max-w-[340px] lg:max-w-[380px] mx-auto">
                             <Image
                                 src="/images/services-neon-network.webp"
