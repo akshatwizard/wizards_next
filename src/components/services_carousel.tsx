@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import { ServiceMeta } from '@/constant/service_meta'
 
-const AUTO_ADVANCE_MS = 1000
+const AUTO_ADVANCE_MS = 2000
 
 function ServiceCard({ service, active, onActivate }: { service: ServiceMeta; active: boolean; onActivate: () => void }) {
     const { name, desc, slug } = service
@@ -124,7 +124,7 @@ export default function ServicesCarousel({ services }: { services: ServiceMeta[]
                             <div
                                 key={svc.slug}
                                 style={style}
-                                className="justify-self-center w-[78%] sm:w-[60%] md:w-[38%] lg:w-[32%] transition-[transform,opacity,filter] duration-400 ease-out motion-reduce:transition-none"
+                                className="justify-self-center w-[78%] sm:w-[60%] md:w-[38%] lg:w-[32%] transition-[transform,opacity,filter] duration-800 ease-out motion-reduce:transition-none"
                             >
                                 <ServiceCard service={svc} active={isActive} onActivate={() => go(i)} />
                             </div>
