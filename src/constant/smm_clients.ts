@@ -138,6 +138,8 @@ export const smmClients: SmmClient[] = [
         sector: "Textiles",
         tagline: "Textiles business.",
         instagram: ig("gnsr_textiles"),
+        avatar: "/images/smm/gnsr-textiles-logo.webp",
+        logo: "/images/smm/gnsr-textiles-logo.webp",
     },
     {
         slug: "maansinghka-agencies",
