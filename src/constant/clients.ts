@@ -391,6 +391,8 @@ export const clients: Client[] = [
             { label: "YouTube", url: "https://www.youtube.com/@DrAnkitaChauhan" },
         ],
         heroImage: "/images/smm/dr-ankita-chauhan-ig.webp",
+        mockupImage: "/images/smm/dr-ankita-chauhan-mockup.webp",
+        heroMockup: true,
     },
     {
         // TODO(Ravi): engagement start year, scope, results, screenshots; credentials/years of practice not on her homepage
