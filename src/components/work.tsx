@@ -5,6 +5,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Section, Wrapper } from './ui/sections'
 import { FadeUp } from './ui/motion_components'
+import SmmAvatar from './smm/smm_avatar'
+import { clientLogo } from '@/lib/client_image'
 
 
 export function ProjectCard({ client }: { client: Client }) {
@@ -112,11 +114,18 @@ export default function PortfolioBentoGrid() {
                     </FadeUp>
                 </div>
 
-                <FadeUp delay={0.2}
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3"
-                >
+                <FadeUp delay={0.2} className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-8 gap-3">
                     {featured.map((client) => (
-                        <ProjectCard key={client.slug} client={client} />
+                        <Link
+                            key={client.slug}
+                            href={`/our-works/${client.slug}`}
+                            className="group bg-zinc-900 border border-zinc-800 hover:border-amber-600/30 rounded-2xl p-3 flex flex-col items-center gap-2 text-center transition-colors"
+                        >
+                            <SmmAvatar client={{ slug: client.slug, name: client.name, sector: "", tagline: "", instagram: { handle: "", url: "" }, avatar: clientLogo(client.slug) }} size={64} />
+                            <span className="text-zinc-100 text-[11.5px] font-medium leading-tight group-hover:text-amber-600 transition-colors">
+                                {client.name}
+                            </span>
+                        </Link>
                     ))}
                 </FadeUp>
 

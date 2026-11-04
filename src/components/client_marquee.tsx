@@ -8,17 +8,12 @@ import { Section, Wrapper } from "./ui/sections";
 import { LinkPreview } from "./ui/link-preview";
 import { getInitials } from "@/lib/utils";
 import Image from "next/image";
-import { smmClients } from "@/constant/smm_clients";
-
-// Instagram profile picture for SMM clients; logo from the client's own website otherwise.
-const websiteLogos = new Set(["gd-sons", "ganga-papers-india", "clinica-derm", "travel-zone", "shagun-centre", "sjsaa", "divine-soul-resonance", "harish-chandra-pg-college"]);
-const marqueeImage = (slug: string) =>
-    smmClients.find((c) => c.slug === slug)?.avatar ?? (websiteLogos.has(slug) ? `/images/clients/${slug}/logo.webp` : undefined);
+import { clientLogo } from "@/lib/client_image";
 
 const marqueeItems = clients.map((c) => ({
     initials: getInitials(c.name),
     name: c.name,
-    image: marqueeImage(c.slug),
+    image: clientLogo(c.slug),
     href: `/our-works/${c.slug}`,
 }));
 const midpoint = Math.ceil(marqueeItems.length / 2);
