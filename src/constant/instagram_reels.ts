@@ -1,5 +1,6 @@
-// Instagram reels shown on the homepage (src/components/instagram_reels.tsx).
-// Edit this list to change the slider: paste the public reel URL and a short caption.
+// FALLBACK Instagram reels for the homepage slider (src/components/instagram_reels.tsx).
+// The homepage now auto-fetches the latest reels from the Instagram Graph API (src/lib/instagram.ts, 6h ISR).
+// This list is used only when INSTAGRAM_ACCESS_TOKEN is missing, the API fails, or returns no reels.
 // Only use real reel URLs from https://www.instagram.com/wizards.digital/ — newest first.
 export type InstagramReel = { url: string; caption: string }
 

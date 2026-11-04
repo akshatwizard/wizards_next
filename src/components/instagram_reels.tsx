@@ -52,7 +52,7 @@ function ReelCard({ reel, index, total }: { reel: InstagramReel; index: number; 
     )
 }
 
-export default function InstagramReels() {
+export default function InstagramReels({ reels = INSTAGRAM_REELS }: { reels?: InstagramReel[] }) {
     const track = useRef<HTMLDivElement>(null)
     const [pos, setPos] = useState({ start: true, end: true })
 
@@ -85,7 +85,7 @@ export default function InstagramReels() {
         if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1) }
     }
 
-    if (INSTAGRAM_REELS.length === 0) return null
+    if (reels.length === 0) return null
     const showArrows = !(pos.start && pos.end)
 
     return (
@@ -121,7 +121,7 @@ export default function InstagramReels() {
                 <div ref={track} tabIndex={0} role='region' aria-roledescription='carousel'
                     aria-label='Instagram reels. Use left and right arrow keys to scroll.' onKeyDown={onKey}
                     className='flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden outline-none'>
-                    {INSTAGRAM_REELS.map((r, i) => <ReelCard key={r.url} reel={r} index={i} total={INSTAGRAM_REELS.length} />)}
+                    {reels.map((r, i) => <ReelCard key={r.url} reel={r} index={i} total={reels.length} />)}
                 </div>
 
                 {showArrows && (
