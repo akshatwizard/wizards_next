@@ -7,10 +7,18 @@ import { ArrowUpRight } from "lucide-react";
 import { Section, Wrapper } from "./ui/sections";
 import { LinkPreview } from "./ui/link-preview";
 import { getInitials } from "@/lib/utils";
+import Image from "next/image";
+import { smmClients } from "@/constant/smm_clients";
+
+// Instagram profile picture for SMM clients; logo from the client's own website otherwise.
+const websiteLogos = new Set(["gd-sons", "ganga-papers-india", "clinica-derm", "travel-zone", "shagun-centre", "sjsaa", "divine-soul-resonance", "harish-chandra-pg-college"]);
+const marqueeImage = (slug: string) =>
+    smmClients.find((c) => c.slug === slug)?.avatar ?? (websiteLogos.has(slug) ? `/images/clients/${slug}/logo.webp` : undefined);
 
 const marqueeItems = clients.map((c) => ({
     initials: getInitials(c.name),
     name: c.name,
+    image: marqueeImage(c.slug),
     href: `/our-works/${c.slug}`,
 }));
 const midpoint = Math.ceil(marqueeItems.length / 2);
@@ -19,18 +27,29 @@ const row2 = marqueeItems.slice(midpoint);
 
 type MarqueeClient = (typeof marqueeItems)[0];
 
-function MarqueeItem({ initials, name, href }: MarqueeClient) {
+function MarqueeItem({ initials, name, image, href }: MarqueeClient) {
     return (
         <LinkPreview url={href}>
             <div
                 className="group/item inline-flex items-center gap-3 mx-2 p-3 rounded-xl border border-zinc-800/80 bg-zinc-900/40 hover:bg-zinc-800/70  hover:border-amber-600/30 transition-all duration-300 cursor-pointer no-underline shrink-0"
             >
                 {/* Avatar */}
+                {image ? (
+                    <Image
+                        src={image}
+                        alt={name}
+                        width={36}
+                        height={36}
+                        unoptimized
+                        className="w-9 h-9 rounded-lg shrink-0 object-cover bg-white border border-zinc-700 group-hover/item:border-amber-600/40 transition-all duration-300"
+                    />
+                ) : (
                 <div
                     className="font-sora! w-9 h-9 rounded-lg shrink-0 flex items-center justify-center text-[12px] font-bold tracking-wide  bg-zinc-800 border border-zinc-700  text-amber-600  group-hover/item:bg-amber-600/15  group-hover/item:border-amber-600/40  group-hover/item:text-amber-500 transition-all duration-300"
                 >
                     {initials}
                 </div>
+                )}
 
                 {/* Name */}
                 <span className="text-[13px] font-medium whitespace-nowrap text-zinc-100 group-hover/item:text-zinc-100 transition-colors duration-300 "
