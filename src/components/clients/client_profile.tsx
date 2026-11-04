@@ -102,7 +102,7 @@ export default function ClientProfile({ client }: { client: Client }) {
     const relatedClients = getRelatedClients(client);
     const labels = sectorLabels(client.sectors);
     const bannerImage = client.screenshots?.[0];
-    const heroMockup = client.heroMockup && client.heroImage ? client.heroImage : undefined;
+    const heroMockup = client.heroMockup ? (client.mockupImage ?? client.heroImage) : undefined;
     const remainingScreenshots = client.screenshots?.slice(1) ?? [];
     const hasTechOverview = client.technicalOverview && Object.values(client.technicalOverview).some(Boolean);
     const hasWhatWeBuilt = client.services.length > 0 || hasTechOverview;

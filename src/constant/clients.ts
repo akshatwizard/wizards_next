@@ -601,6 +601,8 @@ export const clients: Client[] = [
             { label: "Instagram", url: "https://www.instagram.com/gnsr_textiles/" },
         ],
         heroImage: "/images/smm/gnsr-textiles-logo.webp",
+        mockupImage: "/images/smm/gnsr-textiles-mockup.webp",
+        heroMockup: true,
     },
     {
         // TODO(Ravi): engagement start year, scope, results, screenshots
