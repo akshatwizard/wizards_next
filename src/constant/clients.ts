@@ -454,6 +454,7 @@ export const clients: Client[] = [
             { label: "Instagram", url: "https://www.instagram.com/dhanukasilks/" },
         ],
         heroImage: "/images/smm/dhanuka-silks-mockup.webp",
+        heroMockup: true,
     },
     {
         // TODO(Ravi): engagement start year, scope, results, screenshots

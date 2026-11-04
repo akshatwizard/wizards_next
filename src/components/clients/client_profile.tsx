@@ -102,6 +102,7 @@ export default function ClientProfile({ client }: { client: Client }) {
     const relatedClients = getRelatedClients(client);
     const labels = sectorLabels(client.sectors);
     const bannerImage = client.screenshots?.[0];
+    const heroMockup = client.heroMockup && client.heroImage ? client.heroImage : undefined;
     const remainingScreenshots = client.screenshots?.slice(1) ?? [];
     const hasTechOverview = client.technicalOverview && Object.values(client.technicalOverview).some(Boolean);
     const hasWhatWeBuilt = client.services.length > 0 || hasTechOverview;
@@ -111,7 +112,7 @@ export default function ClientProfile({ client }: { client: Client }) {
             {/* 1. Banner — leads with the real screenshot, not the decorative illustration */}
             <Section className="relative overflow-hidden">
                 <Wrapper className="pb-0!">
-                    <div className={bannerImage ? "grid lg:grid-cols-2 gap-10 items-center" : ""}>
+                    <div className={heroMockup ? "grid md:grid-cols-2 gap-10 items-center" : bannerImage ? "grid lg:grid-cols-2 gap-10 items-center" : ""}>
                         <div>
                             <FadeUp delay={0}>
                                 <div className="flex items-center gap-1.5 text-[12px] text-zinc-300 mb-6 flex-wrap">
@@ -177,7 +178,21 @@ export default function ClientProfile({ client }: { client: Client }) {
                             )}
                         </div>
 
-                        {bannerImage && (
+                        {heroMockup ? (
+                            <div className="flex items-center justify-center relative mt-8 md:mt-0">
+                                <FadeUp delay={0.2} className="relative w-full">
+                                    <Image
+                                        src={heroMockup}
+                                        unoptimized={heroMockup.startsWith("/images/smm/")}
+                                        alt={`${client.name} — social media mockup`}
+                                        width={1536}
+                                        height={1024}
+                                        priority
+                                        className="w-full h-auto object-contain select-none pointer-events-none"
+                                    />
+                                </FadeUp>
+                            </div>
+                        ) : bannerImage && (
                             <div className="flex items-center justify-center relative mt-8 lg:mt-0">
                                 <FadeUp delay={0.2} className="relative w-full max-w-[460px] mx-auto">
                                     <Image
@@ -224,7 +239,7 @@ export default function ClientProfile({ client }: { client: Client }) {
                 <Wrapper className="lg:py-6 md:py-5 py-4">
                     {client.overview ? (
                         <FadeUp className="bg-zinc-900/60 border border-zinc-800 rounded-3xl p-6 lg:p-10">
-                            {client.heroImage && (
+                            {client.heroImage && !heroMockup && (
                                 <div className="float-right w-[45%] sm:w-[380px] ml-8 mb-4">
                                     <Image
                                         src={client.heroImage}

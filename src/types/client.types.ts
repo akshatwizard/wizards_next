@@ -34,6 +34,7 @@ export type Client = {
     name: string
     sectors?: string[]       // one or more sector slugs from src/constant/sectors; multiple means the client genuinely spans sectors (e.g. a local retailer that's also an e-commerce brand)
     heroImage?: string        // optional decorative/conceptual hero visual — NOT a screenshot of real work, just mood-setting art for the page (real proof lives in `screenshots`)
+    heroMockup?: boolean      // heroImage is a device mockup: render it large in the hero header instead of inside the overview card
     tagline?: string          // one-line description for cards
     tags: string[]           // short display tags (shown on homepage/hub cards)
     services: string[]         // service slugs we've provided, e.g. ["seo-consultancy"]
