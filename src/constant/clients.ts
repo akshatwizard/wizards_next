@@ -369,18 +369,21 @@ export const clients: Client[] = [
         heroImage: "/images/smm/mrs-mom-event.jpg",
     },
     {
-        // TODO(Ravi): engagement start year, scope (reels/ads/website?), results, screenshots
+        // TODO(Ravi): screenshots
         slug: "dr-ankita-chauhan",
         name: "Dr Ankita Chauhan",
         sectors: ["healthcare"],
-        tagline: "Consultant obstetrician & gynaecologist in Gachibowli, Hyderabad.",
-        tags: ["Social Media"],
-        services: ["social-media"],
-        overview: "Dr Ankita Chauhan is a Consultant Obstetrician & Gynaecologist in Gachibowli, Hyderabad. She holds an MBBS, an MS in Obstetrics & Gynaecology and fellowship training in laparoscopy, and is a member of FOGSI and IMA.\n\nHer practice covers pregnancy care and high-risk obstetrics, normal and caesarean deliveries, infertility and PCOS management, minimally invasive laparoscopic surgery for fibroids, cysts and endometriosis, and laser treatments for intimate health.\n\nWizards Next manages her social media presence on Instagram.",
+        tagline: "From a camera-shy doctor with zero posts to reels with millions of views — building one of Hyderabad's most trusted gynaecologist brands.",
+        tags: ["Social Media", "Personal Branding", "Website Development", "YouTube", "Podcast", "Brand Collaborations"],
+        services: ["social-media", "personal-branding-for-doctors", "website-development"],
+        overview: "Dr Ankita Chauhan is a Consultant Obstetrician & Gynaecologist at KIMS Hospital, Kondapur, Hyderabad. She holds an MBBS, an MS in Obstetrics & Gynaecology and fellowship training in laparoscopy, and is a member of FOGSI and IMA. Her practice covers pregnancy care and high-risk obstetrics, normal and caesarean deliveries, infertility and PCOS management, minimally invasive laparoscopic surgery for fibroids, cysts and endometriosis, and laser treatments for intimate health.\n\nWe have worked with Dr Ankita for about two and a half years, and we started her profile from scratch — zero posts, zero followers, zero following. Wizards manages her entire social media, website, YouTube and podcast, and built her personal brand as a doctor the way she wanted it.\n\nThe biggest challenge at the start was not strategy but comfort: she was not at all at ease making reels, facing the camera and speaking. Around 90% of that hesitation is gone now. A fun-loving, cheerful, jolly personality came through on camera, and she embraces every kind of content positively — AI reels, UGC reels, trending reels, patient-story reels and treatment explainer reels.\n\nThat range is what has positioned her as one of Hyderabad's most reputed gynaecologists online. Her profile has gone viral multiple times, with reels reaching 5 million, 7 million and 8 million views. Beyond her own channels, we have secured brand deals and collaborations for her, got her invited to three podcasts as paid appearances, and produced podcast content with her ourselves.\n\nHer website includes a booking system built by Wizards, connected directly to her own payment gateway so payments go straight to her account with no middleman — and it brings in good inquiries and bookings.",
         highlights: [
-            "10+ years of experience in women's healthcare",
-            "MBBS, MS (OBG) with a fellowship in laparoscopy",
-            "Member of FOGSI & IMA",
+            "Built from scratch — zero posts, zero followers — over about two and a half years",
+            "Viral reels reaching 5 million, 7 million and 8 million views",
+            "Camera hesitation around 90% gone — AI, UGC, trending, patient-story and treatment explainer reels",
+            "Brand collaborations secured, plus three paid podcast invitations",
+            "Website booking system paid directly into her own payment gateway — no middleman",
+            "MBBS, MS (OBG) with a fellowship in laparoscopy; member of FOGSI & IMA",
         ],
         website: "https://drankitachauhan.com",
         links: [
