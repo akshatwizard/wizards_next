@@ -6,7 +6,7 @@ import { INSTAGRAM_REELS, InstagramReel } from '@/constant/instagram_reels'
 const MAX_REELS = 12
 const MAX_CAPTION = 80
 
-type IgMedia = { id: string; caption?: string; media_type?: string; permalink?: string; timestamp?: string }
+type IgMedia = { id: string; caption?: string; media_type?: string; permalink?: string; timestamp?: string; media_url?: string; thumbnail_url?: string }
 
 export function cleanCaption(raw?: string): string {
     const first = (raw ?? '').split(/\r?\n/).find(l => l.trim()) ?? ''
@@ -28,7 +28,7 @@ export async function getInstagramReels(): Promise<InstagramReel[]> {
     const token = process.env.INSTAGRAM_ACCESS_TOKEN
     if (!token) return INSTAGRAM_REELS
     try {
-        const url = `https://graph.instagram.com/me/media?fields=id,caption,media_type,permalink,timestamp&limit=50&access_token=${encodeURIComponent(token)}`
+        const url = `https://graph.instagram.com/me/media?fields=id,caption,media_type,permalink,timestamp,media_url,thumbnail_url&limit=50&access_token=${encodeURIComponent(token)}`
         const res = await fetch(url, { next: { revalidate: 21600 } })
         if (!res.ok) {
             console.warn(`[instagram] media fetch failed (HTTP ${res.status}); using static reels`)
@@ -39,7 +39,7 @@ export async function getInstagramReels(): Promise<InstagramReel[]> {
             .filter(m => m.media_type === 'VIDEO' && m.permalink?.includes('/reel/'))
             .sort((a, b) => Date.parse(b.timestamp ?? '') - Date.parse(a.timestamp ?? ''))
             .slice(0, MAX_REELS)
-            .map(m => ({ url: m.permalink as string, caption: cleanCaption(m.caption) }))
+            .map(m => ({ url: m.permalink as string, caption: cleanCaption(m.caption), video: m.media_url || undefined, poster: m.thumbnail_url || undefined }))
         return reels.length ? reels : INSTAGRAM_REELS
     } catch {
         console.warn('[instagram] media fetch error; using static reels')

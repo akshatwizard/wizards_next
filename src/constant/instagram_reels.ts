@@ -2,7 +2,8 @@
 // The homepage now auto-fetches the latest reels from the Instagram Graph API (src/lib/instagram.ts, 6h ISR).
 // This list is used only when INSTAGRAM_ACCESS_TOKEN is missing, the API fails, or returns no reels.
 // Only use real reel URLs from https://www.instagram.com/wizards.digital/ — newest first.
-export type InstagramReel = { url: string; caption: string }
+// video/poster are Instagram CDN URLs from the API; the static fallback list has neither.
+export type InstagramReel = { url: string; caption: string; video?: string; poster?: string }
 
 export const INSTAGRAM_PROFILE_URL = 'https://www.instagram.com/wizards.digital/'
 export const INSTAGRAM_HANDLE = '@wizards.digital'
