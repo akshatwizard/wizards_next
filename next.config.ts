@@ -9,6 +9,12 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        // The Exploration Call booking admin lives on the booking API host (Hostinger VPS).
+        source: "/book/admin",
+        destination: "https://book-api.wizards.co.in/admin",
+        permanent: false,
+      },
+      {
         // https://wizards.co.in/worksuite/public/login -> https://work.wizards.co.in/login
         // Matched on path only (no host restriction), so this fires the
         // same way regardless of which attached domain the request comes
