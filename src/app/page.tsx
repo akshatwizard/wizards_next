@@ -42,11 +42,11 @@ export default async function Home() {
       <Services />
       <ClientMarquee />
       <IndustriesSection />
-      <CTABanner />
+      <InstagramReels reels={reels} />
       <PortfolioBentoGrid />
       <SmmClientsStrip />
       <Testimonials />
-      <InstagramReels reels={reels} />
+      <CTABanner />
       <AboutUs />
       <ProcessSection />
       <FAQ />
