@@ -579,17 +579,18 @@ export const clients: Client[] = [
         heroImage: "/images/smm/b-khaitan.jpg",
     },
     {
-        // TODO(Ravi): store location (city/address), screenshots
+        // TODO(Ravi): screenshots
         slug: "gnsr-textiles",
         name: "GNSR Textiles",
         sectors: ["retail"],
-        tagline: "Banarasi-fabric sarees, suits, kurtas, accessories and home linen.",
+        tagline: "Varanasi store for Banarasi-fabric sarees, suits, kurtas, accessories and home linen.",
         tags: ["Social Media"],
         services: ["social-media"],
-        overview: "GNSR Textiles is a store offering Banarasi-fabric products: sarees, suits and dupattas for women, kurtas for men, potli bags and handbags as accessories, and bed sheets.\n\nWizards Next has managed GNSR Textiles' Instagram for around the last year and a half, building the account from scratch — zero followers — to around 7,000.",
+        overview: "GNSR Textiles is a Varanasi store offering Banarasi-fabric products: sarees, suits and dupattas for women, kurtas for men, potli bags and handbags as accessories, and bed sheets. It delivers pan-India online, with orders coming in through Instagram.\n\nWizards Next has managed GNSR Textiles' Instagram for around the last year and a half, building the account from scratch — zero followers — to around 7,000.",
         highlights: [
             "0 to 7K+ Instagram followers in ~18 months",
             "Sarees, suits, dupattas, men's kurtas, accessories and bed sheets",
+            "Pan-India delivery, orders via Instagram",
         ],
         links: [
             { label: "Instagram", url: "https://www.instagram.com/gnsr_textiles/" },
