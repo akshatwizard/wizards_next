@@ -18,7 +18,7 @@ const STATS = [
 const PROCESS_STEPS = [
     {
         title: "A quick call",
-        desc: "20 minutes, no pitch deck. We ask about your business and what you're actually trying to achieve.",
+        desc: "30 minutes, no pitch deck. We ask about your business and what you're actually trying to achieve.",
     },
     {
         title: "We look at what's already working",
@@ -93,7 +93,7 @@ export default function CTABanner() {
                             <div className="inline-flex items-center gap-2 bg-amber-600/10 border border-amber-600/30 rounded-full px-4 py-1.5 mb-4">
                                 <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
                                 <span className="text-amber-600 text-[12px] tracking-[1.5px] uppercase">
-                                    Free 20-Min Strategy Call
+                                    Free 30-Min Exploration Call
                                 </span>
                             </div>
                             <h2
@@ -107,7 +107,7 @@ export default function CTABanner() {
                             </p>
                             <div className="flex gap-2.5 flex-wrap">
                                 <Link
-                                    href="#contact"
+                                    href="/book"
                                     className="bg-amber-600 hover:bg-amber-700 active:scale-[0.98] transition-all duration-200 text-black text-[12px] font-semibold px-6 py-2.5 rounded-[9px]"
                                 >
                                     Book a Free Call →
