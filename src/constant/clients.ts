@@ -434,18 +434,20 @@ export const clients: Client[] = [
         heroImage: "/images/smm/dr-satyanarayana-garre-logo.svg",
     },
     {
-        // TODO(Ravi): engagement start year, scope, results, screenshots; founding year not on site
+        // TODO(Ravi): founding year not on site
         slug: "dhanuka-silks",
         name: "Dhanuka Silks",
         sectors: ["retail"],
-        tagline: "Varanasi's destination for sarees, bridal wear and festive ethnic fashion.",
-        tags: ["Social Media"],
-        services: ["social-media"],
-        overview: "Dhanuka Silks is a Varanasi ethnic-wear retailer with a curated collection of sarees, bridal wear, dupattas and festive fashion — from classic Banarasi and handloom sarees to chiffon, georgette and ready-to-wear drapes.\n\nIts stores at Rathyatra and Bansphatak, plus a counter at Varanasi International Airport (arrivals), bring traditional craftsmanship and contemporary style under one roof.\n\nWizards Next manages Dhanuka Silks' social media presence on Instagram.",
+        tagline: "From zero followers to a viral showroom launch — 2.5 years of building Varanasi's favourite saree brand online.",
+        tags: ["Social Media", "WhatsApp Marketing", "Influencer Marketing", "Content Creation"],
+        services: ["social-media", "whatsapp-marketing", "influencer-marketing", "content-creation"],
+        overview: "Dhanuka Silks is a Varanasi ethnic-wear retailer with a curated collection of sarees, bridal wear, dupattas and festive fashion — from classic Banarasi and handloom sarees to chiffon, georgette and ready-to-wear drapes.\n\nWe have been associated with Dhanuka Silks for almost 2.5 years, and we started from scratch: zero followers, zero posts, zero following. Everything on their public Instagram to date has been built by Wizards. All marketing decisions and strategy are handled by us, across Instagram, YouTube, WhatsApp and influencer marketing.\n\nThe work runs on a steady rhythm: content shoots twice a month, with models hired for product shoots, across all three Dhanuka Silks stores we cover — Rathyatra, Ardali Bazar, and the store inside Varanasi Airport. Festival campaigns for Diwali, Holi, Raksha Bandhan, New Year and other festivals have all been big hits.\n\nThe most recent campaign went viral on Instagram: the launch of Dhanuka Silks' 8th showroom at Ardali Bazar, Varanasi, inaugurated by Bollywood actress Shilpa Shetty. Wizards ran the marketing and campaign for the event — top-notch branding that also earned us real goodwill in the market.\n\nThe owners are very happy with the marketing response, and the client has continuously grown its digital marketing and branding budget — it has roughly doubled over 2.5 years. It is a strong, long-term relationship.",
         highlights: [
-            "18K+ Instagram followers",
-            "1,200+ Instagram posts",
-            "Stores at Rathyatra, Bansphatak and Varanasi Airport",
+            "Built from scratch — zero followers, zero posts — to 18K+ Instagram followers and 1,200+ posts",
+            "Viral Instagram campaign for the 8th showroom launch at Ardali Bazar, inaugurated by Shilpa Shetty",
+            "Digital marketing and branding budget roughly doubled over almost 2.5 years",
+            "Festival campaigns for Diwali, Holi, Raksha Bandhan and New Year — all big hits",
+            "Content shoots twice a month with hired models across Rathyatra, Ardali Bazar and Varanasi Airport stores",
         ],
         website: "https://dhanukasilks.com",
         links: [
