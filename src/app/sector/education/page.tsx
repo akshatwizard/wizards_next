@@ -13,6 +13,9 @@ import SectorInterestForm from '@/components/sectors/sector_interest_form'
 export const metadata: Metadata = {
     title: 'Digital Marketing for Education | Wizards Next',
     description: 'We help schools, coaching institutes, and education brands reach parents and students at the right moment.',
+    alternates: {
+        canonical: '/sector/education',
+    },
 }
 
 export default function EducationSectorPage() {

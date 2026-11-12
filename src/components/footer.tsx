@@ -49,6 +49,10 @@ const company = [
     { label: "FAQ", href: "/faq" },
     { label: "Contact", href: "/contact" },
 ];
+const locations = [
+    { label: "Digital Marketing Agency in Varanasi", href: "/digital-marketing-agency-varanasi" },
+    { label: "Digital Marketing for Hyderabad", href: "/digital-marketing-agency-hyderabad" },
+];
 const legal = [
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms of Service", href: "/terms-of-service" },
@@ -129,7 +133,7 @@ export default function Footer() {
                             <a href="tel:+918072199651" className="text-zinc-200 text-[12px] hover:text-amber-600 transition-colors duration-200">
                                 +91 80721 99651
                             </a>
-                            <span className="text-zinc-200 text-[12px]">Varanasi, UP — India</span>
+                            <span className="text-zinc-200 text-[12px] leading-relaxed max-w-56">D59/127 A-1-4, Nirala Nagar Lane No. 3, Shivpurwa, Varanasi, Uttar Pradesh 221010</span>
                         </div>
                     </div>
 
@@ -162,6 +166,14 @@ export default function Footer() {
                         <ColumnHeading>Company</ColumnHeading>
                         <div className="flex flex-col gap-2 mb-6">
                             {company.map(({ label, href }) => (
+                                <Link key={label} href={href} className="text-zinc-200 text-[12px] hover:text-amber-600 transition-colors duration-200">
+                                    {label}
+                                </Link>
+                            ))}
+                        </div>
+                        <ColumnHeading>Locations</ColumnHeading>
+                        <div className="flex flex-col gap-2 mb-6">
+                            {locations.map(({ label, href }) => (
                                 <Link key={label} href={href} className="text-zinc-200 text-[12px] hover:text-amber-600 transition-colors duration-200">
                                     {label}
                                 </Link>

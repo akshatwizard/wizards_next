@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   // This is only the fallback for any page that doesn't set its own
   // title/description (most pages already do). Every page keeps its own
   // metadata export untouched by this.
-  title: "Wizards Next — Digital Marketing Agency in Varanasi & Hyderabad",
+  title: "Wizards Next — Digital Marketing Agency in Varanasi",
   description: BUSINESS.description,
 };
 
@@ -63,8 +63,8 @@ const organizationJsonLd = {
     postalCode: BUSINESS.postalCode,
     addressCountry: BUSINESS.addressCountry,
   },
-  // India is the core, physically-served market (offices in Varanasi and
-  // Hyderabad); the three overseas countries reflect real, current client
+  // India is the core, physically-served market (office in Varanasi; Hyderabad
+  // clients served remotely); the three overseas countries reflect real, current client
   // relationships served remotely — kept in sync with BUSINESS.overseasCountries
   // in constant/site.ts rather than duplicated here.
   areaServed: [

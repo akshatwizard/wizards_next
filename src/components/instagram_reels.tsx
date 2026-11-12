@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import React, { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react'
 import { ChevronLeft, ChevronRight, ExternalLink, Play, Volume2, VolumeX } from 'lucide-react'
 import { Section, Wrapper } from './ui/sections'
@@ -86,7 +87,14 @@ function ReelCard({ reel, index, total }: { reel: InstagramReel; index: number; 
             <div ref={box} className='relative aspect-[9/16] bg-gradient-to-br from-zinc-900 via-[#1a1206] to-zinc-950'>
                 {hasVideo ? (
                     <>
-                        <video ref={ref} src={near ? reel.video : undefined} poster={reel.poster}
+                        {/* Poster as a lazy, sized next/image (was the <video poster>, which every card
+                            downloaded at full size on page load). unoptimized: these are rotating Instagram
+                            CDN URLs, so Vercel image optimisation would spend quota on every 6h refresh. */}
+                        {reel.poster && (
+                            <Image src={reel.poster} alt='' fill sizes='(max-width: 640px) 78vw, 270px'
+                                loading='lazy' unoptimized className='object-cover' />
+                        )}
+                        <video ref={ref} src={near ? reel.video : undefined}
                             muted playsInline loop preload={near ? 'metadata' : 'none'}
                             onError={() => setFailed(true)} onClick={toggleMute}
                             aria-label={reel.caption}
@@ -112,8 +120,8 @@ function ReelCard({ reel, index, total }: { reel: InstagramReel; index: number; 
                     <a href={reel.url} target='_blank' rel='noopener noreferrer' aria-label={`Watch reel on Instagram: ${reel.caption}`}
                         className='absolute inset-0 flex flex-col items-center justify-center gap-4 text-zinc-200 group cursor-pointer'>
                         {reel.poster && (
-                            // eslint-disable-next-line @next/next/no-img-element
-                            <img src={reel.poster} alt='' loading='lazy' className='absolute inset-0 w-full h-full object-cover opacity-70' />
+                            <Image src={reel.poster} alt='' fill sizes='(max-width: 640px) 78vw, 270px'
+                                loading='lazy' unoptimized className='object-cover opacity-70' />
                         )}
                         <IgIcon className='absolute top-4 left-4 w-6 h-6 text-amber-500/80' />
                         <span className='relative w-16 h-16 rounded-full bg-amber-500 text-black flex items-center justify-center shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform'>

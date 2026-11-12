@@ -13,6 +13,9 @@ import { CorporateProfileHero, CorporateProfileAbout, CorporateProfileServicesOf
 export const metadata: Metadata = {
     title: 'Corporate Profile Creation | Wizards Next',
     description: 'Professional company profile videos and documents for tenders, investor meetings, and institutional pitches.',
+    alternates: {
+        canonical: '/services/corporate-profile-creation',
+    },
 }
 
 export default function CorporateProfileCreationPage() {

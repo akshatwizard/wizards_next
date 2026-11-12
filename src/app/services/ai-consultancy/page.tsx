@@ -13,6 +13,9 @@ import { AIConsultancyHero, AIConsultancyAbout, AIConsultancyServicesOffered, AI
 export const metadata: Metadata = {
     title: 'AI Consultancy Services | Wizards Next',
     description: 'Helping businesses adopt AI-assisted development and planning workflows, demonstrated by our own practice.',
+    alternates: {
+        canonical: '/services/ai-consultancy',
+    },
 }
 
 export default function AiConsultancyPage() {

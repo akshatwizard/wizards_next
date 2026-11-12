@@ -13,6 +13,9 @@ import { WhatsAppMarketingHero, WhatsAppMarketingAbout, WhatsAppMarketingService
 export const metadata: Metadata = {
     title: 'WhatsApp Marketing Services | Wizards Next',
     description: 'Catalogs, broadcasts, and automated responses built on WhatsApp Business, done properly.',
+    alternates: {
+        canonical: '/services/whatsapp-marketing',
+    },
 }
 
 export default function WhatsappMarketingPage() {

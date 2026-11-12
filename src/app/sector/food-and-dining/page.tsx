@@ -13,6 +13,9 @@ import SectorInterestForm from '@/components/sectors/sector_interest_form'
 export const metadata: Metadata = {
     title: 'Digital Marketing for Restaurants & Cafes | Wizards Next',
     description: 'We help restaurants and cafes build the visual content and posting frequency that drives a visit.',
+    alternates: {
+        canonical: '/sector/food-and-dining',
+    },
 }
 
 export default function FoodAndDiningSectorPage() {

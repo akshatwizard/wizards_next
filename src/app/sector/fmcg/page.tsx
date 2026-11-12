@@ -13,6 +13,9 @@ import SectorInterestForm from '@/components/sectors/sector_interest_form'
 export const metadata: Metadata = {
     title: 'Digital Marketing for FMCG Brands | Wizards Next',
     description: 'We help FMCG and consumer goods brands build consistent identity, D2C e-commerce, and scalable performance campaigns.',
+    alternates: {
+        canonical: '/sector/fmcg',
+    },
 }
 
 export default function FmcgSectorPage() {

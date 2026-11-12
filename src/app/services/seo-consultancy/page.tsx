@@ -13,6 +13,9 @@ import { SEOConsultancyHero, SEOConsultancyAbout, SEOConsultancyServicesOffered,
 export const metadata: Metadata = {
     title: 'SEO Consultancy | Wizards Next',
     description: 'SEO built for how search actually works in Varanasi and Tier 2-3 Indian markets.',
+    alternates: {
+        canonical: '/services/seo-consultancy',
+    },
 }
 
 export default function SeoConsultancyPage() {

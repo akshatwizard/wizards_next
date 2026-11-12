@@ -13,6 +13,9 @@ import { BrandCreationHero, BrandCreationAbout, BrandCreationServicesOffered, Br
 export const metadata: Metadata = {
     title: 'Brand Creation & Identity Design | Wizards Next',
     description: 'Logo, colour, typography, and a documented brand system built to stay consistent everywhere your business shows up.',
+    alternates: {
+        canonical: '/services/brand-designing',
+    },
 }
 
 export default function BrandDesigningPage() {

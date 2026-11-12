@@ -13,6 +13,9 @@ import { EcommerceMgmtHero, EcommerceMgmtAbout, EcommerceMgmtServicesOffered, Ec
 export const metadata: Metadata = {
     title: 'E-Commerce Business Management | Wizards Next',
     description: 'Ongoing store operations — inventory, updates, and order-flow management after launch.',
+    alternates: {
+        canonical: '/services/ecommerce-management',
+    },
 }
 
 export default function EcommerceManagementPage() {

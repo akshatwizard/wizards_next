@@ -1,0 +1,154 @@
+import { Metadata } from 'next'
+import Link from 'next/link'
+import { Phone, ArrowRight } from 'lucide-react'
+import { Section, Wrapper } from '@/components/ui/sections'
+import { FadeUp } from '@/components/ui/motion_components'
+import { ProjectCard } from '@/components/work'
+import ServiceFAQ from '@/components/services/service_faq'
+import ServiceCTA from '@/components/services/service_cta'
+import { clients } from '@/constant/clients'
+import { SITE_URL } from '@/constant/site'
+import { ServiceFAQType } from '@/types/service.types'
+
+// Service-area page for Hyderabad. Wizards Next has NO Hyderabad office:
+// this page must never claim a local address or office, and its schema is a
+// Service with areaServed Hyderabad (no LocalBusiness / PostalAddress).
+const PATH = '/digital-marketing-agency-hyderabad'
+const PHONE_DISPLAY = '+91 80721 99651'
+
+// Real clients whose case studies are Hyderabad practices.
+const HYDERABAD_CLIENTS = ['clinica-derm', 'dr-k-shilpi-reddy', 'dr-ankita-chauhan', 'dr-aradhya-achuri', 'dr-satyanarayana-garre']
+
+const SERVICES = [
+    { slug: 'seo-consultancy', name: 'SEO for clinics and businesses', desc: 'Treatment and service pages, content and technical SEO built around what Hyderabad patients and customers actually search.' },
+    { slug: 'personal-branding-for-doctors', name: 'Personal branding for doctors', desc: 'Instagram and content that build a doctor’s reputation, within medical advertising guidelines.' },
+    { slug: 'social-media', name: 'Social media marketing', desc: 'Planning, reels, posting and community management.' },
+    { slug: 'website-development', name: 'Website development', desc: 'Fast, mobile-first websites that turn visits into appointments and enquiries.' },
+    { slug: 'google-meta-ads-management', name: 'Google & Meta ads', desc: 'Campaign setup and weekly optimisation, tied to enquiries.' },
+    { slug: 'performance-marketing', name: 'Performance marketing', desc: 'Paid-media strategy with spend tracked openly.' },
+]
+
+const FAQ: ServiceFAQType = {
+    faq_list: [
+        { q: 'Do you have an office in Hyderabad?', a: 'No. Our office is in Varanasi. We work with Hyderabad clients remotely — video calls, WhatsApp and shared monthly reporting — and several of our longest-running healthcare clients are in Hyderabad.' },
+        { q: 'Which Hyderabad clients do you work with?', a: 'Mostly doctors and clinics, including Clinica Derm (website and SEO since August 2024) and Dr. K. Shilpi Reddy. Their case studies are linked on this page.' },
+        { q: 'What results have you delivered in Hyderabad?', a: 'For Clinica Derm, average Google search position moved from the mid-30s in May 2025 to single digits by March 2026, with terms like “dermatologist hyderabad” ranking around positions 4.5–5.7, per their Search Console data.' },
+        { q: 'What does it cost?', a: 'Social media management starts from ₹15,000 a month. Ad budgets are separate, usually from around ₹10,000 a month. Every plan is scoped to your goals.' },
+        { q: 'Is there a long-term contract?', a: 'No lock-ins — rolling monthly engagements.' },
+    ],
+}
+
+export const metadata: Metadata = {
+    title: 'Digital Marketing Agency for Hyderabad Businesses & Clinics | Wizards Next',
+    description: 'Digital marketing, SEO and doctor branding for Hyderabad clinics and businesses, delivered remotely by Wizards Next (Varanasi). Real Hyderabad case studies.',
+    alternates: {
+        canonical: PATH,
+    },
+}
+
+export default function HyderabadPage() {
+    const list = HYDERABAD_CLIENTS.map((s) => clients.find((c) => c.slug === s)).filter((c): c is NonNullable<typeof c> => !!c)
+
+    const serviceJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        '@id': `${SITE_URL}${PATH}#service`,
+        name: 'Digital marketing services for Hyderabad',
+        serviceType: 'Digital marketing',
+        url: `${SITE_URL}${PATH}`,
+        provider: { '@id': `${SITE_URL}/#organization` },
+        areaServed: { '@type': 'City', name: 'Hyderabad', containedInPlace: { '@type': 'State', name: 'Telangana' } },
+        hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: 'Services',
+            itemListElement: SERVICES.map((s) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.name, url: `${SITE_URL}/services/${s.slug}` } })),
+        },
+    }
+    const breadcrumbJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+            { '@type': 'ListItem', position: 2, name: 'Digital Marketing for Hyderabad', item: `${SITE_URL}${PATH}` },
+        ],
+    }
+
+    return (
+        <main>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd).replace(/</g, '\\u003c') }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, '\\u003c') }} />
+
+            <Section className="relative text-zinc-200">
+                <Wrapper className="lg:pt-32 md:pt-28 pt-24 lg:pb-14 md:pb-12 pb-10 gap-6!">
+                    <nav aria-label="Breadcrumb" className="text-[12px] text-zinc-400">
+                        <Link href="/" className="hover:text-amber-500">Home</Link> / <span>Hyderabad</span>
+                    </nav>
+                    <h1 className="tracking-tight text-zinc-100 leading-tight text-3xl md:text-4xl lg:text-5xl font-medium max-w-3xl">
+                        Digital Marketing Agency Serving <span className="text-amber-600 font-sora!">Hyderabad</span>
+                    </h1>
+                    <p className="text-zinc-200 text-[15px] font-light leading-relaxed max-w-2xl">
+                        Wizards Next works with doctors, clinics and businesses in Hyderabad on SEO, websites, social media and ads. We are based in Varanasi and serve Hyderabad clients remotely — no local office, just the same team, process and reporting our Hyderabad clients already rely on.
+                    </p>
+                    <div className="flex flex-wrap gap-3">
+                        <Link href="/book" className="inline-flex items-center gap-2 rounded-lg bg-amber-600 px-5 py-2.5 text-[13px] font-medium text-zinc-950 hover:bg-amber-500">
+                            Book a free exploration call <ArrowRight size={14} />
+                        </Link>
+                        <a href="tel:+918072199651" className="inline-flex items-center gap-2 rounded-lg border border-white/10 px-5 py-2.5 text-[13px] text-zinc-200 hover:border-amber-600/50">
+                            <Phone size={14} /> {PHONE_DISPLAY}
+                        </a>
+                    </div>
+                </Wrapper>
+            </Section>
+
+            {list.length > 0 && (
+                <Section tone="raised">
+                    <Wrapper className="lg:py-14 md:py-12 py-10 gap-8!">
+                        <FadeUp>
+                            <h2 className="text-2xl lg:text-3xl font-medium tracking-tight text-zinc-100 mb-2">Hyderabad clients we work with</h2>
+                            <p className="text-zinc-300 text-[13px] font-light">Real engagements — open any profile to see the work and results.</p>
+                        </FadeUp>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                            {list.map((client) => <ProjectCard key={client.slug} client={client} />)}
+                        </div>
+                    </Wrapper>
+                </Section>
+            )}
+
+            <Section>
+                <Wrapper className="lg:py-14 md:py-12 py-10 gap-8!">
+                    <FadeUp>
+                        <h2 className="text-2xl lg:text-3xl font-medium tracking-tight text-zinc-100">What we do for Hyderabad businesses</h2>
+                    </FadeUp>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {SERVICES.map((s) => (
+                            <Link key={s.slug} href={`/services/${s.slug}`} className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5 hover:border-amber-600/40 transition-colors">
+                                <h3 className="text-[15px] font-medium text-zinc-100 mb-1.5">{s.name}</h3>
+                                <p className="text-[12.5px] font-light leading-relaxed text-zinc-300">{s.desc}</p>
+                            </Link>
+                        ))}
+                    </div>
+                    <p className="text-[13px] text-zinc-300">
+                        Healthcare is our strongest Hyderabad sector — see <Link href="/sector/healthcare" className="underline underline-offset-2 hover:text-amber-500">digital marketing for healthcare</Link>. Our office is in <Link href="/digital-marketing-agency-varanasi" className="underline underline-offset-2 hover:text-amber-500">Varanasi</Link>.
+                    </p>
+                </Wrapper>
+            </Section>
+
+            <Section tone="raised">
+                <Wrapper className="lg:py-14 md:py-12 py-10 gap-6!">
+                    <FadeUp>
+                        <h2 className="text-2xl lg:text-3xl font-medium tracking-tight text-zinc-100 mb-4">How we work with Hyderabad clients</h2>
+                        <ol className="list-decimal pl-5 space-y-2 text-[13.5px] font-light leading-relaxed text-zinc-200 max-w-3xl">
+                            <li>A free exploration call to understand your practice or business, goals and current setup.</li>
+                            <li>A scoped proposal — usually starting with one service, such as SEO or social media.</li>
+                            <li>A fixed weekly and monthly rhythm, with reporting on rankings, enquiries and real post-level numbers.</li>
+                            <li>Calls and WhatsApp for day-to-day coordination; content inputs come from you, the subject-matter expert.</li>
+                        </ol>
+                    </FadeUp>
+                </Wrapper>
+            </Section>
+
+            <ServiceFAQ data={FAQ} />
+            <ServiceCTA />
+        </main>
+    )
+}

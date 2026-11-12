@@ -45,6 +45,13 @@ export default function ServiceCTA() {
                         <p className="text-zinc-700 text-[12px] mt-6">
                             Free 30-min discovery call · No commitment required
                         </p>
+                        <p className="text-zinc-400 text-[12px] mt-2">
+                            Based in{' '}
+                            <Link href="/digital-marketing-agency-varanasi" className="underline underline-offset-2 hover:text-amber-500">Varanasi</Link>
+                            {' '}· Serving{' '}
+                            <Link href="/digital-marketing-agency-hyderabad" className="underline underline-offset-2 hover:text-amber-500">Hyderabad</Link>
+                            {' '}and all of India
+                        </p>
                     </div>
                 </FadeUp>
             </Wrapper>

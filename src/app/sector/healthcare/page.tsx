@@ -13,6 +13,9 @@ import SectorInterestForm from '@/components/sectors/sector_interest_form'
 export const metadata: Metadata = {
     title: 'Digital Marketing for Healthcare | Wizards Next',
     description: 'We help hospitals, clinics, and doctors in Varanasi and across India grow their patient base with websites, SEO, social media, and paid ads.',
+    alternates: {
+        canonical: '/sector/healthcare',
+    },
 }
 
 export default function HealthcareSectorPage() {

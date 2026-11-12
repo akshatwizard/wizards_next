@@ -13,6 +13,9 @@ import { InfluencerMarketingHero, InfluencerMarketingAbout, InfluencerMarketingS
 export const metadata: Metadata = {
     title: 'Influencer Marketing Services | Wizards Next',
     description: 'Matching brands with relevant, vetted creators and managing the campaign end to end.',
+    alternates: {
+        canonical: '/services/influencer-marketing',
+    },
 }
 
 export default function InfluencerMarketingPage() {

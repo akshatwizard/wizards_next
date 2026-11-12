@@ -13,6 +13,9 @@ import { VideoEditingHero, VideoEditingAbout, VideoEditingServicesOffered, Video
 export const metadata: Metadata = {
     title: 'Video Editing Services | Wizards Next',
     description: "Reels, YouTube videos, and ad creative edited for the platform they're published on.",
+    alternates: {
+        canonical: '/services/video-editing',
+    },
 }
 
 export default function VideoEditingPage() {

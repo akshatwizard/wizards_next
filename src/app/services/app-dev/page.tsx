@@ -13,6 +13,9 @@ import { MobileAppHero, MobileAppAbout, MobileAppServicesOffered, MobileAppProce
 export const metadata: Metadata = {
     title: 'Mobile App Development | Wizards Next',
     description: 'iOS and Android apps built for a specific business goal, not just an app-store presence.',
+    alternates: {
+        canonical: '/services/app-dev',
+    },
 }
 
 export default function AppDevPage() {

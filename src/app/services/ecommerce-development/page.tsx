@@ -13,6 +13,9 @@ import { EcommerceDevHero, EcommerceDevAbout, EcommerceDevServicesOffered, Ecomm
 export const metadata: Metadata = {
     title: 'E-Commerce Website Development | Wizards Next',
     description: 'Online stores built to sell — catalog structure, payment integration, and working checkout flows.',
+    alternates: {
+        canonical: '/services/ecommerce-development',
+    },
 }
 
 export default function EcommerceDevelopmentPage() {

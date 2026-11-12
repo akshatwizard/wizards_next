@@ -105,7 +105,7 @@ export const FAQ_CATEGORIES: FAQCategoryGroup[] = [
         items: [
             {
                 q: "Where is Wizards Next based?",
-                a: "We have offices in Varanasi and Hyderabad, running 50+ projects across India.",
+                a: "Our office is in Varanasi (D59/127 A-1-4, Nirala Nagar Lane No. 3, Shivpurwa, Varanasi 221010). We also work with clients in Hyderabad and across India, remotely, running 50+ projects in all.",
                 homepage: true,
             },
             {

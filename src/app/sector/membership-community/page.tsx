@@ -13,6 +13,9 @@ import SectorInterestForm from '@/components/sectors/sector_interest_form'
 export const metadata: Metadata = {
     title: 'Membership & Community Platforms | Wizards Next',
     description: 'Secure, self-service platforms for matrimonial services, alumni associations, professional bodies, and membership-driven organisations — built for privacy and years of stable operation.',
+    alternates: {
+        canonical: '/sector/membership-community',
+    },
 }
 
 export default function MembershipSectorPage() {

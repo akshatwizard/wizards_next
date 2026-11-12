@@ -13,6 +13,9 @@ import { PerformanceMarketingHero, PerformanceMarketingAbout, PerformanceMarketi
 export const metadata: Metadata = {
     title: 'Performance Marketing Services | Wizards Next',
     description: 'Media planning and budget strategy across paid channels, tied to measurable outcomes.',
+    alternates: {
+        canonical: '/services/performance-marketing',
+    },
 }
 
 export default function PerformanceMarketingPage() {

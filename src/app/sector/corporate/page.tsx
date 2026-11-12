@@ -13,6 +13,9 @@ import SectorInterestForm from '@/components/sectors/sector_interest_form'
 export const metadata: Metadata = {
     title: 'Digital Marketing for Corporate & B2B | Wizards Next',
     description: 'We help B2B and institutional businesses build credibility that reads right to another business.',
+    alternates: {
+        canonical: '/sector/corporate',
+    },
 }
 
 export default function CorporateSectorPage() {

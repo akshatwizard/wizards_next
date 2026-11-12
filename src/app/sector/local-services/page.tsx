@@ -13,6 +13,9 @@ import SectorInterestForm from '@/components/sectors/sector_interest_form'
 export const metadata: Metadata = {
     title: 'Digital Marketing for Local Services | Wizards Next',
     description: "We help home services, salons, gyms, and local professionals show up exactly when someone's searching.",
+    alternates: {
+        canonical: '/sector/local-services',
+    },
 }
 
 export default function LocalServicesSectorPage() {

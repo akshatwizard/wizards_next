@@ -6,8 +6,8 @@ import { FadeUp } from "@/components/ui/motion_components";
 import { SectionBadge } from "@/components/services/section_badge";
 
 export const metadata: Metadata = {
-    title: "About Wizards Next | Varanasi & Hyderabad Agency",
-    description: "A joint venture running 50+ projects across India from offices in Varanasi and Hyderabad, with overseas clients in the USA, Russia, and Spain.",
+    title: "About Wizards Next | Digital Marketing Agency in Varanasi",
+    description: "A Varanasi-based joint venture running 50+ projects across India, including clients in Hyderabad, with overseas clients in the USA, Russia, and Spain.",
     alternates: {
         canonical: "/about",
     },
@@ -39,7 +39,7 @@ export default function AboutPage() {
                     </FadeUp>
                     <FadeUp delay={0.15}>
                         <p className="text-zinc-200 text-sm font-light max-w-lg">
-                            A growth-oriented, progressive organisation working in digital marketing and web development since June 2023 — built as a joint venture, not a startup from scratch. Two offices, one team: Varanasi and Hyderabad.
+                            A growth-oriented, progressive organisation working in digital marketing and web development since June 2023 — built as a joint venture, not a startup from scratch. Based in Varanasi, working with clients across India — including Hyderabad.
                         </p>
                     </FadeUp>
                 </Wrapper>
@@ -51,7 +51,7 @@ export default function AboutPage() {
                     <div className="grid grid-cols-3 divide-x divide-zinc-800 border-y border-zinc-800">
                         <FadeUp delay={0} className="text-center px-2 py-5">
                             <p className="font-syne text-2xl md:text-3xl font-black text-amber-500 leading-none">2</p>
-                            <p className="text-[11px] md:text-[12px] text-zinc-300 mt-1.5 uppercase tracking-widest">Cities — Varanasi & Hyderabad</p>
+                            <p className="text-[11px] md:text-[12px] text-zinc-300 mt-1.5 uppercase tracking-widest">Key Markets — Varanasi & Hyderabad</p>
                         </FadeUp>
                         <FadeUp delay={0.05} className="text-center px-2 py-5">
                             <p className="font-syne text-2xl md:text-3xl font-black text-amber-500 leading-none">50+</p>
@@ -73,7 +73,7 @@ export default function AboutPage() {
                             Wizards Next LLP emerged as a joint venture between <strong className="text-zinc-300 font-medium">JR Digital Marketing Services</strong> and <strong className="text-zinc-300 font-medium">Arushi Inforbit Solutions</strong> in June 2023 — bringing together a digital marketing practice and a web development practice that had been solving half the same problem separately for years.
                         </p>
                         <p>
-                            Today that combined practice runs from two offices — <strong className="text-zinc-300 font-medium">Varanasi</strong>, where the founding team built its reputation over 24+ years of combined, hands-on experience, and <strong className="text-zinc-300 font-medium">Hyderabad</strong>, where several of our healthcare clients are based. Between the two, we&apos;re currently running <strong className="text-zinc-300 font-medium">50+ projects across India</strong>, plus a small but real overseas roster with clients in the <strong className="text-zinc-300 font-medium">USA, Russia, and Spain</strong>.
+                            Today that combined practice runs from <strong className="text-zinc-300 font-medium">Varanasi</strong>, where the founding team built its reputation over 24+ years of combined, hands-on experience, and serves <strong className="text-zinc-300 font-medium">Hyderabad</strong> remotely, where several of our healthcare clients are based. Across both, we&apos;re currently running <strong className="text-zinc-300 font-medium">50+ projects across India</strong>, plus a small but real overseas roster with clients in the <strong className="text-zinc-300 font-medium">USA, Russia, and Spain</strong>.
                         </p>
                         <p>
                             The strategic emphasis has always been the same: deliver superior service and measurable performance, not just activity. That&apos;s the standard the venture was built to hold itself to from day one — in Varanasi, in Hyderabad, and everywhere in between.
@@ -170,7 +170,7 @@ export default function AboutPage() {
                             </div>
                             <div>
                                 <p className="font-medium text-[15px] text-zinc-200 mb-1">Two Cities, Nationwide Reach</p>
-                                <p className="text-[13px] text-zinc-200 leading-relaxed">Offices in Varanasi and Hyderabad, running 50+ projects across India — plus overseas clients in the USA, Russia, and Spain.</p>
+                                <p className="text-[13px] text-zinc-200 leading-relaxed">Based in Varanasi, running 50+ projects across India (Hyderabad included) — plus overseas clients in the USA, Russia, and Spain.</p>
                             </div>
                         </FadeUp>
                     </div>

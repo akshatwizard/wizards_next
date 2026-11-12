@@ -13,6 +13,9 @@ import { EmailMarketingHero, EmailMarketingAbout, EmailMarketingServicesOffered,
 export const metadata: Metadata = {
     title: 'Email Marketing Services | Wizards Next',
     description: 'Newsletters, automated sequences, and lifecycle campaigns on the one marketing channel your business actually owns.',
+    alternates: {
+        canonical: '/services/email-marketing',
+    },
 }
 
 export default function EmailMarketingPage() {

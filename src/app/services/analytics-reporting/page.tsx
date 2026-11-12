@@ -13,6 +13,9 @@ import { AnalyticsReportingHero, AnalyticsReportingAbout, AnalyticsReportingServ
 export const metadata: Metadata = {
     title: 'Analytics & Reporting Services | Wizards Next',
     description: 'Clear dashboards and plain-language monthly reporting across every marketing channel.',
+    alternates: {
+        canonical: '/services/analytics-reporting',
+    },
 }
 
 export default function AnalyticsReportingPage() {

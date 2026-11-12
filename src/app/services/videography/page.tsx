@@ -13,6 +13,9 @@ import { VideographyHero, VideographyAbout, VideographyServicesOffered, Videogra
 export const metadata: Metadata = {
     title: 'Videography Services | Wizards Next',
     description: "Professional filming, on location or in studio, planned around the platform it's built for.",
+    alternates: {
+        canonical: '/services/videography',
+    },
 }
 
 export default function VideographyPage() {

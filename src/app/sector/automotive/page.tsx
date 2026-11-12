@@ -13,6 +13,9 @@ import SectorInterestForm from '@/components/sectors/sector_interest_form'
 export const metadata: Metadata = {
     title: 'Digital Marketing for Automotive | Wizards Next',
     description: "We help dealerships and service centres capture buyers while they're still researching online.",
+    alternates: {
+        canonical: '/sector/automotive',
+    },
 }
 
 export default function AutomotiveSectorPage() {

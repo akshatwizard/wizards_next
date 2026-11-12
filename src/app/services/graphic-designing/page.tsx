@@ -13,6 +13,9 @@ import { GraphicDesignHero, GraphicDesignAbout, GraphicDesignServicesOffered, Gr
 export const metadata: Metadata = {
     title: 'Graphic Design Services | Wizards Next',
     description: 'Social creative, ad visuals, and print collateral designed by the same team running your campaigns.',
+    alternates: {
+        canonical: '/services/graphic-designing',
+    },
 }
 
 export default function GraphicDesigningPage() {

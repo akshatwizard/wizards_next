@@ -13,6 +13,9 @@ import SectorInterestForm from '@/components/sectors/sector_interest_form'
 export const metadata: Metadata = {
     title: 'Digital Marketing for Retail | Wizards Next',
     description: 'We help jewellery, furniture, and fashion retailers bring people from the feed to the store.',
+    alternates: {
+        canonical: '/sector/retail',
+    },
 }
 
 export default function RetailSectorPage() {

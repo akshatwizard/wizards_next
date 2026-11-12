@@ -13,6 +13,9 @@ import { SocialMediaHero, SocialMediaAbout, SocialMediaServicesOffered, SocialMe
 export const metadata: Metadata = {
     title: 'Social Media Planning & Management | Wizards Next',
     description: 'Content pillars, scheduling, and real community management across Instagram, Facebook, and LinkedIn.',
+    alternates: {
+        canonical: '/services/social-media',
+    },
 }
 
 export default function SocialMediaPage() {

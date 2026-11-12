@@ -13,6 +13,9 @@ import { AdsManagementHero, AdsManagementAbout, AdsManagementServicesOffered, Ad
 export const metadata: Metadata = {
     title: 'Google & Meta Ads Management | Wizards Next',
     description: 'Hands-on paid campaign management across Google Search, Display, Instagram, and Facebook.',
+    alternates: {
+        canonical: '/services/google-meta-ads-management',
+    },
 }
 
 export default function GoogleMetaAdsManagementPage() {

@@ -151,7 +151,7 @@ export default function AboutUs() {
                                 <p>
                                     By combining the capabilities of these two titans, Wizards is well-positioned
                                     to offer complete integrated digital services and innovative design to clients
-                                    across India — with offices in Varanasi and Hyderabad, 50+ projects running
+                                    across India — based in Varanasi, with clients in Hyderabad, 50+ projects running
                                     nationwide, and overseas clients in the USA, Russia, and Spain.
                                 </p>
                             </div>
@@ -173,7 +173,7 @@ export default function AboutUs() {
                                 <Feature
                                     icon={Globe2}
                                     title="Two Cities, Nationwide Reach"
-                                    description="Varanasi and Hyderabad at home, 50+ projects across India, and clients overseas."
+                                    description="Varanasi at home, Hyderabad clients served remotely, 50+ projects across India, and clients overseas."
                                 />
                             </div>
                         </FadeUp>

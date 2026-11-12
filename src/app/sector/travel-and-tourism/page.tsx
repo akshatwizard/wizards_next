@@ -13,6 +13,9 @@ import SectorInterestForm from '@/components/sectors/sector_interest_form'
 export const metadata: Metadata = {
     title: 'Digital Marketing for Travel & Tourism | Wizards Next',
     description: 'We help hotels, resorts, and travel agencies in Varanasi and across India turn browsing into bookings.',
+    alternates: {
+        canonical: '/sector/travel-and-tourism',
+    },
 }
 
 export default function TravelAndTourismSectorPage() {

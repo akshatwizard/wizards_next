@@ -13,6 +13,9 @@ import { ContentCreationHero, ContentCreationAbout, ContentCreationServicesOffer
 export const metadata: Metadata = {
     title: 'Content Creation Services | Wizards Next',
     description: 'Blog posts, captions, ad copy, and website copy written with a consistent brand voice.',
+    alternates: {
+        canonical: '/services/content-creation',
+    },
 }
 
 export default function ContentCreationPage() {

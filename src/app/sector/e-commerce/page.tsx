@@ -13,6 +13,9 @@ import SectorInterestForm from '@/components/sectors/sector_interest_form'
 export const metadata: Metadata = {
     title: 'Digital Marketing for E-Commerce | Wizards Next',
     description: 'We help online stores get built, found, and actually run — end to end.',
+    alternates: {
+        canonical: '/sector/e-commerce',
+    },
 }
 
 export default function ECommerceSectorPage() {

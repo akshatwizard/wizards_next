@@ -27,26 +27,26 @@ export default function HeroSection() {
                 <div className='w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12'>
                     <div className='w-full h-full flex flex-col justify-center'>
 
-                        <FadeUp
-                            delay={0}
+                        {/* Badge, heading and intro render without the fade-in: they are the
+                            first paint / LCP on mobile, and an opacity:0 start delayed LCP until JS hydrated. */}
+                        <div
                             className='flex items-center gap-2 text-xs px-3 py-2 rounded-full border border-amber-600/50 bg-amber-600/10 max-w-full w-fit text-amber-600 mb-8'>
                             <span className='size-1.5 rounded-full bg-amber-600 animate-ping shrink-0' />
-                            <span>Best Digital Marketing Agency — Varanasi &amp; Hyderabad</span>
-                        </FadeUp>
+                            <span>Digital Marketing Agency in Varanasi — serving Hyderabad &amp; all India</span>
+                        </div>
 
-                        <FadeUp delay={0.05}>
+                        <div>
                             <PageHeading className='font-medium'>
                                 We Don&apos;t Just Market. We <span className='font-sora! text-amber-600'>Ignite</span> <br />Your <span className='font-sora! text-amber-600'>Brand</span>
                             </PageHeading>
-                        </FadeUp>
+                        </div>
 
-                        <FadeUp
-                            delay={0.1}
+                        <div
                             className='text-zinc-100 max-w-lg block mt-5 leading-snug'>
                             <span>
-                                From social media mastery to full-stack web development — Wizards Next is your one-stop growth partner, running 50+ projects across India from offices in Varanasi and Hyderabad, with 24+ years of combined expertise.
+                                From social media mastery to full-stack web development — Wizards Next is your one-stop growth partner, based in <Link href='/digital-marketing-agency-varanasi' className='underline decoration-amber-600/60 underline-offset-4 hover:text-amber-500'>Varanasi</Link> and running 50+ projects across India, including clients in <Link href='/digital-marketing-agency-hyderabad' className='underline decoration-amber-600/60 underline-offset-4 hover:text-amber-500'>Hyderabad</Link>, with 24+ years of combined expertise.
                             </span>
-                        </FadeUp>
+                        </div>
 
                         <FadeUp delay={0.15} className="mt-9 flex items-center gap-2.5">
                             <Link
@@ -104,7 +104,9 @@ export default function HeroSection() {
                                 alt="Illustrated map of Wizards Next's services — branding, marketing, content, video, web development, e-commerce, and AI, connected as one growth system"
                                 width={1024}
                                 height={1536}
-                                priority
+                                // Hidden below md, so no priority preload (it was downloaded on phones too).
+                                loading="lazy"
+                                sizes="(min-width: 1024px) 380px, 340px"
                                 className="w-full h-auto max-h-[520px] object-contain select-none pointer-events-none drop-shadow-[0_0_50px_rgba(217,119,6,0.12)]"
                             />
                         </FadeUp>
