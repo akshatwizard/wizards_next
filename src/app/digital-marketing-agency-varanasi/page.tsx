@@ -9,6 +9,7 @@ import ServiceCTA from '@/components/services/service_cta'
 import { clients } from '@/constant/clients'
 import { SITE_URL, BUSINESS } from '@/constant/site'
 import { ServiceFAQType } from '@/types/service.types'
+import { VARANASI_CLIENTS } from '@/constant/varanasi'
 
 // City landing page for Varanasi — the only physical office. Every fact here
 // comes from what the site already publishes (contact, about, FAQ, case studies).
@@ -17,14 +18,13 @@ const ADDRESS = `${BUSINESS.streetAddress}, ${BUSINESS.addressLocality}, ${BUSIN
 const PHONE_DISPLAY = '+91 80721 99651'
 const MAPS_QUERY = encodeURIComponent(`Wizards Next LLP, ${ADDRESS}`)
 
-// Real clients whose case studies are Varanasi businesses or institutions.
-const VARANASI_CLIENTS = ['gd-sons', 'harish-chandra-pg-college', 'travel-zone', 'dhanuka-silks', 'banarsi-saree', 'gnsr-textiles', 'kasibunkari', 'rk-marbles-varanasi', 'armonia-varanasi', 'pdr-mall', 'sunbeam-academy', 'maansinghka-agencies', 'sjsaa']
 
-const SERVICES = [
-    { slug: 'social-media', name: 'Social media marketing', desc: 'Planning, reels, posting and community management for Instagram, Facebook and YouTube.' },
-    { slug: 'seo-consultancy', name: 'SEO and local SEO', desc: 'Technical fixes, content and Google Business Profile work so Varanasi customers find you in Search and Maps.' },
-    { slug: 'website-development', name: 'Website development', desc: 'Fast, mobile-first websites and landing pages that turn visits into calls and WhatsApp enquiries.' },
-    { slug: 'performance-marketing', name: 'Performance marketing', desc: 'Paid campaigns planned around enquiries and sales, with spend tracked openly.' },
+// `href` overrides /services/<slug> where a dedicated Varanasi page exists.
+const SERVICES: { slug: string; name: string; desc: string; href?: string }[] = [
+    { slug: 'social-media', href: '/social-media-marketing-agency-varanasi', name: 'Social media marketing', desc: 'Planning, reels, posting and community management for Instagram, Facebook and YouTube.' },
+    { slug: 'seo-consultancy', href: '/seo-services-varanasi', name: 'SEO and local SEO', desc: 'Technical fixes, content and Google Business Profile work so Varanasi customers find you in Search and Maps.' },
+    { slug: 'website-development', href: '/website-development-company-varanasi', name: 'Website development', desc: 'Fast, mobile-first websites and landing pages that turn visits into calls and WhatsApp enquiries.' },
+    { slug: 'performance-marketing', href: '/performance-marketing-agency-varanasi', name: 'Performance marketing', desc: 'Paid campaigns planned around enquiries and sales, with spend tracked openly.' },
     { slug: 'google-meta-ads-management', name: 'Google & Meta ads', desc: 'Hands-on campaign setup and weekly optimisation on Google Search and Meta.' },
     { slug: 'whatsapp-marketing', name: 'WhatsApp marketing', desc: 'Catalogues, broadcasts and automation on WhatsApp Business.' },
     { slug: 'brand-designing', name: 'Branding', desc: 'Logo, identity and guidelines for new and established local brands.' },
@@ -82,7 +82,7 @@ export default function VaranasiPage() {
         areaServed: { '@type': 'City', name: 'Varanasi' },
         parentOrganization: { '@id': `${SITE_URL}/#organization` },
         sameAs: ['https://share.google/zYiIe2jRbaZmqOOWi', 'https://www.instagram.com/wizards.digital/', 'https://in.linkedin.com/company/wizardsnext'],
-        makesOffer: SERVICES.map((s) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.name, url: `${SITE_URL}/services/${s.slug}` } })),
+        makesOffer: SERVICES.map((s) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.name, url: `${SITE_URL}${s.href ?? `/services/${s.slug}`}` } })),
     }
     const breadcrumbJsonLd = {
         '@context': 'https://schema.org',
@@ -143,7 +143,7 @@ export default function VaranasiPage() {
                     </FadeUp>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                         {SERVICES.map((s) => (
-                            <Link key={s.slug} href={`/services/${s.slug}`} className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5 hover:border-amber-600/40 transition-colors">
+                            <Link key={s.slug} href={s.href ?? `/services/${s.slug}`} className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5 hover:border-amber-600/40 transition-colors">
                                 <h3 className="text-[15px] font-medium text-zinc-100 mb-1.5">{s.name}</h3>
                                 <p className="text-[12.5px] font-light leading-relaxed text-zinc-300">{s.desc}</p>
                             </Link>
