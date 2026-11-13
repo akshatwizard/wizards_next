@@ -10,7 +10,6 @@ import { SectionBadge } from "@/components/services/section_badge";
 import { services } from "@/constant/services";
 import { HoneypotField } from "@/components/ui/honeypot_field";
 import { getLeadSource } from "@/lib/lead-source";
-import OfficePhotos from "@/components/office_photos";
 
 // Address as already published on this page; Business Profile resolves to "Wizards Next LLP".
 const MAP_ADDRESS = "D59/127 A-1-4, Nirala Nagar Lane No. 3, Shivpurwa, Varanasi – 221010";
@@ -239,8 +238,6 @@ export default function ContactContent() {
                     </FadeUp>
                 </Wrapper>
             </Section>
-
-            <OfficePhotos />
 
             {/* Find us on Google: free Maps embed (no API key) for the Wizards Next LLP Business Profile */}
             <Section className="relative">

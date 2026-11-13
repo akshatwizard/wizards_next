@@ -4,7 +4,6 @@ import { ChevronRight, ArrowRight, ExternalLink, Zap, Users, Target, ShieldCheck
 import { Section, Wrapper } from "@/components/ui/sections";
 import { FadeUp } from "@/components/ui/motion_components";
 import { SectionBadge } from "@/components/services/section_badge";
-import OfficePhotos from "@/components/office_photos";
 
 export const metadata: Metadata = {
     title: "About Wizards Next | Digital Marketing Agency in Varanasi",
@@ -178,7 +177,7 @@ export default function AboutPage() {
                 </Wrapper>
             </Section>
 
-            <OfficePhotos />
+            {/* Team section intentionally omitted here — being handled separately. */}
 
             {/* CTA */}
             <Section>
