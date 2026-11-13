@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
       // Old WordPress site URLs (/index.php/...) still indexed by Google and
       // linked from old profiles — 301 each to its current equivalent; anything
       // else under /index.php goes to the homepage.
+      { source: "/blogs", destination: "/blog", statusCode: 301 },
       { source: "/index.php/about-us", destination: "/about", statusCode: 301 },
       { source: "/index.php/career", destination: "/careers", statusCode: 301 },
       { source: "/index.php/contact-us", destination: "/contact", statusCode: 301 },

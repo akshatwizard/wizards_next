@@ -3,6 +3,7 @@ import { SITE_URL } from "@/constant/site";
 import { ALL_SERVICES } from "@/constant/service_meta";
 import { clients } from "@/constant/clients";
 import { NavMenu } from "@/constant/menu";
+import { POSTS } from "@/constant/blogs";
 
 // Sector slugs are derived from the same nav data every sector link on the
 // site already uses, so this list can't drift out of sync with the real
@@ -57,5 +58,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
     }));
 
-    return [...staticRoutes, ...serviceRoutes, ...sectorRoutes, ...clientRoutes];
+    const blogRoutes: MetadataRoute.Sitemap = [
+        { url: `${SITE_URL}/blog`, lastModified: new Date(POSTS[0].dateModified), changeFrequency: "daily", priority: 0.7 },
+        ...POSTS.map((p) => ({
+            url: `${SITE_URL}/blog/${p.slug}`,
+            lastModified: new Date(p.dateModified),
+            changeFrequency: "monthly" as const,
+            priority: 0.6,
+        })),
+    ];
+
+    return [...staticRoutes, ...serviceRoutes, ...sectorRoutes, ...clientRoutes, ...blogRoutes];
 }
