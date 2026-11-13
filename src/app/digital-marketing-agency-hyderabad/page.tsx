@@ -128,7 +128,7 @@ export default function HyderabadPage() {
                         ))}
                     </div>
                     <p className="text-[13px] text-zinc-300">
-                        Healthcare is our strongest Hyderabad sector — see <Link href="/sector/healthcare" className="underline underline-offset-2 hover:text-amber-500">digital marketing for healthcare</Link>. Our office is in <Link href="/digital-marketing-agency-varanasi" className="underline underline-offset-2 hover:text-amber-500">Varanasi</Link>.
+                        Healthcare is our strongest Hyderabad sector — see <Link href="/healthcare-digital-marketing-hyderabad" className="underline underline-offset-2 hover:text-amber-500">digital marketing for doctors and clinics in Hyderabad</Link> and <Link href="/sector/healthcare" className="underline underline-offset-2 hover:text-amber-500">digital marketing for healthcare</Link>. Our office is in <Link href="/digital-marketing-agency-varanasi" className="underline underline-offset-2 hover:text-amber-500">Varanasi</Link>.
                     </p>
                 </Wrapper>
             </Section>
