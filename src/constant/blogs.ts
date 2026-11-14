@@ -13,12 +13,23 @@ export const BLOG_AUTHOR = {
     display: 'Ravi Khetan, Founder, Wizards Next LLP',
 }
 
+export type BlogFigure = {
+    src: string
+    alt: string
+    caption: string
+    sourceLabel?: string
+    sourceUrl?: string
+    width: number
+    height: number
+}
+
 export type BlogBlock =
     | { h2: string }
     | { h3: string }
     | { p: string }
     | { ul: string[] }
     | { ol: string[] }
+    | { figure: BlogFigure }
 
 export type BlogPost = {
     slug: string
@@ -56,6 +67,7 @@ export const POSTS: BlogPost[] = [
             { p: 'On 10 November 2026, OpenAI announced [Businesses in ChatGPT](https://openai.com/index/introducing-businesses-chatgpt/), a beta that lets companies claim their business inside ChatGPT through a new tool called **ChatGPT Business Hub**. For years the advice for local businesses has been “claim your Google Business Profile.” This is the first time ChatGPT has offered something similar.' },
             { p: 'This post explains what Business Hub does, who can use it today, how verification works and what we recommend businesses in India prepare — based only on what OpenAI and the search industry press have published so far.' },
             { h2: 'What is ChatGPT Business Hub?' },
+            { figure: { src: '/images/blog/chatgpt-business-hub-openai-announcement.webp', alt: 'OpenAI announcement page titled Introducing Businesses in ChatGPT, dated 10 November 2026', caption: 'OpenAI announced Businesses in ChatGPT, and the Business Hub tool, on 10 November 2026.', sourceLabel: 'OpenAI', sourceUrl: 'https://openai.com/index/introducing-businesses-chatgpt/', width: 1200, height: 966 } },
             { p: 'According to OpenAI’s announcement, Business Hub lets a business:' },
             { ul: [
                 '**Claim its business** in ChatGPT and, once verified, update key details such as website, description, category and logo.',
@@ -66,6 +78,7 @@ export const POSTS: BlogPost[] = [
             { p: 'OpenAI says ChatGPT is used by 1.2 billion people each week, That reach is why it is worth checking now whether your business can claim a profile, even if you are a small business.' },
             { h2: 'Who can claim a business right now?' },
             { p: 'This is where the details matter. OpenAI’s [help article on setting up your business](https://help.openai.com/en/articles/20001635-setting-up-your-business-on-chatgpt) says:' },
+            { figure: { src: '/images/blog/chatgpt-business-hub-openai-help-setup.webp', alt: 'OpenAI Help Center article, Setting up your business on ChatGPT, showing the Overview and Who is eligible sections', caption: 'OpenAI’s help article sets out who can claim a profile and how eligibility depends on location and business type.', sourceLabel: 'OpenAI Help Center', sourceUrl: 'https://help.openai.com/en/articles/20001635-setting-up-your-business-on-chatgpt', width: 1200, height: 1151 } },
             { ul: [
                 'You can claim a business if you **own it or are authorised to represent it**. You do not need an ads account or a ChatGPT Enterprise agreement.',
                 'Eligible businesses can claim an existing listing or add one “where ChatGPT is available and the required verification is supported” — availability depends on the business’s **location and type**.',
@@ -82,6 +95,7 @@ export const POSTS: BlogPost[] = [
                 '**Website domain** — adding a DNS TXT record to your domain, then selecting “Verify domain”.',
                 '**Shopify store** — signing in to the store you are claiming.',
             ] },
+            { figure: { src: '/images/blog/chatgpt-business-hub-verification-steps.webp', alt: 'Diagram of four ChatGPT Business Hub verification methods: business phone, business email, website domain and Shopify store, plus a note about Persona identity verification', caption: 'The four verification methods listed in OpenAI’s help article, plus identity verification with Persona after the claim is approved.', width: 1200, height: 780 } },
             { p: 'After the claim is approved, you also need to complete **identity verification with Persona** before you can publish changes, view insights or create an agent. OpenAI says you may need a government-issued ID, business registration information and proof that you are authorised to represent the business. The blue verified check appears only after Persona verification is approved.' },
             { p: 'In a hands-on walkthrough, [Search Engine Journal](https://www.searchenginejournal.com/submit-website-chatgpt/596785/) found that choosing the physical-location option showed a waitlist, while the website option let them continue — which matches OpenAI’s note that local listings are US-only for now.' },
             { h2: 'What Business Hub does not do' },
@@ -95,6 +109,7 @@ export const POSTS: BlogPost[] = [
                 '**Keep your public information consistent.** Since ChatGPT can draw on other sources, your website, Google Business Profile and social profiles should show the same name, address, phone and services.',
                 '**Make your website easy to cite.** Clear service pages, real contact details, FAQs and accurate structured data help any search system — Google or ChatGPT — understand what you do.',
             ] },
+            { figure: { src: '/images/blog/chatgpt-business-hub-india-checklist.webp', alt: 'Five-step checklist of what businesses in India should do now: check Business Hub, prepare paperwork, line up DNS access, keep public information consistent, and make the website easy to cite', caption: 'A short checklist of what businesses in India can do now, while local listing claims remain limited.', width: 1200, height: 860 } },
             { p: 'Google is moving in the same direction: this week it made [Gemini 4 Hydrogen the default model in AI Mode](https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/), and we covered the ongoing [Google November 2026 core update](/blog/google-november-2026-core-update) yesterday. Visibility in AI answers is becoming part of normal SEO work.' },
             { h2: 'How Wizards can help' },
             { p: 'Our [AI consultancy](/services/ai-consultancy) and [SEO consultancy](/services/seo-consultancy) teams help businesses get their information, website and listings in shape for both Google and AI assistants. If you are in Varanasi, see our [SEO services in Varanasi](/seo-services-varanasi) or our full [digital marketing agency in Varanasi](/digital-marketing-agency-varanasi) page. Or simply [book a free call](/book) and we will look at your setup with you.' },
@@ -123,7 +138,7 @@ export const POSTS: BlogPost[] = [
         category: 'SEO',
         tags: ['Google Core Update', 'SEO', 'AI Mode'],
         datePublished: '2026-11-13',
-        dateModified: '2026-11-13',
+        dateModified: '2026-11-14',
         readTime: '6 min read',
         excerpt: 'Google’s third core update of 2026 began rolling out on 10 November and can take up to two weeks. Here is what it is, what not to panic about, and the exact steps to check your site once it finishes.',
         cover: '/images/blog/google-november-2026-core-update.png',
@@ -132,8 +147,10 @@ export const POSTS: BlogPost[] = [
             { p: 'This post explains what a core update is, what Google has (and has not) said about this one, and a simple plan for checking your site once the rollout ends.' },
             { h2: 'What is a Google core update?' },
             { p: 'Google describes core updates as broad changes to its ranking systems, made several times a year. In its [core updates documentation](https://developers.google.com/search/updates/core-updates), Google says they “don’t target specific sites or individual web pages” — the aim is to keep its systems current as content on the web changes.' },
+            { figure: { src: '/images/blog/google-november-2026-core-update-search-central.webp', alt: 'Google Search Central documentation page titled Google Search’s core updates and your website, explaining how core updates work and how to check a traffic drop in Search Console', caption: 'Google’s own documentation on how core updates work, and how to check a traffic change in Search Console.', sourceLabel: 'Google Search Central', sourceUrl: 'https://developers.google.com/search/updates/core-updates', width: 1200, height: 932 } },
             { p: 'In other words, a drop after a core update is not a penalty. It usually means Google now judges other pages to be more helpful for that search than yours.' },
             { h2: 'What we know about the November 2026 core update' },
+            { figure: { src: '/images/blog/google-november-2026-core-update-status-dashboard.webp', alt: 'Google Search Status Dashboard incident page for the November 2026 core update, showing a start time of 10 November 2026 at 10:06 US/Pacific and a rollout of up to two weeks', caption: 'Google’s Search Status Dashboard lists the November 2026 core update as starting on 10 November 2026, with a rollout of up to two weeks.', sourceLabel: 'Google Search Status Dashboard', sourceUrl: 'https://status.search.google.com/incidents/WLxcJyC6jMWMfryxsKMc', width: 1200, height: 650 } },
             { ul: [
                 '**Start:** 10 November 2026, 10:06 a.m. US Pacific time (about 11:36 p.m. IST), per the [Search Status Dashboard](https://status.search.google.com/incidents/WLxcJyC6jMWMfryxsKMc).',
                 '**Scope:** global, all languages — so Hindi and English results in India are both covered.',
@@ -153,6 +170,7 @@ export const POSTS: BlogPost[] = [
                 '**Note your baseline.** Google suggests comparing against a week before the update started — so roughly 3–9 November 2026.',
                 '**Keep publishing normally.** Useful new pages and fixes are fine; avoid “quick fix” edits made only because you read they are bad for SEO.',
             ] },
+            { figure: { src: '/images/blog/google-november-2026-core-update-rollout-plan.webp', alt: 'Two-column plan for the November 2026 core update: what to do during the rollout and what to check in Search Console after it finishes', caption: 'A simple plan: hold major changes during the rollout, then compare Search Console data once it has finished and a further week has passed.', width: 1200, height: 820 } },
             { h2: 'How to check your site after the update finishes' },
             { p: 'Google’s own advice is to wait until the rollout is confirmed complete on the Status Dashboard, then wait at least one more full week before analysing.' },
             { ol: [
@@ -198,7 +216,7 @@ export const POSTS: BlogPost[] = [
         category: 'Social Media',
         tags: ['Instagram', 'Organic Growth', 'Reels'],
         datePublished: '2025-05-12',
-        dateModified: '2026-11-13',
+        dateModified: '2026-11-14',
         readTime: '7 min read',
         excerpt: 'No growth hacks, no bought followers. How Instagram itself says it ranks Reels, what makes it show your content to fewer people, and a simple weekly system to grow an account organically.',
         cover: '/images/blog/grow-instagram-10k.png',
@@ -206,6 +224,7 @@ export const POSTS: BlogPost[] = [
             { p: 'Most businesses want more Instagram followers, but followers on their own don’t pay the bills — the right followers do. This guide covers how to **grow Instagram followers organically**, using what Instagram has publicly said about how it ranks content, and a content routine a small team can actually keep up.' },
             { h2: 'Start with how Instagram says it ranks Reels' },
             { p: 'Instagram has published an explainer, [Instagram Ranking Explained](https://about.instagram.com/blog/announcements/instagram-ranking-explained). The key points for Reels:' },
+            { figure: { src: '/images/blog/grow-instagram-10k-ranking-explained.webp', alt: 'Instagram’s official blog post titled Instagram Ranking Explained, by Adam Mosseri, describing how ranking works across the app', caption: 'Instagram’s public ranking explainer is the basis for the Reels advice in this guide.', sourceLabel: 'Instagram', sourceUrl: 'https://about.instagram.com/blog/announcements/instagram-ranking-explained', width: 1200, height: 766 } },
             { ul: [
                 'Most of what people see in Reels comes from accounts they **don’t** follow. That is why Reels are the main way new people discover a business.',
                 'Instagram says its most important predictions are how likely someone is to **reshare** a reel, **watch it all the way through**, **like** it, and **go to the audio page**.',
@@ -221,6 +240,7 @@ export const POSTS: BlogPost[] = [
                 'Reels that are mostly text.',
                 'Reels that have already been posted on Instagram (reposts of someone else’s content).',
             ] },
+            { figure: { src: '/images/blog/grow-instagram-10k-less-visible.webp', alt: 'Checklist of reel types Instagram says it aims to show to fewer people, including low-resolution, watermarked, muted, bordered, mostly-text and already-posted reels', caption: 'Instagram says it aims to make these kinds of reels less visible.', width: 1200, height: 700 } },
             { p: 'Fixing just these — shooting vertically in good light, exporting clean files, and making original content — removes the most common reasons a business account stalls.' },
             { h2: 'A weekly content system that works for small teams' },
             { h3: '1. Pick three content pillars' },
@@ -233,6 +253,7 @@ export const POSTS: BlogPost[] = [
             { p: 'A schedule you can keep for months beats a burst you abandon in two weeks. Batch-shoot once a week, edit, and schedule. Use Stories daily for lighter, behind-the-scenes updates to the followers you already have.' },
             { h3: '5. Reply and engage' },
             { p: 'Your history of interaction with a viewer is a ranking signal. Reply to comments and DMs quickly, and engage with accounts in your city and industry.' },
+            { figure: { src: '/images/blog/grow-instagram-10k-weekly-system.webp', alt: 'Five-step weekly Instagram content system: pick three pillars, hook in the first seconds, make it worth sharing, post consistently, and reply and engage', caption: 'A weekly content system a small team can keep up, built around how Instagram says it ranks Reels.', width: 1200, height: 860 } },
             { h2: 'Profile basics that turn views into followers' },
             { ul: [
                 'A clear name field with what you do and where (e.g. “Dental Clinic | Varanasi”).',
@@ -269,14 +290,16 @@ export const POSTS: BlogPost[] = [
         category: 'Ads',
         tags: ['Meta Ads', 'Performance'],
         datePublished: '2025-05-03',
-        dateModified: '2026-11-13',
+        dateModified: '2026-11-14',
         readTime: '6 min read',
         excerpt: 'Good Meta ads start before the ad: clean tracking, a simple account structure, and a steady supply of creative. A practical checklist for small businesses.',
         cover: '/images/blog/meta-ads-2025.png',
         body: [
             { p: 'Facebook and Instagram ads can bring steady enquiries and sales for a small business — or burn through budget fast. This **Meta ads strategy for small businesses** focuses on the parts you control: tracking, structure, creative and how you judge results.' },
+            { figure: { src: '/images/blog/meta-ads-2025-strategy-steps.webp', alt: 'Six-part Meta ads strategy diagram covering tracking, simple account structure, Advantage+, creative, landing pages and judging business outcomes', caption: 'The six parts of the strategy: tracking, structure, Advantage+, creative, the landing page, and judging real outcomes.', width: 1200, height: 920 } },
             { h2: '1. Fix tracking before you spend' },
             { p: 'Meta’s delivery system optimises toward the events you send it. If it can’t see your leads or purchases, it can’t find more people like those customers.' },
+            { figure: { src: '/images/blog/meta-ads-2025-about-pixel.webp', alt: 'Meta Business Help Center article titled About Meta pixel, explaining what the pixel measures and how it works', caption: 'Meta’s own help article on the Meta Pixel, the starting point for reliable ad tracking.', sourceLabel: 'Meta Business Help Center', sourceUrl: 'https://www.facebook.com/business/help/742478679120153', width: 1200, height: 876 } },
             { ul: [
                 'Install the [Meta Pixel](https://www.facebook.com/business/help/742478679120153) on your website and confirm the events that matter (Lead, Purchase, Contact) fire correctly.',
                 'Add the [Conversions API](https://developers.facebook.com/docs/marketing-api/conversions-api), which sends events from your server, so tracking holds up when browsers block cookies or scripts.',
@@ -336,7 +359,7 @@ export const POSTS: BlogPost[] = [
         category: 'Branding',
         tags: ['Branding', 'Identity'],
         datePublished: '2025-04-24',
-        dateModified: '2026-11-13',
+        dateModified: '2026-11-14',
         readTime: '5 min read',
         excerpt: 'A logo is a signature. A brand is the reputation behind it. What actually makes up a brand, and how a small business can build one deliberately.',
         cover: '/images/blog/logo-vs-brand.png',
@@ -346,6 +369,7 @@ export const POSTS: BlogPost[] = [
             { p: 'A logo is a symbol or wordmark that identifies your business. It works like a signature: it helps people recognise you quickly on a signboard, a package, a post or a website. A good logo is simple, readable at small sizes, and works in one colour.' },
             { h2: 'What a brand is' },
             { p: 'A brand is what people think, feel and expect when they hear your name. It is built from every experience they have with you — your service, your prices, your staff, your content, your reviews, how you answer the phone. The logo is a reminder of that reputation; it isn’t the reputation itself.' },
+            { figure: { src: '/images/blog/logo-vs-brand-comparison.webp', alt: 'Side-by-side comparison of a logo, described as a signature or wordmark, and a brand, described as the reputation and expectations people have about a business', caption: 'A logo identifies you. A brand is the reputation that logo stands for.', width: 1200, height: 760 } },
             { h2: 'The building blocks of a brand' },
             { h3: 'Positioning' },
             { p: 'Who you serve, what you do for them, and why they should choose you over the alternatives. If you can’t say this in one sentence, customers won’t be able to either.' },
@@ -357,6 +381,7 @@ export const POSTS: BlogPost[] = [
             { p: 'Delivery on the promise: response times, quality, after-sales care. This is where most brands are really made or broken.' },
             { h3: 'Proof' },
             { p: 'Genuine reviews, case studies and word of mouth. What others say about you carries more weight than what you say about yourself.' },
+            { figure: { src: '/images/blog/logo-vs-brand-building-blocks.webp', alt: 'Five building blocks of a brand: positioning, personality and voice, visual identity, customer experience, and proof', caption: 'The building blocks of a brand go well beyond the logo.', width: 1200, height: 820 } },
             { h2: 'Signs your brand needs work (not just your logo)' },
             { ul: [
                 'Customers mainly compare you on price.',
@@ -389,17 +414,19 @@ export const POSTS: BlogPost[] = [
         category: 'E-Commerce',
         tags: ['Shopify', 'E-Commerce'],
         datePublished: '2025-04-15',
-        dateModified: '2026-11-13',
+        dateModified: '2026-11-14',
         readTime: '7 min read',
         excerpt: 'Before you announce your new Shopify store, run through these 12 checks — from test orders and policies to SEO and analytics — so your first customers get a smooth experience.',
         cover: '/images/blog/shopify-checklist.png',
         body: [
             { p: 'Launching a Shopify store is exciting, but small setup gaps — a payment method that fails, missing policies, a broken shipping rate — can cost you your first customers. Use this **Shopify store launch checklist** before you go live.' },
+            { figure: { src: '/images/blog/shopify-checklist-12-steps.webp', alt: 'Shopify store launch checklist grouped into store setup, products and content, performance and trust, and measurement and launch, covering 12 checks', caption: 'The 12 checks in this guide, grouped so you can work through them in order.', width: 1200, height: 780 } },
             { h2: 'Store setup' },
             { h3: '1. Connect your own domain' },
             { p: 'Use your brand domain (for example yourbrand.in or .com) rather than the default myshopify address, and make sure it opens over HTTPS. Set the version customers should see as the primary domain.' },
             { h3: '2. Set up payments and place a test order' },
             { p: 'Activate the payment methods your customers expect — UPI, cards, netbanking, and cash on delivery if you offer it. Shopify recommends placing at least one test order during setup; its help centre explains how to use a [test payment gateway or test mode](https://help.shopify.com/en/manual/checkout-settings/test-orders). Remember customers can’t place live orders while payments are in test mode, so switch it off before launch.' },
+            { figure: { src: '/images/blog/shopify-checklist-test-order.webp', alt: 'Shopify Help Center article titled Placing a test order, including a caution that customers cannot place live orders while payment providers are in test mode', caption: 'Shopify’s help article on placing a test order, including the warning to switch test mode off before launch.', sourceLabel: 'Shopify Help Center', sourceUrl: 'https://help.shopify.com/en/manual/checkout-settings/test-orders', width: 1200, height: 677 } },
             { h3: '3. Configure shipping' },
             { p: 'Set shipping zones and rates that match your courier costs, including any free-shipping threshold. Check delivery estimates and that COD charges (if any) are shown clearly.' },
             { h3: '4. Set up taxes' },

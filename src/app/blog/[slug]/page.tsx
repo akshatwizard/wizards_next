@@ -51,7 +51,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         mainEntityOfPage: { '@type': 'WebPage', '@id': url },
         headline: p.title,
         description: p.description,
-        image: [`${SITE_URL}${p.cover}`],
+        image: [`${SITE_URL}${p.cover}`, ...p.body.flatMap((b) => 'figure' in b ? [`${SITE_URL}${b.figure.src}`] : [])],
         datePublished: p.datePublished,
         dateModified: p.dateModified,
         keywords: [p.keyword, ...p.tags].join(', '),
@@ -121,7 +121,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                             if ('h3' in b) return <h3 key={i} className="text-lg font-medium text-zinc-100 mt-1">{b.h3}</h3>
                             if ('p' in b) return <p key={i}><RichText text={b.p} /></p>
                             if ('ul' in b) return <ul key={i} className="list-disc pl-6 flex flex-col gap-2 marker:text-amber-600">{b.ul.map((li, j) => <li key={j}><RichText text={li} /></li>)}</ul>
-                            return <ol key={i} className="list-decimal pl-6 flex flex-col gap-2 marker:text-amber-600">{b.ol.map((li, j) => <li key={j}><RichText text={li} /></li>)}</ol>
+                            if ('ol' in b) return <ol key={i} className="list-decimal pl-6 flex flex-col gap-2 marker:text-amber-600">{b.ol.map((li, j) => <li key={j}><RichText text={li} /></li>)}</ol>
+                            return (
+                                <figure key={i} className="my-1">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img src={b.figure.src} alt={b.figure.alt} width={b.figure.width} height={b.figure.height} loading="lazy" decoding="async" className="w-full h-auto rounded-xl border border-zinc-800 bg-zinc-900" />
+                                    <figcaption className="mt-2 text-[13px] leading-snug text-zinc-400">
+                                        {b.figure.caption}
+                                        {b.figure.sourceUrl ? <> Source: <a href={b.figure.sourceUrl} target="_blank" rel="noopener" className="text-amber-500 underline underline-offset-2 hover:text-amber-400">{b.figure.sourceLabel || 'Open original'}</a></> : null}
+                                    </figcaption>
+                                </figure>
+                            )
                         })}
 
                         {p.faq && (
