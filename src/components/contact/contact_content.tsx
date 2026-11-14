@@ -12,14 +12,15 @@ import { HoneypotField } from "@/components/ui/honeypot_field";
 import { getLeadSource } from "@/lib/lead-source";
 
 // Address as already published on this page; Business Profile resolves to "Wizards Next LLP".
-const MAP_ADDRESS = "D59/127 A-1-4, Nirala Nagar Lane No. 3, Shivpurwa, Varanasi – 221010";
+const MAP_ADDRESS = "No 3, D59/127 A-1-4, Nirala Nagar Rd, Nirala Nagar, Shivepurva, Mahmoorganj, Varanasi, Uttar Pradesh 221010";
+const MAP_COORDS = "25.3080027,82.9778417";
 const GOOGLE_PROFILE_URL = "https://share.google/zYiIe2jRbaZmqOOWi";
 
 // Confirmed from the live wizards.co.in site — update here if these change.
 const contactInfo = [
     { Icon: Phone, label: "Phone", value: "+91 80721 99651" },
     { Icon: Mail, label: "Email", value: "admin@wizards.co.in" },
-    { Icon: MapPin, label: "Location", value: "D59/127 A-1-4, Nirala Nagar Lane No. 3, Shivpurwa, Varanasi – 221010" },
+    { Icon: MapPin, label: "Location", value: "No 3, D59/127 A-1-4, Nirala Nagar Rd, Nirala Nagar, Shivepurva, Mahmoorganj, Varanasi, Uttar Pradesh 221010" },
     { Icon: Clock, label: "Hours", value: "Mon – Sat, 10am – 7pm IST" }, // not confirmed on the old site — verify
 ];
 
@@ -253,7 +254,7 @@ export default function ContactContent() {
                         <div className="rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900 aspect-4/3 md:aspect-video w-full">
                             <iframe
                                 title="Wizards Next LLP on Google Maps"
-                                src={`https://www.google.com/maps?q=${encodeURIComponent(`Wizards Next LLP, ${MAP_ADDRESS}`)}&output=embed`}
+                                src={`https://www.google.com/maps?q=${MAP_COORDS}&z=17&output=embed`}
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
                                 allowFullScreen
@@ -270,7 +271,7 @@ export default function ContactContent() {
                                 <MapPin size={15} /> View on Google
                             </a>
                             <a
-                                href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`Wizards Next LLP, ${MAP_ADDRESS}`)}`}
+                                href={`https://www.google.com/maps/dir/?api=1&destination=${MAP_COORDS}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-zinc-700 text-sm text-zinc-200 hover:border-amber-600/50 hover:text-amber-600 transition-colors"

@@ -50,6 +50,9 @@ const company = [
 const locations = [
     { label: "Digital Marketing Agency in Varanasi", href: "/digital-marketing-agency-varanasi" },
     { label: "Digital Marketing for Hyderabad", href: "/digital-marketing-agency-hyderabad" },
+    { label: "Social Media Marketing in Hyderabad", href: "/social-media-marketing-agency-hyderabad" },
+    { label: "SEO Services in Hyderabad", href: "/seo-services-hyderabad" },
+    { label: "Website Development in Hyderabad", href: "/website-development-company-hyderabad" },
     { label: "Healthcare Marketing for Hyderabad", href: "/healthcare-digital-marketing-hyderabad" },
 ];
 const legal = [
@@ -132,7 +135,7 @@ export default function Footer() {
                             <a href="tel:+918072199651" className="text-zinc-200 text-[12px] hover:text-amber-600 transition-colors duration-200">
                                 +91 80721 99651
                             </a>
-                            <span className="text-zinc-200 text-[12px] leading-relaxed max-w-56">D59/127 A-1-4, Nirala Nagar Lane No. 3, Shivpurwa, Varanasi, Uttar Pradesh 221010</span>
+                            <span className="text-zinc-200 text-[12px] leading-relaxed max-w-56">No 3, D59/127 A-1-4, Nirala Nagar Rd, Nirala Nagar, Shivepurva, Mahmoorganj, Varanasi, Uttar Pradesh 221010</span>
                         </div>
                     </div>
 

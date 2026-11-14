@@ -9,6 +9,7 @@ import ServiceCTA from '@/components/services/service_cta'
 import { clients } from '@/constant/clients'
 import { SITE_URL } from '@/constant/site'
 import { ServiceFAQType } from '@/types/service.types'
+import { HYDERABAD_CLIENTS } from '@/constant/hyderabad'
 
 // Healthcare service-area page for Hyderabad. Wizards Next has NO Hyderabad
 // office: never claim a local address/office here; schema is a Service with
@@ -16,13 +17,13 @@ import { ServiceFAQType } from '@/types/service.types'
 // comes from the client case studies in constant/clients.ts.
 const PATH = '/healthcare-digital-marketing-hyderabad'
 const PHONE_DISPLAY = '+91 80721 99651'
-const CLIENTS = ['clinica-derm', 'dr-k-shilpi-reddy', 'dr-ankita-chauhan', 'dr-aradhya-achuri', 'dr-satyanarayana-garre']
+const CLIENTS = HYDERABAD_CLIENTS
 
 const SERVICES = [
     { href: '/services/personal-branding-for-doctors', name: 'Personal branding for doctors', desc: 'A trustworthy, guideline-compliant Instagram presence: content pillars, scripted reels, profile optimisation and a review of existing posts.' },
-    { href: '/services/seo-consultancy', name: 'SEO for clinics and hospitals', desc: 'Treatment and condition pages, technical SEO and Google Business Profile work built around what Hyderabad patients actually search.' },
-    { href: '/services/social-media', name: 'Social media management', desc: 'Patient-education reels, posting and replies to comments and DMs, so the page stays active and trustworthy.' },
-    { href: '/services/website-development', name: 'Doctor and clinic websites', desc: 'Fast, mobile-first websites with appointment booking that turn searches into consultations.' },
+    { href: '/seo-services-hyderabad', name: 'SEO for clinics and hospitals', desc: 'Treatment and condition pages, technical SEO and Google Business Profile work built around what Hyderabad patients actually search.' },
+    { href: '/social-media-marketing-agency-hyderabad', name: 'Social media management', desc: 'Patient-education reels, posting and replies to comments and DMs, so the page stays active and trustworthy.' },
+    { href: '/website-development-company-hyderabad', name: 'Doctor and clinic websites', desc: 'Fast, mobile-first websites with appointment booking that turn searches into consultations.' },
     { href: '/services/google-meta-ads-management', name: 'Google & Meta ads', desc: 'Campaigns monitored and optimised weekly, tied to enquiries rather than impressions.' },
     { href: '/services/videography', name: 'Video production', desc: 'Regular shoots and edits for reels, YouTube explainers and patient stories.' },
 ]
@@ -78,11 +79,21 @@ export default function HyderabadHealthcarePage() {
             { '@type': 'ListItem', position: 3, name: 'Healthcare Digital Marketing in Hyderabad', item: `${SITE_URL}${PATH}` },
         ],
     }
+    const faqJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: FAQ.faq_list.map((f) => ({
+            '@type': 'Question',
+            name: f.q,
+            acceptedAnswer: { '@type': 'Answer', text: f.a },
+        })),
+    }
 
     return (
         <main>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd).replace(/</g, '\\u003c') }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, '\\u003c') }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, '\\u003c') }} />
 
             {/* Hero — no fade-in on heading/intro so it paints immediately (LCP). */}
             <Section className="relative text-zinc-200">
@@ -104,6 +115,24 @@ export default function HyderabadHealthcarePage() {
                             <Phone size={14} /> {PHONE_DISPLAY}
                         </a>
                     </div>
+                </Wrapper>
+            </Section>
+
+            <Section>
+                <Wrapper className="lg:py-10 md:py-8 py-6 gap-3!">
+                    <figure className="max-w-4xl">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                            src="/images/city/healthcare-digital-marketing-hyderabad.webp"
+                            alt="Diagram of how Wizards Next works with Hyderabad doctors and clinics: exploration call, scoped proposal, medical inputs from the doctor, and a fixed weekly and monthly reporting rhythm."
+                            width={1200}
+                            height={720}
+                            loading="lazy"
+                            decoding="async"
+                            className="w-full h-auto rounded-2xl border border-zinc-800"
+                        />
+                        <figcaption className="mt-3 text-[12.5px] font-light text-zinc-400">How we work with Hyderabad doctors and clinics — guideline-compliant marketing, delivered remotely from Varanasi.</figcaption>
+                    </figure>
                 </Wrapper>
             </Section>
 
@@ -134,7 +163,7 @@ export default function HyderabadHealthcarePage() {
                         ))}
                     </div>
                     <p className="text-[13px] text-zinc-300">
-                        See also <Link href="/sector/healthcare" className="underline underline-offset-2 hover:text-amber-500">digital marketing for healthcare</Link> and <Link href="/digital-marketing-agency-hyderabad" className="underline underline-offset-2 hover:text-amber-500">all our work for Hyderabad businesses</Link>.
+                        See also <Link href="/social-media-marketing-agency-hyderabad" className="underline underline-offset-2 hover:text-amber-500">social media marketing in Hyderabad</Link>, <Link href="/seo-services-hyderabad" className="underline underline-offset-2 hover:text-amber-500">SEO services in Hyderabad</Link>, <Link href="/website-development-company-hyderabad" className="underline underline-offset-2 hover:text-amber-500">website development in Hyderabad</Link>, <Link href="/sector/healthcare" className="underline underline-offset-2 hover:text-amber-500">digital marketing for healthcare</Link> and <Link href="/digital-marketing-agency-hyderabad" className="underline underline-offset-2 hover:text-amber-500">all our work for Hyderabad businesses</Link>.
                     </p>
                 </Wrapper>
             </Section>

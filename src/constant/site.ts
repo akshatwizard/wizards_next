@@ -23,13 +23,15 @@ export const BUSINESS = {
         "Wizards Next is a full-service digital marketing agency based in Varanasi, running 50+ projects across India (including clients in Hyderabad) — plus overseas clients in the USA, Russia, and Spain. Social media, branding, performance ads, SEO, and website development, under one roof.",
     telephone: "+91-80721-99651",
     email: "admin@wizards.co.in",
-    // Confirmed from the /contact page's own published contact details —
-    // kept in sync with that page rather than duplicated by hand elsewhere.
-    streetAddress: "D59/127 A-1-4, Nirala Nagar Lane No. 3, Shivpurwa",
+    // NAP as published on the Google Business Profile (Ravi confirmed the
+    // map pin on 14 Nov 2026). Kept in sync with /contact and the Varanasi page.
+    streetAddress: "No 3, D59/127 A-1-4, Nirala Nagar Rd, Nirala Nagar, Shivepurva, Mahmoorganj",
     addressLocality: "Varanasi",
     addressRegion: "Uttar Pradesh",
     postalCode: "221010",
     addressCountry: "IN",
+    latitude: 25.3080027,
+    longitude: 82.9778417,
     foundingDate: "2023-06",
     // Countries with an active, real client relationship today — used by
     // the Organization JSON-LD's areaServed. India is the primary market;
@@ -37,3 +39,13 @@ export const BUSINESS = {
     // the roster genuinely grows — never pad it for appearances.
     overseasCountries: ["United States", "Russia", "Spain"],
 };
+
+// Official profiles already linked in the footer, plus the Google Business Profile.
+export const SAME_AS = [
+    "https://www.instagram.com/wizards.digital/",
+    "https://www.facebook.com/wizardsdigital/",
+    "https://in.linkedin.com/company/wizardsnext",
+    "https://share.google/zYiIe2jRbaZmqOOWi",
+];
+
+export const HAS_MAP = `https://www.google.com/maps/search/?api=1&query=${BUSINESS.latitude},${BUSINESS.longitude}`;

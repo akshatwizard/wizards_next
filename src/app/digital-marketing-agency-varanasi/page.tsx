@@ -7,7 +7,7 @@ import { ProjectCard } from '@/components/work'
 import ServiceFAQ from '@/components/services/service_faq'
 import ServiceCTA from '@/components/services/service_cta'
 import { clients } from '@/constant/clients'
-import { SITE_URL, BUSINESS } from '@/constant/site'
+import { SITE_URL, BUSINESS, SAME_AS, HAS_MAP } from '@/constant/site'
 import { ServiceFAQType } from '@/types/service.types'
 import { VARANASI_CLIENTS } from '@/constant/varanasi'
 
@@ -16,7 +16,7 @@ import { VARANASI_CLIENTS } from '@/constant/varanasi'
 const PATH = '/digital-marketing-agency-varanasi'
 const ADDRESS = `${BUSINESS.streetAddress}, ${BUSINESS.addressLocality}, ${BUSINESS.addressRegion} ${BUSINESS.postalCode}`
 const PHONE_DISPLAY = '+91 80721 99651'
-const MAPS_QUERY = encodeURIComponent(`Wizards Next LLP, ${ADDRESS}`)
+const MAP_COORDS = `${BUSINESS.latitude},${BUSINESS.longitude}`
 
 
 // `href` overrides /services/<slug> where a dedicated Varanasi page exists.
@@ -72,7 +72,12 @@ export default function VaranasiPage() {
             postalCode: BUSINESS.postalCode,
             addressCountry: BUSINESS.addressCountry,
         },
-        hasMap: `https://www.google.com/maps/search/?api=1&query=${MAPS_QUERY}`,
+        geo: {
+            '@type': 'GeoCoordinates',
+            latitude: BUSINESS.latitude,
+            longitude: BUSINESS.longitude,
+        },
+        hasMap: HAS_MAP,
         openingHoursSpecification: [{
             '@type': 'OpeningHoursSpecification',
             dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
@@ -81,7 +86,7 @@ export default function VaranasiPage() {
         }],
         areaServed: { '@type': 'City', name: 'Varanasi' },
         parentOrganization: { '@id': `${SITE_URL}/#organization` },
-        sameAs: ['https://share.google/zYiIe2jRbaZmqOOWi', 'https://www.instagram.com/wizards.digital/', 'https://in.linkedin.com/company/wizardsnext'],
+        sameAs: SAME_AS,
         makesOffer: SERVICES.map((s) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.name, url: `${SITE_URL}${s.href ?? `/services/${s.slug}`}` } })),
     }
     const breadcrumbJsonLd = {
@@ -185,7 +190,7 @@ export default function VaranasiPage() {
                                 <a href="https://share.google/zYiIe2jRbaZmqOOWi" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-amber-600 text-sm text-zinc-950 font-medium hover:bg-amber-500">
                                     <MapPin size={15} /> View on Google
                                 </a>
-                                <a href={`https://www.google.com/maps/dir/?api=1&destination=${MAPS_QUERY}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-zinc-700 text-sm text-zinc-200 hover:border-amber-600/50">
+                                <a href={`https://www.google.com/maps/dir/?api=1&destination=${MAP_COORDS}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-zinc-700 text-sm text-zinc-200 hover:border-amber-600/50">
                                     Get directions →
                                 </a>
                             </div>
@@ -193,7 +198,7 @@ export default function VaranasiPage() {
                         <div className="rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900 aspect-4/3 md:aspect-video w-full">
                             <iframe
                                 title="Wizards Next LLP, Varanasi on Google Maps"
-                                src={`https://www.google.com/maps?q=${MAPS_QUERY}&output=embed`}
+                                src={`https://www.google.com/maps?q=${MAP_COORDS}&z=17&output=embed`}
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
                                 className="w-full h-full border-0"

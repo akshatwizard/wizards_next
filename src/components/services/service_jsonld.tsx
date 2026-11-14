@@ -6,8 +6,8 @@ import { SITE_URL } from "@/constant/site";
 // Service + BreadcrumbList structured data for every /services/<slug> page,
 // built from the same name/description shown in the services menu
 // (constant/service_meta). Client component only to read the path; it is
-// still server-rendered. Provider is the Varanasi office (the only office);
-// areaServed India — no city-level claims here.
+// still server-rendered. Provider is the organization (office in Varanasi only);
+// areaServed is the two cities we actually work in — no invented locations.
 const EXTRA: Record<string, { name: string; desc: string }> = {
     "personal-branding-for-doctors": { name: "Personal Branding for Doctors", desc: "Personal branding for doctors, dentists and clinics in India — a trustworthy, guideline-compliant Instagram presence." },
 };
@@ -30,7 +30,10 @@ export default function ServiceJsonLd() {
             description: desc,
             url,
             provider: { "@id": `${SITE_URL}/#organization` },
-            areaServed: { "@type": "Country", name: "India" },
+            areaServed: [
+                { "@type": "City", name: "Varanasi", containedInPlace: { "@type": "State", name: "Uttar Pradesh" } },
+                { "@type": "City", name: "Hyderabad", containedInPlace: { "@type": "State", name: "Telangana" } },
+            ],
         },
         {
             "@context": "https://schema.org",

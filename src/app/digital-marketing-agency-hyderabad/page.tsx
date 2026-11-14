@@ -9,6 +9,7 @@ import ServiceCTA from '@/components/services/service_cta'
 import { clients } from '@/constant/clients'
 import { SITE_URL } from '@/constant/site'
 import { ServiceFAQType } from '@/types/service.types'
+import { HYDERABAD_CLIENTS } from '@/constant/hyderabad'
 
 // Service-area page for Hyderabad. Wizards Next has NO Hyderabad office:
 // this page must never claim a local address or office, and its schema is a
@@ -17,15 +18,14 @@ const PATH = '/digital-marketing-agency-hyderabad'
 const PHONE_DISPLAY = '+91 80721 99651'
 
 // Real clients whose case studies are Hyderabad practices.
-const HYDERABAD_CLIENTS = ['clinica-derm', 'dr-k-shilpi-reddy', 'dr-ankita-chauhan', 'dr-aradhya-achuri', 'dr-satyanarayana-garre']
 
 const SERVICES = [
-    { slug: 'seo-consultancy', name: 'SEO for clinics and businesses', desc: 'Treatment and service pages, content and technical SEO built around what Hyderabad patients and customers actually search.' },
-    { slug: 'personal-branding-for-doctors', name: 'Personal branding for doctors', desc: 'Instagram and content that build a doctor’s reputation, within medical advertising guidelines.' },
-    { slug: 'social-media', name: 'Social media marketing', desc: 'Planning, reels, posting and community management.' },
-    { slug: 'website-development', name: 'Website development', desc: 'Fast, mobile-first websites that turn visits into appointments and enquiries.' },
-    { slug: 'google-meta-ads-management', name: 'Google & Meta ads', desc: 'Campaign setup and weekly optimisation, tied to enquiries.' },
-    { slug: 'performance-marketing', name: 'Performance marketing', desc: 'Paid-media strategy with spend tracked openly.' },
+    { href: '/seo-services-hyderabad', name: 'SEO for clinics and businesses', desc: 'Treatment and service pages, content and technical SEO built around what Hyderabad patients and customers actually search.' },
+    { href: '/healthcare-digital-marketing-hyderabad', name: 'Personal branding for doctors', desc: 'Instagram and content that build a doctor’s reputation, within medical advertising guidelines.' },
+    { href: '/social-media-marketing-agency-hyderabad', name: 'Social media marketing', desc: 'Planning, reels, posting and community management.' },
+    { href: '/website-development-company-hyderabad', name: 'Website development', desc: 'Fast, mobile-first websites that turn visits into appointments and enquiries.' },
+    { href: '/services/google-meta-ads-management', name: 'Google & Meta ads', desc: 'Campaign setup and weekly optimisation, tied to enquiries.' },
+    { href: '/services/performance-marketing', name: 'Performance marketing', desc: 'Paid-media strategy with spend tracked openly.' },
 ]
 
 const FAQ: ServiceFAQType = {
@@ -61,7 +61,7 @@ export default function HyderabadPage() {
         hasOfferCatalog: {
             '@type': 'OfferCatalog',
             name: 'Services',
-            itemListElement: SERVICES.map((s) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.name, url: `${SITE_URL}/services/${s.slug}` } })),
+            itemListElement: SERVICES.map((s) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.name, url: `${SITE_URL}${s.href}` } })),
         },
     }
     const breadcrumbJsonLd = {
@@ -121,7 +121,7 @@ export default function HyderabadPage() {
                     </FadeUp>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {SERVICES.map((s) => (
-                            <Link key={s.slug} href={`/services/${s.slug}`} className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5 hover:border-amber-600/40 transition-colors">
+                            <Link key={s.href} href={s.href} className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5 hover:border-amber-600/40 transition-colors">
                                 <h3 className="text-[15px] font-medium text-zinc-100 mb-1.5">{s.name}</h3>
                                 <p className="text-[12.5px] font-light leading-relaxed text-zinc-300">{s.desc}</p>
                             </Link>

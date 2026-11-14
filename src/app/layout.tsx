@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import Footer from "@/components/footer";
 import WhatsAppButton from "@/components/whatsapp_button";
 import FirstTouch from "@/components/analytics/first_touch";
-import { SITE_URL, BUSINESS, GA_MEASUREMENT_ID } from "@/constant/site";
+import { SITE_URL, BUSINESS, GA_MEASUREMENT_ID, SAME_AS, HAS_MAP } from "@/constant/site";
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -49,12 +49,7 @@ const organizationJsonLd = {
   telephone: BUSINESS.telephone,
   email: BUSINESS.email,
   foundingDate: BUSINESS.foundingDate,
-  sameAs: [
-    "https://www.instagram.com/wizards.digital/",
-    "https://www.facebook.com/wizardsdigital/",
-    "https://in.linkedin.com/company/wizardsnext",
-    "https://share.google/zYiIe2jRbaZmqOOWi",
-  ],
+  sameAs: SAME_AS,
   address: {
     "@type": "PostalAddress",
     streetAddress: BUSINESS.streetAddress,
@@ -63,6 +58,19 @@ const organizationJsonLd = {
     postalCode: BUSINESS.postalCode,
     addressCountry: BUSINESS.addressCountry,
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: BUSINESS.latitude,
+    longitude: BUSINESS.longitude,
+  },
+  hasMap: HAS_MAP,
+  // Hours as already published on /contact and the Varanasi city page.
+  openingHoursSpecification: [{
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    opens: "10:00",
+    closes: "19:00",
+  }],
   // India is the core, physically-served market (office in Varanasi; Hyderabad
   // clients served remotely); the three overseas countries reflect real, current client
   // relationships served remotely — kept in sync with BUSINESS.overseasCountries

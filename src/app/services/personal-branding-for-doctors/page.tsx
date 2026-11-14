@@ -179,6 +179,10 @@ function FinalCTA() {
                         <p className="text-zinc-400 text-[12px] mt-6">
                             Or call +91 80721 99651 · admin@wizards.co.in
                         </p>
+                        <p className="text-zinc-400 text-[12px] mt-2">
+                            Local page:{' '}
+                            <Link href="/healthcare-digital-marketing-hyderabad" className="underline underline-offset-2 hover:text-amber-500">Healthcare digital marketing in Hyderabad</Link>
+                        </p>
                     </div>
                 </FadeUp>
             </Wrapper>

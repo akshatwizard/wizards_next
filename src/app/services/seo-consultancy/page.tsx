@@ -29,7 +29,7 @@ export default function SeoConsultancyPage() {
             <ServiceIndustries data={SEOConsultancyIndustries} />
             <ServiceClientList serviceSlug="seo-consultancy" />
             <ServiceFAQ data={SEOConsultancyFAQ} />
-            <ServiceCTA cityLink={{ href: "/seo-services-varanasi", label: "SEO services in Varanasi" }} />
+            <ServiceCTA cityLinks={[{ href: "/seo-services-varanasi", label: "SEO services in Varanasi" }, { href: "/seo-services-hyderabad", label: "SEO services in Hyderabad" }]} />
         </main>
     )
 }

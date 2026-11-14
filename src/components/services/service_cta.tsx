@@ -4,7 +4,8 @@ import { FadeUp } from '../ui/motion_components'
 import { ArrowRight, Award, ExternalLink } from 'lucide-react'
 import Link from 'next/link'
 
-export default function ServiceCTA({ cityLink }: { cityLink?: { href: string; label: string } } = {}) {
+export default function ServiceCTA({ cityLink, cityLinks }: { cityLink?: { href: string; label: string }; cityLinks?: { href: string; label: string }[] } = {}) {
+    const links = cityLinks ?? (cityLink ? [cityLink] : [])
     return (
         <Section className="pb-20">
             <Wrapper>
@@ -52,10 +53,15 @@ export default function ServiceCTA({ cityLink }: { cityLink?: { href: string; la
                             <Link href="/digital-marketing-agency-hyderabad" className="underline underline-offset-2 hover:text-amber-500">Hyderabad</Link>
                             {' '}and all of India
                         </p>
-                        {cityLink && (
+                        {links.length > 0 && (
                             <p className="text-zinc-400 text-[12px] mt-2">
-                                Local page:{' '}
-                                <Link href={cityLink.href} className="underline underline-offset-2 hover:text-amber-500">{cityLink.label}</Link>
+                                Local pages:{' '}
+                                {links.map((l, i) => (
+                                    <span key={l.href}>
+                                        {i > 0 && ' · '}
+                                        <Link href={l.href} className="underline underline-offset-2 hover:text-amber-500">{l.label}</Link>
+                                    </span>
+                                ))}
                             </p>
                         )}
                     </div>
