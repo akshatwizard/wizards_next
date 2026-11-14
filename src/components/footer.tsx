@@ -50,6 +50,7 @@ const company = [
 const locations = [
     { label: "Digital Marketing Agency in Varanasi", href: "/digital-marketing-agency-varanasi" },
     { label: "Digital Marketing for Hyderabad", href: "/digital-marketing-agency-hyderabad" },
+    { label: "Healthcare Marketing for Hyderabad", href: "/healthcare-digital-marketing-hyderabad" },
 ];
 const legal = [
     { label: "Privacy Policy", href: "/privacy-policy" },

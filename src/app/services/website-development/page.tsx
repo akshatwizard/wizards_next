@@ -32,7 +32,7 @@ export default function WebDevelopmentPage() {
             <ServiceTechStack data={WebDevServiceTechStack} />
             <ServiceClientList serviceSlug="website-development" />
             <ServiceFAQ data={WebDevServiceFAQ} />
-            <ServiceCTA />
+            <ServiceCTA cityLink={{ href: "/website-development-company-varanasi", label: "Website development company in Varanasi" }} />
         </main>
     )
 }

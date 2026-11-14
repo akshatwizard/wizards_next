@@ -29,7 +29,7 @@ export default function PerformanceMarketingPage() {
             <ServiceIndustries data={PerformanceMarketingIndustries} />
             <ServiceClientList serviceSlug="performance-marketing" />
             <ServiceFAQ data={PerformanceMarketingFAQ} />
-            <ServiceCTA />
+            <ServiceCTA cityLink={{ href: "/performance-marketing-agency-varanasi", label: "Performance marketing agency in Varanasi" }} />
         </main>
     )
 }

@@ -29,7 +29,7 @@ export default function SocialMediaPage() {
             <ServiceIndustries data={SocialMediaIndustries} />
             <ServiceClientList serviceSlug="social-media" />
             <ServiceFAQ data={SocialMediaFAQ} />
-            <ServiceCTA />
+            <ServiceCTA cityLink={{ href: "/social-media-marketing-agency-varanasi", label: "Social media marketing agency in Varanasi" }} />
         </main>
     )
 }
