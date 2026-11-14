@@ -112,7 +112,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                             </span>
                         </div>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={p.cover} alt={p.title} width={1200} height={630} fetchPriority="high" className="w-full h-auto rounded-xl border border-zinc-800" />
+                        <picture className="block"><source srcSet={p.cover.replace(/\.png$/, '.webp')} type="image/webp" /><img src={p.cover} alt={p.title} width={1200} height={630} fetchPriority="high" className="w-full h-auto rounded-xl border border-zinc-800" /></picture>
                     </header>
 
                     <article className="flex flex-col gap-5 text-[15.5px] font-light leading-relaxed text-zinc-200">

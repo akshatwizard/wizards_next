@@ -54,7 +54,7 @@ export default function BlogIndex() {
 
                     <Link href={`/blog/${first.slug}`} className="group grid grid-cols-1 md:grid-cols-2 gap-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 overflow-hidden hover:border-amber-600/40 transition-colors">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={first.cover} alt={first.title} width={1200} height={630} className="w-full h-auto object-cover" />
+                        <picture className="block"><source srcSet={first.cover.replace(/\.png$/, '.webp')} type="image/webp" /><img src={first.cover} alt={first.title} width={1200} height={630} className="w-full h-auto object-cover" /></picture>
                         <div className="p-6 md:pl-0 flex flex-col gap-3 justify-center">
                             <span className="text-[12px] uppercase tracking-[1.2px] text-amber-600">{first.category} · Latest</span>
                             <h2 className="text-2xl font-medium tracking-tight text-zinc-100 group-hover:text-amber-500">{first.title}</h2>
@@ -67,7 +67,7 @@ export default function BlogIndex() {
                         {rest.map((p) => (
                             <Link key={p.slug} href={`/blog/${p.slug}`} className="group flex flex-col rounded-xl border border-zinc-800 bg-zinc-900/40 overflow-hidden hover:border-amber-600/40 transition-colors">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img src={p.cover} alt={p.title} width={1200} height={630} loading="lazy" className="w-full h-auto object-cover" />
+                                <picture className="block"><source srcSet={p.cover.replace(/\.png$/, '.webp')} type="image/webp" /><img src={p.cover} alt={p.title} width={1200} height={630} loading="lazy" className="w-full h-auto object-cover" /></picture>
                                 <div className="p-4 flex flex-col gap-2">
                                     <span className="text-[11px] uppercase tracking-[1.2px] text-amber-600">{p.category}</span>
                                     <h2 className="text-[15px] font-medium leading-snug text-zinc-100 group-hover:text-amber-500">{p.title}</h2>
