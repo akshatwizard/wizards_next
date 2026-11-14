@@ -57,21 +57,11 @@ export default function HydCityServicePage({ c }: { c: HydCityServiceConfig }) {
             { '@type': 'ListItem', position: 3, name: `${c.serviceName} in Hyderabad`, item: `${SITE_URL}${c.path}` },
         ],
     }
-    const faqJsonLd = {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: c.faq.faq_list.map((f) => ({
-            '@type': 'Question',
-            name: f.q,
-            acceptedAnswer: { '@type': 'Answer', text: f.a },
-        })),
-    }
 
     return (
         <main>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd).replace(/</g, '\\u003c') }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, '\\u003c') }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, '\\u003c') }} />
 
             {/* Hero — no fade-in on heading/intro so it paints immediately (LCP). */}
             <Section className="relative text-zinc-200">
