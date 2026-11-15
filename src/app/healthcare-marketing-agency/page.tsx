@@ -34,12 +34,12 @@ type Doctor = { slug?: string; name: string; role: string; city: string; did?: s
 // Doctor clients confirmed by Ravi (15 Nov 2026) who have no case study yet.
 // Only publicly verifiable facts; name-only where the doctor could not be
 // confidently identified online. No screenshots until permission is confirmed.
-type DoctorClient = { name: string; role?: string; city?: string; about?: string; website?: string }
+type DoctorClient = { name: string; role?: string; city?: string; about?: string; website?: string; instagram?: string }
 const MORE_DOCTORS: DoctorClient[] = [
-    // TODO(Ravi): specialty, clinic and city for these three — not confidently identifiable from public sources.
-    { name: 'Dr Sandesh' },
-    { name: 'Dr Sonica Miyapuri' },
-    { name: 'Dr Pranathi Ravipathi' },
+    // Instagram handles from Ravi (15 Nov); facts from each doctor's own Instagram name/LinkedIn. No "what we do" until Ravi confirms scope.
+    { name: 'Dr Sandesh Nanisetty', role: 'Consultant Neurologist · CARE Hospitals, Banjara Hills', city: 'Hyderabad', instagram: 'https://www.instagram.com/dr.sandeshnanisetty/' },
+    { name: 'Dr Sonica Miyyapuram', role: 'Prosthodontist (MDS, Prosthodontics & Implantology)', city: 'Hyderabad', instagram: 'https://www.instagram.com/_drsonic/' },
+    { name: 'Dr Pranathi Ravipathi', role: 'Hair transplant & facial aesthetic surgery', instagram: 'https://www.instagram.com/drpranathitransforms/' },
 ]
 
 const DOCTORS: Doctor[] = [
@@ -109,7 +109,7 @@ const FAQ: ServiceFAQType = {
         { q: 'What does a healthcare marketing agency do?', a: 'We help doctors, clinics and hospitals get found by patients and turn that attention into appointments: Google Business Profile and local SEO, treatment pages, social media and reels, personal branding, Google and Meta ads, websites with booking, and WhatsApp. You get plain-language reporting on rankings, enquiries and real post-level numbers.' },
         { q: 'Do you work with doctors and clinics in Varanasi?', a: 'Yes. Our office is in Nirala Nagar, Mahmoorganj, Varanasi, so Varanasi doctors, clinics and hospitals can meet us in person. For a Varanasi practice we usually start with the Google Business Profile, local SEO and an active Instagram, because that is where nearby patients look first.' },
         { q: 'Do you have an office in Hyderabad?', a: 'No. Our only office is in Varanasi. We work with Hyderabad doctors and clinics remotely — video calls, WhatsApp and shared reporting — and several of our longest-running healthcare clients are in Hyderabad.' },
-        { q: 'Which doctors and clinics do you work with?', a: 'Our doctor clients include Dr. K. Shilpi Reddy, Dr Ankita Chauhan, Clinica Derm (Dr. Deepthi Atmakuri), Dr Aradhya Achuri, Dr Satyanarayana Garre and Dr Shaivalini Kamarapu in Hyderabad, as well as Dr Sandesh, Dr Sonica Miyapuri and Dr Pranathi Ravipathi. Case studies are linked on this page where available.' },
+        { q: 'Which doctors and clinics do you work with?', a: 'Our doctor clients include Dr. K. Shilpi Reddy, Dr Ankita Chauhan, Clinica Derm (Dr. Deepthi Atmakuri), Dr Aradhya Achuri, Dr Satyanarayana Garre, Dr Shaivalini Kamarapu, Dr Sandesh Nanisetty and Dr Sonica Miyyapuram in Hyderabad, and Dr Pranathi Ravipathi. Case studies are linked on this page where available.' },
         { q: 'Is marketing allowed for doctors in India?', a: 'Doctors can build a professional, educational presence, but content has to stay within medical advertising and professional-conduct guidelines: no misleading claims or guaranteed results, and patient consent and privacy respected. We plan and review content with those guidelines in mind; please also read the official guidelines yourself or with your advisor.' },
         { q: 'Do I have to appear on camera?', a: 'It helps, but it is not required. We give simple shooting direction and also use formats that do not need you on camera. Dr Ankita Chauhan started out camera-shy; around 90% of that hesitation is gone now.' },
         { q: 'How long does healthcare SEO take?', a: 'SEO is a months-long effort, not a quick fix. For Clinica Derm, average Google search position moved from the mid-30s in May 2025 to single digits by March 2026, per their Search Console data. Ads and Google Business Profile work can bring enquiries sooner.' },
@@ -258,6 +258,9 @@ export default function HealthcareMarketingAgencyPage() {
                                 <h3 className="text-[16px] font-medium text-zinc-100">{d.name}</h3>
                                 <p className="text-amber-500 text-[12.5px]">{d.role ? `${d.role}${d.city ? ` · ${d.city}` : ''}` : 'Doctor client'}</p>
                                 {d.about && <p>{d.about}</p>}
+                                {d.instagram && (
+                                    <a href={d.instagram} target="_blank" rel="noopener" className="mt-auto inline-flex items-center gap-1.5 text-zinc-400 hover:text-amber-500">Instagram @{d.instagram.replace(/^https:\/\/www\.instagram\.com\//, '').replace(/\/$/, '')} <ExternalLink size={12} /></a>
+                                )}
                                 {d.website && (
                                     <a href={d.website} target="_blank" rel="noopener" className="mt-auto inline-flex items-center gap-1.5 text-zinc-400 hover:text-amber-500">{d.website.replace(/^https:\/\/(www\.)?/, '')} <ExternalLink size={12} /></a>
                                 )}
