@@ -138,8 +138,8 @@ export default function BookingApp({ embedded = false }: { embedded?: boolean } 
                         </FadeUp>
                     </div>
 
-                    <FadeUp delay={0.2} className="grid gap-px bg-zinc-800 rounded-2xl overflow-hidden lg:grid-cols-[1fr_1.5fr]">
-                        <aside className="bg-zinc-900 p-7 flex flex-col gap-5">
+                    <FadeUp delay={0.2} className="grid gap-px bg-zinc-800 rounded-2xl overflow-hidden lg:grid-cols-[1fr_1.5fr] min-w-0 w-full">
+                        <aside className="bg-zinc-900 p-7 flex flex-col gap-5 min-w-0">
                             {([
                                 [Clock, "Duration", "30 minutes · free"],
                                 [Video, "Where", "Google Meet (link sent on WhatsApp)"],
@@ -164,7 +164,7 @@ export default function BookingApp({ embedded = false }: { embedded?: boolean } 
                             )}
                         </aside>
 
-                        <div className="bg-zinc-950/80 p-7 flex flex-col gap-5 min-h-105">
+                        <div className="bg-zinc-950/80 p-7 flex flex-col gap-5 min-h-105 min-w-0 overflow-x-hidden">
                             {error && <p role="alert" className="text-[12.5px] text-red-400 bg-red-500/10 border border-red-500/20 rounded-xl px-4 py-3">{error}</p>}
                             {notice && <p role="status" className="text-[12.5px] text-emerald-300 bg-emerald-500/10 border border-emerald-500/20 rounded-xl px-4 py-3">{notice}</p>}
                             {loading ? (
@@ -292,9 +292,9 @@ function SlotPicker({ days, title, submitLabel, withNotes, exclude, onSubmit, on
         </div>
     );
     return (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 min-w-0 w-full">
             <h2 className="text-zinc-100 text-lg font-medium">{title}</h2>
-            <div className="flex gap-2 overflow-x-auto pb-1" role="tablist" aria-label="Dates">
+            <div className="flex gap-2 overflow-x-auto pb-1 min-w-0 w-full" role="tablist" aria-label="Dates">
                 {open.map((d) => (
                     <button key={d.date} role="tab" aria-selected={day?.date === d.date} onClick={() => { setDate(d.date); setSlot(null); }}
                         className={"shrink-0 px-3.5 py-2 rounded-xl border text-[12.5px] transition-all " + (day?.date === d.date ? "bg-amber-600 border-amber-600 text-black font-semibold" : "border-zinc-800 text-zinc-200 hover:border-amber-600/50")}>
@@ -302,21 +302,21 @@ function SlotPicker({ days, title, submitLabel, withNotes, exclude, onSubmit, on
                     </button>
                 ))}
             </div>
-            <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 w-full min-w-0">
                 {day?.slots.map((s) => (
                     <button key={s.id} onClick={() => setSlot(s)} aria-pressed={slot?.id === s.id}
-                        className={"px-3 py-2.5 rounded-xl border text-[12.5px] transition-all " + (slot?.id === s.id ? "bg-amber-600/15 border-amber-600 text-amber-400 font-semibold" : "border-zinc-800 text-zinc-200 hover:border-amber-600/50")}>
+                        className={"w-full min-w-0 px-3 py-2.5 rounded-xl border text-[12.5px] transition-all " + (slot?.id === s.id ? "bg-amber-600/15 border-amber-600 text-amber-400 font-semibold" : "border-zinc-800 text-zinc-200 hover:border-amber-600/50")}>
                         {timeLabel(s.start)}
                     </button>
                 ))}
             </div>
             {withNotes && (
-                <label className="text-[12px] text-zinc-300">What would you like to discuss? (optional)
+                <label className="block w-full min-w-0 text-[12px] text-zinc-300">What would you like to discuss? (optional)
                     <textarea className={input + " mt-1.5 min-h-20"} value={notes} onChange={(e) => setNotes(e.target.value)} maxLength={1000} placeholder="Your business, goals, website or marketing questions…" />
                 </label>
             )}
-            <div className="flex gap-2.5 flex-wrap items-center">
-                <button className={btn} disabled={!slot || busy} onClick={submit}>{busy && <Loader2 size={14} className="animate-spin" />} {slot ? `${submitLabel} · ${whenLabel(slot.start)}` : submitLabel}</button>
+            <div className="flex gap-2.5 flex-wrap items-center w-full min-w-0">
+                <button className={btn + " w-full"} disabled={!slot || busy} onClick={submit}>{busy && <Loader2 size={14} className="animate-spin" />} {slot ? `${submitLabel} · ${whenLabel(slot.start)}` : submitLabel}</button>
                 {onCancel && <button className={ghost} onClick={onCancel} disabled={busy}>Back</button>}
             </div>
             {err && <p role="alert" className="text-[12.5px] text-red-400">{err}</p>}
