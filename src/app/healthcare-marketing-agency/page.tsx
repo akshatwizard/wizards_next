@@ -29,20 +29,13 @@ const SERVICES = [
     { href: '/services/whatsapp-marketing', name: 'WhatsApp for clinics', desc: 'WhatsApp enquiry flows and broadcasts so patients can ask, book and get reminders where they already chat.' },
 ]
 
-type Doctor = { slug: string; name: string; role: string; city: string; did: string; facts: string; website: string; shot?: { src: string; alt: string } }
+type Doctor = { slug?: string; name: string; role: string; city: string; did?: string; facts: string; website: string; shot?: { src: string; alt: string } }
 
 // Doctor clients confirmed by Ravi (15 Nov 2026) who have no case study yet.
 // Only publicly verifiable facts; name-only where the doctor could not be
 // confidently identified online. No screenshots until permission is confirmed.
 type DoctorClient = { name: string; role?: string; city?: string; about?: string; website?: string }
 const MORE_DOCTORS: DoctorClient[] = [
-    {
-        name: 'Dr Shaivalini Kamarapu',
-        role: 'Senior Consultant Gynaecologist, Fertility Specialist & Laparoscopic Surgeon · AMVI Hospitals',
-        city: 'Hyderabad',
-        about: 'Her practice covers fertility treatment, high-risk pregnancy care, advanced laparoscopic surgery and cosmetic gynaecology.',
-        website: 'https://www.drshaivalini.com',
-    },
     // TODO(Ravi): specialty, clinic and city for these three — not confidently identifiable from public sources.
     { name: 'Dr Sandesh' },
     { name: 'Dr Sonica Miyapuri' },
@@ -86,8 +79,9 @@ const DOCTORS: Doctor[] = [
         role: 'IVF and fertility clinic',
         city: 'Hyderabad',
         did: 'We manage her Instagram presence.',
-        facts: 'Her website runs a large patient-education library on fertility and women’s health.',
+        facts: 'Her clinic offers IVF, IUI, ICSI, egg and sperm freezing and personalised fertility care, and her website runs a large patient-education library on fertility and women’s health.',
         website: 'https://draradhyaachuri.com',
+        shot: { src: '/images/healthcare/site-draradhyaachuri.webp', alt: 'Homepage of draradhyaachuri.com, the website of Dr Aradhya Achuri’s fertility clinic in Hyderabad, listing IVF, sperm freezing, egg freezing, ICSI and IUI' },
     },
     {
         slug: 'dr-satyanarayana-garre',
@@ -95,8 +89,17 @@ const DOCTORS: Doctor[] = [
         role: 'Nephrologist and kidney specialist',
         city: 'Jubilee Hills, Hyderabad',
         did: 'We manage his Instagram presence.',
-        facts: 'His practice covers dialysis, renal transplant care and advanced nephrology procedures.',
+        facts: 'His practice covers kidney disorders from early-stage disease to advanced care: dialysis (IHD, CRRT and peritoneal dialysis), renal transplant care and dialysis-access procedures.',
         website: 'https://drsatyanarayanagarre.in',
+        shot: { src: '/images/healthcare/site-drsatyanarayanagarre.webp', alt: 'Homepage of drsatyanarayanagarre.in, the website of Dr. Satyanarayana Garre, nephrologist and kidney specialist in Jubilee Hills, Hyderabad, with a Make an Appointment button' },
+    },
+    {
+        name: 'Dr Shaivalini Kamarapu',
+        role: 'Senior Consultant Gynaecologist, Fertility Specialist & Laparoscopic Surgeon · AMVI Hospitals',
+        city: 'Hyderabad',
+        facts: 'Her practice covers fertility treatment, high-risk pregnancy care, advanced laparoscopic surgery and cosmetic gynaecology.',
+        website: 'https://www.drshaivalini.com',
+        shot: { src: '/images/healthcare/site-drshaivalini.webp', alt: 'Homepage of drshaivalini.com, the website of Dr Shaivalini Kamarapu, gynaecologist and fertility specialist in Hyderabad, with Call Now and Book Consultation buttons' },
     },
 ]
 
@@ -228,7 +231,7 @@ export default function HealthcareMarketingAgencyPage() {
                     </FadeUp>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                         {DOCTORS.filter((d) => d.shot).map((d) => (
-                            <article key={d.slug} className="rounded-2xl border border-zinc-800 bg-zinc-900/50 overflow-hidden flex flex-col">
+                            <article key={d.name} className="rounded-2xl border border-zinc-800 bg-zinc-900/50 overflow-hidden flex flex-col">
                                 <figure>
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img src={d.shot!.src} alt={d.shot!.alt} width={1200} height={750} loading="lazy" decoding="async" className="w-full h-auto border-b border-zinc-800" />
@@ -237,27 +240,18 @@ export default function HealthcareMarketingAgencyPage() {
                                 <div className="p-5 pt-3 flex flex-col gap-2 text-[13px] font-light leading-relaxed text-zinc-300">
                                     <h3 className="text-[16px] font-medium text-zinc-100">{d.name}</h3>
                                     <p className="text-amber-500 text-[12.5px]">{d.role} · {d.city}</p>
-                                    <p><span className="text-zinc-100">What we do: </span>{d.did}</p>
+                                    {d.did && <p><span className="text-zinc-100">What we do: </span>{d.did}</p>}
                                     <p>{d.facts}</p>
-                                    <Link href={`/our-works/${d.slug}`} className="mt-auto inline-flex items-center gap-1.5 text-amber-500 hover:text-amber-400 text-[13px]">Read the case study <ArrowRight size={13} /></Link>
+                                    {d.slug ? (
+                                        <Link href={`/our-works/${d.slug}`} className="mt-auto inline-flex items-center gap-1.5 text-amber-500 hover:text-amber-400 text-[13px]">Read the case study <ArrowRight size={13} /></Link>
+                                    ) : (
+                                        <a href={d.website} target="_blank" rel="noopener" className="mt-auto inline-flex items-center gap-1.5 text-amber-500 hover:text-amber-400 text-[13px]">Visit {d.website.replace(/^https:\/\/(www\.)?/, '')} <ExternalLink size={12} /></a>
+                                    )}
                                 </div>
                             </article>
                         ))}
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        {DOCTORS.filter((d) => !d.shot).map((d) => (
-                            <article key={d.slug} className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5 flex flex-col gap-2 text-[13px] font-light leading-relaxed text-zinc-300">
-                                <h3 className="text-[16px] font-medium text-zinc-100">{d.name}</h3>
-                                <p className="text-amber-500 text-[12.5px]">{d.role} · {d.city}</p>
-                                <p><span className="text-zinc-100">What we do: </span>{d.did} {d.facts}</p>
-                                <div className="flex flex-wrap gap-4 mt-1">
-                                    <Link href={`/our-works/${d.slug}`} className="inline-flex items-center gap-1.5 text-amber-500 hover:text-amber-400">Profile <ArrowRight size={13} /></Link>
-                                    <a href={d.website} target="_blank" rel="noopener" className="inline-flex items-center gap-1.5 text-zinc-400 hover:text-amber-500">{d.website.replace('https://', '')} <ExternalLink size={12} /></a>
-                                </div>
-                            </article>
-                        ))}
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         {MORE_DOCTORS.map((d) => (
                             <article key={d.name} className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5 flex flex-col gap-2 text-[13px] font-light leading-relaxed text-zinc-300">
                                 <h3 className="text-[16px] font-medium text-zinc-100">{d.name}</h3>
