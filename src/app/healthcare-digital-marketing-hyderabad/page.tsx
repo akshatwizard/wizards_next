@@ -39,7 +39,7 @@ const FAQ: ServiceFAQType = {
         { q: 'Do you have an office in Hyderabad?', a: 'No. Our office is in Varanasi. We work with Hyderabad doctors and clinics remotely — video calls, WhatsApp and shared monthly reporting — and several of our longest-running healthcare clients are in Hyderabad.' },
         { q: 'Is doctor marketing on Instagram allowed?', a: 'Doctors can build a professional presence, but content has to stay within medical advertising guidelines. We plan, script and review posts with those guidelines in mind, and can review your existing posts with recommendations on what to keep, edit or archive.' },
         { q: 'Do I have to appear on camera?', a: 'It helps, but it is not required. We give simple shooting direction for your clinic and also use formats that do not need you on camera.' },
-        { q: 'Which Hyderabad healthcare clients do you work with?', a: 'Clinica Derm, Dr. K. Shilpi Reddy, Dr Ankita Chauhan, Dr Aradhya Achuri and Dr Satyanarayana Garre. Their case studies are linked on this page.' },
+        { q: 'Which Hyderabad healthcare clients do you work with?', a: 'Clinica Derm, Dr. K. Shilpi Reddy, Dr Ankita Chauhan, Dr Aradhya Achuri, Dr Satyanarayana Garre and Dr Shaivalini Kamarapu. Case studies are linked on this page where available.' },
         { q: 'What does it cost?', a: 'Personal branding for doctors starts from ₹40,000. Social media management starts from ₹15,000 a month, and ad budgets are separate, usually from around ₹10,000 a month. Every plan is scoped to your goals.' },
         { q: 'Is there a long-term contract?', a: 'No lock-ins — rolling monthly engagements.' },
     ],
@@ -168,6 +168,10 @@ export default function HyderabadHealthcarePage() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                             {list.map((client) => <ProjectCard key={client.slug} client={client} />)}
                         </div>
+                        {/* Confirmed by Ravi 15 Nov 2026; public facts only (drshaivalini.com). No screenshot until permission is confirmed. */}
+                        <p className="text-[13px] font-light text-zinc-300">
+                            We also work with <a href="https://www.drshaivalini.com" target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-amber-500">Dr Shaivalini Kamarapu</a>, Senior Consultant Gynaecologist, Fertility Specialist &amp; Laparoscopic Surgeon at AMVI Hospitals, Hyderabad. See all our <Link href="/healthcare-marketing-agency" className="underline underline-offset-2 hover:text-amber-500">doctor clients</Link>.
+                        </p>
                     </Wrapper>
                 </Section>
             )}

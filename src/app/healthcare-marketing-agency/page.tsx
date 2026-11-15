@@ -31,6 +31,24 @@ const SERVICES = [
 
 type Doctor = { slug: string; name: string; role: string; city: string; did: string; facts: string; website: string; shot?: { src: string; alt: string } }
 
+// Doctor clients confirmed by Ravi (15 Nov 2026) who have no case study yet.
+// Only publicly verifiable facts; name-only where the doctor could not be
+// confidently identified online. No screenshots until permission is confirmed.
+type DoctorClient = { name: string; role?: string; city?: string; about?: string; website?: string }
+const MORE_DOCTORS: DoctorClient[] = [
+    {
+        name: 'Dr Shaivalini Kamarapu',
+        role: 'Senior Consultant Gynaecologist, Fertility Specialist & Laparoscopic Surgeon · AMVI Hospitals',
+        city: 'Hyderabad',
+        about: 'Her practice covers fertility treatment, high-risk pregnancy care, advanced laparoscopic surgery and cosmetic gynaecology.',
+        website: 'https://www.drshaivalini.com',
+    },
+    // TODO(Ravi): specialty, clinic and city for these three — not confidently identifiable from public sources.
+    { name: 'Dr Sandesh' },
+    { name: 'Dr Sonica Miyapuri' },
+    { name: 'Dr Pranathi Ravipathi' },
+]
+
 const DOCTORS: Doctor[] = [
     {
         slug: 'dr-k-shilpi-reddy',
@@ -87,7 +105,7 @@ const FAQ: ServiceFAQType = {
         { q: 'What does a healthcare marketing agency do?', a: 'We help doctors, clinics and hospitals get found by patients and turn that attention into appointments: Google Business Profile and local SEO, treatment pages, social media and reels, personal branding, Google and Meta ads, websites with booking, and WhatsApp. You get plain-language reporting on rankings, enquiries and real post-level numbers.' },
         { q: 'Do you work with doctors and clinics in Varanasi?', a: 'Yes. Our office is in Nirala Nagar, Mahmoorganj, Varanasi, so Varanasi doctors, clinics and hospitals can meet us in person. For a Varanasi practice we usually start with the Google Business Profile, local SEO and an active Instagram, because that is where nearby patients look first.' },
         { q: 'Do you have an office in Hyderabad?', a: 'No. Our only office is in Varanasi. We work with Hyderabad doctors and clinics remotely — video calls, WhatsApp and shared reporting — and several of our longest-running healthcare clients are in Hyderabad.' },
-        { q: 'Which doctors and clinics do you work with?', a: 'Dr. K. Shilpi Reddy, Dr Ankita Chauhan, Clinica Derm (Dr. Deepthi Atmakuri), Dr Aradhya Achuri and Dr Satyanarayana Garre, all in Hyderabad. Their case studies are linked on this page.' },
+        { q: 'Which doctors and clinics do you work with?', a: 'Our doctor clients include Dr. K. Shilpi Reddy, Dr Ankita Chauhan, Clinica Derm (Dr. Deepthi Atmakuri), Dr Aradhya Achuri, Dr Satyanarayana Garre and Dr Shaivalini Kamarapu in Hyderabad, as well as Dr Sandesh, Dr Sonica Miyapuri and Dr Pranathi Ravipathi. Case studies are linked on this page where available.' },
         { q: 'Is marketing allowed for doctors in India?', a: 'Doctors can build a professional, educational presence, but content has to stay within medical advertising and professional-conduct guidelines: no misleading claims or guaranteed results, and patient consent and privacy respected. We plan and review content with those guidelines in mind; please also read the official guidelines yourself or with your advisor.' },
         { q: 'Do I have to appear on camera?', a: 'It helps, but it is not required. We give simple shooting direction and also use formats that do not need you on camera. Dr Ankita Chauhan started out camera-shy; around 90% of that hesitation is gone now.' },
         { q: 'How long does healthcare SEO take?', a: 'SEO is a months-long effort, not a quick fix. For Clinica Derm, average Google search position moved from the mid-30s in May 2025 to single digits by March 2026, per their Search Console data. Ads and Google Business Profile work can bring enquiries sooner.' },
@@ -206,7 +224,7 @@ export default function HealthcareMarketingAgencyPage() {
                 <Wrapper className="lg:py-14 md:py-12 py-10 gap-8!">
                     <FadeUp>
                         <h2 className="text-2xl lg:text-3xl font-medium tracking-tight text-zinc-100 mb-2">Doctors we work with</h2>
-                        <p className="text-zinc-300 text-[13.5px] font-light max-w-3xl">Real engagements with Hyderabad specialists — the same work we offer doctors and clinics in Varanasi. Website screenshots were captured live from each doctor’s own site.</p>
+                        <p className="text-zinc-300 text-[13.5px] font-light max-w-3xl">Real engagements, most of them with Hyderabad specialists — the same work we offer doctors and clinics in Varanasi. Website screenshots were captured live from each doctor’s own site.</p>
                     </FadeUp>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                         {DOCTORS.filter((d) => d.shot).map((d) => (
@@ -236,6 +254,18 @@ export default function HealthcareMarketingAgencyPage() {
                                     <Link href={`/our-works/${d.slug}`} className="inline-flex items-center gap-1.5 text-amber-500 hover:text-amber-400">Profile <ArrowRight size={13} /></Link>
                                     <a href={d.website} target="_blank" rel="noopener" className="inline-flex items-center gap-1.5 text-zinc-400 hover:text-amber-500">{d.website.replace('https://', '')} <ExternalLink size={12} /></a>
                                 </div>
+                            </article>
+                        ))}
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        {MORE_DOCTORS.map((d) => (
+                            <article key={d.name} className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5 flex flex-col gap-2 text-[13px] font-light leading-relaxed text-zinc-300">
+                                <h3 className="text-[16px] font-medium text-zinc-100">{d.name}</h3>
+                                <p className="text-amber-500 text-[12.5px]">{d.role ? `${d.role}${d.city ? ` · ${d.city}` : ''}` : 'Doctor client'}</p>
+                                {d.about && <p>{d.about}</p>}
+                                {d.website && (
+                                    <a href={d.website} target="_blank" rel="noopener" className="mt-auto inline-flex items-center gap-1.5 text-zinc-400 hover:text-amber-500">{d.website.replace(/^https:\/\/(www\.)?/, '')} <ExternalLink size={12} /></a>
+                                )}
                             </article>
                         ))}
                     </div>
