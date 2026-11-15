@@ -173,32 +173,8 @@ export const HealthcareSectorCaseStudy = {
         </>
     ),
     subheading: 'Every number is from real analytics — not our pitch deck.',
-    items: [
-        {
-            client: 'Dr. Ankita Chauhan',
-            result: '2.4K Instagram followers in 90 days',
-            metric: '0→2.4K',
-            metricLabel: 'Followers',
-            desc: "Gynaecologist with zero social presence. We built her personal brand on Instagram with reels, health tips, and patient stories — now she gets 8–10 direct appointment DMs daily.",
-            tags: ['Personal Brand', 'Instagram', 'Reels'],
-        },
-        {
-            client: 'Varanasi Diagnostics',
-            result: '3× increase in test bookings',
-            metric: '3×',
-            metricLabel: 'Bookings',
-            desc: 'Redesigned website with online test booking, home collection scheduler, and Google Ads campaigns targeting high-intent searches like "CBC test near me".',
-            tags: ['Website', 'Google Ads', 'Booking System'],
-        },
-        {
-            client: 'City Dental Clinic',
-            result: 'From 3.2★ to 4.7★ on Google',
-            metric: '4.7★',
-            metricLabel: 'Google Rating',
-            desc: 'Reputation recovery campaign — we set up a systematic review collection process, responded to all existing negative reviews, and ran local SEO to reclaim the top-3 map pack.',
-            tags: ['ORM', 'Local SEO', 'Google Maps'],
-        },
-    ],
+    // Placeholder entries removed (not real clients). Not rendered on /sector/healthcare; add only verified clients here.
+    items: [],
 }
 
 // ─── Projects ──────────────────────────────────────────────────
@@ -212,38 +188,8 @@ export const HealthcareSectorProjects = {
         </>
     ),
     subheading: 'A snapshot of websites, campaigns, and brands we\'ve built for healthcare clients.',
-    items: [
-        {
-            name: 'Dr. Ankita Chauhan',
-            type: 'Personal Brand Website',
-            tags: ['Next.js', 'Appointment Booking', 'Blog'],
-        },
-        {
-            name: 'Varanasi Diagnostics',
-            type: 'Diagnostic Lab Website',
-            tags: ['Next.js', 'Online Booking', 'SEO'],
-        },
-        {
-            name: 'City Dental Clinic',
-            type: 'Clinic Website',
-            tags: ['WordPress', 'Local SEO', 'GMB'],
-        },
-        {
-            name: 'LifeCare Hospital',
-            type: 'Hospital Website',
-            tags: ['Next.js', 'Patient Portal', 'CMS'],
-        },
-        {
-            name: 'Arogya Wellness',
-            type: 'Wellness Centre',
-            tags: ['Branding', 'Instagram', 'Meta Ads'],
-        },
-        {
-            name: 'PrimePhysio Clinic',
-            type: 'Physiotherapy Brand',
-            tags: ['Social Media', 'Reels', 'Google Ads'],
-        },
-    ],
+    // Placeholder entries removed (not real clients). Not rendered on /sector/healthcare; add only verified clients here.
+    items: [],
 }
 
 // ─── Mid CTA ───────────────────────────────────────────────────
@@ -271,16 +217,8 @@ export const HealthcareSectorClients = {
             <span className="text-amber-500">grow with us</span>
         </>
     ),
-    items: [
-        { initials: 'DA', name: 'Dr. Ankita Chauhan', type: 'Gynaecologist', location: 'Varanasi' },
-        { initials: 'VD', name: 'Varanasi Diagnostics', type: 'Diagnostic Lab', location: 'Varanasi' },
-        { initials: 'CD', name: 'City Dental Clinic', type: 'Dental Clinic', location: 'Varanasi' },
-        { initials: 'LC', name: 'LifeCare Hospital', type: 'Multi-speciality Hospital', location: 'Lucknow' },
-        { initials: 'AW', name: 'Arogya Wellness', type: 'Wellness Centre', location: 'Varanasi' },
-        { initials: 'PP', name: 'PrimePhysio', type: 'Physiotherapy Clinic', location: 'Gorakhpur' },
-        { initials: 'SR', name: 'Sunrise Radiology', type: 'Radiology Centre', location: 'Varanasi' },
-        { initials: 'DM', name: 'Dr. Manish Eye Care', type: 'Eye Clinic', location: 'Allahabad' },
-    ],
+    // Placeholder entries removed (not real clients). Not rendered on /sector/healthcare; add only verified clients here.
+    items: [],
 }
 
 // ─── Trust / Why Wizards ───────────────────────────────────────
@@ -323,29 +261,8 @@ export const HealthcareSectorTrust = {
 // ─── Testimonials ──────────────────────────────────────────────
 
 export const HealthcareSectorTestimonials: ServiceTestimonialsType = {
-    testimonial_list: [
-        {
-            quote: "Wizards Next completely transformed our digital presence. Our Instagram went from 200 to 2,400 followers in 3 months and I now get 8–10 appointment enquiries daily through DMs alone.",
-            name: 'Dr. Ankita Chauhan',
-            role: 'Gynaecologist, Varanasi',
-            initials: 'DA',
-            rating: 5,
-        },
-        {
-            quote: "We were struggling to compete with bigger labs online. After Wizards revamped our website and started Google Ads, our daily test bookings tripled within 60 days.",
-            name: 'Rajiv Sinha',
-            role: 'Director, Varanasi Diagnostics',
-            initials: 'RS',
-            rating: 5,
-        },
-        {
-            quote: "Our Google rating went from 3.2 to 4.7 stars. Patients actually mention they chose us because of our online reviews now. Couldn't have done that without the Wizards team.",
-            name: 'Dr. Priya Tiwari',
-            role: 'City Dental Clinic',
-            initials: 'PT',
-            rating: 5,
-        },
-    ],
+    // Placeholder entries removed (not real clients). Not rendered on /sector/healthcare; add only verified clients here.
+    testimonial_list: [],
 }
 
 // ─── FAQ ───────────────────────────────────────────────────────
