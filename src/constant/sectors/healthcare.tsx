@@ -155,7 +155,7 @@ export const HealthcareSectorServices = {
 
 export const HealthcareSectorStats = {
     stats: [
-        { value: '30+', label: 'Healthcare clients', sublabel: 'Across UP & beyond' },
+        { value: '9', label: 'Doctor clients', sublabel: 'In Hyderabad' },
         { value: '4.2×', label: 'Avg patient enquiry growth', sublabel: 'Within 6 months' },
         { value: '#1', label: 'Google rankings achieved', sublabel: 'For local speciality searches' },
         { value: '98%', label: 'Client retention rate', sublabel: 'Healthcare vertical' },
@@ -310,7 +310,7 @@ export const HealthcareSectorTrust = {
         {
             icon: Clock,
             title: 'Local & hyperlocal expertise',
-            desc: 'We know the Varanasi and UP healthcare market. We know which platforms patients use and what searches drive actual footfall.',
+            desc: 'Based in Varanasi and working with doctors and clinics in Hyderabad, we plan Google Business Profile, local SEO and social content around how patients in your city actually search.',
         },
         {
             icon: TrendingUp,
@@ -366,7 +366,7 @@ export const HealthcareSectorFAQ: ServiceFAQType = {
         },
         {
             q: 'Do you work with hospitals outside Varanasi?',
-            a: 'Yes — we have healthcare clients in Lucknow, Gorakhpur, Allahabad, and Delhi. All work is done remotely with regular video reviews.',
+            a: 'Yes. Our current doctor and clinic clients are in Hyderabad — including gynaecologists, a dermatology clinic, a fertility clinic, a nephrologist and a neurologist. We work with them remotely from our Varanasi office, over video calls, WhatsApp and shared reports.',
         },
         {
             q: 'Can you help with appointment booking integration?',
