@@ -31,7 +31,9 @@ const SERVICES = [
 const FAQ: ServiceFAQType = {
     faq_list: [
         { q: 'Do you have an office in Hyderabad?', a: 'No. Our office is in Varanasi. We work with Hyderabad clients remotely — video calls, WhatsApp and shared monthly reporting — and several of our longest-running healthcare clients are in Hyderabad.' },
-        { q: 'Which Hyderabad clients do you work with?', a: 'Mostly doctors and clinics, including Clinica Derm (website and SEO since August 2024) and Dr. K. Shilpi Reddy. Their case studies are linked on this page.' },
+        { q: 'Which Hyderabad clients do you work with?', a: 'Mostly doctors and clinics: Clinica Derm (website and SEO since August 2024), Dr. K. Shilpi Reddy, Dr Ankita Chauhan, Dr Aradhya Achuri, Dr Satyanarayana Garre, Dr Shaivalini Kamarapu, Dr Sandesh Nanisetty, Dr Sonica Miyyapuram and Dr Pranathi Ravipathi. Case studies are linked on this page where available.' },
+        { q: 'Which areas of Hyderabad do you cover?', a: 'All of Hyderabad and Secunderabad, because the work is remote. Our current clients are in Banjara Hills, Jubilee Hills and Kondapur, and we can take on businesses in Gachibowli, Madhapur, HITEC City, Kukatpally and anywhere else in the city.' },
+        { q: 'Do you work with businesses outside healthcare in Hyderabad?', a: 'Yes. Our Hyderabad case studies are in healthcare, and the same SEO, social media, website and ads services are available to any Hyderabad business. Our other case studies (retail, e-commerce, education, travel) are from Varanasi and across India.' },
         { q: 'What results have you delivered in Hyderabad?', a: 'For Clinica Derm, average Google search position moved from the mid-30s in May 2025 to single digits by March 2026, with terms like “dermatologist hyderabad” ranking around positions 4.5–5.7, per their Search Console data.' },
         { q: 'What does it cost?', a: 'Social media management starts from ₹15,000 a month. Ad budgets are separate, usually from around ₹10,000 a month. Every plan is scoped to your goals.' },
         { q: 'Is there a long-term contract?', a: 'No lock-ins — rolling monthly engagements.' },
@@ -40,7 +42,7 @@ const FAQ: ServiceFAQType = {
 
 export const metadata: Metadata = {
     title: 'Digital Marketing Agency in Hyderabad, India | Wizards Next',
-    description: 'Digital marketing, SEO and doctor branding for Hyderabad clinics and businesses, delivered remotely by Wizards Next (Varanasi). Real Hyderabad case studies.',
+    description: 'Digital marketing agency for Hyderabad, Telangana, India: SEO, social media, websites and ads for doctors, clinics and businesses, delivered remotely from Varanasi. Real Hyderabad case studies.',
     alternates: {
         canonical: PATH,
     },
@@ -84,10 +86,10 @@ export default function HyderabadPage() {
                         <Link href="/" className="hover:text-amber-500">Home</Link> / <span>Hyderabad</span>
                     </nav>
                     <h1 className="tracking-tight text-zinc-100 leading-tight text-3xl md:text-4xl lg:text-5xl font-medium max-w-3xl">
-                        Digital Marketing Agency Serving <span className="text-amber-600 font-sora!">Hyderabad</span>
+                        Digital Marketing Agency in <span className="text-amber-600 font-sora!">Hyderabad</span>, Telangana
                     </h1>
                     <p className="text-zinc-200 text-[15px] font-light leading-relaxed max-w-2xl">
-                        Wizards Next works with doctors, clinics and businesses in Hyderabad on SEO, websites, social media and ads. We are based in Varanasi and serve Hyderabad clients remotely — no local office, just the same team, process and reporting our Hyderabad clients already rely on.
+                        Wizards Next works with doctors, clinics and businesses in Hyderabad, Telangana, India on SEO, websites, social media and ads. We are based in Varanasi and serve Hyderabad clients remotely — no local office, just the same team, process and reporting our Hyderabad clients already rely on.
                     </p>
                     <div className="flex flex-wrap gap-3">
                         <Link href="/book" className="inline-flex items-center gap-2 rounded-lg bg-amber-600 px-5 py-2.5 text-[13px] font-medium text-zinc-950 hover:bg-amber-500">
@@ -134,6 +136,23 @@ export default function HyderabadPage() {
             </Section>
 
             <Section tone="raised">
+                <Wrapper className="lg:py-14 md:py-12 py-10 gap-6!">
+                    <FadeUp>
+                        <h2 className="text-2xl lg:text-3xl font-medium tracking-tight text-zinc-100 mb-4">Areas of Hyderabad we work in</h2>
+                        <div className="space-y-3 text-[13.5px] font-light leading-relaxed text-zinc-200 max-w-3xl">
+                            <p>We have no Hyderabad office. Everything runs remotely from Varanasi, so where a client sits in the city makes no difference to the service. These are the areas our current Hyderabad clients practise in:</p>
+                            <ul className="list-disc pl-5 space-y-1.5">
+                                <li>Banjara Hills: <Link href="/our-works/clinica-derm" className="underline underline-offset-2 hover:text-amber-500">Clinica Derm</Link> (Dr. Deepthi Atmakuri, dermatologist) and Dr Sandesh Nanisetty (Consultant Neurologist, CARE Hospitals).</li>
+                                <li>Jubilee Hills: <Link href="/our-works/dr-satyanarayana-garre" className="underline underline-offset-2 hover:text-amber-500">Dr Satyanarayana Garre</Link> (nephrologist).</li>
+                                <li>Kondapur: <Link href="/our-works/dr-k-shilpi-reddy" className="underline underline-offset-2 hover:text-amber-500">Dr. K. Shilpi Reddy</Link> (KIMS Cuddles) and <Link href="/our-works/dr-ankita-chauhan" className="underline underline-offset-2 hover:text-amber-500">Dr Ankita Chauhan</Link> (KIMS Hospital).</li>
+                            </ul>
+                            <p>We also take on businesses in Gachibowli, Madhapur, HITEC City, Kukatpally and KPHB, Secunderabad and the rest of Hyderabad and Telangana in the same way: an exploration call, a scoped plan, then a fixed weekly and monthly rhythm over video calls and WhatsApp.</p>
+                        </div>
+                    </FadeUp>
+                </Wrapper>
+            </Section>
+
+            <Section>
                 <Wrapper className="lg:py-14 md:py-12 py-10 gap-6!">
                     <FadeUp>
                         <h2 className="text-2xl lg:text-3xl font-medium tracking-tight text-zinc-100 mb-4">How we work with Hyderabad clients</h2>

@@ -39,7 +39,9 @@ const FAQ: ServiceFAQType = {
         { q: 'Do you have an office in Hyderabad?', a: 'No. Our office is in Varanasi. We work with Hyderabad doctors and clinics remotely — video calls, WhatsApp and shared monthly reporting — and several of our longest-running healthcare clients are in Hyderabad.' },
         { q: 'Is doctor marketing on Instagram allowed?', a: 'Doctors can build a professional presence, but content has to stay within medical advertising guidelines. We plan, script and review posts with those guidelines in mind, and can review your existing posts with recommendations on what to keep, edit or archive.' },
         { q: 'Do I have to appear on camera?', a: 'It helps, but it is not required. We give simple shooting direction for your clinic and also use formats that do not need you on camera.' },
-        { q: 'Which Hyderabad healthcare clients do you work with?', a: 'Clinica Derm, Dr. K. Shilpi Reddy, Dr Ankita Chauhan, Dr Aradhya Achuri, Dr Satyanarayana Garre and Dr Shaivalini Kamarapu. Case studies are linked on this page where available.' },
+        { q: 'Which Hyderabad healthcare clients do you work with?', a: 'Clinica Derm (Dr. Deepthi Atmakuri), Dr. K. Shilpi Reddy, Dr Ankita Chauhan, Dr Aradhya Achuri, Dr Satyanarayana Garre, Dr Shaivalini Kamarapu, Dr Sandesh Nanisetty, Dr Sonica Miyyapuram and Dr Pranathi Ravipathi. Case studies are linked on this page where available.' },
+        { q: 'Do you work as a hospital marketing agency in Hyderabad?', a: 'Our Hyderabad clients are doctors and clinics, and several of them are consultants at KIMS, CARE and AMVI hospitals. We market the doctor’s own practice and personal brand; we do not represent those hospitals. A hospital can hire us for the same work: consultant personal branding, department and treatment pages, SEO, Google Business Profile management and social media.' },
+        { q: 'What does a healthcare digital marketing agency in Hyderabad do?', a: 'It helps patients find and trust a doctor or clinic online: Google Search and Maps visibility, a clear website with booking, patient-education content on Instagram and YouTube, and ads where they make sense. All of it has to stay within medical advertising guidelines.' },
         { q: 'What does it cost?', a: 'Personal branding for doctors starts from ₹40,000. Social media management starts from ₹15,000 a month, and ad budgets are separate, usually from around ₹10,000 a month. Every plan is scoped to your goals.' },
         { q: 'Is there a long-term contract?', a: 'No lock-ins — rolling monthly engagements.' },
     ],
@@ -47,7 +49,7 @@ const FAQ: ServiceFAQType = {
 
 export const metadata: Metadata = {
     title: 'Healthcare Digital Marketing Agency in Hyderabad for Doctors & Hospitals',
-    description: 'Digital marketing for doctors and clinics in Hyderabad: guideline-compliant personal branding, SEO, websites and ads. Real results for Clinica Derm and Dr. K. Shilpi Reddy.',
+    description: 'Healthcare digital marketing agency for Hyderabad doctors, clinics and hospital consultants: guideline-compliant personal branding, SEO, social media, websites and ads. Real results for Clinica Derm and Dr. K. Shilpi Reddy.',
     alternates: { canonical: PATH },
 }
 
@@ -92,7 +94,7 @@ export default function HyderabadHealthcarePage() {
                         <Link href="/" className="hover:text-amber-500">Home</Link> / <Link href="/digital-marketing-agency-hyderabad" className="hover:text-amber-500">Hyderabad</Link> / <span>Healthcare</span>
                     </nav>
                     <h1 className="tracking-tight text-zinc-100 leading-tight text-3xl md:text-4xl lg:text-5xl font-medium max-w-3xl">
-                        Digital Marketing for Doctors &amp; Clinics in <span className="text-amber-600 font-sora!">Hyderabad</span>
+                        Healthcare Digital Marketing Agency in <span className="text-amber-600 font-sora!">Hyderabad</span> for Doctors &amp; Hospitals
                     </h1>
                     <p className="text-zinc-200 text-[15px] font-light leading-relaxed max-w-2xl">
                         Healthcare is our strongest Hyderabad sector. We help doctors, clinics and hospitals in Hyderabad get found on Google, build a trustworthy, guideline-compliant presence on Instagram and YouTube, and turn that attention into appointments. We are based in Varanasi and work with Hyderabad practices remotely.
@@ -172,11 +174,33 @@ export default function HyderabadHealthcarePage() {
                         <p className="text-[13px] font-light text-zinc-300">
                             We also work with <a href="https://www.drshaivalini.com" target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-amber-500">Dr Shaivalini Kamarapu</a>, Senior Consultant Gynaecologist, Fertility Specialist &amp; Laparoscopic Surgeon at AMVI Hospitals, Hyderabad — we manage her Instagram and WhatsApp presence. See all our <Link href="/healthcare-marketing-agency" className="underline underline-offset-2 hover:text-amber-500">doctor clients</Link>.
                         </p>
+                        {/* Confirmed by Ravi 15 Nov 2026: Hyderabad; Wizards manages their Facebook, Instagram and YouTube. */}
+                        <p className="text-[13px] font-light text-zinc-300">
+                            We also manage the Facebook, Instagram and YouTube channels of three more Hyderabad doctors: <a href="https://www.instagram.com/dr.sandeshnanisetty/" target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-amber-500">Dr Sandesh Nanisetty</a> (Consultant Neurologist, CARE Hospitals, Banjara Hills), <a href="https://www.instagram.com/_drsonic/" target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-amber-500">Dr Sonica Miyyapuram</a> (Prosthodontist) and <a href="https://www.instagram.com/drpranathitransforms/" target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-amber-500">Dr Pranathi Ravipathi</a> (hair transplant and facial aesthetic surgery).
+                        </p>
                     </Wrapper>
                 </Section>
             )}
 
             <Section>
+                <Wrapper className="lg:py-14 md:py-12 py-10 gap-6!">
+                    <FadeUp>
+                        <h2 className="text-2xl lg:text-3xl font-medium tracking-tight text-zinc-100 mb-4">Marketing for hospital consultants in Hyderabad</h2>
+                        <div className="space-y-3 text-[13.5px] font-light leading-relaxed text-zinc-200 max-w-3xl">
+                            <p>Several of our Hyderabad doctor clients are consultants at large hospitals. We market the doctor’s own practice and personal brand; the hospitals are not our clients and we do not speak for them.</p>
+                            <ul className="list-disc pl-5 space-y-1.5">
+                                <li>Dr. K. Shilpi Reddy: Clinical Director of Obstetrics &amp; Gynaecology, KIMS Cuddles, Kondapur.</li>
+                                <li>Dr Ankita Chauhan: Consultant Obstetrician &amp; Gynaecologist, KIMS Hospital, Kondapur.</li>
+                                <li>Dr Sandesh Nanisetty: Consultant Neurologist, CARE Hospitals, Banjara Hills.</li>
+                                <li>Dr Shaivalini Kamarapu: Senior Consultant Gynaecologist, Fertility Specialist &amp; Laparoscopic Surgeon, AMVI Hospitals.</li>
+                            </ul>
+                            <p>For a consultant, patients usually search the doctor’s name and specialty before they book, so the work is a guideline-compliant Instagram and YouTube presence, a personal website or profile page, and Google results that answer the questions patients ask. For a hospital or clinic that wants the same for its doctors, we can run consultant personal branding, department and treatment pages, SEO, Google Business Profile management and social media as one engagement.</p>
+                        </div>
+                    </FadeUp>
+                </Wrapper>
+            </Section>
+
+            <Section tone="raised">
                 <Wrapper className="lg:py-14 md:py-12 py-10 gap-6!">
                     <FadeUp>
                         <h2 className="text-2xl lg:text-3xl font-medium tracking-tight text-zinc-100 mb-4">How we work with Hyderabad practices</h2>
