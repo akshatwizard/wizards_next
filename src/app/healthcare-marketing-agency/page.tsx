@@ -34,12 +34,12 @@ type Doctor = { slug?: string; name: string; role: string; city: string; did?: s
 // Doctor clients confirmed by Ravi (15 Nov 2026) who have no case study yet.
 // Only publicly verifiable facts; name-only where the doctor could not be
 // confidently identified online. No screenshots until permission is confirmed.
-type DoctorClient = { name: string; role?: string; city?: string; about?: string; website?: string; instagram?: string }
+type DoctorClient = { name: string; role?: string; city?: string; did?: string; about?: string; website?: string; instagram?: string }
 const MORE_DOCTORS: DoctorClient[] = [
-    // Instagram handles from Ravi (15 Nov); facts from each doctor's own Instagram name/LinkedIn. No "what we do" until Ravi confirms scope.
-    { name: 'Dr Sandesh Nanisetty', role: 'Consultant Neurologist · CARE Hospitals, Banjara Hills', city: 'Hyderabad', instagram: 'https://www.instagram.com/dr.sandeshnanisetty/' },
-    { name: 'Dr Sonica Miyyapuram', role: 'Prosthodontist (MDS, Prosthodontics & Implantology)', city: 'Hyderabad', instagram: 'https://www.instagram.com/_drsonic/' },
-    { name: 'Dr Pranathi Ravipathi', role: 'Hair transplant & facial aesthetic surgery', instagram: 'https://www.instagram.com/drpranathitransforms/' },
+    // Instagram handles from Ravi (15 Nov); facts from each doctor's own Instagram name/LinkedIn. Scope (social media: Facebook, Instagram, YouTube) confirmed by Ravi 15 Nov 4:39 PM.
+    { name: 'Dr Sandesh Nanisetty', role: 'Consultant Neurologist · CARE Hospitals, Banjara Hills', city: 'Hyderabad', did: 'We manage his Facebook, Instagram and YouTube channel.', instagram: 'https://www.instagram.com/dr.sandeshnanisetty/' },
+    { name: 'Dr Sonica Miyyapuram', role: 'Prosthodontist (MDS, Prosthodontics & Implantology)', city: 'Hyderabad', did: 'We manage her Facebook, Instagram and YouTube channel.', instagram: 'https://www.instagram.com/_drsonic/' },
+    { name: 'Dr Pranathi Ravipathi', role: 'Hair transplant & facial aesthetic surgery', did: 'We manage her Facebook, Instagram and YouTube channel.', instagram: 'https://www.instagram.com/drpranathitransforms/' },
 ]
 
 const DOCTORS: Doctor[] = [
@@ -257,6 +257,7 @@ export default function HealthcareMarketingAgencyPage() {
                             <article key={d.name} className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5 flex flex-col gap-2 text-[13px] font-light leading-relaxed text-zinc-300">
                                 <h3 className="text-[16px] font-medium text-zinc-100">{d.name}</h3>
                                 <p className="text-amber-500 text-[12.5px]">{d.role ? `${d.role}${d.city ? ` · ${d.city}` : ''}` : 'Doctor client'}</p>
+                                {d.did && <p><span className="text-zinc-100">What we do: </span>{d.did}</p>}
                                 {d.about && <p>{d.about}</p>}
                                 {d.instagram && (
                                     <a href={d.instagram} target="_blank" rel="noopener" className="mt-auto inline-flex items-center gap-1.5 text-zinc-400 hover:text-amber-500">Instagram @{d.instagram.replace(/^https:\/\/www\.instagram\.com\//, '').replace(/\/$/, '')} <ExternalLink size={12} /></a>
