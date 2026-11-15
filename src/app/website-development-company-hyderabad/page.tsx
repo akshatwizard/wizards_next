@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 import HydCityServicePage, { HydCityServiceConfig } from '@/components/city/hyd_city_service_page'
 import { webDevServicesOffered, WebDevServiceProcess, WebDevServiceFAQ } from '@/constant/services_data'
 import { HYDERABAD_WEB_CLIENTS } from '@/constant/hyderabad'
@@ -33,8 +34,17 @@ const config: HydCityServiceConfig = {
         width: 1200,
         height: 720,
     },
+    extra: {
+        heading: 'Clinic website design in Hyderabad',
+        paras: [
+            'A clinic website has three jobs: show who the doctor is, explain treatments in plain language, and make it easy to call, WhatsApp or book. Dr. K. Shilpi Reddy’s site puts Make an Appointment and WhatsApp buttons up front. Dr Ankita Chauhan’s site takes bookings that pay straight into her own payment gateway. Clinica Derm’s WordPress site carries the treatment and blog library behind its search growth.',
+            'Patients mostly search on their phones: on Clinica Derm, 5,407 of 7,083 Google clicks came from mobile. So clinic sites are designed, tested and speed-checked mobile-first.',
+            <>Related: <Link href="/seo-services-hyderabad" className="underline underline-offset-2 hover:text-amber-500">SEO for doctors in Hyderabad</Link> · <Link href="/healthcare-digital-marketing-hyderabad" className="underline underline-offset-2 hover:text-amber-500">healthcare digital marketing in Hyderabad</Link>.</>,
+        ],
+    },
     faq: {
         faq_list: [
+            { q: 'Do you build clinic websites with online appointment booking?', a: 'Yes. Dr Ankita Chauhan’s website has a booking system built by Wizards that pays straight into her own payment gateway. Booking, click-to-call and WhatsApp are scoped for each clinic.' },
             { q: 'Do you have an office in Hyderabad we can visit?', a: 'No. Our office is in Varanasi. We plan, build and hand over Hyderabad websites over video calls, WhatsApp and shared reviews. You are welcome to visit us in Varanasi; call or WhatsApp +91 80721 99651 first.' },
             { q: 'Which Hyderabad websites have you built?', a: 'Clinica Derm’s WordPress website (with SEO since August 2024), Dr Ankita Chauhan’s website with an appointment booking system, and Dr. K. Shilpi Reddy’s website. Their case studies are linked on this page.' },
             { q: 'Can you also handle SEO and social media after launch?', a: 'Yes. Wizards Next is a joint venture of a digital marketing practice and a web development practice, so the website, SEO, social media and ads can run under one team.' },

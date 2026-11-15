@@ -28,6 +28,8 @@ export type HydCityServiceConfig = {
     process: ServiceProcessType
     faq: ServiceFAQType
     visual: { src: string; alt: string; caption: string; width: number; height: number }
+    // Optional niche section (e.g. "SEO for doctors in Hyderabad"), real facts only.
+    extra?: { heading: string; paras: React.ReactNode[] }
 }
 
 const PHONE_DISPLAY = '+91 80721 99651'
@@ -132,6 +134,14 @@ export default function HydCityServicePage({ c }: { c: HydCityServiceConfig }) {
 
             <Section>
                 <Wrapper className="lg:py-12 md:py-10 py-8 gap-4!">
+                    {c.extra && (
+                        <div className="flex flex-col gap-3 mb-6">
+                            <h2 className="text-2xl lg:text-3xl font-medium tracking-tight text-zinc-100">{c.extra.heading}</h2>
+                            {c.extra.paras.map((p, i) => (
+                                <p key={i} className="text-[13.5px] font-light leading-relaxed text-zinc-200 max-w-3xl">{p}</p>
+                            ))}
+                        </div>
+                    )}
                     <h2 className="text-2xl lg:text-3xl font-medium tracking-tight text-zinc-100">How we work with Hyderabad clients</h2>
                     <p className="text-[13.5px] font-light leading-relaxed text-zinc-200 max-w-3xl">
                         We have no office in Hyderabad. Coordination happens over video calls, WhatsApp and shared monthly reporting, from our office in Varanasi. Call or WhatsApp {PHONE_DISPLAY}, or book a free exploration call.

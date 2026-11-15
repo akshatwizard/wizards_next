@@ -122,6 +122,7 @@ const faq: ServiceFAQType = {
         { q: 'Do I have to appear on camera?', a: 'No. Appearing on camera helps patients get to know you, but we also plan formats that do not need you on screen. Where you do appear, we give simple shooting guidance.' },
         { q: 'Is this only for dentists?', a: 'No. It is for all doctors and clinics — dentists, physicians, specialists and multi-doctor clinics.' },
         { q: 'What does it cost?', a: 'Personal branding for doctors and professionals starts from ₹40,000. The exact scope is agreed after your free profile audit call.' },
+        { q: 'Do you work with doctors in Hyderabad?', a: 'Yes. Most of our doctor clients are in Hyderabad, including Dr Ankita Chauhan and Dr. K. Shilpi Reddy (both in Kondapur) and Dr Sandesh Nanisetty (Banjara Hills). We work remotely from Varanasi over video calls and WhatsApp; there is no Hyderabad office.' },
         { q: 'How do I get started?', a: 'Book a free 15-minute profile audit through our contact form or message us on WhatsApp at +91 80721 99651.' },
     ],
 }
@@ -138,6 +139,27 @@ function Pricing() {
                     </SectionHeading>
                     <p className="text-zinc-100 text-[14px] leading-relaxed font-light max-w-xl mt-4">
                         Includes content strategy, compliant posts and reels (scripting, shooting guidance, editing), profile optimisation, a compliance review of existing posts, and monthly reporting. Final scope is agreed after the free audit call.
+                    </p>
+                </FadeUp>
+            </Wrapper>
+        </Section>
+    )
+}
+
+function HyderabadDoctors() {
+    return (
+        <Section tone="raised">
+            <Wrapper className="lg:py-14 md:py-12 py-10 gap-4!">
+                <FadeUp delay={0} className="flex flex-col gap-4 max-w-3xl">
+                    <h2 className="text-2xl lg:text-3xl font-medium tracking-tight text-zinc-100">Personal branding for doctors in Hyderabad</h2>
+                    <p className="text-zinc-200 text-[14px] leading-relaxed font-light">
+                        Our longest-running personal branding work is with Hyderabad doctors, run remotely from our Varanasi office. <Link href="/our-works/dr-ankita-chauhan" className="underline underline-offset-2 hover:text-amber-500">Dr Ankita Chauhan</Link> (consultant obstetrician and gynaecologist, KIMS Hospital, Kondapur) started with zero posts and zero followers about two and a half years ago. We run her social media, personal branding, website, YouTube and podcast, and her reels have reached 5, 7 and 8 million views. <Link href="/our-works/dr-k-shilpi-reddy" className="underline underline-offset-2 hover:text-amber-500">Dr. K. Shilpi Reddy</Link> (KIMS Cuddles, Kondapur) has grown to 419,000+ Instagram followers and 1.28 million YouTube subscribers in a continuous engagement since 2023.
+                    </p>
+                    <p className="text-zinc-200 text-[14px] leading-relaxed font-light">
+                        We also manage Facebook, Instagram and YouTube for Dr Sandesh Nanisetty (consultant neurologist, CARE Hospitals, Banjara Hills), Dr Sonica Miyyapuram and Dr Pranathi Ravipathi. The work is for the doctor’s own name and profile; the hospitals they consult at are not our clients.
+                    </p>
+                    <p className="text-zinc-300 text-[13px]">
+                        More: <Link href="/social-media-marketing-agency-hyderabad" className="underline underline-offset-2 hover:text-amber-500">Instagram and YouTube for doctors in Hyderabad</Link> · <Link href="/healthcare-marketing-agency" className="underline underline-offset-2 hover:text-amber-500">healthcare marketing agency</Link>
                     </p>
                 </FadeUp>
             </Wrapper>
@@ -199,6 +221,7 @@ export default function PersonalBrandingForDoctorsPage() {
             <ServicesOffered data={offered} />
             <ServiceProcess data={process} />
             <Pricing />
+            <HyderabadDoctors />
             <ServiceFAQ data={faq} />
             <FinalCTA />
         </main>

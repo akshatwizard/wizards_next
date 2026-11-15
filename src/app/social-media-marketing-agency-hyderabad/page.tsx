@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 import HydCityServicePage, { HydCityServiceConfig } from '@/components/city/hyd_city_service_page'
 import { SocialMediaServicesOffered, SocialMediaProcess, SocialMediaFAQ } from '@/constant/services_data'
 import { HYDERABAD_SOCIAL_CLIENTS } from '@/constant/hyderabad'
@@ -33,8 +34,18 @@ const config: HydCityServiceConfig = {
         width: 1200,
         height: 720,
     },
+    extra: {
+        heading: 'Instagram and YouTube marketing for doctors in Hyderabad',
+        paras: [
+            'Most of our Hyderabad doctors grow on Instagram and YouTube together: short patient-education reels for reach, longer YouTube videos for depth. Dr. K. Shilpi Reddy’s channels now stand at 419,000+ Instagram followers and 1.28 million YouTube subscribers. For Dr Ankita Chauhan we run YouTube and a podcast alongside Instagram, where her reels have reached 5, 7 and 8 million views.',
+            'We manage Facebook, Instagram and YouTube for Dr Sandesh Nanisetty (consultant neurologist, CARE Hospitals, Banjara Hills), Dr Sonica Miyyapuram (prosthodontist) and Dr Pranathi Ravipathi (hair transplant and facial aesthetic surgery), and Instagram for Dr Aradhya Achuri, Dr Satyanarayana Garre and Dr Shaivalini Kamarapu. The work is for each doctor’s own profile; the hospitals they consult at are not our clients.',
+            <>For a doctor’s own name as a brand, see <Link href="/services/personal-branding-for-doctors" className="underline underline-offset-2 hover:text-amber-500">personal branding for doctors</Link>. For the full healthcare picture, see <Link href="/healthcare-digital-marketing-hyderabad" className="underline underline-offset-2 hover:text-amber-500">healthcare digital marketing in Hyderabad</Link>.</>,
+        ],
+    },
     faq: {
         faq_list: [
+            { q: 'Do you manage YouTube channels for doctors in Hyderabad?', a: 'Yes. We manage YouTube alongside Instagram and Facebook for Dr. K. Shilpi Reddy (1.28 million subscribers), Dr Ankita Chauhan, Dr Sandesh Nanisetty, Dr Sonica Miyyapuram and Dr Pranathi Ravipathi. The exact scope (shooting support, editing, publishing, replies) is agreed with each doctor.' },
+            { q: 'Are you an Instagram marketing agency for Hyderabad doctors?', a: 'Instagram is the main channel for most of our Hyderabad doctor clients: Dr. K. Shilpi Reddy (419,000+ followers), Dr Ankita Chauhan, Dr Aradhya Achuri, Dr Satyanarayana Garre, Dr Shaivalini Kamarapu, Dr Sandesh Nanisetty, Dr Sonica Miyyapuram and Dr Pranathi Ravipathi. We work remotely from Varanasi.' },
             { q: 'Do you have an office in Hyderabad?', a: 'No. Our office is in Varanasi. We work with Hyderabad doctors and clinics remotely — video calls, WhatsApp and shared monthly reporting.' },
             { q: 'Which Hyderabad clients do you manage social media for?', a: 'Dr. K. Shilpi Reddy, Dr Ankita Chauhan, Dr Aradhya Achuri and Dr Satyanarayana Garre. Their case studies are linked on this page.' },
             { q: 'What results have you delivered on social media in Hyderabad?', a: 'For Dr. K. Shilpi Reddy, a continuous engagement since 2023 now stands at 419,000+ Instagram followers and 1.28 million YouTube subscribers. For Dr Ankita Chauhan, we started from zero posts and zero followers about two and a half years ago; reels have reached 5, 7 and 8 million views.' },
