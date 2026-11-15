@@ -18,15 +18,15 @@ export default function WaTermsPage() {
                 <p>
                     These Terms are an agreement between <strong className="font-medium">Wizards Next LLP</strong> (LLPIN ACH-4720,
                     GSTIN 09AAEFW8842N1ZB), {WA_OPERATOR_ADDRESS} (&quot;we&quot;, &quot;{WA_BRAND}&quot;) and the business that creates
-                    a {WA_BRAND} account (&quot;you&quot;, &quot;Client&quot;). By creating an account you accept them. These Terms cover
-                    the {WA_BRAND} software only; use of the wizards.co.in website is covered by the general{" "}
+                    a {WA_BRAND}{" "}account (&quot;you&quot;, &quot;Client&quot;). By creating an account you accept them. These Terms cover
+                    the {WA_BRAND}{" "}software only; use of the wizards.co.in website is covered by the general{" "}
                     <Link href="/terms-of-service" className={link}>Terms of Service</Link>.
                 </p>
             }
         >
             <LegalSection title="1. The Service">
                 <p>
-                    {WA_BRAND} is software for sending and receiving WhatsApp messages through Meta&apos;s WhatsApp Business Platform
+                    {WA_BRAND}{" "}is software for sending and receiving WhatsApp messages through Meta&apos;s WhatsApp Business Platform
                     (Cloud API): shared inbox, contacts, templates, broadcasts, automation, reports and optional virtual phone numbers.
                     We are not WhatsApp or Meta and are not endorsed by them.
                 </p>
@@ -43,7 +43,7 @@ export default function WaTermsPage() {
             <LegalSection title="3. Meta charges are separate">
                 <p>
                     WhatsApp message charges are billed <strong className="font-medium">by Meta directly to you</strong> at Meta&apos;s rates,
-                    using the payment method you add in Meta. {WA_BRAND} does not add any markup to Meta&apos;s message charges. Meta may
+                    using the payment method you add in Meta. {WA_BRAND}{" "}does not add any markup to Meta&apos;s message charges. Meta may
                     change its prices and rules; we do not control them.
                 </p>
             </LegalSection>

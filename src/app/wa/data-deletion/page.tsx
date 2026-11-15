@@ -11,14 +11,14 @@ export default function WaDataDeletionPage() {
     return (
         <LegalPage
             title={`How to delete your data from ${WA_BRAND}`}
-            intro={<p>{WA_BRAND} is operated by Wizards Next LLP, Varanasi, India. You can ask us to delete your data at any time.</p>}
+            intro={<p>{WA_BRAND}{" "}is operated by Wizards Next LLP, Varanasi, India. You can ask us to delete your data at any time.</p>}
         >
             <LegalSection title={`If you are a ${WA_BRAND} customer (business account)`}>
                 <ol className="list-decimal pl-5 flex flex-col gap-1.5">
                     <li>
                         <strong className="font-medium">By email:</strong> write to <Mail /> from your account&apos;s email with the subject
                         &quot;Delete my data&quot;, and include your business name and registered mobile number. We verify ownership with a
-                        one-time code. This disconnects your WhatsApp account from {WA_BRAND} and deletes your account, contacts, messages,
+                        one-time code. This disconnects your WhatsApp account from {WA_BRAND}{" "}and deletes your account, contacts, messages,
                         media and templates synced in {WA_BRAND}.
                     </li>
                     <li>

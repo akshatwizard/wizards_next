@@ -21,7 +21,7 @@ export default function WaPrivacyPage() {
                     </p>
                     <p className="mt-3">
                         This policy explains what we collect, why, who we share it with and how you can delete it. It covers
-                        the {WA_BRAND} website, web app and related services (the &quot;Service&quot;). It does not replace
+                        the {WA_BRAND}{" "}website, web app and related services (the &quot;Service&quot;). It does not replace
                         the general <Link href="/privacy-policy" className="text-amber-600 hover:underline">Wizards Next privacy policy</Link>{" "}
                         for the wizards.co.in website.
                     </p>
@@ -115,7 +115,7 @@ export default function WaPrivacyPage() {
                 <p>
                     <strong className="font-medium">Deleting data / disconnecting Meta:</strong> see our{" "}
                     <Link href="/wa/data-deletion" className="text-amber-600 hover:underline">Data Deletion page</Link>. If you remove{" "}
-                    {WA_BRAND} from your Facebook &quot;Business integrations&quot; or &quot;Apps and websites&quot; settings, we stop
+                    {WA_BRAND}{" "}from your Facebook &quot;Business integrations&quot; or &quot;Apps and websites&quot; settings, we stop
                     accessing your WhatsApp account and delete the related data as described there.
                 </p>
             </LegalSection>
