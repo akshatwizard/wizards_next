@@ -53,6 +53,7 @@ const locations = [
     { label: "Social Media Marketing in Hyderabad", href: "/social-media-marketing-agency-hyderabad" },
     { label: "SEO Services in Hyderabad", href: "/seo-services-hyderabad" },
     { label: "Website Development in Hyderabad", href: "/website-development-company-hyderabad" },
+    { label: "Healthcare Marketing Agency", href: "/healthcare-marketing-agency" },
     { label: "Healthcare Marketing for Hyderabad", href: "/healthcare-digital-marketing-hyderabad" },
 ];
 const legal = [

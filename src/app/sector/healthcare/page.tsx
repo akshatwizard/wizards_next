@@ -29,7 +29,7 @@ export default function HealthcareSectorPage() {
             <SectorTrust data={HealthcareSectorTrust} />
             <SectorInterestForm sectorLabel="Healthcare" />
             <ServiceFAQ data={HealthcareSectorFAQ} />
-            <ServiceCTA />
+            <ServiceCTA cityLinks={[{ href: '/healthcare-marketing-agency', label: 'Healthcare marketing agency' }, { href: '/healthcare-digital-marketing-hyderabad', label: 'Healthcare marketing in Hyderabad' }]} />
         </main>
     )
 }

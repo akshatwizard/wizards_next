@@ -155,7 +155,7 @@ export default function VaranasiPage() {
                         ))}
                     </div>
                     <p className="text-[13px] text-zinc-300">
-                        See all <Link href="/services" className="underline underline-offset-2 hover:text-amber-500">19 services</Link>, or the <Link href="/sector" className="underline underline-offset-2 hover:text-amber-500">sectors we work in</Link>.
+                        See all <Link href="/services" className="underline underline-offset-2 hover:text-amber-500">19 services</Link>, the <Link href="/sector" className="underline underline-offset-2 hover:text-amber-500">sectors we work in</Link>, or our <Link href="/healthcare-marketing-agency" className="underline underline-offset-2 hover:text-amber-500">healthcare marketing for doctors and clinics in Varanasi</Link>.
                     </p>
                 </Wrapper>
             </Section>
