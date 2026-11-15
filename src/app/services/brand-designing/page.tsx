@@ -29,7 +29,7 @@ export default function BrandDesigningPage() {
             <ServiceIndustries data={BrandCreationIndustries} />
             <ServiceClientList serviceSlug="brand-designing" />
             <ServiceFAQ data={BrandCreationFAQ} />
-            <ServiceCTA />
+            <ServiceCTA cityLinks={[{ href: "/branding-agency-varanasi", label: "Branding agency in Varanasi" }]} />
         </main>
     )
 }

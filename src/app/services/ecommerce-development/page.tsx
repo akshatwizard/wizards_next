@@ -29,7 +29,7 @@ export default function EcommerceDevelopmentPage() {
             <ServiceIndustries data={EcommerceDevIndustries} />
             <ServiceClientList serviceSlug="ecommerce-development" />
             <ServiceFAQ data={EcommerceDevFAQ} />
-            <ServiceCTA />
+            <ServiceCTA cityLinks={[{ href: "/ecommerce-website-development-varanasi", label: "E-commerce website development in Varanasi" }]} />
         </main>
     )
 }

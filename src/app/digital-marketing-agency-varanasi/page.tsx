@@ -27,8 +27,8 @@ const SERVICES: { slug: string; name: string; desc: string; href?: string }[] = 
     { slug: 'performance-marketing', href: '/performance-marketing-agency-varanasi', name: 'Performance marketing', desc: 'Paid campaigns planned around enquiries and sales, with spend tracked openly.' },
     { slug: 'google-meta-ads-management', href: '/google-ads-agency-varanasi', name: 'Google Ads', desc: 'Hands-on Search, Display and Shopping campaigns with weekly optimisation, alongside Meta ads.' },
     { slug: 'whatsapp-marketing', name: 'WhatsApp marketing', desc: 'Catalogues, broadcasts and automation on WhatsApp Business.' },
-    { slug: 'brand-designing', name: 'Branding', desc: 'Logo, identity and guidelines for new and established local brands.' },
-    { slug: 'ecommerce-development', name: 'E-commerce development', desc: 'Online stores with payments, COD and shipping across India.' },
+    { slug: 'brand-designing', href: '/branding-agency-varanasi', name: 'Branding', desc: 'Logo, identity and guidelines for new and established local brands.' },
+    { slug: 'ecommerce-development', href: '/ecommerce-website-development-varanasi', name: 'E-commerce development', desc: 'Online stores with payments, COD and shipping across India.' },
 ]
 
 const FAQ: ServiceFAQType = {

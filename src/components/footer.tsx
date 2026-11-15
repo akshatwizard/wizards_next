@@ -49,12 +49,17 @@ const company = [
 ];
 const locations = [
     { label: "Digital Marketing Agency in Varanasi", href: "/digital-marketing-agency-varanasi" },
+    { label: "Google Ads Agency in Varanasi", href: "/google-ads-agency-varanasi" },
+    { label: "Branding Agency in Varanasi", href: "/branding-agency-varanasi" },
+    { label: "E-commerce Websites in Varanasi", href: "/ecommerce-website-development-varanasi" },
     { label: "Digital Marketing for Hyderabad", href: "/digital-marketing-agency-hyderabad" },
     { label: "Social Media Marketing in Hyderabad", href: "/social-media-marketing-agency-hyderabad" },
     { label: "SEO Services in Hyderabad", href: "/seo-services-hyderabad" },
     { label: "Website Development in Hyderabad", href: "/website-development-company-hyderabad" },
     { label: "Healthcare Marketing Agency", href: "/healthcare-marketing-agency" },
     { label: "Healthcare Marketing for Hyderabad", href: "/healthcare-digital-marketing-hyderabad" },
+    { label: "IVF Clinic Marketing", href: "/ivf-clinic-marketing-agency" },
+    { label: "Dermatology Clinic Marketing", href: "/dermatology-clinic-marketing-agency" },
 ];
 const legal = [
     { label: "Privacy Policy", href: "/privacy-policy" },

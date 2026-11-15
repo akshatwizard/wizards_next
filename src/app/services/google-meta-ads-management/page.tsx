@@ -29,7 +29,7 @@ export default function GoogleMetaAdsManagementPage() {
             <ServiceIndustries data={AdsManagementIndustries} />
             <ServiceClientList serviceSlug="google-meta-ads-management" />
             <ServiceFAQ data={AdsManagementFAQ} />
-            <ServiceCTA />
+            <ServiceCTA cityLinks={[{ href: "/google-ads-agency-varanasi", label: "Google Ads agency in Varanasi" }, { href: "/performance-marketing-agency-varanasi", label: "Performance marketing in Varanasi" }]} />
         </main>
     )
 }
