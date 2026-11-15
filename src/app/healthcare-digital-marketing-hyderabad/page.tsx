@@ -170,7 +170,7 @@ export default function HyderabadHealthcarePage() {
                         </div>
                         {/* Confirmed by Ravi 15 Nov 2026; public facts only (drshaivalini.com). No screenshot until permission is confirmed. */}
                         <p className="text-[13px] font-light text-zinc-300">
-                            We also work with <a href="https://www.drshaivalini.com" target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-amber-500">Dr Shaivalini Kamarapu</a>, Senior Consultant Gynaecologist, Fertility Specialist &amp; Laparoscopic Surgeon at AMVI Hospitals, Hyderabad. See all our <Link href="/healthcare-marketing-agency" className="underline underline-offset-2 hover:text-amber-500">doctor clients</Link>.
+                            We also work with <a href="https://www.drshaivalini.com" target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-amber-500">Dr Shaivalini Kamarapu</a>, Senior Consultant Gynaecologist, Fertility Specialist &amp; Laparoscopic Surgeon at AMVI Hospitals, Hyderabad — we manage her Instagram and WhatsApp presence. See all our <Link href="/healthcare-marketing-agency" className="underline underline-offset-2 hover:text-amber-500">doctor clients</Link>.
                         </p>
                     </Wrapper>
                 </Section>

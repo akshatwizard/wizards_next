@@ -97,6 +97,7 @@ const DOCTORS: Doctor[] = [
         name: 'Dr Shaivalini Kamarapu',
         role: 'Senior Consultant Gynaecologist, Fertility Specialist & Laparoscopic Surgeon · AMVI Hospitals',
         city: 'Hyderabad',
+        did: 'We manage her Instagram and WhatsApp presence.',
         facts: 'Her practice covers fertility treatment, high-risk pregnancy care, advanced laparoscopic surgery and cosmetic gynaecology.',
         website: 'https://www.drshaivalini.com',
         shot: { src: '/images/healthcare/site-drshaivalini.webp', alt: 'Homepage of drshaivalini.com, the website of Dr Shaivalini Kamarapu, gynaecologist and fertility specialist in Hyderabad, with Call Now and Book Consultation buttons' },
