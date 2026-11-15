@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   // This is only the fallback for any page that doesn't set its own
   // title/description (most pages already do). Every page keeps its own
   // metadata export untouched by this.
-  title: "Wizards Next — Digital Marketing Agency in Varanasi",
+  title: "Wizards Next LLP | Digital Marketing & Web Development",
   description: BUSINESS.description,
 };
 

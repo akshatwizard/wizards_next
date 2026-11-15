@@ -46,7 +46,7 @@ const FAQ: ServiceFAQType = {
 }
 
 export const metadata: Metadata = {
-    title: 'Healthcare & Doctor Digital Marketing in Hyderabad | Wizards Next',
+    title: 'Healthcare Digital Marketing Agency in Hyderabad for Doctors & Hospitals',
     description: 'Digital marketing for doctors and clinics in Hyderabad: guideline-compliant personal branding, SEO, websites and ads. Real results for Clinica Derm and Dr. K. Shilpi Reddy.',
     alternates: { canonical: PATH },
 }

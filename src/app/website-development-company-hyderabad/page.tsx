@@ -6,7 +6,7 @@ import { HYDERABAD_WEB_CLIENTS } from '@/constant/hyderabad'
 const PATH = '/website-development-company-hyderabad'
 
 export const metadata: Metadata = {
-    title: 'Website Development Company in Hyderabad | Wizards Next',
+    title: 'Website Development Company in Hyderabad for Clinics & Doctors',
     description: 'Website development for Hyderabad clinics and doctors: fast, mobile-first sites and appointment booking. Built remotely from Varanasi. Call +91 80721 99651.',
     alternates: { canonical: PATH },
 }

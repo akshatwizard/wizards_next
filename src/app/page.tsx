@@ -23,9 +23,9 @@ import SmmClientsStrip from '@/components/smm_clients_strip'
 import React from 'react'
 
 export const metadata = {
-  title: 'Wizards Next — Digital Marketing Agency in Varanasi, Serving Hyderabad',
+  title: 'Wizards Next LLP | Digital Marketing & Web Development — Varanasi, Hyderabad & India',
   description:
-    'Digital marketing agency in Varanasi, serving Hyderabad and all India — 50+ projects across India, with overseas clients in the USA, Russia & Spain. Social media, branding, ads, SEO, web development.',
+    'Wizards Next LLP: digital marketing and web development from Varanasi, serving Hyderabad and all India — 50+ projects across India, with overseas clients in the USA, Russia & Spain. Social media, branding, ads, SEO, web development.',
   alternates: {
     canonical: '/',
   },

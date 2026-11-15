@@ -43,7 +43,7 @@ const FAQ: ServiceFAQType = {
 }
 
 export const metadata: Metadata = {
-    title: 'Digital Marketing Agency in Varanasi | Wizards Next LLP',
+    title: 'Digital Marketing Agency in Varanasi (Banaras) | Wizards Next LLP',
     description: `Varanasi digital marketing agency for social media, SEO, websites and Google & Meta ads. Office in Shivpurwa, Varanasi. Call ${PHONE_DISPLAY}.`,
     alternates: {
         canonical: PATH,

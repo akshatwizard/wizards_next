@@ -5,7 +5,7 @@ import { webDevServicesOffered, WebDevServiceProcess, WebDevServiceFAQ } from '@
 const PATH = '/website-development-company-varanasi'
 
 export const metadata: Metadata = {
-    title: 'Website Development Company in Varanasi | Wizards Next',
+    title: 'Website Designing & Development Company in Varanasi | Wizards Next',
     description: 'Website development in Varanasi: fast, mobile-first business websites, e-commerce stores and portals. Building Varanasi websites since 2013. Call +91 80721 99651.',
     alternates: { canonical: PATH },
 }

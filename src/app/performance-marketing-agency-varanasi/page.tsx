@@ -5,7 +5,7 @@ import { PerformanceMarketingServicesOffered, PerformanceMarketingProcess, Perfo
 const PATH = '/performance-marketing-agency-varanasi'
 
 export const metadata: Metadata = {
-    title: 'Performance Marketing Agency in Varanasi | Google & Meta Ads',
+    title: 'Performance Marketing & Meta Ads Agency in Varanasi | Wizards Next',
     description: 'Performance marketing in Varanasi: channel and budget planning, Google and Meta ad campaigns optimised weekly, and honest cost-per-result reporting. Call +91 80721 99651.',
     alternates: { canonical: PATH },
 }

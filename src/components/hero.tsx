@@ -44,7 +44,7 @@ export default function HeroSection() {
                         <div
                             className='text-zinc-100 max-w-lg block mt-5 leading-snug'>
                             <span>
-                                From social media mastery to full-stack web development — Wizards Next is your one-stop growth partner, based in <Link href='/digital-marketing-agency-varanasi' className='underline decoration-amber-600/60 underline-offset-4 hover:text-amber-500'>Varanasi</Link> and running 50+ projects across India, including clients in <Link href='/digital-marketing-agency-hyderabad' className='underline decoration-amber-600/60 underline-offset-4 hover:text-amber-500'>Hyderabad</Link>, with 24+ years of combined expertise.
+                                From social media mastery to full-stack web development — Wizards Next is your one-stop growth partner: a <Link href='/digital-marketing-agency-varanasi' className='underline decoration-amber-600/60 underline-offset-4 hover:text-amber-500'>digital marketing agency in Varanasi</Link> running 50+ projects across India, including clients in <Link href='/digital-marketing-agency-hyderabad' className='underline decoration-amber-600/60 underline-offset-4 hover:text-amber-500'>Hyderabad</Link>, with 24+ years of combined expertise.
                             </span>
                         </div>
 

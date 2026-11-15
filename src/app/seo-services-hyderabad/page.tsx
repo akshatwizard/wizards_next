@@ -6,7 +6,7 @@ import { HYDERABAD_SEO_CLIENTS } from '@/constant/hyderabad'
 const PATH = '/seo-services-hyderabad'
 
 export const metadata: Metadata = {
-    title: 'SEO Services in Hyderabad | Clinic SEO & Google Maps | Wizards Next',
+    title: 'SEO Services in Hyderabad for Doctors & Clinics | Wizards Next',
     description: 'SEO for Hyderabad clinics and doctor websites: treatment pages, technical SEO and Google Business Profile work so patients find you on Search and Maps. Call +91 80721 99651.',
     alternates: { canonical: PATH },
 }
