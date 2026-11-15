@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: `${SITE_URL}/seo-services-varanasi`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
         { url: `${SITE_URL}/website-development-company-varanasi`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
         { url: `${SITE_URL}/performance-marketing-agency-varanasi`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+        { url: `${SITE_URL}/google-ads-agency-varanasi`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
         { url: `${SITE_URL}/social-media-marketing-agency-hyderabad`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
         { url: `${SITE_URL}/seo-services-hyderabad`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
         { url: `${SITE_URL}/website-development-company-hyderabad`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
