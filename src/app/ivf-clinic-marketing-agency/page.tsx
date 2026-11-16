@@ -10,7 +10,7 @@ const L = 'underline underline-offset-2 hover:text-amber-500'
 
 export const metadata: Metadata = {
     title: 'IVF & Fertility Clinic Marketing Agency in India | Wizards Next',
-    description: 'Digital marketing for IVF and fertility clinics: patient-education content for Instagram and YouTube, clinic websites, SEO for treatment pages, WhatsApp enquiries and ads, all guideline-aware. Call +91 80721 99651.',
+    description: 'Digital marketing for IVF and fertility clinics: patient-education reels, clinic websites, treatment-page SEO, WhatsApp enquiries and guideline-aware ads.',
     alternates: { canonical: PATH },
 }
 

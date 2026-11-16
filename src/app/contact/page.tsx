@@ -3,7 +3,7 @@ import ContactContent from "@/components/contact/contact_content";
 
 export const metadata: Metadata = {
     title: "Contact Us | Wizards Next — Varanasi",
-    description: "Tell us about your business and what you're trying to achieve — a strategist gets back to you within 24 hours. Office in Varanasi; serving clients in Hyderabad and across India.",
+    description: "Tell us about your business and goals and a strategist gets back to you within 24 hours. Office in Varanasi; serving Hyderabad and all of India.",
     alternates: {
         canonical: "/contact",
     },

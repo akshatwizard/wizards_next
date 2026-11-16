@@ -10,7 +10,7 @@ const L = 'underline underline-offset-2 hover:text-amber-500'
 
 export const metadata: Metadata = {
     title: 'Dermatology & Skin Clinic Marketing Agency | SEO, Website & Social',
-    description: 'Digital marketing for dermatology, skin and hair clinics: SEO for treatment pages, clinic websites, Instagram and YouTube. For Clinica Derm, average Google position moved from 35.3 to 7.9. Call +91 80721 99651.',
+    description: 'Dermatology clinic marketing: treatment-page SEO, clinic websites, Instagram and YouTube. For Clinica Derm, average Google position moved from 35.3 to 7.9.',
     alternates: { canonical: PATH },
 }
 

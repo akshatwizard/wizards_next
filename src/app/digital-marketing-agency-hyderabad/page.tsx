@@ -42,7 +42,7 @@ const FAQ: ServiceFAQType = {
 
 export const metadata: Metadata = {
     title: 'Digital Marketing Agency in Hyderabad, India | Wizards Next',
-    description: 'Digital marketing agency for Hyderabad, Telangana, India: SEO, social media, websites and ads for doctors, clinics and businesses, delivered remotely from Varanasi. Real Hyderabad case studies.',
+    description: 'Digital marketing agency for Hyderabad, Telangana: SEO, social media, websites and ads for doctors, clinics and businesses. Real Hyderabad case studies.',
     alternates: {
         canonical: PATH,
     },

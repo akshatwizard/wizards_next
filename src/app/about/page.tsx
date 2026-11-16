@@ -7,7 +7,7 @@ import { SectionBadge } from "@/components/services/section_badge";
 
 export const metadata: Metadata = {
     title: "About Wizards Next LLP | Founders Ravi Khetan & Akshat Agrawal",
-    description: "Wizards Next LLP is a Varanasi-based joint venture founded in June 2023 by Ravi Khetan (CEO & Founder) and Akshat Agrawal (CTO & Co-Founder): 50+ projects across India, including Hyderabad, with overseas clients in the USA, Russia and Spain.",
+    description: "Wizards Next LLP, Varanasi, was founded in June 2023 by Ravi Khetan (CEO & Founder) and Akshat Agrawal (CTO & Co-Founder): 50+ projects across India and abroad.",
     alternates: {
         canonical: "/about",
     },

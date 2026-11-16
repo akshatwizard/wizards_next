@@ -9,7 +9,7 @@ const PATH = '/ecommerce-website-development-varanasi'
 
 export const metadata: Metadata = {
     title: 'E-commerce Website Development Company in Varanasi | Wizards Next',
-    description: 'E-commerce website development in Varanasi: online stores with Razorpay payments, cash on delivery and pan-India shipping, built mobile-first. Built for Girdhar Das and Sons. Call +91 80721 99651.',
+    description: 'E-commerce website development in Varanasi: mobile-first online stores with Razorpay, cash on delivery and pan-India shipping, as built for Girdhar Das and Sons.',
     alternates: { canonical: PATH },
 }
 

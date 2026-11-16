@@ -9,7 +9,7 @@ const PATH = '/google-ads-agency-varanasi'
 
 export const metadata: Metadata = {
     title: 'Google Ads Agency in Varanasi | Search & Shopping Ads | Wizards Next',
-    description: 'Google Ads management for Varanasi businesses: account setup, keyword research, Search, Display and Shopping campaigns, weekly optimisation and plain monthly reporting. Call +91 80721 99651.',
+    description: 'Google Ads management in Varanasi: setup, keyword research, Search, Display and Shopping campaigns, weekly optimisation and monthly reports. +91 80721 99651.',
     alternates: { canonical: PATH },
 }
 

@@ -9,7 +9,7 @@ const PATH = '/branding-agency-varanasi'
 
 export const metadata: Metadata = {
     title: 'Branding Agency in Varanasi | Logo & Brand Identity Design | Wizards Next',
-    description: 'Branding and logo design for Varanasi businesses: logo, colour and type system, brand guidelines and stationery, then carried into your website and social media by the same team. Call +91 80721 99651.',
+    description: 'Branding and logo design in Varanasi: logo, colours, type, brand guidelines and stationery, carried into your website and social media. Call +91 80721 99651.',
     alternates: { canonical: PATH },
 }
 
