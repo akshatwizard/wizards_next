@@ -36,6 +36,8 @@ const nextConfig: NextConfig = {
       { source: "/index.php/interiors", destination: "/our-works", statusCode: 301 },
       { source: "/index.php/matrimonial", destination: "/our-works", statusCode: 301 },
       { source: "/index.php/rti-talk", destination: "/our-works", statusCode: 301 },
+      { source: "/index.php/blogs", destination: "/blog", statusCode: 301 },
+      { source: "/index.php/blog", destination: "/blog", statusCode: 301 },
       { source: "/index.php", destination: "/", statusCode: 301 },
       { source: "/index.php/:path*", destination: "/", statusCode: 301 },
       {
