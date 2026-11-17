@@ -15,6 +15,7 @@ import { Client } from "@/types/client.types";
 export const clients: Client[] = [
     {
         slug: "gd-sons",
+        city: "varanasi",
         name: "Girdhar Das and Sons",
         sectors: ["local-services", "e-commerce"],
         tagline: "A 55-year-old Varanasi retail institution, turned into a pan-India e-commerce brand through consistent content and real customer trust.",
@@ -51,6 +52,7 @@ export const clients: Client[] = [
 
     {
         slug: "dr-k-shilpi-reddy",
+        city: "hyderabad",
         name: "Dr. K. Shilpi Reddy",
         sectors: ["healthcare"],
         tagline: "23+ years of trusted care, turned into Hyderabad's most-followed voice in women's health.",
@@ -113,6 +115,7 @@ export const clients: Client[] = [
 
     {
         slug: "clinica-derm",
+        city: "hyderabad",
         name: "Clinica Derm",
         sectors: ["healthcare"],
         tagline: "From buried on page three to owning page one — the SEO engine behind Hyderabad's most-searched-for skin clinic.",
@@ -167,6 +170,7 @@ export const clients: Client[] = [
 
     {
         slug: "travel-zone",
+        city: "varanasi",
         name: "Travel Zone",
         sectors: ["travel-and-tourism"],
         tagline: "Built once on Drupal in 2019, still fully self-managed — a platform built to scale with the business, not slow it down.",
@@ -250,6 +254,7 @@ export const clients: Client[] = [
 
     {
         slug: "sjsaa",
+        city: "varanasi",
         name: "St. John's School DLW Alumni Association (SJSAA)",
         sectors: ["membership-community"],
         tagline: "A secure, self-service home for St. John's School DLW alumni — connecting members across India and beyond, one verified login at a time.",
@@ -315,6 +320,7 @@ export const clients: Client[] = [
     },
     {
         slug: "harish-chandra-pg-college",
+        city: "varanasi",
         name: "Harish Chandra Post Graduate College",
         sectors: ["education"],
         tagline: "Wizards Next's oldest website partnership — carrying a 160-year-old Varanasi institution's legacy online since 2013, now reaching students across India.",
@@ -371,6 +377,7 @@ export const clients: Client[] = [
     {
         // TODO(Ravi): screenshots
         slug: "dr-ankita-chauhan",
+        city: "hyderabad",
         name: "Dr Ankita Chauhan",
         sectors: ["healthcare"],
         tagline: "From a camera-shy doctor with zero posts to reels with millions of views — building one of Hyderabad's most trusted gynaecologist brands.",
@@ -397,6 +404,7 @@ export const clients: Client[] = [
     {
         // TODO(Ravi): engagement start year, scope, results, screenshots; credentials/years of practice not on her homepage
         slug: "dr-aradhya-achuri",
+        city: "hyderabad",
         name: "Dr Aradhya Achuri",
         sectors: ["healthcare"],
         tagline: "Fertility & IVF specialist in Hyderabad.",
@@ -420,6 +428,7 @@ export const clients: Client[] = [
     {
         // TODO(Ravi): engagement start year, scope, results, screenshots
         slug: "dr-satyanarayana-garre",
+        city: "hyderabad",
         name: "Dr Satyanarayana Garre",
         sectors: ["healthcare"],
         tagline: "Nephrologist and kidney specialist in Jubilee Hills, Hyderabad.",
@@ -443,6 +452,7 @@ export const clients: Client[] = [
     {
         // TODO(Ravi): founding year not on site
         slug: "dhanuka-silks",
+        city: "varanasi",
         name: "Dhanuka Silks",
         sectors: ["retail"],
         tagline: "From zero followers to a viral showroom launch — 2.5 years of building Varanasi's favourite saree brand online.",
@@ -466,6 +476,7 @@ export const clients: Client[] = [
     {
         // TODO(Ravi): engagement start year, scope, results, screenshots
         slug: "sunbeam-academy",
+        city: "varanasi",
         name: "Sunbeam Academy",
         sectors: ["education"],
         tagline: "CBSE school in Varanasi.",
@@ -489,6 +500,7 @@ export const clients: Client[] = [
     {
         // TODO(Ravi): engagement start year, scope, results, screenshots; no official website found — confirm if one exists
         slug: "pdr-mall",
+        city: "varanasi",
         name: "PDR Mall",
         sectors: ["retail"],
         tagline: "Shopping, dining and entertainment mall in Varanasi.",
@@ -510,6 +522,7 @@ export const clients: Client[] = [
     {
         // TODO(Ravi): engagement start year, results/metrics, screenshots
         slug: "rk-marbles-varanasi",
+        city: "varanasi",
         name: "RK Marbles Varanasi",
         sectors: ["retail"],
         tagline: "Varanasi's homegrown brand for marble, tiles and sanitary ware from India's top brands.",
@@ -530,6 +543,7 @@ export const clients: Client[] = [
     {
         // TODO(Ravi): engagement start year, results/metrics, screenshots
         slug: "armonia-varanasi",
+        city: "varanasi",
         name: "Armonia Varanasi",
         sectors: ["retail"],
         tagline: "Home décor and gifts franchisee store in Sigra, Varanasi, run by the RK Marbles group.",
@@ -550,6 +564,7 @@ export const clients: Client[] = [
     {
         // TODO(Ravi): engagement start year, Shopify/ads/SEO scope per old projects list?, results, screenshots
         slug: "banarsi-saree",
+        city: "varanasi",
         name: "Banarsi Saree",
         sectors: ["e-commerce", "retail"],
         tagline: "Online store for Banarasi silk sarees and suits, made in Varanasi.",
@@ -595,6 +610,7 @@ export const clients: Client[] = [
     {
         // TODO(Ravi): screenshots
         slug: "gnsr-textiles",
+        city: "varanasi",
         name: "GNSR Textiles",
         sectors: ["retail"],
         tagline: "A new Varanasi store with an old textile legacy — built on Instagram from zero to 7K+ followers, with the owner and his father as the faces of the brand.",
@@ -618,6 +634,7 @@ export const clients: Client[] = [
     {
         // TODO(Ravi): engagement start year, scope, results, screenshots
         slug: "maansinghka-agencies",
+        city: "varanasi",
         name: "Maansinghka Agencies",
         sectors: ["fmcg"],
         tagline: "Makers of The Taste King — cold-pressed Kacchi Ghani mustard oil from Varanasi.",
@@ -640,6 +657,7 @@ export const clients: Client[] = [
     {
         // TODO(Ravi): engagement start year, results, screenshots
         slug: "kasibunkari",
+        city: "varanasi",
         name: "Kasibunkari",
         sectors: ["e-commerce", "retail"],
         tagline: "Handloom ethnic wear from Varanasi weavers — sarees, lehengas and suits.",

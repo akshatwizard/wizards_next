@@ -389,6 +389,16 @@ export default function ClientProfile({ client }: { client: Client }) {
                         >
                             Get in touch <ArrowRight size={13} />
                         </Link>
+                        {client.city === "varanasi" && (
+                            <p className="text-zinc-300 text-[12.5px] font-light mt-4">
+                                Based in Varanasi? See our <Link href="/digital-marketing-agency-varanasi" className="text-amber-500 underline underline-offset-2 hover:text-amber-400">digital marketing agency in Varanasi</Link> page.
+                            </p>
+                        )}
+                        {client.city === "hyderabad" && (
+                            <p className="text-zinc-300 text-[12.5px] font-light mt-4">
+                                A doctor or clinic in Hyderabad? See our <Link href="/healthcare-digital-marketing-hyderabad" className="text-amber-500 underline underline-offset-2 hover:text-amber-400">healthcare digital marketing in Hyderabad</Link> page.
+                            </p>
+                        )}
                     </FadeUp>
                 </Wrapper>
             </Section>
