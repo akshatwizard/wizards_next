@@ -17,8 +17,8 @@ const WHATSAPP_URL = 'https://wa.me/918072199651?text=' + encodeURIComponent("Hi
 const CONTACT_URL = '/contact'
 
 export const metadata: Metadata = {
-    title: 'Personal Branding for Doctors | Guideline-Compliant Instagram | Wizards Next',
-    description: 'Personal branding for doctors, dentists and clinics in India — a trustworthy, guideline-compliant Instagram presence. Book a free 15-minute profile audit. From ₹40,000.',
+    title: 'Personal Branding for Doctors | Compliant Instagram',
+    description: 'Personal branding for doctors, dentists and clinics in India: a trustworthy, guideline-compliant Instagram presence. Free 15-minute profile audit. From ₹40,000.',
     alternates: { canonical: 'https://www.wizards.co.in/services/personal-branding-for-doctors' },
 }
 

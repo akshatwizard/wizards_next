@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const name = shortenForTitle(client.name, MAX_TITLE_LENGTH - TITLE_SUFFIX.length);
     return {
         title: `${name}${TITLE_SUFFIX}`,
-        description: client.tagline ?? `How Wizards Next has worked with ${client.name}.`,
+        description: client.seoDescription ?? client.tagline ?? `How Wizards Next has worked with ${client.name}.`,
         alternates: {
             canonical: `/our-works/${client.slug}`,
         },

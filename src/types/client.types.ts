@@ -37,6 +37,7 @@ export type Client = {
     mockupImage?: string      // optional separate mockup for the case-study hero (heroImage stays for cards/strips)
     heroMockup?: boolean      // heroImage is a device mockup: render it large in the hero header instead of inside the overview card
     tagline?: string          // one-line description for cards
+    seoDescription?: string   // meta description override (120–155 chars), falls back to tagline
     tags: string[]           // short display tags (shown on homepage/hub cards)
     services: string[]         // service slugs we've provided, e.g. ["seo-consultancy"]
 
