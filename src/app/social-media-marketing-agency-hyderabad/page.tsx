@@ -7,7 +7,7 @@ import { HYDERABAD_SOCIAL_CLIENTS } from '@/constant/hyderabad'
 const PATH = '/social-media-marketing-agency-hyderabad'
 
 export const metadata: Metadata = {
-    title: 'Social Media Marketing Agency in Hyderabad for Doctors & Clinics',
+    title: 'Social Media Marketing Agency in Hyderabad for Doctors',
     description: 'Social media marketing for Hyderabad doctors and clinics: content calendars, patient-education reels, posting and DM replies. Call +91 80721 99651.',
     alternates: { canonical: PATH },
 }

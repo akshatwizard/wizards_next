@@ -9,7 +9,7 @@ const PATH = '/ivf-clinic-marketing-agency'
 const L = 'underline underline-offset-2 hover:text-amber-500'
 
 export const metadata: Metadata = {
-    title: 'IVF & Fertility Clinic Marketing Agency in India | Wizards Next',
+    title: 'IVF & Fertility Clinic Marketing Agency in India',
     description: 'Digital marketing for IVF and fertility clinics: patient-education reels, clinic websites, treatment-page SEO, WhatsApp enquiries and guideline-aware ads.',
     alternates: { canonical: PATH },
 }

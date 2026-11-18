@@ -5,7 +5,7 @@ import { SEOConsultancyServicesOffered, SEOConsultancyProcess, SEOConsultancyFAQ
 const PATH = '/seo-services-varanasi'
 
 export const metadata: Metadata = {
-    title: 'SEO Services in Varanasi | Local SEO & Google Maps | Wizards Next',
+    title: 'SEO Services in Varanasi: Local SEO & Maps | Wizards Next',
     description: 'SEO services in Varanasi: technical SEO, local keywords, content and Google Business Profile so customers find you on Search and Maps. Call +91 80721 99651.',
     alternates: { canonical: PATH },
 }
