@@ -166,7 +166,7 @@ function AnimatedBg() {
                     top: '-15%',
                     left: '15%',
                 }}
-                animate={{ x: [0, 60, -40, 0], y: [0, -40, 30, 0] }}
+                whileInView={{ x: [0, 60, -40, 0], y: [0, -40, 30, 0] }}
                 transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}
             />
             <motion.div
@@ -176,7 +176,7 @@ function AnimatedBg() {
                     bottom: '5%',
                     right: '10%',
                 }}
-                animate={{ x: [0, -50, 30, 0], y: [0, 40, -20, 0] }}
+                whileInView={{ x: [0, -50, 30, 0], y: [0, 40, -20, 0] }}
                 transition={{ duration: 28, repeat: Infinity, ease: 'easeInOut', delay: 6 }}
             />
             <div
