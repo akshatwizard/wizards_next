@@ -4,7 +4,7 @@ import { FadeUp } from "@/components/ui/motion_components";
 import { PageHeading } from "@/components/ui/headings";
 import { SectionBadge } from "@/components/services/section_badge";
 import { SectionHeading } from "@/components/services/section_heading";
-import { Crumbs, CtaButtons, PlanCards, MetaChargesNote, CompareTable, WcFaq, WcCta, NeedsInput } from "@/components/wizards_connect/wc_sections";
+import { Crumbs, CtaButtons, PlanCards, MetaChargesNote, CompareTable, WcFaq, WcCta } from "@/components/wizards_connect/wc_sections";
 import { WC_NAME, WC_PATH, WC_PRICING_PATH } from "@/constant/wizards_connect";
 import { SITE_URL } from "@/constant/site";
 
@@ -48,7 +48,7 @@ export default function WizardsConnectPricingPage() {
                     <CompareTable />
                     <ul className="text-zinc-300 text-[13px] leading-relaxed font-light list-disc pl-5 flex flex-col gap-1.5">
                         <li>Free broadcasts are capped at 1,000 recipients per calendar month; scheduling is a Paid feature.</li>
-                        <li>Paid renews monthly through Cashfree (UPI Autopay or card). Cancel any time; it stays active until the end of the paid period. <NeedsInput>Cashfree Subscriptions activation is still under review</NeedsInput></li>
+                        <li>Paid renews monthly through Cashfree (UPI Autopay or card). Cancel any time; it stays active until the end of the paid period.</li>
                         <li>Every payment gets a GST tax invoice: CGST + SGST 9% each within Uttar Pradesh, IGST 18% elsewhere.</li>
                         <li>Meta&apos;s WhatsApp message charges are separate and paid to Meta.</li>
                     </ul>

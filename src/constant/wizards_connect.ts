@@ -16,12 +16,12 @@ export const WC_FEATURES = [
     { title: "Broadcasts", body: "Send an approved template to a tag or saved audience, with per-contact variables and header media. Sending is paced to your number's limits, failed messages show Meta's reason, and you can pause, resume or cancel." },
     { title: "Contacts and CSV import", body: "Import a CSV with column mapping and a preview of every row. Numbers are de-duplicated, invalid rows can be downloaded with the reason, and opted-out contacts stay opted out. Tags, audiences and opt-in records included." },
     { title: "Team logins", body: "Invite teammates by email or mobile as Owner, Admin, Agent or Viewer. Agents only see chats assigned to them. Removing a member signs them out at once, and team changes are logged." },
-    { title: "Connect your own number", body: "Link your own WhatsApp Business number to the official WhatsApp Business (Cloud) API through Meta's Embedded Signup, from inside the app." },
+    { title: "Connect your own number", body: "Use your own WhatsApp Business number on the official WhatsApp Business (Cloud) API, so chats, templates and broadcasts all run from that number." },
 ];
 
 export const WC_STEPS = [
     { title: "Start free", body: "Sign in at connect.wizards.co.in with your mobile number or email. A free workspace is created for you." },
-    { title: "Connect WhatsApp", body: "Link your WhatsApp Business number through Meta's Embedded Signup and add a payment method in your Meta account for message charges." },
+    { title: "Connect WhatsApp", body: "Link your WhatsApp Business number to the WhatsApp Business API and add a payment method in your Meta account for message charges." },
     { title: "Import contacts and create templates", body: "Upload your customer list, then submit your first templates to Meta for approval." },
     { title: "Reply and broadcast", body: "Answer customers from the shared inbox and send broadcasts to people who opted in." },
 ];
@@ -48,7 +48,7 @@ export const WC_FAQ = [
     { q: "What does Meta charge for messages?", a: "WhatsApp message charges are billed by Meta directly to the payment method in your Meta account, at Meta's rate. Wizards Connect adds 0% markup. The plan price covers the software only." },
     { q: "Is GST extra?", a: "Yes. The Paid plan is ₹999 a month plus 18% GST (CGST + SGST within Uttar Pradesh, IGST elsewhere), with a GST tax invoice for every payment." },
     { q: "How do I pay for the Paid plan?", a: "Monthly through Cashfree (UPI Autopay or card). Cancel any time; the plan stays active until the end of the paid period, then moves back to Free." },
-    { q: "Do I need a new number?", a: "You need a WhatsApp Business number that you connect to the WhatsApp Business API through Meta's Embedded Signup inside the app." },
+    { q: "Do I need a new number?", a: "You need a WhatsApp Business number that you connect to the WhatsApp Business API." },
     { q: "Can my team use one account?", a: "Yes. Invite teammates as Admin, Agent or Viewer. Free includes 1 user; Paid includes 10." },
     { q: "Can I send to anyone?", a: "Broadcasts go only to contacts who agreed to receive WhatsApp messages from your business, as WhatsApp's policy requires. Contacts who reply STOP are opted out automatically." },
 ];

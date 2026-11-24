@@ -42,6 +42,7 @@ const company = [
     { label: "About Us", href: "/about" },
     { label: "Our Work", href: "/our-works" },
     { label: "Social Media Clients", href: "/social-media-clients" },
+    { label: "WhatsApp API (Wizards Connect)", href: "/wizards-connect" },
     { label: "Blog", href: "/blog" },
     { label: "Careers", href: "/careers" },
     { label: "FAQ", href: "/faq" },

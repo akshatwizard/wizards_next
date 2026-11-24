@@ -8,11 +8,6 @@ import { SectionBadge } from "@/components/services/section_badge";
 import { SectionHeading } from "@/components/services/section_heading";
 import { WC_NAME, WC_PLANS, WC_COMPARE_ROWS, WC_FAQ, WC_SIGNUP_URL, WC_WHATSAPP, WC_WHATSAPP_URL, WC_PRICING_PATH, WC_PATH } from "@/constant/wizards_connect";
 
-/** Visible placeholder for facts still waiting on Ravi. Remove once answered. */
-export function NeedsInput({ children }: { children: React.ReactNode }) {
-    return <span className="inline-block rounded bg-amber-600/15 border border-amber-600/40 text-amber-400 text-[11.5px] px-1.5 py-0.5 font-mono">{"{{NEEDS_INPUT: "}{children}{"}}"}</span>;
-}
-
 export function Crumbs({ items }: { items: { href?: string; label: string }[] }) {
     return (
         <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-[12px] text-zinc-300 mb-6 flex-wrap">
@@ -53,12 +48,11 @@ export function PlanCards() {
                                 <span className="text-zinc-100 text-4xl font-medium">₹{p.pricePerMonth.toLocaleString("en-IN")}</span>
                                 <span className="text-zinc-300 text-[13px]">{p.pricePerMonth ? "/ month + GST" : "forever"}</span>
                             </div>
-                            {paid ? <div className="mt-2"><NeedsInput>confirm ₹999/month (marked placeholder in billing code)</NeedsInput></div> : null}
                         </div>
                         <ul className="flex flex-col gap-2.5 text-[14px] text-zinc-200 font-light">
                             {p.features.map((f) => (
                                 <li key={f} className="flex gap-2.5"><Check size={16} className="text-amber-500 shrink-0 mt-0.5" />
-                                    <span>{f}{paid && f.startsWith("API") ? <> <NeedsInput>public API not built yet; keep or remove</NeedsInput></> : null}</span></li>
+                                    <span>{f}</span></li>
                             ))}
                         </ul>
                         <a href={WC_SIGNUP_URL} className={`mt-auto text-center text-[13px] font-semibold px-6 py-2.5 rounded-[9px] transition-all ${paid ? "bg-amber-600 hover:bg-amber-700 text-black" : "border border-zinc-700 hover:border-amber-600/60 text-zinc-100"}`}>

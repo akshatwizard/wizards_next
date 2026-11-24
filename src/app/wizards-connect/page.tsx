@@ -5,7 +5,7 @@ import { FadeUp } from "@/components/ui/motion_components";
 import { PageHeading } from "@/components/ui/headings";
 import { SectionBadge } from "@/components/services/section_badge";
 import { SectionHeading } from "@/components/services/section_heading";
-import { Crumbs, CtaButtons, PlanCards, MetaChargesNote, WcFaq, WcCta, NeedsInput } from "@/components/wizards_connect/wc_sections";
+import { Crumbs, CtaButtons, PlanCards, MetaChargesNote, WcFaq, WcCta } from "@/components/wizards_connect/wc_sections";
 import { WC_NAME, WC_PATH, WC_PRICING_PATH, WC_FEATURES, WC_STEPS, WC_FAQ, WC_SIGNUP_URL } from "@/constant/wizards_connect";
 import { SITE_URL } from "@/constant/site";
 
@@ -55,7 +55,6 @@ export default function WizardsConnectPage() {
                         </p>
                         <div className="mt-7"><CtaButtons /></div>
                         <p className="mt-4 text-zinc-400 text-[12.5px]">Free plan: 1,000 broadcast recipients a month. Paid: ₹999 a month + GST. <Link href={WC_PRICING_PATH} className="text-amber-500 hover:underline">See pricing</Link></p>
-                        <div className="mt-3"><NeedsInput>Start free opens connect.wizards.co.in, which is still a private staging build (login limited to demo accounts). Confirm launch date / production URL</NeedsInput></div>
                     </FadeUp>
                 </Wrapper>
             </Section>
@@ -71,7 +70,6 @@ export default function WizardsConnectPage() {
                             <FadeUp key={f.title} delay={0.05 * i} className="rounded-[16px] border border-zinc-800 bg-zinc-900/40 p-6">
                                 <h3 className="text-zinc-100 text-[16px] font-medium mb-2">{f.title}</h3>
                                 <p className="text-zinc-300 text-[14px] leading-relaxed font-light">{f.body}</p>
-                                {f.title === "Connect your own number" ? <div className="mt-3"><NeedsInput>Embedded Signup is built but switched off until Meta App Review approves; confirm wording/date</NeedsInput></div> : null}
                             </FadeUp>
                         ))}
                     </div>
