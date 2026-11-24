@@ -589,7 +589,7 @@ export const POSTS: BlogPost[] = [
             { h2: 'Other updates from this week' },
             { p: 'The [Google November 2026 core update](/blog/google-november-2026-core-update) is still rolling out, and OpenAI’s new [ChatGPT Business Hub](/blog/chatgpt-business-hub-claim-your-business) lets some businesses claim a profile in ChatGPT. If you advertise on Meta, our guide to [Meta Ads strategy](/blog/meta-ads-2025) covers the basics of setting up campaigns that are easy to measure.' },
             { h2: 'How Wizards can help' },
-            { p: 'Our [performance marketing](/services/performance-marketing) and [Google and Meta ads management](/services/google-meta-ads-management) teams set up Meta Pixel and Conversions API tracking and reconcile ad-reported results with real orders and enquiries. If you are in Varanasi, see our [performance marketing agency in Varanasi](/performance-marketing-agency-varanasi) page. Or [book a free call](/book) and we will look at your tracking setup with you.' },
+            { p: 'Our [performance marketing](/services/performance-marketing) and [Google and Meta ads management](/services/google-meta-ads-management) teams set up Meta Pixel and Conversions API tracking and reconcile ad-reported results with real orders and enquiries. If you are in Varanasi, see our [performance marketing agency in Varanasi](/performance-marketing-agency-varanasi) page, or the full range of services from our [digital marketing agency in Varanasi](/digital-marketing-agency-varanasi). Or [book a free call](/book) and we will look at your tracking setup with you.' },
         ],
         faq: [
             { q: 'What is “Measure conversions on customer devices” in Meta Events Manager?', a: 'It is a Meta Pixel setting that matches some ad views to purchases on the shopper’s own device, using information the customer already gave the business and temporary device data. Meta says it receives only that a purchase happened and which campaign gets credit.' },
@@ -825,7 +825,7 @@ export const POSTS: BlogPost[] = [
                 'Reposting other creators’ videos — Instagram says it reduces visibility of content already posted on Instagram.',
                 'Chasing trends that have nothing to do with your business.',
             ] },
-            { p: 'If you’d rather have a team plan, shoot and manage this for you, see our [social media management](/services/social-media) service, our [video editing](/services/video-editing) work, or — for Varanasi businesses — our [social media marketing agency in Varanasi](/social-media-marketing-agency-varanasi) page. You can also [book a free call](/book).' },
+            { p: 'If you’d rather have a team plan, shoot and manage this for you, see our [social media management](/services/social-media) service, our [video editing](/services/video-editing) work, or — for Varanasi businesses — our [social media marketing agency in Varanasi](/social-media-marketing-agency-varanasi) page. For social media alongside ads, SEO and a website, see our [digital marketing agency in Varanasi](/digital-marketing-agency-varanasi). You can also [book a free call](/book).' },
         ],
         faq: [
             { q: 'How can I grow Instagram followers organically?', a: 'Post original Reels people watch to the end and share, keep a consistent weekly schedule, reply to comments and DMs, and set up a clear profile that tells new visitors what you do and where.' },
@@ -893,7 +893,7 @@ export const POSTS: BlogPost[] = [
                 'Targeting too narrowly for the budget.',
                 'Sending traffic to the homepage instead of a page built for the offer.',
             ] },
-            { p: 'Want a team to set up tracking, campaigns and creative for you? See our [Google & Meta ads management](/services/google-meta-ads-management) and [performance marketing](/services/performance-marketing) services, or our [performance marketing agency in Varanasi](/performance-marketing-agency-varanasi) page. [Book a free call](/book) to talk it through.' },
+            { p: 'Want a team to set up tracking, campaigns and creative for you? See our [Google & Meta ads management](/services/google-meta-ads-management) and [performance marketing](/services/performance-marketing) services, or our [performance marketing agency in Varanasi](/performance-marketing-agency-varanasi) page. If you want ads, social media and SEO handled together, see our [digital marketing agency in Varanasi](/digital-marketing-agency-varanasi). [Book a free call](/book) to talk it through.' },
         ],
         faq: [
             { q: 'What is the best Meta ads strategy for a small business?', a: 'Set up accurate tracking (Meta Pixel plus Conversions API), keep a simple campaign structure with broad targeting in your service area, test several creatives, and judge results by cost per qualified lead or sale.' },
@@ -1006,7 +1006,7 @@ export const POSTS: BlogPost[] = [
             { p: 'Connect Google Analytics 4 and the Meta Pixel (through the official sales channel apps) so you can measure traffic, add-to-carts and purchases from day one.' },
             { h3: '12. Plan your launch and after-sales' },
             { p: 'Prepare your launch posts, WhatsApp broadcast or email, and a simple process for packing, dispatch, customer queries and reviews. Ask your first happy customers for reviews.' },
-            { p: 'Need a team to build or run your store? See our [e-commerce website development](/services/ecommerce-development) and [e-commerce management](/services/ecommerce-management) services, or our [website development company in Varanasi](/website-development-company-varanasi) page. [Book a free call](/book).' },
+            { p: 'Need a team to build or run your store? See our [e-commerce website development](/services/ecommerce-development) and [e-commerce management](/services/ecommerce-management) services, or our [website development company in Varanasi](/website-development-company-varanasi) page. To promote the store after launch, see our [digital marketing agency in Varanasi](/digital-marketing-agency-varanasi). [Book a free call](/book).' },
         ],
         faq: [
             { q: 'What should I check before launching a Shopify store?', a: 'Domain, payments with a test order, shipping, taxes, store policies, complete product pages, navigation, SEO titles, mobile speed, a full checkout test, analytics, and a launch and after-sales plan.' },
