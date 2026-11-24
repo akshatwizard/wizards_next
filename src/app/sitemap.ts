@@ -34,6 +34,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: `${SITE_URL}/healthcare-marketing-agency`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
         { url: `${SITE_URL}/healthcare-digital-marketing-hyderabad`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
         { url: `${SITE_URL}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+        { url: `${SITE_URL}/wizards-connect`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+        { url: `${SITE_URL}/wizards-connect/pricing`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
         { url: `${SITE_URL}/services`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
         { url: `${SITE_URL}/services/personal-branding-for-doctors`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
         { url: `${SITE_URL}/sector`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
