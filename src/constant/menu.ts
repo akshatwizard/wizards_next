@@ -61,6 +61,11 @@ export const NavMenu: MenuType[] = [
         subMenu: null
     },
     {
+        name: "WhatsApp API",
+        path: "/wizards-connect",
+        subMenu: null
+    },
+    {
         name: "Blog",
         path: "/blog",
         subMenu: null
