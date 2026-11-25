@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react'
-import { ServiceMeta } from '@/constant/service_meta'
+import { ServiceMeta, serviceIconSrc } from '@/constant/service_meta'
 
 const AUTO_ADVANCE_MS = 2000
 
@@ -30,7 +30,7 @@ function ServiceCard({ service, active, onActivate }: { service: ServiceMeta; ac
                 <div className="relative w-14 h-14 shrink-0 flex items-center justify-center">
                     <div className="absolute inset-0 bg-amber-600/10 blur-xl rounded-full scale-90 group-hover:bg-amber-600/15 transition-colors duration-300" />
                     <Image
-                        src={`/images/services/icons/${slug}-icon.webp`}
+                        src={serviceIconSrc(slug)}
                         alt={`${name} icon`}
                         width={256}
                         height={256}

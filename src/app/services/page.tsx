@@ -5,7 +5,7 @@ import { ChevronRight, ArrowUpRight } from 'lucide-react'
 import { Section, Wrapper } from '@/components/ui/sections'
 import { FadeUp } from '@/components/ui/motion_components'
 import { SectionBadge } from '@/components/services/section_badge'
-import { ALL_SERVICES, ServiceMeta } from '@/constant/service_meta'
+import { ALL_SERVICES, ServiceMeta, serviceIconSrc } from '@/constant/service_meta'
 import { clients } from '@/constant/clients'
 import { ProjectCard } from '@/components/work'
 
@@ -38,7 +38,7 @@ function ServiceCard({ service }: { service: ServiceMeta }) {
                 <div className="relative w-12 h-12 shrink-0 flex items-center justify-center">
                     <div className="absolute inset-0 bg-amber-600/10 blur-xl rounded-full scale-90 group-hover:bg-amber-600/15 transition-colors duration-300" />
                     <Image
-                        src={`/images/services/icons/${slug}-icon.webp`}
+                        src={serviceIconSrc(slug)}
                         alt={`${name} icon`}
                         width={256}
                         height={256}

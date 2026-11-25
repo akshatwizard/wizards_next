@@ -1,8 +1,9 @@
 export type ServiceMeta = { slug: string; name: string; desc: string; pillar: 'Branding & Identity' | 'Digital Marketing & Growth' | 'Website, Technology & AI' }
 
 // Single source of truth for service name/description text. Icon images
-// live at /images/services/icons/[slug]-icon.webp — derived from the slug,
-// not stored here, so there's one less place for that to drift.
+// live at /images/services/icons/[slug]-icon.webp — derived from the slug
+// via serviceIconSrc(), which maps slugs with no artwork to the closest
+// existing icon file.
 export const ALL_SERVICES: ServiceMeta[] = [
     { slug: 'brand-designing', name: 'Brand Creation', desc: 'Logo, identity, and guidelines that make you instantly recognisable.', pillar: 'Branding & Identity' },
     { slug: 'graphic-designing', name: 'Graphic Design', desc: 'Scroll-stopping creative — carousels, posters, and ad visuals.', pillar: 'Branding & Identity' },
@@ -27,4 +28,14 @@ export const ALL_SERVICES: ServiceMeta[] = [
 
 export function getServiceMeta(slug: string): ServiceMeta | undefined {
     return ALL_SERVICES.find((s) => s.slug === slug)
+}
+
+// No dedicated artwork exists for these slugs; reuse the closest existing icon.
+const SERVICE_ICON_FALLBACKS: Record<string, string> = {
+    'personal-branding-for-doctors': 'brand-designing',
+}
+
+export function serviceIconSrc(slug: string): string {
+    const iconSlug = SERVICE_ICON_FALLBACKS[slug] ?? slug
+    return `/images/services/icons/${iconSlug}-icon.webp`
 }

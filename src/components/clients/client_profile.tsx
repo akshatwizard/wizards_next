@@ -6,7 +6,7 @@ import { FadeUp } from "@/components/ui/motion_components";
 import { SectionBadge } from "@/components/services/section_badge";
 import { Client } from "@/types/client.types";
 import { clients as allClients } from "@/constant/clients";
-import { getServiceMeta } from "@/constant/service_meta";
+import { getServiceMeta, serviceIconSrc } from "@/constant/service_meta";
 import TrendChart from "@/components/clients/trend_chart";
 
 const SERVICE_LABELS: Record<string, string> = {
@@ -291,7 +291,7 @@ export default function ClientProfile({ client }: { client: Client }) {
                                                 href={`/services/${slug}`}
                                                 icon={() => (
                                                     <Image
-                                                        src={`/images/services/icons/${slug}-icon.webp`}
+                                                        src={serviceIconSrc(slug)}
                                                         alt=""
                                                         width={256}
                                                         height={256}
