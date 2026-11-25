@@ -115,7 +115,7 @@ export function WcCta() {
                     <SectionHeading>Start on the Free plan</SectionHeading>
                     <p className="text-zinc-300 text-[14px] max-w-xl font-light">Free includes 1,000 broadcast recipients a month. Upgrade from inside the app when you need more users, numbers or scheduled broadcasts.</p>
                     <CtaButtons center />
-                    <p className="text-zinc-400 text-[12px]"><Link href={WC_PATH} className="hover:text-zinc-200">Overview</Link> · <Link href={WC_PRICING_PATH} className="hover:text-zinc-200">Pricing</Link> · <Link href="/wa/privacy" className="hover:text-zinc-200">Privacy</Link> · <Link href="/wa/terms" className="hover:text-zinc-200">Terms</Link></p>
+                    <p className="text-zinc-400 text-[12px]"><Link href={WC_PATH} className="hover:text-zinc-200">Overview</Link> · <Link href={WC_PRICING_PATH} className="hover:text-zinc-200">Pricing</Link> · <Link href="/wa/privacy" className="hover:text-zinc-200">Privacy</Link> · <Link href="/wa/terms" className="hover:text-zinc-200">Terms</Link> · <Link href="/wa/refund" className="hover:text-zinc-200">Refund &amp; Cancellation</Link></p>
                 </FadeUp>
             </Wrapper>
         </Section>

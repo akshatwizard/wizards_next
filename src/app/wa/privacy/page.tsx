@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Bullets, LegalPage, LegalSection, Mail, WA_BRAND, WA_OPERATOR_ADDRESS } from "../_components/legal";
+import { Bullets, LegalPage, LegalSection, Mail, WA_BRAND, WA_GRIEVANCE_OFFICER, WA_OPERATOR_ADDRESS } from "../_components/legal";
 
 export const metadata: Metadata = {
     title: `${WA_BRAND} Privacy Policy | Wizards Next`,
@@ -57,7 +57,7 @@ export default function WaPrivacyPage() {
             <LegalSection title="2. What we collect">
                 <p className="text-zinc-200 font-normal">From you when you sign up and use {WA_BRAND}</p>
                 <Bullets items={[
-                    "Name, email, mobile number (verified by one-time password), business name, GSTIN and billing address (for tax invoices), team-member names and roles.",
+                    "Name, email (verified by one-time password), mobile number if you give it, business name, GSTIN and billing address (for tax invoices), team-member names and roles.",
                     "Payment records: plan, amount, invoice, payment status and transaction reference. Card, UPI or bank details are entered on our payment gateway's page (Cashfree Payments); we do not see or store full card numbers.",
                     "Usage and device data: IP address, browser type, pages used, log-in times and error logs, for security and support.",
                 ]} />
@@ -68,7 +68,7 @@ export default function WaPrivacyPage() {
                     "Your basic Facebook profile (name, Facebook user ID), used to complete the login.",
                     <>Using the permissions <code>whatsapp_business_messaging</code> and <code>whatsapp_business_management</code> we access: messages sent to and from your business number, delivery and read statuses, media in those messages, your business profile, message templates and their review status, and webhook subscriptions.</>,
                 ]} />
-                <p className="text-zinc-200 font-normal">Virtual numbers (optional add-on)</p>
+                <p className="text-zinc-200 font-normal">Virtual numbers (optional add-on, coming soon)</p>
                 <Bullets items={[
                     "If you rent a virtual phone number through the Service: the KYC documents you upload (for example GST certificate, incorporation certificate or Udyam certificate), which are passed to our licensed telecom partner that issues the number in your business's name; and call logs and recordings of calls received on that number (used to show you WhatsApp verification codes).",
                 ]} />
@@ -80,7 +80,7 @@ export default function WaPrivacyPage() {
                     "To connect and keep your WhatsApp account working (registering the number, subscribing to webhooks, syncing templates and quality).",
                     "To bill you, issue GST invoices and keep tax records.",
                     "To keep the Service secure: detect abuse or spam, and enforce plan limits and the WhatsApp Business Policy (for example blocking sends to contacts who replied STOP).",
-                    "To provide support and send service messages (one-time passwords, renewal reminders, alerts). We send marketing messages only with your consent, and you can unsubscribe at any time.",
+                    "To provide support and send service messages (one-time passwords, billing notices, alerts). We send marketing messages only with your consent, and you can unsubscribe at any time.",
                 ]} />
                 <p>
                     We <strong className="font-medium">do not</strong> sell personal data, use Client customer data to advertise to anyone,
@@ -126,7 +126,7 @@ export default function WaPrivacyPage() {
 
             <LegalSection title="8. Grievance Officer">
                 <p>
-                    Grievance Officer, Wizards Next LLP, {WA_OPERATOR_ADDRESS}. Email: <Mail />. Phone: +91 80721 99651.
+                    Grievance Officer: {WA_GRIEVANCE_OFFICER}, Wizards Next LLP, {WA_OPERATOR_ADDRESS}. Email: <Mail />. Phone: +91 80721 99651.
                     We acknowledge complaints promptly and aim to resolve them within the time required by applicable law.
                 </p>
             </LegalSection>

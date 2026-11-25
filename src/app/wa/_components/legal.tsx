@@ -7,7 +7,7 @@ import { FadeUp } from "@/components/ui/motion_components";
 import { SectionBadge } from "@/components/services/section_badge";
 
 export const WA_BRAND = "Wizards Connect";
-export const WA_LAST_UPDATED = "15 Nov 2026";
+export const WA_LAST_UPDATED = "25 Nov 2026";
 export const WA_OPERATOR_ADDRESS = "D 59/127 A-1-4, Lane No. 3, Nirala Nagar, Varanasi, Uttar Pradesh 221010, India";
 
 export function LegalPage({ title, intro, children }: { title: string; intro?: React.ReactNode; children: React.ReactNode }) {
@@ -37,6 +37,8 @@ export function LegalPage({ title, intro, children }: { title: string; intro?: R
                             {" · "}
                             <Link href="/wa/terms" className="text-amber-600 hover:underline">Terms of Service</Link>
                             {" · "}
+                            <Link href="/wa/refund" className="text-amber-600 hover:underline">Refund &amp; Cancellation</Link>
+                            {" · "}
                             <Link href="/wa/data-deletion" className="text-amber-600 hover:underline">Data Deletion</Link>
                         </p>
                     </div>
@@ -62,6 +64,8 @@ export function Bullets({ items }: { items: React.ReactNode[] }) {
         </ul>
     );
 }
+
+export const WA_GRIEVANCE_OFFICER = "Ravi Khetan";
 
 export function Mail() {
     return <a href="mailto:admin@wizards.co.in" className="text-amber-600 hover:underline">admin@wizards.co.in</a>;

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Bullets, LegalPage, LegalSection, Mail, WA_BRAND, WA_OPERATOR_ADDRESS } from "../_components/legal";
+import { Bullets, LegalPage, LegalSection, Mail, WA_BRAND, WA_GRIEVANCE_OFFICER, WA_OPERATOR_ADDRESS } from "../_components/legal";
 
 export const metadata: Metadata = {
     title: `${WA_BRAND} Terms of Service | Wizards Next`,
@@ -27,7 +27,8 @@ export default function WaTermsPage() {
             <LegalSection title="1. The Service">
                 <p>
                     {WA_BRAND}{" "}is software for sending and receiving WhatsApp messages through Meta&apos;s WhatsApp Business Platform
-                    (Cloud API): shared inbox, contacts, templates, broadcasts, automation, reports and optional virtual phone numbers.
+                    (Cloud API): shared inbox, contacts, templates, broadcasts, automation and reports. Features marked &quot;coming soon&quot; (such as API &amp; webhooks
+                    and virtual phone numbers) are not yet available and are not part of any paid plan until launched.
                     We are not WhatsApp or Meta and are not endorsed by them.
                 </p>
             </LegalSection>
@@ -50,10 +51,9 @@ export default function WaTermsPage() {
 
             <LegalSection title="4. Plans, payment and taxes">
                 <Bullets items={[
-                    "Plans: Free, and paid plans (currently ₹299, ₹599 and ₹999 per month) with the limits shown on our pricing page. Prices exclude 18% GST, which is added on the invoice.",
-                    "Paid plans renew automatically at the end of each billing period through our payment gateway (Cashfree Payments) until you cancel. You can cancel at any time from Billing; the plan stays active until the end of the paid period.",
-                    <>Refunds are handled as stated at the time of purchase and as required by applicable law. For any billing question, write to <Mail />.</>,
-                    "If a renewal fails we retry and remind you; if it still fails after a grace period, the account moves to the Free plan (no data is deleted at that point).",
+                    "Plans: Free, and Paid at ₹999 per month, with the limits shown on our pricing page. Prices exclude 18% GST, which is added on the invoice.",
+                    "Paid is a one-month plan paid in advance through our payment gateway (Cashfree Payments). There is no auto-renewal: you renew manually from Billing in the app. If you do not renew, the account moves to the Free plan at the end of the paid period (no data is deleted at that point).",
+                    <>Once paid, no refund. You can cancel at any time and the plan stays active till the end of the paid period. See the <Link href="/wa/refund" className={link}>Refund &amp; Cancellation Policy</Link>. For any billing question, write to <Mail />.</>,
                     "Plan limits (users, numbers, broadcast recipients per month, automations) are enforced automatically. Free plan: up to 1,000 broadcast recipients per month.",
                 ]} />
             </LegalSection>
@@ -78,7 +78,7 @@ export default function WaTermsPage() {
                 ]} />
             </LegalSection>
 
-            <LegalSection title="7. Virtual numbers (optional)">
+            <LegalSection title="7. Virtual numbers (optional, coming soon)">
                 <Bullets items={[
                     <>Numbers are supplied by our licensed telecom partner and issued <strong className="font-medium">in your business&apos;s name</strong> after KYC. You must use them only for your own business.</>,
                     "Rental is prepaid for the chosen period and renews unless you deactivate. A released number may not be recoverable. A number used for paid WhatsApp messages in the last 30 days may not be removable from Meta immediately.",
@@ -117,6 +117,9 @@ export default function WaTermsPage() {
 
             <LegalSection title="12. Contact">
                 <p><Mail />, +91 80721 99651.</p>
+                <p>
+                    Grievance Officer: {WA_GRIEVANCE_OFFICER}, Wizards Next LLP, {WA_OPERATOR_ADDRESS}. Email: <Mail />.
+                </p>
             </LegalSection>
         </LegalPage>
     );

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { Section, Wrapper } from "@/components/ui/sections";
 import { FadeUp } from "@/components/ui/motion_components";
 import { PageHeading } from "@/components/ui/headings";
@@ -48,7 +49,8 @@ export default function WizardsConnectPricingPage() {
                     <CompareTable />
                     <ul className="text-zinc-300 text-[13px] leading-relaxed font-light list-disc pl-5 flex flex-col gap-1.5">
                         <li>Free broadcasts are capped at 1,000 recipients per calendar month; scheduling is a Paid feature.</li>
-                        <li>Paid renews monthly through Cashfree (UPI Autopay or card). Cancel any time; it stays active until the end of the paid period.</li>
+                        <li>Paid is a one-month plan paid through Cashfree (UPI, card or netbanking). No auto-renewal: renew manually from Billing in the app.</li>
+                        <li>Once paid, no refund. You can cancel any time and the plan stays active till the end of the paid period. See the <Link href="/wa/refund" className="text-amber-500 hover:underline">Refund &amp; Cancellation Policy</Link>.</li>
                         <li>Every payment gets a GST tax invoice: CGST + SGST 9% each within Uttar Pradesh, IGST 18% elsewhere.</li>
                         <li>Meta&apos;s WhatsApp message charges are separate and paid to Meta.</li>
                     </ul>

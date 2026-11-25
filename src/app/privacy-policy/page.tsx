@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
                         <h1 className="tracking-tight text-zinc-200 leading-tight mb-3 lg:text-4xl text-3xl font-medium">
                             Privacy Policy
                         </h1>
-                        <p className="text-zinc-300 text-[12.5px] mb-10">Last updated: [DATE]</p>
+                        <p className="text-zinc-300 text-[12.5px] mb-10">Last updated: 25 Nov 2026</p>
                     </FadeUp>
 
                     <div className="max-w-2xl flex flex-col gap-8 text-zinc-100 text-[14px] leading-relaxed font-light">
