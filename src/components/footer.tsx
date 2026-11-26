@@ -200,11 +200,23 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom bar */}
-                <div className="border-t border-zinc-900 pt-5 flex items-center justify-between flex-wrap">
+                <div className="border-t border-zinc-900 pt-5 flex items-center justify-between flex-wrap gap-x-4 gap-y-2">
                     <p className="text-zinc-700 text-[12px]">© {new Date().getFullYear()} Wizards Next LLP. All rights reserved.</p>
-                    <div className="flex items-center gap-1.5 text-zinc-300 text-[12px]">
-                        <span className="w-1.5 h-1.5 rounded-full bg-amber-600 inline-block" />
-                        Varanasi — Pan India
+                    <div className="flex items-center flex-wrap gap-x-4 gap-y-1.5">
+                        {/* Exact TechBehemoths verification text-link snippet (dofollow; do not add nofollow). */}
+                        <a
+                            href="https://techbehemoths.com/company/wizards-next-llp"
+                            target="_blank"
+                            rel="noopener"
+                            data-techbehemoths-verification=""
+                            className="text-zinc-600 text-[12px] hover:text-amber-600 transition-colors duration-200"
+                        >
+                            Verified on TechBehemoths
+                        </a>
+                        <div className="flex items-center gap-1.5 text-zinc-300 text-[12px]">
+                            <span className="w-1.5 h-1.5 rounded-full bg-amber-600 inline-block" />
+                            Varanasi — Pan India
+                        </div>
                     </div>
                 </div>
 
