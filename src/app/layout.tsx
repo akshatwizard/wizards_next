@@ -10,7 +10,9 @@ import WhatsAppButton from "@/components/whatsapp_button";
 import FirstTouch from "@/components/analytics/first_touch";
 import { SITE_URL, BUSINESS, GA_MEASUREMENT_ID, SAME_AS, HAS_MAP } from "@/constant/site";
 
-const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
+// W48-4 (26 Nov 2026): Geist is only the html/body fallback (div/p/span/a use Poppins, headings Sora),
+// so it is not preloaded; it still loads on demand where used. Frees a high-priority request for the render-blocking CSS.
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans', preload: false });
 
 const sora = Sora({
   variable: "--font-sora",
