@@ -35,6 +35,8 @@ const FAQ: ServiceFAQType = {
         { q: 'Which areas of Hyderabad do you cover?', a: 'All of Hyderabad and Secunderabad, because the work is remote. Our current clients are in Banjara Hills, Jubilee Hills and Kondapur, and we can take on businesses in Gachibowli, Madhapur, HITEC City, Kukatpally and anywhere else in the city.' },
         { q: 'Do you work with businesses outside healthcare in Hyderabad?', a: 'Yes. Our Hyderabad case studies are in healthcare, and the same SEO, social media, website and ads services are available to any Hyderabad business. Our other case studies (retail, e-commerce, education, travel) are from Varanasi and across India.' },
         { q: 'What results have you delivered in Hyderabad?', a: 'For Clinica Derm, average Google search position moved from the mid-30s in May 2025 to single digits by March 2026, with terms like “dermatologist hyderabad” ranking around positions 4.5–5.7, per their Search Console data.' },
+        { q: 'How do I choose a digital marketing agency in Hyderabad?', a: 'Ask to see real case studies with named clients, how often you will get reports and what they include, whether there is a lock-in, and who owns the content and creatives. For healthcare, also ask how the agency handles medical claims. Our answers: named Hyderabad case studies on this page, weekly and monthly reporting, rolling monthly engagements, and deliverables that are yours.' },
+        { q: 'Do I own the content and creatives you make?', a: 'Yes. All deliverables, creatives, content, copy and design files are yours, and we hand over the source files.' },
         { q: 'What does it cost?', a: 'Social media management starts from ₹15,000 a month. Ad budgets are separate, usually from around ₹10,000 a month. Every plan is scoped to your goals.' },
         { q: 'Is there a long-term contract?', a: 'No lock-ins — rolling monthly engagements.' },
     ],
@@ -132,6 +134,39 @@ export default function HyderabadPage() {
                     <p className="text-[13px] text-zinc-300">
                         Healthcare is our strongest Hyderabad sector — see <Link href="/healthcare-digital-marketing-hyderabad" className="underline underline-offset-2 hover:text-amber-500">digital marketing for doctors and clinics in Hyderabad</Link> and <Link href="/sector/healthcare" className="underline underline-offset-2 hover:text-amber-500">digital marketing for healthcare</Link>. Our office is in <Link href="/digital-marketing-agency-varanasi" className="underline underline-offset-2 hover:text-amber-500">Varanasi</Link>.
                     </p>
+                </Wrapper>
+            </Section>
+
+            <Section tone="raised">
+                <Wrapper className="lg:py-14 md:py-12 py-10 gap-6!">
+                    <FadeUp>
+                        <h2 className="text-2xl lg:text-3xl font-medium tracking-tight text-zinc-100 mb-4">Digital marketing for Hyderabad clinics, by specialty</h2>
+                        <div className="space-y-3 text-[13.5px] font-light leading-relaxed text-zinc-200 max-w-3xl">
+                            <p>Most of our Hyderabad work is for doctors and clinics, and each specialty needs a slightly different plan:</p>
+                            <ul className="list-disc pl-5 space-y-1.5">
+                                <li><Link href="/dermatology-clinic-marketing-agency" className="underline underline-offset-2 hover:text-amber-500">Dermatology and skin clinics</Link>: treatment pages built around how patients search (acne, pigmentation, hair fall, laser, PRP). <Link href="/our-works/clinica-derm" className="underline underline-offset-2 hover:text-amber-500">Clinica Derm</Link> in Banjara Hills gets a performance report every week and a full audit every month.</li>
+                                <li><Link href="/ivf-clinic-marketing-agency" className="underline underline-offset-2 hover:text-amber-500">IVF and fertility clinics</Link>: plain-language education content first, with no guaranteed outcomes or invented success rates. For Dr Shaivalini Kamarapu we run WhatsApp presence alongside Instagram.</li>
+                                <li><Link href="/services/personal-branding-for-doctors" className="underline underline-offset-2 hover:text-amber-500">Personal branding for doctors</Link>: Instagram and content for individual consultants, including doctors at KIMS and CARE Hospitals listed below.</li>
+                                <li>Every specialty: <Link href="/seo-services-hyderabad" className="underline underline-offset-2 hover:text-amber-500">SEO</Link>, <Link href="/social-media-marketing-agency-hyderabad" className="underline underline-offset-2 hover:text-amber-500">social media</Link> and <Link href="/website-development-company-hyderabad" className="underline underline-offset-2 hover:text-amber-500">websites</Link>, with medical facts always coming from the doctor.</li>
+                            </ul>
+                            <p>See the full picture on our <Link href="/healthcare-digital-marketing-hyderabad" className="underline underline-offset-2 hover:text-amber-500">healthcare digital marketing in Hyderabad</Link> page.</p>
+                        </div>
+                    </FadeUp>
+                </Wrapper>
+            </Section>
+
+            <Section>
+                <Wrapper className="lg:py-14 md:py-12 py-10 gap-6!">
+                    <FadeUp>
+                        <h2 className="text-2xl lg:text-3xl font-medium tracking-tight text-zinc-100 mb-4">What to expect from Wizards as your Hyderabad agency</h2>
+                        <ul className="list-disc pl-5 space-y-2 text-[13.5px] font-light leading-relaxed text-zinc-200 max-w-3xl">
+                            <li><strong className="font-medium text-zinc-100">Named, real case studies.</strong> Every Hyderabad client on this page is a real engagement you can open and read.</li>
+                            <li><strong className="font-medium text-zinc-100">No lock-ins.</strong> Rolling monthly engagements: you stay because the work is holding up, not because a contract requires it.</li>
+                            <li><strong className="font-medium text-zinc-100">Your work stays yours.</strong> Deliverables, creatives, content, copy and design files belong to you, with source files handed over.</li>
+                            <li><strong className="font-medium text-zinc-100">Reporting you can check.</strong> A weekly and monthly rhythm covering rankings, enquiries and real post-level numbers.</li>
+                            <li><strong className="font-medium text-zinc-100">Honest about location.</strong> Our only office is in <Link href="/digital-marketing-agency-varanasi" className="underline underline-offset-2 hover:text-amber-500">Varanasi</Link>; Hyderabad clients are served remotely over video calls and WhatsApp.</li>
+                        </ul>
+                    </FadeUp>
                 </Wrapper>
             </Section>
 
